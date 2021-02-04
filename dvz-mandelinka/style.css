@@ -1,0 +1,116 @@
+@font-face {
+    /* https://www.dafont.com/jmh-typewriter.font */
+    font-family: jmh_typewriter;
+    src: url(jmh_typewriter/jmh_typewriter.otf);
+    font-weight: normal;
+}
+@font-face {
+    /* https://www.dafont.com/jmh-typewriter.font */
+    font-family: jmh_typewriter;
+    src: url(jmh_typewriter/jmh_typewriter-bold.otf);
+    font-weight: bold;
+}
+@font-face {
+    /* https://www.dafont.com/jmh-typewriter.font */
+    font-family: jmh_typewriter;
+    src: url(jmh_typewriter/jmh_typewriter-thin.otf);
+    font-weight: thin;
+}
+
+body {
+    height: 100%;
+}
+/* special Harlow selectors */
+tw-story {
+    min-height: 100%;
+    /* min-width: 480px; */
+	background-color: rgb(207, 201, 198);
+    background-image: url("desk_placeholder.jpg");
+    background-position: top center;
+    background-attachment: fixed;
+    background-size: auto;
+
+    padding: 5% 5% 0%;
+    /* padding-top
+    padding-bottom: 0px; */
+
+    color: black;
+    font-family: jmh_typewriter, Georgia, 'Times New Roman', Times, serif;
+}
+tw-passage {
+    background-color: rgb(250, 240, 237);
+    width: 100%;
+    max-width: 1000px;
+    align-self: center;
+
+    flex-grow: 1;
+    padding: 40px 40px 100px;
+    
+    box-shadow: 2px 4px 6px 1px #000000a1;
+}
+tw-link {
+    /* background-color:#FFFFFF; */
+    /* border-radius: 0px; */
+  	/* border:2px solid; */
+    display:inline-block;
+    cursor:pointer;
+    color:#0000DC;
+    font-weight:bold;
+    padding:5px 15px;
+    text-decoration:none;
+    margin: 0;
+  	transition: 0.2s;
+}
+tw-link:hover {
+    background-color:#030349;
+  	color: #FFFFFF;
+    border-color: #030349;
+}
+tw-sidebar {
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+/* narrow screen */
+@media (max-width: 699px) {
+    tw-passage {
+        margin-top: 3em;
+    }
+    tw-sidebar {
+        position: absolute;
+        left: 5%;
+        top: -4em;
+        width: 90%;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+}
+/* wider screen */
+@media (min-width: 700px) {
+    tw-sidebar {
+        left: -4em;
+        width: 3em;
+        position: absolute;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+/* standard css selectors */
+img {
+    max-width: 100%;
+}
+div.sources {
+    margin: 0px;
+    padding: 0px;
+    line-height: 0.9;
+    font-weight: thin;
+
+    width: min-content;
+}
+div.sources img{
+    box-shadow: 2px 4px 6px 1px #000000a1;
+    margin-bottom: 20px;
+}
+
