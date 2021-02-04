@@ -1,6 +1,6 @@
 ### Seznam DVZek na kterých pracuji
 
-- [Mandelinka bramborová](https://raw.githubusercontent.com/honzaflash/dvzka/main/dvz-mandelinka/Mandelinka%20bramborov%C3%A1.html)
+- [Mandelinka bramborová](./dvz-mandelinka/Mandelinka%20bramborová.html)
 
 ### Seznam hotových DVZek
 
