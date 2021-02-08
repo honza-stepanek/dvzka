@@ -1,39 +1,41 @@
+/*
+ Typewriter font TT2020
+ Font author: Fredrick R. Brennan (<copypaste@kittens.ph>)
+ This Font Software is licensed under the SIL Open Font License, Version 1.1.
+ Font github: https://github.com/ctrlcctrlv/TT2020
+*/
 @font-face {
-    /* https://www.dafont.com/jmh-typewriter.font */
-    font-family: jmh_typewriter;
-    src: url(jmh_typewriter/jmh_typewriter.otf);
+    font-family: tt2020;
+    src: url(TT2020/TT2020StyleE-Regular.woff2);
     font-weight: normal;
 }
 @font-face {
-    /* https://www.dafont.com/jmh-typewriter.font */
-    font-family: jmh_typewriter;
-    src: url(jmh_typewriter/jmh_typewriter-bold.otf);
+    font-family: tt2020;
+    src: url(TT2020/TT2020StyleB-Regular.woff2);
     font-weight: bold;
 }
-@font-face {
-    /* https://www.dafont.com/jmh-typewriter.font */
-    font-family: jmh_typewriter;
-    src: url(jmh_typewriter/jmh_typewriter-thin.otf);
-    font-weight: thin;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap'); /* no czech diacritics */
+/* @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap'); */
 
 body {
     height: 100%;
 }
-/* special Harlow selectors */
+/* ... special Harlow selectors ... */
 tw-story {
     min-height: 100%;
-	background-color: rgb(207, 201, 198);
-    background-image: url("desk_placeholder.jpg");
+	background-color: #452614;
+    background-image: url("redaktoruv_stul_v6.png");
     background-position: top center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     background-size: auto;
 
     padding: 5% 12% 0%;
 
     color: black;
     font-size: 150%;
-    font-family: jmh_typewriter, Georgia, 'Times New Roman', Times, serif;
+    font-family: tt2020, 'Special Elite', Times, serif;
 }
 tw-passage {
     background-color: rgb(250, 240, 237);
@@ -44,33 +46,44 @@ tw-passage {
     flex-grow: 1;
     padding: 3em 3em 80px;
     
-    box-shadow: 2px 4px 6px 1px #000000a1;
+    box-shadow: -10px 16px 6px 1px #000000a1;
 }
 tw-passage[tags="title-passage"] {
     font-size: xx-large;
+    padding: 2em 2em 80px;
 }
 tw-passage[tags="title-passage"] img {
+    left: -0.5em;
     width: 10em;
     max-width: 100%;
-    padding: -5px;
 }
 tw-link {
-    /* background-color:#FFFFFF; */
-    /* border-radius: 0px; */
-  	/* border:2px solid; */
-    display:inline-block;
-    cursor:pointer;
+    display: inline-block;
+    margin: 0px;
+    padding: 0.25em 0.6em;
+    left: -0.6em; /* = -padding */
+
+    cursor: pointer;
     color:#0000DC;
-    font-weight:bold;
-    padding:5px 15px;
-    text-decoration:none;
-    margin: 0;
-  	transition: 0.2s;
+    font-weight: bold;
+    text-decoration: none;    
+
+    border: 0.2em solid  rgba(0, 0, 0, 0);
+    transition: all 0.2s;
 }
 tw-link:hover {
-    background-color:#030349;
-  	color: #FFFFFF;
-    border-color: #030349;
+    /* background-color:#0000DC; */
+    /* background-color:#030349; */
+    /* color: #FFFFFF; */
+    color: #000000;
+    border-color: #0000DC;
+}
+tw-link.visited {
+    color:#0000DC;
+}
+tw-link.visited:hover {
+    color: #000000;
+    border-color: #0000DC;
 }
 tw-story tw-consecutive-br {
     height: 1em;
@@ -81,6 +94,7 @@ tw-sidebar {
     display: flex;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    color:#c8c8c8;
 }
 /* responsivity adjustments */
 /* narrow screen */
@@ -90,8 +104,12 @@ tw-sidebar {
     }
     tw-passage {
         margin-top: 30px;
-        font-size: small;
+        padding: 2em 2em 80px;
+        font-size: 85%;
         line-height: normal;
+    }
+    tw-passage[tags="title-passage"] {
+        padding: 1.5em 1.5em 80px;
     }
     tw-sidebar {
         position: absolute;
@@ -111,7 +129,7 @@ tw-sidebar {
 
         -ms-flex-direction: column;
         flex-direction: column;
-        width: 3em;
+        width: 45px;
     }
 }
 /* standard css selectors */
@@ -135,7 +153,7 @@ div.obr-s-citaci {
 div.obr-s-citaci img {
     width: 100%;
     margin-bottom: 20px;
-    box-shadow: 2px 4px 6px 1px #000000a1;
+    box-shadow: -2px 4px 6px 1px #000000a1;
 }
 div.obr-s-citaci.neporadne {
     margin: 0% 10% 0%;
@@ -158,6 +176,22 @@ div.obr-s-citaci.max-300 {
     width: auto;
     max-width: 300px;
 }
+/* links */
+a:link {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+a:link img {
+    border: solid 0.25em hsl(170, 98%, 40%);
+}
+a:visited img {
+    border: solid 0.25em hsl(182, 100%, 27%);
+}
+/* embeds */
 iframe {
     max-width: 100%;
 }
