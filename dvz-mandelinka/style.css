@@ -21,7 +21,7 @@
 body {
     height: 100%;
 }
-/* ... special Harlow selectors ... */
+/* ... special Harlowe selectors ... */
 tw-story {
     min-height: 100%;
 	background-color: #452614;
@@ -95,6 +95,16 @@ tw-sidebar {
     -ms-flex-pack: justify;
     justify-content: space-between;
     color:#c8c8c8;
+
+    visibility: hidden;
+}
+tw-icon[title="Undo"],
+tw-icon[title="Redo"] {
+    display: none;
+    /* visibility: hidden; */
+}
+tw-icon[title="Mute/Unmute"] > img{
+    height: 45px;
 }
 /* responsivity adjustments */
 /* narrow screen */
