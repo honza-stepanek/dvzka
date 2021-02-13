@@ -16,7 +16,7 @@ audioButton.innerHTML = audioButtonUnmutedIcon;
 const twPass = document.getElementsByTagName('tw-passage')[0];
 const passageAudio = twPass.getElementsByTagName('audio')[0];
 if (passageAudio) { passageAudio.volume = 0.5; }
-audioButton.addEventListener ("click", function() {
+audioButton.addEventListener("click", function() {
     if (!passageAudio) {
         console.log("Whoops can't find the <audio> element!");
         return;

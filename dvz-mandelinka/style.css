@@ -19,26 +19,33 @@
 /* @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap'); */
 
 body {
+    margin: 0;
     height: 100%;
 }
 /* ... special Harlowe selectors ... */
 tw-story {
     min-height: 100%;
 	background-color: #452614;
-    background-image: url("redaktoruv_stul_v6.png");
+    background-image: url("journalist_50sepia_1080p.png");
     background-position: top center;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: auto;
-
+    background-repeat: repeat;
+    /* background-size: cover; */
+    
     padding: 5% 12% 0%;
-
+    
     color: black;
     font-size: 150%;
     font-family: tt2020, 'Special Elite', Times, serif;
 }
+tw-story[tags="field"] {
+    background-image: url("field_test.png");
+}
+tw-story[tags="library"] {
+    background-image: url("library_test.png");
+}
 tw-passage {
-    background-color: rgb(250, 240, 237);
+    background-color: rgb(255, 251, 238);
     width: 100%;
     max-width: 1000px;
     align-self: center;
@@ -46,16 +53,7 @@ tw-passage {
     flex-grow: 1;
     padding: 3em 3em 80px;
     
-    box-shadow: -10px 16px 6px 1px #000000a1;
-}
-tw-passage[tags="title-passage"] {
-    font-size: xx-large;
-    padding: 2em 2em 80px;
-}
-tw-passage[tags="title-passage"] img {
-    left: -0.5em;
-    width: 10em;
-    max-width: 100%;
+    box-shadow: -15px 10px 30px 5px #000000a1;
 }
 tw-link {
     display: inline-block;
@@ -77,6 +75,11 @@ tw-link:hover {
     /* color: #FFFFFF; */
     color: #000000;
     border-color: #0000DC;
+}
+tw-link:active {
+    color: #000000;
+    border-color: transparent;
+    outline: none !important;
 }
 tw-link.visited {
     color:#0000DC;
@@ -100,8 +103,8 @@ tw-sidebar {
 }
 tw-icon[title="Undo"],
 tw-icon[title="Redo"] {
-    display: none;
-    /* visibility: hidden; */
+    /* display: none; */
+    visibility: visible;
 }
 tw-icon[title="Mute/Unmute"] > img{
     height: 45px;
@@ -145,6 +148,8 @@ tw-icon[title="Mute/Unmute"] > img{
 /* standard css selectors */
 img {
     max-width: 100%;
+    width: auto;
+    height: auto;
 }
 div {
     max-width: 100%;
@@ -186,6 +191,11 @@ div.obr-s-citaci.max-300 {
     width: auto;
     max-width: 300px;
 }
+
+:focus {
+    outline: dashed black 1px;
+    transition: outline 0.1s;
+}
 /* links */
 a:link {
     color: hsl(170, 98%, 40%);
@@ -201,7 +211,31 @@ a:link img {
 a:visited img {
     border: solid 0.25em hsl(182, 100%, 27%);
 }
+
 /* embeds */
 iframe {
     max-width: 100%;
+}
+
+/* title page */
+tw-passage[tags="title-passage"] {
+    font-size: xx-large;
+    padding: 2em 2em 80px;
+}
+tw-passage[tags="title-passage"] img {
+    left: -0.5em;
+    width: 10em;
+    max-width: 100%;
+}
+div.evropska-unie {
+    margin-top: 20em;
+    font-size: small;
+    line-height: 1.2em;
+}
+div.evropska-unie p {
+    text-align: center;
+}
+div.evropska-unie img {
+    /* border: solid black 2px; */
+    width: 500px;
 }
