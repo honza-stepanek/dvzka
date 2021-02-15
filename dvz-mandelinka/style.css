@@ -107,8 +107,8 @@ tw-sidebar {
 }
 tw-icon[title="Undo"],
 tw-icon[title="Redo"] {
-    /* display: none; */
-    visibility: visible;
+    display: none;
+    /* visibility: visible; */
 }
 tw-icon[title="Mute/Unmute"] > img{
     height: 45px;
