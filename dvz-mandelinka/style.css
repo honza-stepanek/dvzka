@@ -25,7 +25,7 @@ body {
 /* ... special Harlowe selectors ... */
 tw-story {
     min-height: 100%;
-	background-color: #452614;
+	background-color: #926f40;
     background-image: url("images/journalist_1080p.png");
     background-position: top center;
     background-attachment: fixed;
@@ -158,67 +158,76 @@ img {
 div {
     max-width: 100%;
 }
-div.obr-s-citaci {
-    margin: 0px;
-    padding: 0px;
-
+div.image-container {
     line-height: 1.2em;
     font-size: 70%;
     word-wrap: break-word;
-
-    max-width: fit-content;
-
 }
-div.obr-s-citaci img {
-    width: 100%;
-    margin-bottom: 20px;
-    box-shadow: -2px 4px 6px 1px #000000a1;
+div.image-container img {
+    box-shadow: -4px 2px 10px 1px #000000a1;
 }
-div.obr-s-citaci.neporadne {
-    margin: 0% 10% 0%;
-    transform: rotate(-1deg);
-    max-width: fit-content;
-}
-div.obr-s-citaci.max-600 {
-    width: auto;
-    max-width: 600px;
-}
-div.obr-s-citaci.max-500 {
-    width: auto;
-    max-width: 500px;
-}
-div.obr-s-citaci.max-400 {
-    width: auto;
-    max-width: 400px;
-}
-div.obr-s-citaci.max-300 {
-    width: auto;
-    max-width: 300px;
-}
-
 :focus {
     outline: dashed black 1px;
     transition: outline 0.1s;
 }
-/* links */
-a:link {
+
+/* expanding modal images with citations */
+div.modal-image-container {
+    width: max-content;
+    z-index: 10;
+}
+div.modal-image-container > * {
+    box-shadow: -4px 2px 10px 1px #000000a1;
+    transition: box-shadow 400ms;
+}
+div.modal-image-container p {
+    line-height: 1.2em;
+    font-size: 70%;
+    word-wrap: break-word;
+}
+div.modal-image-container .modal-hidden {
+    padding: 0.5em;
+    position: absolute;
+    background-color: rgba(228, 196, 144, 0.774);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+div.modal-image-container.modal-expanded .modal-hidden {
+    pointer-events: inherit;
+    opacity: 0.8;
+}
+div.modal-image-container.modal-expanded > * {
+    box-shadow: -10px 5px 30px 10px #00000063;
+}
+
+
+/* <a> links */
+a:link,
+a:link img {
     color: hsl(170, 98%, 40%);
     text-decoration: underline;
 }
-a:visited {
+a:link img {
+    border: solid 3px hsl(170, 98%, 40%);
+}
+a:visited,
+a:visited img {
     color: hsl(182, 100%, 27%);
     text-decoration: underline;
 }
 a:link img {
-    border: solid 0.25em hsl(170, 98%, 40%);
+    border: solid 3px hsl(182, 100%, 27%);
 }
-a:visited img {
-    border: solid 0.25em hsl(182, 100%, 27%);
+a:local-link {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 /* embeds */
 iframe {
     max-width: 100%;
+    
 }
 
 /* title page */
@@ -243,3 +252,9 @@ div.evropska-unie img {
     /* border: solid black 2px; */
     width: 500px;
 }
+
+/* credits */
+.logo {
+    max-width: 10em;
+}
+
