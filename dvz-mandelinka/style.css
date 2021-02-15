@@ -216,7 +216,7 @@ a:visited img {
     color: hsl(182, 100%, 27%);
     text-decoration: underline;
 }
-a:link img {
+a:visited img {
     border: solid 3px hsl(182, 100%, 27%);
 }
 a:local-link {
@@ -227,7 +227,7 @@ a:local-link {
 /* embeds */
 iframe {
     max-width: 100%;
-    
+    box-shadow: -4px 2px 10px 0px #00000075;
 }
 
 /* title page */
