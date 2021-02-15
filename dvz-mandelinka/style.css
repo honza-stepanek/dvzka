@@ -182,25 +182,25 @@ div.modal-image-container > * {
 }
 div.modal-image-container p {
     line-height: 1.2em;
-    font-size: 70%;
+    font-size: 40%;
     word-wrap: break-word;
 }
 div.modal-image-container .modal-hidden {
     padding: 0.5em;
     position: absolute;
-    background-color: rgba(228, 196, 144, 0.774);
+    background-color: rgb(223, 206, 179);
+    color: rgb(75, 75, 75);
     opacity: 0;
     pointer-events: none;
     transition: opacity 400ms;
 }
 div.modal-image-container.modal-expanded .modal-hidden {
     pointer-events: inherit;
-    opacity: 0.8;
+    opacity: 1;
 }
 div.modal-image-container.modal-expanded > * {
     box-shadow: -10px 5px 30px 10px #00000063;
 }
-
 
 /* <a> links */
 a:link,
@@ -257,4 +257,5 @@ div.evropska-unie img {
 .logo {
     max-width: 10em;
 }
+/* TODO have two columns / 2 divs with flex ?row? or grid? */
 

@@ -16,6 +16,7 @@ $('.modal-image-container').click(function () {
         
         let transX = $('tw-passage').width() / 2 - curW / 2;
         let transY = maxHeight / 2 - (($(this).offset().top + $('tw-passage').offset().top) + curH / 2);
+        // TODO make better Y translate descision based on height of the image and current position of viewport, etc.
         console.log('translating x:', transX, 'translating y:', transY, 'scaling:', scl);
         
         $(this).prop('modal-animation', anime({
@@ -26,16 +27,14 @@ $('.modal-image-container').click(function () {
             duration: 400,
             easing: 'cubicBezier(0.660, 0.010, 0.485, 0.995)'
         }));
-        $(this).prop('modal-animation').play();
         $(this).css('z-index', 20);
-        console.log($(this), "has been clicked! Imma scalin it up");
-    } else {
-        $(this).prop('modal-animation').direction = "reverse";
         $(this).prop('modal-animation').play();
-        $(this).css('z-index', 10);
-        console.log($(this), "has been clicked! Bring it back down");
-        // bug if expansion is triggered during collapsing
-        // next time the div won't go back to it's original style
-        // todo fix by resetting (?) the style after animation is finished
+    } else {
+        let modAnim = $(this).prop('modal-animation');
+        modAnim.direction = "reverse";
+        modAnim.complete = () => {
+            $(this)[0].style = "";
+        };
+        modAnim.play();
     }
 });
