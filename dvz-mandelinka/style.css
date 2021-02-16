@@ -174,16 +174,25 @@ div.image-container img {
 /* expanding modal images with citations */
 div.modal-image-container {
     width: max-content;
+    cursor: pointer;
     z-index: 10;
+    /* transition: transform 300ms; */
 }
 div.modal-image-container > * {
     box-shadow: -4px 2px 10px 1px #000000a1;
     transition: box-shadow 400ms;
 }
 div.modal-image-container p {
+    margin: 0px;
     line-height: 1.2em;
     font-size: 40%;
     word-wrap: break-word;
+    cursor: text;
+}
+div.modal-image-container p.modal-empty-p {
+    padding: 0;
+    margin: 0;
+    height: 0;
 }
 div.modal-image-container .modal-hidden {
     padding: 0.5em;
