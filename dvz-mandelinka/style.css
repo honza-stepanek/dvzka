@@ -176,7 +176,6 @@ div.modal-image-container {
     width: max-content;
     cursor: pointer;
     z-index: 10;
-    /* transition: transform 300ms; */
 }
 div.modal-image-container > * {
     box-shadow: -4px 2px 10px 1px #000000a1;
@@ -208,7 +207,12 @@ div.modal-image-container.modal-expanded .modal-hidden {
     opacity: 1;
 }
 div.modal-image-container.modal-expanded > * {
-    box-shadow: -10px 5px 30px 10px #00000063;
+    box-shadow: -15px 3px 25px 5px #00000078;
+}
+
+/* justify classes */
+div.centered {
+    margin: auto;
 }
 
 /* <a> links */
@@ -237,6 +241,10 @@ a:local-link {
 iframe {
     max-width: 100%;
     box-shadow: -4px 2px 10px 0px #00000075;
+}
+iframe.video {
+    background-color: black;
+    border: solid black 0.4em;
 }
 
 /* title page */

@@ -13,20 +13,22 @@ $('.modal-image-container').click(function (event) {
         const curW = $(this).width();
         
         const scl = Math.min(maxWidth / (curW + 20), 2);
-        const transX = $('tw-passage').width() / 2 - curW / 2;
+        // const transX = $('tw-passage').width() / 2 - curW / 2;
+        const transX = parseInt($('tw-passage').css('width')) / 2 + $('tw-passage').offset().left -
+                        curW / 2 - $(this).children('img').offset().left;
         
         const pHeight = $(this).children('p').css({'width': curW, 'height': 'auto'}).height();
         const divHeight = $(this).height();
         const topOverflow = ($(this)[0].getBoundingClientRect().top + 
-                          window.scrollY -
-                          divHeight * (scl - 1) / 2 -
-                          20) * -1;
+                            window.scrollY -
+                            divHeight * (scl - 1) / 2 -
+                            20) * -1;
         const transY = Math.max(0, topOverflow);
         const bottomOverflow = ($('tw-passage')[0].getBoundingClientRect().bottom -
-                              $(this)[0].getBoundingClientRect().bottom - 
-                              divHeight * (scl - 1) / 2 -
-                              pHeight * scl) * -1 +
-                              transY + 40;
+                                $(this)[0].getBoundingClientRect().bottom - 
+                                divHeight * (scl - 1) / 2 -
+                                pHeight * scl) * -1 +
+                                transY + 40;
 
         console.log('p height:', pHeight * scl, 'upper overflow:', topOverflow, 'bottom overflow:', bottomOverflow, 'scaling:', scl);
         
