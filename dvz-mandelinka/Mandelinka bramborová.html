@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Mandelinka bramborová.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Mandelinka bramborová" startnode="1" creator="Twine" creator-version="2.3.12" ifid="4D286D92-8ED2-461F-87DF-CB688F7CAB10" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Mandelinka bramborová" startnode="1" creator="Twine" creator-version="2.3.13" ifid="4D286D92-8ED2-461F-87DF-CB688F7CAB10" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 .modalDialog {
     position: fixed;
@@ -74,6 +74,60 @@
     display: block;
     margin: 0 auto;
 }
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 90%;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.close {
+    background: #4BC8FF;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    text-size-adjust: 25px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #FF824B;
+}
 </style>
 <link href="style.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -116,7 +170,7 @@ Autor: Monika Martonová
 [[Jak by to udělali?]]
 
 [[Kde si můžeme ověřit tyto informace?]]</tw-passagedata><tw-passagedata pid="6" name="O jaké období se jedná?" tags="" position="787,621" size="100,100">V dalších článcích se dočteš, že mandelinka žije ve většině Evropy. Po druhé světové válce byla v sovětské okupační zóně Německa do roku 1950 napadena téměř polovina všech bramborových polí. Ve východním Německu se mandelince říkalo Amikäfer („americký brouk“) na základě tvrzení tamější vlády, že ji tam shodila americká letadla. Kolem roku 1950 se mandelinka objevila i na našem území.
-
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=33&quot; width=&quot;958&quot; height=&quot;213&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 [[Co se v tomto období dělo ve světě?]]</tw-passagedata><tw-passagedata pid="7" name="Pokud sem byla mandelinka zanesena úmyslně, kdo by z toho v daném období mohl profitovat?" tags="" position="1068,824" size="100,100">Američtí vojáci si tak mohli nasazením škůdce pomoci k vítězství nad Evropou a Sovětským svazem. V tomto období byly vztahy Západu a Východu napjaté a Amerika by zničením našeho zemědělství získala prospěch.
 
 [[A co bylo dál?]]</tw-passagedata><tw-passagedata pid="8" name="Kde si můžeme ověřit tyto informace?" tags="" position="391,761" size="100,100">Tiskoviny z dané doby to dokazují, zejména Rovnost, noviny Lidová demokracie, Mladá fronta, Sborníky ministerstva vnitra a také Rudé právo, jak si můžeš přečíst v následujících ukázkách.
@@ -154,7 +208,7 @@ Boj proti mandelince bramborové]]
 &lt;script type=&quot;text/javascript&quot; src=&quot;audio-button.js&quot;&gt;&lt;/script&gt;
 &lt;audio src=&quot;https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Lobo_Loco/Over_Midnight/Lobo_Loco_-_03_-_Streetlife_-_Silentfilm_ID_981.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="13" name="Jakým způsobem?" tags="" position="1122,1085" size="100,100">Naši sovětští spojenci měli speciálně upravené stroje k hubení hmyzu. Za poražení mandelinky vděčíme jejich letadlům.
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875871&quot; width=&quot;1090&quot; height=&quot;251&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=34&quot; width=&quot;958&quot; height=&quot;213&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[To jsme měli štěstí.]]</tw-passagedata><tw-passagedata pid="14" name="To jsme měli štěstí." tags="" position="1099,1215" size="100,100">To ano, alespoň tak o tom píšou tehdejší noviny.
 
@@ -202,7 +256,7 @@ Boj proti mandelince bramborové]]
 
 [[Kouknout na celý článek v Lidové demokracii.]]
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875828&quot; width=&quot;1090&quot; height=&quot;251&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=37&quot; width=&quot;958&quot; height=&quot;213&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Jak byl vztah Ameriky a Německa?]]</tw-passagedata><tw-passagedata pid="19" name="Jaký dopad měl výskyt mandelinky na československé zemědělství?" tags="" position="1209,826" size="100,100">
 &lt;div class=&quot;modal-image-container&quot;&gt;\
@@ -218,7 +272,7 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875856&quot; width=&quot;1090&quot; height=&quot;212&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=36&quot; width=&quot;958&quot; height=&quot;202&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Jak média popisují danou situaci? Jak to lidé zvládali?]]</tw-passagedata><tw-passagedata pid="20" name="Nahlédnout do tisku." tags="" position="1231,1793" size="100,100">
 &lt;div class=&quot;modal-image-container&quot;&gt;\
@@ -232,7 +286,7 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875107&quot; width=&quot;1090&quot; height=&quot;212&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=40&quot; width=&quot;958&quot; height=&quot;174&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Byly texty v novinách vždy formulované takto?]]</tw-passagedata><tw-passagedata pid="21" name="Chci si v novinách přečíst ještě jiný článek o mandelince." tags="library" position="946,2703" size="100,100">
 &lt;div class=&quot;modal-image-container&quot;&gt;\
@@ -248,7 +302,7 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875865&quot; width=&quot;1090&quot; height=&quot;212&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=35&quot; width=&quot;958&quot; height=&quot;174&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Chci více materiálů a kontextu.]]</tw-passagedata><tw-passagedata pid="23" name="Jaká byla nálada tehdejších novin? Jakým stylem byly psány články?" tags="" position="1062,2330" size="100,100">Podívej se na následující článek. Jaké jazykové prostředky jsou použity pro popis událostí?
 
@@ -258,7 +312,7 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875116&quot; width=&quot;1090&quot; height=&quot;256&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=39&quot; width=&quot;958&quot; height=&quot;218&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Chci více materiálů a kontextu.]]</tw-passagedata><tw-passagedata pid="24" name="Jak média popisují danou situaci? Jak to lidé zvládali?" tags="" position="1266,1014" size="100,100">
 &lt;div class=&quot;modal-image-container&quot;&gt;\
@@ -267,11 +321,11 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875903&quot; width=&quot;1090&quot; height=&quot;212&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=31&quot; width=&quot;958&quot; height=&quot;174&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Byly texty v novinách vždy formulované takto?]]</tw-passagedata><tw-passagedata pid="25" name="Chci vidět časovou osu této situace." tags="" position="255,3865" size="100,100">Jak se to teda celé stalo?
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875089&quot; width=&quot;1090&quot; height=&quot;313&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=42&quot; width=&quot;958&quot; height=&quot;275&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Zajímá mě celý přehled událostí]]
 
@@ -292,7 +346,7 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875165&quot; width=&quot;1090&quot; height=&quot;212&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=38&quot; width=&quot;958&quot; height=&quot;174&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Chci si v novinách přečíst ještě jiný článek o mandelince.]]</tw-passagedata><tw-passagedata pid="27" name="Chci více materiálů a kontextu." tags="library" position="927,2478" size="100,100">Deník Lidová demokracie z června 1950 popisuje příchod mandelinky jako jeden z útoků Západu na Evropu.
 &lt;div class=&quot;modal-image-container centered&quot;&gt;
@@ -301,7 +355,7 @@ Jelikož se jedná o škůdce, ovlivnila mandelinka a nutnost ji vyhubit napří
 &lt;/div&gt;\
 &lt;script type=&quot;text/javascript&quot; src=&quot;expand-images.js&quot;&gt;&lt;/script&gt;\
     
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875911&quot; width=&quot;1090&quot; height=&quot;407&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=30&quot; width=&quot;958&quot; height=&quot;369&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Chci si v novinách přečíst ještě jiný článek o mandelince.]]</tw-passagedata><tw-passagedata pid="28" name="Kde se motiv americké mandelinky ještě objevuje?" tags="" position="299,2227" size="100,100">Teď trochu poskočíme v čase. Běžte se podívat na web &lt;a href=&quot;http://www.manipulatori.cz&quot; target=&quot;_blank&quot;&gt;Manipulátoři&lt;/a&gt; a najděte si článek o Ferdovi mravencovi, jak bojoval s mandelinkou. Teprve potom pokračujte dál.
 
@@ -320,9 +374,11 @@ Měli bychom počítat s tím, že noviny z daného období jsou ideologicky zat
 
 Hodnoťme a srovnávejme texty, které čteme. Přemýšlejme a diskutujme, zajímejme se o kontext událostí. Vyhledávejme výzkumy, data, fakta a přímé argumenty.
 
-Zkuste si přečíst &lt;a href=&quot;https://clanky.rvp.cz/clanek/c/g/13335/IDEOLOGIE-V-MEDIALNIM-KONTEXTU.html/&quot; target=&quot;_blank&quot;&gt;článek o ideologické roli mediálních prostředků&lt;/a&gt; z portálu RVP.
+Zkus si přečíst &lt;a href=&quot;https://clanky.rvp.cz/clanek/c/g/13335/IDEOLOGIE-V-MEDIALNIM-KONTEXTU.html/&quot; target=&quot;_blank&quot;&gt;článek o ideologické roli mediálních prostředků&lt;/a&gt; z portálu RVP. Po přečtení se ale nezapomeň vrátit sem!
 
-Podívejte se také na &lt;a href=&quot;https://digilib.phil.muni.cz/bitstream/handle/11222.digilib/120208/SpisyFF_140-1968-1_4.pdf?sequence=1&quot;target=&quot;_blank&quot;&gt;článek z digitální knihovny FF MU o komunikačních prostředcích propagandy&lt;/a&gt;.
+Podívejte se také na &lt;a href=&quot;https://digilib.phil.muni.cz/bitstream/handle/11222.digilib/120208/SpisyFF_140-1968-1_4.pdf?sequence=1&quot;target=&quot;_blank&quot;&gt;článek z digitální knihovny FF MU o komunikačních prostředcích propagandy&lt;/a&gt;. Neztrať se však v hlubinách internetu a přijď zpět dokončit své bádání.
+
+Máš přečteno?
 
 [[Zkusím si vytvořit časovou osu.-&gt;Chci vidět časovou osu této situace.]]
 
@@ -341,7 +397,7 @@ Boj proti mandelince bramborové]]
 &lt;p class=&quot;modal-hidden&quot;&gt;//Lidová demokracie: orgán Československé strany lidové//. Praha: Nakladatelství Lidová demokracie, 01.07.1950, 6(153). s. 3. ISSN 0323-1143. Dostupné také z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:06e9ed90-9bc7-11e6-bfc2-001018b5eb5c&lt;/p&gt;\
 &lt;/div&gt;\
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/875894&quot; width=&quot;1090&quot; height=&quot;212&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=32&quot; width=&quot;958&quot; height=&quot;174&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 &lt;div class=&quot;modal-image-container&quot;&gt;\
 &lt;img src=&quot;https://i.ibb.co/9cbPbqR/nem2.png&quot;&gt;\
@@ -426,7 +482,7 @@ Boj proti mandelince bramborové]]
 
 Snad se ti budou hodit.
 
-&lt;iframe src=&quot;https://h5p.org/h5p/embed/880704&quot; width=&quot;1090&quot; height=&quot;269&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=41&quot; width=&quot;958&quot; height=&quot;230&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Ještě by mě zajímalo nějaké video.-&gt;Už se mi nechce číst žádné další texty.]]</tw-passagedata><tw-passagedata pid="42" name="Už mám dost informací pro svůj článek." tags="" position="344,4098" size="100,100">Publicistický styl zahrnuje spektrum rozličných útvarů. Mezi základní patří zpráva, komentář, reportáž,  glosa, interview, fejeton a sloupek. Níže se seznámíš se dvěma z nich, zprávou a komentářem.   
 
@@ -436,7 +492,7 @@ Snad se ti budou hodit.
 
 [[Chci si připomenout, jak pracuje redaktor Svobodné Evropy.]]
 
-Napište svůj článek do přiloženého formuláře a odešlete.
+&#39;&#39;Napiš svůj článek do přiloženého formuláře a odešli.&#39;&#39; Máme pochopení pro to, že pracuješ pod tlakem a chceš rychle a efektivně informovat veřejnost, proto ti některé formality odpustíme. Nemusíš přesně dodržet stanovený počet znaků, ani si vyhledávat zdroje a seriózní články navíc. Pracuj s tím, co máš momentálně k dispozici.
 
 &lt;a href=&quot;#mand&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/11/mand.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
 [[Článek je odeslaný. Co dál?]]</tw-passagedata><tw-passagedata pid="43" name="Článek je odeslaný. Co dál?" tags="" position="441,4298" size="100,100">Porovnej svůj článek s články ostatních autorů a odpověz si na následující otázky:
@@ -463,18 +519,19 @@ Příště, když uslyšíš o mandelince, neboj se využít nově získané inf
 
 [[Autoři -&gt;credits]]
 [[Použitá a doplňující literatura]]
-[[Hrát znovu -&gt;Vítej!]]</tw-passagedata><tw-passagedata pid="45" name="Byly texty v novinách vždy formulované takto?" tags="" position="1335,2021" size="100,100">To je dobrá otázka. Podívej se přes následující odkaz do archivu Moravské zemské knihovny na Lidové noviny. Vyber si náhodné vydání od roku 1925 do roku 1935 a srovnej jazyk a formu těchto článků s předchozími články z Rudého práva z roku 1950.
+[[Hrát znovu -&gt;Vítej!]]</tw-passagedata><tw-passagedata pid="45" name="Byly texty v novinách vždy formulované takto?" tags="" position="1335,2021" size="100,100">To je dobrá otázka. Podívej se přes následující odkaz do archivu Moravské zemské knihovny na Lidové noviny. Vyber si náhodné vydání od roku 1925 do roku 1935 a srovnej jazyk a formu těchto článků s předchozími články z Rudého práva z roku 1950. Odkaz vede ven, nezapomeň se proto vrátit zpátky sem a dokončit svůj úkol.
 
 &lt;div class=&quot;image-container&quot;&gt;\
 &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:bdc405b0-e5f9-11dc-bfb2-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://i.ibb.co/DYbXjZJ/roky.png&quot; alt=&quot;roky&quot; border=&quot;0&quot;&gt;&lt;/a&gt;\
 &lt;/div&gt;
 
-Jaké změny v charakteru textu si všímáš?
+&#39;&#39;//Jaké změny v charakteru textu si všímáš?//&#39;&#39;
+Zkus si na otázku odpovědět, protože tuto informaci využiješ při dalším bádání.
 
 Teď se ale vraťme zpátky k mandelince...
 [[Jaká byla nálada tehdejších novin? Jakým stylem byly psány články?]]</tw-passagedata><tw-passagedata pid="46" name="Vítej!" tags="" position="274,69" size="100,100">**Vítej!**
 
-Představ si, že jsi redaktor deníku &lt;a href=&quot;http://www.stopytotality.org/ke-stazeni/svobodna-evropa&quot; target=&quot;_blank&quot;&gt;Svobodná Evropa&lt;/a&gt;, vyslaný do Československa jako zvláštní zpravodaj. Tvým úkolem je rozlousknout jednu záhadu, která se točí kolem příchodu škůdce mandelinky bramborové.
+Představ si, že jsi redaktor deníku &lt;a class=&quot;inmod&quot; href=&quot;#MODALID_2&quot;&gt;Svobodná Evropa&lt;/a&gt;, vyslaný do Československa jako zvláštní zpravodaj. Tvým úkolem je rozlousknout jednu záhadu, která se točí kolem příchodu škůdce mandelinky bramborové.
 
 Výstupem bude krátká zpráva pro tento deník, která bude založena na tvých zjištěních o kauze mandelinka.
 
@@ -485,7 +542,11 @@ Zkus se nyní na chvíli vcítit do role redaktora a přijít na kloub tomu, jak
 Přejeme úspěšné bádání!
 
 [[Jdu na to!]]
-
+&lt;div id=&quot;MODALID_2&quot; class=&quot;modalDialog&quot;&gt;
+    &lt;div&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;Tento odkaz vede na jiný web, kde najdeš rozšuřijící informace o Svobodné Evropě. Klidně se začti, jen se pak nezapomeň vrátit zpět. &lt;a href=&quot;http://www.stopytotality.org/ke-stazeni/svobodna-evropa&quot; target=&quot;_blank&quot;&gt;Co je to Svobodná Evropa?&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
 &lt;script type=&quot;text/javascript&quot; src=&quot;audio-button.js&quot;&gt;&lt;/script&gt;
 &lt;audio src=&quot;https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Lobo_Loco/Over_Midnight/Lobo_Loco_-_03_-_Streetlife_-_Silentfilm_ID_981.mp3&quot; autoplay loop&gt;</tw-passagedata><tw-passagedata pid="47" name="Jak má vypadat zpráva?" tags="" position="146,4297" size="100,100">Funkcí **zprávy** je čtenáře informovat (zpravit) o události, která se již stala. Můžeš psát zprávu o tom, co se stalo nám, anebo o něčem, co je zajímavé pro větší společenství lidí. Událost můžeš vnímat z úhlu svého pohledu na svět nebo svých názorů. Proto je vždy mnoho různých zpráv o jedné a téže události.
 
@@ -517,8 +578,9 @@ Znaky KOMENTÁŘE:
 &lt;li&gt;obsahuje více než 250 slov&lt;/li&gt; 
 
 
-[[Zpět k psaní článku...-&gt;Už mám dost informací pro svůj článek.]]</tw-passagedata><tw-passagedata pid="50" name="Použitá a doplňující literatura" tags="" position="453,4583" size="100,100">[[Zpět -&gt;Chci už ukončit své bádání.]]
-
+[[Zpět k psaní článku...-&gt;Už mám dost informací pro svůj článek.]]</tw-passagedata><tw-passagedata pid="49" name="Použitá a doplňující literatura" tags="" position="453,4583" size="100,100">[[Zpět -&gt;Chci už ukončit své bádání.]]
+[[Chci si to projít celé ještě jednou.-&gt;
+Boj proti mandelince bramborové]]
 Texty a články z Digitální knihovny Moravské zemské knihovny v Brně:
 
 //Lidová demokracie: orgán Československé strany lidové//. Praha: Nakladatelství Lidová demokracie, 18.07.1950, 6(167). s. [1]. ISSN 0323-1143. Dostupné také z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:89c0b090-9bc8-11e6-baa5-005056827e51
@@ -565,13 +627,16 @@ Hudba:
 &lt;!--bílá--&gt;
 &lt;img src=&quot;https://is.muni.cz/www/honza.stepanek/digikult/img/logolinky/ARTS-KISK-lg-white.png&quot; style=&quot;height: 100px;&quot; alt=&quot;Katedra informačních studií a knihovnictví FF MU&quot;&gt;
 
-</tw-passagedata><tw-passagedata pid="49" name="Chci si připomenout, jak pracuje redaktor Svobodné Evropy." tags="" position="293,4299" size="100,100">Jsi redaktor deníku &lt;a href=&quot;http://www.stopytotality.org/ke-stazeni/svobodna-evropa&quot; target=&quot;_blank&quot;&gt;Svobodná Evropa&lt;/a&gt;, vyslaný do Československa jako zvláštní zpravodaj. 
+</tw-passagedata><tw-passagedata pid="50" name="Chci si připomenout, jak pracuje redaktor Svobodné Evropy." tags="" position="293,4299" size="100,100">Jsi redaktor deníku &lt;a class=&quot;inmod&quot; href=&quot;#MODALID_2&quot;&gt;Svobodná Evropa&lt;/a&gt;, vyslaný do Československa jako zvláštní zpravodaj. 
 
 Tvůj úkol je pravdivě informovat veřejnost o událostech. Máš důvěru celých generací, které ovlivňuješ svými názory. Bojuje za svobodu a etickou novinařinu a poukazuješ na praktiky a zločiny totalitních států.
 
 Zkus splnit co nejvíce charakteristik pro vybraný publicistický žánr.
-
-[[Zpět k psaní článku...-&gt;Už mám dost informací pro svůj článek.]]</tw-passagedata><tw-passagedata pid="51" name="credits" tags="credits" position="1326,1199.5" size="100,100">**Na tvorbě se podíleli**
+[[Zpět k psaní článku...-&gt;Už mám dost informací pro svůj článek.]]
+&lt;div id=&quot;MODALID_2&quot; class=&quot;modalDialog&quot;&gt;
+    &lt;div&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;Tento odkaz vede na jiný web, kde najdeš rozšuřijící informace o Svobodné Evropě. Klidně se začti, jen se pak nezapomeň vrátit zpět. &lt;a href=&quot;http://www.stopytotality.org/ke-stazeni/svobodna-evropa&quot; target=&quot;_blank&quot;&gt;Co je to Svobodná Evropa?&lt;/a&gt;
+</tw-passagedata><tw-passagedata pid="51" name="credits" tags="credits" position="1326,1199" size="100,100">**Na tvorbě se podíleli**
 
 &lt;img class=&quot;logo&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/11/med-upp-lg-rgb-01.png&quot; alt=&quot;Ústav psychologie a psychosomatiky LF MU&quot;&gt;
 
