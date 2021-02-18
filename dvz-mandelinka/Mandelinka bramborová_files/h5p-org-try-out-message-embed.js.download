@@ -1,1 +1,0 @@
-(function($){$(document).ready(function(){$('.h5p-content').prepend($('<div/>',{'class':'h5p-trial-warning-embed','html':'Thank you for trying out H5P. To get started with H5P read our <a href="/getting-started" target="_blank">getting started guide</a>'}));});})(H5P.jQuery);
