@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/* ==========================
+   main Twine elements visual
+   ========================== */
+tw-story {
+    padding: 5% 12% 5%;
+    min-height: 100%;
+}
+tw-passage {
+    max-width: 1000px;
+    width: 100%;
+    align-self: center;
+}
+tw-story tw-consecutive-br {
+    height: 1em;
+}
+
+/* ================
+   Twine ui sidebar
+   ================ */
+tw-sidebar {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    color:#c8c8c8;
+    visibility: hidden;
+}
+tw-icon[alt] {
+    opacity: 0.35;
+    transition: opacity 150ms;
+}
+tw-icon[alt]:hover {
+    opacity: 0.6;
+}
+tw-icon[title="Undo"],
+tw-icon[title="Redo"] {
+    /* display: none; */
+    visibility: visible;
+}
+tw-icon[title="Mute/Unmute"] > img{
+    height: 45px;
+}
+
+/* =========================
+   Responsivness adjustments
+   ========================= */
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-story {
+        padding: 5%;
+    }
+    tw-passage {
+        margin-top: 30px;
+        /* leave space fot ui */
+        padding: 2em;
+        font-size: 85%;
+        line-height: normal;
+    }
+    tw-passage[tags="title-passage"] {
+        padding: 1.5em;
+    }
+    tw-sidebar {
+        position: absolute;
+        left: 5%;
+        top: -100px;
+
+        flex-direction: row;
+        width: 90%;
+    }
+}
+/* wider screen */
+@media (min-width: 650px) {
+    tw-sidebar {
+        position: absolute;
+        left: -80px;
+
+        flex-direction: column;
+        width: 45px;
+    }
+}
+
+
+/* TOOLTIP todo ;P */
+a.open-tooltip {
+    --tooltip-color: rgb(230, 218, 50);
+    position: absolute;
+    padding: 0 0.5em;
+    border: solid 0.18em var(--tooltip-color);
+    bottom: 0;
+    right: 0;
+    z-index: 11;
+    
+    animation: jumping alternate 1000ms cubic-bezier(.26,-0.43,.31,1);
+    animation-iteration-count: infinite;
+}
+a.open-tooltip:any-link {
+    text-decoration: none;
+    color: var(--tooltip-color);
+}
+@keyframes jumping {
+    from {bottom: 0}
+    60% {bottom: 0;}
+    to {bottom: 1em}
+}
+
+div.tooltip-background {
+    background-color: aquamarine;
+    position: absolute;
+    right: 3em;
+    top: 1.5em;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+div.tooltip:target {
+    opacity: 1;
+    pointer-events: all;
+}
