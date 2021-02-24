@@ -10,6 +10,10 @@
 /* ==========================
    modal dialogs (targetting)
    ========================== */
+
+a.inmod:any-link {
+    color: hsl(130, 100%, 35%);
+}
 .modalDialog {
     /* dark background container */
     position: fixed;
@@ -209,6 +213,7 @@ tw-icon[title="Mute/Unmute"] > img{
     }
     tw-passage {
         margin-top: 30px;
+        /* leave space fot ui */
         padding: 2em 2em 80px;
         font-size: 85%;
         line-height: normal;
@@ -356,10 +361,6 @@ a:visited img {
 }
 a:visited img {
     border: solid 3px hsl(182, 100%, 27%);
-}
-a:local-link {
-    color: inherit;
-    text-decoration: inherit;
 }
 
 /* =======
