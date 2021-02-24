@@ -1,10 +1,10 @@
-### Seznam DVZek na kterých pracuji
+### Seznam DVZ na kterých pracuji
 
-- [Mandelinka bramborová](./dvz-mandelinka/Mandelinka%20bramborová.html)
+- [Kritické myšlení](./dvz-kriticke-mysleni/kriticke_mysleni.html)
 
-### Seznam hotových DVZek
+### Seznam hotových DVZ
 
-- prázdno *zvuk cvrčků*
+- [Mandelinka bramborová](./dvz-mandelinka/mandelinka_bramborova.html)
 
 \
 \
