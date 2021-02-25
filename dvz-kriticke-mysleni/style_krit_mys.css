@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
 
 tw-story {
     background-color: black;
@@ -11,6 +12,8 @@ tw-story {
 
     justify-content: center;
     align-content: center;
+
+    font-family: 'Quicksand', sans-serif;
 }
 
 tw-passage {
@@ -39,7 +42,7 @@ tw-story[tags~="horakova"] {
 @media (max-width: 649px) {
 
     tw-passage {
-        padding: 2em;
+        padding: 20px;
         box-shadow: 0 0 7px 10px white;
         margin-top: 50px;
         margin-bottom: 70px;
@@ -184,7 +187,7 @@ br:first-child {
     background: rgba(0, 0, 0, 0.8);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 300ms ease-in;
+    transition: opacity 400ms;
 }
 .modalDialog:target {
     opacity: 1;
@@ -198,8 +201,16 @@ br:first-child {
     margin: auto 0px;
 
     padding: 1em;
-    border-radius: 10px;
+    border-radius: 4px;
     background: #fff;
+    box-shadow: 0 0 7px 10px white,
+                -8px 30px 15px 10px rgba(0, 0, 0, 0.322);
+}
+/* narrow screen */
+@media (max-width: 649px) {
+    .modalDialog > div {
+        padding: 5px;
+    }
 }
 
 .modalDialog .close {
@@ -225,58 +236,85 @@ a.inmod:any-link {
     other
    ======= */
 
+/* == QUOTE BOXES == */
+.neutral-box,
+.tip-box,
+.correct-box,
+.wrong-box {
+    display: block;
+    width: 85%;
+    margin: 1.5em auto;
+
+    --neutral-box-bg: rgb(245, 245, 245);
+    background-color: var(--neutral-box-bg);
+}
+.neutral-box {
+    padding: 0.7em;
+    border-radius: 10px;
+
+    box-shadow: 0px 0px 3px 4px var(--neutral-box-bg), -3px 4px 9px 3px rgba(0, 0, 0, 0.35);
+}
+.tip-box,
+.correct-box,
+.wrong-box {
+    padding: 0.4em;
+    border-radius: 5px;
+}
+.tip-box {
+    box-shadow: 0px 0px 9px 9px var(--neutral-box-bg),
+                0px 0px 3px 12px rgb(255, 239, 93),
+                -3px 4px 9px 11px rgba(0, 0, 0, 0.35);
+}
+.correct-box {
+    box-shadow: 0px 0px 9px 9px var(--neutral-box-bg),
+                0px 0px 3px 12px rgb(94, 250, 32),
+                -3px 4px 9px 11px rgba(0, 0, 0, 0.35);
+}
+.wrong-box {
+    box-shadow: 0px 0px 9px 9px var(--neutral-box-bg),
+                0px 0px 3px 12px rgb(250, 35, 35),
+                -3px 4px 9px 11px rgba(0, 0, 0, 0.35);
+}
+.neutral-box + br,
+.tip-box + br,
+.correct-box + br,
+.wrong-box + br {
+    /* this hould get rid of the <br> 
+    that is pushed out onto the next line
+    by the auto margin */
+    display: none;
+}
+
+hr {
+    margin-bottom: 1.5em;
+    color:rgba(0, 0, 0, 0.35);
+    width: 75%;
+}
+
+
+/* == IMAGES == */
+.imbox {
+    box-shadow: 0px 0px 3px 4px rgb(245, 245, 245),
+                -3px 4px 9px 3px rgba(0, 0, 0, 0.35);
+    background-color: rgb(245, 245, 245);
+    border-radius: 10px;
+    padding: 2%;
+    width: 800px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.imbox img,
+.modalDialog img {
+    border-radius: 10px;
+    max-width: 100%;
+}
+
 .citace {
+    margin: 1em 5px 0px;
     text-align: right;
     font-size: small;
-}
-
-.yellowbox {
-    background-color: lightyellow;
-    border-radius: 10px;
-    padding: 2%;
-    box-shadow: 3px 3px 10px darkgray;
-    width: 85%;
-    display: block;
-    margin: 0 auto;
-}
-
-.cyanbox {
-    background-color: #99FFFF;
-    border-radius: 10px;
-    padding: 2%;
-    box-shadow: 3px 3px 10px darkgray;
-    width: 85%;
-    display: block;
-    margin: 0 auto;
-}
-
-.greenbox {
-    background-color: #CCFF99;
-    border-radius: 10px;
-    padding: 2%;
-    box-shadow: 3px 3px 10px darkgray;
-    width: 85%;
-    display: block;
-    margin: 0 auto;
-}
-
-.redbox {
-    background-color: #FF9999;
-    border-radius: 10px;
-    padding: 2%;
-    box-shadow: 3px 3px 10px darkgray;
-    width: 85%;
-    display: block;
-    margin: 0 auto;
-}
-
-.imbox {
-    box-shadow: 3px 3px 10px darkgray;
-    border-radius: 10px;
-    padding: 2%;
-    width: 85%;
-    display: block;
-    margin: 0 auto;
+    line-height: 1.4em;
 }
 
 .inlimg {
@@ -286,6 +324,7 @@ a.inmod:any-link {
     margin: 0 auto;
 }
 
+/* horakova ? */
 .cimage {
     width: auto;
     max-width: 75%;
@@ -293,14 +332,15 @@ a.inmod:any-link {
     margin: 0 auto;
 }
 
-.modalinit {
+/* seems unused???? */
+/* .modalinit {
     color: limegreen;
     font-weight: bold;
 }
 
 .modalinit:hover {
     color: #FF32FF;
-}
+} */
 
 
 .logo {
