@@ -33,11 +33,6 @@ tw-passage::after {
     position: relative;
 }
 
-tw-story[tags~="horakova"] {
-    font-family: 'Special Elite', cursive;
-    background-color: burlywood;
-}
-
 /* narrow screen adjustments */
 @media (max-width: 649px) {
 
@@ -167,8 +162,7 @@ br:first-child {
 
 /* ========
     modals
-   ========
-*/
+   ======== */
 .modalDialog {
     /* container */
     position: fixed;
@@ -384,3 +378,39 @@ hr {
 .commie {
     color: darkred;
 }
+
+
+/* Passage specific style */
+
+tw-story[tags~="horakova"] {
+    font-family: 'Special Elite', cursive;
+    background-color: burlywood;
+}
+
+/* Crossroads */
+tw-hook[name~="crossroadsbranch"] {
+    display: block;
+    padding: 0 2em;
+    margin: 0 auto;
+    /* center it */
+    width: 24em;
+    max-width: 100%;
+}
+tw-hook[name~="crossroadsbranch"] tw-link {
+    display: inline-block;
+    margin: 0.75em 0;
+}
+/* branch checkmark */
+tw-hook[name~="crossroadsbranch"] tw-hook {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-1em);
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
+    border: solid 0.1px #0000DC;
+    background-color: #0000DC;
+    box-shadow: 0 0 5px 5px #0000DC;
+}
+
