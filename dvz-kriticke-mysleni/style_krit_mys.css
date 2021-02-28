@@ -107,9 +107,22 @@ tw-hook[name^='goto'] {
     width: 50%;
 }
 
-/* inline link for changers (?) */
+/* reveal-text style macros like (link:) and (click:) */
 .enchantment-link {
     color: #0000DC;
+    padding: 0 0.2em;
+    border-radius: 0.3em;
+    transition: 300ms;
+    transition-property: background-color, box-shadow;
+}
+.enchantment-link:hover {
+    color: black;
+    background-color: #75a1ff;
+    box-shadow: 0px 0px 3px 4px #75a1ff;
+}
+.enchantment-link tw-hook[name^='ch'] {
+    display: inline-block;
+    margin: 0.2em 0;
 }
 
 /* where is this used ???? */
@@ -123,8 +136,8 @@ tw-hook[name^='goto']:active {
     top: 2px;
 }
 
-/* changer ?? */
-tw-hook[name^='ch'] {
+/* (click:) macro */
+/* tw-hook[name^='ch'] {
     box-shadow: 3px 3px 10px darkgray;
     background-color: white;
     border: #4BC8FF solid;
@@ -147,7 +160,7 @@ tw-hook[name^='ch']:hover {
 tw-hook[name^='ch']:active {
     position: relative;
     top: 2px;
-}
+} */
 
 /* messy breaklines - #TODO fix in the html*/
 tw-consecturive-br:last-child {
