@@ -83,6 +83,26 @@ tw-icon[title="Mute/Unmute"] > img{
     }
 }
 
+/* ================
+    <a> hyperlinks
+   ================ */
+a:link,
+a:link:hover {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:link img {
+    border: solid 3px hsl(170, 98%, 40%);
+}
+a:visited,
+a:visited:hover {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+a:visited img {
+    border: solid 3px hsl(182, 100%, 27%);
+}
+
 
 /* TOOLTIP todo ;P */
 a.open-tooltip {

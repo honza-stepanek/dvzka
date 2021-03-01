@@ -233,6 +233,42 @@ br:first-child {
     background: #0000;
     color: #0000;
 }
+.modalDialog > div::after {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: -7px;
+    top: -43px;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    content: '×';
+    text-align: center;
+    line-height: 0.8em;
+    
+    border-radius: 0.5em;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 4px 4px rgb(100, 100, 100);
+    background-color: rgb(100, 100, 100);
+    opacity: 0.5;
+}
+/* .modalDialog .close::after {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    width: 1em;
+    height: 1em;
+
+    content: '×';
+    text-align: center;
+    line-height: 0.8em;
+    
+    border-radius: 0.5em;
+    color: gray;
+    box-shadow: 0 0 5px 5px rgb(0, 179, 30);
+    background-color: rgb(0, 179, 30);
+} */
 
 a.inmod:any-link {
     color: rgb(0, 179, 30);
