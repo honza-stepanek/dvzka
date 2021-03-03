@@ -144,43 +144,6 @@ tw-hook[name^='goto'] {
     margin: 0.2em 0;
 }
 
-/* where is this used ???? */
-tw-hook[name^='goto']:hover {
-    background-color: #4BC8FF;
-    color: cyan;
-    color: white;
-}
-tw-hook[name^='goto']:active {
-    position: relative;
-    top: 2px;
-}
-
-/* (click:) macro */
-/* tw-hook[name^='ch'] {
-    box-shadow: 3px 3px 10px darkgray;
-    background-color: white;
-    border: #4BC8FF solid;
-    border-radius: 35px;
-    display: inline-block;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    padding: 15px 20px;
-    text-decoration: none;
-    margin: 1%;
-    text-align: center;
-    width: 50%;
-}
-tw-hook[name^='ch']:hover {
-    background-color: #4BC8FF;
-    color: cyan;
-    color: white;
-}
-tw-hook[name^='ch']:active {
-    position: relative;
-    top: 2px;
-} */
-
 /* messy breaklines - #TODO fix in the html*/
 tw-consecturive-br:last-child {
     display: none;
@@ -202,6 +165,7 @@ br:first-child {
     left: 0;
     width: 100vw;
     height: 100vh;
+    padding: 0;
     padding: 6vh 4vw;
     z-index: 10000;
 
@@ -232,6 +196,19 @@ br:first-child {
     box-shadow: 0 0 7px 10px white,
                 -8px 30px 15px 10px rgba(0, 0, 0, 0.322);
 }
+.modalDialog > div::after {
+    /* invisible "padding" to ensure user can scroll
+       all the way to the bottom of the bubble
+       (that is past its border bc shadow/glow fx) */
+    content: '';
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
+}
+
 /* narrow screen */
 @media (max-width: 649px) {
     .modalDialog > div {
@@ -253,7 +230,7 @@ br:first-child {
     background: #0000;
     color: #0000;
 }
-.modalDialog > div::after {
+.modalDialog > div::before {
     /* adding an x above of the modal */
     position: absolute;
     right: -7px;
@@ -371,14 +348,6 @@ hr {
     display: block;
     margin: 0 auto;
 }
-
-/* ? 3x in horakova */
-/* .cimage {
-    width: auto;
-    max-width: 75%;
-    display: block;
-    margin: 0 auto;
-} */
 
 /* ? seems unused */
 /* .modalinit {
