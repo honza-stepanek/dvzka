@@ -257,9 +257,8 @@ br:first-child {
 }
 
 a.inmod:any-link {
-    border-radius: 0.15em;
     color: rgb(0, 179, 30);
-    transition: 350ms;
+    transition: 300ms;
     transition-property: color, text-shadow;
     text-decoration: underline;
 }
@@ -381,15 +380,25 @@ hr {
 }
 
 /* nonlocal hyper links */
-.hyper,
-.hyper:hover {
-    color: hsl(170, 98%, 40%);
+.hyper {
+    --hyper-color: hsl(170, 98%, 40%);
+    color: var(--hyper-color);
     text-decoration: underline;
+
+    transition: 300ms;
+    transition-property: color, text-shadow;
 }
-.hyper:visited,
+.hyper:hover {
+    color: hsl(170, 100%, 33%);
+    text-shadow: 0 0 0.05em var(--hyper-color);
+}
+.hyper:visited {
+    --hyper-visited-color: hsl(182, 100%, 27%);
+    color: var(--hyper-visited-color);
+}
 .hyper:visited:hover {
-    color: hsl(182, 100%, 27%);
-    text-decoration: underline;
+    color: hsl(182, 100%, 20%);
+    text-shadow: 0 0 0.05em var(--hyper-visited-color);
 }
 
 
