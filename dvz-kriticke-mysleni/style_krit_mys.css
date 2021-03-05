@@ -257,7 +257,16 @@ br:first-child {
 }
 
 a.inmod:any-link {
+    border-radius: 0.15em;
     color: rgb(0, 179, 30);
+    transition: 350ms;
+    transition-property: color, text-shadow;
+    text-decoration: underline;
+}
+a.inmod:any-link:hover {
+    color: rgb(0, 146, 24);
+    text-decoration: underline;
+    text-shadow: 0 0 0.05em rgb(0, 179, 30);
 }
 
 
