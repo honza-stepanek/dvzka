@@ -105,6 +105,10 @@ a:visited:hover {
     text-decoration: underline;
 }
 
+/* ===============
+    modal dialogs
+   =============== */
+/* TODO bring it in here */
 
 /* TOOLTIP todo ;P */
 a.open-tooltip {
@@ -143,3 +147,54 @@ div.tooltip:target {
     opacity: 1;
     pointer-events: all;
 }
+
+
+/* ========================
+   credits page adjustments 
+   ======================== */
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags="credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags="credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags="credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags="credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags="credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags="credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
+
