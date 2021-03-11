@@ -19,7 +19,7 @@
 
 # Kritické myšlení
 
-Celý život se vás někdo bude pokoušet o&amp;nbsp;něčem přesvědčit. Rodiče se vás budou snažit přesvědčit, abyste šli studovat tu či onu vysokou školu a&amp;nbsp;obor. Politici se vás budou snažit přesvědčovat, abyste volili právě jejich stranu a&amp;nbsp;je samotné. &lt;a href=&quot;#crossroads&quot; style=&quot;text-decoration: none; color: black;&quot;&gt;Kamarádi&lt;/a&gt; se vás budou snažit přesvědčit, že byste si měli dát ještě jednoho panáka. Youtubeři vás budou chtít přesvědčit, abyste lajkli jejich video a&amp;nbsp;začali odebírat jejich kanál. A&amp;nbsp;vy se budete celý život snažit přesvědčovat ostatní.
+Celý život se vás někdo bude pokoušet o&amp;nbsp;něčem přesvědčit. Rodiče se vás budou snažit přesvědčit, abyste šli studovat tu či onu vysokou školu a&amp;nbsp;obor. Politici se vás budou snažit přesvědčovat, abyste volili právě jejich stranu a&amp;nbsp;je samotné. &lt;a href=&quot;#crossroads&quot; style=&quot;text-decoration: none; color: inherit;&quot;&gt;Kamarádi&lt;/a&gt; se vás budou snažit přesvědčit, že byste si měli dát ještě jednoho panáka. Youtubeři vás budou chtít přesvědčit, abyste lajkli jejich video a&amp;nbsp;začali odebírat jejich kanál. A&amp;nbsp;vy se budete celý život snažit přesvědčovat ostatní.
 
 Prostředků, jak někoho přesvědčit, je hodně. My si to ale prozatím zjednodušíme a&amp;nbsp;rozdělíme si je na dvě skupiny podle toho, na co jsou zaměřené:
 
@@ -34,10 +34,8 @@ Na emoce nebo na rozum.
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         ### Vítejte zpět!
-
-        [[Přejít na přehled argumentačních chyb.|fallacies]]
-        [[Vyzkoušet si znalosti na případu mandelinky bramborové.|mandelinka]]
-        [[Vyzkoušet si znalosti na procesu se skupinou dr. Milady Horákové.|mh00]]
+		Našli jste zkratku. Tudy se můžete dostat rovnou na rozcestník s přehledem argumentačních chyb a s příklady, na kterých si můžete své znalosti vyzkoušet.
+        [[Rozcestník|crossroads]]
     &lt;/div&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="intro-emoce" tags="" position="600,500" size="100,100">Emoce pociťují až na velmi vzácné výjimky všichni lidé. Některým emocím se chceme vyhýbat, některé naopak vyhledáváme – díky tomu lze přesvědčování pomocí emocí zjednodušit na &lt;a class=&quot;inmod&quot; href=&quot;#emoce&quot;&gt;dva typy&lt;/a&gt;. Proto je přesvědčování pomocí emocí tak účinné.
 
@@ -396,7 +394,7 @@ Cílem je vykreslit obžalované jako tu nejodpornější lidskou špínu. Cíle
 (click: ?ch2)[(show: ?wrong, ?sum)(replace: ?volba)[//Ne, jedná se o&amp;nbsp;argumentační chybu.//]]\
 </tw-passagedata><tw-passagedata pid="25" name="ad-hominem-summary" tags="" position="4186,723" size="100,100">Argument zaměřený na osobu je přípustný jen tehdy, pokud je pro přijetí (nebo naopak odmítnutí) teze podstatná osoba nebo její charakter. v&amp;nbsp;případě, že je teze na charakteru nezávislá, jsou osobní útoky argumentačními chybami a&amp;nbsp;nejsou přípustné, jelikož nejsou relevantní a&amp;nbsp;mohou znamenat konec rozumné diskuse.
 
-[[Pokračovat dál.|fallacies]]</tw-passagedata><tw-passagedata pid="26" name="freedom" tags="" position="4693,2306" size="100,100">„Zvítězit“ v&amp;nbsp;kritické diskusi lze i&amp;nbsp;tak, že se zabrání jejímu vzniku nebo se zastaví její průběh. Tento přístup sice pro stranu, která ho použije, nemusí znamenat, že vyhraje, ale může zaručit, že &lt;a class=&quot;inmod&quot; href=&quot;#win&quot;&gt;neprohraje&lt;/a&gt;. A&amp;nbsp;mnoho lidí si tyto dvě situace plete.
+[[Pokračovat dál.|crossroads]]</tw-passagedata><tw-passagedata pid="26" name="freedom" tags="" position="4693,2306" size="100,100">„Zvítězit“ v&amp;nbsp;kritické diskusi lze i&amp;nbsp;tak, že se zabrání jejímu vzniku nebo se zastaví její průběh. Tento přístup sice pro stranu, která ho použije, nemusí znamenat, že vyhraje, ale může zaručit, že &lt;a class=&quot;inmod&quot; href=&quot;#win&quot;&gt;neprohraje&lt;/a&gt;. A&amp;nbsp;mnoho lidí si tyto dvě situace plete.
 
 A jak zabránit protistraně v&amp;nbsp;argumentaci? Lze využít třeba strach nebo soucit. Na co se chcete zaměřit nejdříve?
 
@@ -657,7 +655,12 @@ Argumentace opírající se o&amp;nbsp;něčí názor je použitelná jen tehdy,
 [[Pokračovat dál.|crossroads]]
 \\
 (set: $CAS to &quot;yes&quot;)\
-</tw-passagedata><tw-passagedata pid="43" name="crossroads" tags="crossroads" position="4200,2300" size="100,100">Můžete si zkusit projít jiné téma:
+</tw-passagedata><tw-passagedata pid="43" name="crossroads" tags="crossroads" position="4200,2300" size="100,100">\
+(if: (history:)'s last is "ad-hominem-summary")[\
+Výborně! Už poznáte argumenty a&nbsp;některé rozšířené argumentační chyby. Všechny možné argumentační chyby a&nbsp;prohřešky se nám sem nevejdou, ale máme tu pro vás ještě několik zajímavých, se kterými se můžete setkat.\
+](else:)[\
+Můžete si zkusit projít jiné téma:\
+]
 
 [[[Snaha zabránit protistraně v&amp;nbsp;argumentaci.|freedom]] |free)[  &lt;img src=&quot;images/checkmark.svg&quot;&gt;]]&lt;crossroadsbranch|\
 [[[Chybné užití argumentu.|arg-scheme]] |args)[  &lt;img src=&quot;images/checkmark.svg&quot;&gt;]]&lt;crossroadsbranch|\
@@ -769,7 +772,7 @@ Falešné dilema bývá používáno např. v&amp;nbsp;marketingu. Zákazník m�
 Děkujeme, že jste si prošli náš materiál o&amp;nbsp;kritickém myšlení. Snad se vám líbil, hlavně ale doufáme, že jste se z&amp;nbsp;něho něco nového a&amp;nbsp;užitečného dozvěděli a&amp;nbsp;naučili.
 
 Pokud jste si to rozmysleli a&amp;nbsp;chcete ještě chvíli studovat tento materiál, můžete se vrátit zpátky na rozcestník:
-[[rozcestník|crossroads]]
+[[Rozcestník|crossroads]]
 Pokud ne, přejeme vám hezký zbytek dne!
 
 
@@ -1192,7 +1195,7 @@ Svoje znalosti můžete vyzkoušet na případu *amerického brouka*.
 
 &lt;img class=&quot;logolink&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/Logolink_OP_VVV_hor_barva_cz.jpg&quot; alt=&quot;Vytvořeno v rámci Operačního programu Výzkum, vývoj a vzdělávání CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&quot;&gt;\
 &lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="68" name="fallacies" tags="" position="4200,1300" size="100,100">Výborně! Už poznáte argumenty a&amp;nbsp;některé rozšířené argumentační chyby. Všechny možné argumentační chyby a&amp;nbsp;prohřešky se nám sem nevejdou, ale máme tu pro vás ještě několik zajímavých, se kterými se můžete setkat.
+</tw-passagedata><tw-passagedata pid="68" name="fallacies" tags="" position="4200,1300" size="100,100">Všechny možné argumentační chyby a&amp;nbsp;prohřešky se nám sem nevejdou, ale máme tu pro vás ještě několik zajímavých, se kterými se můžete setkat.
 
 [[[Snaha zabránit protistraně v&amp;nbsp;argumentaci.|freedom]] |free)[  &lt;img src=&quot;images/checkmark.svg&quot;&gt;]]&lt;crossroadsbranch|\
 [[[Chybné užití argumentu.|arg-scheme]] |args)[  &lt;img src=&quot;images/checkmark.svg&quot;&gt;]]&lt;crossroadsbranch|\

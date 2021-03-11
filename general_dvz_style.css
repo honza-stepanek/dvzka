@@ -45,8 +45,7 @@ tw-icon[alt]:hover {
 }
 tw-icon[title="Undo"],
 tw-icon[title="Redo"] {
-    /* display: none; */
-    visibility: visible;
+    display: none;
 }
 tw-icon[title="Mute/Unmute"] > img{
     height: 45px;
