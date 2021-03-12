@@ -1,46 +1,72 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=s wap');
-/* @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;0,700;1,400&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700&display=swap'); */
-
-/* ======================================================
- Typewriter font TT2020
- Font author: Fredrick R. Brennan (<copypaste@kittens.ph>)
- This Font Software is licensed under the SIL Open Font License, Version 1.1.
- Font github: https://github.com/ctrlcctrlv/TT2020
-   ====================================================== */
+/* 
+ Quicksand font
+ Copyright (c) 2011 The Quicksand Project Authors (https://github.com/andrew-paglinawan/QuicksandFamily),
+ with Reserved Font Name “Quicksand”.
+ This Font Software is licensed under the SIL Open Font License, Version 1.1. */
+ @font-face {
+    font-family: 'Quicksand';
+    src: url("font-Quicksand/Quicksand-Medium.ttf");
+    /* src: url("https://digikult.phil.muni.cz/wp-content/DVZ/common/font-Quicksand/Quicksand-Medium.ttf"); */
+    font-weight: 500;
+}
 @font-face {
-    font-family: tt2020;
-    /* src: url(../dvz-mandelinka/TT2020/TT2020StyleE-Regular.woff2); */
-    src: url("https://honzaflash.github.io/dvzka/dvz-mandelinka/TT2020/TT2020StyleE-Regular.woff2");
+    font-family: 'Quicksand';
+    src: url("font-Quicksand/Quicksand-Bold.ttf");
+    font-weight: bold;
+}
+
+/*
+ Typewriter font TT2020
+ Copyright (c) 2020 Fredrick R. Brennan (<copypaste@kittens.ph>)
+ This Font Software is licensed under the SIL Open Font License, Version 1.1.
+ Font github: https://github.com/ctrlcctrlv/TT2020  */
+@font-face {
+    font-family: 'TT2020';
+    src: url("../dvz-mandelinka/TT2020/TT2020StyleE-Regular.woff2");
     font-weight: normal;
 }
 @font-face {
-    font-family: tt2020;
-    src: url("https://honzaflash.github.io/dvzka/dvz-mandelinka/TT2020/TT2020StyleB-Regular.woff2");
+    font-family: 'TT2020';
+    src: url("../dvz-mandelinka/TT2020/TT2020StyleB-Regular.woff2");
     font-weight: bold;
 }
 
 
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+
 /* ======================
-    basic twine elements 
+    basic Twine elements 
    ====================== */
 tw-story {
+    padding: 5% 12% 5%;
+    min-height: 100%;
+
     background-color: black;
-    background-image: url('images/lightbulb1.png');
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/kriticke-mysleni/images/lightbulb-bg.png");
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    /* background-size: cover; */
 
     justify-content: center;
-    align-content: center;
 
     font-family: 'Quicksand', sans-serif;
 }
 
 tw-passage {
+    max-width: 1000px;
+    width: 100%;
+    align-self: center;
+
     padding: 2em;
     margin-top: 3vh;
     margin-bottom: 4vh;
@@ -51,10 +77,28 @@ tw-passage {
     color: black;
 }
 
-/* narrow screen adjustments */
-@media (max-width: 649px) {
+tw-story tw-consecutive-br {
+    height: 1em;
+}
 
+tw-sidebar {
+    display: none;
+}
+
+/* =========================
+   Responsivness adjustments
+   ========================= */
+@media (max-width: 649px) {
+    /* narrow screen */
+    tw-story {
+        padding: 5%;
+    }
     tw-passage {
+        margin-top: 30px;
+        /* leave space fot ui */
+        padding: 2em;
+        font-size: 85%;
+        line-height: normal;
         padding: 20px;
         box-shadow: 0 0 7px 10px white;
         margin-top: 50px;
@@ -62,9 +106,6 @@ tw-passage {
     }
     tw-passage[tags="title-passage"] {
         padding: 0.7em;
-    }
-    tw-sidebar {
-        top: -125px;
     }
 }
 
@@ -361,7 +402,20 @@ hr {
     font-size: smaller;
 }
 
-/* nonlocal hyper links */
+
+/* ================
+    <a> hyperlinks
+   ================ */
+a:link,
+a:link:hover {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:visited,
+a:visited:hover {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
 .hyper {
     --hyper-color: hsl(170, 98%, 40%);
     color: var(--hyper-color);
@@ -420,9 +474,9 @@ tw-story[tags~="horakova"] {
     background-color: rgb(20, 20, 20);
     background-repeat: no-repeat;
     /* background-image: url(images/horakova-soudni-sin-denoised2-lightbulb3.png); */
-    background-image: url(images/horakova-edges.png);
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/kriticke-mysleni/images/horakova-bg.png");
 
-    font-family: 'tt2020', Times, serif;
+    font-family: 'TT2020', Times, serif;
 }
 
 .horakova-feedback {
@@ -443,9 +497,60 @@ tw-story[tags~="horakova"] audio {
 /* Mandelinka */
 tw-story[tags~="mandelinka"] {
     background-color: #0e0d0d;
-    background-image: url(images/mandelinka-edges.png);
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/kriticke-mysleni/images/mandelinka-bg.png");
 
-    font-family: 'tt2020', Times, serif;
+    font-family: 'TT2020', Times, serif;
 }
 
+/* Invalid/Unknown Authority fallacy */
+img#authority1 {
+    margin-bottom: 0.2em;
+}
 
+/* ========================
+   credits page adjustments 
+   ======================== */
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags="credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags="credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags="credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags="credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags="credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags="credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
