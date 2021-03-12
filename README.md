@@ -1,20 +1,15 @@
-### Seznam DVZ na kterých pracuji
+## Seznam DVZ na kterých pracuji
 
-- [Kritické myšlení](./dvz-kriticke-mysleni/kriticke_mysleni.html)
+- [**Morálnní psychologie a rozhodování**](https://honzaflash.github.io/dvzka/dvz-moralni-psych/moralni-psych)
 
-### Seznam hotových DVZ
+## Seznam hotových DVZ
 
-- [Mandelinka bramborová](./dvz-mandelinka/mandelinka_bramborova.html)
+- [Mandelinka bramborová](https://honzaflash.github.io/dvzka/dvz-mandelinka/mandelinka_bramborova)
+- [Kritické myšlení](https://honzaflash.github.io/dvzka/dvz-kriticke-mysleni/kriticke_mysleni)
 
-\
-\
-\
-\
-\
-\
-\
-\
-\
-Running the Jekyll theme on GitHub Pages
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/) \
-or check out the [documentation](https://docs.github.com/categories/github-pages-basics/).
+
+---
+### Více o projektu Humanitní vědy dokořán
+[Stránky projektu](https://digikult.phil.muni.cz/) \
+Projekt vzniká pod [Katedrou informačních studií a knihovnictví](https://kisk.phil.muni.cz/)
+
