@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+
+/* ======================
+    basic Twine elements 
+   ====================== */
+tw-story {
+    min-height: 100%;
+
+    font-family: "Quicksand", sans-serif;
+}
+
+tw-passage {
+    max-width: 1000px;
+    width: 100%;
+    align-self: center;
+
+    background-color: white;
+    color: black;
+}
+
+tw-story tw-consecutive-br {
+    height: 1em;
+}
+
+tw-sidebar {
+    background-color: pass;
+    /* display: none; */
+}
+
+/* =========================
+   Responsivness adjustments
+   ========================= */
+@media (max-width: 649px) {
+    /* narrow screen */
+    tw-story {
+        padding: 5%;
+    }
+    tw-passage {
+        margin-top: 30px;
+        /* leave space fot ui */
+        padding: 2em;
+        font-size: 85%;
+        line-height: normal;
+        padding: 20px;
+        box-shadow: 0 0 7px 10px white;
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
+    tw-passage[tags="title-passage"] {
+        padding: 0.7em;
+    }
+}
+
+/* ===========
+   Twine LINKS
+   =========== */
+tw-link,
+tw-link.visited {
+    display: block;
+    padding: 0.35em;
+    margin: 1.4em auto;
+    /* center it */
+    width: 20em;
+    max-width: 100%;
+    text-align: center;
+    background-color: #e6f1ff;
+    color: #0000dc;
+
+    transition: 300ms;
+    transition-property: background-color, box-shadow;
+}
+tw-expression[name="link-goto"] + br {
+    /* this hould get rid of the <br> 
+    that is pushed out onto the next line
+    by the tw-link's auto margin */
+    display: none;
+}
+tw-link:hover,
+tw-link:active,
+tw-link.visited:hover,
+tw-link.visited:active {
+    color: #fff;
+    background-color: #0000dc;
+}
+tw-link:active,
+tw-link.visited:active {
+    position: relative;
+    top: 2px;
+}
+
+/* reveal-text style macros like (link:) and (click:) */
+.enchantment-link {
+    color: #0000dc;
+    padding: 0 0.2em;
+    border-radius: 0.3em;
+    transition: 300ms;
+    transition-property: background-color;
+}
+.enchantment-link:hover {
+    color: black;
+    background-color: #75a1ff;
+}
+
+/* ================
+        modals
+    ================ */
+.modalDialog {
+    /* dialog container */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    /* modal content */
+    max-width: 40em;
+    flex-grow: 0;
+    margin: auto 0px;
+
+    /* padding: 1em; */
+    background: #fff;
+    /* box-shadow: ; */
+}
+.modalDialog > div::after {
+    /* invisible "padding" to ensure user can scroll
+        all the way to the bottom of the bubble
+        (that is past its border bc shadow/glow fx) */
+    content: "";
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
+}
+
+@media (max-width: 649px) {
+    /* narrow screen */
+    .modalDialog > div {
+        padding: 0px;
+    }
+}
+
+.modalDialog .close,
+.modalDialog .close:hover {
+    /* close link */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0000;
+    color: #0000;
+}
+.modalDialog > div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: -7px;
+    top: -43px;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.2em;
+
+    border-radius: 0.5em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(100, 100, 100);
+    opacity: 0.5;
+}
+
+a.inmod:any-link {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: color, text-shadow;
+    text-decoration: underline;
+}
+a.inmod:any-link:hover {
+    color: rgb(0, 146, 24);
+    text-decoration: underline;
+    text-shadow: 0 0 0.05em rgb(0, 179, 30);
+}
+
+.imbox {
+    box-shadow: 3px 3px 10px darkgray;
+    border-radius: 10px;
+    padding: 2%;
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+}
+
+.inlimg {
+    width: auto;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.cimage {
+    width: auto;
+    max-width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.modalinit {
+    color: limegreen;
+    font-weight: bold;
+}
+
+.modalinit:hover {
+    color: #ff32ff;
+}
+
+.inmod {
+    color: #00dc00;
+}
+
+.inmod:hover {
+    color: #dc6e00;
+}
+
+.frejm {
+    width: 100%;
+    height: 800px;
+}
+
+.tube {
+    width: 75%;
+    height: 640px;
+    display: block;
+    margin: 0 auto;
+}
