@@ -13,6 +13,9 @@
 
 </style>
 <link href="style-moralni-psych.css" rel="stylesheet">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA==" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"> </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
 <script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="" position="100,898" size="100,100">&lt;img class=&quot;logo&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/arts-lg-text-cze.png&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;
 
 # Pomozte Adamovi
@@ -276,7 +279,9 @@ Po necelých dvou hodinách je Adam zpátky u kanceláře marketingového ředit
 Uplyne asi půl hodiny a Adam si všimne, že si tablet zapomněl dát nabít a zbývá mu už asi jenom 6 % baterie. Také si všimne, že pokud by chtěl stihnout vlak domů, kterým chtěl jet původně, tak by měl pomalu vyrazit.
 
 [[Vyrazí Adam na vlak?-&gt;homecoming]]
-[[Nebo bude čekat dál?-&gt;longer-wait]]</tw-passagedata><tw-passagedata pid="30" name="debriefing" tags="" position="6903.333333333333,929.6666666666665" size="100,100">Jste téměř na konci své cesty tímto příběhem. Pojďme se nyní podívat na události, které se Adamovi od příjezdu do Brna udály, a co se o nich dá říct.
+[[Nebo bude čekat dál?-&gt;longer-wait]]</tw-passagedata><tw-passagedata pid="30" name="debriefing" tags="debriefing" position="6903.333333333333,929.6666666666665" size="100,100">\
+<script src="debriefin-inception-after.js"></script>\
+Jste téměř na konci své cesty tímto příběhem. Pojďme se nyní podívat na události, které se Adamovi od příjezdu do Brna udály, a co se o nich dá říct.
 
 [[Pojďme se tedy podívat, co se vlastně stalo.-&gt;d-intro]]</tw-passagedata><tw-passagedata pid="31" name="longer-wait" tags="" position="5843,1158.3333333333333" size="100,100">Uplynula asi další čtvrthodina. Adamův tablet se vybil a Adam se začíná silně nudit. Sekretářka bohužel má nabíječku jen na micro USB a Adam si svoji USB-C prozíravě nechal doma. Vtom zazvoní sekretářce telefon. Ta telefon zvedne a několikrát jednoslabičně odpoví mužskému hlasu na druhé straně. Když telefon zavěsí, oznámí, že její šéf je právě u generálního ředitele a že má jít za ním. Prý by neměla být pryč déle než pět minut a svému šéfovi o Adamovi rozhodně řekne.
 
@@ -367,7 +372,9 @@ Po krátkém dechovém cvičení se Adam pokouší zhodnotit svoji situaci. Mů�
 
 [[Adam zkusí ukrást kravatu.-&gt;steal]]
 |goto-right&gt;[Nebo odejde z obchodu a bude spěchat na pohovor.]
-(click: ?goto-right)[(set: $steal to false)(if: $deo is true)[(set: $wc to true)](go-to: &quot;veveri&quot;)]</tw-passagedata><tw-passagedata pid="39" name="late" tags="" position="5396.333333333333,512.0000000000001" size="100,100">Adam podle instrukcí recepční najde dveře s nápisem „ŘEDITEL MARKETINGU“ a zaklepe na ně. Zevnitř se ozve ženský hlas: &quot;Dále.&quot; Adam vstupuje do malé místnosti, kde za stolem sedí sekretářka, která ho hned pozdraví a zeptá se, co pro něj může udělat. Když Adam řekne, že jde na pohovor, sekretářka semkne rty k sobě v gestu, které Adamovi dává tušit, že asi nebude následovat nic dobrého.
+(click: ?goto-right)[(set: $steal to false)(if: $deo is true)[(set: $wc to true)](go-to: &quot;veveri&quot;)]</tw-passagedata><tw-passagedata pid="39" name="late" tags="" position="5396.333333333333,512.0000000000001" size="100,100">\
+<script src="debriefing-inception-before.js"></script>\
+Adam podle instrukcí recepční najde dveře s nápisem „ŘEDITEL MARKETINGU“ a zaklepe na ně. Zevnitř se ozve ženský hlas: &quot;Dále.&quot; Adam vstupuje do malé místnosti, kde za stolem sedí sekretářka, která ho hned pozdraví a zeptá se, co pro něj může udělat. Když Adam řekne, že jde na pohovor, sekretářka semkne rty k sobě v gestu, které Adamovi dává tušit, že asi nebude následovat nic dobrého.
 
 Sekretářka se postaví, se zaklepáním otevře dveře do kanceláře ředitele a ohlásí mu, že přišel Adam na pohovor. Ředitel odvětí: „Tak zas může odejít.“ Sekretářka se vrátí do své místnosti. Než stačí cokoliv říct, Adam pokývá hlavou, rozloučí se a jde zpátky na vlak domů.
 

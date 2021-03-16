@@ -32,9 +32,18 @@ tw-story tw-consecutive-br {
     height: 1em;
 }
 
-tw-sidebar {
-    background-color: pass;
+tw-sidebar, tw-sidebar *[alt] {
+    /* TODO REMOVE!!!! */
+    color:rgb(0, 214, 36);
+    opacity: 0.6;
     /* display: none; */
+}
+@media (max-width: 649px) {
+    /* TODO REMOVE!!!! */
+    tw-sidebar {
+        position: fixed;
+        top:-40px;
+    }
 }
 
 /* =========================
@@ -52,7 +61,6 @@ tw-sidebar {
         font-size: 85%;
         line-height: normal;
         padding: 20px;
-        box-shadow: 0 0 7px 10px white;
         margin-top: 50px;
         margin-bottom: 70px;
     }
@@ -266,4 +274,8 @@ a.inmod:any-link:hover {
     height: 640px;
     display: block;
     margin: 0 auto;
+}
+
+tw-story[tags ^= "debriefing"] {
+    background-color: gray;
 }
