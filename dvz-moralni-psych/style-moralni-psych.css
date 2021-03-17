@@ -14,12 +14,29 @@ h2 {
     basic Twine elements 
    ====================== */
 tw-story {
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100%;
 
-    font-family: "Quicksand", sans-serif;
+    font-family: sans-serif;
+}
+tw-story[tags ~= "station"],
+tw-story[tags ~= "charity"] {
+    background-image: url("images/train-station-1.jpeg");
+}
+tw-story[tags ~= "freedom-square"] {
+    background-image: url("images/square-9.jpeg");
+}
+tw-story[tags = ""] {
+    background-image: url("images/side-alley-6.jpeg");
+}
+tw-story[tags ~= "debriefing"] {
+    background-image: none;
+    background-color: rgb(71, 71, 71);
 }
 
 tw-passage {
+    padding: 40px;
     max-width: 1000px;
     width: 100%;
     align-self: center;
@@ -30,6 +47,8 @@ tw-passage {
 
 tw-story tw-consecutive-br {
     height: 1em;
+    /* TODO REMOVE */
+    background-color: #dc6e007a;
 }
 
 tw-sidebar, tw-sidebar *[alt] {
@@ -56,11 +75,11 @@ tw-sidebar, tw-sidebar *[alt] {
     }
     tw-passage {
         margin-top: 30px;
-        /* leave space fot ui */
+        /* leave space for ui */
         padding: 2em;
         font-size: 85%;
         line-height: normal;
-        padding: 20px;
+        padding: 1.3em;
         margin-top: 50px;
         margin-bottom: 70px;
     }
@@ -73,51 +92,62 @@ tw-sidebar, tw-sidebar *[alt] {
    Twine LINKS
    =========== */
 tw-link,
-tw-link.visited {
-    display: block;
-    padding: 0.35em;
-    margin: 1.4em auto;
-    /* center it */
-    width: 20em;
+tw-link.visited,
+.enchantment-link,
+.enchantment-link.visited {
+    display: inline-block;
+    padding: 0.35em 0.8em;
+    margin: 0.4em auto;
+    min-width: 350px;
     max-width: 100%;
-    text-align: center;
-    background-color: #e6f1ff;
+    border: #0000dc 0.18em solid;
+    /* background-color: #e6f1ff; */
     color: #0000dc;
 
-    transition: 300ms;
-    transition-property: background-color, box-shadow;
+    transition: 400ms;
+    transition-property: all;
 }
-tw-expression[name="link-goto"] + br {
-    /* this hould get rid of the <br> 
-    that is pushed out onto the next line
-    by the tw-link's auto margin */
-    display: none;
+@media (max-width: 500px) {
+    tw-link,
+    tw-link.visited,
+    .enchantment-link,
+    .enchantment-link.visited {
+        min-width: 100%;
+    }
 }
+/* hover link button */
 tw-link:hover,
-tw-link:active,
+tw-link:focus,
 tw-link.visited:hover,
-tw-link.visited:active {
+tw-link.visited:focus,
+.enchantment-link:hover,
+.enchantment-link.visited:hover,
+.enchantment-link:focus,
+.enchantment-link.visited:focus {
+    transform: translateX(1em);
+
     color: #fff;
     background-color: #0000dc;
 }
+/* activated link button */
 tw-link:active,
-tw-link.visited:active {
-    position: relative;
-    top: 2px;
+tw-link.visited:active,
+.enchantment-link:active,
+.enchantment-link.visited:active {
+    /* todo */
+    opacity: 1;
 }
-
-/* reveal-text style macros like (link:) and (click:) */
-.enchantment-link {
+/* .enchantment-link {
     color: #0000dc;
     padding: 0 0.2em;
     border-radius: 0.3em;
     transition: 300ms;
     transition-property: background-color;
-}
-.enchantment-link:hover {
+} */
+/* .enchantment-link:hover {
     color: black;
     background-color: #75a1ff;
-}
+} */
 
 /* ================
         modals
@@ -241,10 +271,9 @@ a.inmod:any-link:hover {
 }
 
 .cimage {
-    width: auto;
-    max-width: 50%;
+    width: 100%;
     display: block;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .modalinit {
@@ -276,6 +305,8 @@ a.inmod:any-link:hover {
     margin: 0 auto;
 }
 
-tw-story[tags ^= "debriefing"] {
-    background-color: gray;
+.logo {
+    height: auto;
+    max-height: 100px;
 }
+
