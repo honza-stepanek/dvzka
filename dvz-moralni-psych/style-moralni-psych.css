@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 body {
     margin: 0;
     height: 100%;
@@ -14,11 +16,13 @@ h2 {
     basic Twine elements 
    ====================== */
 tw-story {
-    background-position: center;
-    background-attachment: fixed;
+    padding: 80px 10%;
     min-height: 100%;
 
-    font-family: sans-serif;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: 'Poppins', sans-serif;
 }
 tw-story[tags ~= "station"],
 tw-story[tags ~= "charity"] {
@@ -31,7 +35,7 @@ tw-story[tags = ""] {
     background-image: url("images/side-alley-6.jpeg");
 }
 tw-story[tags ~= "debriefing"] {
-    background-image: none;
+    background-image: url("images/stack_of_books.jpg");
     background-color: rgb(71, 71, 71);
 }
 
@@ -47,8 +51,6 @@ tw-passage {
 
 tw-story tw-consecutive-br {
     height: 1em;
-    /* TODO REMOVE */
-    background-color: #dc6e007a;
 }
 
 tw-sidebar, tw-sidebar *[alt] {
@@ -76,16 +78,16 @@ tw-sidebar, tw-sidebar *[alt] {
     tw-passage {
         margin-top: 30px;
         /* leave space for ui */
-        padding: 2em;
+        /* padding: 2em; */
         font-size: 85%;
         line-height: normal;
-        padding: 1.3em;
+        padding: 30px;
         margin-top: 50px;
         margin-bottom: 70px;
     }
-    tw-passage[tags="title-passage"] {
+    /* tw-passage[tags="title-passage"] {
         padding: 0.7em;
-    }
+    } */
 }
 
 /* ===========
@@ -149,9 +151,10 @@ tw-link.visited:active,
     background-color: #75a1ff;
 } */
 
+
 /* ================
         modals
-    ================ */
+   ================ */
 .modalDialog {
     /* dialog container */
     position: fixed;
@@ -167,7 +170,7 @@ tw-link.visited:active,
     align-items: center;
     overflow-y: auto;
 
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.75);
     opacity: 0;
     pointer-events: none;
     transition: opacity 400ms;
@@ -179,13 +182,13 @@ tw-link.visited:active,
 
 .modalDialog > div {
     /* modal content */
-    max-width: 40em;
+    max-width: 45em;
     flex-grow: 0;
     margin: auto 0px;
+    padding: 15px;
 
-    /* padding: 1em; */
     background: #fff;
-    /* box-shadow: ; */
+    box-shadow: -5px 10px 10px 20px rgba(0, 0, 0, 0.226);
 }
 .modalDialog > div::after {
     /* invisible "padding" to ensure user can scroll
@@ -199,11 +202,10 @@ tw-link.visited:active,
     height: 60px;
     width: 1px;
 }
-
 @media (max-width: 649px) {
     /* narrow screen */
     .modalDialog > div {
-        padding: 0px;
+        padding: 10px;
     }
 }
 
@@ -224,8 +226,8 @@ tw-link.visited:active,
 .modalDialog > div::before {
     /* adding an x above of the modal */
     position: absolute;
-    right: -7px;
-    top: -43px;
+    right: 0.15em;
+    top: -1.35em;
     width: 1em;
     height: 1em;
     z-index: -2;
@@ -234,73 +236,104 @@ tw-link.visited:active,
     font-family: sans-serif;
     content: "×";
     text-align: center;
-    line-height: 1.2em;
+    line-height: 1.1em;
 
-    border-radius: 0.5em;
     color: rgb(0, 0, 0);
-    background-color: rgb(100, 100, 100);
+    background-color: rgb(70, 70, 70);
     opacity: 0.5;
 }
+
+.modalDialog img {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
 
 a.inmod:any-link {
     color: rgb(0, 179, 30);
     transition: 300ms;
-    transition-property: color, text-shadow;
+    transition-property: all;
     text-decoration: underline;
 }
 a.inmod:any-link:hover {
     color: rgb(0, 146, 24);
     text-decoration: underline;
-    text-shadow: 0 0 0.05em rgb(0, 179, 30);
+    text-decoration-thickness: 1.5px;
 }
 
+/* ================
+    <a> hyperlinks
+   ================ */
+a:link,
+a:link:hover {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:visited,
+a:visited:hover {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+.hyper {
+    --hyper-color: hsl(170, 98%, 40%);
+    color: var(--hyper-color);
+    text-decoration: underline;
+
+    transition: 300ms;
+    transition-property: color, text-shadow;
+}
+.hyper:hover {
+    color: hsl(170, 100%, 33%);
+    text-shadow: 0 0 0.05em var(--hyper-color);
+}
+.hyper:visited {
+    --hyper-visited-color: hsl(182, 100%, 27%);
+    color: var(--hyper-visited-color);
+}
+.hyper:visited:hover {
+    color: hsl(182, 100%, 20%);
+    text-shadow: 0 0 0.05em var(--hyper-visited-color);
+}
+
+
 .imbox {
-    box-shadow: 3px 3px 10px darkgray;
-    border-radius: 10px;
-    padding: 2%;
-    width: 85%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
+}
+.imbox img {
+    box-shadow: -2px 5px 6px 1px rgba(0, 0, 0, 0.274);
+}
+.imbox .citace {
+    display: none;
 }
 
 .inlimg {
     width: auto;
-    max-width: 90%;
+    max-width: 100%;
     display: block;
     margin: 0 auto;
 }
 
+.citace {
+    margin: 1em 5px 0px;
+    text-align: right;
+    font-size: 70%;
+    line-height: 1.4em;
+}
+
+/* modal initializer images */
 .cimage {
     width: 100%;
     display: block;
-    /* margin: 0 auto; */
 }
 
-.modalinit {
-    color: limegreen;
-    font-weight: bold;
-}
-
-.modalinit:hover {
-    color: #ff32ff;
-}
-
-.inmod {
-    color: #00dc00;
-}
-
-.inmod:hover {
-    color: #dc6e00;
-}
-
-.frejm {
-    width: 100%;
-    height: 800px;
-}
-
+/* TODO youtube */
 .tube {
-    width: 75%;
-    height: 640px;
+    max-width: 40em;
+    /* height: 640px; */
     display: block;
     margin: 0 auto;
 }
