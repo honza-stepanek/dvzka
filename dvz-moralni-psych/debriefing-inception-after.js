@@ -23,7 +23,7 @@
 
     document.animation = anime({
         begin: () => {$("canvas").remove()},
-        // endDelay: 300,
+        endDelay: 300,
         direction: "reverse",
         targets: "#inception-image",
         translateY: transY,
