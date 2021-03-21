@@ -35,7 +35,7 @@ tw-story[tags = ""] {
     background-image: url("images/side-alley-6.jpeg");
 }
 tw-story[tags ~= "debriefing"] {
-    background-image: url("images/stack_of_books.jpg");
+    background-image: url("images/debriefing-stack-of-books.jpg");
     background-color: rgb(71, 71, 71);
 }
 
