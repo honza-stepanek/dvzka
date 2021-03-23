@@ -15,29 +15,42 @@ h2 {
 /* ======================
     basic Twine elements 
    ====================== */
+
 tw-story {
     padding: 80px 10%;
     min-height: 100%;
 
     background-position: center;
     background-attachment: fixed;
+    background-color: rgb(46, 46, 46);
 
     font-family: 'Poppins', sans-serif;
 }
-tw-story[tags ~= "station"],
-tw-story[tags ~= "charity"] {
-    background-image: url("images/train-station-1.jpeg");
+tw-story[tags ~= "station"] {
+    background-image: url("images/04-train-station.png");
 }
-tw-story[tags ~= "freedom-square"] {
-    background-image: url("images/square-9.jpeg");
+/* tw-story[tags ~= "charity"] {} */
+tw-story[tags ~= "masaryk"] {
+    background-image: url("images/05-masarykova.png");
 }
+tw-story[tags ~= "freedom-square"],
 tw-story[tags = ""] {
-    background-image: url("images/side-alley-6.jpeg");
+    background-image: url("images/09-freedom-square.png");
+}
+tw-story[tags ~= "ceska"] {
+    background-image: url("images/11-ceska.png");
+}
+tw-story[tags ~= "veveri"] {
+    background-image: url("images/14-veveri.png");
+}
+tw-story[tags ~= "platinium"] {
+    background-image: url("images/16-platinium.png");
 }
 tw-story[tags ~= "debriefing"] {
     background-image: url("images/debriefing-stack-of-books.jpg");
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(165, 165, 165);
 }
+
 
 tw-passage {
     padding: 40px;
@@ -47,6 +60,11 @@ tw-passage {
 
     background-color: white;
     color: black;
+
+    box-shadow: -3px 7px 10px 2px rgba(0, 0, 0, 0.42);
+}
+tw-passage[tags ~= "debriefing"] {
+    box-shadow: -2px 5px 7px rgba(0,0,0,0.2);
 }
 
 tw-story tw-consecutive-br {
@@ -89,6 +107,7 @@ tw-sidebar, tw-sidebar *[alt] {
         padding: 0.7em;
     } */
 }
+
 
 /* ===========
    Twine LINKS
@@ -139,22 +158,12 @@ tw-link.visited:active,
     /* todo */
     opacity: 1;
 }
-/* .enchantment-link {
-    color: #0000dc;
-    padding: 0 0.2em;
-    border-radius: 0.3em;
-    transition: 300ms;
-    transition-property: background-color;
-} */
-/* .enchantment-link:hover {
-    color: black;
-    background-color: #75a1ff;
-} */
 
 
 /* ================
         modals
    ================ */
+
 .modalDialog {
     /* dialog container */
     position: fixed;
@@ -185,10 +194,16 @@ tw-link.visited:active,
     max-width: 45em;
     flex-grow: 0;
     margin: auto 0px;
-    padding: 15px;
+    padding: 27px;
 
     background: #fff;
-    box-shadow: -5px 10px 10px 20px rgba(0, 0, 0, 0.226);
+    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 649px) {
+    /* narrow screen */
+    .modalDialog > div {
+        padding: 15px;
+    }
 }
 .modalDialog > div::after {
     /* invisible "padding" to ensure user can scroll
@@ -201,12 +216,6 @@ tw-link.visited:active,
     pointer-events: none;
     height: 60px;
     width: 1px;
-}
-@media (max-width: 649px) {
-    /* narrow screen */
-    .modalDialog > div {
-        padding: 10px;
-    }
 }
 
 .modalDialog .close,
@@ -266,45 +275,40 @@ a.inmod:any-link:hover {
 /* ================
     <a> hyperlinks
    ================ */
-a:link,
-a:link:hover {
+
+.hyper,
+a:link {
     color: hsl(170, 98%, 40%);
-    text-decoration: underline;
-}
-a:visited,
-a:visited:hover {
-    color: hsl(182, 100%, 27%);
-    text-decoration: underline;
-}
-.hyper {
-    --hyper-color: hsl(170, 98%, 40%);
-    color: var(--hyper-color);
     text-decoration: underline;
 
     transition: 300ms;
-    transition-property: color, text-shadow;
+    transition-property: color;
 }
-.hyper:hover {
+.hyper:hover,
+a:link:hover {
     color: hsl(170, 100%, 33%);
-    text-shadow: 0 0 0.05em var(--hyper-color);
+    text-decoration-thickness: 1.5px;
 }
-.hyper:visited {
-    --hyper-visited-color: hsl(182, 100%, 27%);
-    color: var(--hyper-visited-color);
+.hyper:visited,
+a:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
 }
-.hyper:visited:hover {
+.hyper:visited:hover,
+a:visited:hover {
     color: hsl(182, 100%, 20%);
-    text-shadow: 0 0 0.05em var(--hyper-visited-color);
+    text-decoration-thickness: 1.5px;
 }
 
-
+/* == Images and such == */
 .imbox {
     max-width: 100%;
     display: block;
     margin: 0 auto;
 }
-.imbox img {
-    box-shadow: -2px 5px 6px 1px rgba(0, 0, 0, 0.274);
+.imbox img,
+.cimage { /* cimage too? TODO */
+    box-shadow: -1px 3px 6px 1px rgba(0, 0, 0, 0.3);
 }
 .imbox .citace {
     display: none;
@@ -317,11 +321,20 @@ a:visited:hover {
     margin: 0 auto;
 }
 
+#inception-image {
+    box-shadow: -2px 4px 6px rgba(0, 0, 0, 0.37);
+}
+
+/* blockquote {
+
+} */
+
 .citace {
-    margin: 1em 5px 0px;
+    margin: 1em 0px 0px auto;
     text-align: right;
     font-size: 70%;
     line-height: 1.4em;
+    max-width: 30em;
 }
 
 /* modal initializer images */
@@ -330,16 +343,26 @@ a:visited:hover {
     display: block;
 }
 
-/* TODO youtube */
 .tube {
-    max-width: 40em;
-    /* height: 640px; */
-    display: block;
+    width: 32em;
+    height: 18em;
+    max-width: 100%;
+    display: flex;
     margin: 0 auto;
+
+    background-color: black;
+    box-shadow: -3px 5px 5px 1px rgba(0, 0, 0, 0.404);
 }
 
 .logo {
     height: auto;
     max-height: 100px;
+}
+
+.logotext {
+    /* eu disclaimer */
+    font-size: 75%;
+    line-height: 1.4em;
+    /* text-align: center; */
 }
 
