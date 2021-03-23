@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Rozhodování a morálka.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Rozhodování a morálka" startnode="1" creator="Twine" creator-version="2.3.13" ifid="13BE64F3-D5F0-493A-A33C-56DF216E058C" zoom="0.25" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Rozhodování a morálka" startnode="1" creator="Twine" creator-version="2.3.13" ifid="13BE64F3-D5F0-493A-A33C-56DF216E058C" zoom="0.6" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 </style>
 <link href="style-moralni-psych.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
-<script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="station" position="100,898" size="100,100">&lt;img class=&quot;logo&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/arts-lg-text-cze.png&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;\
+<script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="station" position="60,682" size="100,100">&lt;img class=&quot;logo&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/arts-lg-text-cze.png&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;\
 
 # Pomozte Adamovi
 
@@ -35,39 +35,41 @@ Adam vychází z nádraží a míří k ústí Masarykovy třídy. Chvíli mu hl
 Jakmile ale vejde na ostrůvek, rychle přehodnotí možnost cestování MHD. Ulice Veveří je uzavřená kvůli rekonstrukci, takže by musel na České přestoupit do trolejbusu.
 
 |goto-next&gt;[Rychle se tedy otáčí a odchází směrem na Masarykovu třídu.]
-
+\
 (click: ?goto-next)[(go-to: (either: &quot;dime&quot;, &quot;charity&quot;))]
-
+\\
 &lt;div id=&quot;nadr&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-nadrazi-06.jpg&quot; alt=&quot;Šibíčková, Jitka. Nádražní - prostor stanoviště městské hromadné dopravy [fotografie]. In: Internetová encyklopedie dějin Brna [online]. 2006, [cit. 2020-08-31]. Dostupné z: https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5058.jpg&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Nádražní - prostor stanoviště městské hromadné dopravy &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2006, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5058.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5058.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="dime" tags="station" position="465,1108" size="100,100">(set: $helpvar to &quot;dime&quot;)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="dime" tags="station" position="465,1108" size="100,100">(set: $helpvar to &quot;dime&quot;)\
 &lt;a href=&quot;#dime&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-nadrazi-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Ještě, než vkročí na silnici, všimne si Adam na zemi ležící pětikoruny. Usměje se a minci zvedne. Navzdory tomu, že ležela na zemi, vypadá jako zbrusu nová. Znovu se usměje, dá si minci do kapsy u kalhot pro štěstí a pokračuje dál.
 
 [[Jít dál.-&gt;crossroads]]
-
+\
 &lt;div id=&quot;dime&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-nadrazi-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Nádražní - pohled k nádražní budově &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5056.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5056.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="crossroads" tags="station" position="1064,900.6666666666666" size="100,100">&lt;a href=&quot;#crossroads&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-tgm-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="4" name="crossroads" tags="leaving-station masaryk" position="1064,900" size="100,100">&lt;a href=&quot;#crossroads&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-tgm-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam odchází od nádraží Masarykovou třídou a přemýšlí, jestli se neprojde přes Zelný trh a Dominikánské náměstí. Sice má dost času, ale nakonec ale dá přednost přímé cestě – po Masarykově třídě na náměstí Svobody, Českou a po Veveří až k Právnické fakultě MU a na pohovor.
 
 [[Pokračovat v cestě.-&gt;tgm]]
-
+\
 &lt;div id=&quot;crossroads&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-tgm-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Masarykova - pohled od Nádražní ulice (vpravo) k Nádražní ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0067/img3347.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0067/img3347.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="charity" tags="charity" position="469,700" size="100,100">(set: $helpvar to &quot;charity&quot;)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="charity" tags="station charity" position="469,700" size="100,100">(set: $helpvar to &quot;charity&quot;)\
 &lt;a href=&quot;#refyz&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-nadrazi-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
 
 Než Adam stačí odejít směrem na Masarykovu třídu, osloví ho asi dvacetiletá dívka v tmavomodrém tričku a béžové sukni. V levé ruce drží clipboard se svazkem trochu pomuchlaných tabulek a propagačních materiálů a na krku má zavěšenou pokladničku ve formě plastového válce potištěného zelenými psími tlapkami.
@@ -77,44 +79,47 @@ Dívka Adama pozdraví a řekne mu, že sbírá peníze na výcvik asistenčníc
 Co Adam udělá?
 
 [[Přispěje.-&gt;ch-sum]]
-(click: ?goto-bail)[(set: $char to &quot;bail&quot;)(go-to: &quot;crossroads&quot;)]|goto-bail&gt;[Bude ji ignorovat a půjde prostě dál.]
-
+(click: ?goto-bail)[(set: $char to &quot;bail&quot;)(go-to: &quot;crossroads&quot;)]|goto-bail&gt;[Bude ji ignorovat a půjde prostě dál.]\
+\
 &lt;div id=&quot;refyz&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-nadrazi-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Nádražní - pohled k nádražní budově &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5056.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0101/img5056.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="ch-sum" tags="charity" position="666.6666666666667,700.6666666666666" size="100,100">Kolik by měl Adam přispět?
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="ch-sum" tags="charity station" position="666,700" size="100,100">Kolik by měl Adam přispět?
 
 |goto-don1&gt;[100 Kč]
 |goto-don2&gt;[200 Kč]
 |goto-don3&gt;[300 Kč]
 |goto-don4&gt;[400 Kč]
 |goto-don5&gt;[500 Kč]
-(click: ?goto-don1)[(set: $char to &quot;100&quot;)(go-to: &quot;dar-ch-a&quot;)]
-(click: ?goto-don2)[(set: $char to &quot;200&quot;)(go-to: &quot;dar-ch-a&quot;)]
-(click: ?goto-don3)[(set: $char to &quot;300&quot;)(go-to: &quot;dar-ch-a&quot;)]
-(click: ?goto-don4)[(set: $char to &quot;400&quot;)(go-to: &quot;dar-ch-a&quot;)]
-(click: ?goto-don5)[(set: $char to &quot;500&quot;)(go-to: &quot;dar-ch-b&quot;)]</tw-passagedata><tw-passagedata pid="7" name="dar-ch-a" tags="charity" position="810,639" size="100,100">Adam vytáhne peněženku a z ní (print: $char) korun, které dívce podá. Ta peníze hned strčí do pokladničky, usměje se na něho a poděkuje mu.
+(click: ?goto-don1)[(set: $char to &quot;100&quot;)(go-to: &quot;dar-ch-a&quot;)]\
+(click: ?goto-don2)[(set: $char to &quot;200&quot;)(go-to: &quot;dar-ch-a&quot;)]\
+(click: ?goto-don3)[(set: $char to &quot;300&quot;)(go-to: &quot;dar-ch-a&quot;)]\
+(click: ?goto-don4)[(set: $char to &quot;400&quot;)(go-to: &quot;dar-ch-a&quot;)]\
+(click: ?goto-don5)[(set: $char to &quot;500&quot;)(go-to: &quot;dar-ch-b&quot;)]\
+</tw-passagedata><tw-passagedata pid="7" name="dar-ch-a" tags="charity station" position="810,639" size="100,100">Adam vytáhne peněženku a z ní (print: $char) korun, které dívce podá. Ta peníze hned strčí do pokladničky, usměje se na něho a poděkuje mu.
 
-[[Adam se s ní rozloučí a pokračuje dál.-&gt;crossroads]]</tw-passagedata><tw-passagedata pid="8" name="dar-ch-b" tags="charity" position="808.3333333333333,767.3333333333334" size="100,100">Adam vytáhne z peněženky pětistovku, kterou dívce s úsměvem podá. Ta na zlomek vteřiny vykulí oči, ale rychle se vzpamatuje a rychle se začne usmívat. Vezme si od Adama bankovku, přeloží ji na polovinu a vloží ji do pokladničky. Poděkuje Adamovi a zeptá se ho, jestli jde do práce, na což Adam odvětí, že v to doufá, že jde na pracovní pohovor. Dívka mu popřeje hodně štěstí a hezký den.
+[[Adam se s ní rozloučí a pokračuje dál.-&gt;crossroads]]</tw-passagedata><tw-passagedata pid="8" name="dar-ch-b" tags="charity station" position="808,767" size="100,100">Adam vytáhne z peněženky pětistovku, kterou dívce s úsměvem podá. Ta na zlomek vteřiny vykulí oči, ale rychle se vzpamatuje a rychle se začne usmívat. Vezme si od Adama bankovku, přeloží ji na polovinu a vloží ji do pokladničky. Poděkuje Adamovi a zeptá se ho, jestli jde do práce, na což Adam odvětí, že v to doufá, že jde na pracovní pohovor. Dívka mu popřeje hodně štěstí a hezký den.
 
-[[Adam jí také popřeje hezký den a pokračuje dál.-&gt;crossroads]]</tw-passagedata><tw-passagedata pid="9" name="tgm" tags="" position="1260.6666666666665,905.3333333333334" size="100,100">&lt;a href=&quot;#frant&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frant-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+[[Adam jí také popřeje hezký den a pokračuje dál.-&gt;crossroads]]</tw-passagedata><tw-passagedata pid="9" name="tgm" tags="masaryk" position="1260,905" size="100,100">&lt;a href=&quot;#frant&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frant-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam se vydává na cestu směrem na náměstí Svobody. Zatímco se dívá do výlohy jednoho obchodu, všimne si v jedné vedlejší ulici staré paní vlekoucí s vypětím všech sil dvě velké tašky. Stařenka už vypadá hodně vyčerpaně. Navíc se udělalo hodně teplo. Jelikož paní je na ulici sama, vypadá to, že jí nikdo nepomůže.
 
 [[Půjde se Adam stařenky zeptat, jestli potřebuje pomoct?-&gt;help-m]]
 |goto-cont&gt;[Nebo bude pokračovat dál?]
-(click: ?goto-cont)[(set: $deo to false)(go-to: &quot;tgm2&quot;)]
-
+(click: ?goto-cont)[(set: $deo to false)(go-to: &quot;tgm2&quot;)]\
+\\
 &lt;div id=&quot;frant&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frant-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Františkánská - pohled od Masarykovy ulice &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0072/img3608.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0072/img3608.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="help-m" tags="" position="1464,903.6666666666667" size="100,100">(set: $samaritan to true)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="help-m" tags="masaryk side-alley" position="1464,903" size="100,100">(set: $samaritan to true)\
 &lt;a href=&quot;#orli&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-orli-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam zabočí do postranní uličky a zeptá se paní, jestli chce pomoci s taškami. Ta nijak neskrývá svou radost a hned Adamovu nabídku s vděčností přijímá. Adam bere obě tašky a je celkem překvapený, že je stará paní vůbec uzvedla. Jelikož tašky jsou plné zeleniny, Adam si domyslí, že paní se s nimi vláčela už od Zelného trhu.
 
 Paní naštěstí bydlí jen pár desítek metrů daleko. Jenomže v jejím domě není výtah a ona bydlí až v pátém patře.
@@ -123,27 +128,28 @@ Ačkoli se Adam bál, že mu pomoc staré paní zabere hodně času, po necelýc
 
 [[Pokusí se Adam jít si koupit nějaký deodorant?-&gt;deodorant]]
 [[Nebo bude pokračovat v cestě na náměstí Svobody a bude doufat, že při pohovoru budou všichni sedět dostatečně daleko?-&gt;tgm2]]
-
+\
 &lt;div id=&quot;orli&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-orli-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Orlí - pohled od Minoritské k Měnínské ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0103/img5142.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0103/img5142.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="tgm2" tags="freedom-square" position="2610.3333333333335,907.3333333333333" size="100,100">&lt;a href=&quot;#masaryk&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-omega-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="tgm2" tags="freedom-square omega-palace" position="2610,907" size="100,100">&lt;a href=&quot;#masaryk&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-omega-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam přichází na náměstí Svobody. Nejdřív se zastavuje u knihkupectví a dívá se do výlohy, po chvíli si ale uvědomí, že zas tak moc času nemá a pokračuje dál. Když se blíží k paláci Omega, vidí, že z něho vychází lehce vrávoravou chůzí korpulentní pán. Jelikož nejdřív jen lehce zavrávorá, Adama napadne, že je možná opilý, ale po chvilce se pán sesune na zem.
 
 [[Adam se rozběhne k pánovi, aby zjistil, co se mu stalo.-&gt;priskocit]]
 [[Chvíli počká, jestli se pán sám od sebe nezvedne.-&gt;wait]]
 [[Rozhodne se událost ignorovat a jít dál.-&gt;dip]]
-
+\
 &lt;div id=&quot;masaryk&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-omega-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Palác Omega (dům č. 9) na náměstí Svobody v době stavby &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2006, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0112/img5616.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0112/img5616.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="deodorant" tags="" position="1666.3333333333335,998.3333333333333" size="100,100">(set: $drugstore to true)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="deodorant" tags="masaryk deodorant-shop" position="1666,998" size="100,100">(set: $drugstore to true)\
 Adam se rozhodl, že se staví v jedné malé drogerii, kde si chce koupit deodorant, který by alespoň trochu eliminoval následky jeho dobrého činu. Když vchází do obchodu, automaticky si nasazuje roušku a hledá regál s deodoranty. Když ho konečně najde, zjistí, že hodnocení vůně není s rouškou tak jednoduché a vždy se proto nejdříve rozhlédne, jestli není někdo v bezprostřední blízkosti. Po chvíli velmi podezřele vypadajícího zkoušení se Adam postaví do fronty.
 
 Během čekání ve frontě si Adam všimne, že muž u pokladny podává svoji platební kartu prodavačce a následně jí něco pošeptá do ucha. Prodavačka kývne hlavou a za chvilku muži kartu vrátí. Muž si vezme svoji pěnu na holení a odejde. Adam celou situaci přejde jen mírným pozdvižením obočí, ale ta se opakuje i u dalších tří žen stojících ve frontě před ním.
@@ -158,47 +164,48 @@ Adam viděl čtyři předchozí zákazníky bez mrknutí oka podat svoje karty a
 [[Zkusit poprosit ostatní zákazníky, jestli mu nedají potřebné peníze.-&gt;beg]]
 [[Zkusit deodorant ukrást.-&gt;nick]]
 [[Vrátit deodorant a odejít s nepořízenou-&gt;wompwomp]]
-
+\
 {
   (if: $char is &quot;bail&quot;)[(append: ?srajtofle)[Ráno si ale zapomněl zkontrolovat, jestli má v peněžence kromě občanky i peníze. Když si spočítá mince v peněžence, zjistí, že mu chybí 19 korun. Deodorant, který si vybral, byl nejlevnější, který lze v obchodě koupit, takže Adam si nemůže jít vybrat jiný. Bude tedy muset zaplatit kartou.]]
   (else-if: $helpvar is &quot;charity&quot;)[(append: ?srajtofle)[Adam ale dal všechny svoje bankovky dívce u hlavního nádraží a zbývá mu jen několik mincí. Jakmile si je přepočítá, zjistí, že mu chybí 19 korun. Deodorant, který si vybral, byl nejlevnější, který lze v obchodě koupit, takže Adam si nemůže jít vybrat jiný. Bude tedy muset zaplatit kartou.]]
   (else:)[(append: ?srajtofle)[Ráno si ale zapomněl zkontrolovat, jestli má v peněžence kromě občanky i peníze. Když si spočítá mince v peněžence, zjistí, že mu chybí 19 korun. Deodorant, který si vybral, byl nejlevnější, který lze v obchodě koupit, takže Adam si nemůže jít vybrat jiný. Bude tedy muset zaplatit kartou.]]
 }
-
-(event: when time &gt; 666s)[(go-to: &quot;kobayashi-maru&quot;)]</tw-passagedata><tw-passagedata pid="13" name="priskocit" tags="freedom-square" position="2994.3333333333335,1213.6666666666667" size="100,100">Adam bez váhání přiklekává k pánovi a kontroluje, jestli dýchá. Jelikož nevidí, že by se pánovi hýbal hrudník, skloní k jeho obličeji hlavu v naději, že uslyší, že dýchá, nebo ucítí jeho dech na tváři. Obojí marné. Co teď?
+\\
+(event: when time &gt; 666s)[(go-to: &quot;kobayashi-maru&quot;)]</tw-passagedata><tw-passagedata pid="13" name="priskocit" tags="freedom-square omega-palace" position="2994,1213" size="100,100">Adam bez váhání přiklekává k pánovi a kontroluje, jestli dýchá. Jelikož nevidí, že by se pánovi hýbal hrudník, skloní k jeho obličeji hlavu v naději, že uslyší, že dýchá, nebo ucítí jeho dech na tváři. Obojí marné. Co teď?
 
 [[Adam rychle zavolá sanitku.-&gt;call]]
 [[Adam začne provádět neodkladnou resuscitaci.-&gt;saved]]
-[[Bude čekat, co udělají ostatní.-&gt;protahovani]]</tw-passagedata><tw-passagedata pid="14" name="wait" tags="freedom-square" position="3005.6666666666665,803.9999999999999" size="100,100">Během chvilky k pánovi přijdou tři lidé. Dva se jen tak koukají a třetí si klekne a ptá se: „Jste v pořádku?“ Tuto otázku během deseti vteřin čtyřikrát zopakuje a bezmocně se přitom na pána dívá. Další dva se začínají dohadovat, jestli je pán opilý, nebo ne. Hlouček lidí se rozrůstá o nové členy, kteří zjišťují, co že se to vlastně stalo.
+[[Bude čekat, co udělají ostatní.-&gt;protahovani]]</tw-passagedata><tw-passagedata pid="14" name="wait" tags="freedom-square omega-palace" position="3005,803" size="100,100">Během chvilky k pánovi přijdou tři lidé. Dva se jen tak koukají a třetí si klekne a ptá se: „Jste v pořádku?“ Tuto otázku během deseti vteřin čtyřikrát zopakuje a bezmocně se přitom na pána dívá. Další dva se začínají dohadovat, jestli je pán opilý, nebo ne. Hlouček lidí se rozrůstá o nové členy, kteří zjišťují, co že se to vlastně stalo.
 
 [[Rozhodne se Adam, že na tohle nemá čas, a odejde?-&gt;dip]]
 [[Nebo bude dál sledovat, co se děje?-&gt;cumil]]
-[[Nebo přistoupí blíž a zkusí zjistit, jestli nemůže nějak pomoct?-&gt;p-cpr]]</tw-passagedata><tw-passagedata pid="15" name="cumil" tags="freedom-square" position="3498.0000000000005,700.9999999999999" size="100,100">Po nějaké chvilce se ke hloučku lidí přidá vysoký mladík mající evidentně kladný vztah ke sportu. Když si všimne, že lidé se jen dívají, co se to děje, nebo se snaží pána v bezvědomí přemluvit, aby se probral, klekne si k němu, na pár okamžiků se zadívá na jeho hrudník a rychle se rozhlédne kolem sebe. Ukáže na jednoho mladíka, který celou situaci sleduje a řekne: „Hej, ty v té tmavomodré košili, zavolej 155 a řekni, že na Svoboďáku je někdo v bezvědomí!&quot; Mladík vytřeští oči, jako kdyby ho právě vyvolal chemikář k tabuli, a hned začne volat.
+[[Nebo přistoupí blíž a zkusí zjistit, jestli nemůže nějak pomoct?-&gt;p-cpr]]</tw-passagedata><tw-passagedata pid="15" name="cumil" tags="freedom-square omega-palace" position="3498,700" size="100,100">Po nějaké chvilce se ke hloučku lidí přidá vysoký mladík mající evidentně kladný vztah ke sportu. Když si všimne, že lidé se jen dívají, co se to děje, nebo se snaží pána v bezvědomí přemluvit, aby se probral, klekne si k němu, na pár okamžiků se zadívá na jeho hrudník a rychle se rozhlédne kolem sebe. Ukáže na jednoho mladíka, který celou situaci sleduje a řekne: „Hej, ty v té tmavomodré košili, zavolej 155 a řekni, že na Svoboďáku je někdo v bezvědomí!&quot; Mladík vytřeští oči, jako kdyby ho právě vyvolal chemikář k tabuli, a hned začne volat.
 
 Adam si mezitím uvědomil, že tu jen tak očumuje a nic nedělá, zatímco by měl jít na svůj pohovor.
 
-[[Pokračovat v cestě na pohovor.-&gt;dip]]</tw-passagedata><tw-passagedata pid="16" name="p-cpr" tags="freedom-square" position="3490.666666666666,908.3333333333331" size="100,100">Adam přichází blíž a kouká se na pána ležícího bezvládně na zemi. Vypadá to, že vůbec nedýchá. Adam začíná mít svíravý pocit a přemýšlí, co by měl udělat dál.
+[[Pokračovat v cestě na pohovor.-&gt;dip]]</tw-passagedata><tw-passagedata pid="16" name="p-cpr" tags="freedom-square omega-palace" position="3490,908" size="100,100">Adam přichází blíž a kouká se na pána ležícího bezvládně na zemi. Vypadá to, že vůbec nedýchá. Adam začíná mít svíravý pocit a přemýšlí, co by měl udělat dál.
 
 [[Zahájí neodkladnou resuscitaci.-&gt;saved]]
 [[Zavolá sanitku.-&gt;call]]
-[[Nechá to na ostatních.-&gt;cumil]]</tw-passagedata><tw-passagedata pid="17" name="saved" tags="freedom-square" position="3791.666666666666,1202.6666666666667" size="100,100">Adam si klekne vedle pána a vyhrnuje mu triko, aby mohl položit ruce na jeho hrudník, lehce mu zakloní hlavu, aby mu uvolnil dýchací cesty. Začíná rychle stlačovat a v hlavě si začíná přehrávat Bee Gees. Po chvíli si uvědomí, že nezavolal sanitku a taky si nevšiml, že by to udělal někdo jiný. Jelikož ví, že kardiopulmonální resuscitaci by neměl přerušovat, rázně řekne: „Zavolejte někdo sanitku!“ Prakticky hned mu ale dojde, že to byla chyba, jelikož všichni přihlížející najednou začnou těkat pohledy mezi sebou v naději, že někdo z nich vytáhne telefon a zavolá sanitku. Adam v mysli zakleje a tentokrát už svůj povel cílí: „Pane, vy v té světlemodré košili, zavolejte prosím sanitku.“ Pánovi ve světlemodré košili se sice viditelně přitížilo, ale sahá do kapsy pro mobil. Zatímco ho vytahuje, nenechává Adam nic náhodě a říká: „Sto padesát pět.“ Asi by bylo lepší, kdyby Adam zavolal záchranku na svém mobilu před zahájením resuscitace, ale teď se musí soustředit hlavně na Bee Gees ve svojí hlavě.
+[[Nechá to na ostatních.-&gt;cumil]]</tw-passagedata><tw-passagedata pid="17" name="saved" tags="freedom-square omega-palace" position="3791,1202" size="100,100">Adam si klekne vedle pána a vyhrnuje mu triko, aby mohl položit ruce na jeho hrudník, lehce mu zakloní hlavu, aby mu uvolnil dýchací cesty. Začíná rychle stlačovat a v hlavě si začíná přehrávat Bee Gees. Po chvíli si uvědomí, že nezavolal sanitku a taky si nevšiml, že by to udělal někdo jiný. Jelikož ví, že kardiopulmonální resuscitaci by neměl přerušovat, rázně řekne: „Zavolejte někdo sanitku!“ Prakticky hned mu ale dojde, že to byla chyba, jelikož všichni přihlížející najednou začnou těkat pohledy mezi sebou v naději, že někdo z nich vytáhne telefon a zavolá sanitku. Adam v mysli zakleje a tentokrát už svůj povel cílí: „Pane, vy v té světlemodré košili, zavolejte prosím sanitku.“ Pánovi ve světlemodré košili se sice viditelně přitížilo, ale sahá do kapsy pro mobil. Zatímco ho vytahuje, nenechává Adam nic náhodě a říká: „Sto padesát pět.“ Asi by bylo lepší, kdyby Adam zavolal záchranku na svém mobilu před zahájením resuscitace, ale teď se musí soustředit hlavně na Bee Gees ve svojí hlavě.
 
 Pánovi se trochu třese hlas, evidentně není zvyklý vystupovat před publikem. Dispečerka záchranné služby z něho ale obratně dostane potřebné informace a přiměje ho, aby zapnul hlasitý odposlech, aby mohla mluvit s Adamem.
 
 Za necelých pět minut přijíždí sanitka a resuscitaci přebírají záchranáři. Adam chvíli sleduje, jak připravují muže k převozu do nemocnice, když si uvědomí, že musí na pohovor.
 
-[[Rychle se tedy otočí, aby mohl vyrazit opět na cestu.-&gt;pickpocket]]</tw-passagedata><tw-passagedata pid="18" name="call" tags="freedom-square" position="3538.6666666666656,1491.333333333333" size="100,100">Adam vytahuje telefon a pomocí aplikace &lt;a class=&quot;hyper&quot; href=&quot;https://www.zachrankaapp.cz/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Záchranka&lt;/a&gt; volá pomoc. Dispečerka od Adama zjistí, co se děje a jestli jeho poloha odpovídá jeho GPS lokalizaci v aplikaci. Zatímco popisuje, co se pánovi stalo, ke hloučku lidí se připojí muž, který vypadá na první pohled jako sportovec. Když si všimne, že lidé okolo buď jen očumují, nebo se snaží s pána v bezvědomí přemluvit, aby se probral, klekne si k němu a nahne se hlavou k jeho obličeji a zkoumá, jestli muž dýchá. Zeptá se Adama, co se stalo a Adam mu řekne, že muž najednou zkolaboval. Mezitím operátorka poprosí Adama, aby ji přepnul na hlasitý odposlech. Muž začne komunikovat s operátorkou a začne s neodkladnou resuscitací. Adamovi se značně ulevilo, že s resuscitací začal někdo jiný. Sám si totiž jenom matně pamatuje, že komprese hrudníku by měly být ve stejném rytmu, jako je Stayin&#39; Alive od Bee Gees.
+[[Rychle se tedy otočí, aby mohl vyrazit opět na cestu.-&gt;pickpocket]]</tw-passagedata><tw-passagedata pid="18" name="call" tags="freedom-square omega-palace" position="3538,1491" size="100,100">Adam vytahuje telefon a pomocí aplikace &lt;a class=&quot;hyper&quot; href=&quot;https://www.zachrankaapp.cz/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Záchranka&lt;/a&gt; volá pomoc. Dispečerka od Adama zjistí, co se děje a jestli jeho poloha odpovídá jeho GPS lokalizaci v aplikaci. Zatímco popisuje, co se pánovi stalo, ke hloučku lidí se připojí muž, který vypadá na první pohled jako sportovec. Když si všimne, že lidé okolo buď jen očumují, nebo se snaží s pána v bezvědomí přemluvit, aby se probral, klekne si k němu a nahne se hlavou k jeho obličeji a zkoumá, jestli muž dýchá. Zeptá se Adama, co se stalo a Adam mu řekne, že muž najednou zkolaboval. Mezitím operátorka poprosí Adama, aby ji přepnul na hlasitý odposlech. Muž začne komunikovat s operátorkou a začne s neodkladnou resuscitací. Adamovi se značně ulevilo, že s resuscitací začal někdo jiný. Sám si totiž jenom matně pamatuje, že komprese hrudníku by měly být ve stejném rytmu, jako je Stayin&#39; Alive od Bee Gees.
 
-[[Počkat na příjezd sanitky.-&gt;emt]]</tw-passagedata><tw-passagedata pid="19" name="protahovani" tags="freedom-square" position="3223.666666666667,1043" size="100,100">Během chvilky se k Adamovi připojí další tři lidé. Dva se jen tak koukají a třetí si klekne a ptá se: „Jste v pořádku?“ Tuto otázku opakuje každých pět vteřin a bezmocně se přitom na pána dívá, jako by doufal, že dotyčný se nad ním slituje a probere se sám od sebe. Další dva se začínají dohadovat, jestli je pán opilý, nebo ne. Hlouček lidí se rozrůstá o nové členy, kteří zjišťují, co že se to vlastně stalo.
+[[Počkat na příjezd sanitky.-&gt;emt]]</tw-passagedata><tw-passagedata pid="19" name="protahovani" tags="freedom-square omega-palace" position="3223,1043" size="100,100">Během chvilky se k Adamovi připojí další tři lidé. Dva se jen tak koukají a třetí si klekne a ptá se: „Jste v pořádku?“ Tuto otázku opakuje každých pět vteřin a bezmocně se přitom na pána dívá, jako by doufal, že dotyčný se nad ním slituje a probere se sám od sebe. Další dva se začínají dohadovat, jestli je pán opilý, nebo ne. Hlouček lidí se rozrůstá o nové členy, kteří zjišťují, co že se to vlastně stalo.
 
 [[Ihned zahájit resucitaci.-&gt;saved]]
 [[Zavolat sanitku.-&gt;call]]
-[[Čekat, co se bude dít dál.-&gt;cumil]]</tw-passagedata><tw-passagedata pid="20" name="emt" tags="freedom-square" position="3796.666666666667,1499.0000000000002" size="100,100">Adam nemůže než obdivovat muže provádějícího kardiopulmonální resuscitaci. Už resuscituje ve zběsilém tempu alespoň pět minut, ale pořád na něm není vidět moc známek únavy. Snad jen trocha potu na čele a na rukou. Adam nic nedělá, a přitom se potí přibližně stejně.
+[[Čekat, co se bude dít dál.-&gt;cumil]]</tw-passagedata><tw-passagedata pid="20" name="emt" tags="freedom-square omega-palace" position="3796,1499" size="100,100">Adam nemůže než obdivovat muže provádějícího kardiopulmonální resuscitaci. Už resuscituje ve zběsilém tempu alespoň pět minut, ale pořád na něm není vidět moc známek únavy. Snad jen trocha potu na čele a na rukou. Adam nic nedělá, a přitom se potí přibližně stejně.
 
 Mezitím přijíždí sanitka a resuscitaci přebírají záchranáři. Adam chvíli sleduje, jak připravují muže k převozu do nemocnice, když v tu chvíli si uvědomí, že musí na pohovor. 
 
-[[Rychle se tedy otočí, aby mohl vyrazit opět na cestu.-&gt;pickpocket]]</tw-passagedata><tw-passagedata pid="21" name="pickpocket" tags="freedom-square" position="4203,909.6666666666667" size="100,100">(set: $cprhelp to true)
+[[Rychle se tedy otočí, aby mohl vyrazit opět na cestu.-&gt;pickpocket]]</tw-passagedata><tw-passagedata pid="21" name="pickpocket" tags="freedom-square" position="4203,909" size="100,100">(set: $cprhelp to true)\
 &lt;a href=&quot;#thief&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frei-05.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Ale to byla chyba. Velmi blízko za Adamem totiž stojí nějaký muž s burgerem v ruce a Adam do něho vrazí.
 
 „Dávej bacha, šampóne!“
@@ -206,49 +213,52 @@ Ale to byla chyba. Velmi blízko za Adamem totiž stojí nějaký muž s burgere
 Adam se ale v tom šoku zmůže jen na překvapené zvednutí obočí. Muž se na něho na něj naštvaně dívá, něco si pro sebe polohlasem zamumlá a odchází směrem k hlavnímu nádraží.
 
 [[Adam se otočí a pokračuje dál.-&gt;flek]]
-
+\
 &lt;div id=&quot;thief&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frei-05.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Náměstí Svobody - pohled z budovy NPÚ směrem k Rašínově ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2006, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0114/img5695.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0114/img5695.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="kravata" tags="" position="4583,908" size="100,100">&lt;a href=&quot;#cara&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-ceska-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="kravata" tags="ceska" position="4583,908" size="100,100">&lt;a href=&quot;#cara&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-ceska-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Střet s milovníkem burgerů se nakonec neobešel bez obětí. Kečup na Adamově světlešedé kravatě a na bílé košili pod ní velmi dobře ladí k barvě, kterou teď má Adamova tvář. Adama se zmocňuje vztek, hrůza a panika. Adamovi ještě zbývá lehce přes dvacet minut do pohovoru, ale jen cesta zabere minimálně čtvrt hodiny. Co teď? Adam se zoufale rozhlíží, jestli náhodou někde není nějaký obchod s oblečením, o kterém by nevěděl. Skoro nemůže uvěřit svému štěstí, když jeden takový uvidí asi dvacet metrů od sebe.
 
 [[Rychle vyrazit do obchodu.-&gt;kravata-2]]
-
+\
 &lt;div id=&quot;cara&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-ceska-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Česká - pohled Solniční k Joštově ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0066/img3278.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0066/img3278.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="steal" tags="" position="4975.666666666667,726" size="100,100">(set: $theft to true)(set: $late to true)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="steal" tags="ceska tie-shop" position="4975,726" size="100,100">(set: $theft to true)(set: $late to true)\
 Adam se rozhlédne a vejde s kravatou do kabinky, kde si svoji zničenou sundá a dá si ji do brašny. Potom di uváže novou kravatu, narovná si uzel a s potěšením zjišťuje, že novější a širší kravata opravdu dobře maskuje skvrnu na košili.
 
 Adam vyjde z kabinky a pomalu odchází z obchodu. Zastavuje se u několika věšáků a dělá, jako by si prohlížel oblečení na nich. Ani Adam si nemyslí, že je jeho výkon příliš přesvědčivý, ale v obchodě mu nikdo nevěnuje pozornost.
 
-[[Venku přidává rázně do kroku, jelikož se v obchodě zdržel víc, než si myslel.-&gt;veveri]]</tw-passagedata><tw-passagedata pid="24" name="veveri" tags="" position="5061.333333333333,913.3333333333335" size="100,100">&lt;a href=&quot;#veveri&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-vev-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+[[Venku přidává rázně do kroku, jelikož se v obchodě zdržel víc, než si myslel.-&gt;veveri]]</tw-passagedata><tw-passagedata pid="24" name="veveri" tags="veveri" position="5061,913" size="100,100">&lt;a href=&quot;#veveri&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-vev-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam přidává do kroku a směřuje nahoru po Veveří směrem ke Konečného náměstí. Řešit ukradenou peněženku bude až po pohovoru, teď jen v mobilním bankovnictví zapíná blokaci svých platebních karet.
 
 Zatímco pokračuje po Veveří, v hlavě si opět přehrává své předem připravené odpovědi a přemýšlí, jestli má zvolit dominantní podání ruky. Na chvilku se zarazí, když si uvědomí, že v dnešní době je to s podáváním ruky poněkud sporné. Uklidňuje ho, že naštěstí není v roli toho, kdo bude podání ruky iniciovat.
 
 [[To už ale přichází do cíle své cesty a vchází na recepci.-&gt;lobby]]
-
+\
 &lt;div id=&quot;veveri&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-vev-03.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Veveří - pohled od Gorkého ke Grohově ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0100/img4987.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0100/img4987.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="lobby" tags="" position="5228,913.3333333333333" size="100,100">&lt;a href=&quot;#deathstar&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-deathstar-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="lobby" tags="platinium lobby" position="5228,913" size="100,100">&lt;a href=&quot;#deathstar&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-deathstar-01.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam vchází na recepci, kde se poněkud udýchaně představuje recepční a říká, že jde na pohovor kvůli stáži. Recepční mu řekne, že pohovor je v kanceláří marketingového ředitele ve třetím patře a popíše mu cestu.
 
 |entry&gt;[Adam poděkuje sekretářce a vydává se směrem k výtahu. ]
 
 [[Adam nastupuje do výtahu a mačká číslici 3 a když se zavřou dveře, hlasitě si oddechne.-&gt;treti]]
-
+\\
 &lt;div id=&quot;deathstar&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -256,39 +266,40 @@ Adam vchází na recepci, kde se poněkud udýchaně představuje recepční a �
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Veveří 115 - budova Sono centra &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2014, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0343/img17154.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0343/img17154.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-
+\
 {
   (if: $wc is true)[(append: ?entry)[Cestou si všimne symbolu pro pánské WC, kam rychle zamíří. Rychle si rozepne košili a nastříká se deodorantem. Potom vytáhne z dávkovače několik papírových utěrek a začne čistit košili a kravatu. Výsledek není ani zdaleka dokonalý. Skvrny pouze trochu zesvětlaly a díky použité vodě se trochu rozpily. Adam rychle přidřepne k horkovzdušnému vysoušeči rukou a začne si sušit oblečení. Po dvou minutách nazná, že víc času už ztrácet nemůže, a jde do výtahu.]]
   (else-if: $deo is true)[(append: ?entry)[Cestou si všimne symbolu pro pánské WC, kam rychle zamíří. Rychle si rozepne košili a nastříká se deodorantem. Umyje se a zkontroluje v zrcadle, jestli není potřeba udělat nějaké úpravy na poslední chvíli. Nakonec si nervózně upraví uzel u nové kravaty a vyjde k výtahu.]]
   (else-if: $steal is false)[(append: ?entry)[Cestou si všimne symbolu pro pánské WC, kam rychle zamíří. Vytáhne z dávkovače několik papírových utěrek a začne čistit košili a kravatu. Výsledek není ani zdaleka dokonalý. Skvrny pouze trochu zesvětlaly a díky použité vodě se trochu rozpily. Adam rychle přidřepne k horkovzdušnému vysoušeči rukou a začne si sušit oblečení. Po dvou minutách nazná, že víc času už ztrácet nemůže a jde do výtahu.]]
   (else:)[(append: ?entry)[Zatímco čeká na výtah, nervózně si hraje s uzlem u své nové kravaty.]]
-}</tw-passagedata><tw-passagedata pid="26" name="treti" tags="" position="5396.333333333333,913.3333333333333" size="100,100">(if: $late is true)[(go-to: &quot;late&quot;)]
+}</tw-passagedata><tw-passagedata pid="26" name="treti" tags="platinium" position="5396,913" size="100,100">(if: $late is true)[(go-to: &quot;late&quot;)]\
 Adam podle instrukcí recepční najde dveře s nápisem „ŘEDITEL MARKETINGU“ a zaklepe na ně. Zevnitř se ozve ženský hlas: &quot;Dále.&quot; Adam vstupuje do malé místnosti, kde za stolem sedí sekretářka, která ho hned pozdraví a zeptá se, co pro něj může udělat. Když Adam řekne, že jde na pohovor, sekretářka semkne rty k sobě v gestu, které Adamovi dává tušit, že asi nebude následovat nic dobrého.
 
 Sekretářka se Adamovi omluví a sdělí mu, že ředitel musel ráno na schůzi s významným investorem a neví, kdy se vrátí. Nabízí Adamovi, že pokud chce, může u ní v kanceláři počkat, ale že mu nemůže říct kdy, a jestli vůbec, se ředitel vrátí. Adam se zeptá, jestli by se mohl stavit později odpoledne, na což mu sekretářka odpoví, že opravdu neví, jestli tam ředitel dnes ještě bude. Adam se ještě ptá, jestli je možné domluvit si pohovor na jiný termín, ale sekretářka mu odpoví, že jelikož je ředitel pryč, nemůže mu žádný termín dát a musel by zavolat zítra.
 
 [[Odejde Adam na vlak domů a zítra si zkusí pohovor přesunout na jindy?-&gt;homecoming]]
 [[Nebo půjde někam na oběd a zkusí svoje štěstí později odpoledne?-&gt;obed]]
-[[Nebo využije možnost počkat na ředitele u jeho sekretářky?-&gt;long-wait]]</tw-passagedata><tw-passagedata pid="27" name="homecoming" tags="" position="6256.333333333333,936.6666666666665" size="100,100">\
+[[Nebo využije možnost počkat na ředitele u jeho sekretářky?-&gt;long-wait]]</tw-passagedata><tw-passagedata pid="27" name="homecoming" tags="platinium" position="6256,936" size="100,100">\
 &lt;script src=&quot;debriefing-inception-before.js&quot;&gt;&lt;/script&gt;\
 Adam odchází na vlak a jede zpátky domů. Cesta na vlak a domů už je naštěstí bez jakýchkoli neočekávaných událostí a ubíhá rychle – až na zdržení na policii kvůli nahlášení ukradené peněženky. Další den je škaredé počasí a prší, takže se Adam rozhodne si přispat a vstane až po desáté hodině. Ještě v pyžamu se rozhodne, že zavolá kvůli termínu náhradního pohovoru. Když mu sekretářka marketingového ředitele sdělí, že na stáž přijali uchazeče, který přišel na pohovor dnes ráno, Adam se rozhodne, že pyžamo si už převlékat nebude.
 
-[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="28" name="obed" tags="" position="5823.000000000001,630" size="100,100">Adam se si vzpomene, že nedaleko je jedna nová restaurace, kterou mu doporučil kamarád, co studuje práva. Rozloučí se se sekretářkou a jde na oběd. Dnes už nemá chuť nikam spěchat, takže klidnou chůzí vychází směrem k restauraci. Po několika metrech si ale uvědomí, že nemá čím zaplatit. Tedy alespoň v restauraci ne. Jelikož ISIC nosí v pouzdru na mobil, může si skočit buď do menzy, nebo do univerzitní pizzerie. Jelikož už Adam nechce žádná další překvapení, vsadí na jistotu a jde si dát pizzu.
+[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="28" name="obed" tags="platinium" position="5823,630" size="100,100">Adam se si vzpomene, že nedaleko je jedna nová restaurace, kterou mu doporučil kamarád, co studuje práva. Rozloučí se se sekretářkou a jde na oběd. Dnes už nemá chuť nikam spěchat, takže klidnou chůzí vychází směrem k restauraci. Po několika metrech si ale uvědomí, že nemá čím zaplatit. Tedy alespoň v restauraci ne. Jelikož ISIC nosí v pouzdru na mobil, může si skočit buď do menzy, nebo do univerzitní pizzerie. Jelikož už Adam nechce žádná další překvapení, vsadí na jistotu a jde si dát pizzu.
 
 Po necelých dvou hodinách je Adam zpátky u kanceláře marketingového ředitele, kde mu sekretářka řekne, že její šéf se dnes už nevrátí.
 
-[[Adam jí poděkuje a řekne, že zavolá zítra, aby si domluvil nový termín.-&gt;homecoming]]</tw-passagedata><tw-passagedata pid="29" name="long-wait" tags="" position="5654.666666666667,1158.3333333333335" size="100,100">Adam čeká na příchod ředitele u jeho sekretářky. Jelikož se několik minut nic neděje a sekretářka zběsile cosi píše na počítači, Adam si vytáhne svůj tablet a začne na něm číst *V horách šílenství* od H. P. Lovecrafta.
+[[Adam jí poděkuje a řekne, že zavolá zítra, aby si domluvil nový termín.-&gt;homecoming]]</tw-passagedata><tw-passagedata pid="29" name="long-wait" tags="platinium office" position="5654,1158" size="100,100">Adam čeká na příchod ředitele u jeho sekretářky. Jelikož se několik minut nic neděje a sekretářka zběsile cosi píše na počítači, Adam si vytáhne svůj tablet a začne na něm číst *V horách šílenství* od H. P. Lovecrafta.
 
 Uplyne asi půl hodiny a Adam si všimne, že si tablet zapomněl dát nabít a zbývá mu už asi jenom 6 % baterie. Také si všimne, že pokud by chtěl stihnout vlak domů, kterým chtěl jet původně, tak by měl pomalu vyrazit.
 
 [[Vyrazí Adam na vlak?-&gt;homecoming]]
-[[Nebo bude čekat dál?-&gt;longer-wait]]</tw-passagedata><tw-passagedata pid="30" name="debriefing" tags="debriefing" position="6903.333333333333,929.6666666666665" size="100,100">\
+[[Nebo bude čekat dál?-&gt;longer-wait]]</tw-passagedata><tw-passagedata pid="30" name="debriefing" tags="debriefing" position="6903,929" size="100,100">\
 &lt;script src=&quot;debriefing-inception-after.js&quot;&gt;&lt;/script&gt;\
+
 Jste téměř na konci své cesty tímto příběhem. Pojďme se nyní podívat na události, které se Adamovi od příjezdu do Brna udály, a co se o nich dá říct.
 
-[[Pojďme se tedy podívat, co se vlastně stalo.-&gt;d-intro]]</tw-passagedata><tw-passagedata pid="31" name="longer-wait" tags="" position="5843,1158.3333333333333" size="100,100">Uplynula asi další čtvrthodina. Adamův tablet se vybil a Adam se začíná silně nudit. Sekretářka bohužel má nabíječku jen na micro USB a Adam si svoji USB-C prozíravě nechal doma. Vtom zazvoní sekretářce telefon. Ta telefon zvedne a několikrát jednoslabičně odpoví mužskému hlasu na druhé straně. Když telefon zavěsí, oznámí, že její šéf je právě u generálního ředitele a že má jít za ním. Prý by neměla být pryč déle než pět minut a svému šéfovi o Adamovi rozhodně řekne.
+[[Pojďme se tedy podívat, co se vlastně stalo.-&gt;d-intro]]</tw-passagedata><tw-passagedata pid="31" name="longer-wait" tags="platinium office" position="5843,1158" size="100,100">Uplynula asi další čtvrthodina. Adamův tablet se vybil a Adam se začíná silně nudit. Sekretářka bohužel má nabíječku jen na micro USB a Adam si svoji USB-C prozíravě nechal doma. Vtom zazvoní sekretářce telefon. Ta telefon zvedne a několikrát jednoslabičně odpoví mužskému hlasu na druhé straně. Když telefon zavěsí, oznámí, že její šéf je právě u generálního ředitele a že má jít za ním. Prý by neměla být pryč déle než pět minut a svému šéfovi o Adamovi rozhodně řekne.
 
-[[Adam tedy čeká dál.-&gt;longerer-wait]]</tw-passagedata><tw-passagedata pid="32" name="longerer-wait" tags="" position="6033,1160" size="100,100">(set: $godot to true)
+[[Adam tedy čeká dál.-&gt;longerer-wait]]</tw-passagedata><tw-passagedata pid="32" name="longerer-wait" tags="platinium office" position="6033,1160" size="100,100">(set: $godot to true)\
 Sekretářka za sebou zavře dveře a Adam přemýšlí, jestli má pořád cenu čekat. Čeká už dost dlouho a nenapadá ho, co dělat. Kancelář, ve které čeká, mu moc příležitostí k zabavení se nenabízí.
 
 [[Odejít na vlak.-&gt;homecoming]]
@@ -319,77 +330,70 @@ Vedle Adama je na konferenčním stolku položených několik časopisů. Pokud 
         &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=87&quot; width=&quot;958&quot; height=&quot;1568&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/imagestent/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Mayer, J. Otázka podmořských člunů u námořních velmocí. *Epocha: rozhledy a úvahy časové o novějších objevech moderní techniky a přírodovědy s zvláštním zřetelem na vzduchoplavbu*. Praha: E. Weinfurter, 10.1901, 6(10), s. 181–186. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:12bc7ad0-7d2a-11e7-8b50-001018b5eb5c&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:12bc7ad0-7d2a-11e7-8b50-001018b5eb5c&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="clement" tags="" position="6413,1241.6666666666667" size="100,100">\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="33" name="clement" tags="platinium office" position="6413,1241" size="100,100">\
 &lt;script src=&quot;debriefing-inception-before.js&quot;&gt;&lt;/script&gt;\
 Po chvilce váhání se Adam zvedne a jde za stůl k počítači. Na širokoúhlé čtyřiatřicetipalcové obrazovce je lehce rozmazaná fotka černého krátkosrstého jezevčíka, která ale skoro není vidět za desítkami ikon. Adam si je začne prohlížet v naději, že by si náhodou všiml něčeho zajímavého. Asi po minutě si všimne na jezevčíkově pravé zadní tlapě složky s názvem „uchazeci-man“. Adam otevře složku s životopisy uchazečů, ale v té chvíli se do kanceláře vrací sekretářka.
-
 &lt;blockquote&gt;„Co tam děláte?“&lt;/blockquote&gt;\
-
 Adamovi asi nedochází, že to byla spíše řečnická otázka, a tak se snaží ze sebe narychlo něco dostat. Sekretářka mu ale nedá šanci a začne mu nadávat. Sice ne sprostě, ale i tak dost úderně. Svůj výstup ukončí další řečnickou otázkou:
-
 &lt;blockquote&gt;„Půjdete sám, nebo mám zavolat ochranku?“&lt;/blockquote&gt;\
-
 Tentokrát už Adamovi došlo, že očekávaná reakce je urychlený odchod, takže opouští kancelář a míří do výtahu.
 
 Než se zavřou dveře od výtahu, vidí Adam, jak do kanceláře, ze které byl právě „vypráskán“, vchází muž středního věku v na první pohled velmi drahém obleku. Že by to byl onen ředitel, na kterého celou dobu čekal? Odpověď už se Adam nedozví, jelikož po dnešku se zde již rozhodně o práci nebude moci ucházet.
 
 A aby toho nebylo málo, ještě mu ujel před nosem vlak a musí čekat hodinu na další…
 
-[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="34" name="clement2" tags="" position="6411.333333333334,1065" size="100,100">\
+[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="34" name="clement2" tags="platinium office" position="6411,1065" size="100,100">\
 &lt;script src=&quot;debriefing-inception-before.js&quot;&gt;&lt;/script&gt;\
 Po chvilce váhání se Adam zvedne a jde ke stolu sekretářky. Když byl posledně na pohovoru, měla sekretářka na stole připravené složky s životopisy uchazečů. Třeba to tady bude podobné a on tak zjistí, kdo další se o místo uchází. Sekretářka má na stole rozložených několik tabulek a dvě výroční zprávy několika automobilek. Adamova pozornost se proto přesune na pořadače na okraji stolu. Druhý má na sobě nápis „VÝBĚROVÁ ŘÍZENÍ“. Adam zvedne vrchní pořadač právě v okamžik, když se otevřou dveře do kanceláře.
-
 &lt;blockquote&gt;„Co to děláte?“&lt;/blockquote&gt;\
-
 Adamovi asi nedochází, že to byla spíše řečnická otázka, a tak se snaží ze sebe narychlo něco dostat. Sekretářka mu ale nedá šanci a začne mu nadávat. Sice ne sprostě, ale i tak dost úderně. Svůj výstup ukončí další řečnickou otázkou:
-
 &lt;blockquote&gt;„Půjdete sám, nebo mám zavolat ochranku?“&lt;/blockquote&gt;\
-
 Tentokrát už Adamovi došlo, že očekávaná reakce je urychlený odchod, takže opouští kancelář a míří do výtahu.
 
 Než se zavřou dveře od výtahu, vidí Adam, jak do kanceláře, ze které byl právě „vypráskán“, vchází muž středního věku v na první pohled velmi drahém obleku. Že by to byl onen ředitel, na kterého celou dobu čekal? Odpověď už se Adam nedozví, jelikož po dnešku se zde již rozhodně o práci nebude moci ucházet.
 
 A aby toho nebylo málo, ještě mu ujel před nosem vlak a musí čekat hodinu na další…
 
-[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="35" name="pohovor" tags="" position="6414.333333333335,1418.3333333333333" size="100,100">(set: $winner to true)
+[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="35" name="pohovor" tags="platinium office interview" position="6414,1418" size="100,100">(set: $winner to true)\
 Najednou se otevřou dveře a dovnitř kromě sekretářky vejde ještě jedna žena a jeden muž. Sekretářka Adamovi představí ředitele marketingu a vedoucí HR oddělení, kteří Adamovi oba s úsměvem podají ruku a ředitel mu pokyne, aby s nimi šel do jeho kanceláře. Když vstupuje dovnitř, ředitel se ho s úsměvem zeptá, kdo mu zavraždil kravatu.
 
 O půl hodiny později Adam vychází z budovy. Při cestě na policii, kde nahlásí krádež své peněženky, přemýšlí, co si za první výplatu koupí.
 
-[[Přejít na debriefing.-&gt;gratulace]]</tw-passagedata><tw-passagedata pid="36" name="flek" tags="" position="4395.666666666667,904.6666666666667" size="100,100">&lt;a href=&quot;#ceska&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-ceska-02.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+[[Přejít na debriefing.-&gt;gratulace]]</tw-passagedata><tw-passagedata pid="36" name="flek" tags="ceska" position="4395,904" size="100,100">&lt;a href=&quot;#ceska&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-ceska-02.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Adam pokračuje svižným tempem na Českou. V hlavě se mu honí myšlenky, co všechno měl udělat před několika minutami jinak a lépe, ale teď se snaží je nahradit něčím produktivnějším. Snaží se vzpomenout si na jeden materiál o personální psychologii, který mu doporučil jeho spolužák z gymplu, který studuje psychologii na Filozofické fakultě. Adam se lehce ušklíbne, když si při myšlence na onen materiál jako první věc vybaví heslo „nátlakový pohovor“.
 
 Adam si v hlavě přehrává svoje předpřipravené odpovědi na klasické otázky personalistů jako „Co považujete za svoje silné a slabé stránky?“ nebo „Jakým způsobem řešíte konflikty?“, když si všimne muže v obleku, který jde proti němu. Když muž vidí, že si ho Adam všiml, kývne hlavou a rukou si přejede po kravatě. Adama se zmocní hrůza.
 
 [[Adam se podívá na svoji kravatu a jeho obavy se stanou skutečností.-&gt;kravata]]
-
+\
 &lt;div id=&quot;ceska&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-ceska-02.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Česká - pohled od Skryté k Solniční ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2005, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0066/img3277.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0066/img3277.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="kravata-2" tags="" position="4737.666666666667,911" size="100,100">Radost ho ale rychle přejde, když vejde dovnitř, jelikož nejdecentnější košile, kterou tam mají, na sobě má sněhuláky. Adam opět přepíná do režimu zběsilého rozhlížení se. V rohu obchodu si všimne věšáku s kravatami. Ani zde není výběr nijak oslnivý, což je celkem pochopitelné, jelikož všechny kravaty stojí jednu patnáctinu ceny jeho zničené kravaty. Nakonec si vybere šedou kravatu, která nevypadá až tak lacině. Při troše štěstí překryje flek na košili a na pohovoru si nikdo ničeho nevšimne.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="37" name="kravata-2" tags="ceska tie-shop" position="4737,911" size="100,100">Radost ho ale rychle přejde, když vejde dovnitř, jelikož nejdecentnější košile, kterou tam mají, na sobě má sněhuláky. Adam opět přepíná do režimu zběsilého rozhlížení se. V rohu obchodu si všimne věšáku s kravatami. Ani zde není výběr nijak oslnivý, což je celkem pochopitelné, jelikož všechny kravaty stojí jednu patnáctinu ceny jeho zničené kravaty. Nakonec si vybere šedou kravatu, která nevypadá až tak lacině. Při troše štěstí překryje flek na košili a na pohovoru si nikdo ničeho nevšimne.
 
-[[Adam si vezme kravatu a jde ji zaplatit.-&gt;kravata-3]]</tw-passagedata><tw-passagedata pid="38" name="kravata-3" tags="" position="4897,911" size="100,100">Adam sahá do náprsní kapsy saka pro peněženku a jenom zázrakem celému obchodu nepředvede svoji interpretaci jedné scény z filmu *Vše je ztraceno* s Robertem Redfordem.
+[[Adam si vezme kravatu a jde ji zaplatit.-&gt;kravata-3]]</tw-passagedata><tw-passagedata pid="38" name="kravata-3" tags="ceska tie-shop" position="4897,911" size="100,100">Adam sahá do náprsní kapsy saka pro peněženku a jenom zázrakem celému obchodu nepředvede svoji interpretaci jedné scény z filmu *Vše je ztraceno* s Robertem Redfordem.
 
 Ten milovník burgerů byl nejspíš i milovníkem peněženek jiných lidí.
 
 Po krátkém dechovém cvičení se Adam pokouší zhodnotit svoji situaci. Může vsadit na to, že stihne dojít na pohovor v dostatečném předstihu a podaří se mu kravatu od toho nejhoršího vyčistit. Při pohovoru by pak mohl zkusit hrát na city a říct, co se mu stalo. Nepřipadá mu ale moc pravděpodobné, že by to na investiční bankéře příliš zapůsobilo. Další možností je kravatu ukrást – není na ní žádný zabezpečovací prvek a prodavačka si zákazníků moc nevšímá. Co teď?
 
 [[Adam zkusí ukrást kravatu.-&gt;steal]]
-|goto-right&gt;[Nebo odejde z obchodu a bude spěchat na pohovor.]
-(click: ?goto-right)[(set: $steal to false)(if: $deo is true)[(set: $wc to true)](go-to: &quot;veveri&quot;)]</tw-passagedata><tw-passagedata pid="39" name="late" tags="" position="5396.333333333333,512.0000000000001" size="100,100">\
+|goto-right&gt;[Nebo odejde z obchodu a bude spěchat na pohovor.]\
+(click: ?goto-right)[(set: $steal to false)(if: $deo is true)[(set: $wc to true)](go-to: &quot;veveri&quot;)]</tw-passagedata><tw-passagedata pid="39" name="late" tags="platinium" position="5396,512" size="100,100">\
 &lt;script src=&quot;debriefing-inception-before.js&quot;&gt;&lt;/script&gt;\
 Adam podle instrukcí recepční najde dveře s nápisem „ŘEDITEL MARKETINGU“ a zaklepe na ně. Zevnitř se ozve ženský hlas: &quot;Dále.&quot; Adam vstupuje do malé místnosti, kde za stolem sedí sekretářka, která ho hned pozdraví a zeptá se, co pro něj může udělat. Když Adam řekne, že jde na pohovor, sekretářka semkne rty k sobě v gestu, které Adamovi dává tušit, že asi nebude následovat nic dobrého.
 
 Sekretářka se postaví, se zaklepáním otevře dveře do kanceláře ředitele a ohlásí mu, že přišel Adam na pohovor. Ředitel odvětí: „Tak zas může odejít.“ Sekretářka se vrátí do své místnosti. Než stačí cokoliv říct, Adam pokývá hlavou, rozloučí se a jde zpátky na vlak domů.
 
-[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="40" name="d-intro" tags="debriefing" position="7078.666666666667,930.6666666666665" size="100,100">Děkujeme, že jste si prošli Adamův příběh. Nyní vám dlužíme vysvětlení, co se vlastně stalo a proč jste se v předešlých minutách pokoušeli jakéhosi Adama dostat na pohovor. 
+[[Přejít na debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="40" name="d-intro" tags="debriefing" position="7078,930" size="100,100">Děkujeme, že jste si prošli Adamův příběh. Nyní vám dlužíme vysvětlení, co se vlastně stalo a proč jste se v předešlých minutách pokoušeli jakéhosi Adama dostat na pohovor. 
 
 Cílem příběhu totiž nebylo, aby Adam získal stáž. Dokonce ani to, aby se vůbec dostal na pohovor. Znáte takové to otřepané tvrzení, že cesta je důležitější než cíl? Naším záměrem bylo, abyste se seznámili se situacemi, které mohou být objektem zkoumání morální psychologie. Zároveň jsme Vám nechtěli tyto situace jen popsat, ale chtěli jsme, abyste se zkusili rozhodnout, jak se zachovat. Nyní bychom s Vámi jednotlivé situace probrali a ukázali, jaké experimenty a výzkumy se s nimi pojí.
 
-[[Nejdřív několik slov k rozdílu mezi situacemi v tomto příběhu a skutečnými experimenty.-&gt;d-dopad]]</tw-passagedata><tw-passagedata pid="41" name="d-bura" tags="debriefing" position="7614,1181.6666666666665" size="100,100">První situace, jíž jsme Adama vystavili, byla založena na výzkum toho, co všechno může ovlivnit ochotu člověka pomoci svému bližnímu. Tato situace se skládala ze dvou částí. Tou první bylo „náhodné“ nalezení mince na chodníku. Druhou částí bylo setkání Adama s babičkou se dvěma těžkými taškami.
+[[Nejdřív několik slov k rozdílu mezi situacemi v tomto příběhu a skutečnými experimenty.-&gt;d-dopad]]</tw-passagedata><tw-passagedata pid="41" name="d-bura" tags="debriefing" position="7614,1181" size="100,100">První situace, jíž jsme Adama vystavili, byla založena na výzkum toho, co všechno může ovlivnit ochotu člověka pomoci svému bližnímu. Tato situace se skládala ze dvou částí. Tou první bylo „náhodné“ nalezení mince na chodníku. Druhou částí bylo setkání Adama s babičkou se dvěma těžkými taškami.
 
 Může mít nalezení mince na chodníku vliv na to, jestli někomu pomůžeme nebo nikoli? Ano, může.
 
@@ -403,16 +407,17 @@ Situace, kterou jsem pro Adama připravili, je inspirována experimentem z roku 
 Kdybychom, tak měli celou záležitost zjednodušeně interpretovat, můžeme říct: lidé, které potkala šťastná událost, jsou v nejbližším čase po ní více ochotní pomoci někomu dalšímu. |first)[To je sice na jednu stranu v souladu s Adamovým rozhodnutím pomoci stařence, ale na druhou stranu je v tomto případě cena pomoci vyšší než v případě sbírání papírů na ulici – Adam se mohl hodně zapotit a ztratit hodně času. Strach z obojího by mohl hrát větší roli než radost z nalezené mince.]|second)[I když se tedy Adam rozhodl nepomoci stařence, je zapotřebí si uvědomit, že v tomto případě byla cena pomoci vyšší než v případě sbírání papírů na ulici – Adam se mohl hodně zapotit a ztratit hodně času. Strach z obojího by mohl hrát větší roli než radost z nalezené mince.]
 
 [[To lze ostatně doložit i jinými experimenty.-&gt;d-pens]]
-
-(if: $samaritan is true)[(show: ?first)](else:)[(show: ?second)]
-
+\\
+(if: $samaritan is true)[(show: ?first)](else:)[(show: ?second)]\
+\
 &lt;div id=&quot;isen&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-isen_levin-01.png&quot; alt=&quot;Isen, Alice M., Levin, Paula F. Effect of feeling good on helping: Cookies and kindness. Journal of Personality and Social Psychology, 1972, 21(3), 384–388. Dostupné z: doi.org/10.1037/h0032317.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Isen, Alice M., Levin, Paula F. Effect of feeling good on helping: Cookies and kindness. &lt;i&gt;Journal of Personality and Social Psychology&lt;/i&gt;, 1972, 21(3), 384–388. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;doi.org/10.1037/h0032317&quot;&gt;doi.org/10.1037/h0032317&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="42" name="d-balancing" tags="debriefing" position="7688.666666666667,766.3333333333333" size="100,100">První situace, jíž jsme Adama podrobili, byla složena ze dvou částí. Adam nejdříve dostal na nástupišti u nádraží možnost přispět na výcvik asistenčních psů, následně měl možnost pomoci stařence s těžkými taškami.
+&lt;/div&gt;\
+</tw-passagedata><tw-passagedata pid="42" name="d-balancing" tags="debriefing" position="7688,766" size="100,100">První situace, jíž jsme Adama podrobili, byla složena ze dvou částí. Adam nejdříve dostal na nástupišti u nádraží možnost přispět na výcvik asistenčních psů, následně měl možnost pomoci stařence s těžkými taškami.
 
 Obdobné experimenty jsou zaměřené na výzkum podmíněnosti rozhodování předchozím rozhodnutím a na teorii morálního vyvažování. Podle této teorie mají lidé nevědomou tendenci vyvažovat svoje jednání z morálního hlediska. Pokud tedy například vykonáme nějaký skutek, který sami považujeme za špatný, máme pak sklon udělat něco, co považujeme za na obdobné úrovni dobré. To samozřejmě platí i opačně.
 
@@ -423,22 +428,23 @@ Pokud by vás zajímalo, jak mohou vypadat reálné experimenty zaměřené na m
 Můžete se také sami zamyslet, zda když jste vykonali nějaký dobrý skutek, a následně Vás někdo požádal o pomoc, měli jste spíše tendenci mu pomoct, nebo ho odmítnout.
 
 [[A ještě jedna drobnost.-&gt;d-nahodna-volba]]
-
+\
 &lt;div id=&quot;licensing&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;iframe class=&quot;tube&quot; src=&quot;https://www.youtube.com/embed/yZlOw3rsPBM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Stevens, Michael. Moral Licensing. In: &lt;i&gt;Mind Field&lt;/i&gt; &#96;[seriál]&#96;. 9. 1. 2019 &#96;[cit. 31. 8. 2020]&#96;, 3(2). Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://youtu.be/yZlOw3rsPBM&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://youtu.be/yZlOw3rsPBM&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="d-nahodna-volba" tags="debriefing" position="7951.333333333334,972.6666666666665" size="100,100">V některých experimentech se jejich účastníci rozdělují na *experimentální* a *kontrolní* skupinu. Pokud například chcete zjistit, jestli má barva léku vliv na jeho účinnost, pak je zapotřebí vytvořit několik skupin a jejich výsledky následně porovnat. Pokud dostávají dvě skupiny stejný lék, který se liší jen barvou, a jedna skupina má lepší výsledky než ta druhá, pak barva ovlivňuje účinnost léku. A jen pro zajímavost – barva i tvar opravdu ovlivňují míru účinnosti určitých léků.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="43" name="d-nahodna-volba" tags="debriefing" position="7951,972" size="100,100">V některých experimentech se jejich účastníci rozdělují na *experimentální* a *kontrolní* skupinu. Pokud například chcete zjistit, jestli má barva léku vliv na jeho účinnost, pak je zapotřebí vytvořit několik skupin a jejich výsledky následně porovnat. Pokud dostávají dvě skupiny stejný lék, který se liší jen barvou, a jedna skupina má lepší výsledky než ta druhá, pak barva ovlivňuje účinnost léku. A jen pro zajímavost – barva i tvar opravdu ovlivňují míru účinnosti určitých léků.
 
 My sice žádnou kontrolní skupinu nemáme, ale hned na začátku vám byl přidělen jeden ze tří možných experimentálních scénářů.
 
 |stinky)[[[Teď se podíváme, co se vlastně stalo na náměstí Svobody.-&gt;d-cpr]]]\
 |oldspice)[[[Teď se pojďme podívat na situaci v drogerii.-&gt;d-deodorant]]]
-
-(if: $drugstore is true)[(show: ?oldspice)]
-(else:)[(show: ?stinky)]</tw-passagedata><tw-passagedata pid="44" name="d-cpr" tags="debriefing" position="8628.333333333334,985.6666666666665" size="100,100">Ve světě se můžete se situacemi, kdy se stane nehoda, kdy se někomu udělá nevolno, kdy se vybourá auto na silnici apod. V našem případě jsme se pokusili ukázat podobný scénář na pánovi, který zkolaboval. Co nám tedy říkají výzkumy o pomoci lidem?
+\
+(if: $drugstore is true)[(show: ?oldspice)]\
+(else:)[(show: ?stinky)]\
+</tw-passagedata><tw-passagedata pid="44" name="d-cpr" tags="debriefing" position="8628,985" size="100,100">Ve světě se můžete se situacemi, kdy se stane nehoda, kdy se někomu udělá nevolno, kdy se vybourá auto na silnici apod. V našem případě jsme se pokusili ukázat podobný scénář na pánovi, který zkolaboval. Co nám tedy říkají výzkumy o pomoci lidem?
 
 Výzkumy bohužel ukazují, že lidí ochotných pomoci člověku v podobné situaci, jakou jsme vytvořili pro Adama, by asi nebylo tolik, kolik bychom si představovali a přáli. {|helped)[I když tedy Adam muži ve vašem příběhu pomohl a může se vám zdát samozřejmé v takovéto situaci pomoc poskytnout, realita by mohla být zcela odlišná.]|bailed)[Ačkoliv je jistě více žádoucí, aby Adam pánovi pomohl, vaše volba bude pravděpodobně bližší tomu, co by se mohlo stát v realitě.]} Problémem je totiž poněkud paradoxně to, že situace se odehrála v přítomnosti více lidí.
 
@@ -450,16 +456,16 @@ Výzkumy bohužel ukazují, že lidí ochotných pomoci člověku v podobné sit
 Proč mají lidé menší tendenci pomáhat v přítomnosti dalších lidí, resp. když jsou ve skupině více osob?
 
 [[Souvisí to s tzv. efektem přihlížejícího.-&gt;d-bystander]]
-
-(if: $cprhelp is true)[(show: ?helped)](else:)[(show: ?bailed)]
-
+\
+(if: $cprhelp is true)[(show: ?helped)](else:)[(show: ?bailed)]\
+\\
 &lt;div id=&quot;bystander&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-bystander-01.png&quot; alt=&quot;Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. Psychologie Atkinsonové a Hilgarda. Přepracované vydání. Praha: Portál, 2012, s. 712. ISBN 978-80-262-0083-3. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. &lt;i&gt;Psychologie Atkinsonové a Hilgarda&lt;/i&gt;. Přepracované vydání. Praha: Portál, 2012, s. 712. ISBN 978-80-262-0083-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="d-deodorant" tags="debriefing" position="8117.666666666666,775.3333333333333" size="100,100">O co šlo v drogerii s nestandardně se chovajícími zákazníky je celkem jasné. Jednalo se o pokus se sociálním nátlakem.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="45" name="d-deodorant" tags="debriefing" position="8117,775" size="100,100">O co šlo v drogerii s nestandardně se chovajícími zákazníky je celkem jasné. Jednalo se o pokus se sociálním nátlakem.
 
 &lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#dvorakova&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-dvorakova-01.png&quot; alt=&quot;Dvořáková, Jana. Morální usuzování vliv hodnot, osobnosti a morální identity. Brno: Masarykova univerzita, 2008. ISBN 978-80-210-4751-8. Dostupné také z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:a52440c0-c3aa-11e3-aec3-005056827e52.&quot;&gt;&lt;/a&gt;\
@@ -471,14 +477,14 @@ Některé formy sociálního nátlaku jste jistě už určitě zažili – koho 
 Adamův zážitek je volně inspirován slavným testem konformity, který v roce 1951 provedl Solomon Asch.
 
 [[Více o Aschově experimentu.-&gt;d-asch]]
-
+\
 &lt;div id=&quot;dvorakova&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-dvorakova-01.png&quot; alt=&quot;Dvořáková, Jana. Morální usuzování vliv hodnot, osobnosti a morální identity. Brno: Masarykova univerzita, 2008. ISBN 978-80-210-4751-8. Dostupné také z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:a52440c0-c3aa-11e3-aec3-005056827e52.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Dvořáková, Jana. &lt;i&gt;Morální usuzování vliv hodnot, osobnosti a morální identity&lt;/i&gt;. Brno: Masarykova univerzita, 2008. ISBN 978-80-210-4751-8. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:a52440c0-c3aa-11e3-aec3-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:a52440c0-c3aa-11e3-aec3-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="d-kravata" tags="debriefing" position="9457.666666666666,988" size="100,100">{|first)[Scénář s příspěvkem na charitu a babičkou s taškami nebyl jediný scénář týkající se morálního vyvažování, kterému jsme Adama vystavili. V prvním případě měla jeho ochota přispět na dobrou věc ovlivnit jeho následnou ochotu pomoci babičce. Teď se situace změnila a Adam před chvílí mohl pomoci zachránit něčí život.]|second)[Obdobné experimenty jsou zaměřené na výzkum podmíněnosti rozhodování předchozím rozhodnutím a na teorii morálního vyvažování. Podle této teorie mají lidé nevědomou tendenci vyvažovat svoje jednání z morálního hlediska. Pokud tedy například vykonáme nějaký skutek, který sami považujeme za špatný, máme pak sklon udělat něco, co považujeme za na obdobné úrovni dobré. To samozřejmě platí i opačně. Adam před chvílí mohl pomoci zachránit něčí život.]} Pokud to udělal, má důvod cítit se dobře. Jenže pokud to udělal, pak se mu hned potom přihodilo několik velmi nepříjemných věcí. Je to, co se stalo dostačující k tomu, aby Adam udělal něco, co by za jiných okolností nikdy neudělal?
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="46" name="d-kravata" tags="debriefing" position="9457,988" size="100,100">{|first)[Scénář s příspěvkem na charitu a babičkou s taškami nebyl jediný scénář týkající se morálního vyvažování, kterému jsme Adama vystavili. V prvním případě měla jeho ochota přispět na dobrou věc ovlivnit jeho následnou ochotu pomoci babičce. Teď se situace změnila a Adam před chvílí mohl pomoci zachránit něčí život.]|second)[Obdobné experimenty jsou zaměřené na výzkum podmíněnosti rozhodování předchozím rozhodnutím a na teorii morálního vyvažování. Podle této teorie mají lidé nevědomou tendenci vyvažovat svoje jednání z morálního hlediska. Pokud tedy například vykonáme nějaký skutek, který sami považujeme za špatný, máme pak sklon udělat něco, co považujeme za na obdobné úrovni dobré. To samozřejmě platí i opačně. Adam před chvílí mohl pomoci zachránit něčí život.]} Pokud to udělal, má důvod cítit se dobře. Jenže pokud to udělal, pak se mu hned potom přihodilo několik velmi nepříjemných věcí. Je to, co se stalo dostačující k tomu, aby Adam udělal něco, co by za jiných okolností nikdy neudělal?
 
 &lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#dvorakova&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-dvorakova-02.png&quot; alt=&quot;Dvořáková, Jana. Morální usuzování vliv hodnot, osobnosti a morální identity. Brno: Masarykova univerzita, 2008. ISBN 978-80-210-4751-8. Dostupné také z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:a52440c0-c3aa-11e3-aec3-005056827e52.&quot;&gt;&lt;/a&gt;\
@@ -492,12 +498,12 @@ Náš experiment zatím nikdo neprovedl, ale pokud umíte anglicky, můžete se 
 |marshmallow)[[[Tímto se dostáváme k poslendímu „experimentu“, který jste si tentokrát vyzkoušeli na vlastní kůži.-&gt;d-marsh-l]]]\
 |win)[[[Tímto se dostáváme k poslendímu „experimentu“, který jste si tentokrát vyzkoušeli na vlastní kůži.-&gt;d-marsh-w]]]\
 |fail)[[[Tímto váš a Adamův příběh skončil, ale…-&gt;d-fail]]]
-
-{(if: $theft is true)[(show: ?fail)]
-(else-if: $winner is true)[(show: ?win)]
-(else:)[(show: ?marshmallow)]}
-{(if: $helpvar is &quot;charity&quot;)[(show: ?first)](if: $helpvar is &quot;dime&quot;)[(show: ?second)]}
-
+\\
+{(if: $theft is true)[(show: ?fail)]\
+(else-if: $winner is true)[(show: ?win)]\
+(else:)[(show: ?marshmallow)]}\
+{(if: $helpvar is &quot;charity&quot;)[(show: ?first)](if: $helpvar is &quot;dime&quot;)[(show: ?second)]}\
+\
 &lt;div id=&quot;dvorakova&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -511,7 +517,7 @@ Náš experiment zatím nikdo neprovedl, ale pokud umíte anglicky, můžete se 
         &lt;iframe class=&quot;tube&quot; src=&quot;https://www.youtube.com/embed/yZlOw3rsPBM&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Stevens, Michael. Moral Licensing. In: &lt;i&gt;Mind Field&lt;/i&gt; &#96;[seriál]&#96;. 9. 1. 2019 &#96;[cit. 31. 8. 2020]&#96;, 3(2). Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://youtu.be/yZlOw3rsPBM&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://youtu.be/yZlOw3rsPBM&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="d-fail" tags="debriefing" position="9912.333333333334,738.9999999999998" size="100,100">(set: $zpet to &quot;d-fail&quot;)\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="d-fail" tags="debriefing" position="9915.333333333334,731.3333333333334" size="100,100">(set: $zpet to &quot;d-fail&quot;)\
 \\
 Tímto jste se dostali na samotný konec Adamova příběhu. Mnohokrát Vám děkujeme za to, že jste si příběh vyzkoušeli projít a následně si prošli i debriefingem. Mohli jste se dozvědět o několika více i méně známých experimentech z oblasti morální a sociální psychologie. Víte o tom, jak byste se vy, ale i ostatní lidé mohli zachovat za určitých podmínek.
 
@@ -534,7 +540,7 @@ P.S.: Adamův příběh teď sice skončil neúspěchem, ale mohl skončit i jin
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-end-01.png&quot; alt=&quot;Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. Psychologie Atkinsonové a Hilgarda. Přepracované vydání. Praha: Portál, 2012, s. 714–715. ISBN 978-80-262-0083-3. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. &lt;i&gt;Psychologie Atkinsonové a Hilgarda&lt;/i&gt;. Přepracované vydání. Praha: Portál, 2012, s. 714–715. ISBN 978-80-262-0083-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="credits" tags="" position="10563.333333333334,1316" size="100,100"># Na tvorbě se podíleli
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="48" name="credits" tags="" position="10563,1316" size="100,100"># Na tvorbě se podíleli
 
 &lt;img class=&quot;logo&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/KatedraPodnikHosp-lg-cze-rgb.png&quot; alt=&quot;Katedra podnikového hospodářství ESF MU&quot;&gt;\
 
@@ -560,7 +566,7 @@ Elena Weyrová
 [[Zpět-&gt;$zpet]]
 
 &lt;img class=&quot;logolink&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/Logolink_OP_VVV_hor_barva_cz.jpg&quot; style=&quot;width:85%&quot; alt=&quot;Vytvořeno v rámci Operačního programu Výzkum, vývoj a vzdělávání CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&quot;&gt;\
-&lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="bibliografie" tags="" position="10515.666666666666,679.6666666666665" size="100,100">&lt;img class=&quot;logo&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/arts-lg-text-cze.png&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;\
+&lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;</tw-passagedata><tw-passagedata pid="49" name="bibliografie" tags="" position="10515,679" size="100,100">&lt;img class=&quot;logo&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/arts-lg-text-cze.png&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;\
 
 # Použité zdroje
 
@@ -598,8 +604,8 @@ Elena Weyrová
 [[Zpět-&gt;$zpet]]
 
 &lt;img class=&quot;logolink&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/Logolink_OP_VVV_hor_barva_cz.jpg&quot; style=&quot;width:85%&quot; alt=&quot;Vytvořeno v rámci Operačního programu Výzkum, vývoj a vzdělávání CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&quot;&gt;\
-&lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="d-marshmallow" tags="debriefing" position="9947.333333333334,1219.3333333333333" size="100,100">(set: $zpet to &quot;d-marshmallow&quot;)\
-
+&lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;</tw-passagedata><tw-passagedata pid="50" name="d-marshmallow" tags="debriefing" position="9947,1219" size="100,100">(set: $zpet to &quot;d-marshmallow&quot;)\
+\\
 Tímto jste se dostali na samotný konec Adamova příběhu. Mnohokrát Vám děkujeme za to, že jste si příběh vyzkoušeli projít a následně si prošli i debriefingem. Mohli jste se dozvědět o několika více i méně známých experimentech z oblasti morální a sociální psychologie. Víte o tom, jak byste se vy, ale i ostatní lidé mohli zachovat za určitých podmínek.
 
 Pokud bychom měli vybrat jedinou věc, kterou byste si měli z tohoto materiálu odnést, tak zopakujeme lekci z Adamovy příhody na náměstí Svobody. Už víte, že přítomnost více lidí automaticky neznamená, že někdo pomůže. Nebo že pomůže včas. Podle výzkumů ale i tato znalost sama o sobě stačí, aby lidé více pomáhali. Takže pokud budete moci a nebude to pro vás nebo jiné představovat nebezpečí, pomozte. Prosíme.
@@ -611,15 +617,15 @@ Pokud bychom měli vybrat jedinou věc, kterou byste si měli z tohoto materiál
 
 [[Tvůrci DVZ-&gt;credits]]
 [[Použitá literatura-&gt;bibliografie]]
-
+\
 &lt;div id=&quot;end&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-end-01.png&quot; alt=&quot;Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. Psychologie Atkinsonové a Hilgarda. Přepracované vydání. Praha: Portál, 2012, s. 714–715. ISBN 978-80-262-0083-3. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. &lt;i&gt;Psychologie Atkinsonové a Hilgarda&lt;/i&gt;. Přepracované vydání. Praha: Portál, 2012, s. 714–715. ISBN 978-80-262-0083-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="d-win" tags="debriefing" position="9925,998" size="100,100">(set: $zpet to &quot;d-win&quot;)
-
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="51" name="d-win" tags="debriefing" position="9925,998" size="100,100">(set: $zpet to &quot;d-win&quot;)\
+\\
 Tímto jste se dostali na samotný konec Adamova příběhu. Mnohokrát Vám děkujeme za to, že jste si příběh vyzkoušeli projít a následně si prošli i debriefingem. Mohli jste se dozvědět o několika více i méně známých experimentech z oblasti morální a sociální psychologie. Víte o tom, jak byste se vy, ale i ostatní lidé mohli zachovat za určitých podmínek.
 
 Pokud bychom měli vybrat jedinou věc, kterou byste si měli z tohoto materiálu odnést, tak zopakujeme lekci z Adamovy příhody na náměstí Svobody. Už víte, že přítomnost více lidí automaticky neznamená, že někdo pomůže. Nebo že pomůže včas. Podle výzkumů ale i tato znalost sama o sobě stačí, aby lidé více pomáhali. Takže pokud budete moci a nebude to pro vás nebo jiné představovat nebezpečí, pomozte. Prosíme.
@@ -631,27 +637,27 @@ Pokud bychom měli vybrat jedinou věc, kterou byste si měli z tohoto materiál
 
 [[Tvůrci DVZ-&gt;credits]]
 [[Použitá literatura-&gt;bibliografie]]
-
+\
 &lt;div id=&quot;end&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-end-01.png&quot; alt=&quot;Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. Psychologie Atkinsonové a Hilgarda. Přepracované vydání. Praha: Portál, 2012, s. 714–715. ISBN 978-80-262-0083-3. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Nolen-Hoeksema, S., Frederickson, B. L., Loftus, G. R., Wagenaar,  W. R. &lt;i&gt;Psychologie Atkinsonové a Hilgarda&lt;/i&gt;. Přepracované vydání. Praha: Portál, 2012, s. 714–715. ISBN 978-80-262-0083-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:caffc1f0-63cb-11e8-a67a-5ef3fc9ae867&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="$zpet" tags="" position="10315.666666666666,959.3333333333333" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="53" name="conform" tags="" position="2251.6666666666665,918.3333333333335" size="100,100">(set: $deo to true)(set: $conformity to &quot;conform&quot;)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="52" name="$zpet" tags="" position="10356.666666666666,894" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="53" name="conform" tags="deodorant-shop masaryk" position="2251,918" size="100,100">(set: $deo to true)(set: $conformity to &quot;conform&quot;)\
 Adam neochotně pošeptá svůj PIN prodavačce, která okamžitě vezme jeho kartu, projede jí terminálem vedle pokladny, kterého si Adam všiml až teď. Poté zadá Adamův PIN a po chvilce mu podá kartu i se stvrzenkou a účtenkou. Poděkuje mu a začne účtovat zboží dalšímu zákazníkovi.
 
-[[Adam jí poděkuje, rozloučí se a odchází zpět směrem na náměstí Svobody.-&gt;tgm2]]</tw-passagedata><tw-passagedata pid="54" name="gratulace" tags="" position="6586.333333333333,1411.6666666666667" size="100,100">\
+[[Adam jí poděkuje, rozloučí se a odchází zpět směrem na náměstí Svobody.-&gt;tgm2]]</tw-passagedata><tw-passagedata pid="54" name="gratulace" tags="platinium congrats" position="6586,1411" size="100,100">\
 &lt;script src=&quot;debriefing-inception-before.js&quot;&gt;&lt;/script&gt;\
 # Gratulujeme!
 Podařilo se vám nejenom dostat Adama na pohovor včas, ale zároveň jste překonali i všechny nástrahy, které jsme si pro vás přichystali. Dobrá práce!
 
-[[Teď už ale slibovaný debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="55" name="d-dopad" tags="debriefing" position="7249.666666666667,934.6666666666665" size="100,100">Ještě než se do toho pustíme je třeba říci několik věcí. Při studiu morálky nebo i při jiných výzkumech s lidmi je třeba dbát na základní etické principy vědy. V našem případě se pak jedná o princip *primum non nocere*, který je u užíván i v medicíně a znamená „především neškodit“. Jedná se o to, že pokud bychom studovali jedince, jeho reakce, pak mu musíme zajistit takové prostředí, kdy zkoumané osobě ani nikomu z dalších účastníků či pozorovatelů nevznikne trvalá újma, ať už fyzická nebo psychická. Krátkodobá újma pak nesmí být nepřiměřená předmětu poznání a užitečnosti, kterou z ní společnost může mít.
+[[Teď už ale slibovaný debriefing.-&gt;debriefing]]</tw-passagedata><tw-passagedata pid="55" name="d-dopad" tags="debriefing" position="7249,934" size="100,100">Ještě než se do toho pustíme je třeba říci několik věcí. Při studiu morálky nebo i při jiných výzkumech s lidmi je třeba dbát na základní etické principy vědy. V našem případě se pak jedná o princip *primum non nocere*, který je u užíván i v medicíně a znamená „především neškodit“. Jedná se o to, že pokud bychom studovali jedince, jeho reakce, pak mu musíme zajistit takové prostředí, kdy zkoumané osobě ani nikomu z dalších účastníků či pozorovatelů nevznikne trvalá újma, ať už fyzická nebo psychická. Krátkodobá újma pak nesmí být nepřiměřená předmětu poznání a užitečnosti, kterou z ní společnost může mít.
 
 Mnohé experimenty, které by nám mohly hodně napovědět o lidské psychice, tak nikdy nebudou moci být provedeny, protože je jejich provedení prostě příliš nebezpečné. Některé sice v minulosti provedeny byly a &lt;a class=&quot;inmod&quot; href=&quot;#danger&quot;&gt;některé byly provedeny s výraznými obměnami&lt;/a&gt;, ale na akademické půdě je jejich provedení již prakticky nemožné.
 
 [[Pokračovat dál.-&gt;d-differences]]
-
+\
 &lt;div id=&quot;danger&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -660,7 +666,7 @@ Mnohé experimenty, které by nám mohly hodně napovědět o lidské psychice, 
         &lt;div class=&quot;citace&quot;&gt;(Stevens, Michael. The Greater Good. In: &lt;i&gt;Mind Field&lt;/i&gt; &#96;[seriál]&#96;. 6. 12. 2017 &#96;[cit. 31. 8. 2020]&#96;, 2(1). Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://youtu.be/1sl5KJ69qiA&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://youtu.be/1sl5KJ69qiA&lt;/a&gt;. Verze s českými titulky: Stevens, Michael. Mind Field: Vyšší dobro – Tramvajové dilema. In: *Videačesky* &#96;[&#96;online&#96;]&#96;. Přel. MultiZaklinac. 27.07.2019 &#96;[cit. 31. 8. 2020]&#96;, 2(1).&lt;a class=&quot;hyper&quot; href=&quot;https://videacesky.cz/video/vsauce-mind-field-vyssi-dobro-tramvajove-dilema&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://videacesky.cz/video/vsauce-mind-field-vyssi-dobro-tramvajove-dilema&lt;/a&gt;)&lt;/div&gt;\
         Pokud by vás tento experiment zaujal, můžete si o něm přečíst více například v tomto &lt;a class=&quot;hyper&quot; href=&quot;https://clanky.rvp.cz/clanek/c/Z/22042/tramvajove-dilema-a-informaticke-mysleni.html/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;článku Bořivoje Brdičky&lt;/a&gt;.
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="d-differences" tags="debriefing" position="7433.666666666667,935.3333333333333" size="100,100">Dále je třeba říci, že studium chování je velmi náročné stran své tzv. *ekologické validity*. Jednoduše řečeno: lidé mají tendence chovat se jinak, když ví, že jsou pozorováni. V tomto ohledu je mnohdy velmi náročné sestavit celou situaci tak, aby byla pro zkoumanou osobu uvěřitelná, aby zapomněla, že se jedná o experiment a chovala se přirozeně.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="56" name="d-differences" tags="debriefing" position="7433,935" size="100,100">Dále je třeba říci, že studium chování je velmi náročné stran své tzv. *ekologické validity*. Jednoduše řečeno: lidé mají tendence chovat se jinak, když ví, že jsou pozorováni. V tomto ohledu je mnohdy velmi náročné sestavit celou situaci tak, aby byla pro zkoumanou osobu uvěřitelná, aby zapomněla, že se jedná o experiment a chovala se přirozeně.
 
 Zároveň musíme mít na paměti vždy také to, že na lidské chování může působit mnoho vlivů. Pokud se špatně vyspíte, asi nebudete mít hned náladu na to si s někým povídat a řešit smysl života. V každém výzkumu je proto třeba zvážit, co vše může ovlivnit jeho výsledek, a snažit se všechny tyto vlivy kontrolovat nebo aspoň zahrnout do interpretace získaných informací.
 
@@ -670,11 +676,12 @@ Stejně tak by se ani nemohlo jednat o sérii experimentů, které by byly za se
 
 Když máme toto vše na paměti, můžeme se podívat na jednotlivé situace a ukázat si, o co v nich šlo.
 
-|bura)[[[Teď se podívejme na první situaci, do níž jsme Adama vrhli.-&gt;d-bura]]]
+|bura)[[[Teď se podívejme na první situaci, do níž jsme Adama vrhli.-&gt;d-bura]]]\
 |pesy)[[[Teď se podívejme na první situaci, do níž jsme Adama vrhli.-&gt;d-balancing]]]
-
-(if: $helpvar is &quot;dime&quot;)[(show: ?bura)]
-(if: $helpvar is &quot;charity&quot;)[(show: ?pesy)]</tw-passagedata><tw-passagedata pid="57" name="d-asch" tags="debriefing" position="8281.333333333334,773" size="100,100">&lt;div class=&quot;imbox&quot;&gt;\
+\\
+(if: $helpvar is &quot;dime&quot;)[(show: ?bura)]\
+(if: $helpvar is &quot;charity&quot;)[(show: ?pesy)]\
+</tw-passagedata><tw-passagedata pid="57" name="d-asch" tags="debriefing" position="8281,773" size="100,100">&lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#asch01&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-asch-01.png&quot; alt=&quot;Atkinson, Rita. Psychologie. Druhé, aktualizované vydání. Praha: Portál, 2003, s. 647. ISBN 80-7178-640-3. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52.&quot;&gt;&lt;/a&gt;\
     &lt;div class=&quot;citace&quot;&gt;(Atkinson, Rita. &lt;i&gt;Psychologie&lt;/i&gt;. Druhé, aktualizované vydání. Praha: Portál, 2003, s. 646. ISBN 80-7178-640-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
 &lt;/div&gt;\
@@ -689,7 +696,7 @@ Tohoto experimentu se sice účastnilo více lidí, ale pouze jeden ve skupině 
 Aschův experiment je jedním z těch, které je snadné replikovat, díky čemuž se můžete podívat, &lt;a class=&quot;inmod&quot; href=&quot;#asch03&quot;&gt;jak tento experiment vypadá v praxi&lt;/a&gt;.
 
 [[Další formou sociálního tlaku je poslušnost vůči autoritě.-&gt;d-milgram]]
-
+\
 &lt;div id=&quot;asch01&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -697,7 +704,6 @@ Aschův experiment je jedním z těch, které je snadné replikovat, díky čemu
         &lt;div class=&quot;citace&quot;&gt;(Atkinson, Rita. &lt;i&gt;Psychologie&lt;/i&gt;. Druhé, aktualizované vydání. Praha: Portál, 2003, s. 646. ISBN 80-7178-640-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-
 &lt;div id=&quot;asch02&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -705,14 +711,14 @@ Aschův experiment je jedním z těch, které je snadné replikovat, díky čemu
         &lt;div class=&quot;citace&quot;&gt;(Atkinson, Rita. &lt;i&gt;Psychologie&lt;/i&gt;. Druhé, aktualizované vydání. Praha: Portál, 2003, s. 647. ISBN 80-7178-640-3. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-
 &lt;div id=&quot;asch03&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;iframe class=&quot;tube&quot; src=&quot;https://www.youtube.com/embed/fbyIYXEu-nQ&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Stevens, Michael. Conformity. In: *Mind Field* &#96;[seriál]&#96;. 18. 1. 2017 &#96;[cit. 31. 8. 2020]&#96;, 1(2). Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://youtu.be/fbyIYXEu-nQ&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://youtu.be/fbyIYXEu-nQ&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="58" name="d-milgram" tags="debriefing" position="8438.333333333334,774.6666666666667" size="100,100">Lidé mívají tendenci podceňovat vliv sociálního tlaku na rozhodování a jednání. Jedním ze slavných experimentů v historii psychologie je bezesporu Milgramův experiment zkoumající ochotu podřídit se autoritě. Účastníci tohoto experimentu byli na podnět experimentátora udílejícího jim pokyny ochotni dávat elektrické šoky dalšímu účastníkovi experimentu (který ale pouze hrál, že šoky dostává) – a to mnohdy i v případě, že elektrický šok měl být zdraví ohrožující, nebo dokonce smrtelný.
+&lt;/div&gt;\
+</tw-passagedata><tw-passagedata pid="58" name="d-milgram" tags="debriefing" position="8438,774" size="100,100">Lidé mívají tendenci podceňovat vliv sociálního tlaku na rozhodování a jednání. Jedním ze slavných experimentů v historii psychologie je bezesporu Milgramův experiment zkoumající ochotu podřídit se autoritě. Účastníci tohoto experimentu byli na podnět experimentátora udílejícího jim pokyny ochotni dávat elektrické šoky dalšímu účastníkovi experimentu (který ale pouze hrál, že šoky dostává) – a to mnohdy i v případě, že elektrický šok měl být zdraví ohrožující, nebo dokonce smrtelný.
 
 &lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#stan01&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-milgram-01.png&quot; alt=&quot;Atkinson, Rita. Psychologie. Druhé, aktualizované vydání. Praha: Portál, 2003, s. 651. ISBN 80-7178-640-3. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:f0174720-4c32-11e3-ad8c-005056827e52.&quot;&gt;&lt;/a&gt;\
@@ -729,7 +735,7 @@ Milgram pak provedl i variace svého experimentu, aby mohl určit, jak bude mír
 Naschvál si zkuste vybavit, jak to vypadá v MHD, když nastoupí revizor nebo revizorka. Kolik lidí si připraví jízdenku nebo průkazku ještě před tím, než se k nim revizor vůbec dostane a ukáže jim svůj odznak nebo průkaz? Co myslíte, dal by Adam svůj PIN prodavačce, kdyby mu někdo v uniformě řekl, ať to udělá?
 
 [[Teď se podíváme, co se vlastně stalo na náměstí Svobody.-&gt;d-cpr]]
-
+\
 &lt;div id=&quot;stan01&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -775,8 +781,9 @@ Naschvál si zkuste vybavit, jak to vypadá v MHD, když nastoupí revizor nebo 
         &lt;/video&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Slater, M. et al. Movie S3a. In: Wikimedia Commons &#96;[&#96;online&#96;]&#96;, 20. 12. 2006 &#96;[&#96;cit. 12. 10. 2020&#96;]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://upload.wikimedia.org/wikipedia/commons/4/45/A-Virtual-Reprise-of-the-Stanley-Milgram-Obedience-Experiments-pone.0000039.s013.ogv&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://upload.wikimedia.org/wikipedia/commons/4/45/A-Virtual-Reprise-of-the-Stanley-Milgram-Obedience-Experiments-pone.0000039.s013.ogv&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="dip" tags="freedom-square" position="3802,427.99999999999983" size="100,100">(set: $cprhelp to false)(set: $late to true)
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="59" name="dip" tags="freedom-square" position="3802,427" size="100,100">(set: $cprhelp to false)(set: $late to true)\
 &lt;a href=&quot;#thief&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frei-05.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
+
 Ale to byla chyba. Velmi blízko za Adamem totiž stojí nějaký muž s burgerem v ruce a Adam do něho vrazí.
 
 „Dávej bacha, šampóne!“
@@ -784,18 +791,16 @@ Ale to byla chyba. Velmi blízko za Adamem totiž stojí nějaký muž s burgere
 Adam se ale v tom šoku zmůže jen na překvapené zvednutí obočí. Muž se na něho na něj naštvaně dívá, něco si pro sebe polohlasem zamumlá a odchází směrem k hlavnímu nádraží.
 
 [[Adam se otočí a pokračuje dál.-&gt;flek]]
-
+\
 &lt;div id=&quot;thief&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-frei-05.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Šibíčková, Jitka. Náměstí Svobody - pohled z budovy NPÚ směrem k Rašínově ulici &#96;[fotografie]&#96;. In: &lt;i&gt;Internetová encyklopedie dějin Brna&lt;/i&gt; &#96;[online]&#96;. 2006, &#96;[cit. 2020-08-31]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0114/img5695.jpg&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;https://encyklopedie.brna.cz/data/http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/0114/img5695.jpg&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="beg" tags="" position="2068.6666666666665,999.6666666666666" size="100,100">(set: $beg to true)(set: $beggar to (random: 1,4))
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="beg" tags="masaryk deodorant-shop" position="2068,999" size="100,100">(set: $beg to true)(set: $beggar to (random: 1,4))\
 Adam udělá dva kroky směrem od pokladny, aby viděl na všechny ostatní zákazníky stojící ve frontě a spustí:
-
 &lt;blockquote&gt;„Dobrý den, já se omlouvám a je mi to moc trapné, ale jdu na důležitý pohovor a potřebuju si koupit tenhle deodorant, abych na pohovoru nepáchnul. Chybí mi ale devatenáct korun, tak jsem se chtěl zeptat, jestli byste nebyli tak hodní a nedali mi nějaké drobné. Moc vám děkuju.“&lt;/blockquote&gt;\
-
 Adam svým výkonem není moc nadšený a lituje, že si vloni na podzim nezapsal tu dílnu improvizace na fildě.
 
 |laugh)[Ostatní zákazníci se na Adama chvíli tiše dívají, ale pak se najednou všichni začnou smát. Po chvilce se k nim přidá i prodavačka, a dokonce i sekuriťák se začne trochu uchechtávat. Za necelou minutu je po všem a zase o něco víc zpocený Adam přemýšlí, jak dál.]
@@ -806,15 +811,15 @@ Adam svým výkonem není moc nadšený a lituje, že si vloni na podzim nezapsa
 [[Vrátit deodorant a odejít z obchodu.-&gt;wompwomp]]
 [[Zaplatit kartou a říct prodavačce PIN.-&gt;conform]]
 |nick&gt;[[[Zkusit deodorant ukrást.-&gt;nick]]]
-
+\\
 (if: $nick is true)[(replace: ?nick)[ ]]
-(event: when time &gt; 666s)[(go-to: &quot;kobayashi-maru&quot;)]
+(event: when time &gt; 666s)[(go-to: &quot;kobayashi-maru&quot;)]\
 {
   (if: $beggar is 1)[(show: ?laugh)]
   (if: $beggar is 2)[(show: ?nope)]
   (if: $beggar is 3)[(show: ?silence)]
   (if: $beggar is 4)[(show: ?nasty)]
-}</tw-passagedata><tw-passagedata pid="61" name="nick" tags="" position="2065,1266.6666666666667" size="100,100">(set: $nick to true)
+}</tw-passagedata><tw-passagedata pid="61" name="nick" tags="masaryk deodorant-shop" position="2065,1266" size="100,100">(set: $nick to true)\
 |text&gt;[Adama na zlomek vteřiny napadne, že by se mohl pokusit deodorant ukrást. Ale jak by to měl udělat a nevzbudit pozornost? Už stojí ve frontě. I kdyby se mu podařilo nějakým zázrakem strčit bez povšimnutí deodorant do brašny, proč vlastně stojí ve frontě s prázdným košíkem? Aby si koupil žvýkačky?]
 
 Adam tedy myšlenku na krádež rychle pustí z hlavy a rychle promýšlí další možnosti.
@@ -822,12 +827,12 @@ Adam tedy myšlenku na krádež rychle pustí z hlavy a rychle promýšlí dalš
 [[Vrátit deodorant a odejít z obchodu.-&gt;wompwomp]]
 [[Zaplatit kartou a říct prodavačce PIN.-&gt;conform]]
 |beg&gt;[[[Zkusit poprosit ostatní zákazníky, jestli mu nedají potřebné peníze.-&gt;beg]]]
-
-(if: $beg is true)[(append: ?text)[ A hlavně teď – chvilku po tom, co ze sebe udělal před celým obchodem blbce. Navíc z něj sekuriťák už pěkně dlouho nespustil oči.](replace: ?beg)[ ]]
-(event: when time &gt; 666s)[(go-to: &quot;kobayashi-maru&quot;)]</tw-passagedata><tw-passagedata pid="62" name="wompwomp" tags="" position="2233.333333333333,1185" size="100,100">(set: $deo to false)
+\\
+(if: $beg is true)[(append: ?text)[ A hlavně teď – chvilku po tom, co ze sebe udělal před celým obchodem blbce. Navíc z něj sekuriťák už pěkně dlouho nespustil oči.](replace: ?beg)[ ]]\
+(event: when time &gt; 666s)[(go-to: &quot;kobayashi-maru&quot;)]</tw-passagedata><tw-passagedata pid="62" name="wompwomp" tags="deodorant-shop masaryk" position="2233,1185" size="100,100">(set: $deo to false)\
 Adam se nejistě otočí a s vyčítavými pohledy ostatních zákazníků a „drsně“ pózujícího sekuriťáka v zádech jde vrátit deodorant zpět do regálu.
 
-[[Pokračovat zpět na náměstí Svobody.-&gt;tgm2]]</tw-passagedata><tw-passagedata pid="63" name="kobayashi-maru" tags="" position="2290.6666666666665,1370" size="100,100">(set: $deo to true)
+[[Pokračovat zpět na náměstí Svobody.-&gt;tgm2]]</tw-passagedata><tw-passagedata pid="63" name="kobayashi-maru" tags="masaryk deodorant-shop kobayashi-maru-easter-egg" position="2290,1370" size="100,100">(set: $deo to true)\
 Zatímco Adam stojí u pokladny a přemýšlí, ostatní zákazníci i prodavačka začnou být nejdříve netrpěliví, po chvíli se začnou ptát, co se děje. Adam stále stojí a nic nedělá. Zákazníci se ho pokouší různě popohnat a následně i eskalují svoje průpovídky v nadávky. Brzy se přidá i sekuriťák, který zatím stál opodál a vypadal drsně, jako vanilkový puding. Ten začne Adamovi vyhrožovat, a nakonec vytáhne i teleskopický obušek. Adam se mu s ledovým klidem podívá do očí a řekne mu: „První zákon robotiky ti to zakazuje.“
 
 Sekuriťák i všichni ostatní v obchodě se najednou zaseknou a po několika málo okamžicích se začnou zmítat v podivném záchvatu a z hlav jim začnou sršet jiskry. Nakonec se sesunou k zemi a jejich obličeje se oddělí od jejich hlav a odhalí jiskrami sršící robotické endoskeletony.
@@ -836,7 +841,7 @@ Adam se usměje a zamíří směrem k východu, když tu se otevřou dveře ze s
 
 Adam jen pokrčí rameny, odchází a doufá, že už nikde dnes nebude muset čekat jak tvrdý y.
 
-[[Pokračovat na náměstí Svobody.-&gt;tgm2]]</tw-passagedata><tw-passagedata pid="64" name="d-pens" tags="debriefing" position="7790.666666666667,1177.6666666666665" size="100,100">V roce 1976 byl proveden experiment, během kterého byl obyvatelům amerického Lancasteru v Pensylvánii doručen dárkový balíček obsahující psací potřeby. Následně byly do těchto domácností v různých rozestupech uskutečněny telefonáty, v nichž se experimentátoři vydávali za někoho, kdo si spletl číslo a požádal obyvatele, aby následně někam zavolali. Zatímco v kontrolní skupině (žádný dárek) vyhovělo jen 12 % účastníků, v případě experimentální skupiny pomohlo v průměru 83 % účastníků experimentu.
+[[Pokračovat na náměstí Svobody.-&gt;tgm2]]</tw-passagedata><tw-passagedata pid="64" name="d-pens" tags="debriefing" position="7790,1177" size="100,100">V roce 1976 byl proveden experiment, během kterého byl obyvatelům amerického Lancasteru v Pensylvánii doručen dárkový balíček obsahující psací potřeby. Následně byly do těchto domácností v různých rozestupech uskutečněny telefonáty, v nichž se experimentátoři vydávali za někoho, kdo si spletl číslo a požádal obyvatele, aby následně někam zavolali. Zatímco v kontrolní skupině (žádný dárek) vyhovělo jen 12 % účastníků, v případě experimentální skupiny pomohlo v průměru 83 % účastníků experimentu.
 
 &lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#hewstone&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-gift-01.png&quot; alt=&quot;Hewstone, M., Stroebe, W. Sociální psychologie. Praha: Portál, 2006. ISBN 80-7367-092-5. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51.&quot;&gt;&lt;/a&gt;\
@@ -844,14 +849,14 @@ Adam jen pokrčí rameny, odchází a doufá, že už nikde dnes nebude muset č
 &lt;/div&gt;\
 
 [[A ještě jedna drobnost.-&gt;d-nahodna-volba]]
-
+\
 &lt;div id=&quot;hewstone&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-gift-01.png&quot; alt=&quot;Hewstone, M., Stroebe, W. Sociální psychologie. Praha: Portál, 2006. ISBN 80-7367-092-5. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Hewstone, M., Stroebe, W. &lt;i&gt;Sociální psychologie&lt;/i&gt;. Praha: Portál, 2006. ISBN 80-7367-092-5. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="d-bystander" tags="debriefing" position="8792.666666666666,990" size="100,100">*Efektem přihlížejícího* se nazývá jev spočívající v klesající pravděpodobnosti poskytnutí pomoci jednou osobou v přítomnosti jiných lidí. Je ovlivněn dvěma procesy. Prvním je *pluralistická ignorance*. Pokud není zcela na první pohled jasné, co se děje, mají lidé tendenci chovat se neutrálně – nereagovat okamžitě nijak extrémně. Adam nemohl na první pohled poznat, že kolabující muž opravdu kolabuje, resp. že vyžaduje nějakou jeho pomoc. Mohl být „jen“ opilý. Pokud situaci sleduje víc lidí, kteří se budou všichni tvářit neutrálně, pak mohou všichni na základě pozorování ostatních dospět k závěru, že situace není vážná, protože ani ostatní se nechovají tak, jak by se chovali, kdyby vážná byla.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="65" name="d-bystander" tags="debriefing" position="8792,990" size="100,100">*Efektem přihlížejícího* se nazývá jev spočívající v klesající pravděpodobnosti poskytnutí pomoci jednou osobou v přítomnosti jiných lidí. Je ovlivněn dvěma procesy. Prvním je *pluralistická ignorance*. Pokud není zcela na první pohled jasné, co se děje, mají lidé tendenci chovat se neutrálně – nereagovat okamžitě nijak extrémně. Adam nemohl na první pohled poznat, že kolabující muž opravdu kolabuje, resp. že vyžaduje nějakou jeho pomoc. Mohl být „jen“ opilý. Pokud situaci sleduje víc lidí, kteří se budou všichni tvářit neutrálně, pak mohou všichni na základě pozorování ostatních dospět k závěru, že situace není vážná, protože ani ostatní se nechovají tak, jak by se chovali, kdyby vážná byla.
 
 &lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#byst&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-modern-04.png&quot; alt=&quot;Hill, G. Moderní psychologie. Praha: Portál, 2004, s. 86. ISBN 80-7178-641-1. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52.&quot;&gt;&lt;/a&gt;\
@@ -859,17 +864,18 @@ Adam jen pokrčí rameny, odchází a doufá, že už nikde dnes nebude muset č
 &lt;/div&gt;\
 
 [[Pojďme se podívat na druhý proces.-&gt;d-diffusion]]
-
+\
 &lt;div id=&quot;byst&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-modern-04.png&quot; alt=&quot;Hill, G. Moderní psychologie. Praha: Portál, 2004, s. 86. ISBN 80-7178-641-1. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Hill, G. &lt;i&gt;Moderní psychologie&lt;/i&gt;. Praha: Portál, 2004, s. 86. ISBN 80-7178-641-1. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="d-diffusion" tags="debriefing" position="8959.333333333334,991.3333333333333" size="100,100">&lt;div class=&quot;imbox&quot;&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="66" name="d-diffusion" tags="debriefing" position="8959,991" size="100,100">&lt;div class=&quot;imbox&quot;&gt;\
     &lt;a href=&quot;#diffusion&quot;&gt;&lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-diffusion-01.png&quot; alt=&quot;Hewstone, M., Stroebe, W. Sociální psychologie. Praha: Portál, 2006, s. 349. ISBN 80-7367-092-5. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51.&quot;&gt;&lt;/a&gt;\
     &lt;div class=&quot;citace&quot;&gt;(Hewstone, M., Stroebe, W. &lt;i&gt;Sociální psychologie&lt;/i&gt;. Praha: Portál, 2006, s. 349. ISBN 80-7367-092-5. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:60a81410-ed73-11e8-bc37-005056827e51&lt;/a&gt;.)&lt;/div&gt;\
 &lt;/div&gt;\
+
 Druhým procesem je *rozložení odpovědnosti* nebo také *difuze morální zodpovědnosti*. Ta spočívá v tom, že lidé mají tendenci nepřebírat odpovědnost, pokud jim není určena, nebo pokud je možné, že ji převezme někdo jiný. Je to jako když učitel vejde do třídy a řekne, že by měla být smazaná tabule. Pokud není určený nikdo konkrétní, kdo ji má smazat, kdo se toho chopí? A jak dlouho bude trvat, než někdo vstane a smaže ji?
 
 &lt;div class=&quot;imbox&quot;&gt;\
@@ -885,7 +891,7 @@ S problematikou difuze odpovědnosti se pojí i tzv. *sociální zahálka/lenoš
 &lt;/div&gt;\
 
 [[Ještě je zapotřebí zmínit několik proměnných.-&gt;d-time]]
-
+\
 &lt;div id=&quot;diffusion&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -906,7 +912,7 @@ S problematikou difuze odpovědnosti se pojí i tzv. *sociální zahálka/lenoš
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-loafing-01.png&quot; alt=&quot;Hill, G. Moderní psychologie. Praha: Portál, 2004, s. 62. ISBN 80-7178-641-1. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Hill, G. &lt;i&gt;Moderní psychologie&lt;/i&gt;. Praha: Portál, 2004, s. 62. ISBN 80-7178-641-1. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="d-time" tags="debriefing" position="9115,988.6666666666665" size="100,100">Ještě je zapotřebí zmínit minimálně dvě proměnné, které mohou v rozhodování v Adamově situaci hrát roli.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="67" name="d-time" tags="debriefing" position="9115,988" size="100,100">Ještě je zapotřebí zmínit minimálně dvě proměnné, které mohou v rozhodování v Adamově situaci hrát roli.
 
 Tou první je čas. V našem příběhu sice Adam spěchá na pohovor, ale v tomto bodu příběhu měl ještě poměrně dobrou časovou zásobu. Nicméně v reálné situaci by silně záviselo na tom, jak by reálný Adam svoji situaci vnímal. Bylo by pro něj dostatečné přijít na pohovor akorát, nebo by to už považoval za zpoždění a chtěl by být na místě deset minut předem, aby si mohl vydechnout a uklidnit se?
 
@@ -918,18 +924,18 @@ Další proměnnou je cena pomoci. S tou jsme již operovali ve scénáři se st
 &lt;/div&gt;\
 
 [[Pokračovat dál.-&gt;d-cpr-fin]]
-
+\
 &lt;div id=&quot;cost&quot; class=&quot;modalDialog&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;inlimg&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/PSY-modern-02.png&quot; alt=&quot;Hill, G. Moderní psychologie. Praha: Portál, 2004, s. 85. ISBN 80-7178-641-1. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52.&quot;&gt;&lt;/a&gt;\
         &lt;div class=&quot;citace&quot;&gt;(Hill, G. &lt;i&gt;Moderní psychologie&lt;/i&gt;. Praha: Portál, 2004, s. 85. ISBN 80-7178-641-1. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:2089d8a0-8a14-11e2-8593-005056827e52&lt;/a&gt;.)&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="d-cpr-fin" tags="debriefing" position="9289.666666666666,989.6666666666665" size="100,100">Na závěr je ale nutné říct, že bez ohledu na to, co nám říkají výzkumy o tom, jak se lidé chovají, nejedná se o stav, který bychom si přáli nebo který by měl být. Přitom to můžeme všichni změnit – stačí nebýt pasivní a když se něco stane, aktivně se snažit pomoct. Neznamená to vběhnout do hořícího domu, ale zavolat hasiče; neznamená to hned přiskakovat ke každému člověku, který třeba leží na lavičce, ale snažit se zvážit situaci, zda v ní není zapotřebí pomoc. A následně zjistit, zda je pomoc zařízena či ji případně sami zařídit.
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="68" name="d-cpr-fin" tags="debriefing" position="9289,989" size="100,100">Na závěr je ale nutné říct, že bez ohledu na to, co nám říkají výzkumy o tom, jak se lidé chovají, nejedná se o stav, který bychom si přáli nebo který by měl být. Přitom to můžeme všichni změnit – stačí nebýt pasivní a když se něco stane, aktivně se snažit pomoct. Neznamená to vběhnout do hořícího domu, ale zavolat hasiče; neznamená to hned přiskakovat ke každému člověku, který třeba leží na lavičce, ale snažit se zvážit situaci, zda v ní není zapotřebí pomoc. A následně zjistit, zda je pomoc zařízena či ji případně sami zařídit.
 
 K tomu jsou zde navíc dva důvody, proč bychom to měli udělat. V první řadě se něco podobného může stát nám samotným. Můžeme mít nehodu a jistě nechceme, aby všichni kolem nás nevšímavě projeli a nikdo nepomohl. V druhé řadě je to také naše zákonná povinnost. Máme povinnost pomoci druhým, pokud jsou ohroženi na zdraví, pokud tato pomoc neohrozí nás nebo další osoby.
 
-[[Pokračovat dál.-&gt;d-kravata]]</tw-passagedata><tw-passagedata pid="69" name="d-marsh-l" tags="debriefing" position="9692.333333333334,1221.3333333333333" size="100,100">Scénář, kterému jste byli vystaveni při čekání na Adama, v sobě kombinuje prvky minimálně dvou experimentů.
+[[Pokračovat dál.-&gt;d-kravata]]</tw-passagedata><tw-passagedata pid="69" name="d-marsh-l" tags="debriefing" position="9692,1221" size="100,100">Scénář, kterému jste byli vystaveni při čekání na Adama, v sobě kombinuje prvky minimálně dvou experimentů.
 
 Prvním z nich je známý stanfordský marshmallow experiment. V tomto experimentu byly zkoumány malé děti a jejich schopnost oddálit potěšení. Děti byly usazeny do místnosti, kde měly na talířku nějakou sladkost (marshmallow, ale někdy to byly sušenky, nebo jiné sladkosti). Experimentátor jim řekl, že pokud chtějí, mohou si sladkost vzít a sníst hned. Pokud ale počkají do jeho příchodu, dostanou dvojnásobek. Účastníci experimentu byli po letech zkoumáni a bylo zjištěno, že u děti, které vydržely čekat na návrat experimentátora, byla významně vyšší úspěšnost ve škole i v životě obecně.
 
