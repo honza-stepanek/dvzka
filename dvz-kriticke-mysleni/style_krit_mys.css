@@ -390,16 +390,17 @@ hr {
 }
 
 .logolink {
+    /* EU */
     display: block;
-    border-top: #0000cd solid;
-    margin: 0 auto;
-    margin-top: 150px;
     width: 85%;
+    margin: 0 auto;
+    margin-top: 5em;
 }
-
 .logotext {
+    /* EU */
+    font-size: small;
+    line-height: 1.4em;
     text-align: center;
-    font-size: smaller;
 }
 
 

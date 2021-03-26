@@ -364,8 +364,14 @@ a:visited:hover {
 
 .logotext {
     /* eu disclaimer */
-    font-size: 75%;
+    font-size: small;
     line-height: 1.4em;
-    /* text-align: center; */
+    text-align: center;
+}
+.logolink {
+    /* eu disclaimer */
+    display: block;
+    margin: 5em auto 0;
+
 }
 
