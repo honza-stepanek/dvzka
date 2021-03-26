@@ -54,7 +54,7 @@ tw-story[tags ~= "debriefing"] {
 
 tw-passage {
     padding: 40px;
-    max-width: 1000px;
+    max-width: 900px;
     width: 100%;
     align-self: center;
 
@@ -94,13 +94,12 @@ tw-sidebar, tw-sidebar *[alt] {
         padding: 5%;
     }
     tw-passage {
-        margin-top: 30px;
         /* leave space for ui */
         /* padding: 2em; */
         font-size: 85%;
         line-height: normal;
         padding: 30px;
-        margin-top: 50px;
+        margin-top: 30px;
         margin-bottom: 70px;
     }
     /* tw-passage[tags="title-passage"] {
@@ -306,8 +305,17 @@ a:visited:hover {
     display: block;
     margin: 0 auto;
 }
+
+/* modal initializer images */
+.cimage {
+    max-width: 100%;
+    width: 570px;
+    display: block;
+    margin: 0 auto;
+}
+
 .imbox img,
-.cimage { /* cimage too? TODO */
+.cimage {
     box-shadow: -1px 3px 6px 1px rgba(0, 0, 0, 0.3);
 }
 .imbox .citace {
@@ -332,15 +340,10 @@ a:visited:hover {
 .citace {
     margin: 1em 0px 0px auto;
     text-align: right;
-    font-size: 70%;
+    font-size: 65%;
     line-height: 1.4em;
     max-width: 30em;
-}
-
-/* modal initializer images */
-.cimage {
-    width: 100%;
-    display: block;
+    word-wrap: break-word;
 }
 
 .tube {
