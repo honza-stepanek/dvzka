@@ -94,17 +94,12 @@ tw-sidebar, tw-sidebar *[alt] {
         padding: 5%;
     }
     tw-passage {
-        /* leave space for ui */
-        /* padding: 2em; */
         font-size: 85%;
         line-height: normal;
-        padding: 30px;
+        padding: 23px;
         margin-top: 30px;
         margin-bottom: 70px;
     }
-    /* tw-passage[tags="title-passage"] {
-        padding: 0.7em;
-    } */
 }
 
 
@@ -121,11 +116,10 @@ tw-link.visited,
     min-width: 350px;
     max-width: 100%;
     border: #0000dc 0.18em solid;
-    /* background-color: #e6f1ff; */
     color: #0000dc;
 
     transition: 400ms;
-    transition-property: all;
+    transition-property: color, background-color, transform;
 }
 @media (max-width: 500px) {
     tw-link,
@@ -135,19 +129,36 @@ tw-link.visited,
         min-width: 100%;
     }
 }
-/* hover link button */
+/* hover/focus link button */
 tw-link:hover,
 tw-link:focus,
 tw-link.visited:hover,
 tw-link.visited:focus,
 .enchantment-link:hover,
-.enchantment-link.visited:hover,
 .enchantment-link:focus,
+.enchantment-link.visited:hover,
 .enchantment-link.visited:focus {
-    transform: translateX(1em);
+    transform: translateX(20px);
 
     color: #fff;
     background-color: #0000dc;
+}
+tw-link:hover::before,
+tw-link.visited:hover::before,
+.enchantment-link:hover::before,
+.enchantment-link.visited:hover::before {
+    /* fixing the issue of the button "dehovering" itself
+       by moving away from the cursor when it's
+       on the button's left side */
+    content: "";
+    height: 110%;
+    width: 22px;
+
+    position: absolute;
+    top: -5%;
+    left: -24px;
+
+    background-color: #0000;
 }
 /* activated link button */
 tw-link:active,
@@ -163,8 +174,8 @@ tw-link.visited:active,
         modals
    ================ */
 
+/* dialog container */
 .modalDialog {
-    /* dialog container */
     position: fixed;
     top: 0;
     left: 0;
@@ -188,8 +199,8 @@ tw-link.visited:active,
     pointer-events: auto;
 }
 
+/* modal content */
 .modalDialog > div {
-    /* modal content */
     max-width: 45em;
     flex-grow: 0;
     margin: auto 0px;
@@ -375,3 +386,54 @@ a:visited:hover {
 
 }
 
+
+
+/* ========================
+   credits page adjustments 
+   ======================== */
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+    padding-top: 0;
+    margin-top: -10px;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+img#muni-logo,
+img#muni-logo-econ {
+    margin-left: -13px;
+}
+img#mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
