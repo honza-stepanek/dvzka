@@ -403,6 +403,18 @@ hr {
     text-align: center;
 }
 
+/* pdf viewer object in a modal */
+.pdf-viewer {
+    width: 100%;
+    height: 80vh;
+    border: solid 2px black;
+    border-radius: 7px;
+    box-shadow: 0 0 5px 5px black;
+    top: 200vh;
+}
+.modalDialog:target .pdf-viewer {
+    top: unset;
+}
 
 /* ================
     <a> hyperlinks
