@@ -10,56 +10,10 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Akce K.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Akce K" startnode="1" creator="Twine" creator-version="2.3.13" ifid="624DCBCA-DB7D-40D7-856C-3CD2AFA5845D" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-.modalDialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 99999;
-    opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
-.modalDialog:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-.modalDialog>div {
-    width: 90%;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
-}
-.close {
-    background: #606061;
-    color: #FFFFFF;
-    line-height: 25px;
-    position: absolute;
-    right: -12px;
-    text-align: center;
-    top: -10px;
-    width: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
-}
-.close:hover {
-    background: #00d9ff;
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="init" tags="" position="750,198" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/arts-lg-text-cze.png&quot; style=&quot;height: 100px;&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;
+
+</style>
+<link rel="stylesheet" href="style-akce-k.css">
+<script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="intro" position="738,12" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/arts-lg-text-cze.png&quot; style=&quot;height: 100px;&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;
 
 &lt;span style=&quot;font-size: 200%&quot;&gt;Duben 1950&lt;/span&gt;
 
@@ -70,7 +24,7 @@ Vítej! Je duben 1950 a Tebe čeká nejtěžší noc v životě. Nejdřív se al
 
 ---
 
-&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/Logolink_OP_VVV_hor_barva_cz.jpg&quot; style=&quot;width:85%&quot; alt=&quot;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&quot;&gt;&lt;br&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Začátek akce - novic" tags="" position="601,650" size="100,100">(set: $inv to (a: &quot;růženec&quot;))
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/Logolink_OP_VVV_hor_barva_cz.jpg&quot; style=&quot;width:85%&quot; alt=&quot;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&quot;&gt;&lt;br&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/p&gt;</tw-passagedata><tw-passagedata pid="2" name="Začátek akce - novic" tags="monk cell" position="604,640" size="100,100">(set: $inv to (a: &quot;růženec&quot;))
 13. duben 1950, 23:59
 
 Je skoro půlnoc. Ty i bratr Martin spíte. Máš pocit, že slyšíš vzdálené bušení na klášterní vrata, ale to bude asi jen sen. Poté se ale ozve hlasitá rána. Cítíš, že i bratr Martin je vzhůru, ale ani jeden z vás si netroufá vylézt z postele.
@@ -82,7 +36,7 @@ Po chvíli se se na chodbě ozvou hlasy. Najednou se prudce otevřou dveře a ce
 
 -----
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 1]]</tw-passagedata><tw-passagedata pid="3" name="Konfrontace" tags="" position="526,774" size="100,100">14. duben 1950, 00:01
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 1]]</tw-passagedata><tw-passagedata pid="3" name="Konfrontace" tags="cell monk" position="532,780" size="100,100">14. duben 1950, 00:01
 
 Otevřeš oči a ve dveřích cely spatříš dva muže. Nemají na sobě uniformy, ale oba jsou ozbrojeni. Mladší z mužů zůstane stát ve dveřích, zatímto starší vejde dovnitř a velkou zbraní, která vypadá jako samopal, začne nevybíravě dloubat spícího bratra Martina do žeber. //„Vstávat, hovada! StB!“//
 
@@ -100,7 +54,7 @@ Vklouzneš do sandálů a přes noční hábit si rychle přetáhneš denní kut
 [[Ponechat si lehký oděv.]]
 
 ----
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="4" name="Spánek" tags="" position="677,772" size="100,100">14. duben 1950, 00:01
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="4" name="Spánek" tags="cell monk" position="683,778" size="100,100">14. duben 1950, 00:01
 
 Pevně zavřeš oči a doufáš, že se ti to jen zdá. Slyšíš, že někdo vešel do cely, následně se ozve hrubý rozkaz: //„Vstávat, hovada! StB!“//
 
@@ -118,7 +72,7 @@ Vklouzneš do sandálů a přes noční hábit si rychle přetáhneš denní kut
 ----
 
 
-</tw-passagedata><tw-passagedata pid="5" name="Obléknout se tepleji." tags="" position="527,898" size="100,100">(set: $inv to $inv + (a:  &quot;svetr&quot;))(set: $dop to false)
+</tw-passagedata><tw-passagedata pid="5" name="Obléknout se tepleji." tags="cell monk" position="527,898" size="100,100">(set: $inv to $inv + (a:  &quot;svetr&quot;))(set: $dop to false)
 
 14. duben 1950, 00:05
 
@@ -135,7 +89,7 @@ Snažíš se protestovat: //„Ale obě jsou nezbytné pro...“ //
 //„Ticho!“//, zařve estébák a výhrůžně se napřáhne samopalem. //„Řek jsem jenom jednu. A dělej!“// 
 
 [[Vzít breviář.]]
-[[Vzít Bibli.]]</tw-passagedata><tw-passagedata pid="6" name="Ponechat si lehký oděv." tags="" position="678,897" size="100,100">(set: $dop to true)
+[[Vzít Bibli.]]</tw-passagedata><tw-passagedata pid="6" name="Ponechat si lehký oděv." tags="monk cell" position="678,897" size="100,100">(set: $dop to true)
 14. duben 1950, 00:05
 
 Jeho slova tě zarazí, ale nakonec se rozhodneš zůstat oblečený tak, jak jsi. Koneckonců, noc je teplá a... A vlastně pořád nevěříš, že vás z kláštera chtějí opravdu odvézt pryč.
@@ -151,7 +105,7 @@ Snažíš se protestovat: //„Ale obě jsou nezbytné pro...“ //
 //„Ticho!“//, zařve estébák a výhrůžně se napřáhne samopalem. //„Řek jsem jenom jednu. A dělej!“//  
 
 [[Vzít breviář.]]
-[[Vzít Bibli.]]</tw-passagedata><tw-passagedata pid="7" name="Vzít breviář." tags="" position="525,1023" size="100,100">(set: $inv to $inv + (a:  &quot;breviář&quot;))
+[[Vzít Bibli.]]</tw-passagedata><tw-passagedata pid="7" name="Vzít breviář." tags="cell monk" position="525,1023" size="100,100">(set: $inv to $inv + (a:  &quot;breviář&quot;))
 
 14. duben 1950, 00:08
 
@@ -161,7 +115,7 @@ Nakonec se rozhodneš pro breviář a společně s ním přihodíš do pytlíku 
 
 //„Ale to je...“// snažíš se bránit. Muž ti vytrhne fotku z rukou a roztrhne ji napůl. Než stačíš říct cokoliv dalšího, tebe i bratra Martina už oba estébáci nevybíravě vyhánějí ven z cely a samopaly vás postrkují směrem k refektáři.
 
-[[Vejít do refektáře.]]</tw-passagedata><tw-passagedata pid="8" name="Vzít Bibli." tags="" position="677,1021" size="100,100">(set: $inv to $inv + (a:  &quot;Bible&quot;))
+[[Vejít do refektáře.]]</tw-passagedata><tw-passagedata pid="8" name="Vzít Bibli." tags="cell monk" position="677,1021" size="100,100">(set: $inv to $inv + (a:  &quot;Bible&quot;))
 14. duben 1950, 00:08
 
 Nakonec se rozhodneš pro Bibli a společně s ní přihodíš do pytlíku i fotku své rodiny. 
@@ -170,7 +124,7 @@ Nakonec se rozhodneš pro Bibli a společně s ní přihodíš do pytlíku i fot
 
 //„Ale to je...“// snažíš se bránit. Muž ti vytrhne fotku z rukou a roztrhne ji napůl. Než stačíš říct cokoliv dalšího, tebe i bratra Martina už oba estébáci nevybíravě vyhánějí ven z cely a samopaly vás postrkují směrem k refektáři.
 
-[[Vejít do refektáře.]]</tw-passagedata><tw-passagedata pid="9" name="růženec" tags="" position="101,399" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="Bible" tags="" position="103,523" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="breviář" tags="" position="102,652" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="svetr" tags="" position="103,775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Vejít do refektáře." tags="" position="602,1148" size="100,100">14. duben 1950, 00:10
+[[Vejít do refektáře.]]</tw-passagedata><tw-passagedata pid="9" name="růženec" tags="" position="101,399" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="10" name="Bible" tags="" position="103,523" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="11" name="breviář" tags="" position="102,652" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="12" name="svetr" tags="" position="103,775" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="13" name="Vejít do refektáře." tags="refectory monk" position="602,1148" size="100,100">14. duben 1950, 00:10
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_chodba.jpg&quot;&gt;
 
@@ -183,7 +137,7 @@ V refektáři se už mezitím shromáždil zbytek konventu. Oproti očekávání
 Než mu ale stačíš odpovědět něčím chlácholivým, ozve se výkřik: //„Buďte zticha a seřaďte se!“//
 
 [[Seřadit se.]]
-[[Protestovat.]]</tw-passagedata><tw-passagedata pid="14" name="Seřadit se." tags="" position="525,1272" size="100,100">14. duben 1950, 00:15
+[[Protestovat.]]</tw-passagedata><tw-passagedata pid="14" name="Seřadit se." tags="refectory monk" position="525,1272" size="100,100">14. duben 1950, 00:15
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;
 
@@ -199,10 +153,10 @@ Ani tohle oznámení nevyvolá mezi bratry žádnou významnější reakci. Rozh
 
 Ozbrojení muži se opět pustí do práce a za křiku a postrkování samopaly vás rozdělí do malých skupinek.
 
-[[Podrobit se prohlídce.]]</tw-passagedata><tw-passagedata pid="15" name="Začátek akce - příslušník" tags="" position="900,500" size="100,100">(set: $inv to (a: &quot;zbraň&quot;))(set: $goleft to true)(set: $gostraight to true)
+[[Podrobit se prohlídce.]]</tw-passagedata><tw-passagedata pid="15" name="Začátek akce - příslušník" tags="stb door" position="900,500" size="100,100">(set: $inv to (a: &quot;zbraň&quot;))(set: $goleft to true)(set: $gostraight to true)\
 13. duben 1950, 23:45
 
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_vchod.jpg&quot;&gt;
+&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_vchod.jpg&quot;&gt;\
 
 Je skoro půlnoc a ty ses podle rozkazu dostavil společně s dalšími příslušníky k branám kláštera. Vaším úkolem je shromáždit řeholníky a odeslat je připravenými autobusy na dvě různá místa určení - řadové mnichy a novice do centralizačního kláštera v Broumově, představené do internačního kláštera v Želivi.
 
@@ -211,7 +165,7 @@ Vše je připraveno. Vedoucí akce, kapitán Pilát, zahájí operaci tím, že 
 Nikdo ale neotevírá.
 
 [[Zkoušet to dál.-&gt;Zaklepat]]
-[[Vyrazit dveře.-&gt;Vyrazit dveře]]</tw-passagedata><tw-passagedata pid="16" name="Zaklepat" tags="" position="824,648" size="100,100">13. duben 1950, 23:50 
+[[Vyrazit dveře.-&gt;Vyrazit dveře]]</tw-passagedata><tw-passagedata pid="16" name="Zaklepat" tags="door stb" position="824,648" size="100,100">13. duben 1950, 23:50 
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_portal.jpg&quot;&gt;
 
@@ -225,7 +179,7 @@ Nic.
 
 //„Vyražte je,“// rozkáže Pilát.
 
-[[Vyrazit dveře.-&gt;Vyrazit dveře]]</tw-passagedata><tw-passagedata pid="17" name="Vyrazit dveře" tags="" position="975,648" size="100,100">13. duben 1950, 23:50
+[[Vyrazit dveře.-&gt;Vyrazit dveře]]</tw-passagedata><tw-passagedata pid="17" name="Vyrazit dveře" tags="stb entry" position="975,648" size="100,100">13. duben 1950, 23:50
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_chodba.jpg&quot;&gt;
 
@@ -241,7 +195,7 @@ Společně se strážmistrem Adamem máte za úkol postarat se o mnichy v první
 
 [[Vpravo!-&gt;vpravo]]
 [[Vlevo!-&gt;vlevo]]
-[[Rovně!-&gt;rovne]]</tw-passagedata><tw-passagedata pid="18" name="zbraň" tags="" position="1401,399" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="19" name="Následovat Adama do dormitáře." tags="" position="901,773" size="100,100">13. duben 1950, 23:59
+[[Rovně!-&gt;rovne]]</tw-passagedata><tw-passagedata pid="18" name="zbraň" tags="" position="1401,399" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="19" name="Následovat Adama do dormitáře." tags="cell stb" position="901,772" size="100,100">13. duben 1950, 23:59
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_dormitar.jpg&quot;&gt;
 
@@ -257,7 +211,7 @@ Adam prudce rozrazí dveře cely. V šeru místnosti rozeznáš dvě lůžka, na
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 1]]</tw-passagedata><tw-passagedata pid="20" name="Uklidnit ho." tags="" position="797,897" size="100,100">14. duben 1950, 00:02
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 1]]</tw-passagedata><tw-passagedata pid="20" name="Uklidnit ho." tags="stb cell" position="797,897" size="100,100">14. duben 1950, 00:02
 
 //„Neboj se, jen vás převezeme na jiné, bezpečnější místo,“// snažíš se ho uklidnit. //„Obleč se a sbal si pár nejnutnějších věcí.“//
 
@@ -272,7 +226,7 @@ Zatímco dohlížíš na balícího se mnicha, očima zabloudíš na druhý kone
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="21" name="Odbýt ho." tags="" position="901,897" size="100,100">14. duben 1950, 00:02
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="21" name="Odbýt ho." tags="cell stb" position="901,897" size="100,100">14. duben 1950, 00:02
 
 //„Neodmlouvat a balit!“// vyjedeš na něj zostra.
 
@@ -287,7 +241,7 @@ Zatímco dohlížíš na balícího se mnicha, očima zabloudíš na druhý kone
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="22" name="Ignorovat ho." tags="" position="1005,898" size="100,100">14. duben 1950, 00:02
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="22" name="Ignorovat ho." tags="stb cell" position="1005,898" size="100,100">14. duben 1950, 00:02
 
 Jeho otázku ignoruješ. //„Obleč se a sbal si pár nejnutnějších věcí,“// řekneš mu, aniž by ses mu podíval do tváře.
 
@@ -303,7 +257,7 @@ Zatímco dohlížíš na balícího se mnicha, očima zabloudíš na druhý kone
 ---
 
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="23" name="Jít do refektáře." tags="" position="899,1274" size="100,100">14. duben 1950, 00:13
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 2]]</tw-passagedata><tw-passagedata pid="23" name="Jít do refektáře." tags="refectory stb" position="899,1274" size="100,100">14. duben 1950, 00:13
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;
 
@@ -313,21 +267,21 @@ To už ale Pilát zavelí: //„Buďte zticha a seřaďte se!“//, načež řeh
 
 To je signál pro tebe a tvé soudruhy, že máte řeholníky rozdělit do menšich skupin a zjistit, jestli u sebe nemají zbraně nebo nějaké zakázané písemnosti.
 
-[[Zahájit prohlídku.]]</tw-passagedata><tw-passagedata pid="24" name="Zabavit dopisy." tags="" position="825,1022" size="100,100">(set: $inv to $inv + (a:  &quot;dopisy&quot;))(set: $dop to false)
+[[Zahájit prohlídku.]]</tw-passagedata><tw-passagedata pid="24" name="Zabavit dopisy." tags="cell stb" position="839,1021" size="100,100">(set: $inv to $inv + (a:  &quot;dopisy&quot;))(set: $dop to false)
 14. duben 1950, 00:08
 
 //„Je mi líto, ale mám rozkaz všechny písemnosti zkonfiskovat. Dej mi je,“// natáhneš k novici ruku. Ten se slzami v očích uposlechne.
 
 To už se ale druhý mnich hrne ven z cely, strážmistra Adama a jeho samopal v zádech. //„Jdeme,“// houkne na tebe Adam.
 
-[[Jít do refektáře.]]</tw-passagedata><tw-passagedata pid="25" name="Nechat mu dopisy." tags="" position="976,1023" size="100,100">(set: $dop to true)
+[[Jít do refektáře.]]</tw-passagedata><tw-passagedata pid="25" name="Nechat mu dopisy." tags="cell stb" position="976,1023" size="100,100">(set: $dop to true)
 14. duben 1950, 00:08
 
 Rychle se ohlédneš, a když vidíš, že je Adam dostatečně zaměstnán vyhazováním knih ze zavazadla druhého mnicha, zašeptáš: //„No tak dobře. Ale schovej je na dno zavazadla.“//
 
 To už se ale druhý mnich hrne ven z cely, strážmistra Adama a jeho samopal v zádech. //„Jdeme,“// houkne na tebe Adam.
 
-[[Jít do refektáře.]]</tw-passagedata><tw-passagedata pid="26" name="dopisy" tags="" position="1403,525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="27" name="Zahájit prohlídku." tags="" position="900,1399" size="100,100">14. duben 1950, 00:25
+[[Jít do refektáře.]]</tw-passagedata><tw-passagedata pid="26" name="dopisy" tags="" position="1403,525" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="27" name="Zahájit prohlídku." tags="refectory stb" position="900,1399" size="100,100">14. duben 1950, 00:25
 
 Společně s Adamem vám přidělí skupinku čtyř starých mnichů. Adam coby služebně starší má starosti kontrolu a zápis majetku řeholníků, zatímco tvým úkolem je samotná prohlídka. Je to velká zodpovědnost - řeholníci nemají dovoleno vynést ven nic, co by mohlo být nebezpečné.
 
@@ -342,7 +296,7 @@ Předstoupí stařičký mnich, který se opírá o dřevěnou hůl. Prohlídka 
 Adam se na tebe vyzývavě otočí: //„Co myslíš, mladej? Necháme mu ji?“//
 
 [[Zabavit ji.]]
-[[Nechat mu ji.]]</tw-passagedata><tw-passagedata pid="28" name="Podrobit se prohlídce." tags="" position="601,1400" size="100,100">14. duben 1950, 00:25
+[[Nechat mu ji.]]</tw-passagedata><tw-passagedata pid="28" name="Podrobit se prohlídce." tags="refectory monk" position="601,1400" size="100,100">14. duben 1950, 00:25
 
 Vaši skupinku pěti noviců si převzali dva ozbrojenci; ti dva, které už znáš, mezi nimi ale nejsou. 
 
@@ -365,7 +319,7 @@ Vytáhne z hromádky několik složených listů papíru. Bratr Martin zbledne. 
 //„Tak, pokračujeme. Veselý Jaroslav, předstoupit!“//
 
 [[Předstoupit.]]
-[[Odmítnout.]]</tw-passagedata><tw-passagedata pid="29" name="Vyjít ven z kláštera." tags="" position="599,1648" size="100,100">14. dubna 1950, 00:58
+[[Odmítnout.]]</tw-passagedata><tw-passagedata pid="29" name="Vyjít ven z kláštera." tags="outside monk" position="599,1648" size="100,100">14. dubna 1950, 00:58
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg&quot;&gt;
 
@@ -391,7 +345,7 @@ Ozbrojenec, který stojí nejblíž, ho zaslechne a odpoví překvapivě mírně
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 7]]</tw-passagedata><tw-passagedata pid="30" name="Do vězení." tags="" position="497,1775" size="100,100">14. dubna 1950, 01:15
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 7]]</tw-passagedata><tw-passagedata pid="30" name="Do vězení." tags="bus monk" position="497,1775" size="100,100">14. dubna 1950, 01:15
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -408,7 +362,7 @@ Nevíš, kdo z bratrů píseň začal, ale postupně se k osamocenému hlasu za�
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]</tw-passagedata><tw-passagedata pid="31" name="Na Sibiř." tags="" position="602,1775" size="100,100">14. dubna 1950, 01:15
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]</tw-passagedata><tw-passagedata pid="31" name="Na Sibiř." tags="bus monk" position="602,1775" size="100,100">14. dubna 1950, 01:15
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -425,7 +379,7 @@ Nevíš, kdo z bratrů píseň začal, ale postupně se k osamocenému hlasu za�
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]</tw-passagedata><tw-passagedata pid="32" name="Do bezpečí." tags="" position="706,1774" size="100,100">14. dubna 1950, 01:15
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]</tw-passagedata><tw-passagedata pid="32" name="Do bezpečí." tags="bus monk" position="706,1774" size="100,100">14. dubna 1950, 01:15
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -442,21 +396,21 @@ Nevíš, kdo z bratrů píseň začal, ale postupně se k osamocenému hlasu za�
 
 ---
 
-[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]</tw-passagedata><tw-passagedata pid="33" name="Přidat se ke zpěvu." tags="" position="526,1898" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;
+[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]</tw-passagedata><tw-passagedata pid="33" name="Přidat se ke zpěvu." tags="bus monk" position="527,1921" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;\
 14. dubna 1950, 01:21
 
 Přidáš se k písni a během chvíle zní oslavný hymnus celým autobusem. Estébáci se vás chvíli snaží překřičet, ale není jim to nic platné. Nakonec jeden z nich, který ostatním očividně velí, otráveně pokrčí rameny - ať si zpívají, však my jim to ještě spočítáme...
 
 ---
 
-[[A to je konec?]]</tw-passagedata><tw-passagedata pid="34" name="Mlčet." tags="" position="675,1899" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;
+[[A to je konec?]]</tw-passagedata><tw-passagedata pid="34" name="Mlčet." tags="bus monk" position="676,1922" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;
 14. dubna 1950, 01:21
 
 Ačkoliv se ke zpěvu nepřidáš, během chvíle zní oslavný hymnus celým autobusem. Estébáci se tvé bratry chvíli snaží překřičet, ale není jim to nic platné. Nakonec jeden z nich, který ostatním očividně velí, otráveně pokrčí rameny - ať si zpívají, však my jim to ještě spočítáme...
 
 ---
 
-[[A to je konec?]]</tw-passagedata><tw-passagedata pid="35" name="Předstoupit." tags="" position="525,1523" size="100,100">14. duben 1950, 00:34
+[[A to je konec?]]</tw-passagedata><tw-passagedata pid="35" name="Předstoupit." tags="refectory monk" position="525,1523" size="100,100">14. duben 1950, 00:34
 
 Předstoupíš před estébáka se seznamem a po vzoru bratra Martina zvedneš ruce nad hlavu a necháš se prošacovat. Poté rozvážeš šňůrku na svém cestovním vaku. Podle očekávání se po vaku natáhne přihlížející estébák a převrátí ho naruby. 
 
@@ -468,7 +422,7 @@ Ztrácíš pojem o čase, celé to trvá až neúnosně dlouho. Když jsou s vá
 
 Ani nevíš, jak dlouho tam už stojíte, když se z druhé strany refektáře ozve známý hlas velitele s černými složkami, vyzývající k seřazení a opuštění refektáře.
 
-[[Vyjít ven z kláštera.]]</tw-passagedata><tw-passagedata pid="36" name="Odmítnout." tags="" position="675,1524" size="100,100">14. duben 1950, 00:34
+[[Vyjít ven z kláštera.]]</tw-passagedata><tw-passagedata pid="36" name="Odmítnout." tags="refectory monk" position="675,1524" size="100,100">14. duben 1950, 00:34
 
 //„Na tohle nemáte právo,“// oboříš se na estébáka, ale než se naděješ, namísto odpovědi ti v obličeji přistane pěst. Bolí to jako čert, až se musíš ujistit, že nekrvácíš. Estébák, který tě praštil, využije příležitosti, vytrhne ti z ruky vak a převrátí ho naruby.
 
@@ -480,7 +434,7 @@ Ztrácíš pojem o čase, celé to trvá až neúnosně dlouho. Když jsou s vá
 
 Ani nevíš, jak dlouho tam už stojíte, když se z druhé strany refektáře ozve známý hlas velitele s černými složkami, vyzývající k seřazení a opuštění refektáře.
 
-[[Vyjít ven z kláštera.]]</tw-passagedata><tw-passagedata pid="37" name="Zabavit ji." tags="" position="826,1525" size="100,100">(set: $inv to $inv + (a:  &quot;hůl&quot;))(set: $dop to true)
+[[Vyjít ven z kláštera.]]</tw-passagedata><tw-passagedata pid="37" name="Zabavit ji." tags="refectory stb" position="826,1525" size="100,100">(set: $inv to $inv + (a:  &quot;hůl&quot;))(set: $dop to true)
 14. duben 1950, 00:31
 
 //„To jen teď na převoz, pak ji dostaneš zpátky,“// snažíš se mnicha ukonejšit, zatímco mu z vrásčité ruky odebíráš hůl.
@@ -489,7 +443,7 @@ Zbytek prohlídek proběhne bez komplikací, navzdory tomu máš ale pocit, že 
 
 Všichni čekáte. Víš, že kapitán to celé protahuje schválně. Konečně Pilát vydává rozkaz, abyste mnichy doprovodili do autobusu, který čeká venku na klášterním nádvoří. Všechny, až na představeného, kterého máte za úkol odvézt jinam.
 
-[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="38" name="Nechat mu ji." tags="" position="976,1525" size="100,100">(set: $dop to false)
+[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="38" name="Nechat mu ji." tags="refectory stb" position="976,1525" size="100,100">(set: $dop to false)
 14. duben 1950, 00:31
 
 Mávneš rukou. //„Ať si ji nechá.“// Upřímně, představa stařičkého mnicha mlátícího tvé soudruhy po hlavě holí, ti přijde směšná.
@@ -498,7 +452,7 @@ Zbytek prohlídek proběhne bez komplikací, navzdory tomu máš ale pocit, že 
 
 Všichni čekáte. Víš, že kapitán to celé protahuje schválně. Konečně Pilát vydává rozkaz, abyste mnichy doprovodili do autobusu, který čeká venku na klášterním nádvoří. Všechny, až na představeného, kterého máte za úkol odvézt jinam.
 
-[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="39" name="Doprovodit mnichy do autobusu." tags="" position="901,1648" size="100,100">14. dubna 1950, 00:58
+[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="39" name="Doprovodit mnichy do autobusu." tags="outside stb" position="901,1648" size="100,100">14. dubna 1950, 00:58
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg&quot;&gt;
 
@@ -514,7 +468,7 @@ $dop[Mniši postupují pomalu, ve dvojstupech, v rukou cestovní vaky. Jsou mezi
 
 Pilát vedle tebe netrpělivě odfrkuje, očividně to chce mít celé co nejdříve za sebou. Když jsou všichni mniši v autobuse, kývne na tebe a na Adama. Společně budete dohlížet na průběh cesty, zatímco zbytek příslušníků má na starosti zajištění budouvy kláštera.
 
-[[Přistoupit do autobusu.]]</tw-passagedata><tw-passagedata pid="40" name="Kapitola 1" tags="" position="299,649" size="100,100">Takto vzpomíná na událost Pavel Konzal (*1927), kterého akce zastihla v klášteře redemptoristů v Českých Budějovicích.
+[[Přistoupit do autobusu.]]</tw-passagedata><tw-passagedata pid="40" name="Kapitola 1" tags="memories" position="299,649" size="100,100">Takto vzpomíná na událost Pavel Konzal (*1927), kterého akce zastihla v klášteře redemptoristů v Českých Budějovicích.
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_konzal.jpg&quot; width=&quot;172px&quot; height=&quot;240px&quot;&gt;
 
@@ -522,7 +476,7 @@ Pilát vedle tebe netrpělivě odfrkuje, očividně to chce mít celé co nejdř
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_2.-konzal-probuzeni.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/konzal-pavel-20180504-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Pavla Konzala.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="41" name="Kapitola 7" tags="" position="300,1649" size="100,100">Na překotný odjezd z kláštera a nejistotu ohledně cíle cesty vzpomíná Jan Josef Kohl (*1928 †2013), který byl tou dobou členem benediktinského řádu v Emauzích.
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/konzal-pavel-20180504-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Pavla Konzala.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="41" name="Kapitola 7" tags="memories" position="296,1653" size="100,100">Na překotný odjezd z kláštera a nejistotu ohledně cíle cesty vzpomíná Jan Josef Kohl (*1928 †2013), který byl tou dobou členem benediktinského řádu v Emauzích.
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_kohl.jpg&quot; height=&quot;240px&quot;&gt;
 
@@ -530,7 +484,7 @@ Pilát vedle tebe netrpělivě odfrkuje, očividně to chce mít celé co nejdř
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_9.-kohl-sibir.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="42" name="Přistoupit do autobusu." tags="" position="900,1773" size="100,100">14. dubna 1950, 01:12
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="42" name="Přistoupit do autobusu." tags="bus stb" position="900,1773" size="100,100">14. dubna 1950, 01:12
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -551,7 +505,7 @@ Nevíš, kdo z mnichů píseň začal, ale postupně se k osamocenému hlasu za�
 //„Ticho tam bude!“// rozeřve se Pilát. Chvíli váháš, jestli se k němu přidat.
 
 [[Nechat je zpívat.]]
-[[Pokusit se je umlčet.]]</tw-passagedata><tw-passagedata pid="43" name="Nechat je zpívat." tags="" position="825,1898" size="100,100">14. dubna 1950, 01:21
+[[Pokusit se je umlčet.]]</tw-passagedata><tw-passagedata pid="43" name="Nechat je zpívat." tags="bus stb" position="826,1921" size="100,100">14. dubna 1950, 01:21
 
 Otočíš se na Adama a posunky mu dáš najevo, že to nemá cenu. Je to od tebe drzost - koneckonců je služebně starší než ty a ty jako zelenáč mu nemáš co rozkazovat.
 
@@ -559,7 +513,7 @@ Adam nakonec pochopí a něco křikne na Piláta. Ten jen otráveně pokrčí ra
 
 ---
 
-[[A to je konec?]]</tw-passagedata><tw-passagedata pid="44" name="Pokusit se je umlčet." tags="" position="978,1897" size="100,100">14. dubna 1950, 01:21
+[[A to je konec?]]</tw-passagedata><tw-passagedata pid="44" name="Pokusit se je umlčet." tags="bus stb" position="979,1920" size="100,100">14. dubna 1950, 01:21
 
 Křikem se přidáš k soudruhům. //„Buďte zticha! Přestaňte zpívat!“// Není to ale nic platné, čím víc mnichy okřikujete, tím hlasitější se zpěv zdá.
 
@@ -567,7 +521,7 @@ Nakonec Pilát otráveně pokrčí rameny - ať si zpívají, však my jim to je
 
 ---
 
-[[A to je konec?]]</tw-passagedata><tw-passagedata pid="45" name="Protestovat." tags="" position="674,1272" size="100,100">14. duben 1950, 00:15
+[[A to je konec?]]</tw-passagedata><tw-passagedata pid="45" name="Protestovat." tags="refectory monk" position="674,1272" size="100,100">14. duben 1950, 00:15
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;
 
@@ -581,7 +535,7 @@ Po tomto prohlášení nastává hrobové ticho. Sotva překonáte šok z toho, 
 
 Než stihnete s bratry jakkoliv zareagovat, ozbrojení muži se opět pustí do práce a za křiku a postrkování samopaly vás rozdělí do malých skupinek.
 
-[[Podrobit se prohlídce.]]</tw-passagedata><tw-passagedata pid="46" name="A to je konec?" tags="" position="750,2048" size="100,100">Reflexe:
+[[Podrobit se prohlídce.]]</tw-passagedata><tw-passagedata pid="46" name="A to je konec?" tags="ending" position="758,2178" size="100,100">Reflexe:
 
 Vytvořte dvojice řeholník - příslušník StB a společně si zrekapitulujte příběh, který jste právě prožili. Odpovězte si na tyto otázky:
 
@@ -592,7 +546,7 @@ Vytvořte dvojice řeholník - příslušník StB a společně si zrekapitulujte
 
 ---
 
-[[O čem to celé vlastně bylo?-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="47" name="život řeholníka" tags="" position="456,426" size="100,100">Zde je tvoje ložnice neboli, jak se v klášteře říká, dormitář. Ten sdílíš s dalším novicem, bratrem Martinem.
+[[O čem to celé vlastně bylo?-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="47" name="život řeholníka" tags="intro monk" position="449,342" size="100,100">Zde je tvoje ložnice neboli, jak se v klášteře říká, dormitář. Ten sdílíš s dalším novicem, bratrem Martinem.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=1&quot; width=&quot;958&quot; height=&quot;796&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
@@ -600,7 +554,7 @@ Vytvořte dvojice řeholník - příslušník StB a společně si zrekapitulujte
 
 V klášteře se ti líbí a po skončení noviciátu máš tak v plánu složit řeholní slib a stát se trvalým členem řádu. Teď už víš, že není nic, co by ti v tom mohlo zabránit.
 
-[[Až jednoho dne...-&gt;Začátek akce - novic]]</tw-passagedata><tw-passagedata pid="48" name="život příslušníka" tags="" position="1027,250" size="100,100">Po absolvování školy SNB jsi nastoupil k oddílu StB v rodném Brně. Pronajímáš si malý byt na Leninově ulici, jen kousek od hlavního sídla StB.
+[[Až jednoho dne...-&gt;Začátek akce - novic]]</tw-passagedata><tw-passagedata pid="48" name="život příslušníka" tags="intro stb" position="1020,166" size="100,100">Po absolvování školy SNB jsi nastoupil k oddílu StB v rodném Brně. Pronajímáš si malý byt na Leninově ulici, jen kousek od hlavního sídla StB.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=92&quot; width=&quot;760&quot; height=&quot;542&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
@@ -608,9 +562,9 @@ Práce u StB je nesmírně zajímavá. Sice jsi tu služebně nejmladší, takž
 
 Před několika dny přišly z krajského velitelství pokyny k přísně tajné akci, které se mají zúčastnit rovnou tři sbory, celkem tedy asi dvacet příslušníků. Konečně máš šanci všem ukázat, co v tobě je!
 
-[[Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="49" name="Připravit se na akci." tags="" position="1026,423" size="100,100">Na akci je třeba se pečlivě připravit, zejména [[si pečlivě přečíst rozkazy-&gt;rozkazy]] a [[nastudovat si mapu-&gt;mapa]] místa určení. Až budete na místě, vše musí proběhnout přesně podle plánu. Nemůžete si se soudruhy dovolit udělat chybu.
+[[Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="49" name="Připravit se na akci." tags="intro stb" position="1019,339" size="100,100">Na akci je třeba se pečlivě připravit, zejména [[si pečlivě přečíst rozkazy-&gt;rozkazy]] a [[nastudovat si mapu-&gt;mapa]] místa určení. Až budete na místě, vše musí proběhnout přesně podle plánu. Nemůžete si se soudruhy dovolit udělat chybu.
 
-[[Dostavit se na místo určení.-&gt;Začátek akce - příslušník]]</tw-passagedata><tw-passagedata pid="50" name="Hotovo" tags="" position="750,2172" size="100,100">&lt;span style=&quot;font-size: 150%&quot;&gt;O čem to celé vlastně bylo?&lt;/span&gt;
+[[Dostavit se na místo určení.-&gt;Začátek akce - příslušník]]</tw-passagedata><tw-passagedata pid="50" name="Hotovo" tags="overview" position="760,2324" size="100,100">&lt;span style=&quot;font-size: 150%&quot;&gt;O čem to celé vlastně bylo?&lt;/span&gt;
 
 V noci z 13. na 14. dubna 1950 bylo v rámci tzv. Akce K násilně přemístěno na 809 řeholníků ze 75 klášterů v Čechách a na Moravě. V průběhu druhé etapy akce, která proběhla v noci ze 27. na 28. dubna 1950, tentýž osud potkal dalších 355 řeholníků z 69 klášterů.
 
@@ -626,29 +580,29 @@ Stejný osud potkal i ženské řeholnice o půl roku později během tzv. Akce 
 
 ---
 
-[[Seznam použitých zdrojů]]</tw-passagedata><tw-passagedata pid="51" name="rozkazy" tags="" position="1151,423" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=6&quot; width=&quot;958&quot; height=&quot;1476&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Seznam použitých zdrojů]]</tw-passagedata><tw-passagedata pid="51" name="rozkazy" tags="intro stb orders" position="1171,339" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=6&quot; width=&quot;958&quot; height=&quot;1476&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="52" name="mapa" tags="" position="1151,301" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_mapa.jpg&quot;&gt;
+[[Zpět-&gt;Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="52" name="mapa" tags="intro stb map" position="1179,224" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_mapa.jpg&quot;&gt;
 
-[[Zpět-&gt;Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="53" name="vpravo" tags="" position="1102,757" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_rajskydvur.jpg&quot;&gt;
-
+[[Zpět-&gt;Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="53" name="vpravo" tags="yard stb" position="1102,757" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_rajskydvur.jpg&quot;&gt;\
+\
 Rychlým poklusem pokračujete dlouhou chodbou, až dorazíte ke dveřím do rajského dvora.
 
 //„To bude ono! Podle plánku se tam jde přes nějaký dvůr...“// rozpomínáš se.
 
 Adam do tebe zezadu hrubě strčí a předbíhá tě. //„Za mnou!“//, zavelí, jako by to, že jste ložnice konečně našli, byla jen jeho zásluha.
 
-[[Následovat Adama do dormitáře.]]</tw-passagedata><tw-passagedata pid="54" name="vlevo" tags="" position="1102,653" size="100,100">(set: $goleft to false)
-
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;
+[[Následovat Adama do dormitáře.]]</tw-passagedata><tw-passagedata pid="54" name="vlevo" tags="refectory stb" position="1102,653" size="100,100">(set: $goleft to false)\
+\
+&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;\
 
 //„To je jídelna, ksakru! Kde mají ty ložnice?!“// vzteká se Adam, když se před vámi otevře rozlehlý prostor klášterního refektáře. 
 
-//„Nejsem si jistý,“// odpovídáš. //„Asi bychom se měli [[vrátit zpátky-&gt;rozcestí]].“//</tw-passagedata><tw-passagedata pid="55" name="rovne" tags="" position="1101,549" size="100,100">(set: $gostraight to false)
-
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_kuchyne.jpg&quot;&gt;
-
-//„Ksakru, to nebude ono,“// odtuší Adam, když vběhnete do potemnělé klášterní kuchyně. //„Musíme se [[vrátit zpátky-&gt;rozcestí]].“//</tw-passagedata><tw-passagedata pid="56" name="rozcestí" tags="" position="1252,650" size="100,100">//&quot;Tak kudy, sakra?&quot;// vzteká se Adam. 
+//„Nejsem si jistý,“// odpovídáš. //„Asi bychom se měli [[vrátit zpátky-&gt;rozcestí]].“//</tw-passagedata><tw-passagedata pid="55" name="rovne" tags="kitchen stb" position="1101,549" size="100,100">(set: $gostraight to false)\
+\
+&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_kuchyne.jpg&quot;&gt;\
+\
+//„Ksakru, to nebude ono,“// odtuší Adam, když vběhnete do potemnělé klášterní kuchyně. //„Musíme se [[vrátit zpátky-&gt;rozcestí]].“//</tw-passagedata><tw-passagedata pid="56" name="rozcestí" tags="entry stb" position="1252,650" size="100,100">//&quot;Tak kudy, sakra?&quot;// vzteká se Adam. 
 //
 &quot;Řekl bych, že...&quot;//
 
@@ -657,7 +611,7 @@ Adam do tebe zezadu hrubě strčí a předbíhá tě. //„Za mnou!“//, zavel�
 |gostraight)[[[Rovně!-&gt;rovne]]]
 
 (if: $goleft is true)[(show: ?goleft)]
-(if: $gostraight is true)[(show: ?gostraight)]</tw-passagedata><tw-passagedata pid="57" name="Kapitola 2" tags="" position="300,775" size="100,100">Na chování příslušníků StB vzpomíná Benedikt Vladimír Holota (*1922), který byl právě novicem v kláštěře Panny Marie Sněžné a studentem teologické fakulty, když bylo jeho studium násilně přerušeno.
+(if: $gostraight is true)[(show: ?gostraight)]</tw-passagedata><tw-passagedata pid="57" name="Kapitola 2" tags="memories" position="299,890" size="100,100">Na chování příslušníků StB vzpomíná Benedikt Vladimír Holota (*1922), který byl právě novicem v kláštěře Panny Marie Sněžné a studentem teologické fakulty, když bylo jeho studium násilně přerušeno.
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/holota.jpg&quot; height=&quot;240px&quot;&gt;
 
@@ -665,7 +619,7 @@ Adam do tebe zezadu hrubě strčí a předbíhá tě. //„Za mnou!“//, zavel�
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_3.-holota-oblekani.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="58" name="proč" tags="" position="633,2283" size="100,100">Církev byla komunistickým režimem od počátku vnímána jako potenciální základna protistátní činnosti. Patrné to bylo už ve 40. letech, kdy v tisku pravidelně vycházely [[články-&gt;články 1]] namířené proti katolickým intelektuálům.
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="58" name="proč" tags="overview" position="762,2574" size="100,100">Církev byla komunistickým režimem od počátku vnímána jako potenciální základna protistátní činnosti. Patrné to bylo už ve 40. letech, kdy v tisku pravidelně vycházely [[články-&gt;články 1]] namířené proti katolickým intelektuálům.
 
 V únoru 1948 vydal tehdejší kardinál Josef Beran tzv. [[pastýřský list-&gt;list]], v němž odsoudil nastupující totalitní režim a apeloval na duchovní, aby se mu nepodvolovali. Čtení nebo i jen držení tohoto listu se okamžitě stalo vážným prohřeškem. Ještě toho roku došlo k prvnímu masivnímu zatýkání řeholníků, z nichž již bylo mnoho odsouzeno k odnětí svobody. Samotný kardinál byl režimem dlouho držen v internaci, načež zbytek života prožil ve vyhnanství.
 
@@ -675,7 +629,7 @@ V dubnu 1949 byly poprvé formulovány požadavky na zrušení klášterů. Tzv.
 
 Součástí přípravy byla i [[masivní protináboženská kampaň vedená sdělovacími prostředky-&gt;články 2]] a [[vykonstruované monstrprocesy-&gt;machalka]] s vrcholnými zástupci řádů, kteří byli pouhých osm dní před začátkem akce odsouzeni k vysokým trestům. Veřejné mínění bylo tedy nastaveno silně protinábožensky a [[Akce K mohla začít-&gt;průběh akce]].
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="59" name="internace" tags="" position="742,2292" size="100,100">Všichni řeholníci zadržení během Akce K byli bez předchozího vysvětlení [[odvezeni do centralizačních středisek-&gt;Kapitola 9]], které byly SNB předem zřízeny ve vyklizených klášterech po celé zemi. Představení klášterů byli od zbytku svých řádů odděleni a shromážděni v internačním klášteře v Želivi, společně s dalšími politicky nepohodlnými členy řádů.
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="59" name="internace" tags="overview" position="394,2565" size="100,100">Všichni řeholníci zadržení během Akce K byli bez předchozího vysvětlení [[odvezeni do centralizačních středisek-&gt;Kapitola 9]], které byly SNB předem zřízeny ve vyklizených klášterech po celé zemi. Představení klášterů byli od zbytku svých řádů odděleni a shromážděni v internačním klášteře v Želivi, společně s dalšími politicky nepohodlnými členy řádů.
 
 V těchto klášterech byli řeholníci nuceni vykonávat těžké práce a podstupovat politická školení, jejichž cílem bylo přinutit je, aby se své víry dobrovolně vzdali.
 
@@ -685,11 +639,11 @@ Mnoho převážně mladých řeholníků bylo odveleno na vojnu, [[popřípadě 
 
 Jiní řeholníci, kteří byli považováni za hrozbu, byli pod různými záminkami [[odsouzeni k odnětí svobody-&gt;Kapitola 12]] nebo k nuceným pracem v uranových dolech.
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="60" name="články 1" tags="" position="500,2250" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=8&quot; width=&quot;958&quot; height=&quot;1138&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="60" name="články 1" tags="overview" position="537,2799" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=8&quot; width=&quot;958&quot; height=&quot;1138&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="61" name="články 2" tags="" position="500,2352" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=9&quot; width=&quot;958&quot; height=&quot;1336&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="61" name="články 2" tags="overview" position="539,2926" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=9&quot; width=&quot;958&quot; height=&quot;1336&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="62" name="machalka" tags="" position="652,2426" size="100,100">&lt;a href=&quot;#MODALID&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_machalka.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
+[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="62" name="machalka" tags="overview" position="698,2925" size="100,100">&lt;a href=&quot;#MODALID&quot;&gt;&lt;img class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_machalka.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;
 
 Tzv. proces Machalka a spol. byl první vykonstruovaný proces v režii komunistické strany namířený proti katolické církvi. Proces proběhl v dubnu 1950 a byl prezentován jako šokující odhalení rozsáhlé protistátní činnosti řeholníků, kteří zde byli obviněni ze špionáže a vlastizrady. Proces byl doprovázen [[masivní kampaní-&gt;články 2]] a měl tak poskytnout zdůvodnění následné likvidace klášterů. během procesu bylo deset řeholníků (většinou předních představitelů řádů, mezi nimi i dva opati) odsouzeno k vysokým trestům odnětí svobody.
 
@@ -701,7 +655,7 @@ Tzv. proces Machalka a spol. byl první vykonstruovaný proces v režii komunist
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
         OBSAH
     &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Seznam použitých zdrojů" tags="" position="1103,2202" size="100,100">Monografie:
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="63" name="Seznam použitých zdrojů" tags="overview" position="1445,2567" size="100,100">Monografie:
 
 &lt;span style=&quot;font-size: 80%&quot;&gt;BALÍK, Stanislav a Jiří HANUŠ. Katolická církev v Československu 1945–1989. 2. vyd. Brno: Centrum pro studium demokracie a kultury, 2013. ISBN 978-80-7325-311-0.
 
@@ -751,7 +705,7 @@ Soukromý archiv Jána Janoka, J. J. Kohla, Josefa Huska B. Vl. Holoty, Pavla Ko
 Audio nahrávky:
 &lt;span style=&quot;font-size: 80%&quot;&gt;lalala
 
-&lt;/span&gt;</tw-passagedata><tw-passagedata pid="64" name="kláštery" tags="" position="852,2293" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=10&quot; width=&quot;958&quot; height=&quot;728&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+&lt;/span&gt;</tw-passagedata><tw-passagedata pid="64" name="kláštery" tags="overview" position="1213,2567" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=10&quot; width=&quot;958&quot; height=&quot;728&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 Na Akci K bezprostředně navázala tzv. Akce VK, neboli vyklízení klášterů. V rámci té měl být veškerý majetek klášterů zajištěn a sepsán zmocněnci Státního úřadu pro věci církevní. V květnu 1950 vznikly při témže úřadu kulturní komise, které měly za úkol majetek ocenit a roztřídit. 
 
@@ -761,9 +715,9 @@ Kvůli necitlivému zacházení bylo však mnoho knih i uměleckých děl [[nen�
 
 Většina z 429 uvolněných klášterních budov připadla armádě a ministerstvu vnitra, navzdory slibům, že budou přestavěny v nemocnice, školy a byty pro rozrůstající se obyvatelstvo. Mnoho budov ale zůstalo ponecháno ladem a bez pravidelné údržby postupně zchátraly.
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="65" name="zpráva" tags="" position="851,2414" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=12&quot; width=&quot;958&quot; height=&quot;1490&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="65" name="zpráva" tags="overview" position="1220,2725" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=12&quot; width=&quot;958&quot; height=&quot;1490&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;kláštery]]</tw-passagedata><tw-passagedata pid="66" name="hůl" tags="" position="1400,650" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="67" name="Kapitola 9" tags="" position="301,2199" size="100,100">Pavel Konzal (*1927) popisuje příjezd do centralizačního kláštera v Králíkách.
+[[Zpět-&gt;kláštery]]</tw-passagedata><tw-passagedata pid="66" name="hůl" tags="" position="1400,650" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="67" name="Kapitola 9" tags="memories" position="203,2567" size="100,100">Pavel Konzal (*1927) popisuje příjezd do centralizačního kláštera v Králíkách.
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_konzal.jpg&quot; width=&quot;172px&quot; height=&quot;240px&quot;&gt;
 
@@ -771,7 +725,7 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_konzal-Kraliky.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/konzal-pavel-20180504-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Pavla Konzala.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="68" name="Kapitola 11" tags="" position="301,2325" size="100,100">Ján Janok (*1929 †2019) byl jedním z řeholníků, kteří odmítli nastoupit do státem zřízeného semináře a byl proto odveden k PTP. 
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/konzal-pavel-20180504-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Pavla Konzala.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="68" name="Kapitola 11" tags="memories" position="203,2693" size="100,100">Ján Janok (*1929 †2019) byl jedním z řeholníků, kteří odmítli nastoupit do státem zřízeného semináře a byl proto odveden k PTP. 
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_janok.jpg&quot; width=&quot;190px&quot; height=&quot;240px&quot;&gt;
 
@@ -779,7 +733,7 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_janok-PTP.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/sk/janok-jan-20131216-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jána Janoka.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="69" name="Kapitola 12" tags="" position="302,2450" size="100,100">Josef Husek (*1923) byl podobně jako mnozí další nucen nastoupit službu u PTP. Po nálezu dvou náboženských letáků byl ale zatčen a odsouzen k osmi letům vězení.
+&lt;a href=&quot;https://www.pametnaroda.cz/sk/janok-jan-20131216-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jána Janoka.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="69" name="Kapitola 12" tags="memories" position="204,2818" size="100,100">Josef Husek (*1923) byl podobně jako mnozí další nucen nastoupit službu u PTP. Po nálezu dvou náboženských letáků byl ale zatčen a odsouzen k osmi letům vězení.
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_husek.jpg&quot; width=&quot;200px&quot; height=&quot;240px&quot;&gt;
 
@@ -787,14 +741,14 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK-husek-zaten.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/husek-josef-20131215-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Josefa Huska.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="70" name="list" tags="" position="500,2455" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_pastyrsky-list.jpg&quot; width=&quot;1125px&quot; height=&quot;1682px&quot;&gt;
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/husek-josef-20131215-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Josefa Huska.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="70" name="list" tags="overview" position="537,2679" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_pastyrsky-list.jpg&quot; width=&quot;1125px&quot; height=&quot;1682px&quot;&gt;
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="71" name="Kapitola 8" tags="" position="299,1773" size="100,100">Bernard Bokor (*1924 †2013) byl v dubnu 1950 studentem teologie u salesiánů ve Svätem Križi nad Hronom (dnešní Žiar nad Hronom). V souvislosti s nuceným odjezdem z kláštera vzpomíná na poslední společný zpěv.
+[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="71" name="Kapitola 8" tags="memories" position="299,1778" size="100,100">Bernard Bokor (*1924 †2013) byl v dubnu 1950 studentem teologie u salesiánů ve Svätem Križi nad Hronom (dnešní Žiar nad Hronom). V souvislosti s nuceným odjezdem z kláštera vzpomíná na poslední společný zpěv.
 
 &lt;video controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_10.-bokor-zpev.mp4&quot;  width=&quot;640&quot; height=&quot;480&quot;&gt;&lt;/video&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/bokor-bernard-20110409-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Bernarda Bokora.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="72" name="info řeholník" tags="" position="626,249" size="100,100">Jmenuješ se Jaroslav Veselý, ale svému okolí jsi známý spíše jako bratr Řehoř.
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/bokor-bernard-20110409-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Bernarda Bokora.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="72" name="info řeholník" tags="intro monk" position="619,165" size="100,100">Jmenuješ se Jaroslav Veselý, ale svému okolí jsi známý spíše jako bratr Řehoř.
 
 Narodil ses 27.února roku 1930 v malé vísce na jihu Moravy do katolické rodiny. Tvým rodičům patřilo malé hospodářství včetně pole, na které chodíte se sourozenci už od dětství společně pracovat. Dohromady vás bylo pět - ty, tvůj starší bratr Josef a dvě mladší sestry, Marie a Eliška.
 
@@ -804,17 +758,17 @@ Na gymnáziu tvořili většinu učitelského sboru kněží a ty sis mnohé z n
 
 Po maturitě jsi se odvážil se se svými plány svěřit rodičům. Táta z toho nadšený nebyl, ale maminka souhlasila a časem ti pomohla tátu přesvědčit.
 
-Tvé další kroky tedy mířily do kláštera, kde jsi přijal nové jméno Řehoř a coby novic začal studovat bohoslovectví a [[připravovat se na svou budoucí kněžskou dráhu-&gt;život řeholníka]].</tw-passagedata><tw-passagedata pid="73" name="info příslušník" tags="" position="873,250" size="100,100">Jmenuješ se Stanislav Malina. Narodil ses 8. října 1925 v Brně. Tatínek pracoval jako dělník v továrně a maminka se starala o domácnost a o děti - tebe a tvého mladšího bratra Františka. Tvé studium na střední průmyslové škole přerušila válka. Táta, zapřísáhlý antinacista, odešel téměř ihned do odboje a vy jste s maminkou zůstali sami. Musel jsi začít pracovat, aby se rodina uživila. Nebylo to snadné, ale nakonec jste se ve zdraví všichni dožili konce války, včetně táty, který se z bojů vrátil se spoustou dobrodružných historek.
+Tvé další kroky tedy mířily do kláštera, kde jsi přijal nové jméno Řehoř a coby novic začal studovat bohoslovectví a [[připravovat se na svou budoucí kněžskou dráhu-&gt;život řeholníka]].</tw-passagedata><tw-passagedata pid="73" name="info příslušník" tags="intro stb" position="866,166" size="100,100">Jmenuješ se Stanislav Malina. Narodil ses 8. října 1925 v Brně. Tatínek pracoval jako dělník v továrně a maminka se starala o domácnost a o děti - tebe a tvého mladšího bratra Františka. Tvé studium na střední průmyslové škole přerušila válka. Táta, zapřísáhlý antinacista, odešel téměř ihned do odboje a vy jste s maminkou zůstali sami. Musel jsi začít pracovat, aby se rodina uživila. Nebylo to snadné, ale nakonec jste se ve zdraví všichni dožili konce války, včetně táty, který se z bojů vrátil se spoustou dobrodružných historek.
 
 Tehdy tě moc mrzelo, že jsi sám nemohl ve válce bojovat a zasloužit se o záchranu své vlasti. K vojákům jsi vždy vzhlížel s obdivem, a k odbojářům bránícím vlast před nacisty ještě více.
 
-Po skončení války jsi nepokračoval ve studiu (které ti stejně dvakrát nešlo), ale nastoupil jsi jako dělník do továrny. Práce to byla k uzoufání nudná a hlavně neužitečná. Když ses po několika letech u pásu už pomalu loučil s výhledy na dobrodružný život, navrhl ti jeden rodinný přítel, člen KSČ, práci u Státní bezpečnosti. S podáním žádosti jsi ani na vteřinu neváhal - tohle byla tvoje [[příležitost stát se hrdinou-&gt;život příslušníka]]!</tw-passagedata><tw-passagedata pid="74" name="průběh akce" tags="" position="551,2099" size="100,100">Organizací akce byl pověřen Státní úřad pro věci církevní (SÚC) a jeho realizací [[StB-&gt;stb]].
+Po skončení války jsi nepokračoval ve studiu (které ti stejně dvakrát nešlo), ale nastoupil jsi jako dělník do továrny. Práce to byla k uzoufání nudná a hlavně neužitečná. Když ses po několika letech u pásu už pomalu loučil s výhledy na dobrodružný život, navrhl ti jeden rodinný přítel, člen KSČ, práci u Státní bezpečnosti. S podáním žádosti jsi ani na vteřinu neváhal - tohle byla tvoje [[příležitost stát se hrdinou-&gt;život příslušníka]]!</tw-passagedata><tw-passagedata pid="74" name="průběh akce" tags="overview" position="940,2671" size="100,100">Organizací akce byl pověřen Státní úřad pro věci církevní (SÚC) a jeho realizací [[StB-&gt;stb]].
 
 Obsazení klášterů předcházely pečlivé přípravy, včetně vypracování seznamů všech řeholníků a jejich kádrových posudků, podrobného návrhu využití zabraných budov a rozsáhlé propagační kampaně proti jednotlivým řádům. Celá přípravná fáze byla držena v přísné tajnosti, aby zásah zastihl řeholníky nepřipravené a předešlo se nepokojů u místního obyvatelstva.
 
 Po odvezení řeholníků do centralizačních klášterů proběhla v zabraných klášterech důkladná domovní prohlídka a inventura majetku. Veškerý klášterní majetek byl zabaven a civilní zaměstnanci klášterů propuštěni.
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="75" name="stb" tags="" position="424,2099" size="100,100">Pojem StB (Státní bezpečnost) se po únorovém převratu ujal jako souhrnné označení pro státně bezpečnostní a zpravodajské složky, jež byly pod úplnou kontrolou KSČ. Společně s Veřejnou bezpečností (VB) tvořila tzv. Sbor národní bezpečnosti (SNB), represivního aparátu československého státu.
+[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="75" name="stb" tags="overview" position="949,2817" size="100,100">Pojem StB (Státní bezpečnost) se po únorovém převratu ujal jako souhrnné označení pro státně bezpečnostní a zpravodajské složky, jež byly pod úplnou kontrolou KSČ. Společně s Veřejnou bezpečností (VB) tvořila tzv. Sbor národní bezpečnosti (SNB), represivního aparátu československého státu.
 
 Na rozdíl od VB, která měla na starosti spíše běžné policejní činnosti, úkolem StB byla ochrana totalitního systému a boj proti jeho oponentům. To bylo možné zejména díky husté síti tajných spolupracovníků, kteří orgánu poskytovali potřebné informace, ať už vedomě či nevědomě, nebo dokonce nedobrovolně.
 
