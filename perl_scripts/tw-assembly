@@ -1,0 +1,256 @@
+#!/usr/bin/perl
+
+###########################################################
+# by Jan Rychly                     
+# 
+# Simple script for assembling and disassembling
+# a Twine HTML document
+#
+# usage:
+#   ./tw-asembly [-h] [{FILEPATH} [-a] || [FILEPATH] -d
+# 
+# examples:
+#   ./tw-assembly bits.html style.css
+#   ./tw-assembly mysory.html -d
+###########################################################
+
+
+use strict;
+use warnings;
+use utf8;
+
+# use HTML::TagParser;
+use File::Basename;
+
+# static globals
+my $usage = "usage: $0 [-h][-a][-d] HTML_FILE [CSS_FILE]";
+
+# options
+my $assembling = 1;
+my @files;
+my %paths;
+# my $verbose;
+my @css_in_pths;
+
+
+parse_args();
+
+if ($assembling == 1) {
+    #--------------#
+    #  ASSEMBLING  #
+    #--------------#
+
+    my $html_in_pth;
+    
+    for my $f (@files) {
+        if ($f =~ /.*\.html/) {
+            $html_in_pth = $f;
+        } else {
+            print "wrong file extension";
+            die 2;
+        }
+    }
+
+    find_css_links($html_in_pth);
+    my($ignore_this_1_, $base_path, $ignore_this_2_) = fileparse($html_in_pth);
+
+    # there are some issues with eol sequences ('<:crlf' can force dos mode)
+    open(HTML_IN, '<', $html_in_pth);
+    safe_open_new(\*HTML_OUT, 'assembled', '.html');
+
+    my $state = 0;
+    while (<HTML_IN>) {
+        if ($state == 0 && $_ =~ /(.*<style[^>]*id="twine-user-stylesheet"[^>]*>)((.*)(<\/style>((.*)<link [^>]*rel=\"stylesheet\"[^>]*>)?(.*)))?/) {
+            # $1 matched from the beginning of the line to the end of the opening <style> tag
+            if ($2) {
+                # the closing </style> tag has been found on the same line and $3 matches the style contents
+
+                print HTML_OUT "$1$3\n";
+
+                for my $css_in_pth (@css_in_pths) {
+                    open(CSS_IN, '<', $base_path . $css_in_pth);
+                    read_and_paste(\*CSS_IN, \*HTML_OUT);
+                    close(CSS_IN);
+                }
+
+                if ($5) {
+                    # $5 matches a <link ...>
+                    print HTML_OUT "<\/style>$6$7";
+                    $state = 3; # all done - style pasted and removed <link>
+                } else {
+                    print HTML_OUT $4;
+                    $state = 2; # style has been pasted, <link> remains
+                }
+            } else {
+                # the closing </style> tag hasn't been found on this line
+                print HTML_OUT $_;
+                $state = 1; # found beginning of <style>
+            }
+        } elsif ($state == 1) {
+            # state == 1 => beginning of <style> has already been found
+
+            if ($_ =~ /(.*)<\/style>((.*)<link [^>]*rel=\"stylesheet\"[^>]*>)?(.*)/) {
+                # found the closing tag </style>
+                # $1 matches anything before it
+                # $4 matches anything behind it or behind a following <link> tag
+
+                print HTML_OUT "$1\n";
+                
+                for my $css_in_pth (@css_in_pths) {
+                    open(CSS_IN, '<', $base_path . $css_in_pth);
+                    read_and_paste(\*CSS_IN, \*HTML_OUT);
+                    close(CSS_IN);
+                }
+
+                print HTML_OUT "<\/style>";
+                if ($2) {
+                    # <link ...> has been matched, $4 matches anything between </style> 
+                    print HTML_OUT "$3$4\n";
+                    $state = 3; # all done - style pasted and leaved out the <link ...>
+                } else {
+                    # <link ...> has not been matched on this line
+                    print HTML_OUT "$4\n";
+                    $state = 2; # style pasted but <link ...> is still present somewhere
+                }
+            } else {
+                # </style> has not been found yet
+                # copying over the style from HTML_IN 
+                print HTML_OUT $_;
+            }
+        } elsif ($state == 2 && $_ =~ /(.*)<link [^>]*rel=\"stylesheet\"[^>]*>(.*)/) {
+            print HTML_OUT "$1$2";
+            $state = 3; # <link> has been removed
+        } else {
+            print HTML_OUT $_;
+        }
+    }
+
+    close(HTML_IN);
+    close(HTML_OUT);
+}
+else {
+    #-----------------#
+    #  DISASSEMBLING  #
+    #-----------------#
+
+    open(HTML_IN, '<', $files[0]);
+    # TODO optional output file naming
+    safe_open_new(\*CSS_OUT, "style-$files[0]", '.css');
+    safe_open_new(\*HTML_OUT, "html-$files[0]", '.html');
+
+    my $in_style = undef;
+    while (<HTML_IN>) {
+        if (defined $in_style && $in_style == 1) {
+            if ($_ =~ /(.*)<\/style>(.*)/) {
+                print CSS_OUT $1;
+                my $css_pth = $paths{fileno CSS_OUT};
+                print HTML_OUT "\n</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$2\n";
+                $in_style = 0;
+            } else {
+                print CSS_OUT $_;
+            }
+        }
+        elsif (!defined $in_style && $_ =~ /(.*<style.*id="twine-user-stylesheet".*>)(.*)/) {
+            print HTML_OUT $1;
+            $in_style = 1;
+            my $bit_of_css = $2;
+            if ($2 =~ /\s*<\/style>.*/) {
+                print "user style sheet is empty, no point in disassembling";
+                die 1;
+            }
+            print CSS_OUT "$bit_of_css\n";
+        } else {
+            print HTML_OUT $_;
+        }
+    }
+
+    close(HTML_IN);
+    close(CSS_OUT);
+    close(HTML_OUT);
+}
+
+
+# read from one file and paste to the other
+sub read_and_paste { #(\*CSS_IN, \*HTML_OUT)
+    my $in = shift;
+    my $out = shift;
+    while (<$in>) {
+        print $out $_;
+    }
+}
+
+# parse arguments
+sub parse_args {
+    for my $arg (@ARGV) {
+        if ($arg eq "-h") {
+            print_help(); # exits the program
+        } elsif ($arg eq "-a") {
+            $assembling    = 1;
+        } elsif ($arg eq "-d") {
+            $assembling    = 0;
+        } else {
+            push(@files, $arg);
+        }
+    }
+}
+
+# finds linked css files
+sub find_css_links {
+    my $html_in_pth = shift;
+    open(HTML_IN_, '<', $html_in_pth);
+    while (<HTML_IN_>) {
+        if ($_ =~ /.*<link [^>]*href=\"([^\"]*)\" rel=\"stylesheet\">.*/) {
+            print "found linked css file: $1\n";
+            push(@css_in_pths, $1);
+        }
+    }
+    close(HTML_IN_);
+}
+
+# prints help message and !exits!
+sub print_help {
+    print $usage . "\n" .
+    "\t-a\tassembly mode\n" .
+    "\t-d\tdisassembling mode\n #TODO ...\n";
+    exit 0;
+}
+
+sub safe_open_new {
+    my $fh = shift;
+    # my $mode = shift;#$_[0];
+    my $new_pref = shift;#$_[1];
+    my $new_suf = shift;#$_[2];
+    if (-e "${new_pref}${new_suf}") {
+        # print "${new_pref}${new_suf} exits";
+        my $no = 1;
+        while (-e "${new_pref}_${no}${new_suf}") {
+            $no = $no + 1;
+        }
+        # print "${new_pref}_${no}${new_suf} doesn't exist";
+        open($fh, '>', "${new_pref}_${no}${new_suf}") or die $!;
+        $paths{fileno $fh} = "${new_pref}_${no}${new_suf}";
+    } else {
+        # print "${new_pref}${new_suf} doesn't exit";
+        open($fh, '>', "${new_pref}${new_suf}") or die $!;
+        $paths{fileno $fh} = "${new_pref}${new_suf}";
+    }
+}
+
+
+# my $twine_min = HTML::TagParser->new($files[0]);
+# my $stylesheet = $twine_min->getElementById("twine-user-stylesheet");
+# if ($stylesheet) {
+#     my $content = $stylesheet->innerText();
+#     # print "this is what I've found:\n";
+#     # print $content;
+#     my $cssfile = "twine-user-stylesheet-";
+#     my $no = 1;
+#     while (-e ($cssfile . "$no.css")) {
+#         $no = $no + 1;
+#     }
+#     open(CSS, '>', $cssfile . "$no.css") or die $!;
+#     print CSS $content;
+#     close(CSS);
+# } else {
+#     print "whoops didn't find user stylesheet inside the html";
+# }
