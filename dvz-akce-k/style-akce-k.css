@@ -27,9 +27,18 @@ tw-story {
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
     background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
+    background-size: cover;
 
     font-family: "Roboto Slab", serif;
 }
+
+tw-story[tags ~= "intro"] {
+    background-image: url("images/kostel-a-fara-cropped.png");
+}
+tw-story[tags ~= "refectory"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
+}
+
 
 
 /*============================
@@ -46,14 +55,14 @@ tw-passage {
 
     /* background-color: rgb(255, 251, 218); */
     background-color: rgb(255, 253, 236);
-    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.274);
+    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
     color: black;
 }
 
 tw-passage[tags ~= "memories"] {
     background-color: rgb(255, 253, 236, 0.95);
     box-shadow: 0 0 7px 10px rgb(255, 253, 236, 0.95),
-        0 10px 15px 10px rgba(0, 0, 0, 0.274);
+        0 10px 15px 10px rgba(0, 0, 0, 0.363);
 }
 
 tw-story tw-consecutive-br {
@@ -285,6 +294,34 @@ a.modal-initializer:any-link:hover {
 }
 
 
+
+/*============================
+    FLOATING CLOCK
+============================*/
+
+div.floating-clock-container {
+    position: absolute;
+    width: 100%;
+    top: -95px;
+    left: 0;
+    z-index: 10;
+}
+div.floating-clock {
+    margin: 0 auto;
+    width: max-content;
+    padding: 0.4em 0.8em;
+
+    /* color:rgb(243, 239, 222); */
+    /* border: rgb(104, 100, 87) solid 2px; */
+    border-radius: 7px;
+    background-color: rgb(245, 242, 216);
+
+    box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
+                /* 0 0 0.3em 0.3em rgb(216, 210, 157) inset; */
+}
+
+
+
 /*============================
     IMAGE STUFF
 ============================*/
@@ -298,7 +335,9 @@ img {
     max-width: 100%;
 }
 
-
+iframe {
+    max-width: 100%;
+}
 
 /*============================
     TEXT STUFF 
