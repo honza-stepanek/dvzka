@@ -87,7 +87,7 @@ tw-sidebar, tw-sidebar *[alt] {
         padding: 5%;
     }
     tw-passage {
-        margin-top: 30px;
+        margin-top: 50px;
         /* leave space fot ui */
         padding: 2em;
         font-size: 85%;
@@ -302,22 +302,26 @@ a.modal-initializer:any-link:hover {
 div.floating-clock-container {
     position: absolute;
     width: 100%;
-    top: -95px;
     left: 0;
-    z-index: 10;
 }
 div.floating-clock {
     margin: 0 auto;
     width: max-content;
-    padding: 0.4em 0.8em;
+    padding: 0.2em 0.5em;
+    top: -130px;
 
-    /* color:rgb(243, 239, 222); */
-    /* border: rgb(104, 100, 87) solid 2px; */
-    border-radius: 7px;
+    /* border-radius: 6px; */
     background-color: rgb(245, 242, 216);
 
     box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
-                /* 0 0 0.3em 0.3em rgb(216, 210, 157) inset; */
+    
+    font-weight: 600;
+}
+/* narrow screen */
+@media (max-width: 649px) {
+    div.floating-clock {
+        top: -100px;
+    }
 }
 
 
