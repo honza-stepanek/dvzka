@@ -38,6 +38,9 @@ tw-story[tags ~= "intro"] {
 tw-story[tags ~= "refectory"] {
     background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
 }
+tw-story[tags ~= "bus"] {
+    background-image: url("images/autobus.jpg");
+}
 
 
 
@@ -73,6 +76,9 @@ tw-sidebar, tw-sidebar *[alt] {
     color:rgb(0, 214, 36);
     opacity: 0.8;
     /* display: none; TODO eventually uncomment */
+}
+tw-icon[title="Mute/Unmute"] > img{
+    height: 45px;
 }
 
 
@@ -127,7 +133,7 @@ tw-link.visited {
     display: inline-block;
     padding: 0.1em 0.2em;
     left: -0.1em; /* half of side padding */
-    margin: 0.3em 0;
+    margin: 1em 0 0;
     max-width: 100%;
     
     color: #0000dc;
@@ -144,29 +150,27 @@ tw-link.visited::before {
     width: 0;
     transition: 300ms width;
 }
-/* hover */
+/* hover and active*/
 tw-link:hover,
 tw-link:focus,
+tw-link:active,
 tw-link.visited:hover,
-tw-link.visited:focus {
+tw-link.visited:focus,
+tw-link.visited:active {
     /* overwriting twine defaults */
     color: #0000dc;
 }
 tw-link:hover::before,
 tw-link:focus::before,
+tw-link:active::before,
 tw-link.visited:hover::before,
-tw-link.visited:focus::before {
+tw-link.visited:focus::before,
+tw-link.visited:active::before {
     /* underline expanded */
     content: "";
     width: 100%;
 }
 
-/* activated link button */
-tw-link:active,
-tw-link.visited:active {
-    /* todo */
-    opacity: 1;
-}
 
 /* LINKS TO MEMORIES */
 tw-hook[name="memorylink"] tw-link {

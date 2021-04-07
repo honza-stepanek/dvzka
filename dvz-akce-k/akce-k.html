@@ -13,6 +13,9 @@
 
 </style>
 <link rel="stylesheet" href="style-akce-k.css">
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
 <script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="intro" position="738,12" size="100,100">&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/arts-lg-text-cze.png&quot; style=&quot;height: 100px;&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;
 
 &lt;span style=&quot;font-size: 200%&quot;&gt;Duben 1950&lt;/span&gt;
@@ -319,7 +322,7 @@ Vytáhne z hromádky několik složených listů papíru. Bratr Martin zbledne. 
 //„Tak, pokračujeme. Veselý Jaroslav, předstoupit!“//
 
 [[Předstoupit.]]
-[[Odmítnout.]]</tw-passagedata><tw-passagedata pid="29" name="Vyjít ven z kláštera." tags="outside monk" position="599,1648" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. dubna 1950, 00:58&lt;/div&gt;&lt;/div&gt;\
+[[Odmítnout.]]</tw-passagedata><tw-passagedata pid="29" name="Vyjít ven z kláštera." tags="outside monk" position="599,1648" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 00:58&lt;/div&gt;&lt;/div&gt;\
 \\
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg&quot;&gt;\
 
@@ -348,7 +351,7 @@ Ozbrojenec, který stojí nejblíž, ho zaslechne a odpoví překvapivě mírně
 
 
 
-[[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 7]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="30" name="Do vězení." tags="bus monk" position="497,1775" size="100,100">14. dubna 1950, 01:15
+[[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 7]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="30" name="Do vězení." tags="bus monk" position="497,1775" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:15&lt;/div&gt;&lt;/div&gt;\
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -365,7 +368,7 @@ Nevíš, kdo z bratrů píseň začal, ale postupně se k osamocenému hlasu za�
 
 
 
-[[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="31" name="Na Sibiř." tags="bus monk" position="602,1775" size="100,100">14. dubna 1950, 01:15
+[[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="31" name="Na Sibiř." tags="bus monk" position="602,1775" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:15&lt;/div&gt;&lt;/div&gt;\
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -382,7 +385,7 @@ Nevíš, kdo z bratrů píseň začal, ale postupně se k osamocenému hlasu za�
 
 
 
-[[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="32" name="Do bezpečí." tags="bus monk" position="706,1774" size="100,100">14. dubna 1950, 01:15
+[[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="32" name="Do bezpečí." tags="bus monk" position="706,1774" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:15&lt;/div&gt;&lt;/div&gt;\
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -400,18 +403,20 @@ Nevíš, kdo z bratrů píseň začal, ale postupně se k osamocenému hlasu za�
 
 
 [[[Poslechnout si vzpomínky pamětníka.-&gt;Kapitola 8]]]&lt;memorylink|</tw-passagedata><tw-passagedata pid="33" name="Přidat se ke zpěvu." tags="bus monk" position="527,1921" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;\
-14. dubna 1950, 01:21
-
+&lt;script src=&quot;audio-button.js&quot;&gt;&lt;/script&gt;\
+&lt;script src=&quot;overview-inception-before.js&quot;&gt;&lt;/script&gt;\
+&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:21&lt;/div&gt;&lt;/div&gt;\
+\\
 Přidáš se k písni a během chvíle zní oslavný hymnus celým autobusem. Estébáci se vás chvíli snaží překřičet, ale není jim to nic platné. Nakonec jeden z nich, který ostatním očividně velí, otráveně pokrčí rameny - ať si zpívají, však my jim to ještě spočítáme...
 
----
 
-[[A to je konec?]]</tw-passagedata><tw-passagedata pid="34" name="Mlčet." tags="bus monk" position="676,1922" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;
-14. dubna 1950, 01:21
-
+[[A to je konec?]]</tw-passagedata><tw-passagedata pid="34" name="Mlčet." tags="bus monk" position="676,1922" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;\
+&lt;script src=&quot;audio-button.js&quot;&gt;&lt;/script&gt;\
+&lt;script src=&quot;overview-inception-before.js&quot;&gt;&lt;/script&gt;\
+&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:21&lt;/div&gt;&lt;/div&gt;\
+\\
 Ačkoliv se ke zpěvu nepřidáš, během chvíle zní oslavný hymnus celým autobusem. Estébáci se tvé bratry chvíli snaží překřičet, ale není jim to nic platné. Nakonec jeden z nich, který ostatním očividně velí, otráveně pokrčí rameny - ať si zpívají, však my jim to ještě spočítáme...
 
----
 
 [[A to je konec?]]</tw-passagedata><tw-passagedata pid="35" name="Předstoupit." tags="refectory monk" position="525,1523" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 00:34&lt;/div&gt;&lt;/div&gt;\
 
@@ -446,19 +451,17 @@ Zbytek prohlídek proběhne bez komplikací, navzdory tomu máš ale pocit, že 
 
 Všichni čekáte. Víš, že kapitán to celé protahuje schválně. Konečně Pilát vydává rozkaz, abyste mnichy doprovodili do autobusu, který čeká venku na klášterním nádvoří. Všechny, až na představeného, kterého máte za úkol odvézt jinam.
 
-[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="38" name="Nechat mu ji." tags="refectory stb" position="976,1525" size="100,100">(set: $dop to false)
+[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="38" name="Nechat mu ji." tags="refectory stb" position="976,1525" size="100,100">(set: $dop to false)\
 &lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 00:31&lt;/div&gt;&lt;/div&gt;\
-
 Mávneš rukou. //„Ať si ji nechá.“// Upřímně, představa stařičkého mnicha mlátícího tvé soudruhy po hlavě holí, ti přijde směšná.
 
 Zbytek prohlídek proběhne bez komplikací, navzdory tomu máš ale pocit, že to celé trvá neúměrně dlouho. Když jste hotovi, většina skupin už má prohlídku za sebou a řeholníci stojí v řadě podél zdi refektáře.
 
 Všichni čekáte. Víš, že kapitán to celé protahuje schválně. Konečně Pilát vydává rozkaz, abyste mnichy doprovodili do autobusu, který čeká venku na klášterním nádvoří. Všechny, až na představeného, kterého máte za úkol odvézt jinam.
 
-[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="39" name="Doprovodit mnichy do autobusu." tags="outside stb" position="901,1648" size="100,100">14. dubna 1950, 00:58
-
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg&quot;&gt;
-
+[[Doprovodit mnichy do autobusu.]]</tw-passagedata><tw-passagedata pid="39" name="Doprovodit mnichy do autobusu." tags="outside stb" position="901,1648" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 00:58&lt;/div&gt;&lt;/div&gt;\
+&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg&quot;&gt;\
+\
 S většinou soudruhů vytvoříte na nádvoří koridor, aby mniši neměli šanci během přesunu utéct. Ale nevypadá to, že by je to vůbec napadlo.
 
 $dop[Mniši postupují pomalu, ve dvojstupech, v rukou cestovní vaky. Jsou mezi nimi i staří mniši, letmo zahlédneš starce, který se bez hole opírá o rámě jenoho z noviců.]
@@ -489,7 +492,7 @@ Pilát vedle tebe netrpělivě odfrkuje, očividně to chce mít celé co nejdř
 &lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_9.-kohl-sibir.mp3&quot;&gt;&lt;/audio&gt;
 
 
-&lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="42" name="Přistoupit do autobusu." tags="bus stb" position="900,1773" size="100,100">14. dubna 1950, 01:12
+&lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;</tw-passagedata><tw-passagedata pid="42" name="Přistoupit do autobusu." tags="bus stb" position="900,1773" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:12&lt;/div&gt;&lt;/div&gt;\
 
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/autobus.jpg&quot;&gt;
 
@@ -510,26 +513,29 @@ Nevíš, kdo z mnichů píseň začal, ale postupně se k osamocenému hlasu za�
 //„Ticho tam bude!“// rozeřve se Pilát. Chvíli váháš, jestli se k němu přidat.
 
 [[Nechat je zpívat.]]
-[[Pokusit se je umlčet.]]</tw-passagedata><tw-passagedata pid="43" name="Nechat je zpívat." tags="bus stb" position="826,1921" size="100,100">14. dubna 1950, 01:21
-
+[[Pokusit se je umlčet.]]</tw-passagedata><tw-passagedata pid="43" name="Nechat je zpívat." tags="bus stb" position="826,1921" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;\
+&lt;script src=&quot;audio-button.js&quot;&gt;&lt;/script&gt;\
+&lt;script src=&quot;overview-inception-before.js&quot;&gt;&lt;/script&gt;\
+&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:21&lt;/div&gt;&lt;/div&gt;\
+\\
 Otočíš se na Adama a posunky mu dáš najevo, že to nemá cenu. Je to od tebe drzost - koneckonců je služebně starší než ty a ty jako zelenáč mu nemáš co rozkazovat.
 
 Adam nakonec pochopí a něco křikne na Piláta. Ten jen otráveně pokrčí rameny - ať si zpívají, však my jim to ještě spočítáme...
 
----
 
-[[A to je konec?]]</tw-passagedata><tw-passagedata pid="44" name="Pokusit se je umlčet." tags="bus stb" position="979,1920" size="100,100">14. dubna 1950, 01:21
-
+[[A to je konec?]]</tw-passagedata><tw-passagedata pid="44" name="Pokusit se je umlčet." tags="bus stb" position="979,1920" size="100,100">&lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/Christus-Vincit-Akapela.mp3&quot; autoplay&gt;&lt;/audio&gt;\
+&lt;script src=&quot;audio-button.js&quot;&gt;&lt;/script&gt;\
+&lt;script src=&quot;overview-inception-before.js&quot;&gt;&lt;/script&gt;\
+&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 01:21&lt;/div&gt;&lt;/div&gt;\
+\\
 Křikem se přidáš k soudruhům. //„Buďte zticha! Přestaňte zpívat!“// Není to ale nic platné, čím víc mnichy okřikujete, tím hlasitější se zpěv zdá.
 
 Nakonec Pilát otráveně pokrčí rameny - ať si zpívají, však my jim to ještě spočítáme...
 
----
 
 [[A to je konec?]]</tw-passagedata><tw-passagedata pid="45" name="Protestovat." tags="refectory monk" position="674,1272" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;14. duben 1950, 00:15&lt;/div&gt;&lt;/div&gt;\
-
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;
-
+&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg&quot;&gt;\
+\\
 Nevydržíš to a vykřikneš: //„Ale proč? Co jsme provedli?“//
 
 Na několik dlouhých vteřin zavládne překvapené ticho, ale pak se k tvé úlevě začnou ozývat i ostatní bratři - my jsme nikomu nic neudělali, nic neprovedli, žijeme podle stávajících zákonů, proč jste nás takhle přepadli... Je to však k ničemu. Estébáci výhružně pozvednou zbraně, a vy si postupně uvědomíte, že protesty vám nejsou nic platné.
@@ -540,7 +546,9 @@ Po tomto prohlášení nastává hrobové ticho. Sotva překonáte šok z toho, 
 
 Než stihnete s bratry jakkoliv zareagovat, ozbrojení muži se opět pustí do práce a za křiku a postrkování samopaly vás rozdělí do malých skupinek.
 
-[[Podrobit se prohlídce.]]</tw-passagedata><tw-passagedata pid="46" name="A to je konec?" tags="ending" position="758,2178" size="100,100">Reflexe:
+[[Podrobit se prohlídce.]]</tw-passagedata><tw-passagedata pid="46" name="A to je konec?" tags="ending" position="758,2178" size="100,100">&lt;script src=&quot;overview-inception-after.js&quot;&gt;&lt;/script&gt;\
+
+Reflexe:
 
 Vytvořte dvojice řeholník - příslušník StB a společně si zrekapitulujte příběh, který jste právě prožili. Odpovězte si na tyto otázky:
 
