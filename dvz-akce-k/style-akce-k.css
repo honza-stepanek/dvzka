@@ -300,9 +300,10 @@ a.modal-initializer:any-link:hover {
 ============================*/
 
 div.floating-clock-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
     left: 0;
+    z-index: 1;
 }
 div.floating-clock {
     margin: 0 auto;
