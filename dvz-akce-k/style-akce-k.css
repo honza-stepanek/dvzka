@@ -38,8 +38,33 @@ tw-story[tags ~= "intro"] {
 tw-story[tags ~= "refectory"] {
     background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
 }
+tw-story[tags ~= "entry"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_chodba.jpg");
+}
+tw-story[tags ~= "entry"] img {
+    /* TODO */
+    display: none;
+}
+tw-story[tags ~= "door"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_portal.jpg");
+}
+tw-story[tags ~= "door"] img {
+    /* TODO */
+    display: none;
+}
+tw-story[tags ~= "cell"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_dormitar.jpg");
+}
+tw-story[tags ~= "cell"] img {
+    /* TODO */
+    display: none;
+}
 tw-story[tags ~= "bus"] {
     background-image: url("images/autobus.jpg");
+}
+tw-story[tags ~= "bus"] img {
+    /* TODO */
+    display: none;
 }
 
 
@@ -342,10 +367,14 @@ img {
 /* all images relevant to the story */
 .story-image {
     max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.123);
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
 }
 
 iframe {
     max-width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.123);
     box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
 }
 iframe.interactive-room {
@@ -355,6 +384,7 @@ iframe.interactive-room {
 iframe.slide-viewer {
     /* todo? */
     box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+    border: solid 2px black;
 }
 
 /*============================
