@@ -346,6 +346,15 @@ img {
 
 iframe {
     max-width: 100%;
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+iframe.interactive-room {
+    /* todo? */
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+iframe.slide-viewer {
+    /* todo? */
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
 }
 
 /*============================
