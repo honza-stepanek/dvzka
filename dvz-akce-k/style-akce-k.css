@@ -19,6 +19,7 @@ h2 {
 /*============================
     TWINE STORY 
 ============================*/
+
 tw-story {
     padding: 80px 10%;
     min-height: 100%;
@@ -26,7 +27,7 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
+    /* background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg"); */
     background-size: cover;
 
     font-family: "Roboto Slab", serif;
@@ -35,38 +36,49 @@ tw-story {
 tw-story[tags ~= "intro"] {
     background-image: url("images/kostel-a-fara-cropped.png");
 }
+
+tw-story[tags ~= "memories"] {
+    background-image: url("images/autobus.jpg");
+}
+
+tw-story[tags ~= "overview"],
+tw-story[tags ~= "ending"] {
+    background-image: url("images/kostel-a-fara-cropped.png");
+}
+
+/* locations */
 tw-story[tags ~= "refectory"] {
     background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
 }
 tw-story[tags ~= "entry"] {
     background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_chodba.jpg");
 }
-tw-story[tags ~= "entry"] img {
-    /* TODO */
-    display: none;
+tw-story[tags ~= "kitchen"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_kuchyne.jpg");
 }
 tw-story[tags ~= "door"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_portal.jpg");
-}
-tw-story[tags ~= "door"] img {
-    /* TODO */
-    display: none;
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_vchod.jpg");
 }
 tw-story[tags ~= "cell"] {
     background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_dormitar.jpg");
 }
-tw-story[tags ~= "cell"] img {
-    /* TODO */
-    display: none;
+tw-story[tags ~= "yard"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_rajskydvur.jpg");
+}
+tw-story[tags ~= "outside"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg");
 }
 tw-story[tags ~= "bus"] {
     background-image: url("images/autobus.jpg");
 }
-tw-story[tags ~= "bus"] img {
-    /* TODO */
+/* TODO */
+.location-image {
     display: none;
 }
-
+.location-image + tw-consecutive-br,
+.location-image + br {
+    display: none;
+}
 
 
 /*============================
