@@ -37,10 +37,6 @@ tw-story[tags ~= "intro"] {
     background-image: url("images/kostel-a-fara-cropped.png");
 }
 
-tw-story[tags ~= "memories"] {
-    background-image: url("images/autobus.jpg");
-}
-
 tw-story[tags ~= "overview"],
 tw-story[tags ~= "ending"] {
     background-image: url("images/kostel-a-fara-cropped.png");
@@ -48,28 +44,28 @@ tw-story[tags ~= "ending"] {
 
 /* locations */
 tw-story[tags ~= "refectory"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg");
+    background-image: url("images/refektar.png");
 }
 tw-story[tags ~= "entry"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_chodba.jpg");
+    background-image: url("images/chodba.png");
 }
 tw-story[tags ~= "kitchen"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_kuchyne.jpg");
+    background-image: url("images/kuchyne.png");
 }
 tw-story[tags ~= "door"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_vchod.jpg");
+    background-image: url("images/vchod.png");
 }
 tw-story[tags ~= "cell"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_dormitar.jpg");
+    background-image: url("images/dormitar.png");
 }
 tw-story[tags ~= "yard"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_rajskydvur.jpg");
+    background-image: url("images/rajsky-dvur.png");
 }
 tw-story[tags ~= "outside"] {
-    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_nadvori.jpg");
+    background-image: url("images/nadvori.png");
 }
 tw-story[tags ~= "bus"] {
-    background-image: url("images/autobus.jpg");
+    background-image: url("images/autobus.png");
 }
 /* TODO */
 .location-image {
@@ -377,7 +373,8 @@ img {
 }
 
 /* all images relevant to the story */
-.story-image {
+.story-image,
+#inception-image {
     max-width: 100%;
     background-color: rgba(0, 0, 0, 0.123);
     box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
