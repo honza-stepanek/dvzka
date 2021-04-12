@@ -71,14 +71,7 @@ tw-story[tags ~= "outside"] {
 tw-story[tags ~= "bus"] {
     background-image: url("images/autobus.png");
 }
-/* TODO */
-.location-image {
-    display: none;
-}
-.location-image + tw-consecutive-br,
-.location-image + br {
-    display: none;
-}
+
 
 
 /*============================
@@ -196,6 +189,7 @@ tw-link.visited:focus,
 tw-link.visited:active {
     /* overwriting twine defaults */
     color: #0000dc;
+    outline: none;
 }
 tw-link:hover::before,
 tw-link:focus::before,
@@ -497,6 +491,9 @@ a:visited:hover {
 audio {
     max-width: 100%;
     width: 270px;
+    height: 1.7em;
     box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background-color: rgb(241, 241, 241);
 }
 
