@@ -284,13 +284,14 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
     pointer-events: auto;
 }
 
+/* modal content */
 .modal-dialog-container > div {
-    /* modal content */
-    max-width: 800px;
+    max-width: 1400px;
     flex-grow: 0;
     margin: auto 0px;
+    padding: 1.2em;
 
-    background: #fff;
+    background: rgb(216, 210, 183);
     box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
 }
 .modal-dialog-container > div::after {
@@ -340,21 +341,6 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
     opacity: 0.5;
 }
 
-a.modal-initializer:any-link {
-    color: rgb(0, 179, 30);
-    text-decoration: underline;
-
-    transition: 300ms;
-    transition-property: color;
-}
-a.modal-initializer:any-link:hover {
-    color: rgb(0, 146, 24);
-    text-decoration: underline;
-
-    /* do something */
-}
-
-
 
 /*============================
     FLOATING CLOCK
@@ -372,7 +358,6 @@ div.floating-clock {
     padding: 0.2em 0.5em;
     top: -130px;
 
-    /* border-radius: 6px; */
     background-color: rgb(245, 242, 216);
 
     box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
@@ -404,6 +389,28 @@ img {
     box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
 }
 
+.modal-dialog-container img {
+    display: block;
+    margin: 0 auto;
+}
+
+.map-image {
+    box-shadow: none;
+    background-color: unset;
+    transform: scale(1.02);
+}
+
+.witness-image {
+    width: 270px;
+}
+
+.eu-msmt-logo {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+}
+
+
 iframe {
     max-width: 100%;
 
@@ -426,8 +433,27 @@ iframe.slide-viewer {
 
 span.citation {
     font-size: 75%;
-    line-height: 1em;
+    line-height: 1.2em;
 }
+
+div.block-citation {
+    margin: 1em 0.1em 0 auto;
+    width: 800px;
+
+    text-align: right;
+    word-wrap: break-word;
+    font-size: 80%;
+    line-height: 1.2em;
+}
+
+
+.eu-disclaimer {
+    text-align: center;
+
+    font-size: 65%;
+    line-height: 1.4em;
+}
+
 
 /*============================
     HYPERLINKS   a.hyper
@@ -461,3 +487,16 @@ a:visited:hover {
 .hyper:visited:hover {
     color: hsl(182, 100%, 20%);
 }
+
+
+
+/*============================
+    OTHER STUFF
+============================*/
+
+audio {
+    max-width: 100%;
+    width: 270px;
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
