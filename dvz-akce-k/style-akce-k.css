@@ -15,6 +15,10 @@ h1 {
 h2 {
     font-size: 150%;
 }
+h3 {
+    font-size: 120%;
+    font-weight: 500;
+}
 
 /*============================
     TWINE STORY 
@@ -206,7 +210,8 @@ tw-link.visited:active::before {
 
 
 /* LINKS TO MEMORIES */
-tw-hook[name="memorylink"] tw-link {
+tw-hook[name="memorylink"] tw-link,
+tw-hook[name="inlinememorylink"] tw-link {
     text-shadow: 0 0 2px #8080e9;
     color: #0000dc1e;
     font-weight: 400;
@@ -214,7 +219,8 @@ tw-hook[name="memorylink"] tw-link {
     transition-duration: 600ms;
     transition-property: color, text-shadow;
 }
-tw-hook[name="memorylink"] tw-link:hover {
+tw-hook[name="memorylink"] tw-link:hover,
+tw-hook[name="inlinememorylink"] tw-link:hover {
     color: #0000dc;
     text-shadow: 0 0 0 #8080e9;
 }
@@ -227,6 +233,24 @@ tw-hook[name="memorylink"] tw-link::before {
 tw-hook[name="memorylink"] tw-link:hover::before {
     /* underline expanded */
     border-bottom-color: #0000dc;
+}
+
+
+/* INLINE LINKS */
+tw-hook[name="inlinelink"] tw-link,
+tw-hook[name="inlinememorylink"] tw-link {
+    display: inline;
+    border-bottom: solid #8080e900 0.2em;
+    padding: 0 0 0 0.12em;
+    transition-property: border, color, text-shadow;
+}
+tw-hook[name="inlinelink"] tw-link::before,
+tw-hook[name="inlinememorylink"] tw-link::before {
+    display: none;
+}
+tw-hook[name="inlinelink"] tw-link:hover,
+tw-hook[name="inlinememorylink"] tw-link:hover {
+    border-bottom: solid #0000dc 0.2em;
 }
 
 
@@ -400,17 +424,10 @@ iframe.slide-viewer {
     TEXT STUFF 
 ============================*/
 
-span.date-and-time {
-    display: block;
-    text-align: right;
-    color: black;
+span.citation {
+    font-size: 75%;
+    line-height: 1em;
 }
-span.date-and-time + br {
-    /* TODO */
-    display: none;
-}
-
-
 
 /*============================
     HYPERLINKS   a.hyper
