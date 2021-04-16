@@ -135,8 +135,9 @@ else {
 
     open(HTML_IN, '<', $files[0]);
     # TODO optional output file naming
-    safe_open_new(\*CSS_OUT, "style-$files[0]", '.css');
-    safe_open_new(\*HTML_OUT, "html-$files[0]", '.html');
+    my($html_in_name, $base_path, $extension_) = fileparse($files[0], (".html"));
+    safe_open_new(\*CSS_OUT, "${base_path}style-$html_in_name", '.css');
+    safe_open_new(\*HTML_OUT, "${base_path}html-$html_in_name", '.html');
 
     my $in_style = undef;
     while (<HTML_IN>) {
@@ -217,20 +218,18 @@ sub print_help {
 
 sub safe_open_new {
     my $fh = shift;
-    # my $mode = shift;#$_[0];
-    my $new_pref = shift;#$_[1];
-    my $new_suf = shift;#$_[2];
+
+    my $new_pref = shift;
+    my $new_suf = shift;
+
     if (-e "${new_pref}${new_suf}") {
-        # print "${new_pref}${new_suf} exits";
         my $no = 1;
         while (-e "${new_pref}_${no}${new_suf}") {
             $no = $no + 1;
         }
-        # print "${new_pref}_${no}${new_suf} doesn't exist";
         open($fh, '>', "${new_pref}_${no}${new_suf}") or die $!;
         $paths{fileno $fh} = "${new_pref}_${no}${new_suf}";
     } else {
-        # print "${new_pref}${new_suf} doesn't exit";
         open($fh, '>', "${new_pref}${new_suf}") or die $!;
         $paths{fileno $fh} = "${new_pref}${new_suf}";
     }
