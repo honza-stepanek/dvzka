@@ -86,7 +86,6 @@ tw-passage {
     margin-top: 3vh;
     margin-bottom: 4vh;
 
-    /* background-color: rgb(255, 251, 218); */
     background-color: rgb(255, 253, 236);
     box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
     color: black;
@@ -231,21 +230,26 @@ tw-hook[name="memorylink"] tw-link:hover::before {
 
 
 /* INLINE LINKS */
+div.nav-bar tw-link,
 tw-hook[name="inlinelink"] tw-link,
 tw-hook[name="inlinememorylink"] tw-link {
     display: inline;
     border-bottom: solid #8080e900 0.2em;
-    padding: 0 0 0 0.12em;
+    padding: 0;
+    margin: 0 0 0 0.12em;
     transition-property: border, color, text-shadow;
 }
+div.nav-bar tw-link::before,
 tw-hook[name="inlinelink"] tw-link::before,
 tw-hook[name="inlinememorylink"] tw-link::before {
     display: none;
 }
+div.nav-bar tw-link:hover,
 tw-hook[name="inlinelink"] tw-link:hover,
 tw-hook[name="inlinememorylink"] tw-link:hover {
     border-bottom: solid #0000dc 0.2em;
 }
+
 
 
 
@@ -336,6 +340,7 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
 }
 
 
+
 /*============================
     FLOATING CLOCK
 ============================*/
@@ -364,6 +369,50 @@ div.floating-clock {
         top: -100px;
     }
 }
+
+
+
+
+/*============================
+    Overview navigation 
+============================*/
+
+/* navigational bar in the overview part */
+div.nav-bar {
+    position: relative;
+    top: -1em;
+    padding: 0.;
+    font-size: 90%;
+    
+    /* more standing out variation */
+    /* padding: 0.05em 0.5em 0.15em; */
+    /* background-color: rgb(245, 242, 220); */
+    /* box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.157); */
+}
+
+div.nav-bar div {
+    display: inline;
+}
+
+div.nav-bar tw-link{
+    margin: 0;
+    font-weight: normal;
+}
+div.nav-bar tw-link:hover{
+    border-bottom-width: 0.1em;
+}
+div.nav-bar-path-item::after {
+    /* content: " → "; */
+    content: " / ";
+    color:#0000dc;
+}
+
+div.nav-bar-location {
+    color:#0000dc;
+    /* text-decoration: underline #0000dc 1.5px; */
+    border-bottom: solid #0000dc 0.1em;
+}
+
 
 
 

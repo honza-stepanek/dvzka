@@ -12,11 +12,18 @@
 <tw-storydata name="Akce K" startnode="1" creator="Twine" creator-version="2.3.13" ifid="624DCBCA-DB7D-40D7-856C-3CD2AFA5845D" zoom="1" format="Harlowe" format-version="3.2.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 
 </style>
-<link rel="stylesheet" href="style-akce-k.css">
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
+<link href="style-akce-k.css" rel="stylesheet">
+<!-- <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
-<script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro" tags="intro" position="738,12" size="100,100">&lt;img class=&quot;logo-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/arts-lg-text-cze.png&quot; style=&quot;height: 100px;&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script> -->
+<script role="script" id="twine-user-script" type="text/twine-javascript">
+$("body").prepend(
+    '<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></'+'script>\
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></'+'script>\
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></'+'script>\
+    ')
+</script>
+<tw-passagedata pid="1" name="intro" tags="intro" position="738,12" size="100,100">&lt;img class=&quot;logo-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/08/arts-lg-text-cze.png&quot; style=&quot;height: 100px;&quot; alt=&quot;Filozofická fakulta Masarykovy univerzity&quot;&gt;
 
 # Duben 1950
 Vítej! Je duben 1950 a Tebe čeká nejtěžší noc v životě. Nejdřív se ale rozhodni, v čí kůži ji chceš prožít:
@@ -185,7 +192,7 @@ Nic.
     &lt;div&gt;\
         &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;story-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_portal.jpg&quot;&gt;\
-        &lt;div class=&quot;block-citation&quot;&gt;Rajský dvůr, 1907. BRANIŠ, Josef. *Svatá Koruna, bývalý klášter cistercienský* `[`online`]`. Praha: Společ. přátel starož. čes., s. 82 `[`cit. 2021-04-07`]`. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:b8827be0-f95e-11e6-bff9-005056825209&lt;/div&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;Rajský dvůr, 1907. BRANIŠ, Josef. *Svatá Koruna, bývalý klášter cistercienský* &#96;[&#96;online&#96;]&#96;. Praha: Společ. přátel starož. čes., s. 82 &#96;[&#96;cit. 2021-04-07&#96;]&#96;. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:b8827be0-f95e-11e6-bff9-005056825209&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 </tw-passagedata><tw-passagedata pid="17" name="Vyrazit dveře" tags="stb entry" position="975,648" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;13. duben 1950, 23:50&lt;/div&gt;&lt;/div&gt;\
@@ -456,7 +463,7 @@ Pilát vedle tebe netrpělivě odfrkuje, očividně to chce mít celé co nejdř
 
 &lt;a href=&quot;https://www.pametnaroda.cz/cs/konzal-pavel-20180504-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Pavla Konzala.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 &lt;div id=&quot;mod-konzal&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&amp;times;&lt;/a&gt;\
@@ -475,7 +482,7 @@ Pilát vedle tebe netrpělivě odfrkuje, očividně to chce mít celé co nejdř
 
 &lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 \\
 &lt;div id=&quot;mod-kohl&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
@@ -560,7 +567,10 @@ Před několika dny přišly z krajského velitelství pokyny k přísně tajné
 
 [[Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="49" name="Připravit se na akci." tags="intro stb" position="1019,339" size="100,100">Na akci je třeba se pečlivě připravit, zejména [[[si pečlivě přečíst rozkazy-&gt;rozkazy]]]&lt;inlinelink| a [[[nastudovat si mapu-&gt;mapa]]]&lt;inlinelink| místa určení. Až budete na místě, vše musí proběhnout přesně podle plánu. Nemůžete si se soudruhy dovolit udělat chybu.
 
-[[Dostavit se na místo určení.-&gt;Začátek akce - příslušník]]</tw-passagedata><tw-passagedata pid="50" name="Hotovo" tags="overview" position="760,2324" size="100,100">## O čem to celé vlastně bylo?
+[[Dostavit se na místo určení.-&gt;Začátek akce - příslušník]]</tw-passagedata><tw-passagedata pid="50" name="Hotovo" tags="overview" position="760,2324" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Rozcestník&lt;/div&gt;\
+&lt;/div&gt;\
+## O čem to celé vlastně bylo?
 V noci z 13. na 14. dubna 1950 bylo v rámci tzv. Akce K násilně přemístěno na 809 řeholníků ze 75 klášterů v Čechách a na Moravě. V průběhu druhé etapy akce, která proběhla v noci ze 27. na 28. dubna 1950, tentýž osud potkal dalších 355 řeholníků z 69 klášterů.
 
 Zadržení řeholníci byli internováni v tzv. centralizačních klášterech, na 76 představených bylo internováno v internačním klášteře v Želivě.
@@ -573,7 +583,7 @@ Stejný osud potkal i ženské řeholnice o půl roku později během tzv. Akce 
 ---
 [[Projít si příběh ještě jednou-&gt;intro]]
 [[Seznam použitých zdrojů]]
-[[Autoři-&gt;credits]]</tw-passagedata><tw-passagedata pid="51" name="rozkazy" tags="intro stb orders" position="1171,339" size="100,100">&lt;iframe class=&quot;slide-viewer&quot; src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=6&quot; width=&quot;958&quot; height=&quot;1476&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Tvůrci DVZ-&gt;credits]]</tw-passagedata><tw-passagedata pid="51" name="rozkazy" tags="intro stb orders" position="1171,339" size="100,100">&lt;iframe class=&quot;slide-viewer&quot; src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=6&quot; width=&quot;958&quot; height=&quot;1476&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Zpět-&gt;Připravit se na akci.]]</tw-passagedata><tw-passagedata pid="52" name="mapa" tags="intro stb map" position="1179,224" size="100,100">&lt;a href=&quot;#mod-mapa&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
 &lt;img class=&quot;story-image map-image&quot; src=&quot;images/mapa.png&quot;&gt;\
@@ -618,7 +628,7 @@ Adam do tebe zezadu hrubě strčí a předbíhá tě. //„Za mnou!“//, zavel�
 
 &lt;a href=&quot;https://www.pametnaroda.cz/cs/kohl-jan-josef-20091128-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jana Josefa Kohla.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 \\
 &lt;div id=&quot;mod-holota&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
@@ -627,7 +637,11 @@ Adam do tebe zezadu hrubě strčí a předbíhá tě. //„Za mnou!“//, zavel�
         &lt;div class=&quot;block-citation&quot;&gt;CITACE&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="58" name="proč" tags="overview" position="762,2574" size="100,100">Církev byla komunistickým režimem od počátku vnímána jako potenciální základna protistátní činnosti. Patrné to bylo už ve 40. letech, kdy v tisku pravidelně vycházely [[[články-&gt;články 1]]]&lt;inlinelink| namířené proti katolickým intelektuálům.
+</tw-passagedata><tw-passagedata pid="58" name="proč" tags="overview" position="763,2574" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Proč se to stalo?&lt;/div&gt;\
+&lt;/div&gt;\
+Církev byla komunistickým režimem od počátku vnímána jako potenciální základna protistátní činnosti. Patrné to bylo už ve 40. letech, kdy v tisku pravidelně vycházely [[[články-&gt;články 1]]]&lt;inlinelink| namířené proti katolickým intelektuálům.
 
 V únoru 1948 vydal tehdejší kardinál Josef Beran tzv. [[[pastýřský list-&gt;list]]]&lt;inlinelink|, v němž odsoudil nastupující totalitní režim a apeloval na duchovní, aby se mu nepodvolovali. Čtení nebo i jen držení tohoto listu se okamžitě stalo vážným prohřeškem. Ještě toho roku došlo k prvnímu masivnímu zatýkání řeholníků, z nichž již bylo mnoho odsouzeno k odnětí svobody. Samotný kardinál byl režimem dlouho držen v internaci, načež zbytek života prožil ve vyhnanství.
 
@@ -637,7 +651,11 @@ V dubnu 1949 byly poprvé formulovány požadavky na zrušení klášterů. Tzv.
 
 Součástí přípravy byla i [[[masivní protináboženská kampaň vedená sdělovacími prostředky-&gt;články 2]]]&lt;inlinelink| a [[[vykonstruované monstrprocesy-&gt;machalka]]]&lt;inlinelink| s vrcholnými zástupci řádů, kteří byli pouhých osm dní před začátkem akce odsouzeni k vysokým trestům. Veřejné mínění bylo tedy nastaveno silně protinábožensky a [[[Akce K mohla začít-&gt;průběh akce]]]&lt;inlinelink|.
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="59" name="internace" tags="overview" position="394,2565" size="100,100">Všichni řeholníci zadržení během Akce K byli bez předchozího vysvětlení [[[odvezeni do centralizačních středisek-&gt;Kapitola 9]]]&lt;inlinememorylink|, které byly SNB předem zřízeny ve vyklizených klášterech po celé zemi. Představení klášterů byli od zbytku svých řádů odděleni a shromážděni v internačním klášteře v Želivi, společně s dalšími politicky nepohodlnými členy řádů.
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="59" name="internace" tags="overview" position="375,2573" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Jak to dopadlo s řeholníky?&lt;/div&gt;\
+&lt;/div&gt;\
+Všichni řeholníci zadržení během Akce K byli bez předchozího vysvětlení [[[odvezeni do centralizačních středisek-&gt;Kapitola 9]]]&lt;inlinememorylink|, které byly SNB předem zřízeny ve vyklizených klášterech po celé zemi. Představení klášterů byli od zbytku svých řádů odděleni a shromážděni v internačním klášteře v Želivi, společně s dalšími politicky nepohodlnými členy řádů.
 
 V těchto klášterech byli řeholníci nuceni vykonávat těžké práce a podstupovat politická školení, jejichž cílem bylo přinutit je, aby se své víry dobrovolně vzdali.
 
@@ -656,19 +674,35 @@ Jiní řeholníci, kteří byli považováni za hrozbu, byli pod různými zámi
     &lt;div&gt;\
         &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;story-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_PTP.jpg&quot;&gt;\
-        &lt;div class=&quot;block-citation&quot;&gt;Jan Josef Kohl u PTP. In: *Paměť národa* `[`online`]`. `[`cit. 2021-04-07`]`. Dostupné z: https://www.pametnaroda.cz/cs/kohl-jan-josef-1928&lt;/div&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;Jan Josef Kohl u PTP. In: *Paměť národa* &#96;[&#96;online&#96;]&#96;. &#96;[&#96;cit. 2021-04-07&#96;]&#96;. Dostupné z: https://www.pametnaroda.cz/cs/kohl-jan-josef-1928&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="60" name="články 1" tags="overview" position="537,2799" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=8&quot; width=&quot;958&quot; height=&quot;1138&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+</tw-passagedata><tw-passagedata pid="60" name="články 1" tags="overview" position="550,2756" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Proč se to stalo?-&gt;proč]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Články&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=8&quot; width=&quot;958&quot; height=&quot;1138&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="61" name="články 2" tags="overview" position="539,2926" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=9&quot; width=&quot;958&quot; height=&quot;1336&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="61" name="články 2" tags="overview" position="610,2903" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Proč se to stalo?-&gt;proč]]&lt;/div&gt;\
+(if: last of (history:) is &quot;machalka&quot;)[\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Vykonstruované procesy-&gt;machalka]]&lt;/div&gt;]\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Protináboženská kampaň&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=9&quot; width=&quot;958&quot; height=&quot;1336&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="62" name="machalka" tags="overview" position="698,2925" size="100,100">&lt;a href=&quot;#mod-machalka&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
+(link-goto: &quot;Zpět&quot;, last of (history:))</tw-passagedata><tw-passagedata pid="62" name="machalka" tags="overview" position="763,2821" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Proč se to stalo?-&gt;proč]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Vykonstruované procesy&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;a href=&quot;#mod-machalka&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
 &lt;img class=&quot;story-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_machalka.jpg&quot; alt=&quot;&quot;&gt;\
 &lt;/a&gt;
 
 Tzv. proces Machalka a spol. byl první vykonstruovaný proces v režii komunistické strany namířený proti katolické církvi. Proces proběhl v dubnu 1950 a byl prezentován jako šokující odhalení rozsáhlé protistátní činnosti řeholníků, kteří zde byli obviněni ze špionáže a vlastizrady. Proces byl doprovázen [[[masivní kampaní-&gt;články 2]]]&lt;inlinelink| a měl tak poskytnout zdůvodnění následné likvidace klášterů. během procesu bylo deset řeholníků (většinou předních představitelů řádů, mezi nimi i dva opati) odsouzeno k vysokým trestům odnětí svobody.
-
 
 [[Zpět-&gt;proč]]\
 \\
@@ -676,10 +710,14 @@ Tzv. proces Machalka a spol. byl první vykonstruovaný proces v režii komunist
     &lt;div&gt;\
         &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;story-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_machalka.jpg&quot;&gt;\
-        &lt;div class=&quot;block-citation&quot;&gt;Desetičlenná skupina kněží na lavici obžalovaných. In. Vysocí církevní hodnostáři v čele skupiny velezrádců a vyzvědačů: Zahájení procesu s deseti řádovými knězi před státním soudem v Praze, 1950. *Rudé právo: Orgán Československé sociálně demokratické strany dělnické* `[`online`]`. Praha: `[`s.n.`]`, 1.4.1950, **30-31(78)**, s. 3 `[`cit. 2021-04-07`]`. ISSN 0032-6569. Dostupné z: https://ndk.cz/uuid/uuid:858d6034-7145-4643-b71e-0788849ada07&lt;/div&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;Desetičlenná skupina kněží na lavici obžalovaných. In. Vysocí církevní hodnostáři v čele skupiny velezrádců a vyzvědačů: Zahájení procesu s deseti řádovými knězi před státním soudem v Praze, 1950. *Rudé právo: Orgán Československé sociálně demokratické strany dělnické* &#96;[&#96;online&#96;]&#96;. Praha: &#96;[&#96;s.n.&#96;]&#96;, 1.4.1950, **30-31(78)**, s. 3 &#96;[&#96;cit. 2021-04-07&#96;]&#96;. ISSN 0032-6569. Dostupné z: https://ndk.cz/uuid/uuid:858d6034-7145-4643-b71e-0788849ada07&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="63" name="Seznam použitých zdrojů" tags="overview" position="1445,2567" size="100,100">###Monografie:
+</tw-passagedata><tw-passagedata pid="63" name="Seznam použitých zdrojů" tags="overview" position="1396,2571" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Seznam použitých zdrojů&lt;/div&gt;\
+&lt;/div&gt;\
+###Monografie:
 &lt;span class=&quot;citation&quot;&gt;BALÍK, Stanislav a Jiří HANUŠ. Katolická církev v Československu 1945–1989. 2. vyd. Brno: Centrum pro studium demokracie a kultury, 2013. ISBN 978-80-7325-311-0.
 
 Bulínová, M., Janišová, M., &amp; Kaplan, K. (Eds.). (1994). Církevní komise ÚV KSČ 1949-1951: Edice dokumentů. Doplněk. ISBN 80-85270-29-3.
@@ -707,11 +745,11 @@ Rudé právo.
 
 ###Obrázky:
 &lt;span class=&quot;citation&quot;&gt;\
-Vyklízení klášterů. Archiv bezpečnostních složek [online]. [cit. 2020-09-18]. Dostupné z: https://www.abscr.cz/archivalie/vyklizeni-archivu/
+Vyklízení klášterů. Archiv bezpečnostních složek &#96;[online]&#96;. &#96;[cit. 2020-09-18]&#96;. Dostupné z: https://www.abscr.cz/archivalie/vyklizeni-archivu/
 
-Vnější brána s kostelem sv. Markéty, 1907. BRANIŠ, Josef. Svatá Koruna, bývalý klášter cistercienský [online]. Praha: Společ. přátel starož. čes., s. 127 [cit. 2021-04-07]. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:bf9abcd0-f95e-11e6-bff9-005056825209
+Vnější brána s kostelem sv. Markéty, 1907. BRANIŠ, Josef. Svatá Koruna, bývalý klášter cistercienský &#96;[online]&#96;. Praha: Společ. přátel starož. čes., s. 127 &#96;[cit. 2021-04-07]&#96;. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:bf9abcd0-f95e-11e6-bff9-005056825209
 
-Rajský dvůr, 1907. BRANIŠ, Josef. Svatá Koruna, bývalý klášter cistercienský [online]. Praha: Společ. přátel starož. čes., s. 82 [cit. 2021-04-07]. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:b8827be0-f95e-11e6-bff9-005056825209
+Rajský dvůr, 1907. BRANIŠ, Josef. Svatá Koruna, bývalý klášter cistercienský &#96;[online]&#96;. Praha: Společ. přátel starož. čes., s. 82 &#96;[cit. 2021-04-07]&#96;. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:b8827be0-f95e-11e6-bff9-005056825209
 
 Portál chrámový se zbytky předsíně, 1907. BRANIŠ, Josef. Svatá Koruna, bývalý klášter cistercienský [online]. Praha: Společ. přátel starož. čes., s. 132 [cit. 2021-04-07]. Dostupné z: http://www.digitalniknihovna.cz/mzk/uuid/uuid:c03a3120-f95e-11e6-bff9-005056825209
 
@@ -745,7 +783,11 @@ Soukromý archiv Jána Janoka, J. J. Kohla, Josefa Huska B. Vl. Holoty, Pavla Ko
 lalala
 &lt;/span&gt;\
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="64" name="kláštery" tags="overview" position="1213,2567" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=10&quot; width=&quot;958&quot; height=&quot;728&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="64" name="kláštery" tags="overview" position="1130,2570" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Co se stalo s kláštery?&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=10&quot; width=&quot;958&quot; height=&quot;728&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 Na Akci K bezprostředně navázala tzv. Akce VK, neboli vyklízení klášterů. V rámci té měl být veškerý majetek klášterů zajištěn a sepsán zmocněnci Státního úřadu pro věci církevní. V květnu 1950 vznikly při témže úřadu kulturní komise, které měly za úkol majetek ocenit a roztřídit. 
 
@@ -755,9 +797,19 @@ Kvůli necitlivému zacházení bylo však mnoho knih i uměleckých děl [[[nen
 
 Většina z 429 uvolněných klášterních budov připadla armádě a ministerstvu vnitra, navzdory slibům, že budou přestavěny v nemocnice, školy a byty pro rozrůstající se obyvatelstvo. Mnoho budov ale zůstalo ponecháno ladem a bez pravidelné údržby postupně zchátraly.
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="65" name="zpráva" tags="overview" position="1220,2725" size="100,100">&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=12&quot; width=&quot;958&quot; height=&quot;1490&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="65" name="zpráva" tags="overview" position="1137,2728" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Co se stalo s kláštery?-&gt;kláštery]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Ztráty a škody&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=12&quot; width=&quot;958&quot; height=&quot;1490&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět-&gt;kláštery]]</tw-passagedata><tw-passagedata pid="66" name="hůl" tags="" position="1400,650" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="67" name="Kapitola 9" tags="memories overview" position="203,2567" size="100,100">Pavel Konzal (*1927) popisuje příjezd do centralizačního kláštera v Králíkách.
+[[Zpět-&gt;kláštery]]</tw-passagedata><tw-passagedata pid="66" name="hůl" tags="" position="1400,650" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="67" name="Kapitola 9" tags="memories overview" position="172,2613" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Jak to dopadlo s řeholníky?-&gt;internace]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Odvoz do centralizačních středisek&lt;/div&gt;\
+&lt;/div&gt;\
+Pavel Konzal (*1927) popisuje příjezd do centralizačního kláštera v Králíkách.
 
 &lt;a href=&quot;#mod-konzal&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
 &lt;img class=&quot;story-image witness-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_konzal.jpg&quot;&gt;\
@@ -768,7 +820,7 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 
 &lt;a href=&quot;https://www.pametnaroda.cz/cs/konzal-pavel-20180504-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Pavla Konzala.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 \\
 &lt;div id=&quot;mod-konzal&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
@@ -777,7 +829,12 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
         &lt;div class=&quot;block-citation&quot;&gt;CITACE&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="68" name="Kapitola 11" tags="memories overview" position="203,2693" size="100,100">Ján Janok (*1929 †2019) byl jedním z řeholníků, kteří odmítli nastoupit do státem zřízeného semináře a byl proto odveden k PTP. 
+</tw-passagedata><tw-passagedata pid="68" name="Kapitola 11" tags="memories overview" position="183,2740" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Jak to dopadlo s řeholníky?-&gt;internace]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Odvelení k PTP&lt;/div&gt;\
+&lt;/div&gt;\
+Ján Janok (*1929 †2019) byl jedním z řeholníků, kteří odmítli nastoupit do státem zřízeného semináře a byl proto odveden k PTP. 
 
 &lt;a href=&quot;#mod-janok&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
 &lt;img class=&quot;story-image witness-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_janok.jpg&quot;&gt;\
@@ -788,7 +845,7 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 
 &lt;a href=&quot;https://www.pametnaroda.cz/sk/janok-jan-20131216-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Jána Janoka.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 \\
 &lt;div id=&quot;mod-janok&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
@@ -797,7 +854,12 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
         &lt;div class=&quot;block-citation&quot;&gt;CITACE&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="69" name="Kapitola 12" tags="memories overview" position="204,2818" size="100,100">Josef Husek (*1923) byl podobně jako mnozí další nucen nastoupit službu u PTP. Po nálezu dvou náboženských letáků byl ale zatčen a odsouzen k osmi letům vězení.
+</tw-passagedata><tw-passagedata pid="69" name="Kapitola 12" tags="memories overview" position="222,2871" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Jak to dopadlo s řeholníky?-&gt;internace]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Odnětí svobody&lt;/div&gt;\
+&lt;/div&gt;\
+Josef Husek (*1923) byl podobně jako mnozí další nucen nastoupit službu u PTP. Po nálezu dvou náboženských letáků byl ale zatčen a odsouzen k osmi letům vězení.
 
 &lt;a href=&quot;#mod-husek&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
 &lt;img class=&quot;story-image witness-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_husek.jpg&quot;&gt;\
@@ -808,7 +870,7 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 
 &lt;a href=&quot;https://www.pametnaroda.cz/cs/husek-josef-20131215-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Josefa Huska.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 \\
 &lt;div id=&quot;mod-husek&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
@@ -817,7 +879,12 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
         &lt;div class=&quot;block-citation&quot;&gt;CITACE&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="70" name="list" tags="overview" position="537,2679" size="100,100">&lt;a href=&quot;#mod-pastyrsky-list&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
+</tw-passagedata><tw-passagedata pid="70" name="list" tags="overview" position="537,2627" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Proč se to stalo?-&gt;proč]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Pastýřský list&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;a href=&quot;#mod-pastyrsky-list&quot; title=&quot;Otevřít&quot; class=&quot;modal-open&quot;&gt;\
 &lt;img class=&quot;story-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_pastyrsky-list.jpg&quot;&gt;\
 &lt;/a&gt;\
 
@@ -837,7 +904,7 @@ Většina z 429 uvolněných klášterních budov připadla armádě a ministers
 
 &lt;a href=&quot;https://www.pametnaroda.cz/cs/bokor-bernard-20110409-0&quot; target=&quot;_blank&quot;&gt;Přečíst si celý příběh Bernarda Bokora.&lt;/a&gt;\
 
-(link-goto: "Zpět", last of (history:))\
+(link-goto: &quot;Zpět&quot;, last of (history:))\
 </tw-passagedata><tw-passagedata pid="72" name="info řeholník" tags="intro monk" position="619,165" size="100,100">Jmenuješ se Jaroslav Veselý, ale svému okolí jsi známý spíše jako bratr Řehoř.
 
 Narodil ses 27.února roku 1930 v malé vísce na jihu Moravy do katolické rodiny. Tvým rodičům patřilo malé hospodářství včetně pole, na které chodíte se sourozenci už od dětství společně pracovat. Dohromady vás bylo pět - ty, tvůj starší bratr Josef a dvě mladší sestry, Marie a Eliška.
@@ -853,13 +920,24 @@ Tvé další kroky tedy mířily do kláštera, kde jsi přijal nové jméno Ře
 
 Tehdy tě moc mrzelo, že jsi sám nemohl ve válce bojovat a zasloužit se o záchranu své vlasti. K vojákům jsi vždy vzhlížel s obdivem, a k odbojářům bránícím vlast před nacisty ještě více.
 
-Po skončení války jsi nepokračoval ve studiu (které ti stejně dvakrát nešlo), ale nastoupil jsi jako dělník do továrny. Práce to byla k uzoufání nudná a hlavně neužitečná. Když ses po několika letech u pásu už pomalu loučil s výhledy na dobrodružný život, navrhl ti jeden rodinný přítel, člen KSČ, práci u Státní bezpečnosti. S podáním žádosti jsi ani na vteřinu neváhal - tohle byla tvoje... [[Příležitost stát se hrdinou!-&gt;život příslušníka]]</tw-passagedata><tw-passagedata pid="74" name="průběh akce" tags="overview" position="940,2671" size="100,100">Organizací akce byl pověřen Státní úřad pro věci církevní (SÚC) a jeho realizací [[[StB-&gt;stb]]]&lt;inlinelink|.
+Po skončení války jsi nepokračoval ve studiu (které ti stejně dvakrát nešlo), ale nastoupil jsi jako dělník do továrny. Práce to byla k uzoufání nudná a hlavně neužitečná. Když ses po několika letech u pásu už pomalu loučil s výhledy na dobrodružný život, navrhl ti jeden rodinný přítel, člen KSČ, práci u Státní bezpečnosti. S podáním žádosti jsi ani na vteřinu neváhal - tohle byla tvoje... [[Příležitost stát se hrdinou!-&gt;život příslušníka]]</tw-passagedata><tw-passagedata pid="74" name="průběh akce" tags="overview" position="974,2788" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Proč se to stalo?-&gt;proč]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Průběh Akce K&lt;/div&gt;\
+&lt;/div&gt;\
+Organizací akce byl pověřen Státní úřad pro věci církevní (SÚC) a jeho realizací [[[StB-&gt;stb]]]&lt;inlinelink|.
 
 Obsazení klášterů předcházely pečlivé přípravy, včetně vypracování seznamů všech řeholníků a jejich kádrových posudků, podrobného návrhu využití zabraných budov a rozsáhlé propagační kampaně proti jednotlivým řádům. Celá přípravná fáze byla držena v přísné tajnosti, aby zásah zastihl řeholníky nepřipravené a předešlo se nepokojů u místního obyvatelstva.
 
 Po odvezení řeholníků do centralizačních klášterů proběhla v zabraných klášterech důkladná domovní prohlídka a inventura majetku. Veškerý klášterní majetek byl zabaven a civilní zaměstnanci klášterů propuštěni.
 
-[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="75" name="stb" tags="overview" position="949,2817" size="100,100">Pojem StB (Státní bezpečnost) se po únorovém převratu ujal jako souhrnné označení pro státně bezpečnostní a zpravodajské složky, jež byly pod úplnou kontrolou KSČ. Společně s Veřejnou bezpečností (VB) tvořila tzv. Sbor národní bezpečnosti (SNB), represivního aparátu československého státu.
+[[Zpět-&gt;proč]]</tw-passagedata><tw-passagedata pid="75" name="stb" tags="overview" position="978,2930" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Proč se to stalo?-&gt;proč]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Průběh Akce K-&gt;průběh akce]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;StB&lt;/div&gt;\
+&lt;/div&gt;\
+Pojem StB (Státní bezpečnost) se po únorovém převratu ujal jako souhrnné označení pro státně bezpečnostní a zpravodajské složky, jež byly pod úplnou kontrolou KSČ. Společně s Veřejnou bezpečností (VB) tvořila tzv. Sbor národní bezpečnosti (SNB), represivního aparátu československého státu.
 
 Na rozdíl od VB, která měla na starosti spíše běžné policejní činnosti, úkolem StB byla ochrana totalitního systému a boj proti jeho oponentům. To bylo možné zejména díky husté síti tajných spolupracovníků, kteří orgánu poskytovali potřebné informace, ať už vedomě či nevědomě, nebo dokonce nedobrovolně.
 
@@ -877,10 +955,15 @@ Příslušníci StB byli mj. zodpovědní také za přípravu politických monst
     &lt;div&gt;\
         &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&amp;times;&lt;/a&gt;\
         &lt;img class=&quot;story-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/03/dukazy.jpg&quot;&gt;\
-        &lt;div class=&quot;block-citation&quot;&gt;Naše bankovky a dolary, které ukrýval opat Machalka.In. Vysocí církevní hodnostáři v čele skupiny velezrádců a vyzvědačů: Zahájení procesu s deseti řádovými knězi před státním soudem v Praze, 1950. *Rudé právo: Orgán Československé sociálně demokratické strany dělnické* `[`online`]`. Praha: `[`s.n.`]`, 1.4.1950, **30-31**(78), s. 3 `[`cit. 2021-04-07`]`. ISSN 0032-6569. Dostupné z: https://ndk.cz/uuid/uuid:858d6034-7145-4643-b71e-0788849ada07&lt;/div&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;Naše bankovky a dolary, které ukrýval opat Machalka.In. Vysocí církevní hodnostáři v čele skupiny velezrádců a vyzvědačů: Zahájení procesu s deseti řádovými knězi před státním soudem v Praze, 1950. *Rudé právo: Orgán Československé sociálně demokratické strany dělnické* &#96;[&#96;online&#96;]&#96;. Praha: &#96;[&#96;s.n.&#96;]&#96;, 1.4.1950, **30-31**(78), s. 3 &#96;[&#96;cit. 2021-04-07&#96;]&#96;. ISSN 0032-6569. Dostupné z: https://ndk.cz/uuid/uuid:858d6034-7145-4643-b71e-0788849ada07&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="76" name="credits" tags="" position="1578,2568" size="100,100">&lt;div class=&quot;nav-bar&quot;&gt;\
+&lt;div class=&quot;nav-bar-path-item&quot;&gt;[[Rozcestník-&gt;Hotovo]]&lt;/div&gt;\
+&lt;div class=&quot;nav-bar-location&quot;&gt;Tvůrci DVZ&lt;/div&gt;\
+&lt;/div&gt;\
+
+[[Zpět-&gt;Hotovo]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,i=!1,a=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){i=!0,a=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw a}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
