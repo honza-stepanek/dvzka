@@ -355,15 +355,16 @@ div.floating-clock-container {
     width: 100%;
     left: 0;
     z-index: 1;
+    pointer-events: none;
 }
 div.floating-clock {
     margin: 0 auto;
     width: max-content;
     padding: 0.2em 0.5em;
     top: -130px;
+    pointer-events: auto;
 
     background-color: rgb(245, 242, 216);
-
     box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
     
     font-weight: 600;
