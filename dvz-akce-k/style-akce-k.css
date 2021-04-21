@@ -101,12 +101,14 @@ tw-story tw-consecutive-br {
     height: 1em;
 }
 
-tw-sidebar, tw-sidebar *[alt] {
-    color:rgb(0, 214, 36);
-    opacity: 0.8;
-    /* display: none; TODO eventually uncomment */
+tw-icon[alt="Undo"],
+tw-icon[alt="Redo"] {
+    display: none;
 }
-tw-icon[title="Mute/Unmute"] > img{
+tw-icon {
+    margin: 0.3em 0;
+}
+tw-icon > img {
     height: 45px;
 }
 
@@ -122,8 +124,8 @@ tw-icon[title="Mute/Unmute"] > img{
         padding: 5%;
     }
     tw-passage {
-        margin-top: 50px;
-        /* leave space fot ui */
+        margin-top: 65px;
+        /* leave space for the sidebar */
         padding: 2em;
         font-size: 85%;
         line-height: normal;
@@ -133,11 +135,14 @@ tw-icon[title="Mute/Unmute"] > img{
     }
     tw-sidebar {
         position: absolute;
-        left: 5%;
-        top: -100px;
-
+        width: 94%;
+        left: 3%;
+        top: -110px;
+        
         flex-direction: row;
-        width: 90%;
+    }
+    tw-icon > img {
+        height: 30px
     }
 }
 /* wider screen */
@@ -147,7 +152,7 @@ tw-icon[title="Mute/Unmute"] > img{
         left: -80px;
 
         flex-direction: column;
-        width: 45px;
+        /* width: 45px; */
     }
 }
 

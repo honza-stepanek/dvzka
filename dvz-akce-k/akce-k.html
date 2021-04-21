@@ -173,7 +173,6 @@ Nikdo ale neotevírá.
 
 [[Zkoušet to dál.-&gt;Zaklepat]]
 [[Vyrazit dveře.-&gt;Vyrazit dveře]]</tw-passagedata><tw-passagedata pid="16" name="Zaklepat" tags="door stb" position="824,648" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;13. duben 1950, 23:50&lt;/div&gt;&lt;/div&gt;\
-
 //„Soudruhu, zkus to ty, ty máš větší sílu v pěsti,“// otočí se na tebe Pilát.
 
 Nervózně přistoupíš k bráně a ze všech sil na ni zabušíš. Dveře se neotevírají.
@@ -953,8 +952,8 @@ Příslušníci StB byli mj. zodpovědní také za přípravu politických monst
 &lt;div class=&quot;nav-bar-location&quot;&gt;Tvůrci DVZ&lt;/div&gt;\
 &lt;/div&gt;\
 
-[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="77" name="play-music" tags="startup" position="1269,21" size="100,100">&lt;script&gt;
-
+[[Zpět-&gt;Hotovo]]</tw-passagedata><tw-passagedata pid="77" name="play-music" tags="footer" position="1269,21" size="100,100">&lt;script&gt;
+// set up the audio if it hasn't been done yet
 if (!document.ambientAudioControl)
 {
 $(&quot;body&quot;).prepend(&#39;&lt;audio id=&quot;ambient-audio&quot; src=&quot;https://static.wikia.nocookie.net/dota2_gamepedia/images/8/8d/Music_default_ui_main_02.mp3&quot; autoplay loop&gt;&lt;/audio&gt;&#39;);
@@ -962,9 +961,9 @@ $(&quot;#ambient-audio&quot;)[0].volume = 0.15;
 
 const pauseButton = document.createElement(&quot;tw-icon&quot;);
 pauseButton.setAttribute(&quot;tabindex&quot;, 0);
-pauseButton.setAttribute(&quot;alt&quot;, &quot;Mute/Unmute&quot;);
-pauseButton.setAttribute(&quot;title&quot;, &quot;Mute/Unmute&quot;);
-pauseButton.innerHTML = &#39;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/archive/7/74/20171229204732%21Pause_-_The_Noun_Project.svg&quot;&gt;&#39;;
+pauseButton.setAttribute(&quot;alt&quot;, &quot;Pause/Play&quot;);
+pauseButton.setAttribute(&quot;title&quot;, &quot;Pause/Play&quot;);
+pauseButton.innerHTML = &#39;&lt;img src=&quot;images/pause-icon.svg&quot;&gt;&#39;;
 
 const volumeButton = document.createElement(&quot;tw-icon&quot;);
 volumeButton.setAttribute(&quot;tabindex&quot;, 0);
@@ -975,8 +974,8 @@ volumeButton.innerHTML = &#39;&lt;img src=&quot;images/loud2-icon.svg&quot;&gt;&
 let audioObject = {
 	audio: $(&quot;#ambient-audio&quot;)[0],
     pauseButton: pauseButton,
-    playIcon: &#39;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/archive/6/64/20171229204808%21Play_-_The_Noun_Project.svg&quot;&gt;&#39;,
-    pauseIcon: &#39;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/archive/7/74/20171229204732%21Pause_-_The_Noun_Project.svg&quot;&gt;&#39;,
+    playIcon: &#39;&lt;img src=&quot;images/play-icon.svg&quot;&gt;&#39;,
+    pauseIcon: &#39;&lt;img src=&quot;images/pause-icon.svg&quot;&gt;&#39;,
     volumeButton: volumeButton,
     volumeIcons: {
         1: &#39;&lt;img src=&quot;images/loud1-icon.svg&quot;&gt;&#39;,
@@ -1015,7 +1014,7 @@ audioObject.volumeButton.addEventListener(&quot;click&quot;, function() {
 });
 }
 
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="78" name="music-controls" tags="footer" position="1393,21" size="100,100">&lt;script&gt;
+// append the controls to the sidebar
 if (document.ambientAudioControl) {
 	$(&quot;tw-sidebar&quot;)[0].appendChild(document.ambientAudioControl.pauseButton);
 	$(&quot;tw-sidebar&quot;)[0].appendChild(document.ambientAudioControl.volumeButton);
