@@ -552,3 +552,68 @@ audio {
     background-color: rgb(241, 241, 241);
 }
 
+.logolink {
+    /* EU */
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+.logotext {
+    /* EU */
+    font-size: small;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+
+
+/*=============================
+   credits page adjustments 
+=============================*/
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags ~= "credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags ~= "credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
+
