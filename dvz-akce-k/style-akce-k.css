@@ -78,7 +78,7 @@ tw-story[tags ~= "bus"] {
     TWINE PASSAGE 
 ============================*/
 tw-passage {
-    max-width: 1000px;
+    max-width: 900px;
     width: 100%;
     align-self: center;
 
@@ -268,7 +268,6 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 0;
     padding: 6vh 4vw;
     z-index: 10000;
 
@@ -289,7 +288,7 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
 
 /* modal content */
 .modal-dialog-container > div {
-    max-width: 1400px;
+    max-width: 100%;
     flex-grow: 0;
     margin: auto 0px;
     padding: 1.2em;
@@ -308,6 +307,10 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
     pointer-events: none;
     height: 60px;
     width: 1px;
+}
+
+.modal-dialog-container img.dont-get-too-big-image {
+    width: 900px;
 }
 
 .modal-dialog-container .modal-close,
@@ -488,6 +491,7 @@ span.citation {
 div.block-citation {
     margin: 1em 0.1em 0 auto;
     width: 800px;
+    max-width: 100%;
 
     text-align: right;
     word-wrap: break-word;
