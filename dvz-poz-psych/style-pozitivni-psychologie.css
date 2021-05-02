@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+
+
+/* .imbox {
+    box-shadow: 3px 3px 10px darkgray;
+    border-radius: 10px;
+    padding: 2%;
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+} */
+
+/* .cimage {
+    width: auto;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px darkgray;
+} */
+
+/* original css to sort through */
+
+tw-hook[name^='goto'] {
+    box-shadow: 3x 3px 10px darkgray;
+    background-color: white;
+    border: #4BC8FF solid;
+    border-radius: 35px;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin: 1%;
+    text-align: center;
+    width: 50%;
+}
+
+tw-hook[name^='goto']:hover {
+    background-color: #4BC8FF;
+    color: cyan;
+    color: white;
+}
+
+tw-hook[name^='goto']:active {
+    position: relative;
+    top: 2px;
+}
+
+
+
+tw-hook[name='back'] {
+    box-shadow: 3px 3px 10px darkgray;
+    background-color: white;
+    border: #4BC8FF solid;
+    border-radius: 35px;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin: 1%;
+    text-align: center;
+    width: 50%;
+}
+
+tw-hook[name='back']:hover {
+    background-color: #4BC8FF;
+    color: white;
+    transition: 0s;
+}
+
+tw-hook[name='back']:active {
+    position: relative;
+    top: 2px;
+}
+
+.question {
+    text-align: center;
+    font-size: xx-large;
+}
+
+table {
+    padding: 2%;
+    width: 90%;
+}
+
+th {
+    text-align: center;
+    font-size: xx-large;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.virtue {
+    font-weight: bold;
+}
+
+.result {
+    text-align: center;
+}
+
+
+
+
+tw-hook[name^='hook1'] {
+    font-size: 1.75rem;
+}
+
+tw-hook[name^='hook2'] {
+    font-size: 1.5rem;
+}
+
+/* my css from moralni-psychologie */
+
+/* ======================
+    basic Twine elements 
+   ====================== */
+
+tw-story {
+    padding: 80px 10%;
+    min-height: 100%;
+
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(46, 46, 46);
+    background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg");
+
+    font-family: 'Poppins', sans-serif;
+}
+tw-story[tags ~= "antika"] {
+    background-image: url("https://i.pinimg.com/originals/e2/26/97/e226978809e22cd41fe0ee8dc4d8a98a.jpg");
+}
+
+tw-passage {
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    align-self: center;
+
+    background-color: white;
+    color: black;
+
+    box-shadow: -3px 7px 10px 2px rgba(0, 0, 0, 0.42);
+}
+tw-passage[tags ~= "debriefing"] {
+    box-shadow: -2px 5px 7px rgba(0,0,0,0.2);
+}
+
+tw-story tw-consecutive-br {
+    height: 1em;
+}
+
+tw-sidebar {
+    color:rgb(0, 214, 36);
+    opacity: 0.8;
+    /* display: none; */
+}
+tw-sidebar tw-link,
+tw-sidebar tw-link.visited {
+    left: -30px;
+    min-width: 5em;
+}
+
+/* =========================
+   Responsivness adjustments
+   ========================= */
+@media (max-width: 649px) {
+    /* narrow screen */
+    tw-story {
+        padding: 5%;
+    }
+    tw-passage {
+        font-size: 85%;
+        line-height: normal;
+        padding: 23px;
+        margin-top: 30px;
+        margin-bottom: 70px;
+    }
+}
+
+
+/*============================
+    Twine LINKS and buttons
+============================*/
+
+/* general link/button */
+tw-link,
+tw-link.visited,
+/* test options */
+tw-hook[name^='choice'],
+/* traits */
+tw-hook[name='wsd'],
+tw-hook[name='cour'],
+tw-hook[name='lov'],
+tw-hook[name='jstc'],
+tw-hook[name='mdr'],
+tw-hook[name='trns'] {
+
+    display: inline-block;
+    padding: 0.35em 0.8em;
+    margin: 0.4em auto;
+    min-width: 350px;
+    max-width: 100%;
+    border: #0000dc 0.18em solid;
+    color: #0000dc;
+
+    transition: 400ms;
+    transition-property: color, background-color, transform;
+}
+@media (max-width: 500px) {
+    tw-link,
+    tw-link.visited {
+        min-width: 100%;
+    }
+}
+/* hover/focus link button */
+tw-link:hover,
+tw-link:focus,
+tw-link.visited:hover,
+tw-link.visited:focus,
+/* test options */
+tw-hook[name^='choice']:hover,
+tw-hook[name^='choice']:focus,
+/* traits */
+tw-hook[name='wsd']:hover,
+tw-hook[name='wsd']:focus,
+tw-hook[name='cour']:hover,
+tw-hook[name='cour']:focus,
+tw-hook[name='lov']:hover,
+tw-hook[name='lov']:focus,
+tw-hook[name='jstc']:hover,
+tw-hook[name='jstc']:focus,
+tw-hook[name='mdr']:hover,
+tw-hook[name='mdr']:focus,
+tw-hook[name='trns']:hover,
+tw-hook[name='trns']:focus {
+
+    transform: translateX(20px);
+
+    color: #fff;
+    background-color: #0000dc;
+}
+tw-link:hover::before,
+tw-link.visited:hover::before,
+/* test options */
+tw-hook[name^='choice']:hover::before,
+/* traits */
+tw-hook[name='wsd']:hover::before,
+tw-hook[name='cour']:hover::before,
+tw-hook[name='lov']:hover::before,
+tw-hook[name='jstc']:hover::before,
+tw-hook[name='mdr']:hover::before,
+tw-hook[name='trns']:hover::before {
+    /* fixing the issue of the button "dehovering" itself
+       by moving away from the cursor when it's
+       on the button's left side */
+    content: "";
+    height: 110%;
+    width: 22px;
+
+    position: absolute;
+    top: -5%;
+    left: -24px;
+
+    background-color: #0000;
+}
+
+
+/* enchantment links with named hooks */
+
+/* wisdom */
+tw-hook[name^='wis'] {
+    border-left: #33CC00 15px solid;
+    font-size: x-large;
+    padding: 3px;
+}
+
+tw-hook[name='wsd'] {
+    border: #33CC00 solid 10px;
+}
+tw-hook[name='wsd']:hover {
+    background-color: #33CC00;
+    color: white;
+}
+
+/* courage */
+tw-hook[name^='crg'] {
+    border-left: #0033CC 15px solid;
+    font-size: x-large;
+    padding: 3px;
+}
+
+tw-hook[name='cour'] {
+    border: #0033CC solid 10px;
+}
+tw-hook[name='cour']:hover {
+    background-color: #0033CC;
+    color: white;
+}
+
+/* love */
+tw-hook[name^='luv'] {
+    border-left: #FF33CC 15px solid;
+    font-size: x-large;
+    padding: 3px;
+}
+
+tw-hook[name='lov'] {
+    border: #FF33CC solid 10px;
+}
+tw-hook[name='lov']:hover {
+    background-color: #FF33CC;
+    color: white;
+}
+
+/* justice */
+tw-hook[name^='jus'] {
+    border-left: #FFFF66 15px solid;
+    font-size: x-large;
+    padding: 3px;
+}
+
+tw-hook[name='jstc'] {
+    border: #FFFF66 solid 10px;
+}
+tw-hook[name='jstc']:hover {
+    background-color: #FFFF66;
+    color: black;
+}
+
+/* modesty */
+tw-hook[name^='mod'] {
+    border-left: #00CCCC 15px solid;
+    font-size: x-large;
+    padding: 3px;
+}
+
+tw-hook[name='mdr'] {
+    border: #00CCCC solid 10px;
+}
+tw-hook[name='mdr']:hover {
+    background-color: #00CCCC;
+    color: white;
+}
+
+/* transcendancy */
+tw-hook[name^='tra'] {
+    border-left: #FF3333 15px solid;
+    font-size: x-large;
+    padding: 3px;
+}
+
+tw-hook[name='trns'] {
+    border: #FF3333 solid 10px;
+}
+tw-hook[name='trns']:hover {
+    background-color: #FF3333;
+    color: white;
+}
+
+
+
+/*=====================
+        modals
+=====================*/
+
+/* dialog container */
+.modalDialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* modal content */
+.modalDialog > div {
+    max-width: 45em;
+    flex-grow: 0;
+    margin: auto 0px;
+    padding: 27px;
+
+    background: #fff;
+    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 649px) {
+    /* narrow screen */
+    .modalDialog > div {
+        padding: 15px;
+    }
+}
+.modalDialog > div::after {
+    /* invisible "padding" to ensure user can scroll
+        all the way to the bottom of the bubble
+        (that is past its border bc shadow/glow fx) */
+    content: "";
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
+}
+
+.modalDialog .close,
+.modalDialog .close:hover {
+    /* close link */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0000;
+    color: #0000;
+}
+.modalDialog > div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: 0.15em;
+    top: -1.35em;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.1em;
+
+    color: rgb(0, 0, 0);
+    background-color: rgb(70, 70, 70);
+    opacity: 0.5;
+}
+
+.modalDialog img {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+
+a.inmod:any-link,
+.modbut:any-link {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: all;
+    text-decoration: underline;
+}
+a.inmod:any-link:hover,
+.modbut:any-link:hover {
+    color: rgb(0, 146, 24);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+.immod {
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 5px 5px 10px darkgray;
+}
+
+.immod:hover {
+    border: limegreen solid;
+}
+
+.modalinit {
+    color: limegreen;
+    font-weight: bold;
+}
+
+.modalinit:hover {
+    color: #FF32FF;
+}
+
+/* .modbut {
+    box-shadow: 3px 3px 10px darkgray;
+    background-color: white;
+    border-radius: 35px;
+    border: #00DC00 solid;
+    display: inline-block;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin: 1%;
+    text-align: center;
+    width: 50%;
+    transition: 0s;
+}
+
+.modbut:hover {
+    background-color: #00DC00;
+    color: white;
+    transition: 0s;
+}
+
+.modbut:active {
+    position: relative;
+    top: 2px;
+} */
+
+/*======================
+    <a> hyperlinks
+======================*/
+
+.hyper {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+.hyper:hover {
+    color: hsl(170, 90%, 46%);
+    text-decoration-thickness: 1.5px;
+}
+.hyper:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+.hyper:visited:hover {
+    color: hsl(182, 100%, 22%);
+    text-decoration-thickness: 1.5px;
+}
+
+
+
+/*============================
+    Images and such
+============================*/
+
+.imbox {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.imbox img,
+img.cimage {
+    box-shadow: -1px 3px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.inlimg {
+    width: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* modal initializer images */
+.cimage {
+    max-width: 100%;
+    width: 570px;
+    display: block;
+}
+
+
+
+/*==========================
+    other stuff
+==========================*/
+
+.citace {
+    margin: 1em 0px 0px auto;
+    text-align: right;
+    font-size: 65%;
+    line-height: 1.4em;
+    max-width: 30em;
+    word-wrap: break-word;
+}
+
+blockquote {
+    text-align: justify;
+}
+
+.footnote {
+    font-size: 0.9rem;
+}
+
+.tube {
+    width: 32em;
+    height: 18em;
+    max-width: 100%;
+    display: flex;
+    margin: 0 auto;
+
+    background-color: black;
+    box-shadow: -3px 5px 5px 1px rgba(0, 0, 0, 0.404);
+}
+
+.frejm {
+    width: 100%;
+    height: 800px;
+}
+
+.videowrap {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.videowrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* progress bar */
+progress[value] {
+    width: 100%;
+    height: 15px;
+}
+.progress {
+    text-align: center;
+    font-size: large;
+}
+
+
+.logo {
+    height: auto;
+    max-height: 100px;
+}
+
+.logotext {
+    /* eu disclaimer */
+    font-size: small;
+    line-height: 1.4em;
+    text-align: center;
+}
+.logolink {
+    /* eu disclaimer */
+    display: block;
+    margin: 5em auto 0;
+    width: 85%;
+}
+
+
+
+/* ========================
+   credits page adjustments 
+   ======================== */
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+    padding-top: 0;
+    margin-top: -10px;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+img#muni-logo,
+img#muni-logo-econ {
+    margin-left: -13px;
+}
+img#mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
