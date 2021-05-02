@@ -203,14 +203,7 @@ tw-sidebar tw-link.visited {
 tw-link,
 tw-link.visited,
 /* test options */
-tw-hook[name^='choice'],
-/* traits */
-tw-hook[name='wsd'],
-tw-hook[name='cour'],
-tw-hook[name='lov'],
-tw-hook[name='jstc'],
-tw-hook[name='mdr'],
-tw-hook[name='trns'] {
+tw-hook[name^='choice'] {
 
     display: inline-block;
     padding: 0.35em 0.8em;
@@ -236,20 +229,7 @@ tw-link.visited:hover,
 tw-link.visited:focus,
 /* test options */
 tw-hook[name^='choice']:hover,
-tw-hook[name^='choice']:focus,
-/* traits */
-tw-hook[name='wsd']:hover,
-tw-hook[name='wsd']:focus,
-tw-hook[name='cour']:hover,
-tw-hook[name='cour']:focus,
-tw-hook[name='lov']:hover,
-tw-hook[name='lov']:focus,
-tw-hook[name='jstc']:hover,
-tw-hook[name='jstc']:focus,
-tw-hook[name='mdr']:hover,
-tw-hook[name='mdr']:focus,
-tw-hook[name='trns']:hover,
-tw-hook[name='trns']:focus {
+tw-hook[name^='choice']:focus {
 
     transform: translateX(20px);
 
@@ -259,14 +239,7 @@ tw-hook[name='trns']:focus {
 tw-link:hover::before,
 tw-link.visited:hover::before,
 /* test options */
-tw-hook[name^='choice']:hover::before,
-/* traits */
-tw-hook[name='wsd']:hover::before,
-tw-hook[name='cour']:hover::before,
-tw-hook[name='lov']:hover::before,
-tw-hook[name='jstc']:hover::before,
-tw-hook[name='mdr']:hover::before,
-tw-hook[name='trns']:hover::before {
+tw-hook[name^='choice']:hover::before {
     /* fixing the issue of the button "dehovering" itself
        by moving away from the cursor when it's
        on the button's left side */
@@ -291,10 +264,10 @@ tw-hook[name^='wis'] {
     padding: 3px;
 }
 
-tw-hook[name='wsd'] {
+tw-hook[name='wsd'] tw-link {
     border: #33CC00 solid 10px;
 }
-tw-hook[name='wsd']:hover {
+tw-hook[name='wsd'] tw-link:hover {
     background-color: #33CC00;
     color: white;
 }
@@ -306,10 +279,10 @@ tw-hook[name^='crg'] {
     padding: 3px;
 }
 
-tw-hook[name='cour'] {
+tw-hook[name='cour'] tw-link {
     border: #0033CC solid 10px;
 }
-tw-hook[name='cour']:hover {
+tw-hook[name='cour'] tw-link:hover {
     background-color: #0033CC;
     color: white;
 }
@@ -321,10 +294,10 @@ tw-hook[name^='luv'] {
     padding: 3px;
 }
 
-tw-hook[name='lov'] {
+tw-hook[name='lov'] tw-link {
     border: #FF33CC solid 10px;
 }
-tw-hook[name='lov']:hover {
+tw-hook[name='lov'] tw-link:hover {
     background-color: #FF33CC;
     color: white;
 }
@@ -336,25 +309,25 @@ tw-hook[name^='jus'] {
     padding: 3px;
 }
 
-tw-hook[name='jstc'] {
+tw-hook[name='jstc'] tw-link {
     border: #FFFF66 solid 10px;
 }
-tw-hook[name='jstc']:hover {
+tw-hook[name='jstc'] tw-link:hover {
     background-color: #FFFF66;
     color: black;
 }
 
-/* modesty */
+/* moderation */
 tw-hook[name^='mod'] {
     border-left: #00CCCC 15px solid;
     font-size: x-large;
     padding: 3px;
 }
 
-tw-hook[name='mdr'] {
+tw-hook[name='mdr'] tw-link {
     border: #00CCCC solid 10px;
 }
-tw-hook[name='mdr']:hover {
+tw-hook[name='mdr'] tw-link:hover {
     background-color: #00CCCC;
     color: white;
 }
@@ -366,10 +339,10 @@ tw-hook[name^='tra'] {
     padding: 3px;
 }
 
-tw-hook[name='trns'] {
+tw-hook[name='trns'] tw-link {
     border: #FF3333 solid 10px;
 }
-tw-hook[name='trns']:hover {
+tw-hook[name='trns'] tw-link:hover {
     background-color: #FF3333;
     color: white;
 }
