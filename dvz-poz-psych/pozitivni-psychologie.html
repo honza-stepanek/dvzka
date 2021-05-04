@@ -899,453 +899,238 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c5)[(set: $ven to it + 1)(go-to: &quot;12a&quot;)]</tw-passagedata><tw-passagedata pid="51" name="vyhodnoceni-por" tags="" position="3000,1200" size="100,100">$signaturest[# Vaše silné stránky
 
 {
-    (if: $zzs is 10)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] **10**
-    &quot;)]
-    (if: $luz is 10)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] **10**
-    &quot;)]
-    (if: $ouk is 10)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] **10**
-    &quot;)]
-    (if: $tov is 10)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] **10**
-    &quot;)]
-    (if: $sei is 10)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] **10**
-    &quot;)]
-    (if: $vam is 10)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] **10**&quot;)]
-    (if: $sau is 10)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] **10**
-    &quot;)]
-    (if: $vpp is 10)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] **10**
-    &quot;)]
-    (if: $iau is 10)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] **10**
-    &quot;)]
-    (if: $las is 10)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] **10**
-    &quot;)]
-    (if: $lmm is 10)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] **10**
-    &quot;)]
-    (if: $ost is 10)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] **10**
-    &quot;)]
-    (if: $san is 10)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] **10**
-    &quot;)]
-    (if: $vsv is 10)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] **10**
-    &quot;)]
-    (if: $sas is 10)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] **10**
-    &quot;)]
-    (if: $oao is 10)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] **10**
-    &quot;)]
-    (if: $pas is 10)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] **10**
-    &quot;)]
-    (if: $skd is 10)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] **10**
-    &quot;)]
-    (if: $vde is 10)[(print: &quot;|travde&gt;[Vděčnost: ] **10**
-    &quot;)]
-    (if: $nob is 10)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] **10**
-    &quot;)]
-    (if: $ssv is 10)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] **10**
-    &quot;)]
-    (if: $oam is 10)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] **10**
-    &quot;)]
-    (if: $shh is 10)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] **10**
-    &quot;)]
-    (if: $ven is 10)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] **10**
-    &quot;)]
+    (if: $zzs is 10)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;**10**]&quot;)]
+    (if: $luz is 10)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;**10**]&quot;)]
+    (if: $ouk is 10)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;**10**]&quot;)]
+    (if: $tov is 10)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;**10**]&quot;)]
+    (if: $sei is 10)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;**10**]&quot;)]
+    (if: $vam is 10)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;**10**]&quot;)]
+    (if: $sau is 10)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;**10**]&quot;)]
+    (if: $vpp is 10)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;**10**]&quot;)]
+    (if: $iau is 10)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;**10**]&quot;)]
+    (if: $las is 10)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;**10**]&quot;)]
+    (if: $lmm is 10)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;**10**]&quot;)]
+    (if: $ost is 10)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;**10**]&quot;)]
+    (if: $san is 10)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;**10**]&quot;)]
+    (if: $vsv is 10)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;**10**]&quot;)]
+    (if: $sas is 10)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;**10**]&quot;)]
+    (if: $oao is 10)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;**10**]&quot;)]
+    (if: $pas is 10)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;**10**]&quot;)]
+    (if: $skd is 10)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;**10**]&quot;)]
+    (if: $vde is 10)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;**10**]&quot;)]
+    (if: $nob is 10)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;**10**]&quot;)]
+    (if: $ssv is 10)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;**10**]&quot;)]
+    (if: $oam is 10)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;**10**]&quot;)]
+    (if: $shh is 10)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;**10**]&quot;)]
+    (if: $ven is 10)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;**10**]&quot;)]
 }\
 {
-    (if: $zzs is 9)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] **9**
-    &quot;)]
-    (if: $luz is 9)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] **9**
-    &quot;)]
-    (if: $ouk is 9)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] **9**
-    &quot;)]
-    (if: $tov is 9)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] **9**
-    &quot;)]
-    (if: $sei is 9)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] **9**
-    &quot;)]
-    (if: $vam is 9)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] **9**
-    &quot;)]
-    (if: $sau is 9)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] **9**
-    &quot;)]
-    (if: $vpp is 9)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] **9**
-    &quot;)]
-    (if: $iau is 9)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] **9**
-    &quot;)]
-    (if: $las is 9)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] **9**
-    &quot;)]
-    (if: $lmm is 9)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] **9**
-    &quot;)]
-    (if: $ost is 9)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] **9**
-    &quot;)]
-    (if: $san is 9)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] **9**
-    &quot;)]
-    (if: $vsv is 9)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] **9**
-    &quot;)]
-    (if: $sas is 9)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] **9**
-    &quot;)]
-    (if: $oao is 9)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] **9**
-    &quot;)]
-    (if: $pas is 9)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] **9**
-    &quot;)]
-    (if: $skd is 9)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] **9**
-    &quot;)]
-    (if: $vde is 9)[(print: &quot;|travde&gt;[Vděčnost: ] **9**
-    &quot;)]
-    (if: $nob is 9)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] **9**
-    &quot;)]
-    (if: $ssv is 9)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] **9**
-    &quot;)]
-    (if: $oam is 9)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] **9**
-    &quot;)]
-    (if: $shh is 9)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] **9**
-    &quot;)]
-    (if: $ven is 9)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] **9**
-    &quot;)]
+    (if: $zzs is 9)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;**9**]&quot;)]
+    (if: $luz is 9)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;**9**]&quot;)]
+    (if: $ouk is 9)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;**9**]&quot;)]
+    (if: $tov is 9)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;**9**]&quot;)]
+    (if: $sei is 9)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;**9**]&quot;)]
+    (if: $vam is 9)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;**9**]&quot;)]
+    (if: $sau is 9)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;**9**]&quot;)]
+    (if: $vpp is 9)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;**9**]&quot;)]
+    (if: $iau is 9)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;**9**]&quot;)]
+    (if: $las is 9)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;**9**]&quot;)]
+    (if: $lmm is 9)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;**9**]&quot;)]
+    (if: $ost is 9)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;**9**]&quot;)]
+    (if: $san is 9)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;**9**]&quot;)]
+    (if: $vsv is 9)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;**9**]&quot;)]
+    (if: $sas is 9)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;**9**]&quot;)]
+    (if: $oao is 9)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;**9**]&quot;)]
+    (if: $pas is 9)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;**9**]&quot;)]
+    (if: $skd is 9)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;**9**]&quot;)]
+    (if: $vde is 9)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;**9**]&quot;)]
+    (if: $nob is 9)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;**9**]&quot;)]
+    (if: $ssv is 9)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;**9**]&quot;)]
+    (if: $oam is 9)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;**9**]&quot;)]
+    (if: $shh is 9)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;**9**]&quot;)]
+    (if: $ven is 9)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;**9**]&quot;)]
 }\
 {
-    (if: $zzs is 8)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] **8**
-    &quot;)]
-    (if: $luz is 8)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] **8**
-    &quot;)]
-    (if: $ouk is 8)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] **8**
-    &quot;)]
-    (if: $tov is 8)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] **8**
-    &quot;)]
-    (if: $sei is 8)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] **8**
-    &quot;)]
-    (if: $vam is 8)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] **8**
-    &quot;)]
-    (if: $sau is 8)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] **8**
-    &quot;)]
-    (if: $vpp is 8)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] **8**
-    &quot;)]
-    (if: $iau is 8)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] **8**
-    &quot;)]
-    (if: $las is 8)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] **8**
-    &quot;)]
-    (if: $lmm is 8)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] **8**
-    &quot;)]
-    (if: $ost is 8)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] **8**
-    &quot;)]
-    (if: $san is 8)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] **8**
-    &quot;)]
-    (if: $vsv is 8)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] **8**
-    &quot;)]
-    (if: $sas is 8)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] **8**
-    &quot;)]
-    (if: $oao is 8)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] **8**
-    &quot;)]
-    (if: $pas is 8)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] **8**
-    &quot;)]
-    (if: $skd is 8)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] **8**
-    &quot;)]
-    (if: $vde is 8)[(print: &quot;|travde&gt;[Vděčnost: ] **8**
-    &quot;)]
-    (if: $nob is 8)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] **8**
-    &quot;)]
-    (if: $ssv is 8)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] **8**
-    &quot;)]
-    (if: $oam is 8)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] **8**
-    &quot;)]
-    (if: $shh is 8)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] **8**
-    &quot;)]
-    (if: $ven is 8)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] **8**
-    &quot;)]
+    (if: $zzs is 8)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;**8**]&quot;)]
+    (if: $luz is 8)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;**8**]&quot;)]
+    (if: $ouk is 8)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;**8**]&quot;)]
+    (if: $tov is 8)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;**8**]&quot;)]
+    (if: $sei is 8)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;**8**]&quot;)]
+    (if: $vam is 8)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;**8**]&quot;)]
+    (if: $sau is 8)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;**8**]&quot;)]
+    (if: $vpp is 8)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;**8**]&quot;)]
+    (if: $iau is 8)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;**8**]&quot;)]
+    (if: $las is 8)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;**8**]&quot;)]
+    (if: $lmm is 8)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;**8**]&quot;)]
+    (if: $ost is 8)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;**8**]&quot;)]
+    (if: $san is 8)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;**8**]&quot;)]
+    (if: $vsv is 8)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;**8**]&quot;)]
+    (if: $sas is 8)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;**8**]&quot;)]
+    (if: $oao is 8)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;**8**]&quot;)]
+    (if: $pas is 8)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;**8**]&quot;)]
+    (if: $skd is 8)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;**8**]&quot;)]
+    (if: $vde is 8)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;**8**]&quot;)]
+    (if: $nob is 8)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;**8**]&quot;)]
+    (if: $ssv is 8)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;**8**]&quot;)]
+    (if: $oam is 8)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;**8**]&quot;)]
+    (if: $shh is 8)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;**8**]&quot;)]
+    (if: $ven is 8)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;**8**]&quot;)]
 }\
 {
-    (if: $zzs is 7)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] 7
-    &quot;)]
-    (if: $luz is 7)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] 7
-    &quot;)]
-    (if: $ouk is 7)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] 7
-    &quot;)]
-    (if: $tov is 7)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] 7
-    &quot;)]
-    (if: $sei is 7)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] 7
-    &quot;)]
-    (if: $vam is 7)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] 7
-    &quot;)]
-    (if: $sau is 7)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] 7
-    &quot;)]
-    (if: $vpp is 7)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] 7
-    &quot;)]
-    (if: $iau is 7)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] 7
-    &quot;)]
-    (if: $las is 7)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] 7
-    &quot;)]
-    (if: $lmm is 7)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] 7
-    &quot;)]
-    (if: $ost is 7)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] 7
-    &quot;)]
-    (if: $san is 7)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] 7
-    &quot;)]
-    (if: $vsv is 7)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] 7
-    &quot;)]
-    (if: $sas is 7)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] 7
-    &quot;)]
-    (if: $oao is 7)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] 7
-    &quot;)]
-    (if: $pas is 7)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] 7
-    &quot;)]
-    (if: $skd is 7)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] 7
-    &quot;)]
-    (if: $vde is 7)[(print: &quot;|travde&gt;[Vděčnost: ] 7
-    &quot;)]
-    (if: $nob is 7)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] 7
-    &quot;)]
-    (if: $ssv is 7)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] 7
-    &quot;)]
-    (if: $oam is 7)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] 7
-    &quot;)]
-    (if: $shh is 7)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] 7
-    &quot;)]
-    (if: $ven is 7)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] 7
-    &quot;)]
+    (if: $zzs is 7)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;7]&quot;)]
+    (if: $luz is 7)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;7]&quot;)]
+    (if: $ouk is 7)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;7]&quot;)]
+    (if: $tov is 7)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;7]&quot;)]
+    (if: $sei is 7)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;7]&quot;)]
+    (if: $vam is 7)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;7]&quot;)]
+    (if: $sau is 7)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;7]&quot;)]
+    (if: $vpp is 7)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;7]&quot;)]
+    (if: $iau is 7)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;7]&quot;)]
+    (if: $las is 7)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;7]&quot;)]
+    (if: $lmm is 7)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;7]&quot;)]
+    (if: $ost is 7)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;7]&quot;)]
+    (if: $san is 7)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;7]&quot;)]
+    (if: $vsv is 7)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;7]&quot;)]
+    (if: $sas is 7)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;7]&quot;)]
+    (if: $oao is 7)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;7]&quot;)]
+    (if: $pas is 7)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;7]&quot;)]
+    (if: $skd is 7)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;7]&quot;)]
+    (if: $vde is 7)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;7]&quot;)]
+    (if: $nob is 7)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;7]&quot;)]
+    (if: $ssv is 7)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;7]&quot;)]
+    (if: $oam is 7)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;7]&quot;)]
+    (if: $shh is 7)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;7]&quot;)]
+    (if: $ven is 7)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;7]&quot;)]
 }\
 {
-    (if: $zzs is 6)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] 6
-    &quot;)]
-    (if: $luz is 6)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] 6
-    &quot;)]
-    (if: $ouk is 6)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] 6
-    &quot;)]
-    (if: $tov is 6)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] 6
-    &quot;)]
-    (if: $sei is 6)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] 6
-    &quot;)]
-    (if: $vam is 6)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] 6
-    &quot;)]
-    (if: $sau is 6)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] 6
-    &quot;)]
-    (if: $vpp is 6)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] 6
-    &quot;)]
-    (if: $iau is 6)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] 6
-    &quot;)]
-    (if: $las is 6)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] 6
-    &quot;)]
-    (if: $lmm is 6)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] 6
-    &quot;)]
-    (if: $ost is 6)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] 6
-    &quot;)]
-    (if: $san is 6)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] 6
-    &quot;)]
-    (if: $vsv is 6)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] 6
-    &quot;)]
-    (if: $sas is 6)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] 6
-    &quot;)]
-    (if: $oao is 6)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] 6
-    &quot;)]
-    (if: $pas is 6)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] 6
-    &quot;)]
-    (if: $skd is 6)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] 6
-    &quot;)]
-    (if: $vde is 6)[(print: &quot;|travde&gt;[Vděčnost: ] 6
-    &quot;)]
-    (if: $nob is 6)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] 6
-    &quot;)]
-    (if: $ssv is 6)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] 6
-    &quot;)]
-    (if: $oam is 6)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] 6
-    &quot;)]
-    (if: $shh is 6)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] 6
-    &quot;)]
-    (if: $ven is 6)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] 6
-    &quot;)]
+    (if: $zzs is 6)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;6]&quot;)]
+    (if: $luz is 6)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;6]&quot;)]
+    (if: $ouk is 6)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;6]&quot;)]
+    (if: $tov is 6)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;6]&quot;)]
+    (if: $sei is 6)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;6]&quot;)]
+    (if: $vam is 6)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;6]&quot;)]
+    (if: $sau is 6)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;6]&quot;)]
+    (if: $vpp is 6)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;6]&quot;)]
+    (if: $iau is 6)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;6]&quot;)]
+    (if: $las is 6)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;6]&quot;)]
+    (if: $lmm is 6)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;6]&quot;)]
+    (if: $ost is 6)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;6]&quot;)]
+    (if: $san is 6)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;6]&quot;)]
+    (if: $vsv is 6)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;6]&quot;)]
+    (if: $sas is 6)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;6]&quot;)]
+    (if: $oao is 6)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;6]&quot;)]
+    (if: $pas is 6)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;6]&quot;)]
+    (if: $skd is 6)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;6]&quot;)]
+    (if: $vde is 6)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;6]&quot;)]
+    (if: $nob is 6)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;6]&quot;)]
+    (if: $ssv is 6)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;6]&quot;)]
+    (if: $oam is 6)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;6]&quot;)]
+    (if: $shh is 6)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;6]&quot;)]
+    (if: $ven is 6)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;6]&quot;)]
 }\
 {
-    (if: $zzs is 5)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] 5
-    &quot;)]
-    (if: $luz is 5)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] 5
-    &quot;)]
-    (if: $ouk is 5)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] 5
-    &quot;)]
-    (if: $tov is 5)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] 5
-    &quot;)]
-    (if: $sei is 5)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] 5
-    &quot;)]
-    (if: $vam is 5)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] 5
-    &quot;)]
-    (if: $sau is 5)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] 5
-    &quot;)]
-    (if: $vpp is 5)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] 5
-    &quot;)]
-    (if: $iau is 5)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] 5
-    &quot;)]
-    (if: $las is 5)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] 5
-    &quot;)]
-    (if: $lmm is 5)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] 5
-    &quot;)]
-    (if: $ost is 5)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] 5
-    &quot;)]
-    (if: $san is 5)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] 5
-    &quot;)]
-    (if: $vsv is 5)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] 5
-    &quot;)]
-    (if: $sas is 5)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] 5
-    &quot;)]
-    (if: $oao is 5)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] 5
-    &quot;)]
-    (if: $pas is 5)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] 5
-    &quot;)]
-    (if: $skd is 5)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] 5
-    &quot;)]
-    (if: $vde is 5)[(print: &quot;|travde&gt;[Vděčnost: ] 5
-    &quot;)]
-    (if: $nob is 5)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] 5
-    &quot;)]
-    (if: $ssv is 5)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] 5
-    &quot;)]
-    (if: $oam is 5)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] 5
-    &quot;)]
-    (if: $shh is 5)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] 5
-    &quot;)]
-    (if: $ven is 5)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] 5
-    &quot;)]
+    (if: $zzs is 5)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;5]&quot;)]
+    (if: $luz is 5)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;5]&quot;)]
+    (if: $ouk is 5)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;5]&quot;)]
+    (if: $tov is 5)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;5]&quot;)]
+    (if: $sei is 5)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;5]&quot;)]
+    (if: $vam is 5)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;5]&quot;)]
+    (if: $sau is 5)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;5]&quot;)]
+    (if: $vpp is 5)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;5]&quot;)]
+    (if: $iau is 5)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;5]&quot;)]
+    (if: $las is 5)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;5]&quot;)]
+    (if: $lmm is 5)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;5]&quot;)]
+    (if: $ost is 5)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;5]&quot;)]
+    (if: $san is 5)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;5]&quot;)]
+    (if: $vsv is 5)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;5]&quot;)]
+    (if: $sas is 5)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;5]&quot;)]
+    (if: $oao is 5)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;5]&quot;)]
+    (if: $pas is 5)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;5]&quot;)]
+    (if: $skd is 5)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;5]&quot;)]
+    (if: $vde is 5)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;5]&quot;)]
+    (if: $nob is 5)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;5]&quot;)]
+    (if: $ssv is 5)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;5]&quot;)]
+    (if: $oam is 5)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;5]&quot;)]
+    (if: $shh is 5)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;5]&quot;)]
+    (if: $ven is 5)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;5]&quot;)]
 }\
 {
-    (if: $zzs is 4)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] *4*
-    &quot;)]
-    (if: $luz is 4)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] *4*
-    &quot;)]
-    (if: $ouk is 4)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] *4*
-    &quot;)]
-    (if: $tov is 4)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] *4*
-    &quot;)]
-    (if: $sei is 4)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] *4*
-    &quot;)]
-    (if: $vam is 4)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] *4*
-    &quot;)]
-    (if: $sau is 4)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] *4*
-    &quot;)]
-    (if: $vpp is 4)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] *4*
-    &quot;)]
-    (if: $iau is 4)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] *4*
-    &quot;)]
-    (if: $las is 4)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] *4*
-    &quot;)]
-    (if: $lmm is 4)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] *4*
-    &quot;)]
-    (if: $ost is 4)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] *4*
-    &quot;)]
-    (if: $san is 4)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] *4*
-    &quot;)]
-    (if: $vsv is 4)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] *4*
-    &quot;)]
-    (if: $sas is 4)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] *4*
-    &quot;)]
-    (if: $oao is 4)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] *4*
-    &quot;)]
-    (if: $pas is 4)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] *4*
-    &quot;)]
-    (if: $skd is 4)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] *4*
-    &quot;)]
-    (if: $vde is 4)[(print: &quot;|travde&gt;[Vděčnost: ] *4*
-    &quot;)]
-    (if: $nob is 4)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] *4*
-    &quot;)]
-    (if: $ssv is 4)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] *4*
-    &quot;)]
-    (if: $oam is 4)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] *4*
-    &quot;)]
-    (if: $shh is 4)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] *4*
-    &quot;)]
-    (if: $ven is 4)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] *4*
-    &quot;)]
+    (if: $zzs is 4)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;*4*]&quot;)]
+    (if: $luz is 4)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;*4*]&quot;)]
+    (if: $ouk is 4)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;*4*]&quot;)]
+    (if: $tov is 4)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;*4*]&quot;)]
+    (if: $sei is 4)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;*4*]&quot;)]
+    (if: $vam is 4)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;*4*]&quot;)]
+    (if: $sau is 4)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;*4*]&quot;)]
+    (if: $vpp is 4)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;*4*]&quot;)]
+    (if: $iau is 4)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;*4*]&quot;)]
+    (if: $las is 4)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;*4*]&quot;)]
+    (if: $lmm is 4)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;*4*]&quot;)]
+    (if: $ost is 4)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;*4*]&quot;)]
+    (if: $san is 4)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;*4*]&quot;)]
+    (if: $vsv is 4)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;*4*]&quot;)]
+    (if: $sas is 4)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;*4*]&quot;)]
+    (if: $oao is 4)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;*4*]&quot;)]
+    (if: $pas is 4)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;*4*]&quot;)]
+    (if: $skd is 4)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;*4*]&quot;)]
+    (if: $vde is 4)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;*4*]&quot;)]
+    (if: $nob is 4)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;*4*]&quot;)]
+    (if: $ssv is 4)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;*4*]&quot;)]
+    (if: $oam is 4)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;*4*]&quot;)]
+    (if: $shh is 4)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;*4*]&quot;)]
+    (if: $ven is 4)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;*4*]&quot;)]
 }\
 {
-    (if: $zzs is 3)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] *3*
-    &quot;)]
-    (if: $luz is 3)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] *3*
-    &quot;)]
-    (if: $ouk is 3)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] *3*
-    &quot;)]
-    (if: $tov is 3)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] *3*
-    &quot;)]
-    (if: $sei is 3)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] *3*
-    &quot;)]
-    (if: $vam is 3)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] *3*
-    &quot;)]
-    (if: $sau is 3)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] *3*
-    &quot;)]
-    (if: $vpp is 3)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] *3*
-    &quot;)]
-    (if: $iau is 3)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] *3*
-    &quot;)]
-    (if: $las is 3)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] *3*
-    &quot;)]
-    (if: $lmm is 3)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] *3*
-    &quot;)]
-    (if: $ost is 3)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] *3*
-    &quot;)]
-    (if: $san is 3)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] *3*
-    &quot;)]
-    (if: $vsv is 3)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] *3*
-    &quot;)]
-    (if: $sas is 3)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] *3*
-    &quot;)]
-    (if: $oao is 3)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] *3*
-    &quot;)]
-    (if: $pas is 3)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] *3*
-    &quot;)]
-    (if: $skd is 3)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] *3*
-    &quot;)]
-    (if: $vde is 3)[(print: &quot;|travde&gt;[Vděčnost: ] *3*
-    &quot;)]
-    (if: $nob is 3)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] *3*
-    &quot;)]
-    (if: $ssv is 3)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] *3*
-    &quot;)]
-    (if: $oam is 3)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] *3*
-    &quot;)]
-    (if: $shh is 3)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] *3*
-    &quot;)]
-    (if: $ven is 3)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] *3*
-    &quot;)]
+    (if: $zzs is 3)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;*3*]&quot;)]
+    (if: $luz is 3)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;*3*]&quot;)]
+    (if: $ouk is 3)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;*3*]&quot;)]
+    (if: $tov is 3)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;*3*]&quot;)]
+    (if: $sei is 3)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;*3*]&quot;)]
+    (if: $vam is 3)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;*3*]&quot;)]
+    (if: $sau is 3)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;*3*]&quot;)]
+    (if: $vpp is 3)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;*3*]&quot;)]
+    (if: $iau is 3)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;*3*]&quot;)]
+    (if: $las is 3)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;*3*]&quot;)]
+    (if: $lmm is 3)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;*3*]&quot;)]
+    (if: $ost is 3)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;*3*]&quot;)]
+    (if: $san is 3)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;*3*]&quot;)]
+    (if: $vsv is 3)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;*3*]&quot;)]
+    (if: $sas is 3)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;*3*]&quot;)]
+    (if: $oao is 3)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;*3*]&quot;)]
+    (if: $pas is 3)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;*3*]&quot;)]
+    (if: $skd is 3)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;*3*]&quot;)]
+    (if: $vde is 3)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;*3*]&quot;)]
+    (if: $nob is 3)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;*3*]&quot;)]
+    (if: $ssv is 3)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;*3*]&quot;)]
+    (if: $oam is 3)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;*3*]&quot;)]
+    (if: $shh is 3)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;*3*]&quot;)]
+    (if: $ven is 3)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;*3*]&quot;)]
 }\
 {
-    (if: $zzs is 2)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět: ] *2*
-    &quot;)]
-    (if: $luz is 2)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání: ] *2*
-    &quot;)]
-    (if: $ouk is 2)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení: ] *2*
-    &quot;)]
-    (if: $tov is 2)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost: ] *2*
-    &quot;)]
-    (if: $sei is 2)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence: ] *2*
-    &quot;)]
-    (if: $vam is 2)[(print: &quot;|wisvam&gt;[Vhled, moudrost: ] *2*
-    &quot;)]
-    (if: $sau is 2)[(print: &quot;|crgsau&gt;[Statečnost, udatnost: ] *2*
-    &quot;)]
-    (if: $vpp is 2)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle: ] *2*
-    &quot;)]
-    (if: $iau is 2)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost: ] *2*
-    &quot;)]
-    (if: $las is 2)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost: ] *2*
-    &quot;)]
-    (if: $lmm is 2)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován: ] *2*
-    &quot;)]
-    (if: $ost is 2)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce: ] *2*
-    &quot;)]
-    (if: $san is 2)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost: ] *2*
-    &quot;)]
-    (if: $vsv is 2)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi: ] *2*
-    &quot;)]
-    (if: $sas is 2)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň: ] *2*
-    &quot;)]
-    (if: $oao is 2)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost: ] *2*
-    &quot;)]
-    (if: $pas is 2)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost: ] *2*
-    &quot;)]
-    (if: $skd is 2)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost: ] *2*
-    &quot;)]
-    (if: $vde is 2)[(print: &quot;|travde&gt;[Vděčnost: ] *2*
-    &quot;)]
-    (if: $nob is 2)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost: ] *2*
-    &quot;)]
-    (if: $ssv is 2)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra: ] *2*
-    &quot;)]
-    (if: $oam is 2)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství: ] *2*
-    &quot;)]
-    (if: $shh is 2)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost: ] *2*
-    &quot;)]
-    (if: $ven is 2)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení: ] *2*
-    &quot;)]
+    (if: $zzs is 2)[(print: &quot;|wiszzs&gt;[Zvídavost, zájem o&amp;nbsp;svět:&amp;nbsp;*2*]&quot;)]
+    (if: $luz is 2)[(print: &quot;|wisluz&gt;[Láska k&amp;nbsp;učení a&amp;nbsp;vzdělávání:&amp;nbsp;*2*]&quot;)]
+    (if: $ouk is 2)[(print: &quot;|wisouk&gt;[Otevřenost mysli, úsudek, kritické myšlení:&amp;nbsp;*2*]&quot;)]
+    (if: $tov is 2)[(print: &quot;|wistov&gt;[Tvořivost, originalita, vynalézavost:&amp;nbsp;*2*]&quot;)]
+    (if: $sei is 2)[(print: &quot;|wissei&gt;[Sociální a&amp;nbsp;emoční inteligence:&amp;nbsp;*2*]&quot;)]
+    (if: $vam is 2)[(print: &quot;|wisvam&gt;[Vhled, moudrost:&amp;nbsp;*2*]&quot;)]
+    (if: $sau is 2)[(print: &quot;|crgsau&gt;[Statečnost, udatnost:&amp;nbsp;*2*]&quot;)]
+    (if: $vpp is 2)[(print: &quot;|crgvpp&gt;[Vytrvalost, pracovitost, píle:&amp;nbsp;*2*]&quot;)]
+    (if: $iau is 2)[(print: &quot;|crgiau&gt;[Integrita, autentičnost, upřímnost:&amp;nbsp;*2*]&quot;)]
+    (if: $las is 2)[(print: &quot;|luvlas&gt;[Laskavost a&amp;nbsp;štědrost:&amp;nbsp;*2*]&quot;)]
+    (if: $lmm is 2)[(print: &quot;|luvlmm&gt;[Láska, schopnost milovat a&amp;nbsp;být milován:&amp;nbsp;*2*]&quot;)]
+    (if: $ost is 2)[(print: &quot;|jusost&gt;[Občanství, sociální zodpovědnost, týmová práce:&amp;nbsp;*2*]&quot;)]
+    (if: $san is 2)[(print: &quot;|jussan&gt;[Spravedlivost a&amp;nbsp;nestrannost:&amp;nbsp;*2*]&quot;)]
+    (if: $vsv is 2)[(print: &quot;|jusvsv&gt;[Vůdcovství, schopnost vést druhé lidi:&amp;nbsp;*2*]&quot;)]
+    (if: $sas is 2)[(print: &quot;|modsas&gt;[Sebekontrola a&amp;nbsp;sebekázeň:&amp;nbsp;*2*]&quot;)]
+    (if: $oao is 2)[(print: &quot;|modoao&gt;[Obezřetnost, opatrnost:&amp;nbsp;*2*]&quot;)]
+    (if: $pas is 2)[(print: &quot;|modpas&gt;[Pokora a&amp;nbsp;skromnost:&amp;nbsp;*2*]&quot;)]
+    (if: $skd is 2)[(print: &quot;|traskd&gt;[Smysl pro krásu a&amp;nbsp;dokonalost:&amp;nbsp;*2*]&quot;)]
+    (if: $vde is 2)[(print: &quot;|travde&gt;[Vděčnost:&amp;nbsp;*2*]&quot;)]
+    (if: $nob is 2)[(print: &quot;|tranob&gt;[Naděje, optimismus, orientace na budoucnost:&amp;nbsp;*2*]&quot;)]
+    (if: $ssv is 2)[(print: &quot;|trassv&gt;[Spiritualita, smysluplnost, víra:&amp;nbsp;*2*]&quot;)]
+    (if: $oam is 2)[(print: &quot;|traoam&gt;[Odpuštění a&amp;nbsp;milosrdenství:&amp;nbsp;*2*]&quot;)]
+    (if: $shh is 2)[(print: &quot;|trashh&gt;[Smysl pro humor, hravost:&amp;nbsp;*2*]&quot;)]
+    (if: $ven is 2)[(print: &quot;|traven&gt;[Vitalita, elán, nadšení:&amp;nbsp;*2*]&quot;)]
 }\
 ]
 Pokud se chcete dozvědět více o&amp;nbsp;ctnostech a&amp;nbsp;jim příslušejících silných stránkách a&amp;nbsp;možnostech jejich rozvoje,vyberte si z&amp;nbsp;nabídky níže.
@@ -3052,45 +2837,30 @@ Právě tuto šestici považují Christopher Peterson se Seligmanem za základn�
 [[Pokračovat dál-&gt;flow]]
 
 &lt;span class=footnote&gt;&lt;sup&gt;`[`1`]`&lt;/sup&gt; Seligman, M. E. P. *Opravdové štěstí: pozitivní psychologie v&amp;nbsp;praxi*. Praha: Ikar, 2003.&lt;/span&gt;
-&lt;span class=footnote&gt;&lt;sup&gt;`[`2`]`&lt;/sup&gt; Seligman, M. E. P., Peterson, C. *Character strengths and virtues: a&amp;nbsp;handbook and classification*. New York: Oxford University Press, 2004.&lt;/span&gt;</tw-passagedata><tw-passagedata pid="104" name="obsah" tags="" position="3800,100" size="100,100"># Obsah
-
-&lt;ul&gt;
-    &lt;li&gt;|hook1-pp&gt;[Co je pozitivní psychologie]&lt;/li&gt;\
-    &lt;li&gt;|hook1-app&gt;[Aplikace pozitivní psychologie]&lt;/li&gt;\
-    &lt;li&gt;|hook1-hist&gt;[Historie zkoumání ctností a&amp;nbsp;silných stránek]&lt;/li&gt;\
-    &lt;li&gt;|hook1-flow&gt;[Flow a&amp;nbsp;silné stránky]&lt;/li&gt;\
-    &lt;li&gt;|hook1-sst&gt;[Test charakteristických silných stránek]&lt;/li&gt;\
-    &lt;li&gt;|hook1-virt&gt;[Přehled ctností a&amp;nbsp;silných stránek]&lt;/li&gt;\
-    &lt;li&gt;|hook1-crsr&gt;[Více o&amp;nbsp;silných stránkách]&lt;/li&gt;\
+&lt;span class=footnote&gt;&lt;sup&gt;`[`2`]`&lt;/sup&gt; Seligman, M. E. P., Peterson, C. *Character strengths and virtues: a&amp;nbsp;handbook and classification*. New York: Oxford University Press, 2004.&lt;/span&gt;</tw-passagedata><tw-passagedata pid="104" name="obsah" tags="contents" position="3800,100" size="100,100"># Obsah
+&lt;ul class=&quot;contents&quot;&gt;\
+    &lt;li&gt;|hook1-pp&gt;[[[Co je pozitivní psychologie-&gt;coje-pp]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-app&gt;[[[Aplikace pozitivní psychologie-&gt;aplikace]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-hist&gt;[[[Historie zkoumání ctností a&amp;nbsp;silných stránek-&gt;antika]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-flow&gt;[[[Flow a&amp;nbsp;silné stránky-&gt;flow]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-sst&gt;[[[Test charakteristických silných stránek-&gt;sst]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-virt&gt;[[[Přehled ctností a&amp;nbsp;silných stránek-&gt;vyhodnoceni-por]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-crsr&gt;[[[Více o&amp;nbsp;silných stránkách-&gt;crossroads]]]&lt;/li&gt;\
     &lt;ul&gt;\
-        &lt;li&gt;|hook2-str&gt;[O silných stránkách]&lt;/li&gt;\
-        &lt;li&gt;|hook2-job&gt;[Silné stránky a&amp;nbsp;povolání]&lt;/li&gt;\
-        &lt;li&gt;|hook2-res&gt;[Výzkum silných stránek]&lt;/li&gt;\
-        &lt;li&gt;|hook2-ant&gt;[Antické inspirace zkoumání štěstí]&lt;/li&gt;\
+        &lt;li&gt;|hook2-str&gt;[[[O silných stránkách-&gt;co-a-jak]]]&lt;/li&gt;\
+        &lt;li&gt;|hook2-job&gt;[[[Silné stránky a&amp;nbsp;povolání-&gt;str-job]]]&lt;/li&gt;\
+        &lt;li&gt;|hook2-res&gt;[[[Výzkum silných stránek-&gt;str-research]]]&lt;/li&gt;\
+        &lt;li&gt;|hook2-ant&gt;[[[Antické inspirace zkoumání štěstí-&gt;antique]]]&lt;/li&gt;\
     &lt;/ul&gt;\
-    &lt;li&gt;|hook1-exc&gt;[Rozšiřující cvičení (nejen) na doma]&lt;/li&gt;\
-    &lt;li&gt;|hook1-balance&gt;[Vyrovnanost silných stránek]&lt;/li&gt;\
-&lt;/ul&gt;
+    &lt;li&gt;|hook1-exc&gt;[[[Rozšiřující cvičení (nejen) na doma-&gt;excercise]]]&lt;/li&gt;\
+    &lt;li&gt;|hook1-balance&gt;[[[Vyrovnanost silných stránek-&gt;balance1]]]&lt;/li&gt;\
+&lt;/ul&gt;\
 
-|hook1-bib&gt;[Bibliografie]
-|hook1-cred&gt;[Autoři]
 
-(click: ?hook1-pp)[(go-to: &quot;coje-pp&quot;)]
-(click: ?hook1-app)[(go-to: &quot;aplikace&quot;)]
-(click: ?hook1-hist)[(go-to: &quot;antika&quot;)]
-(click: ?hook1-sst)[(go-to: &quot;sst&quot;)]
-(click: ?hook1-virt)[(go-to: &quot;vyhodnoceni-por&quot;)]
-(click: ?hook1-crsr)[(go-to: &quot;crossroads&quot;)]
-(click: ?hook2-str)[(go-to: &quot;co-a-jak&quot;)]
-(click: ?hook1-flow)[(go-to: &quot;flow&quot;)]
-(click: ?hook2-job)[(go-to: &quot;str-job&quot;)]
-(click: ?hook2-res)[(go-to: &quot;str-research&quot;)]
-(click: ?hook2-ant)[(go-to: &quot;antique&quot;)]
-(click: ?hook1-exc)[(go-to: &quot;excercise&quot;)]
-(click: ?hook1-balance)[(go-to: &quot;balance1&quot;)]
-(click: ?hook1-bib)[(go-to: &quot;bibliografie&quot;)]
-(click: ?hook1-cred)[(go-to: &quot;credits&quot;)]</tw-passagedata><tw-passagedata pid="105" name="Sidebar" tags="footer" position="100,700" size="100,100">(append: ?SideBar)[\
-[[Obsah-&gt;obsah]]
+|hook1-bib&gt;[[[Bibliografie-&gt;bibliografie]]]
+|hook1-cred&gt;[[[Autoři-&gt;credits]]]\
+</tw-passagedata><tw-passagedata pid="105" name="Sidebar" tags="footer" position="100,700" size="100,100">(append: ?SideBar)[\
+[[&lt;img id=&quot;home-button&quot; src=&quot;images/home.svg&quot;&gt;-&gt;obsah]]
 ]</tw-passagedata><tw-passagedata pid="106" name="flow" tags="" position="2100,100" size="100,100">## Proč je využívání ctností dobré?
 
 Využívání ctností by mělo podle Aristotela vést k&amp;nbsp;blaženosti. Pozitivní psychologie sice používá trochu jinou terminologii, ale v&amp;nbsp;důležitých aspektech s&amp;nbsp;Aristotelem souhlasí.

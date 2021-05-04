@@ -199,30 +199,64 @@ tw-sidebar tw-link.visited {
     Twine LINKS and buttons
 ============================*/
 
-/* general link/button */
+/* == general link/button == */
 tw-link,
 tw-link.visited,
 /* test options */
 tw-hook[name^='choice'] {
+    /* text of the button */
 
     display: inline-block;
     padding: 0.35em 0.8em;
     margin: 0.4em auto;
     min-width: 350px;
     max-width: 100%;
-    border: #0000dc 0.18em solid;
+    z-index: 1;
     color: #0000dc;
+    background-color: transparent;
 
-    transition: 400ms;
-    transition-property: color, background-color, transform;
+    transition: 190ms;
+    transition-property: color;
 }
 @media (max-width: 500px) {
     tw-link,
-    tw-link.visited {
+    tw-link.visited,
+    tw-hook[name^='choice'] {
         min-width: 100%;
     }
 }
-/* hover/focus link button */
+tw-link::before,
+tw-hook[name^='choice']::before {
+    /* the little strip */
+    content: "";
+    height: 100%;
+    width: 0.3em;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-color: #0000dc;
+
+    transition: 300ms ease-in-out;
+    transition-property: width;
+}
+tw-link::after,
+tw-hook[name^='choice']::after {
+    /* background rectangle */
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+
+    background-color: #EBF0FF;
+}
+
+/* == hover/focus link button == */
 tw-link:hover,
 tw-link:focus,
 tw-link.visited:hover,
@@ -230,121 +264,89 @@ tw-link.visited:focus,
 /* test options */
 tw-hook[name^='choice']:hover,
 tw-hook[name^='choice']:focus {
-
-    transform: translateX(20px);
-
     color: #fff;
-    background-color: #0000dc;
 }
 tw-link:hover::before,
+tw-link:focus::before,
 tw-link.visited:hover::before,
-/* test options */
-tw-hook[name^='choice']:hover::before {
-    /* fixing the issue of the button "dehovering" itself
-       by moving away from the cursor when it's
-       on the button's left side */
+tw-link.visited:focus::before,
+tw-hook[name^='choice']:hover::before,
+tw-hook[name^='choice']:focus::before {
     content: "";
-    height: 110%;
-    width: 22px;
-
+    height: 100%;
+    width: 100%;
+    
     position: absolute;
-    top: -5%;
-    left: -24px;
+    top: 0;
+    left: 0;
 
-    background-color: #0000;
+    background-color: #0000dc;
 }
 
-
-/* enchantment links with named hooks */
-
-/* wisdom */
+/* color coded strengths links */
+tw-hook[name='wsd'] tw-link::before,
+tw-hook[name='cour'] tw-link::before,
+tw-hook[name='lov'] tw-link::before,
+tw-hook[name='jstc'] tw-link::before,
+tw-hook[name='mdr'] tw-link::before,
+tw-hook[name='trns'] tw-link::before {
+    /* link color coding */
+    border-right: var(--color-coding) 0.3em solid;
+    background-color: var(--color-coding);
+    transition-property: width, background-color, border-width;
+}
+tw-hook[name='wsd'] tw-link,
 tw-hook[name^='wis'] {
-    border-left: #33CC00 15px solid;
-    font-size: x-large;
-    padding: 3px;
+    /* wisdom */
+    --color-coding: #0680DE;
 }
-
-tw-hook[name='wsd'] tw-link {
-    border: #33CC00 solid 10px;
-}
-tw-hook[name='wsd'] tw-link:hover {
-    background-color: #33CC00;
-    color: white;
-}
-
-/* courage */
+tw-hook[name='cour'] tw-link,
 tw-hook[name^='crg'] {
-    border-left: #0033CC 15px solid;
-    font-size: x-large;
-    padding: 3px;
+    /* courage */
+    --color-coding: #F37B30;
 }
-
-tw-hook[name='cour'] tw-link {
-    border: #0033CC solid 10px;
-}
-tw-hook[name='cour'] tw-link:hover {
-    background-color: #0033CC;
-    color: white;
-}
-
-/* love */
+tw-hook[name='lov'] tw-link,
 tw-hook[name^='luv'] {
-    border-left: #FF33CC 15px solid;
-    font-size: x-large;
-    padding: 3px;
+    /* love */
+    --color-coding: #DD5296;
 }
-
-tw-hook[name='lov'] tw-link {
-    border: #FF33CC solid 10px;
-}
-tw-hook[name='lov'] tw-link:hover {
-    background-color: #FF33CC;
-    color: white;
-}
-
-/* justice */
+tw-hook[name='jstc'] tw-link,
 tw-hook[name^='jus'] {
-    border-left: #FFFF66 15px solid;
-    font-size: x-large;
-    padding: 3px;
+    /* justice */
+    --color-coding: #F6CB2C;
 }
-
-tw-hook[name='jstc'] tw-link {
-    border: #FFFF66 solid 10px;
-}
-tw-hook[name='jstc'] tw-link:hover {
-    background-color: #FFFF66;
-    color: black;
-}
-
-/* moderation */
+tw-hook[name='mdr'] tw-link,
 tw-hook[name^='mod'] {
-    border-left: #00CCCC 15px solid;
-    font-size: x-large;
-    padding: 3px;
+    /* moderation */
+    --color-coding: #D4B8F7;
 }
-
-tw-hook[name='mdr'] tw-link {
-    border: #00CCCC solid 10px;
-}
-tw-hook[name='mdr'] tw-link:hover {
-    background-color: #00CCCC;
-    color: white;
-}
-
-/* transcendancy */
+tw-hook[name='trns'] tw-link,
 tw-hook[name^='tra'] {
-    border-left: #FF3333 15px solid;
-    font-size: x-large;
-    padding: 3px;
+    /* transcendancy */
+    --color-coding: #6EE5D9;
+}
+tw-hook[name='wsd'] tw-link:hover::before,
+tw-hook[name='cour'] tw-link:hover::before,
+tw-hook[name='lov'] tw-link:hover::before,
+tw-hook[name='jstc'] tw-link:hover::before,
+tw-hook[name='mdr'] tw-link:hover::before,
+tw-hook[name='trns'] tw-link:hover::before {
+    border-right-width: 0.5em;
+    background-color: #0000dc;
 }
 
-tw-hook[name='trns'] tw-link {
-    border: #FF3333 solid 10px;
-}
-tw-hook[name='trns'] tw-link:hover {
-    background-color: #FF3333;
-    color: white;
+/* == tests results style (strengths) == */
+tw-hook[name^='wis'],
+tw-hook[name^='crg'],
+tw-hook[name^='luv'],
+tw-hook[name^='jus'],
+tw-hook[name^='mod'],
+tw-hook[name^='tra'] {
+    display: block;
+    border-left: var(--color-coding) 0.4em solid;
+    font-size: x-large;
+    padding: 0 0.35em;
+    margin: 0.35em 0;
 }
 
 
@@ -646,9 +648,21 @@ progress[value] {
 
 
 
-/* ========================
+
+/*====================
+   contents page
+====================*/
+ul.contents {
+    padding-left: 0;
+}
+ul.contents li {
+    list-style-type: none;
+}
+
+
+/*============================
    credits page adjustments 
-   ======================== */
+============================*/
 div.flex-columns {
     display: flex;
     width: 100%;
