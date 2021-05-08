@@ -13,23 +13,6 @@ h2 {
 }
 
 
-/* .imbox {
-    box-shadow: 3px 3px 10px darkgray;
-    border-radius: 10px;
-    padding: 2%;
-    width: 85%;
-    display: block;
-    margin: 0 auto;
-} */
-
-/* .cimage {
-    width: auto;
-    height: 150px;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 5px 5px 10px darkgray;
-} */
-
 /* original css to sort through */
 
 tw-hook[name^='goto'] {
@@ -47,6 +30,13 @@ tw-hook[name^='goto'] {
     text-align: center;
     width: 50%;
 }
+tw-hook[name^='goto']::after {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    color: red;
+    content: "< this is tw-hook[name^='goto'] rule";
+}
 
 tw-hook[name^='goto']:hover {
     background-color: #4BC8FF;
@@ -55,35 +45,6 @@ tw-hook[name^='goto']:hover {
 }
 
 tw-hook[name^='goto']:active {
-    position: relative;
-    top: 2px;
-}
-
-
-
-tw-hook[name='back'] {
-    box-shadow: 3px 3px 10px darkgray;
-    background-color: white;
-    border: #4BC8FF solid;
-    border-radius: 35px;
-    display: inline-block;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    padding: 15px 20px;
-    text-decoration: none;
-    margin: 1%;
-    text-align: center;
-    width: 50%;
-}
-
-tw-hook[name='back']:hover {
-    background-color: #4BC8FF;
-    color: white;
-    transition: 0s;
-}
-
-tw-hook[name='back']:active {
     position: relative;
     top: 2px;
 }
@@ -202,6 +163,7 @@ tw-sidebar tw-link.visited {
 /* == general link/button == */
 tw-link,
 tw-link.visited,
+tw-hook[name='back'],
 /* test options */
 tw-hook[name^='choice'] {
     /* text of the button */
@@ -226,6 +188,7 @@ tw-hook[name^='choice'] {
     }
 }
 tw-link::before,
+tw-hook[name='back']::before,
 tw-hook[name^='choice']::before {
     /* the little strip */
     content: "";
@@ -243,6 +206,7 @@ tw-hook[name^='choice']::before {
     transition-property: width;
 }
 tw-link::after,
+tw-hook[name='back']::after,
 tw-hook[name^='choice']::after {
     /* background rectangle */
     content: "";
@@ -259,6 +223,8 @@ tw-hook[name^='choice']::after {
 /* == hover/focus link button == */
 tw-link:hover,
 tw-link:focus,
+tw-hook[name='back']:hover,
+tw-hook[name='back']:focus,
 tw-link.visited:hover,
 tw-link.visited:focus,
 /* test options */
@@ -270,6 +236,8 @@ tw-link:hover::before,
 tw-link:focus::before,
 tw-link.visited:hover::before,
 tw-link.visited:focus::before,
+tw-hook[name='back']:hover::before,
+tw-hook[name='back']:focus::before,
 tw-hook[name^='choice']:hover::before,
 tw-hook[name^='choice']:focus::before {
     content: "";
@@ -545,6 +513,8 @@ a.inmod:any-link:hover,
     display: block;
     margin: 0 auto;
 }
+
+/* images shadow */
 .imbox img,
 img.cimage {
     box-shadow: -1px 3px 6px 1px rgba(0, 0, 0, 0.3);
@@ -564,6 +534,38 @@ img.cimage {
     display: block;
 }
 
+a.book-modal-init img {
+    border: rgb(0, 179, 30) solid 0.2em;
+    transition: 300ms;
+    width: 15em;
+    transition-property: border, transform;
+}
+a.book-modal-init img:hover {
+    border: rgb(0, 146, 24) solid 0.2em;
+    transform: scale(1.02);
+    z-index: 2;
+}
+a.book-modal-init {
+    display: block;
+    width: max-content;
+}
+
+/* tw-passage[tags ~= "antika"] */
+a.hyper img.cimage {
+    display: inline-block;
+    margin: 1%;
+    width: 47%;
+    max-width: 13em;
+    border: hsl(170, 98%, 40%) solid 0.2em;
+    transition: 300ms;
+    transition-property: border, transform;
+}
+/* tw-passage[tags ~= "antika"]  */
+a.hyper img.cimage:hover {
+    border: hsl(170, 90%, 46%) solid 0.2em;
+    transform: scale(1.02);
+    z-index: 2;
+}
 
 
 /*==========================
@@ -601,6 +603,11 @@ blockquote {
 .frejm {
     width: 100%;
     height: 800px;
+}
+
+.modalDialog div.interactive-book-container {
+    width:100%;
+    max-width:1000px;
 }
 
 .videowrap {
