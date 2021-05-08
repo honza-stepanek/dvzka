@@ -7,11 +7,12 @@
 # a Twine HTML document
 #
 # usage:
-#   ./tw-asembly [-h] [{FILEPATH} [-a] || [FILEPATH] -d
 # 
 # examples:
-#   ./tw-assembly bits.html style.css
-#   ./tw-assembly mysory.html -d
+#   tw-assembly bits.html
+#   tw-assembly bits.html bitsassembled
+#   tw-assembly bits.html bitsassembled.html
+#   tw-assembly mystory.html -d
 ###########################################################
 
 
@@ -23,13 +24,25 @@ use utf8;
 use File::Basename;
 
 # static globals
-my $usage = "usage: $0 [-h][-a][-d] HTML_FILE [CSS_FILE]";
+my $usage =
+    "usage: tw-assembly [-h][-s][-f][-o][-a][-d] HTML_FILE [OUTPUT_NAME]\n" .
+    # "       tw-assembly [-h][-s][-f][-o] -d HTML_FILE [OUTPU_NAME]\n" .
+    "";
+
 
 # options
 my $assembling = 1;
 my @files;
-my %paths;
 # my $verbose;
+my $safe_open = 1;
+my $html_in_pth;
+my $output_name;
+my $output_base_path;
+
+# global dict of opened files
+my %paths;
+
+# global list of linked css files
 my @css_in_pths;
 
 
@@ -40,23 +53,13 @@ if ($assembling == 1) {
     #  ASSEMBLING  #
     #--------------#
 
-    my $html_in_pth;
-    
-    for my $f (@files) {
-        if ($f =~ /.*\.html/) {
-            $html_in_pth = $f;
-        } else {
-            print "wrong file extension";
-            die 2;
-        }
-    }
 
     find_css_links($html_in_pth);
-    my($ignore_this_1_, $base_path, $ignore_this_2_) = fileparse($html_in_pth);
 
     # there are some issues with eol sequences ('<:crlf' can force dos mode)
-    open(HTML_IN, '<', $html_in_pth);
-    safe_open_new(\*HTML_OUT, 'assembled', '.html');
+    open(HTML_IN, '<', $html_in_pth) or die "couldn't open $html_in_pth";
+
+    open_new(\*HTML_OUT, "$output_base_path$output_name", '.html');
 
     my $state = 0;
     while (<HTML_IN>) {
@@ -68,7 +71,8 @@ if ($assembling == 1) {
                 print HTML_OUT "$1$3\n";
 
                 for my $css_in_pth (@css_in_pths) {
-                    open(CSS_IN, '<', $base_path . $css_in_pth);
+                    my ($x1_, $html_in_base_path, $x2_) = fileparse($html_in_pth, (".html"));
+                    open(CSS_IN, '<', $html_in_base_path . $css_in_pth);
                     read_and_paste(\*CSS_IN, \*HTML_OUT);
                     close(CSS_IN);
                 }
@@ -97,7 +101,8 @@ if ($assembling == 1) {
                 print HTML_OUT "$1\n";
                 
                 for my $css_in_pth (@css_in_pths) {
-                    open(CSS_IN, '<', $base_path . $css_in_pth);
+                    my ($x1_, $html_in_base_path, $x2_) = fileparse($html_in_pth, (".html"));
+                    open(CSS_IN, '<', $html_in_base_path . $css_in_pth);
                     read_and_paste(\*CSS_IN, \*HTML_OUT);
                     close(CSS_IN);
                 }
@@ -127,17 +132,18 @@ if ($assembling == 1) {
 
     close(HTML_IN);
     close(HTML_OUT);
+
+    exit 0;
 }
 else {
     #-----------------#
     #  DISASSEMBLING  #
     #-----------------#
 
-    open(HTML_IN, '<', $files[0]);
-    # TODO optional output file naming
-    my($html_in_name, $base_path, $extension_) = fileparse($files[0], (".html"));
-    safe_open_new(\*CSS_OUT, "${base_path}style-$html_in_name", '.css');
-    safe_open_new(\*HTML_OUT, "${base_path}html-$html_in_name", '.html');
+    open(HTML_IN, '<', $html_in_pth);
+
+    open_new(\*CSS_OUT, "${output_base_path}style-$output_name", '.css');
+    open_new(\*HTML_OUT, "$output_base_path$output_name", '.html');
 
     my $in_style = undef;
     while (<HTML_IN>) {
@@ -145,7 +151,7 @@ else {
             if ($_ =~ /(.*)<\/style>(.*)/) {
                 print CSS_OUT $1;
                 my $css_pth = $paths{fileno CSS_OUT};
-                print HTML_OUT "\n</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$2\n";
+                print HTML_OUT "\n</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$2";
                 $in_style = 0;
             } else {
                 print CSS_OUT $_;
@@ -157,7 +163,7 @@ else {
             my $bit_of_css = $2;
             if ($2 =~ /\s*<\/style>.*/) {
                 print "user style sheet is empty, no point in disassembling";
-                die 1;
+                exit 0;
             }
             print CSS_OUT "$bit_of_css\n";
         } else {
@@ -168,7 +174,10 @@ else {
     close(HTML_IN);
     close(CSS_OUT);
     close(HTML_OUT);
+
+    exit 0;
 }
+
 
 
 # read from one file and paste to the other
@@ -186,21 +195,47 @@ sub parse_args {
         if ($arg eq "-h") {
             print_help(); # exits the program
         } elsif ($arg eq "-a") {
-            $assembling    = 1;
+            $assembling = 1; # assembling
         } elsif ($arg eq "-d") {
-            $assembling    = 0;
+            $assembling = 0; # dissasembling
+        } elsif ($arg eq "-f") {
+            $safe_open = 0;
+        } elsif ($arg eq "-s") {
+            $safe_open = 1;
         } else {
             push(@files, $arg);
         }
+    }
+    $html_in_pth = $files[0];
+
+    if ($html_in_pth =~ /.*\.html/) {
+    } else {
+        print "first file argument does not have html extension";
+        die 2;
+    }
+
+    if (defined $files[1]) {
+        # user given output file name
+        my ($name, $base_path, $ext_) = fileparse($files[1], (".html", ".css"));
+        $output_name = $name;
+        $output_base_path = $base_path;
+    } else {
+        # output file name based on the input name
+        my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
+        $output_name = $assembling == 1 ? "$name-a" : "$name-d";
+        $output_base_path = $base_path;
     }
 }
 
 # finds linked css files
 sub find_css_links {
     my $html_in_pth = shift;
-    open(HTML_IN_, '<', $html_in_pth);
+    open(HTML_IN_, '<', $html_in_pth) or die "couldn't open $html_in_pth";
     while (<HTML_IN_>) {
-        if ($_ =~ /.*<link [^>]*href=\"([^\"]*)\" rel=\"stylesheet\">.*/) {
+        if ($_ =~ /.*<link [^>]*href=\"([^\"]*)\"[^>]*rel=\"stylesheet\"[^>]*>.*/) {
+            print "found linked css file: $1\n";
+            push(@css_in_pths, $1);
+        } elsif ($_ =~ /.*<link [^>]*rel=\"stylesheet\"[^>]*href=\"([^\"]*)\">.*/) {
             print "found linked css file: $1\n";
             push(@css_in_pths, $1);
         }
@@ -211,18 +246,23 @@ sub find_css_links {
 # prints help message and !exits!
 sub print_help {
     print $usage . "\n" .
-    "\t-a\tassembly mode\n" .
-    "\t-d\tdisassembling mode\n #TODO ...\n";
+    "\t-a\tassembly mode [default]\n" .
+    "\t-d\tdisassembling mode\n" .
+    "\t-s\tsafe open (new files are numbered\n" .
+      "\t\tif same name already exists) [deafult]\n" .
+    "\t-f\tno safe open\n" .
+    "\t-o\toverwrite existing html #TODO\n" .
+    # "#TODO ...\n" .
+    "";
     exit 0;
 }
 
-sub safe_open_new {
-    my $fh = shift;
+sub open_new {
+    my $fh = shift; # file handle
+    my $new_pref = shift; # part of the file path
+    my $new_suf = shift; # extension
 
-    my $new_pref = shift;
-    my $new_suf = shift;
-
-    if (-e "${new_pref}${new_suf}") {
+    if ($safe_open && -e "${new_pref}${new_suf}") {
         my $no = 1;
         while (-e "${new_pref}_${no}${new_suf}") {
             $no = $no + 1;
@@ -230,6 +270,10 @@ sub safe_open_new {
         open($fh, '>', "${new_pref}_${no}${new_suf}") or die $!;
         $paths{fileno $fh} = "${new_pref}_${no}${new_suf}";
     } else {
+        if ("${new_pref}${new_suf}" eq $html_in_pth) {
+            die "can't open $html_in_pth for writing because it is needed for reading\n" .
+            "use safe open option\n";
+        }
         open($fh, '>', "${new_pref}${new_suf}") or die $!;
         $paths{fileno $fh} = "${new_pref}${new_suf}";
     }
