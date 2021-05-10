@@ -568,6 +568,41 @@ a.hyper img.cimage:hover {
 }
 
 
+
+
+/*==========================
+    Progress bar
+==========================*/
+
+div.progress-bar {
+    height: 0.6em;
+    width: 100%;
+    background-color: #ebf0ff;
+}
+div.progress-bar-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    
+    background-color: #ced9ff;
+}
+
+div.progress-bar::after {
+    /* color: rgb(85, 85, 85); */
+    content: attr(data-value) "/48";
+
+    position: absolute;
+    top: -70%;
+    left: 0;
+    
+    height: 200%;
+    width: 100%;
+    text-align: center;
+}
+
+
+
 /*==========================
     other stuff
 ==========================*/
@@ -625,14 +660,14 @@ blockquote {
 }
 
 /* progress bar */
-progress[value] {
+/* progress[value] {
     width: 100%;
     height: 15px;
 }
 .progress {
     text-align: center;
     font-size: large;
-}
+} */
 
 
 .logo {

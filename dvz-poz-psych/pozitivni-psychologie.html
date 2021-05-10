@@ -14,7 +14,14 @@
 
 </style>
 <link rel="stylesheet" href="style-pozitivni-psychologie.css">
-<script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="sst" tags="" position="300,400" size="100,100"># Test charakteristických silných stránek&lt;span class=footnote&gt;&lt;sup&gt;`[`1`]`&lt;/sup&gt;&lt;/span&gt;\
+<script role="script" id="twine-user-script" type="text/twine-javascript">
+// the progressing bar of the progress bar :)
+document.twineAnimateProgressBar = function () {
+    let progress = $("div.progress-bar").attr("data-value");
+    progress = parseInt(progress, 10) / 0.48;
+    $("div.progress-bar").append('<div class="progress-bar-bar" style="width: ' + progress + '%"></div>');
+}
+</script><tw-passagedata pid="1" name="sst" tags="" position="300,400" size="100,100"># Test charakteristických silných stránek&lt;span class=footnote&gt;&lt;sup&gt;`[`1`]`&lt;/sup&gt;&lt;/span&gt;\
 
 V&amp;nbsp;následujícím testu na vás čeká 48 tvrzení, která budete hodnotit podle na pětistupňové škále od „Vůbec nesouhlasím“ po „Úplně souhlasím“. Test by vám měl zabrat mezi 5 až 10 minutami.
 
@@ -28,8 +35,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 
 (set: $zzs to 0)(set: $luz to 0)(set: $ouk to 0)(set: $tov to 0)(set: $sei to 0)(set: $vam to 0)(set: $sau to 0)(set: $vpp to 0)(set: $iau to 0)(set: $las to 0)(set: $lmm to 0)(set: $ost to 0)(set: $san to 0)(set: $vsv to 0)(set: $sas to 0)(set: $oao to 0)(set: $pas to 0)(set: $skd to 0)(set: $vde to 0)(set: $nob to 0)(set: $ssv to 0)(set: $oam to 0)(set: $shh to 0)(set: $ven to 0)
 
-&lt;!--[[Přeskočit test (dummy values)-&gt;dummy-values]]--&gt;</tw-passagedata><tw-passagedata pid="2" name="1a" tags="test" position="500,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;9&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;9/48&lt;/div&gt;\
+&lt;!--[[Přeskočit test (dummy values)-&gt;dummy-values]]--&gt;</tw-passagedata><tw-passagedata pid="2" name="1a" tags="test" position="500,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;9&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy se zajímám o&amp;nbsp;svět kolem sebe.&lt;/div&gt;\
 
@@ -191,8 +198,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
     &lt;/tbody&gt;\
 &lt;/table&gt;\
 
-[[Seřadit výsledky-&gt;hotovo]]</tw-passagedata><tw-passagedata pid="4" name="1b" tags="test" position="700,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;44&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;44/48&lt;/div&gt;\
+[[Seřadit výsledky-&gt;hotovo]]</tw-passagedata><tw-passagedata pid="4" name="1b" tags="test" position="700,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;44&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Snadno se začnu nudit.&lt;/div&gt;\
 
@@ -206,8 +213,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $zzs to it + 4)(go-to: &quot;7b&quot;)]
 (click: ?choice-c3)[(set: $zzs to it + 3)(go-to: &quot;7b&quot;)]
 (click: ?choice-c4)[(set: $zzs to it + 2)(go-to: &quot;7b&quot;)]
-(click: ?choice-c5)[(set: $zzs to it + 1)(go-to: &quot;7b&quot;)]</tw-passagedata><tw-passagedata pid="5" name="2a" tags="test" position="900,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;2&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;2/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $zzs to it + 1)(go-to: &quot;7b&quot;)]</tw-passagedata><tw-passagedata pid="5" name="2a" tags="test" position="900,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;2&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Jsem nadšený/á, když se učím něco nového.&lt;/div&gt;\
 
@@ -221,8 +228,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $luz to it + 2)(go-to: &quot;23a&quot;)]
 (click: ?choice-c3)[(set: $luz to it + 3)(go-to: &quot;23a&quot;)]
 (click: ?choice-c4)[(set: $luz to it + 4)(go-to: &quot;23a&quot;)]
-(click: ?choice-c5)[(set: $luz to it + 5)(go-to: &quot;23a&quot;)]</tw-passagedata><tw-passagedata pid="6" name="2b" tags="test" position="1100,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;35&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;35/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $luz to it + 5)(go-to: &quot;23a&quot;)]</tw-passagedata><tw-passagedata pid="6" name="2b" tags="test" position="1100,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;35&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Nemám ve zvyku navštěvovat muzea nebo vzdělávací instituce.&lt;/div&gt;\
 
@@ -236,8 +243,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $luz to it + 4)(go-to: &quot;8b&quot;)]
 (click: ?choice-c3)[(set: $luz to it + 3)(go-to: &quot;8b&quot;)]
 (click: ?choice-c4)[(set: $luz to it + 2)(go-to: &quot;8b&quot;)]
-(click: ?choice-c5)[(set: $luz to it + 1)(go-to: &quot;8b&quot;)]</tw-passagedata><tw-passagedata pid="7" name="3a" tags="test" position="1300,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;48&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;48/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $luz to it + 1)(go-to: &quot;8b&quot;)]</tw-passagedata><tw-passagedata pid="7" name="3a" tags="test" position="1300,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;48&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Když to situace vyžaduje, dokážu uvažovat velmi racionálně.&lt;/div&gt;\
 
@@ -251,8 +258,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ouk to it + 2)(go-to: &quot;hotovo&quot;)]
 (click: ?choice-c3)[(set: $ouk to it + 3)(go-to: &quot;hotovo&quot;)]
 (click: ?choice-c4)[(set: $ouk to it + 4)(go-to: &quot;hotovo&quot;)]
-(click: ?choice-c5)[(set: $ouk to it + 5)(go-to: &quot;hotovo&quot;)]</tw-passagedata><tw-passagedata pid="8" name="3b" tags="test" position="1500,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;28&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;28/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ouk to it + 5)(go-to: &quot;hotovo&quot;)]</tw-passagedata><tw-passagedata pid="8" name="3b" tags="test" position="1500,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;28&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Mám sklon dělat rychlé závěry a&amp;nbsp;soudy.&lt;/div&gt;\
 
@@ -266,8 +273,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ouk to it + 4)(go-to: &quot;18b&quot;)]
 (click: ?choice-c3)[(set: $ouk to it + 3)(go-to: &quot;18b&quot;)]
 (click: ?choice-c4)[(set: $ouk to it + 2)(go-to: &quot;18b&quot;)]
-(click: ?choice-c5)[(set: $ouk to it + 1)(go-to: &quot;18b&quot;)]</tw-passagedata><tw-passagedata pid="9" name="4a" tags="test" position="1700,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;33&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;33/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ouk to it + 1)(go-to: &quot;18b&quot;)]</tw-passagedata><tw-passagedata pid="9" name="4a" tags="test" position="1700,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;33&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Rád/a vymýšlím nové způsoby, jak něco udělat.&lt;/div&gt;\
 
@@ -281,8 +288,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $tov to it + 2)(go-to: &quot;13b&quot;)]
 (click: ?choice-c3)[(set: $tov to it + 3)(go-to: &quot;13b&quot;)]
 (click: ?choice-c4)[(set: $tov to it + 4)(go-to: &quot;13b&quot;)]
-(click: ?choice-c5)[(set: $tov to it + 5)(go-to: &quot;13b&quot;)]</tw-passagedata><tw-passagedata pid="10" name="4b" tags="test" position="1900,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;16&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;16/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $tov to it + 5)(go-to: &quot;13b&quot;)]</tw-passagedata><tw-passagedata pid="10" name="4b" tags="test" position="1900,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;16&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Myslím, že většina mých přátel má větší představivost než já.&lt;/div&gt;\
 
@@ -296,8 +303,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $tov to it + 4)(go-to: &quot;12b&quot;)]
 (click: ?choice-c3)[(set: $tov to it + 3)(go-to: &quot;12b&quot;)]
 (click: ?choice-c4)[(set: $tov to it + 2)(go-to: &quot;12b&quot;)]
-(click: ?choice-c5)[(set: $tov to it + 1)(go-to: &quot;12b&quot;)]</tw-passagedata><tw-passagedata pid="11" name="5a" tags="test" position="2100,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;30&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;30/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $tov to it + 1)(go-to: &quot;12b&quot;)]</tw-passagedata><tw-passagedata pid="11" name="5a" tags="test" position="2100,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;30&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Ať se nacházím v&amp;nbsp;jakékoli společenské situaci, vždy dokážu zapadnout.&lt;/div&gt;\
 
@@ -311,8 +318,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $sei to it + 2)(go-to: &quot;10b&quot;)]
 (click: ?choice-c3)[(set: $sei to it + 3)(go-to: &quot;10b&quot;)]
 (click: ?choice-c4)[(set: $sei to it + 4)(go-to: &quot;10b&quot;)]
-(click: ?choice-c5)[(set: $sei to it + 5)(go-to: &quot;10b&quot;)]</tw-passagedata><tw-passagedata pid="12" name="5b" tags="test" position="2300,400" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;19&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;19/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $sei to it + 5)(go-to: &quot;10b&quot;)]</tw-passagedata><tw-passagedata pid="12" name="5b" tags="test" position="2300,400" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;19&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Příliš se mi nedaří odhadnout pocity druhých lidí.&lt;/div&gt;\
 
@@ -326,8 +333,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $sei to it + 4)(go-to: &quot;14b&quot;)]
 (click: ?choice-c3)[(set: $sei to it + 3)(go-to: &quot;14b&quot;)]
 (click: ?choice-c4)[(set: $sei to it + 2)(go-to: &quot;14b&quot;)]
-(click: ?choice-c5)[(set: $sei to it + 1)(go-to: &quot;14b&quot;)]</tw-passagedata><tw-passagedata pid="13" name="6a" tags="test" position="2300,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;23&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;23/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $sei to it + 1)(go-to: &quot;14b&quot;)]</tw-passagedata><tw-passagedata pid="13" name="6a" tags="test" position="2300,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;23&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy jsem schopný/á vidět věci v&amp;nbsp;jejich celistvosti.&lt;/div&gt;\
 
@@ -341,8 +348,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vam to it + 2)(go-to: &quot;22a&quot;)]
 (click: ?choice-c3)[(set: $vam to it + 3)(go-to: &quot;22a&quot;)]
 (click: ?choice-c4)[(set: $vam to it + 4)(go-to: &quot;22a&quot;)]
-(click: ?choice-c5)[(set: $vam to it + 5)(go-to: &quot;22a&quot;)]</tw-passagedata><tw-passagedata pid="14" name="6b" tags="test" position="2100,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;38&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;38/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vam to it + 5)(go-to: &quot;22a&quot;)]</tw-passagedata><tw-passagedata pid="14" name="6b" tags="test" position="2100,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;38&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Málokdy mě někdo požádá o&amp;nbsp;radu.&lt;/div&gt;\
 
@@ -356,8 +363,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vam to it + 4)(go-to: &quot;19b&quot;)]
 (click: ?choice-c3)[(set: $vam to it + 3)(go-to: &quot;19b&quot;)]
 (click: ?choice-c4)[(set: $vam to it + 2)(go-to: &quot;19b&quot;)]
-(click: ?choice-c5)[(set: $vam to it + 1)(go-to: &quot;19b&quot;)]</tw-passagedata><tw-passagedata pid="15" name="7a" tags="test" position="1900,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;47&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;47/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vam to it + 1)(go-to: &quot;19b&quot;)]</tw-passagedata><tw-passagedata pid="15" name="7a" tags="test" position="1900,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;47&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Často zastávám odlišné názory, a&amp;nbsp;to i&amp;nbsp;když se mnou někdo výrazně nesouhlasí.&lt;/div&gt;\
 
@@ -371,8 +378,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $sau to it + 2)(go-to: &quot;3a&quot;)]
 (click: ?choice-c3)[(set: $sau to it + 3)(go-to: &quot;3a&quot;)]
 (click: ?choice-c4)[(set: $sau to it + 4)(go-to: &quot;3a&quot;)]
-(click: ?choice-c5)[(set: $sau to it + 5)(go-to: &quot;3a&quot;)]</tw-passagedata><tw-passagedata pid="16" name="7b" tags="test" position="1700,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;45&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;45/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $sau to it + 5)(go-to: &quot;3a&quot;)]</tw-passagedata><tw-passagedata pid="16" name="7b" tags="test" position="1700,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;45&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Často mě přemůže smutek a&amp;nbsp;zklamání.&lt;/div&gt;\
 
@@ -386,8 +393,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $sau to it + 4)(go-to: &quot;22b&quot;)]
 (click: ?choice-c3)[(set: $sau to it + 3)(go-to: &quot;22b&quot;)]
 (click: ?choice-c4)[(set: $sau to it + 2)(go-to: &quot;22b&quot;)]
-(click: ?choice-c5)[(set: $sau to it + 1)(go-to: &quot;22b&quot;)]</tw-passagedata><tw-passagedata pid="17" name="8a" tags="test" position="1500,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;43&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;43/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $sau to it + 1)(go-to: &quot;22b&quot;)]</tw-passagedata><tw-passagedata pid="17" name="8a" tags="test" position="1500,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;43&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy dokončím, co začnu.&lt;/div&gt;\
 
@@ -401,8 +408,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vpp to it + 2)(go-to: &quot;1b&quot;)]
 (click: ?choice-c3)[(set: $vpp to it + 3)(go-to: &quot;1b&quot;)]
 (click: ?choice-c4)[(set: $vpp to it + 4)(go-to: &quot;1b&quot;)]
-(click: ?choice-c5)[(set: $vpp to it + 5)(go-to: &quot;1b&quot;)]</tw-passagedata><tw-passagedata pid="18" name="8b" tags="test" position="1300,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;36&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;36/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vpp to it + 5)(go-to: &quot;1b&quot;)]</tw-passagedata><tw-passagedata pid="18" name="8b" tags="test" position="1300,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;36&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Od práce se často nechám odlákat.&lt;/div&gt;\
 
@@ -416,8 +423,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vpp to it + 4)(go-to: &quot;19a&quot;)]
 (click: ?choice-c3)[(set: $vpp to it + 3)(go-to: &quot;19a&quot;)]
 (click: ?choice-c4)[(set: $vpp to it + 2)(go-to: &quot;19a&quot;)]
-(click: ?choice-c5)[(set: $vpp to it + 1)(go-to: &quot;19a&quot;)]</tw-passagedata><tw-passagedata pid="19" name="9a" tags="test" position="1100,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;12&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;12/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vpp to it + 1)(go-to: &quot;19a&quot;)]</tw-passagedata><tw-passagedata pid="19" name="9a" tags="test" position="1100,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;12&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Své sliby vždy dodržím.&lt;/div&gt;\
 
@@ -431,8 +438,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $iau to it + 2)(go-to: &quot;11a&quot;)]
 (click: ?choice-c3)[(set: $iau to it + 3)(go-to: &quot;11a&quot;)]
 (click: ?choice-c4)[(set: $iau to it + 4)(go-to: &quot;11a&quot;)]
-(click: ?choice-c5)[(set: $iau to it + 5)(go-to: &quot;11a&quot;)]</tw-passagedata><tw-passagedata pid="20" name="9b" tags="test" position="900,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;32&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;32/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $iau to it + 5)(go-to: &quot;11a&quot;)]</tw-passagedata><tw-passagedata pid="20" name="9b" tags="test" position="900,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;32&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Kamarádi mi nikdy neříkají, že jsem opravdový/á, upřímný/á.&lt;/div&gt;\
 
@@ -446,8 +453,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $iau to it + 4)(go-to: &quot;4a&quot;)]
 (click: ?choice-c3)[(set: $iau to it + 3)(go-to: &quot;4a&quot;)]
 (click: ?choice-c4)[(set: $iau to it + 2)(go-to: &quot;4a&quot;)]
-(click: ?choice-c5)[(set: $iau to it + 1)(go-to: &quot;4a&quot;)]</tw-passagedata><tw-passagedata pid="21" name="10a" tags="test" position="700,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;7&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;7/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $iau to it + 1)(go-to: &quot;4a&quot;)]</tw-passagedata><tw-passagedata pid="21" name="10a" tags="test" position="700,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;7&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;V&amp;nbsp;průběhu uplynulého měsíce jsem někomu dobrovolně pomohl/a.&lt;/div&gt;\
 
@@ -461,8 +468,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $las to it + 2)(go-to: &quot;21b&quot;)]
 (click: ?choice-c3)[(set: $las to it + 3)(go-to: &quot;21b&quot;)]
 (click: ?choice-c4)[(set: $las to it + 4)(go-to: &quot;21b&quot;)]
-(click: ?choice-c5)[(set: $las to it + 5)(go-to: &quot;21b&quot;)]</tw-passagedata><tw-passagedata pid="22" name="10b" tags="test" position="500,600" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;31&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;31/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $las to it + 5)(go-to: &quot;21b&quot;)]</tw-passagedata><tw-passagedata pid="22" name="10b" tags="test" position="500,600" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;31&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Málokdy mě štěstí druhých tak potěší jako moje vlastní.&lt;/div&gt;\
 
@@ -476,8 +483,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $las to it + 4)(go-to: &quot;9b&quot;)]
 (click: ?choice-c3)[(set: $las to it + 3)(go-to: &quot;9b&quot;)]
 (click: ?choice-c4)[(set: $las to it + 2)(go-to: &quot;9b&quot;)]
-(click: ?choice-c5)[(set: $las to it + 1)(go-to: &quot;9b&quot;)]</tw-passagedata><tw-passagedata pid="23" name="11a" tags="test" position="500,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;13&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;13/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $las to it + 1)(go-to: &quot;9b&quot;)]</tw-passagedata><tw-passagedata pid="23" name="11a" tags="test" position="500,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;13&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;V&amp;nbsp;mém životě jsou lidé, kterým záleží na mých pocitech a&amp;nbsp;na tom, abych byl/a v&amp;nbsp;pohodě, stejně jako jim záleží na jejich vlastním štěstí.&lt;/div&gt;\
 
@@ -491,8 +498,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $lmm to it + 2)(go-to: &quot;15b&quot;)]
 (click: ?choice-c3)[(set: $lmm to it + 3)(go-to: &quot;15b&quot;)]
 (click: ?choice-c4)[(set: $lmm to it + 4)(go-to: &quot;15b&quot;)]
-(click: ?choice-c5)[(set: $lmm to it + 5)(go-to: &quot;15b&quot;)]</tw-passagedata><tw-passagedata pid="24" name="11b" tags="test" position="700,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;1&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;1/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $lmm to it + 5)(go-to: &quot;15b&quot;)]</tw-passagedata><tw-passagedata pid="24" name="11b" tags="test" position="700,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;1&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Je pro mne těžké přijímat lásku od druhých lidí.&lt;/div&gt;\
 
@@ -506,8 +513,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $lmm to it + 4)(go-to: &quot;2a&quot;)]
 (click: ?choice-c3)[(set: $lmm to it + 3)(go-to: &quot;2a&quot;)]
 (click: ?choice-c4)[(set: $lmm to it + 2)(go-to: &quot;2a&quot;)]
-(click: ?choice-c5)[(set: $lmm to it + 1)(go-to: &quot;2a&quot;)]</tw-passagedata><tw-passagedata pid="25" name="12a" tags="test" position="900,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;41&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;41/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $lmm to it + 1)(go-to: &quot;2a&quot;)]</tw-passagedata><tw-passagedata pid="25" name="12a" tags="test" position="900,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;41&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Když jsem členem nějaké skupiny, pracuji, jak nejlépe umím.&lt;/div&gt;\
 
@@ -521,8 +528,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ost to it + 2)(go-to: &quot;20b&quot;)]
 (click: ?choice-c3)[(set: $ost to it + 3)(go-to: &quot;20b&quot;)]
 (click: ?choice-c4)[(set: $ost to it + 4)(go-to: &quot;20b&quot;)]
-(click: ?choice-c5)[(set: $ost to it + 5)(go-to: &quot;20b&quot;)]</tw-passagedata><tw-passagedata pid="26" name="12b" tags="test" position="1100,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;17&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;17/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ost to it + 5)(go-to: &quot;20b&quot;)]</tw-passagedata><tw-passagedata pid="26" name="12b" tags="test" position="1100,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;17&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Váhám, když mám svůj vlastní zájem obětovat ve prospěch skupiny, jejímž jsem členem/členkou.&lt;/div&gt;\
 
@@ -536,8 +543,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ost to it + 4)(go-to: &quot;21a&quot;)]
 (click: ?choice-c3)[(set: $ost to it + 3)(go-to: &quot;21a&quot;)]
 (click: ?choice-c4)[(set: $ost to it + 2)(go-to: &quot;21a&quot;)]
-(click: ?choice-c5)[(set: $ost to it + 1)(go-to: &quot;21a&quot;)]</tw-passagedata><tw-passagedata pid="27" name="13a" tags="test" position="1300,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;11&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;11/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ost to it + 1)(go-to: &quot;21a&quot;)]</tw-passagedata><tw-passagedata pid="27" name="13a" tags="test" position="1300,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;11&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Ke všem lidem se chovám stejně, ať se jedná o&amp;nbsp;kohokoliv.&lt;/div&gt;\
 
@@ -551,8 +558,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $san to it + 2)(go-to: &quot;9a&quot;)]
 (click: ?choice-c3)[(set: $san to it + 3)(go-to: &quot;9a&quot;)]
 (click: ?choice-c4)[(set: $san to it + 4)(go-to: &quot;9a&quot;)]
-(click: ?choice-c5)[(set: $san to it + 5)(go-to: &quot;9a&quot;)]</tw-passagedata><tw-passagedata pid="28" name="13b" tags="test" position="1500,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;34&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;34/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $san to it + 5)(go-to: &quot;9a&quot;)]</tw-passagedata><tw-passagedata pid="28" name="13b" tags="test" position="1500,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;34&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Když někoho nemám rád/a, je pro mne těžké se k&amp;nbsp;němu chovat nestranně.&lt;/div&gt;\
 
@@ -566,8 +573,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $san to it + 4)(go-to: &quot;2b&quot;)]
 (click: ?choice-c3)[(set: $san to it + 3)(go-to: &quot;2b&quot;)]
 (click: ?choice-c4)[(set: $san to it + 2)(go-to: &quot;2b&quot;)]
-(click: ?choice-c5)[(set: $san to it + 1)(go-to: &quot;2b&quot;)]</tw-passagedata><tw-passagedata pid="29" name="14a" tags="test" position="1700,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;22&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;22/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $san to it + 1)(go-to: &quot;2b&quot;)]</tw-passagedata><tw-passagedata pid="29" name="14a" tags="test" position="1700,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;22&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy lidi přesvědčím, aby věci dělali společně, bez toho, aniž bych na ně příliš naléhal/a.&lt;/div&gt;\
 
@@ -581,8 +588,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vsv to it + 2)(go-to: &quot;6a&quot;)]
 (click: ?choice-c3)[(set: $vsv to it + 3)(go-to: &quot;6a&quot;)]
 (click: ?choice-c4)[(set: $vsv to it + 4)(go-to: &quot;6a&quot;)]
-(click: ?choice-c5)[(set: $vsv to it + 5)(go-to: &quot;6a&quot;)]</tw-passagedata><tw-passagedata pid="30" name="14b" tags="test" position="1900,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;20&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;20/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vsv to it + 5)(go-to: &quot;6a&quot;)]</tw-passagedata><tw-passagedata pid="30" name="14b" tags="test" position="1900,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;20&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;V&amp;nbsp;plánování skupinových aktivit nejsem moc dobrý/á.&lt;/div&gt;\
 
@@ -596,8 +603,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vsv to it + 4)(go-to: &quot;18a&quot;)]
 (click: ?choice-c3)[(set: $vsv to it + 3)(go-to: &quot;18a&quot;)]
 (click: ?choice-c4)[(set: $vsv to it + 2)(go-to: &quot;18a&quot;)]
-(click: ?choice-c5)[(set: $vsv to it + 1)(go-to: &quot;18a&quot;)]</tw-passagedata><tw-passagedata pid="31" name="15a" tags="test" position="2100,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;25&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;25/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vsv to it + 1)(go-to: &quot;18a&quot;)]</tw-passagedata><tw-passagedata pid="31" name="15a" tags="test" position="2100,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;25&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Své emoce ovládám.&lt;/div&gt;\
 
@@ -611,8 +618,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $sas to it + 2)(go-to: &quot;20a&quot;)]
 (click: ?choice-c3)[(set: $sas to it + 3)(go-to: &quot;20a&quot;)]
 (click: ?choice-c4)[(set: $sas to it + 4)(go-to: &quot;20a&quot;)]
-(click: ?choice-c5)[(set: $sas to it + 5)(go-to: &quot;20a&quot;)]</tw-passagedata><tw-passagedata pid="32" name="15b" tags="test" position="2300,800" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;14&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;14/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $sas to it + 5)(go-to: &quot;20a&quot;)]</tw-passagedata><tw-passagedata pid="32" name="15b" tags="test" position="2300,800" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;14&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Málokdy dodržím své předsevzetí.&lt;/div&gt;\
 
@@ -626,8 +633,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $sas to it + 4)(go-to: &quot;16a&quot;)]
 (click: ?choice-c3)[(set: $sas to it + 3)(go-to: &quot;16a&quot;)]
 (click: ?choice-c4)[(set: $sas to it + 2)(go-to: &quot;16a&quot;)]
-(click: ?choice-c5)[(set: $sas to it + 1)(go-to: &quot;16a&quot;)]</tw-passagedata><tw-passagedata pid="33" name="16a" tags="test" position="2300,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;15&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;15/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $sas to it + 1)(go-to: &quot;16a&quot;)]</tw-passagedata><tw-passagedata pid="33" name="16a" tags="test" position="2300,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;15&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vyhýbám se činnostem, které jsou nebezpečné.&lt;/div&gt;\
 
@@ -641,8 +648,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $oao to it + 2)(go-to: &quot;4b&quot;)]
 (click: ?choice-c3)[(set: $oao to it + 3)(go-to: &quot;4b&quot;)]
 (click: ?choice-c4)[(set: $oao to it + 4)(go-to: &quot;4b&quot;)]
-(click: ?choice-c5)[(set: $oao to it + 5)(go-to: &quot;4b&quot;)]</tw-passagedata><tw-passagedata pid="34" name="16b" tags="test" position="2100,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;4&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;4/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $oao to it + 5)(go-to: &quot;4b&quot;)]</tw-passagedata><tw-passagedata pid="34" name="16b" tags="test" position="2100,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;4&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Někdy si v&amp;nbsp;přátelských a&amp;nbsp;partnerských vztazích špatně vybírám.&lt;/div&gt;\
 
@@ -656,8 +663,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $oao to it + 4)(go-to: &quot;17a&quot;)]
 (click: ?choice-c3)[(set: $oao to it + 3)(go-to: &quot;17a&quot;)]
 (click: ?choice-c4)[(set: $oao to it + 2)(go-to: &quot;17a&quot;)]
-(click: ?choice-c5)[(set: $oao to it + 1)(go-to: &quot;17a&quot;)]</tw-passagedata><tw-passagedata pid="35" name="17a" tags="test" position="1900,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;5&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;5/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $oao to it + 1)(go-to: &quot;17a&quot;)]</tw-passagedata><tw-passagedata pid="35" name="17a" tags="test" position="1900,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;5&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Když mi lidé lichotí, raději změním téma.&lt;/div&gt;\
 
@@ -671,8 +678,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $pas to it + 2)(go-to: &quot;23b&quot;)]
 (click: ?choice-c3)[(set: $pas to it + 3)(go-to: &quot;23b&quot;)]
 (click: ?choice-c4)[(set: $pas to it + 4)(go-to: &quot;23b&quot;)]
-(click: ?choice-c5)[(set: $pas to it + 5)(go-to: &quot;23b&quot;)]</tw-passagedata><tw-passagedata pid="36" name="17b" tags="test" position="1700,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;27&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;27/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $pas to it + 5)(go-to: &quot;23b&quot;)]</tw-passagedata><tw-passagedata pid="36" name="17b" tags="test" position="1700,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;27&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Často hovořím o&amp;nbsp;svých úspěších.&lt;/div&gt;\
 
@@ -686,8 +693,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $pas to it + 4)(go-to: &quot;3b&quot;)]
 (click: ?choice-c3)[(set: $pas to it + 3)(go-to: &quot;3b&quot;)]
 (click: ?choice-c4)[(set: $pas to it + 2)(go-to: &quot;3b&quot;)]
-(click: ?choice-c5)[(set: $pas to it + 1)(go-to: &quot;3b&quot;)]</tw-passagedata><tw-passagedata pid="37" name="18a" tags="test" position="1500,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;21&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;21/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $pas to it + 1)(go-to: &quot;3b&quot;)]</tw-passagedata><tw-passagedata pid="37" name="18a" tags="test" position="1500,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;21&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;V&amp;nbsp;minulém měsící mě nadchlo nějaké vynikající dílo (v&amp;nbsp;hudbě, výtvarném umění, divadle, filmu, sportu, vědě či matematice).&lt;/div&gt;\
 
@@ -701,8 +708,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $skd to it + 2)(go-to: &quot;14a&quot;)]
 (click: ?choice-c3)[(set: $skd to it + 3)(go-to: &quot;14a&quot;)]
 (click: ?choice-c4)[(set: $skd to it + 4)(go-to: &quot;14a&quot;)]
-(click: ?choice-c5)[(set: $skd to it + 5)(go-to: &quot;14a&quot;)]</tw-passagedata><tw-passagedata pid="38" name="18b" tags="test" position="1300,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;29&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;29/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $skd to it + 5)(go-to: &quot;14a&quot;)]</tw-passagedata><tw-passagedata pid="38" name="18b" tags="test" position="1300,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;29&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;V posledním roce jsem nevytvořil/a žádný krásný výtvor.&lt;/div&gt;\
 
@@ -716,8 +723,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $skd to it + 4)(go-to: &quot;5a&quot;)]
 (click: ?choice-c3)[(set: $skd to it + 3)(go-to: &quot;5a&quot;)]
 (click: ?choice-c4)[(set: $skd to it + 2)(go-to: &quot;5a&quot;)]
-(click: ?choice-c5)[(set: $skd to it + 1)(go-to: &quot;5a&quot;)]</tw-passagedata><tw-passagedata pid="39" name="19a" tags="test" position="1100,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;37&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;37/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $skd to it + 1)(go-to: &quot;5a&quot;)]</tw-passagedata><tw-passagedata pid="39" name="19a" tags="test" position="1100,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;37&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy někomu řeknu „děkuji“, i&amp;nbsp;když se jedná o&amp;nbsp;drobnost.&lt;/div&gt;\
 
@@ -731,8 +738,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vde to it + 2)(go-to: &quot;6b&quot;)]
 (click: ?choice-c3)[(set: $vde to it + 3)(go-to: &quot;6b&quot;)]
 (click: ?choice-c4)[(set: $vde to it + 4)(go-to: &quot;6b&quot;)]
-(click: ?choice-c5)[(set: $vde to it + 5)(go-to: &quot;6b&quot;)]</tw-passagedata><tw-passagedata pid="40" name="19b" tags="test" position="900,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;39&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;39/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vde to it + 5)(go-to: &quot;6b&quot;)]</tw-passagedata><tw-passagedata pid="40" name="19b" tags="test" position="900,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;39&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Málokdy se zamyslím nad tím, jakého štěstí se mi dostává.&lt;/div&gt;\
 
@@ -746,8 +753,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $vde to it + 4)(go-to: &quot;24b&quot;)]
 (click: ?choice-c3)[(set: $vde to it + 3)(go-to: &quot;24b&quot;)]
 (click: ?choice-c4)[(set: $vde to it + 2)(go-to: &quot;24b&quot;)]
-(click: ?choice-c5)[(set: $vde to it + 1)(go-to: &quot;24b&quot;)]</tw-passagedata><tw-passagedata pid="41" name="20a" tags="test" position="700,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;26&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;26/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $vde to it + 1)(go-to: &quot;24b&quot;)]</tw-passagedata><tw-passagedata pid="41" name="20a" tags="test" position="700,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;26&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy se dívám na pozitivní stránku věcí.&lt;/div&gt;\
 
@@ -761,8 +768,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $nob to it + 2)(go-to: &quot;17b&quot;)]
 (click: ?choice-c3)[(set: $nob to it + 3)(go-to: &quot;17b&quot;)]
 (click: ?choice-c4)[(set: $nob to it + 4)(go-to: &quot;17b&quot;)]
-(click: ?choice-c5)[(set: $nob to it + 5)(go-to: &quot;17b&quot;)]</tw-passagedata><tw-passagedata pid="42" name="20b" tags="test" position="500,1000" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;42&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;42/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $nob to it + 5)(go-to: &quot;17b&quot;)]</tw-passagedata><tw-passagedata pid="42" name="20b" tags="test" position="500,1000" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;42&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Málokdy mám dobře promyšlený plán toho, co chci udělat.&lt;/div&gt;\
 
@@ -776,8 +783,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $nob to it + 4)(go-to: &quot;8a&quot;)]
 (click: ?choice-c3)[(set: $nob to it + 3)(go-to: &quot;8a&quot;)]
 (click: ?choice-c4)[(set: $nob to it + 2)(go-to: &quot;8a&quot;)]
-(click: ?choice-c5)[(set: $nob to it + 1)(go-to: &quot;8a&quot;)]</tw-passagedata><tw-passagedata pid="43" name="21a" tags="test" position="500,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;18&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;18/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $nob to it + 1)(go-to: &quot;8a&quot;)]</tw-passagedata><tw-passagedata pid="43" name="21a" tags="test" position="500,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;18&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Můj život má jasně daný smysl.&lt;/div&gt;\
 
@@ -791,8 +798,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ssv to it + 2)(go-to: &quot;5b&quot;)]
 (click: ?choice-c3)[(set: $ssv to it + 3)(go-to: &quot;5b&quot;)]
 (click: ?choice-c4)[(set: $ssv to it + 4)(go-to: &quot;5b&quot;)]
-(click: ?choice-c5)[(set: $ssv to it + 5)(go-to: &quot;5b&quot;)]</tw-passagedata><tw-passagedata pid="44" name="21b" tags="test" position="700,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;8&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;8/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ssv to it + 5)(go-to: &quot;5b&quot;)]</tw-passagedata><tw-passagedata pid="44" name="21b" tags="test" position="700,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;8&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Nemám v&amp;nbsp;životě žádný jasný cíl nebo poslání.&lt;/div&gt;\
 
@@ -806,8 +813,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ssv to it + 4)(go-to: &quot;1a&quot;)]
 (click: ?choice-c3)[(set: $ssv to it + 3)(go-to: &quot;1a&quot;)]
 (click: ?choice-c4)[(set: $ssv to it + 2)(go-to: &quot;1a&quot;)]
-(click: ?choice-c5)[(set: $ssv to it + 1)(go-to: &quot;1a&quot;)]</tw-passagedata><tw-passagedata pid="45" name="22a" tags="test" position="900,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;24&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;24/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ssv to it + 1)(go-to: &quot;1a&quot;)]</tw-passagedata><tw-passagedata pid="45" name="22a" tags="test" position="900,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;24&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Když se s&amp;nbsp;někým nepohodnu, dokážu se přes to přenést a&amp;nbsp;odpustit.&lt;/div&gt;\
 
@@ -821,8 +828,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $oam to it + 2)(go-to: &quot;15a&quot;)]
 (click: ?choice-c3)[(set: $oam to it + 3)(go-to: &quot;15a&quot;)]
 (click: ?choice-c4)[(set: $oam to it + 4)(go-to: &quot;15a&quot;)]
-(click: ?choice-c5)[(set: $oam to it + 5)(go-to: &quot;15a&quot;)]</tw-passagedata><tw-passagedata pid="46" name="22b" tags="test" position="1100,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;46&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;46/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $oam to it + 5)(go-to: &quot;15a&quot;)]</tw-passagedata><tw-passagedata pid="46" name="22b" tags="test" position="1100,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;46&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy usiluji o&amp;nbsp;odvetu, pomstu.&lt;/div&gt;\
 
@@ -836,8 +843,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $oam to it + 4)(go-to: &quot;7a&quot;)]
 (click: ?choice-c3)[(set: $oam to it + 3)(go-to: &quot;7a&quot;)]
 (click: ?choice-c4)[(set: $oam to it + 2)(go-to: &quot;7a&quot;)]
-(click: ?choice-c5)[(set: $oam to it + 1)(go-to: &quot;7a&quot;)]</tw-passagedata><tw-passagedata pid="47" name="23a" tags="test" position="1300,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;3&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;3/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $oam to it + 1)(go-to: &quot;7a&quot;)]</tw-passagedata><tw-passagedata pid="47" name="23a" tags="test" position="1300,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;3&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy se snažím co nejvíc spojit práci se hrou.&lt;/div&gt;\
 
@@ -851,8 +858,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $shh to it + 2)(go-to: &quot;16b&quot;)]
 (click: ?choice-c3)[(set: $shh to it + 3)(go-to: &quot;16b&quot;)]
 (click: ?choice-c4)[(set: $shh to it + 4)(go-to: &quot;16b&quot;)]
-(click: ?choice-c5)[(set: $shh to it + 5)(go-to: &quot;16b&quot;)]</tw-passagedata><tw-passagedata pid="48" name="23b" tags="test" position="1500,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;6&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;6/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $shh to it + 5)(go-to: &quot;16b&quot;)]</tw-passagedata><tw-passagedata pid="48" name="23b" tags="test" position="1500,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;6&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Málokdy říkám vtipné věci.&lt;/div&gt;\
 
@@ -866,8 +873,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $shh to it + 4)(go-to: &quot;10a&quot;)]
 (click: ?choice-c3)[(set: $shh to it + 3)(go-to: &quot;10a&quot;)]
 (click: ?choice-c4)[(set: $shh to it + 2)(go-to: &quot;10a&quot;)]
-(click: ?choice-c5)[(set: $shh to it + 1)(go-to: &quot;10a&quot;)]</tw-passagedata><tw-passagedata pid="49" name="24a" tags="test" position="1700,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;10&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;10/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $shh to it + 1)(go-to: &quot;10a&quot;)]</tw-passagedata><tw-passagedata pid="49" name="24a" tags="test" position="1700,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;10&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Vždy se naplno vrhnu do všeho, co dělám.&lt;/div&gt;\
 
@@ -881,8 +888,8 @@ Pokud jste již tento test absolvovali a&amp;nbsp;chcete se rovnou podívat na i
 (click: ?choice-c2)[(set: $ven to it + 2)(go-to: &quot;13a&quot;)]
 (click: ?choice-c3)[(set: $ven to it + 3)(go-to: &quot;13a&quot;)]
 (click: ?choice-c4)[(set: $ven to it + 4)(go-to: &quot;13a&quot;)]
-(click: ?choice-c5)[(set: $ven to it + 5)(go-to: &quot;13a&quot;)]</tw-passagedata><tw-passagedata pid="50" name="24b" tags="test" position="1900,1200" size="100,100">&lt;progress max=&quot;48&quot; value=&quot;40&quot;&gt;&lt;/progress&gt;\
-&lt;div class=&quot;progress&quot;&gt;40/48&lt;/div&gt;\
+(click: ?choice-c5)[(set: $ven to it + 5)(go-to: &quot;13a&quot;)]</tw-passagedata><tw-passagedata pid="50" name="24b" tags="test" position="1900,1200" size="100,100">&lt;div class=&quot;progress-bar&quot; data-value=&quot;40&quot;&gt;&lt;/div&gt;\
+&lt;script&gt;document.twineAnimateProgressBar()&lt;/script&gt;\
 
 &lt;div class=&quot;question&quot;&gt;Často jen tak nečinně sedím nebo bloumám od ničeho k&amp;nbsp;ničemu.&lt;/div&gt;\
 
