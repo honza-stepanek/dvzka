@@ -90,8 +90,14 @@ tw-story {
 
     background-position: center;
     background-attachment: fixed;
-    background-color: rgb(46, 46, 46);
-    background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_655998316_2000149920009280219_363765.jpg");
+    background-color: rgb(178, 225, 246);
+    background-size: cover;
+    
+    background-image: url("images/sky-balloons.png");
+    /* background-image: url("images/books1.png"); */
+    /* background-image: url("images/books2.png"); */
+    /* background-image: url("images/wall-balloons.png"); */
+    /* background-image: url("images/hot-air-balloon.png"); */
 
     font-family: 'Poppins', sans-serif;
 }
