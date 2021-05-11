@@ -2892,8 +2892,14 @@ Právě tuto šestici považují Christopher Peterson se Seligmanem za základn�
 |hook1-bib&gt;[[[Bibliografie-&gt;bibliografie]]]
 |hook1-cred&gt;[[[Autoři-&gt;credits]]]\
 </tw-passagedata><tw-passagedata pid="105" name="Sidebar" tags="footer" position="100,700" size="100,100">(append: ?SideBar)[\
-[[&lt;img id=&quot;home-button&quot; src=&quot;images/home.svg&quot;&gt;-&gt;obsah]]
-]</tw-passagedata><tw-passagedata pid="106" name="flow" tags="" position="2100,100" size="100,100">## Proč je využívání ctností dobré?
+|home-button&gt;[&lt;tw-icon&gt;&lt;img class=&quot;navigation-button-image&quot; id=&quot;home-button&quot; src=&quot;images/home.svg&quot;&gt;&lt;/tw-icon&gt;]]\
+(click: ?home-button)[(go-to: &quot;obsah&quot;)]\
+&lt;script&gt;
+$("tw-icon").addClass("navigation-button");
+$("tw-icon[alt=\"Undo\"").html("&lt;img class=\"navigation-button-image\" id=\"back-button\" src=\"images/back.svg\"&gt;");
+$("tw-icon[alt=\"Redo\"").html("&lt;img class=\"navigation-button-image\" id=\"forward-button\" src=\"images/forward.svg\"&gt;");
+&lt;/script&gt;\
+</tw-passagedata><tw-passagedata pid="106" name="flow" tags="" position="2100,100" size="100,100">## Proč je využívání ctností dobré?
 
 Využívání ctností by mělo podle Aristotela vést k&amp;nbsp;blaženosti. Pozitivní psychologie sice používá trochu jinou terminologii, ale v&amp;nbsp;důležitých aspektech s&amp;nbsp;Aristotelem souhlasí.
 
