@@ -102,7 +102,7 @@ tw-story {
     font-family: 'Poppins', sans-serif;
 }
 tw-story[tags ~= "antika"] {
-    background-image: url("https://i.pinimg.com/originals/e2/26/97/e226978809e22cd41fe0ee8dc4d8a98a.jpg");
+    background-image: url("images/books-1245690.jpg");
 }
 
 tw-passage {
@@ -396,10 +396,12 @@ tw-sidebar {
 
 /* modal content */
 .modalDialog > div {
+    width:100%;
     max-width: 45em;
     flex-grow: 0;
     margin: auto 0px;
     padding: 27px;
+
 
     background: #fff;
     box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3);
@@ -469,63 +471,25 @@ a.inmod:any-link,
 .modbut:any-link {
     color: rgb(0, 179, 30);
     transition: 300ms;
-    transition-property: all;
+    transition-property: color, underline, text-shadow;
     text-decoration: underline;
 }
 a.inmod:any-link:hover,
 .modbut:any-link:hover {
-    color: rgb(0, 146, 24);
+    color: rgb(0, 134, 22);
+    text-shadow: rgb(0, 134, 22) 0 0 0.5px;
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
 }
 
-.immod {
-    max-width: 80%;
-    display: block;
-    margin: 0 auto;
-    box-shadow: 5px 5px 10px darkgray;
-}
-
-.immod:hover {
-    border: limegreen solid;
-}
-
-.modalinit {
-    color: limegreen;
-    font-weight: bold;
-}
-
-.modalinit:hover {
-    color: #FF32FF;
-}
 
 /* .modbut {
-    box-shadow: 3px 3px 10px darkgray;
-    background-color: white;
-    border-radius: 35px;
-    border: #00DC00 solid;
-    display: inline-block;
-    cursor: pointer;
-    color: black;
-    font-weight: bold;
-    padding: 15px 20px;
-    text-decoration: none;
-    margin: 1%;
-    text-align: center;
-    width: 50%;
-    transition: 0s;
+
 }
 
 .modbut:hover {
-    background-color: #00DC00;
-    color: white;
-    transition: 0s;
-}
 
-.modbut:active {
-    position: relative;
-    top: 2px;
-} */
+}*/
 
 /*======================
     <a> hyperlinks
@@ -534,17 +498,21 @@ a.inmod:any-link:hover,
 .hyper {
     color: hsl(170, 98%, 40%);
     text-decoration: underline;
+    transition-property: color, underline, text-shadow;
 }
 .hyper:hover {
     color: hsl(170, 90%, 46%);
+    text-shadow: hsl(170, 90%, 46%) 0 0 0.5px;
     text-decoration-thickness: 1.5px;
 }
 .hyper:visited {
     color: hsl(182, 100%, 27%);
     text-decoration: underline;
+    transition-property: color, underline, text-shadow;
 }
 .hyper:visited:hover {
     color: hsl(182, 100%, 22%);
+    text-shadow: hsl(182, 100%, 22%) 0 0 0.5px;
     text-decoration-thickness: 1.5px;
 }
 
@@ -575,47 +543,49 @@ img.cimage {
     margin: 0 auto;
 }
 
-/* modal initializer images */
 .cimage {
     max-width: 100%;
-    width: 570px;
+    max-height: 20em;
+    /* width: 570px; */
     display: block;
 }
 
-a.book-modal-init img {
-    border: rgb(0, 179, 30) solid 0.2em;
+tw-passage[tags ~= "examples"] a img,
+a.hyper img {
+    border: solid 0.2em;
     transition: 300ms;
-    width: 15em;
     transition-property: border, transform;
 }
-a.book-modal-init img:hover {
-    border: rgb(0, 146, 24) solid 0.2em;
+tw-passage[tags ~= "examples"] a img:hover,
+a.hyper img:hover {
     transform: scale(1.02);
     z-index: 2;
 }
-a.book-modal-init {
-    display: block;
-    width: max-content;
+
+tw-passage[tags ~= "examples"] a img {
+    border-color: rgb(0, 179, 30);
+}
+tw-passage[tags ~= "examples"] a img:hover {
+    border-color: rgb(0, 146, 24);
 }
 
-/* tw-passage[tags ~= "antika"] */
-a.hyper img.cimage {
+a.hyper img {
+    border-color: hsl(170, 98%, 40%);
+}
+a.hyper img:hover {
+    border-color: hsl(170, 90%, 46%);
+}
+a.hyper img {
     display: inline-block;
     margin: 1%;
     width: 47%;
     max-width: 13em;
-    border: hsl(170, 98%, 40%) solid 0.2em;
-    transition: 300ms;
-    transition-property: border, transform;
-}
-/* tw-passage[tags ~= "antika"]  */
-a.hyper img.cimage:hover {
-    border: hsl(170, 90%, 46%) solid 0.2em;
-    transform: scale(1.02);
-    z-index: 2;
 }
 
-
+a.book-modal-init {
+    display: block;
+    width: max-content;
+}
 
 
 /*==========================
@@ -708,15 +678,14 @@ blockquote {
     height: 100%;
 }
 
-/* progress bar */
-/* progress[value] {
-    width: 100%;
-    height: 15px;
+
+.footnote {
+    font-size: 50%;
 }
-.progress {
-    text-align: center;
-    font-size: large;
-} */
+div.footnote {
+    display: block;
+    line-height: 1.3em;
+}
 
 
 .logo {
