@@ -94,15 +94,11 @@ tw-story {
     background-size: cover;
     
     background-image: url("images/sky-balloons.png");
-    /* background-image: url("images/books1.png"); */
-    /* background-image: url("images/books2.png"); */
-    /* background-image: url("images/wall-balloons.png"); */
-    /* background-image: url("images/hot-air-balloon.png"); */
 
     font-family: 'Poppins', sans-serif;
 }
 tw-story[tags ~= "antika"] {
-    background-image: url("images/books-1245690.jpg");
+    background-image: url("images/antiquity-books.png");
 }
 
 tw-passage {
