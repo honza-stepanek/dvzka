@@ -90,7 +90,7 @@ tw-story {
 
     background-position: center;
     background-attachment: fixed;
-    background-color: rgb(178, 225, 246);
+    background-color: rgb(177, 207, 223);
     background-size: cover;
     
     background-image: url("images/sky-balloons.png");
@@ -110,11 +110,11 @@ tw-passage {
     background-color: white;
     color: black;
 
-    box-shadow: -3px 7px 10px 2px rgba(0, 0, 0, 0.42);
+    box-shadow: -3px 7px 10px 2px rgba(0, 0, 0, 0.233);
 }
-/* tw-passage[tags ~= "debriefing"] {
-    box-shadow: -2px 5px 7px rgba(0,0,0,0.2);
-} */
+tw-passage[tags ~= "antika"] {
+    box-shadow: -3px 7px 11px 3px rgba(0, 0, 0, 0.342);
+}
 
 tw-story tw-consecutive-br {
     height: 1em;
@@ -528,7 +528,9 @@ a.inmod:any-link:hover,
 
 /* images shadow */
 .imbox img,
-img.cimage {
+img.cimage,
+.modalDialog div img,
+.modalDialog div iframe {
     box-shadow: -1px 3px 6px 1px rgba(0, 0, 0, 0.3);
 }
 
@@ -753,15 +755,17 @@ tw-passage[tags ~= "credits"] li.category {
     margin: 0.2em 0em;
     padding: 0em;
 }
-img#muni-logo,
+img#muni-arts-logo,
+img#muni-med-logo,
 img#muni-logo-econ {
     margin-left: -13px;
 }
 img#mzk-logo {
     padding: 10px 0px 20px 0px;
+    margin-left: 4px;
 }
 ul#jan-rychly {
     margin-top: 0.25em;
-    max-width: 10em;
+    max-width: 12em;
     border-top: solid #0000DC 0.2em
 }
