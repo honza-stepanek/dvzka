@@ -1,9 +1,10 @@
 ## Seznam DVZ na kterých pracuji
 
-- [**Pozitivní psychologie**](https://honzaflash.github.io/dvzka/dvz-poz-psych/pozitivni-psychologie)
+- [**Krása**](https://honzaflash.github.io/dvzka/dvz-krasa/krasa)
 
 ## Seznam hotových DVZ
 
+- [Pozitivní psychologie](https://honzaflash.github.io/dvzka/dvz-poz-psych/pozitivni-psychologie)
 - [Akce K](https://honzaflash.github.io/dvzka/dvz-akce-k/akce-k)
 - [Mandelinka bramborová](https://honzaflash.github.io/dvzka/dvz-mandelinka/mandelinka_bramborova)
 - [Kritické myšlení](https://honzaflash.github.io/dvzka/dvz-kriticke-mysleni/kriticke_mysleni)

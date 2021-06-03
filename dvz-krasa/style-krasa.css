@@ -1,0 +1,71 @@
+
+
+tw-story {
+    background-color: brown;
+    color: black;
+    overflow-x: scroll;
+    height: 100%;
+    margin: 0;
+    padding: 0 20px;
+    scroll-behavior: smooth;
+}
+
+tw-passage {
+    margin: auto;
+    padding: 20px;
+    background-color: burlywood;
+    height: 80vh;
+    display: flex;
+}
+
+tw-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/* "slide" container */
+div.gallery-wall-space {
+    height: 100%;
+    width: 90vw;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1; */
+    /* border: solid aqua 4px; */
+}
+
+div.painting-label {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1.1em;
+    height: 1.1em;
+
+    opacity: 0.2;
+    transition: opacity 300ms;
+}
+div.gallery-wall-space:hover div.painting-label {
+    opacity: 1;
+}
+
+div.gallery-wall-space tw-expression {
+    min-height: 0;    
+    display: block;
+    margin: 0 auto;
+    
+    border: solid rgb(243, 100, 119, 0.1) 4px;
+}
+div.gallery-wall-space tw-expression tw-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
