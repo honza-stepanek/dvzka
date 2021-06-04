@@ -1,21 +1,22 @@
 
 
+/*===============================
+|   General vertical layouts    |
+===============================*/
+
 tw-story {
     background-color: brown;
     color: black;
-    overflow-x: scroll;
-    height: 100%;
     margin: 0;
-    padding: 0 20px;
-    scroll-behavior: smooth;
+    padding: 50px 15%;
 }
 
 tw-passage {
     margin: auto;
     padding: 20px;
     background-color: burlywood;
-    height: 80vh;
-    display: flex;
+    width: 90vw;
+    max-width: 1000px;
 }
 
 tw-sidebar {
@@ -24,17 +25,49 @@ tw-sidebar {
     top: 0;
 }
 
-/* "slide" container */
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+
+    box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.411);
+}
+
+
+
+/*===============================
+|  Gallery horizontal layouts   |
+===============================*/
+
+
+tw-story[tags ~= "gallery"] {
+    overflow-x: scroll;
+    height: 100%;
+    margin: 0;
+}
+tw-passage[tags ~= "gallery"] {
+    display: flex;
+    margin: auto;
+    height: 80vh;
+    width: unset;
+    max-width: unset;
+}
+
+
+/* Single wall space wrapper */
 div.gallery-wall-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     height: 100%;
     width: 90vw;
     max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    /* flex-grow: 1; */
-    /* border: solid aqua 4px; */
+    margin: 0 1em;
 }
 
+/* labels above the paintings */
 div.painting-label {
     width: 100%;
     text-align: center;
@@ -49,6 +82,7 @@ div.gallery-wall-space:hover div.painting-label {
     opacity: 1;
 }
 
+/* the painting itself */
 div.gallery-wall-space tw-expression {
     min-height: 0;    
     display: block;
@@ -62,10 +96,28 @@ div.gallery-wall-space tw-expression tw-link {
     height: 100%;
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin: 0 auto;
+/* a text container */
+div.gallery-text {
+    column-width: 30em;
+    column-count: auto;
+    /* TODO  the columns overflow >:( */
 }
+
+/* audio narrator/gallery currator */
+tw-passage[tags ~= "gallery"] audio {
+    position: fixed;
+    left: 20px;
+    bottom: 40px;
+}
+
+
+/*-------------------------------------
+   Custom gallery spaces properties
+-------------------------------------*/
+tw-passage[tags ~= "baroque"] img {
+    max-height: 600px;
+}
+
+
+
 
