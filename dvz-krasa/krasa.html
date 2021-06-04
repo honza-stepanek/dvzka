@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="style-krasa.css">
 <script role="script" id="twine-user-script" type="text/twine-javascript">
     window.smoothScroller = {
-        container: document.getElementsByTagName("tw-story")[0],
+        container: document.getElementsByTagName("body")[0],
         scrollStack: 0,
         scroll: function (deltaY) {
             this.scrollStack += deltaY;
@@ -37,7 +37,7 @@
         window.smoothScroller.update();
     }, 15);
 </script>
-<tw-passagedata pid="1" name="init" tags="" position="601,24" size="100,100">(set: $pruchod to (a:))(display: &quot;start&quot;)</tw-passagedata><tw-passagedata pid="2" name="zdroje" tags="" position="100,99" size="100,100">\
+<tw-passagedata pid="1" name="init" tags="" position="601,24" size="100,100">(set: $pruchod to (a:))(display: &quot;start&quot;)</tw-passagedata><tw-passagedata pid="2" name="zdroje" tags="" position="100,99" size="100,100">
 <div class="gallery-text">\
 Monografie:
 
@@ -208,141 +208,177 @@ WRIGHT, Joseph. Vesuvius from Posillipo by Moonlight. [olejomalba, 1774]. New Ha
 ZOCCHI, Giuseppe, PFEFFEL Johann Andreas a ALLEGRINI Giuseppe.// Scelta Di XXIV Vedute delle principali Contrade, Piazze, Chiese, e Padazzi della Citta di Firenze, T. 1: Veduta di Firenze dal Convento de PP. Cappuccini di Montughi// [grafika, 1744]. 47,5 x 68 cm. Firenze: Appresso Giuseppe Allegrini Stampatore. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:d9ed9e32-4015-47fb-9798-13b8d104f3e4
 </div>\
 </tw-passagedata>
-<tw-passagedata pid="3" name="výstava" tags="gallery" position="602,148" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_vystava.aac&quot;&gt;&lt;/audio&gt;
+<tw-passagedata pid="3" name="výstava" tags="gallery" position="602,148" size="100,100">&lt;audio controls autoplay class="curator" src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_vystava.aac&quot;&gt;&lt;/audio&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Řád\
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vystava_1.jpeg&quot;&gt;-&gt;baroko rozc]]\
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Emoce\
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vystava_2-scaled.jpeg&quot;&gt;-&gt;romantismus rozc]]\
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Pokrok\
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vystava_3.jpeg&quot;&gt;-&gt;industrial rozc]]\
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 ?\
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/otaznik.jpg&quot;&gt;-&gt;aktivita]]\
 &lt;/div&gt;\
 </tw-passagedata><tw-passagedata pid="4" name="baroko malby" tags="gallery baroque" position="157,561" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_rad-zrod-krajinomalby.aac&quot;&gt;&lt;/audio&gt;
 &lt;div class="gallery-wall-space"&gt;\
-<!-- &lt;div class="painting-label"&gt;&lt;/div&gt;\ -->
+<!-- &lt;div class="wall-space-label"&gt;&lt;/div&gt;\ -->
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-malby-1-scaled.jpeg&quot;&gt;
 &lt;/div&gt;\
 &lt;div class="gallery-wall-space"&gt;\
-<!-- &lt;div class="painting-label"&gt;&lt;/div&gt;\ -->
+<!-- &lt;div class="wall-space-label"&gt;&lt;/div&gt;\ -->
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-malby_2.jpeg&quot;&gt;
 &lt;/div&gt;\
 &lt;div class="gallery-wall-space"&gt;\
-<!-- &lt;div class="painting-label"&gt;&lt;/div&gt;\ -->
+<!-- &lt;div class="wall-space-label"&gt;&lt;/div&gt;\ -->
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-malby_3.jpeg&quot;&gt;
 &lt;/div&gt;\
 &lt;div class="gallery-wall-space"&gt;\
-<!-- &lt;div class="painting-label"&gt;&lt;/div&gt;\ -->
+<!-- &lt;div class="wall-space-label"&gt;&lt;/div&gt;\ -->
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-malby_4.jpeg&quot;&gt;
 &lt;/div&gt;\
 &lt;div class="gallery-wall-space"&gt;\
-<!-- &lt;div class="painting-label"&gt;&lt;/div&gt;\ -->
+<!-- &lt;div class="wall-space-label"&gt;&lt;/div&gt;\ -->
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-malby_5.jpeg&quot;&gt;
 &lt;/div&gt;\
 <!-- [[Zpět na rozcestník-&gt;baroko rozc]] -->
 </tw-passagedata><tw-passagedata pid="5" name="romantismus rozc" tags="gallery romantism-cross" position="601,297" size="100,100">
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Divoká krajina
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-rozc_1-scaled.jpeg&quot;&gt;-&gt;romantismus obecně]]
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Romantismus a realismus
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-rozc_2.jpeg&quot;&gt;-&gt;romantismus malby]]
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Přírodní lyrika
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-rozc_3-scaled.jpg&quot;&gt;-&gt;romantismus lit 1]]
 &lt;/div&gt;\
 \\
 <!-- [[Návrat do galerie-&gt;výstava]] -->
-</tw-passagedata><tw-passagedata pid="6" name="industrial rozc" tags="gallery industrial-cross" position="1000,301" size="100,100">\    
+</tw-passagedata><tw-passagedata pid="6" name="industrial rozc" tags="gallery industrial-cross" position="1000,301" size="100,100">  
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Průmyslová krajina
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/industrial-rozc_1.jpeg&quot;&gt;-&gt;industra obecně]]
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Avantgarda a socialistický realismus
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/industrial-rozc_2.jpg&quot;&gt;-&gt;industra malby]]
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Oslava technického pokroku
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/industrial-rozc_3-scaled.jpg&quot;&gt;-&gt;industra lit 1]]
 &lt;/div&gt;\
 \\
 <!-- [[Návrat do galerie-&gt;výstava]] -->
-</tw-passagedata><tw-passagedata pid="7" name="romantismus lit 1" tags="" position="721,427" size="100,100">Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem jejich autoři popisují krajinu. Dokážete říct, co mají společného?
+</tw-passagedata><tw-passagedata pid="7" name="romantismus lit 1" tags="gallery" position="721,427" size="100,100">
+&lt;div class="gallery-wall-note"&gt;\
+Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem jejich autoři popisují krajinu. Dokážete říct, co mají společného?
 
 //Ukázky básní (s audiozáznamem) a textová verze po rozkliknutí//
+&lt;/div&gt;\
 
+&lt;div class="gallery-wall-space-book"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Julius Zeyer - //Ctirad//
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/zeyer_obalka.jpg&quot; width=&quot;25%&quot; hight=&quot;25%&quot;&gt;
+&lt;/div&gt;\
+&lt;img class="book-cover" src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/zeyer_obalka.jpg&quot;&gt;
+&lt;/div&gt;\
 
+&lt;div class="gallery-wall-space-book"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Jaroslav Vrchlický - //Šum listí//
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vrchlicky-obalka.jpg&quot; width=&quot;25%&quot; hight=&quot;25%&quot;&gt;
+&lt;/div&gt;\
+&lt;div class="book-container"&gt;\
+    &lt;img class=&quot;book-cover&quot; id="vrchlicky-cover" src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vrchlicky-obalka.jpg&quot;&gt;\
+    &lt;div class="book-contents" id="vrchlicky-contents"&gt;\
+    &lt;audio controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
+    &lt;img src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
+    &lt;/div&gt;\
+    &lt;script&gt;
+    $("#vrchlicky-contents").addClass("collapsed");
+    $("#vrchlicky-cover").on("click", function () {
+        $("#vrchlicky-contents").toggleClass("collapsed");
+    });
+    $("#vrchlicky-contents").on("click", function () {
+        $("#vrchlicky-contents").toggleClass("collapsed");
+    });
+    &lt;/script&gt;\
+&lt;/div&gt;\
+&lt;/div&gt;\
 
+&lt;div class="gallery-wall-space-book"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Antonín Sova - //Noční krajina//
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/sova_obalka.jpg&quot; width=&quot;25%&quot; hight=&quot;25%&quot;&gt;
+&lt;/div&gt;\
+&lt;img class="book-cover" src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/sova_obalka.jpg&quot;&gt;
+&lt;/div&gt;\
 
+&lt;div class="gallery-wall-space-book"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Karel Hynek Mácha -// Měsíc stojí s zesinalou tváří//
-&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/macha-obalka.jpg&quot; width=&quot;25%&quot; hight=&quot;25%&quot;&gt;
-
+&lt;/div&gt;\
+&lt;img class="book-cover" src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/macha-obalka.jpg&quot;&gt;
+&lt;/div&gt;\
+&lt;div class="gallery-wall-note"&gt;\
 Co vás na básních nejvíce upoutalo?
 
 [[Bohaté využití básnických figur a tropů.-&gt;romantismus figury 1]]
 [[Využití specifické slovní zásoby.-&gt;romantismus slovník 1]]
 
-[[Zpět na rozcestník-&gt;romantismus rozc]]</tw-passagedata><tw-passagedata pid="8" name="baroko rozc" tags="gallery baroq-cross" position="200,298" size="100,100">\
+[[Zpět na rozcestník-&gt;romantismus rozc]]\
+&lt;/div&gt;\
+</tw-passagedata><tw-passagedata pid="8" name="baroko rozc" tags="gallery baroq-cross" position="200,298" size="100,100">
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Kulturní krajina
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-rozc_1.jpeg&quot;&gt;-&gt;baroko obecně]]
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Zrod krajinomalby
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-rozc_2-scaled.jpeg&quot;&gt;-&gt;baroko malby]]
 &lt;/div&gt;\
 
 &lt;div class="gallery-wall-space"&gt;\
-&lt;div class="painting-label"&gt;\
+&lt;div class="wall-space-label"&gt;\
 Zahradní architektura
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-rozc_3.jpeg&quot;&gt;-&gt;baroko zahrady]]
