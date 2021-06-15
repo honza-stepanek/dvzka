@@ -63,7 +63,7 @@ tw-passage[tags ~= "gallery"] {
     height: 80vh;
     width: unset;
     max-width: unset;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
 }
 
 
@@ -83,7 +83,7 @@ div.gallery-wall-space-book {
     /* border: solid rgba(238, 100, 243, 0.486) 4px; */
 }
 div.gallery-wall-space-book {
-    width: 30em;
+    width: 60vh;
 }
 
 /* labels above the paintings */
@@ -120,11 +120,17 @@ div.gallery-wall-space > tw-expression img {
     border-style: ridge;
 }
 
+/* neutral painting frame -> border */
+img.painting-frame-neutral {
+    border: solid #c38a05 0.5em;
+    border-style: ridge;
+}
+
 /* text containers */
 div.gallery-text {
     column-width: 30em;
     column-count: auto;
-    /* TODO  the columns overflow >:( */
+    /* the columns overflow >:( */
 }
 
 div.gallery-wall-note {
@@ -160,10 +166,10 @@ div.book-contents {
     display: flex;
     flex-direction: column;
     height: 115%;
-    max-width: 95vw;
     width: 23em;
+    max-width: 95vw;
     padding: 1em;
-    border-radius: 0.2em;
+    /* border-radius: 0.2em; */
 
     background-color: rgb(248, 242, 234);
     box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.178);
@@ -209,13 +215,39 @@ div.book-contents::after {
 }
 
 
+/* image clickable true/false options */
+img.image-option-wrong,
+img.image-option-correct {
+    transition: transform 400ms;
+}
+img.image-option-wrong:hover,
+img.image-option-correct:hover {
+    transform: scale(1.03);
+}
+
+img.image-option-wrong.clicked {
+    box-shadow: 0px 0px 10px 2px rgb(248, 76, 76),
+    0 6px 8px 4px rgba(0, 0, 0, 0.411);
+}
+img.image-option-correct.clicked {
+    box-shadow: 0px 0px 10px 4px rgb(3, 167, 3),
+    0 6px 8px 4px rgba(0, 0, 0, 0.411);
+}
+
+
+
 
 /* audio narrator/gallery currator */
 tw-passage[tags ~= "gallery"] audio.curator {
     position: fixed;
-    left: 20px;
+    /* left: 20px; */
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 40px;
+    border-radius: 0.2em;
+    height: 1.5em;
 }
+
 
 
 /*-------------------------------------
