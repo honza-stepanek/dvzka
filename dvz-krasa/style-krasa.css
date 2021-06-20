@@ -36,7 +36,9 @@ tw-sidebar {
     z-index: 10;
 }
 tw-sidebar tw-icon {
-    display: none;
+    /* display: none; */
+    opacity: 1;
+    /* TODO remove */
 }
 
 img.nav-arrow {
@@ -305,6 +307,10 @@ tw-passage[tags ~= "gallery"] audio.curator {
 /*-------------------------------------
        Modal image citation tags
 -------------------------------------*/
+div.painting-with-citation {
+    z-index: 1;
+}
+
 div.painting-with-citation a {
     min-height: 0;
     /* min height 0 allows it to shrink in the flex container */
@@ -324,12 +330,17 @@ div.painting-with-citation div.citation-tag {
     transition: 300ms;
     transition-property: all;
 }
-div.painting-with-citation:target div.citation-tag {
+div.painting-with-citation:target div.citation-tag,
+img.clicked + div.citation-tag.image-option-tag {
     padding: 0.5em 0.65em;
     max-height: 15em;
     height: auto;
     pointer-events: auto;
     opacity: 1;
+}
+div.citation-tag.image-option-tag {
+    margin: 1em auto 0.5em;
+    z-index: -1;
 }
 
 div.citation-tag a.citation-tag-close {
@@ -347,7 +358,7 @@ div.citation-tag a.citation-tag-close {
     text-decoration: none;
 }
 
-div.painting-with-citation div.citation-tag {
+tw-passage[tags ~= "gallery"] div.painting-with-citation div.citation-tag {
     font-size: 70%;
     line-height: 1.5em;
     z-index: -1;
@@ -358,9 +369,14 @@ div.painting-with-citation div.citation-tag {
 /*-------------------------------------
    Custom gallery spaces properties
 -------------------------------------*/
+tw-passage[tags ~= "romantismuslitaktivita"] img {
+    width: 30em;
+}
+
 tw-passage[tags ~= "baroque"] img {
     max-height: 600px;
 }
+
 
 
 
