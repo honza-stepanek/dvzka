@@ -32,13 +32,32 @@ tw-passage {
 tw-sidebar {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 25px;
+    z-index: 10;
+}
+tw-sidebar tw-icon {
+    display: none;
+}
+
+img.nav-arrow {
+    width: 50px;
+    max-width: 100%;
+    box-shadow: none;
+    opacity: 0.7;
+
+    transition: 300ms;
+    transition-property: transform, opacity;
+}
+img.nav-arrow:hover,
+img.nav-arrow:focus {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 img {
     max-width: 100%;
     max-height: 100%;
-    min-height: 10px;
+    min-height: 50px;
     display: block;
     margin: 0 auto;
 
@@ -132,7 +151,8 @@ div.gallery-wall-space-book:hover div.wall-space-label {
 
 /* == the PAINTING container itself == */
 div.gallery-wall-space tw-expression {
-    min-height: 0;    
+    min-height: 0;
+    /* min height 0 allows it to shrink in the flex container */  
     display: block;
     margin: 0 auto;
     /* debug border: */
@@ -243,6 +263,7 @@ div.book-contents::after {
 
     border-radius: 0.2em;
     background-color: green;
+    /* TODO  replace with proper modal green */
 }
 
 
@@ -267,7 +288,6 @@ img.image-option-correct.clicked {
 
 
 
-
 /* audio narrator/gallery currator */
 tw-passage[tags ~= "gallery"] audio.curator {
     position: fixed;
@@ -280,6 +300,59 @@ tw-passage[tags ~= "gallery"] audio.curator {
     height: 1.5em;
 }
 
+
+
+/*-------------------------------------
+       Modal image citation tags
+-------------------------------------*/
+div.painting-with-citation a {
+    min-height: 0;
+    /* min height 0 allows it to shrink in the flex container */
+    max-height: 100%;
+}
+
+div.painting-with-citation div.citation-tag {
+    border-radius: 0.15em;
+    background-color: rgb(245, 236, 225);
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.205);
+
+    padding: 0;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 300ms;
+    transition-property: all;
+}
+div.painting-with-citation:target div.citation-tag {
+    padding: 0.5em 0.65em;
+    max-height: 15em;
+    height: auto;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+div.citation-tag a.citation-tag-close {
+    position: absolute;
+    right: -0.25em;
+    top: -0.25em;
+
+    width: 1em;
+    height: 1em;
+    background-color: #e2bf6d;
+    border-radius: 0.15em;
+    text-align: center;
+    line-height: 1em;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+div.painting-with-citation div.citation-tag {
+    font-size: 70%;
+    line-height: 1.5em;
+    z-index: -1;
+    transform: translateY(10px);
+}
 
 
 /*-------------------------------------
