@@ -82,9 +82,9 @@ tw-link.visited:focus {
 
 
 
-/*===============================
-|  Gallery horizontal layouts   |
-===============================*/
+/*========================================
+||      Gallery horizontal layouts      ||
+========================================*/
 
 body {
     overflow-x: auto;
@@ -108,7 +108,9 @@ tw-passage[tags ~= "gallery"] {
 }
 
 
-/* == Single WALL SPACE wrapper == */
+/*-------------------------------------
+        Wall space container
+-------------------------------------*/
 div.gallery-wall-space,
 div.gallery-wall-space-book {
     display: flex;
@@ -128,7 +130,10 @@ div.gallery-wall-space-book {
     width: 60vh;
 }
 
-/* labels above the paintings */
+
+/*-------------------------------------
+    Wall space label in the gallery
+-------------------------------------*/
 div.wall-space-label {
     margin: 10px auto;
     padding: 0.1em 0.5em;
@@ -151,7 +156,10 @@ div.gallery-wall-space-book:hover div.wall-space-label {
     opacity: 1;
 }
 
-/* == the PAINTING container itself == */
+
+/*-------------------------------------
+       Painting in the gallery
+-------------------------------------*/
 div.gallery-wall-space tw-expression {
     min-height: 0;
     /* min height 0 allows it to shrink in the flex container */  
@@ -176,15 +184,10 @@ img.painting-frame-neutral {
     border-style: ridge;
 }
 
-/* text containers */
-div.gallery-text {
-    column-width: 30em;
-    column-count: auto;
-    /* the columns overflow >:( */
-}
 
-
-/* == NOTE on the wall == */
+/*-------------------------------------
+         Note in the gallery
+-------------------------------------*/
 div.gallery-wall-note {
     /* min-width: 18em; */
     /* width: min-content; */
@@ -201,7 +204,17 @@ div.gallery-wall-note {
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.205);
 }
 
-/* books in the gallery */
+/* text containers -- currently unused */
+div.gallery-text {
+    column-width: 30em;
+    column-count: auto;
+    /* the columns overflow >:( */
+}
+
+
+/*-------------------------------------
+         Books in the gallery
+-------------------------------------*/
 div.book-container {
     display: flex;
     flex-direction: row;
@@ -214,7 +227,9 @@ div.book-container {
 
 img.book-cover {
     border: green 0.4em ridge;
+    cursor: pointer;
 }
+
 div.book-contents {
     display: flex;
     flex-direction: column;
@@ -238,7 +253,8 @@ div.book-contents img {
 }
 div.book-contents audio {
     margin: auto;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.411);
+    /* box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.411); */
+    /* shadow is janky in chrome browsers */
     border-radius: 0.2em;
 }
 
@@ -254,6 +270,7 @@ div.book-contents::after {
     text-align: center;
     content: "▼";
     color: white;
+    cursor: pointer;
 
     width: var(--size);
     height: var(--size);
@@ -293,13 +310,13 @@ img.image-option-correct.clicked {
 /* audio narrator/gallery currator */
 tw-passage[tags ~= "gallery"] audio.curator {
     position: fixed;
-    /* left: 20px; */
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
     max-width: 95%;
-    top: 40px;
-    border-radius: 0.2em;
     height: 1.5em;
+    border-radius: 0.2em;
+    /* TODO controls in chrome browsers are white and fade in with the background */
 }
 
 
@@ -311,16 +328,25 @@ div.painting-with-citation {
     z-index: 1;
 }
 
-div.painting-with-citation a {
+div.painting-with-citation > a {
     min-height: 0;
     /* min height 0 allows it to shrink in the flex container */
     max-height: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+div.painting-with-citation a > img{
+    display: inline-block;
 }
 
+/* the general citation tag div */
 div.painting-with-citation div.citation-tag {
+    display: block;
+    margin: 1em auto 0.5em;
     border-radius: 0.15em;
     background-color: rgb(245, 236, 225);
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.205);
+    z-index: -1;
 
     padding: 0;
     max-height: 0;
@@ -338,11 +364,15 @@ img.clicked + div.citation-tag.image-option-tag {
     pointer-events: auto;
     opacity: 1;
 }
-div.citation-tag.image-option-tag {
-    margin: 1em auto 0.5em;
-    z-index: -1;
+
+tw-passage[tags ~= "gallery"] div.painting-with-citation div.citation-tag {
+    font-size: 70%;
+    line-height: 1.5em;
+    margin: 0 auto;
+    transform: translateY(10px);
 }
 
+/* citation close link */
 div.citation-tag a.citation-tag-close {
     position: absolute;
     right: -0.25em;
@@ -351,6 +381,7 @@ div.citation-tag a.citation-tag-close {
     width: 1em;
     height: 1em;
     background-color: #e2bf6d;
+    color: black;
     border-radius: 0.15em;
     text-align: center;
     line-height: 1em;
@@ -358,16 +389,9 @@ div.citation-tag a.citation-tag-close {
     text-decoration: none;
 }
 
-tw-passage[tags ~= "gallery"] div.painting-with-citation div.citation-tag {
-    font-size: 70%;
-    line-height: 1.5em;
-    z-index: -1;
-    transform: translateY(10px);
-}
-
 
 /*-------------------------------------
-   Custom gallery spaces properties
+   Custom gallery spaces/tw-passages properties
 -------------------------------------*/
 tw-passage[tags ~= "romantismuslitaktivita"] img {
     width: 30em;
@@ -375,6 +399,14 @@ tw-passage[tags ~= "romantismuslitaktivita"] img {
 
 tw-passage[tags ~= "baroque"] img {
     max-height: 600px;
+}
+
+tw-passage[tags ~= "vstup"] {
+    width: 30em;
+    text-align: center;
+}
+tw-passage[tags ~= "vstup"] tw-link {
+    font-size: 130%;
 }
 
 
