@@ -334,22 +334,22 @@ Julius Zeyer - //Ctirad//
 Jaroslav Vrchlický - //Šum listí//
 &lt;/div&gt;\
 &lt;div class=&quot;book-container&quot;&gt;\
+&lt;a href="#book-vrchlicky" title="Přečíst si báseň"&gt;\
     &lt;img class=&quot;book-cover&quot; id=&quot;vrchlicky-cover&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vrchlicky-obalka.jpg&quot;&gt;\
-    &lt;div class=&quot;book-contents&quot; id=&quot;vrchlicky-contents&quot;&gt;\
-    &lt;audio controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
-    &lt;img src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
+&lt;/a&gt;\
+&lt;div id="book-vrchlicky" class="modal-dialog-overlay-container"&gt;\
+    &lt;div class="modal-dialog-overlay book-contents"&gt;\
+        &lt;audio controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
+        &lt;img src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
+        <!-- &lt;div class="modal-citation"&gt;\
+        ...
+        &lt;/div&gt;\ -->\
     &lt;/div&gt;\
-    &lt;script&gt;
-    $(&quot;#vrchlicky-contents&quot;).addClass(&quot;collapsed&quot;);
-    $(&quot;#vrchlicky-cover&quot;).on(&quot;click&quot;, function () {
-        $(&quot;#vrchlicky-contents&quot;).toggleClass(&quot;collapsed&quot;);
-    });
-    $(&quot;#vrchlicky-contents&quot;).on(&quot;click&quot;, function () {
-        $(&quot;#vrchlicky-contents&quot;).toggleClass(&quot;collapsed&quot;);
-    });
-    &lt;/script&gt;\
+    &lt;a class="modal-close" href="#"&gt;&times;&lt;/a&gt;\
 &lt;/div&gt;\
 &lt;/div&gt;\
+&lt;/div&gt;\
+
 
 &lt;div class=&quot;gallery-wall-space-book&quot;&gt;\
 &lt;div class=&quot;book-label&quot;&gt;\
