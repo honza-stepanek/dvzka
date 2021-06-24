@@ -99,7 +99,8 @@ tw-story[tags ~= "gallery"] {
 tw-passage[tags ~= "gallery"] {
     display: flex;
     margin: auto;
-    height: 80vh;
+    height: 750px;
+    max-height: 85vh;
     width: unset;
     max-width: unset;
     padding-bottom: 2em;
@@ -134,10 +135,10 @@ div.gallery-wall-space-book {
 /*-------------------------------------
     Wall space label in the gallery
 -------------------------------------*/
-div.wall-space-label {
+div.painting-label,
+div.book-label {
     margin: 10px auto;
     padding: 0.1em 0.5em;
-    /* width: 100%; */
     text-align: center;
     /* font-size: 2em;
     line-height: 1.1em;
@@ -145,14 +146,24 @@ div.wall-space-label {
     border-radius: 0.15em;
     background-color: rgb(248, 242, 234);
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.205);
-    order: 2;
-    z-index: -1;
 
-    opacity: 0.4;
+    opacity: 0.5;
     transition: opacity 300ms;
+    pointer-events: none;
 }
-div.gallery-wall-space:hover div.wall-space-label,
-div.gallery-wall-space-book:hover div.wall-space-label {
+div.painting-label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    opacity: 0;
+    transition: opacity 300ms;
+    pointer-events: none;
+}
+div.gallery-wall-space:hover div.painting-label,
+div.gallery-wall-space-book:hover div.book-label {
     opacity: 1;
 }
 
@@ -226,7 +237,7 @@ div.book-container {
 }
 
 img.book-cover {
-    border: green 0.4em ridge;
+    border: rgb(0, 179, 30) 0.4em ridge;
     cursor: pointer;
 }
 
@@ -281,8 +292,7 @@ div.book-contents::after {
     z-index: 1;
 
     border-radius: 0.2em;
-    background-color: green;
-    /* TODO  replace with proper modal green */
+    background-color: rgb(0, 179, 30);
 }
 
 
@@ -305,6 +315,23 @@ img.image-option-correct.clicked {
     0 6px 8px 4px rgba(0, 0, 0, 0.411);
 }
 
+div.image-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.image-options > div {
+    width: 48%;
+    /* width: auto;
+    display: inline-block; */
+}
+@media (max-width: 900px) {
+    /* narrow screen */
+    div.image-options > div {
+        width: auto;
+    }
+}
 
 
 /* audio narrator/gallery currator */
@@ -391,8 +418,116 @@ div.citation-tag a.citation-tag-close {
 
 
 /*-------------------------------------
-   Custom gallery spaces/tw-passages properties
+   Classic target modal dialogs
 -------------------------------------*/
+/* dialog container */
+div.modal-dialog-overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+div.modal-dialog-overlay-container:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* modal content */
+div.modal-dialog-overlay {
+    /* max-width: 45em; */
+    max-height: 95vh;
+    flex-grow: 0;
+    margin: auto 0px;
+    padding: 1em;
+
+    background: rgb(248, 242, 234);
+    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* the close link (whole background + a dummy x button) */
+div.modal-dialog-overlay-container .modal-close,
+div.modal-dialog-overlay-container .modal-close:hover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0000;
+    color: #0000;
+}
+div.modal-dialog-overlay::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: 0.15em;
+    top: -1.35em;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.1em;
+
+    color: rgb(0, 0, 0);
+    background-color: rgb(70, 70, 70);
+    opacity: 0.5;
+}
+
+/* an image inside of the modal */
+div.modal-dialog-overlay img {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* citation inside a modal */
+div.modal-citation {
+    padding: 1em 0em 0em;
+    font-size: 80%;
+    line-height: 1.5em;
+    max-width: 40em;
+
+}
+
+
+/* links/initializers */
+a.modal-open:any-link {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: all;
+    text-decoration: underline;
+}
+a.modal-open:any-link:hover {
+    color: rgb(0, 146, 24);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+
+
+/*--------------------------------------------------
+    Custom gallery spaces/tw-passages properties
+--------------------------------------------------*/
 tw-passage[tags ~= "romantismuslitaktivita"] img {
     width: 30em;
 }
