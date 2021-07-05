@@ -17,7 +17,7 @@ tw-story {
     background-attachment: fixed;
     color: black;
     margin: 0;
-    padding: 50px 15%;
+    padding: 50px 10%;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Merriweather', serif;
 }
@@ -226,6 +226,10 @@ div.gallery-text {
     /* the columns overflow >:( */
 }
 
+.in-gallery-vertical-scroll {
+    overflow-y: auto;
+}
+
 
 /*-------------------------------------
          Books in the gallery
@@ -306,16 +310,103 @@ div.image-options > div {
 }
 
 
-/* audio narrator/gallery currator */
-tw-passage[tags ~= "gallery"] audio.curator {
+
+/*-------------------------------------
+    Gallery curator / Audio narrator
+-------------------------------------*/
+
+/* invisible parent control wrapper
+   that also serves as a spacer on the right of the gallery
+   when the (fixed position) transcript expands */
+div.curator-wrapper {
+    width: 0;
+    transition: width 300ms;
+}
+div.curator-wrapper.active {
+    width: 18em; /* TODO pxs? */
+    max-height: 100%;
+}
+
+/* the visible container itself */
+div.curator-container {
+    /* state: transcript hidden */
+    
     position: fixed;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    max-width: 95%;
+    top: 20px;
+    left: 80px;
+    z-index: 20;
+    
+    display: flex;
+    flex-direction: column;
+    max-width: 12.4em;
+    height: 2.1em;
+    padding: 0.3em;
+    
+    border-radius: 0.2em;
+    background-color: rgb(173, 151, 84);
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.281);
+    
+    transition: 300ms;
+    transition-property: max-width, height;
+}
+div.curator-wrapper.active div.curator-container {
+    /* state: transcript expanded */
+    
+    max-width: 24em;
+    height: 94vh;
+}
+
+/* the vertically scrollable div with the transcript */
+div.curator-transcript {
+    /* state: transcript hidden */
+    
+    max-height: 0;
+    overflow: hidden;
+    color: #0000;
+    transition: 300ms;
+    transition-property: color, background-color, box-shadow, max-height;
+    margin-top: 0.3em;
+    padding: 0.3em;
+}
+div.curator-wrapper.active div.curator-transcript {
+    /* state: transcript expanded */
+    
+    max-width: 100%;
+    max-height: 100%;
+    
+    overflow-y: auto;
+    color: inherit;
+    box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.342) inset;
+    background-color: rgb(248, 242, 234);
+}
+
+/* transcript button and audio controls */
+div.curator-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 1.5em;
+}
+
+#curator-transcript-button {
+    display: block;
+    margin: 0;
+    width: 1.5em;
     height: 1.5em;
     border-radius: 0.2em;
-    /* TODO controls in chrome browsers are white and fade in with the background */
+    background-color: rgba(46, 46, 46, 0.787);
+    cursor: pointer;
+
+    color: white;
+    text-align: center;
+    font-weight: 600;
+}
+
+audio.curator {
+    height: 1.5em;
+    width: 10em;
+    border-radius: 0.2em;
+    /* TODO rework -- controls in chrome browsers are white and fade in with the background */
 }
 
 

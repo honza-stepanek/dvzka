@@ -11,7 +11,7 @@
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Krása.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Krása" startnode="2" creator="Twine" creator-version="2.3.14" ifid="E716A51E-F24B-40BF-A530-41926A2C98D3" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 </style>
-<link href=".\style-krasa-tw-d.css" rel="stylesheet">
+<link href=".\style-krasa.css" rel="stylesheet">
 <script role="script" id="twine-user-script" type="text/twine-javascript">
 
 window.smoothScroller = {
@@ -30,8 +30,9 @@ window.smoothScroller = {
     };
 
     window.addEventListener("wheel", function (e) {
-        window.smoothScroller.scroll(e.deltaY);
-        //window.smoothScroller.container.scrollLeft += e.deltaY;
+        if (!e.target.classList.contains("in-gallery-vertical-scroll")) {
+            window.smoothScroller.scroll(e.deltaY);
+        }
     });
 
     window.smoothScroller.intervalID = window.setInterval(() => {
@@ -400,12 +401,31 @@ Zahradní architektura
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=104&quot; width=&quot;886&quot; height=&quot;700&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, navrhout [[svou vlastní zahradu-&gt;baroko zahrady aktivita]]?</tw-passagedata><tw-passagedata pid="11" name="romantismus malby" tags="gallery romantism" position="1034,460" size="100,100">&lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-romantismus-a-realismus.aac&quot;&gt;&lt;/audio&gt;
+Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, navrhout [[svou vlastní zahradu-&gt;baroko zahrady aktivita]]?</tw-passagedata><tw-passagedata pid="11" name="romantismus malby" tags="gallery romantism" position="1034,460" size="100,100">\
+&lt;div class="curator-wrapper"&gt;\
+&lt;div class="curator-container"&gt;\
+&lt;div class="curator-controls"&gt;\
+    &lt;div id="curator-transcript-button"&gt;&equiv;&lt;/div&gt;\
+    &lt;script&gt;
+        $(&quot;#curator-transcript-button&quot;).on(&quot;click&quot;, function () {
+            $(".curator-wrapper").toggleClass("active")});
+    &lt;/script&gt;\
+    &lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-romantismus-a-realismus.aac&quot;&gt;&lt;/audio&gt;\
+&lt;/div&gt;\
+&lt;div class="curator-transcript in-gallery-vertical-scroll"&gt;\
+    Dominujícím uměleckým stylem...
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima, vero soluta repellat ipsam, sapiente blanditiis quaerat et repudiandae quam, sit quos qui sed eum ex aperiam! Deleniti, fugiat ratione qui excepturi quos sed, molestiae quae beatae odio necessitatibus dolor?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum ipsa minima error pariatur tenetur quod aperiam temporibus. Suscipit enim hic tempora dolorum recusandae, incidunt quae molestias tempore nulla labore possimus quam impedit rem at magni sunt. Deserunt atque dolorum, dolore voluptatum sed illo mollitia culpa! Obcaecati excepturi delectus dignissimos enim repellendus quaerat sequi, nesciunt minus illo porro laudantium mollitia amet ipsam ullam fugit at ut molestiae quo impedit beatae earum non provident facere eos! Nam numquam quidem vel dicta temporibus aut sapiente, blanditiis cupiditate rerum nemo deleniti tenetur fuga amet in ea, consectetur dolore voluptatum non fugiat atque delectus.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, ipsum, sint laborum iusto amet harum ipsam voluptatem quo dolorem explicabo aut porro, nesciunt ratione. Tempora dolore suscipit esse ipsa sed? A autem ullam porro dolorem. Repellendus ab quod quae rem qui animi cum eveniet maxime ea! Error doloribus dicta fuga libero quam quod sapiente facere quis necessitatibus perferendis illum quidem accusamus, similique esse dolores nulla magni quae iste. Ad, totam blanditiis pariatur amet ipsa voluptatem necessitatibus natus possimus explicabo provident, quibusdam at animi, iusto ullam ratione odit illo aliquid debitis. Repudiandae obcaecati nobis magnam quia, exercitationem et vero nesciunt architecto?
+&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
 &lt;a href=&quot;#painting-bergh&quot; title=&quot;Prohlédnout si malbu zblízka&quot;&gt;\
     &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_1.jpeg&quot;&gt;\
 &lt;/a&gt;\
+&lt;/div&gt;\
 &lt;div id=&quot;painting-bergh&quot; class=&quot;modal-dialog-overlay-container&quot;&gt;\
     &lt;div class=&quot;modal-dialog-overlay&quot;&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_1.jpeg&quot;&gt;\
@@ -414,7 +434,6 @@ Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, na
 \       &lt;/div&gt;\
     &lt;/div&gt;\
     &lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;
-&lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
@@ -433,8 +452,9 @@ Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, na
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_5.jpg&quot;&gt;
 &lt;/div&gt;\
 \\
-
-</tw-passagedata><tw-passagedata pid="12" name="aktivita" tags="" position="954,56" size="100,100">Máte za sebou výstavu věnovanou estetickému vnímání krajiny v minulosti. Je ale na vás, abyste napsali její další kapitolu.
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus rozc]]
+]</tw-passagedata><tw-passagedata pid="12" name="aktivita" tags="" position="954,56" size="100,100">Máte za sebou výstavu věnovanou estetickému vnímání krajiny v minulosti. Je ale na vás, abyste napsali její další kapitolu.
 
 Rozdělte se do skupin a společně se zamyslete nad tím, co v krajině považujeme za krásné dnes. Zkuste si odpovědět na otázky jako:
 
