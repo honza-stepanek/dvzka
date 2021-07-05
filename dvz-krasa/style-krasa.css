@@ -226,9 +226,9 @@ div.gallery-text {
     /* the columns overflow >:( */
 }
 
-.in-gallery-vertical-scroll {
+/* .block-horizontal-scroll {
     overflow-y: auto;
-}
+} */
 
 
 /*-------------------------------------
@@ -249,23 +249,17 @@ img.book-cover {
     cursor: pointer;
 }
 
-div.modal-dialog-overlay.book-contents {
-    display: flex;
-    flex-direction: column;
-    width: 30em;
-    max-width: 95vw;
-    padding: 1em;
-    /* border-radius: 0.2em; */
-
+/* div.modal-dialog-overlay.book-contents {
     background-color: rgb(248, 242, 234);
+} */
+div.modal-dialog-overlay.book-contents img {
+    margin: 1em auto 0;
+    max-width: 45em;
     box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.178);
 }
-div.book-contents img {
-    margin: 0.5em auto 0;
-    box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.178);
-}
-div.book-contents audio {
-    margin: auto;
+div.modal-dialog-overlay.book-contents audio {
+    display: block;
+    margin: 0 auto;
     /* box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.411); */
     /* shadow is janky in chrome browsers */
     border-radius: 0.2em;
@@ -481,7 +475,7 @@ div.citation-tag a.citation-tag-close {
 
 
 /*-------------------------------------
-   Classic target modal dialogs
+    Classic targeted modal dialogs
 -------------------------------------*/
 /* dialog container */
 div.modal-dialog-overlay-container {
@@ -490,7 +484,7 @@ div.modal-dialog-overlay-container {
     left: 0;
     width: 100vw;
     height: 100vh;
-    padding: 1em;
+    padding: 1em 2.3em;
     z-index: 100;
 
     display: flex;
@@ -510,16 +504,16 @@ div.modal-dialog-overlay-container:target {
 
 /* modal content */
 div.modal-dialog-overlay {
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    max-height: 90vh;
-    flex-grow: 0;
+    max-height: 100%;
+    max-width: 100%;
     margin: auto 0px;
-    padding: 25px;
+    padding: 1em 2em;
+    overflow-y: auto;
 
     background: rgb(248, 242, 234);
-    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3);
+    border: solid 0.5em rgb(245, 231, 214);
+    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3),
+                    0 0 4px 2px rgba(0, 0, 0, 0.349) inset;
 }
 
 /* the close link (whole background + a dummy x button) */
@@ -538,9 +532,9 @@ div.modal-dialog-overlay-container .modal-close:hover {
 }
 div.modal-dialog-overlay::before {
     /* adding an x above of the modal */
-    position: absolute;
-    right: 0.15em;
-    top: -1.35em;
+    position: fixed;
+    right: 1em;
+    top: 1em;
     width: 1em;
     height: 1em;
     z-index: -2;
@@ -552,13 +546,15 @@ div.modal-dialog-overlay::before {
     line-height: 1.1em;
 
     color: rgb(0, 0, 0);
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(97, 97, 97);
     opacity: 0.5;
 }
 
 /* an image inside of the modal */
 div.modal-dialog-overlay img {
     width: auto;
+    max-width: 90vw;
+    max-height: 3000px;
     display: block;
     margin: 0 auto;
 }
@@ -569,6 +565,12 @@ div.modal-citation {
     font-size: 80%;
     line-height: 1.5em;
     max-width: 40em;
+}
+
+@media (orientation: portrait) {
+    div.modal-dialog-overlay-container {
+        padding: 2.3em 1em;
+    }
 }
 
 

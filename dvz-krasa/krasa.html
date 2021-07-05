@@ -30,7 +30,7 @@ window.smoothScroller = {
     };
 
     window.addEventListener("wheel", function (e) {
-        if (!e.target.classList.contains("in-gallery-vertical-scroll")) {
+        if (!e.target.classList.contains("block-horizontal-scroll")) {
             window.smoothScroller.scroll(e.deltaY);
         }
     });
@@ -341,9 +341,9 @@ Jaroslav Vrchlický - //Šum listí//
     &lt;img class=&quot;book-cover&quot; id=&quot;vrchlicky-cover&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/vrchlicky-obalka.jpg&quot;&gt;\
 &lt;/a&gt;\
 &lt;div id=&quot;book-vrchlicky&quot; class=&quot;modal-dialog-overlay-container&quot;&gt;\
-    &lt;div class=&quot;modal-dialog-overlay book-contents&quot;&gt;\
-        &lt;audio controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
-        &lt;img src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
+    &lt;div class=&quot;modal-dialog-overlay book-contents block-horizontal-scroll&quot;&gt;\
+        &lt;audio class="block-horizontal-scroll" controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
+        &lt;img class="block-horizontal-scroll" src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
         \
     &lt;/div&gt;\
     &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
@@ -412,7 +412,7 @@ Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, na
     &lt;/script&gt;\
     &lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-romantismus-a-realismus.aac&quot;&gt;&lt;/audio&gt;\
 &lt;/div&gt;\
-&lt;div class="curator-transcript in-gallery-vertical-scroll"&gt;\
+&lt;div class="curator-transcript block-horizontal-scroll"&gt;\
     Dominujícím uměleckým stylem...
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima, vero soluta repellat ipsam, sapiente blanditiis quaerat et repudiandae quam, sit quos qui sed eum ex aperiam! Deleniti, fugiat ratione qui excepturi quos sed, molestiae quae beatae odio necessitatibus dolor?
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum ipsa minima error pariatur tenetur quod aperiam temporibus. Suscipit enim hic tempora dolorum recusandae, incidunt quae molestias tempore nulla labore possimus quam impedit rem at magni sunt. Deserunt atque dolorum, dolore voluptatum sed illo mollitia culpa! Obcaecati excepturi delectus dignissimos enim repellendus quaerat sequi, nesciunt minus illo porro laudantium mollitia amet ipsam ullam fugit at ut molestiae quo impedit beatae earum non provident facere eos! Nam numquam quidem vel dicta temporibus aut sapiente, blanditiis cupiditate rerum nemo deleniti tenetur fuga amet in ea, consectetur dolore voluptatum non fugiat atque delectus.
@@ -427,9 +427,9 @@ Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, na
 &lt;/a&gt;\
 &lt;/div&gt;\
 &lt;div id=&quot;painting-bergh&quot; class=&quot;modal-dialog-overlay-container&quot;&gt;\
-    &lt;div class=&quot;modal-dialog-overlay&quot;&gt;\
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_1.jpeg&quot;&gt;\
-        &lt;div class=&quot;modal-citation&quot;&gt;\
+    &lt;div class=&quot;modal-dialog-overlay block-horizontal-scroll&quot;&gt;\
+        &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_1.jpeg&quot;&gt;\
+        &lt;div class=&quot;modal-citation block-horizontal-scroll&quot;&gt;\
             BERGH, Edvard. Från Fjällbacka &#96;[&#96;olejomalba, 1870&#96;]&#96;. 75 x 139 cm. Gävle: Länsmuseet Gävleborg. Dostupné z: https://digitaltmuseum.se/021046642918/fran-fjallbacka-landskapsmaleri
 \       &lt;/div&gt;\
     &lt;/div&gt;\
