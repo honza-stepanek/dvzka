@@ -13,50 +13,71 @@
 </style>
 <link href=".\style-krasa.css" rel="stylesheet">
 <script role="script" id="twine-user-script" type="text/twine-javascript">
-
 window.smoothScroller = {
-        container: document.getElementsByTagName("body")[0],
-        scrollStack: 0,
-        scroll: function (deltaY) {
-            this.scrollStack += deltaY;
-        },
-        update: function () {
-            if (Math.abs(this.scrollStack) >= 1) {
-                const diff = this.scrollStack * 0.25;
-                this.container.scrollLeft += diff;
-                this.scrollStack -= diff;
-            }
+    container: document.getElementsByTagName("body")[0],
+    scrollStack: 0,
+    scroll: function (deltaY) {
+        this.scrollStack += deltaY;
+    },
+    update: function () {
+        if (Math.abs(this.scrollStack) >= 1) {
+            const diff = this.scrollStack * 0.25;
+            this.container.scrollLeft += diff;
+            this.scrollStack -= diff;
         }
-    };
+    }
+};
 
-    window.addEventListener("wheel", function (e) {
-        if (!e.target.classList.contains("block-horizontal-scroll")) {
-            window.smoothScroller.scroll(e.deltaY);
+window.addEventListener("wheel", function (e) {
+    if (!e.target.classList.contains("block-horizontal-scroll")) {
+        window.smoothScroller.scroll(e.deltaY);
+    }
+});
+
+window.smoothScroller.intervalID = window.setInterval(() => {
+    window.smoothScroller.update();
+}, 15);
+
+// global flag array for audio elements that have been autoplayed
+document.galleryPlayCurator = function () {
+    let curator = document.getElementsByClassName("curator")[0];
+    if (curator) {
+        curator.play();
+    }
+};
+
+document.galleryInitCuratorControls = function () {
+    $("audio.curator").on("ended", function () {
+        $("#playback-button").attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg");
+    });
+    $("#playback-button").on("click", function () {
+        let curator = $("audio.curator")[0];
+        if (curator.paused) {
+            curator.play();
+            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/pause-icon.svg");
+        } else {
+            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg");
+            curator.pause();
         }
     });
 
-    window.smoothScroller.intervalID = window.setInterval(() => {
-        window.smoothScroller.update();
-    }, 15);
+    $("#volume-button").attr("value", 2);
+    $("#volume-button").on("click", function () {
+        $(this).attr("value", (_, v) => {return (parseInt(v) + 1) % 4})
+        $("audio.curator")[0].volume = (parseInt($(this).attr("value")) + 1) / 4;
+        $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/loud"
+            + $(this).attr("value") + "-icon.svg")
+    });
+}
 
-    // global flag array for audio elements that have been autoplayed
-    document.galleryPlayCurator = function () {
-        let curator = document.getElementsByClassName("curator")[0];
-        if (curator) {
-            curator.play();
-        }
-    };
-</script><tw-passagedata pid="1" name="footer" tags="footer" position="57,147" size="100,100">
-</tw-passagedata><tw-passagedata pid="2" name="init" tags="" position="55,29" size="100,100">(set: $pruchod to (a:))
-(set: $playedcurators to (a:))
-(go-to: &quot;start&quot;)</tw-passagedata><tw-passagedata pid="3" name="zdroje" tags="" position="1209,107" size="100,100">
-&lt;div class=&quot;gallery-text&quot;&gt;\
-Monografie:
+document.galleryInitCuratorTranscriptButton = function () {
+    $("#curator-transcript-button").on("click", function () {
+        $(".curator-wrapper").toggleClass("active")
+    });
+}
 
-ECO, Umberto, 2005. Dějiny krásy. 1. Praha: Argo. ISBN 80-7203-677-7.
 
-HÁJEK, Pavel, 2008. Jde pevně kupředu naše zem: Krajina českých zemí v období socialismu 1948-1989 [online]. Praha: Malá Skála [cit. 2021-3-29]. ISBN 978-80-86776-07-1. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:f90672bc-667c-4d7d-a1aa-77e234617870
-
+</script><tw-passagedata pid="1" name="footer" tags="footer" position="57,147" size="100,100"></tw-passagedata><tw-passagedata pid="2" name="init" tags="" position="55,29" size="100,100">(set: $pruchod to (a:))(set: $playedcurators to (a:))(go-to: &quot;start&quot;)</tw-passagedata><tw-passagedata pid="3" name="zdroje" tags="" position="1209,107" size="100,100">&lt;div class=&quot;gallery-text&quot;&gt;\Monografie:ECO, Umberto, 2005. Dějiny krásy. 1. Praha: Argo. ISBN 80-7203-677-7.HÁJEK, Pavel, 2008. Jde pevně kupředu naše zem: Krajina českých zemí v období socialismu 1948-1989 [online]. Praha: Malá Skála [cit. 2021-3-29]. ISBN 978-80-86776-07-1. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:f90672bc-667c-4d7d-a1aa-77e234617870
 CHODĚJOVSKÁ, Eva, Jiří BALSKÝ, Markéta HOLUBOVÁ, et al., 2020. Krajina v rukou barokního člověka: Lidé a krajina 16.-18. století na východě Čech. Josefov: Národní památkový ústav, územní odborné pracoviště v Josefově. ISBN 978-80-88226-23-9.
 
 MALURA, Jan a Martin TOMÁŠEK, ed., 2016. Příroda vs. industriál: Vytváření prostoru v literatuře a výtvarném umění. Ostrava: Ostravská univerzita. ISBN 978-80-7464-864-9.
@@ -407,10 +428,16 @@ Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, na
 &lt;div class="curator-controls"&gt;\
     &lt;div id="curator-transcript-button"&gt;&equiv;&lt;/div&gt;\
     &lt;script&gt;
-        $(&quot;#curator-transcript-button&quot;).on(&quot;click&quot;, function () {
-            $(".curator-wrapper").toggleClass("active")});
+        document.galleryInitCuratorTranscriptButton();
     &lt;/script&gt;\
-    &lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-romantismus-a-realismus.aac&quot;&gt;&lt;/audio&gt;\
+    &lt;div class="playback-controls"&gt;\
+        &lt;audio class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-romantismus-a-realismus.aac&quot;&gt;&lt;/audio&gt;\
+        &lt;img id="playback-button" src="https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg"&gt;\
+        &lt;img id="volume-button" src="https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/loud2-icon.svg"&gt;\
+        &lt;script&gt;
+            document.galleryInitCuratorControls();
+        &lt;/script&gt;\
+    &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;div class="curator-transcript block-horizontal-scroll"&gt;\
     Dominujícím uměleckým stylem...
