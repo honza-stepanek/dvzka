@@ -25,17 +25,18 @@ use File::Basename;
 
 # static globals
 my $usage =
-    "usage: tw-assembly [-h][-s][-f][-o][-a][-d] HTML_FILE [OUTPUT_NAME]\n" .
+    "usage: tw-assembly [-h][-s][-f][-o][-a][-d][-js JS_FILE] HTML_FILE [OUTPUT_NAME]\n" .
     # "       tw-assembly [-h][-s][-f][-o] -d HTML_FILE [OUTPU_NAME]\n" .
     "";
 
 
 # options
-my $assembling = 1;
+my $assembling = undef;
 my @files;
 # my $verbose;
 my $safe_open = 1;
 my $html_in_pth;
+my $javascript;
 my $output_name;
 my $output_base_path;
 
@@ -46,13 +47,58 @@ my %paths;
 my @css_in_pths;
 
 
-parse_args();
+parse_args(@ARGV);
 
-if ($assembling == 1) {
+if ($javascript && !defined $assembling) {
+    # TODO  make this a separate subrutine
+    # and make it work separately *or together with assembly mode* 
+
+    print "input html needed\n" if (!defined $html_in_pth);
+    open(HTML_IN, '<', $html_in_pth) or die "couldn't open the html: $html_in_pth";
+    open(JS_IN, '<', $javascript) or die "couldn't open javascript: $javascript";
+
+    open_new(\*HTML_OUT, "$output_base_path$output_name", '.html');
+
+    my $state = 0;
+    while (<HTML_IN>) {
+        if ($_ =~ /(.*)<script role="script" id="twine-user-script" type="text\/twine-javascript">(.*)<\/script>(.*)/) {
+            # opening and closing tag at the same line
+            my $pre_script = $1 ? "$1\n" : "";
+            print HTML_OUT "$pre_script<script role=\"script\" id=\"twine-user-script\" type=\"text/twine-javascript\">\n";
+            read_and_paste(\*JS_IN, \*HTML_OUT);
+            print HTML_OUT "\n</script>$3";
+
+        } elsif ($_ =~ /(.*)<script role="script" id="twine-user-script" type="text\/twine-javascript">(.*)/) {
+            # found only opening tag
+            my $pre_script = $1 ? "$1\n" : "";
+            print HTML_OUT "$pre_script<script role=\"script\" id=\"twine-user-script\" type=\"text/twine-javascript\">\n";
+            read_and_paste(\*JS_IN, \*HTML_OUT);
+            close(JS_IN);
+            $state = 1;
+
+        } elsif ($state == 1 && $_ =~ /(.*)<\/script>(.*)/) {
+            # found the closing tag
+            print HTML_OUT "\n</script>$2";
+            $state = 42;
+
+        } elsif ($state == 1) {
+            # ignoring the existing javascript
+
+        } else {
+            print HTML_OUT $_;
+        }
+    }
+    close(HTML_IN);
+    my $html_out_name = $paths{fileno HTML_OUT};
+    close(HTML_OUT);
+    rename $html_out_name, $html_in_pth;
+    print "javascript updated\n"
+}
+elsif ($assembling == 1 || !defined $assembling) {
     #--------------#
     #  ASSEMBLING  #
     #--------------#
-
+    print "assembling $html_in_pth\n";
 
     find_css_links($html_in_pth);
 
@@ -79,7 +125,7 @@ if ($assembling == 1) {
 
                 if ($5) {
                     # $5 matches a <link ...>
-                    print HTML_OUT "<\/style>$6$7";
+                    print HTML_OUT "</style>$6$7";
                     $state = 3; # all done - style pasted and removed <link>
                 } else {
                     print HTML_OUT $4;
@@ -130,9 +176,11 @@ if ($assembling == 1) {
         }
     }
 
+    my $html_out_name = $paths{fileno HTML_OUT};
     close(HTML_IN);
     close(HTML_OUT);
 
+    print "assembled into $html_out_name\n";
     exit 0;
 }
 else {
@@ -189,23 +237,29 @@ sub read_and_paste { #(\*CSS_IN, \*HTML_OUT)
     }
 }
 
+
 # parse arguments
 sub parse_args {
-    for my $arg (@ARGV) {
+    my $arg = shift;
+    while ($arg) {
         if ($arg eq "-h") {
             print_help(); # exits the program
         } elsif ($arg eq "-a") {
             $assembling = 1; # assembling
         } elsif ($arg eq "-d") {
             $assembling = 0; # dissasembling
+        } elsif ($arg eq "-js") {
+            $javascript = shift; # replacing 'user javascript' in original the twine file
         } elsif ($arg eq "-f") {
-            $safe_open = 0;
+            $safe_open = 0; # force opening files
         } elsif ($arg eq "-s") {
-            $safe_open = 1;
+            $safe_open = 1; # use the safe open subrutine
         } else {
             push(@files, $arg);
         }
+        $arg = shift;
     }
+
     $html_in_pth = $files[0];
 
     if ($html_in_pth =~ /.*\.html/) {
@@ -222,10 +276,11 @@ sub parse_args {
     } else {
         # output file name based on the input name
         my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
-        $output_name = $assembling == 1 ? "$name-a" : "$name-d";
+        $output_name = $assembling ? "$name-a" : ($javascript ? "$name-a" : "$name-d");
         $output_base_path = $base_path;
     }
 }
+
 
 # finds linked css files
 sub find_css_links {
@@ -243,19 +298,23 @@ sub find_css_links {
     close(HTML_IN_);
 }
 
+
 # prints help message and !exits!
 sub print_help {
     print $usage . "\n" .
-    "\t-a\tassembly mode [default]\n" .
-    "\t-d\tdisassembling mode\n" .
-    "\t-s\tsafe open (new files are numbered\n" .
-      "\t\tif same name already exists) [deafult]\n" .
-    "\t-f\tno safe open\n" .
-    "\t-o\toverwrite existing html #TODO\n" .
+    "  -a       assembly mode [default]\n" .
+    "  -d       disassembly mode\n" .
+    "  -js PTH  replace user javascript in the original\n" .
+    "           twine html with contents of PTH\n" .
+    "  -s       safe open (new files are numbered\n" .
+    "           if same name already exists) [deafult]\n" .
+    "  -f       no safe open\n" .
+    "  -o       overwrite existing html #TODO\n" .
     # "#TODO ...\n" .
     "";
     exit 0;
 }
+
 
 sub open_new {
     my $fh = shift; # file handle
@@ -279,21 +338,3 @@ sub open_new {
     }
 }
 
-
-# my $twine_min = HTML::TagParser->new($files[0]);
-# my $stylesheet = $twine_min->getElementById("twine-user-stylesheet");
-# if ($stylesheet) {
-#     my $content = $stylesheet->innerText();
-#     # print "this is what I've found:\n";
-#     # print $content;
-#     my $cssfile = "twine-user-stylesheet-";
-#     my $no = 1;
-#     while (-e ($cssfile . "$no.css")) {
-#         $no = $no + 1;
-#     }
-#     open(CSS, '>', $cssfile . "$no.css") or die $!;
-#     print CSS $content;
-#     close(CSS);
-# } else {
-#     print "whoops didn't find user stylesheet inside the html";
-# }
