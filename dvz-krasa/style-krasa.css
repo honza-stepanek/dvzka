@@ -12,13 +12,13 @@
 tw-story {
     background-color: rgb(248, 248, 248);
     background-image: url("resources/white-wall-texture.png");
-    background-repeat: repeat-x;
+    background-repeat: repeat;
     background-size: contain;
     background-attachment: fixed;
     color: black;
     margin: 0;
     padding: 50px 10%;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Merriweather', serif;
 }
 
@@ -26,25 +26,42 @@ tw-passage {
     margin: auto;
     padding: 1.5em;
     background-color: rgb(248, 242, 234);
-    width: 90vw;
+    width: 97%;
     max-width: 1000px;
     box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.164);
 }
 
+@media (max-width: 649px) {
+    tw-story {
+        padding: 80px 15px;
+    }
+    tw-passage {
+        margin: auto;
+        padding: 1.1em;
+        width: 97%;
+        font-size: 85%;
+        line-height: 1.5em;
+    }
+}
+
+/* === Navigation === */
 tw-sidebar {
+    display: flex;
+    flex-direction: row;
+    height: 2.1em;
     position: fixed;
-    left: 0;
-    top: 25px;
+    left: 15px;
+    top: 20px;
     z-index: 10;
 }
 tw-sidebar tw-icon {
-    /* display: none; */
-    opacity: 1;
-    /* TODO remove */
+    display: none;
+    /* opacity: 1; */
 }
 
 img.nav-arrow {
     width: 50px;
+    height: 1.5em;
     max-width: 100%;
     box-shadow: none;
     opacity: 0.7;
@@ -58,6 +75,8 @@ img.nav-arrow:focus {
     transform: scale(1.1);
 }
 
+
+/* === images in general === */
 img {
     max-width: 100%;
     max-height: 100%;
@@ -68,6 +87,7 @@ img {
     box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.411);
 }
 
+/* === twine "button" style === */
 tw-link,
 tw-link.visited {
     color: #0000dc;
@@ -101,7 +121,7 @@ tw-story[tags ~= "gallery"] {
 tw-passage[tags ~= "gallery"] {
     display: flex;
     margin: auto;
-    height: 750px;
+    height: 1000px;
     max-height: 85vh;
     width: unset;
     max-width: unset;
@@ -121,9 +141,9 @@ div.gallery-wall-space-book {
     justify-content: center;
 
     height: 100%;
-    width: 90vw;
-    max-width: 1000px;
-    margin: 0 1em;
+    /* width: 90vw; */
+    max-width: 90vw;
+    margin: 0 3em;
 
     /* debug border: */
     /* border: solid rgba(238, 100, 243, 0.486) 4px; */
@@ -158,8 +178,7 @@ div.painting-label {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    
-    font-size: 120%;
+
     font-weight: 700;
     color: #0000dc;
     color: #3737af;
@@ -174,9 +193,16 @@ div.gallery-wall-space-book:hover div.book-label {
 }
 @media (hover: none) {
     /* on devices without the ability to hover over elements */
-    div.painting-label,
+    div.painting-label {
+        opacity: 0.8;
+    }
     div.book-label {
         opacity: 1;
+    }
+}
+@media (min-width: 500px) and (min-height: 500px) {
+    div.painting-label {
+        font-size: 150%;
     }
 }
 
@@ -326,7 +352,7 @@ div.curator-wrapper {
     transition: width 300ms;
 }
 div.curator-wrapper.active {
-    width: 18em; /* TODO pxs? */
+    width: 20em;
     max-height: 100%;
 }
 
@@ -358,6 +384,22 @@ div.curator-wrapper.active div.curator-container {
     max-width: 24em;
     height: 94vh;
 }
+
+@media (max-width: 649px) {
+    div.curator-container {
+        left: unset;
+        right: 20px;
+    }
+    div.curator-wrapper.active div.curator-container {
+        left: 10px;
+        right: 10px;
+    }
+
+    div.curator-wraper.active {
+        width: 0;
+    }
+}
+
 
 /* the vertically scrollable div with the transcript */
 div.curator-transcript {
@@ -422,6 +464,7 @@ div.playback-controls > #volume-button {
     height: 1.3em;
     margin: 0.1em;
 }
+
 
 
 
@@ -622,7 +665,8 @@ tw-passage[tags ~= "baroque"] img {
 }
 
 tw-passage[tags ~= "vstup"] {
-    width: 30em;
+    /* width: 30em; */
+    max-width: 95%;
     text-align: center;
 }
 tw-passage[tags ~= "vstup"] tw-link {

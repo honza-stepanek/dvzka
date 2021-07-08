@@ -78,7 +78,7 @@ if ($javascript && !defined $assembling) {
 
         } elsif ($state == 1 && $_ =~ /(.*)<\/script>(.*)/) {
             # found the closing tag
-            print HTML_OUT "\n</script>$2";
+            print HTML_OUT "\n</script>$2\n";
             $state = 42;
 
         } elsif ($state == 1) {
@@ -94,7 +94,7 @@ if ($javascript && !defined $assembling) {
     rename $html_out_name, $html_in_pth;
     print "javascript updated\n"
 }
-elsif ($assembling == 1 || !defined $assembling) {
+elsif (!defined $assembling || $assembling == 1) {
     #--------------#
     #  ASSEMBLING  #
     #--------------#
@@ -125,7 +125,7 @@ elsif ($assembling == 1 || !defined $assembling) {
 
                 if ($5) {
                     # $5 matches a <link ...>
-                    print HTML_OUT "</style>$6$7";
+                    print HTML_OUT "</style>$6$7\n";
                     $state = 3; # all done - style pasted and removed <link>
                 } else {
                     print HTML_OUT $4;
@@ -176,8 +176,8 @@ elsif ($assembling == 1 || !defined $assembling) {
         }
     }
 
-    my $html_out_name = $paths{fileno HTML_OUT};
     close(HTML_IN);
+    my $html_out_name = $paths{fileno HTML_OUT};
     close(HTML_OUT);
 
     print "assembled into $html_out_name\n";
@@ -187,6 +187,7 @@ else {
     #-----------------#
     #  DISASSEMBLING  #
     #-----------------#
+    print "disassembling $html_in_pth\n";
 
     open(HTML_IN, '<', $html_in_pth);
 
@@ -220,9 +221,12 @@ else {
     }
 
     close(HTML_IN);
-    close(CSS_OUT);
+    my $html_out_name = $paths{fileno HTML_OUT};
     close(HTML_OUT);
+    my $css_out_name = $paths{fileno CSS_OUT};
+    close(CSS_OUT);
 
+    print "disassembled into $html_out_name and $css_out_name\n";
     exit 0;
 }
 
@@ -276,7 +280,7 @@ sub parse_args {
     } else {
         # output file name based on the input name
         my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
-        $output_name = $assembling ? "$name-a" : ($javascript ? "$name-a" : "$name-d");
+        $output_name = defined $assembling && $assembling == 0 ? "$name-d" : "$name-a";
         $output_base_path = $base_path;
     }
 }

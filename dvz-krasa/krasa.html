@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Krása.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Krása" startnode="2" creator="Twine" creator-version="2.3.14" ifid="E716A51E-F24B-40BF-A530-41926A2C98D3" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Krása" startnode="16" creator="Twine" creator-version="2.3.14" ifid="E716A51E-F24B-40BF-A530-41926A2C98D3" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 </style>
 <link href=".\style-krasa.css" rel="stylesheet">
 <script role="script" id="twine-user-script" type="text/twine-javascript">
@@ -76,8 +76,26 @@ document.galleryInitCuratorTranscriptButton = function () {
     });
 }
 
+document.galleryResizer = function () {
+    $("div.gallery-wall-space").each(function (i) {
+        const img = $(this).find("img")[0];
+        if (img) {
+            const ratio = img.naturalWidth / img.naturalHeight;
+            const width = ratio * Math.min($(this).height(), img.naturalHeight);
+            $(this).width(width);
+            // console.log(i, img.naturalWidth, img.naturalHeight, width);
+        }
+    });
+}
+window.addEventListener("resize", document.galleryResizer);
 
-</script><tw-passagedata pid="1" name="footer" tags="footer" position="57,147" size="100,100"></tw-passagedata><tw-passagedata pid="2" name="init" tags="" position="55,29" size="100,100">(set: $pruchod to (a:))(set: $playedcurators to (a:))(go-to: &quot;start&quot;)</tw-passagedata><tw-passagedata pid="3" name="zdroje" tags="" position="1209,107" size="100,100">&lt;div class=&quot;gallery-text&quot;&gt;\Monografie:ECO, Umberto, 2005. Dějiny krásy. 1. Praha: Argo. ISBN 80-7203-677-7.HÁJEK, Pavel, 2008. Jde pevně kupředu naše zem: Krajina českých zemí v období socialismu 1948-1989 [online]. Praha: Malá Skála [cit. 2021-3-29]. ISBN 978-80-86776-07-1. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:f90672bc-667c-4d7d-a1aa-77e234617870
+</script><tw-passagedata pid="1" name="gallery resizer" tags="footer" position="59,148" size="100,100">&lt;script&gt;
+setTimeout(document.galleryResizer, 50);
+setTimeout(document.galleryResizer, 200);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="2" name="init" tags="startup" position="55,29" size="100,100">(set: $pruchod to (a:))\
+&lt;!--
+(set: $playedcurators to (a:))
+--&gt;</tw-passagedata><tw-passagedata pid="3" name="zdroje" tags="" position="1154,109" size="100,100">&lt;div class=&quot;gallery-text&quot;&gt;\Monografie:ECO, Umberto, 2005. Dějiny krásy. 1. Praha: Argo. ISBN 80-7203-677-7.HÁJEK, Pavel, 2008. Jde pevně kupředu naše zem: Krajina českých zemí v období socialismu 1948-1989 [online]. Praha: Malá Skála [cit. 2021-3-29]. ISBN 978-80-86776-07-1. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:f90672bc-667c-4d7d-a1aa-77e234617870
 CHODĚJOVSKÁ, Eva, Jiří BALSKÝ, Markéta HOLUBOVÁ, et al., 2020. Krajina v rukou barokního člověka: Lidé a krajina 16.-18. století na východě Čech. Josefov: Národní památkový ústav, územní odborné pracoviště v Josefově. ISBN 978-80-88226-23-9.
 
 MALURA, Jan a Martin TOMÁŠEK, ed., 2016. Příroda vs. industriál: Vytváření prostoru v literatuře a výtvarném umění. Ostrava: Ostravská univerzita. ISBN 978-80-7464-864-9.
@@ -240,7 +258,9 @@ WRIGHT, Joseph. Vesuvius from Posillipo by Moonlight. [olejomalba, 1774]. New Ha
 
 ZOCCHI, Giuseppe, PFEFFEL Johann Andreas a ALLEGRINI Giuseppe.// Scelta Di XXIV Vedute delle principali Contrade, Piazze, Chiese, e Padazzi della Citta di Firenze, T. 1: Veduta di Firenze dal Convento de PP. Cappuccini di Montughi// [grafika, 1744]. 47,5 x 68 cm. Firenze: Appresso Giuseppe Allegrini Stampatore. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:d9ed9e32-4015-47fb-9798-13b8d104f3e4
 &lt;/div&gt;\
-</tw-passagedata><tw-passagedata pid="4" name="výstava" tags="gallery" position="654,137" size="100,100">&lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_vystava.aac&quot;&gt;&lt;/audio&gt;\
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;aktivita]]
+]</tw-passagedata><tw-passagedata pid="4" name="výstava" tags="gallery" position="654,137" size="100,100">&lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_vystava.aac&quot;&gt;&lt;/audio&gt;\
 
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
@@ -293,7 +313,9 @@ Pokrok\
 
 
 [[Zpět na rozcestník-&gt;baroko rozc]]
-</tw-passagedata><tw-passagedata pid="6" name="romantismus rozc" tags="gallery romantism-cross" position="776,298" size="100,100">\
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko rozc]]
+]</tw-passagedata><tw-passagedata pid="6" name="romantismus rozc" tags="gallery romantism-cross" position="776,298" size="100,100">\
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
 Divoká krajina
@@ -363,8 +385,8 @@ Jaroslav Vrchlický - //Šum listí//
 &lt;/a&gt;\
 &lt;div id=&quot;book-vrchlicky&quot; class=&quot;modal-dialog-overlay-container&quot;&gt;\
     &lt;div class=&quot;modal-dialog-overlay book-contents block-horizontal-scroll&quot;&gt;\
-        &lt;audio class="block-horizontal-scroll" controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
-        &lt;img class="block-horizontal-scroll" src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
+        &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
+        &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;resources/vrchlicky-sum-listi-text.jpg&quot;&gt;\
         \
     &lt;/div&gt;\
     &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
@@ -422,24 +444,27 @@ Zahradní architektura
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=104&quot; width=&quot;886&quot; height=&quot;700&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, navrhout [[svou vlastní zahradu-&gt;baroko zahrady aktivita]]?</tw-passagedata><tw-passagedata pid="11" name="romantismus malby" tags="gallery romantism" position="1034,460" size="100,100">\
-&lt;div class="curator-wrapper"&gt;\
-&lt;div class="curator-container"&gt;\
-&lt;div class="curator-controls"&gt;\
-    &lt;div id="curator-transcript-button"&gt;&equiv;&lt;/div&gt;\
+Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, navrhout [[svou vlastní zahradu-&gt;baroko zahrady aktivita]]?
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko rozc]]
+]</tw-passagedata><tw-passagedata pid="11" name="romantismus malby" tags="gallery romantism" position="1034,460" size="100,100">\
+&lt;div class=&quot;curator-wrapper&quot;&gt;\
+&lt;div class=&quot;curator-container&quot;&gt;\
+&lt;div class=&quot;curator-controls&quot;&gt;\
+    &lt;div id=&quot;curator-transcript-button&quot;&gt;≡&lt;/div&gt;\
     &lt;script&gt;
         document.galleryInitCuratorTranscriptButton();
     &lt;/script&gt;\
-    &lt;div class="playback-controls"&gt;\
+    &lt;div class=&quot;playback-controls&quot;&gt;\
         &lt;audio class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-romantismus-a-realismus.aac&quot;&gt;&lt;/audio&gt;\
-        &lt;img id="playback-button" src="https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg"&gt;\
-        &lt;img id="volume-button" src="https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/loud2-icon.svg"&gt;\
+        &lt;img id=&quot;playback-button&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg&quot;&gt;\
+        &lt;img id=&quot;volume-button&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/loud2-icon.svg&quot;&gt;\
         &lt;script&gt;
             document.galleryInitCuratorControls();
         &lt;/script&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div class="curator-transcript block-horizontal-scroll"&gt;\
+&lt;div class=&quot;curator-transcript block-horizontal-scroll&quot;&gt;\
     Dominujícím uměleckým stylem...
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque minima, vero soluta repellat ipsam, sapiente blanditiis quaerat et repudiandae quam, sit quos qui sed eum ex aperiam! Deleniti, fugiat ratione qui excepturi quos sed, molestiae quae beatae odio necessitatibus dolor?
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus laborum ipsa minima error pariatur tenetur quod aperiam temporibus. Suscipit enim hic tempora dolorum recusandae, incidunt quae molestias tempore nulla labore possimus quam impedit rem at magni sunt. Deserunt atque dolorum, dolore voluptatum sed illo mollitia culpa! Obcaecati excepturi delectus dignissimos enim repellendus quaerat sequi, nesciunt minus illo porro laudantium mollitia amet ipsam ullam fugit at ut molestiae quo impedit beatae earum non provident facere eos! Nam numquam quidem vel dicta temporibus aut sapiente, blanditiis cupiditate rerum nemo deleniti tenetur fuga amet in ea, consectetur dolore voluptatum non fugiat atque delectus.
@@ -481,7 +506,7 @@ Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, na
 \\
 (append: ?SideBar)[\
 [[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus rozc]]
-]</tw-passagedata><tw-passagedata pid="12" name="aktivita" tags="" position="954,56" size="100,100">Máte za sebou výstavu věnovanou estetickému vnímání krajiny v minulosti. Je ale na vás, abyste napsali její další kapitolu.
+]</tw-passagedata><tw-passagedata pid="12" name="aktivita" tags="" position="931,17" size="100,100">Máte za sebou výstavu věnovanou estetickému vnímání krajiny v minulosti. Je ale na vás, abyste napsali její další kapitolu.
 
 Rozdělte se do skupin a společně se zamyslete nad tím, co v krajině považujeme za krásné dnes. Zkuste si odpovědět na otázky jako:
 
@@ -498,7 +523,7 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
 [[Použité zdroje-&gt;zdroje]]
 (append: ?SideBar)[\
 [[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;výstava]]
-]\</tw-passagedata><tw-passagedata pid="13" name="industra lit 1" tags="" position="1586,419" size="100,100">Poslechněte si následující ukázky textů reflektujících průmyslovou krajinu. Jak ji popisují? A podle čeho poznáme, že ji autoři vnímají pozitivně? 
+]</tw-passagedata><tw-passagedata pid="13" name="industra lit 1" tags="" position="1586,419" size="100,100">Poslechněte si následující ukázky textů reflektujících průmyslovou krajinu. Jak ji popisují? A podle čeho poznáme, že ji autoři vnímají pozitivně? 
 
 //Ukázky básní (s audiozáznamem) a textová verze po rozkliknutí//
 
@@ -514,29 +539,47 @@ Guillaume Apollinaire - //Palác hromu//
 Marie Majerová - //Přehrada//
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/majerova-obalka.jpg&quot;&gt;
 
-[[Zpět na rozcestník-&gt;industrial rozc]]</tw-passagedata><tw-passagedata pid="14" name="baroko obecně" tags="" position="54,458" size="100,100">Lidé začali ráz krajiny ve větším měřítku ovlivňovat v 17. a 18. století. Pro tuto krajinu se, vzhledem k dobovému zakotvení, vžilo označení &#39;&#39;barokní krajina&#39;&#39;.
+[[Zpět na rozcestník-&gt;industrial rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industrial rozc]]
+]</tw-passagedata><tw-passagedata pid="14" name="baroko obecně" tags="" position="54,458" size="100,100">Lidé začali ráz krajiny ve větším měřítku ovlivňovat v 17. a 18. století. Pro tuto krajinu se, vzhledem k dobovému zakotvení, vžilo označení &#39;&#39;barokní krajina&#39;&#39;.
 
 Podívejte se na obrázky a zkuste na jejich základě určit typické znaky barokní krajiny.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=100&quot; width=&quot;760&quot; height=&quot;676&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-Hotovo? [[Pojďme se podívat, jaká je správná odpověď-&gt;baroko obecně klíč]]!</tw-passagedata><tw-passagedata pid="15" name="baroko obecně klíč" tags="" position="134,602" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_rad-kulturni-krajina.aac&quot;&gt;&lt;/audio&gt;
+Hotovo? [[Pojďme se podívat, jaká je správná odpověď-&gt;baroko obecně klíč]]!
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko rozc]]
+]</tw-passagedata><tw-passagedata pid="15" name="baroko obecně klíč" tags="" position="134,602" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_rad-kulturni-krajina.aac&quot;&gt;&lt;/audio&gt;
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=100&quot; width=&quot;760&quot; height=&quot;676&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět na rozcestník-&gt;baroko rozc]]</tw-passagedata><tw-passagedata pid="16" name="start" tags="vstup" position="239,30" size="100,100">[[Vstoupit do galerie-&gt;výstava]]</tw-passagedata><tw-passagedata pid="17" name="romantismus obecně" tags="" position="638,459" size="100,100">Ke konci 18. století došlo k posunu ve vnímání toho, jakou krajinu lze považovat za krásnou. Dokážete na základě těchto výjevů určit, v čem tato změna spočívala?
+[[Zpět na rozcestník-&gt;baroko rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko obecně]]
+]</tw-passagedata><tw-passagedata pid="16" name="start" tags="vstup" position="239,30" size="100,100">[[Vstoupit do galerie-&gt;výstava]]</tw-passagedata><tw-passagedata pid="17" name="romantismus obecně" tags="" position="638,459" size="100,100">Ke konci 18. století došlo k posunu ve vnímání toho, jakou krajinu lze považovat za krásnou. Dokážete na základě těchto výjevů určit, v čem tato změna spočívala?
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=105&quot; width=&quot;886&quot; height=&quot;702&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-Hotovo? [[Pojďme se podívat, jaká je správná odpověď-&gt;romantismus obecně klíč]]!</tw-passagedata><tw-passagedata pid="18" name="romantismus obecně klíč" tags="" position="686,624" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-divoka-krajina.aac&quot;&gt;&lt;/audio&gt;
+Hotovo? [[Pojďme se podívat, jaká je správná odpověď-&gt;romantismus obecně klíč]]!
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus rozc]]
+]</tw-passagedata><tw-passagedata pid="18" name="romantismus obecně klíč" tags="" position="686,624" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_emoce-divoka-krajina.aac&quot;&gt;&lt;/audio&gt;
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=105&quot; width=&quot;886&quot; height=&quot;702&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět na rozcestník-&gt;romantismus rozc]]</tw-passagedata><tw-passagedata pid="19" name="industra obecně" tags="" position="1197,422" size="100,100">Následující obrazy vám patrně nebudou připadat krásné, ačkoli byly doby, kdy za takové považovány bezpochyby byly. Zkuste se na ně podívat očima člověka 19. a počátku 20. století a pokuste se určit, v čem mohla spočívat krása těchto krajin.
+[[Zpět na rozcestník-&gt;romantismus rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus obecně]]
+]</tw-passagedata><tw-passagedata pid="19" name="industra obecně" tags="" position="1197,422" size="100,100">Následující obrazy vám patrně nebudou připadat krásné, ačkoli byly doby, kdy za takové považovány bezpochyby byly. Zkuste se na ně podívat očima člověka 19. a počátku 20. století a pokuste se určit, v čem mohla spočívat krása těchto krajin.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=106&quot; width=&quot;886&quot; height=&quot;734&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-Hotovo? [[Pojďme se podívat, jak to je-&gt;industra obecně klíč]]!</tw-passagedata><tw-passagedata pid="20" name="industra malby" tags="gallery industrialism" position="1451,419" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_pokrok-avantgarda-a-socialni-realismus.aac&quot;&gt;&lt;/audio&gt;
+Hotovo? [[Pojďme se podívat, jak to je-&gt;industra obecně klíč]]!
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industrial rozc]]
+]</tw-passagedata><tw-passagedata pid="20" name="industra malby" tags="gallery industrialism" position="1451,419" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_pokrok-avantgarda-a-socialni-realismus.aac&quot;&gt;&lt;/audio&gt;
 
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/industra-malby_1.jpg&quot;&gt;
@@ -559,17 +602,26 @@ Hotovo? [[Pojďme se podívat, jak to je-&gt;industra obecně klíč]]!</tw-pass
 &lt;/div&gt;\
 
 
-[[Zobrazit správnou odpověď-&gt;industra směry]]</tw-passagedata><tw-passagedata pid="21" name="industra obecně klíč" tags="" position="1266,583" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_pokrok-prumyslova-krajina.aac&quot;&gt;&lt;/audio&gt;
+[[Zobrazit správnou odpověď-&gt;industra směry]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industrial rozc]]
+]</tw-passagedata><tw-passagedata pid="21" name="industra obecně klíč" tags="" position="1266,583" size="100,100">&lt;audio controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/kr_pokrok-prumyslova-krajina.aac&quot;&gt;&lt;/audio&gt;
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=106&quot; width=&quot;886&quot; height=&quot;734&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět na rozcestník-&gt;industrial rozc]]</tw-passagedata><tw-passagedata pid="22" name="baroko zahrady aktivita" tags="" position="250,606" size="100,100">Vžijte se do role zahradního architekta! Píše se rok 1725 a místní šlechtic si vás právě najal, abyste mu nově zakoupené panství zvelebili podle poslední módy. Které prvky nesmí v barokní zahradě chybět a kterým se naopak zdaleka vyhnete?
+[[Zpět na rozcestník-&gt;industrial rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industra obecně]]
+]</tw-passagedata><tw-passagedata pid="22" name="baroko zahrady aktivita" tags="" position="250,606" size="100,100">Vžijte se do role zahradního architekta! Píše se rok 1725 a místní šlechtic si vás právě najal, abyste mu nově zakoupené panství zvelebili podle poslední módy. Které prvky nesmí v barokní zahradě chybět a kterým se naopak zdaleka vyhnete?
 
 Vybrané prvky přetáhněte do horní části nákresu.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=113&quot; width=&quot;886&quot; height=&quot;591&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět na rozcestník-&gt;baroko rozc]]</tw-passagedata><tw-passagedata pid="23" name="romantismus lit aktivita" tags="romantismuslitaktivita" position="807,620" size="100,100">Prohlédněte si kresbu hradu Bezděz od Karla Hynka Máchy. Který z následujících popisů se k němu podle vás vztahuje?
+[[Zpět na rozcestník-&gt;baroko rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko zahrady]]
+]</tw-passagedata><tw-passagedata pid="23" name="romantismus lit aktivita" tags="romantismuslitaktivita" position="836,625" size="100,100">Prohlédněte si kresbu hradu Bezděz od Karla Hynka Máchy. Který z následujících popisů se k němu podle vás vztahuje?
 
 &lt;a href=&quot;#cit-bezdez&quot; title=&quot;Prohlédnout si malbu zblízka&quot;&gt;\
     &lt;img class=&quot;painting-frame-neutral&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-slovnik_1.jpg&quot;&gt;
@@ -619,13 +671,19 @@ $(&quot;.image-option-correct&quot;).on(&quot;click&quot;, function (e) {e.targe
 $(&quot;.image-option-wrong&quot;).on(&quot;click&quot;, function (e) {e.target.classList.add(&quot;clicked&quot;)});
 &lt;/script&gt;\
 
-[[Zpět na rozcestník-&gt;romantismus rozc]]</tw-passagedata><tw-passagedata pid="24" name="industra směry" tags="" position="1377,582" size="100,100">Industriální krajina byla oblíbeným motivem mnoha výtvarných směrů 20. století. Dokážete je od sebe vzájemně odlišit?
+[[Zpět na rozcestník-&gt;romantismus rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus lit 1]]
+]</tw-passagedata><tw-passagedata pid="24" name="industra směry" tags="" position="1377,582" size="100,100">Industriální krajina byla oblíbeným motivem mnoha výtvarných směrů 20. století. Dokážete je od sebe vzájemně odlišit?
 
 Obrazy přetáhněte do odpovídajících kolonek.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=130&quot; width=&quot;886&quot; height=&quot;1400&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; title=&quot;kr_industra malby&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
-[[Zpět na rozcestník-&gt;industrial rozc]]</tw-passagedata></tw-storydata>
+[[Zpět na rozcestník-&gt;industrial rozc]]
+(append: ?SideBar)[\
+[[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industra malby]]
+]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
