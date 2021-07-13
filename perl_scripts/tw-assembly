@@ -1,15 +1,13 @@
 #!/usr/bin/perl
 
 ###########################################################
-# by Jan Rychly                     
+# by Jan Rychlý (github: honzaflash)                     
 # 
 # Simple script for assembling and disassembling
 # a Twine HTML document
-#
-# usage:
 # 
 # examples:
-#   tw-assembly bits.html
+#   tw-assembly storywithlinkedcss.html -a
 #   tw-assembly bits.html bitsassembled
 #   tw-assembly bits.html bitsassembled.html
 #   tw-assembly mystory.html -d
@@ -20,7 +18,6 @@ use strict;
 use warnings;
 use utf8;
 
-# use HTML::TagParser;
 use File::Basename;
 
 # static globals
@@ -31,14 +28,15 @@ my $usage =
 
 
 # options
-my $assembling = undef;
+my $assembling;
+my $overwrite_dis;
+my $javascript;
 my @files;
-# my $verbose;
 my $safe_open = 1;
 my $html_in_pth;
-my $javascript;
 my $output_name;
 my $output_base_path;
+# my $verbose;
 
 # global dict of opened files
 my %paths;
@@ -114,7 +112,7 @@ elsif (!defined $assembling || $assembling == 1) {
             if ($2) {
                 # the closing </style> tag has been found on the same line and $3 matches the style contents
 
-                print HTML_OUT "$1$3\n";
+                print HTML_OUT "$1$3";
 
                 for my $css_in_pth (@css_in_pths) {
                     my ($x1_, $html_in_base_path, $x2_) = fileparse($html_in_pth, (".html"));
@@ -200,7 +198,8 @@ else {
             if ($_ =~ /(.*)<\/style>(.*)/) {
                 print CSS_OUT $1;
                 my $css_pth = $paths{fileno CSS_OUT};
-                print HTML_OUT "\n</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$2";
+                my $bit_after_style = $2 ? "$2\n" : "";
+                print HTML_OUT "\n</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$bit_after_style";
                 $in_style = 0;
             } else {
                 print CSS_OUT $_;
@@ -209,12 +208,12 @@ else {
         elsif (!defined $in_style && $_ =~ /(.*<style.*id="twine-user-stylesheet".*>)(.*)/) {
             print HTML_OUT $1;
             $in_style = 1;
-            my $bit_of_css = $2;
+            my $bit_of_css = $2 ? "$2\n" : "";
             if ($2 =~ /\s*<\/style>.*/) {
-                print "user style sheet is empty, no point in disassembling";
+                print "user style sheet is empty, no point in disassembling\n";
                 exit 0;
             }
-            print CSS_OUT "$bit_of_css\n";
+            print CSS_OUT "$bit_of_css";
         } else {
             print HTML_OUT $_;
         }
@@ -252,6 +251,9 @@ sub parse_args {
             $assembling = 1; # assembling
         } elsif ($arg eq "-d") {
             $assembling = 0; # dissasembling
+        } elsif ($arg =~ /-od|-do/) {
+            $assembling = 0; # dissasembling
+            $overwrite_dis = 1; # reverse assembly (including nameing -> overwrite original files)
         } elsif ($arg eq "-js") {
             $javascript = shift; # replacing 'user javascript' in original the twine file
         } elsif ($arg eq "-f") {
@@ -281,6 +283,10 @@ sub parse_args {
         # output file name based on the input name
         my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
         $output_name = defined $assembling && $assembling == 0 ? "$name-d" : "$name-a";
+        if ($overwrite_dis && $assembling == 0 && "$name" =~ /(.*)-a/) {
+            # reversing the assembly -> overwrite the original not assembled file
+            $output_name = $1;
+        }
         $output_base_path = $base_path;
     }
 }
@@ -308,12 +314,14 @@ sub print_help {
     print $usage . "\n" .
     "  -a       assembly mode [default]\n" .
     "  -d       disassembly mode\n" .
+    "  -do      disassemble a file named with '-a' sufix\n" .
+    "           into a file without that sufix (with overwriting)\n" .
     "  -js PTH  replace user javascript in the original\n" .
     "           twine html with contents of PTH\n" .
     "  -s       safe open (new files are numbered\n" .
     "           if same name already exists) [deafult]\n" .
     "  -f       no safe open\n" .
-    "  -o       overwrite existing html #TODO\n" .
+    # "  -o       overwrite existing html #TODO\n" .
     # "#TODO ...\n" .
     "";
     exit 0;
@@ -324,6 +332,12 @@ sub open_new {
     my $fh = shift; # file handle
     my $new_pref = shift; # part of the file path
     my $new_suf = shift; # extension
+
+    if ($overwrite_dis) { # todo the same as not safe_open
+        open($fh, '>', "${new_pref}${new_suf}") or die $!;
+        $paths{fileno $fh} = "${new_pref}${new_suf}";
+        return;
+    }
 
     if ($safe_open && -e "${new_pref}${new_suf}") {
         my $no = 1;
