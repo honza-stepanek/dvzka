@@ -24,24 +24,24 @@ window.smoothScroller.intervalID = window.setInterval(() => {
 }, 15);
 
 // global flag array for audio elements that have been autoplayed
-document.galleryPlayCurator = function () {
-    let curator = document.getElementsByClassName("curator")[0];
-    if (curator) {
-        curator.play();
-    }
-};
+// document.galleryPlayCurator = function () {
+//     let curator = document.getElementsByClassName("curator")[0];
+//     if (curator) {
+//         curator.play();
+//     }
+// };
 
 document.galleryInitCuratorControls = function () {
     $("audio.curator").on("ended", function () {
-        $("#playback-button").attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg");
+        $("#playback-button").attr("src", "resources/play.svg");
     });
     $("#playback-button").on("click", function () {
         let curator = $("audio.curator")[0];
         if (curator.paused) {
             curator.play();
-            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/pause-icon.svg");
+            $(this).attr("src", "resources/pause.svg");
         } else {
-            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/play-icon.svg");
+            $(this).attr("src", "resources/play.svg");
             curator.pause();
         }
     });
@@ -50,8 +50,8 @@ document.galleryInitCuratorControls = function () {
     $("#volume-button").on("click", function () {
         $(this).attr("value", (_, v) => {return (parseInt(v) + 1) % 4})
         $("audio.curator")[0].volume = (parseInt($(this).attr("value")) + 1) / 4;
-        $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/loud"
-            + $(this).attr("value") + "-icon.svg")
+        $(this).attr("src", "resources/loud"
+            + $(this).attr("value") + ".svg");
     });
 }
 
@@ -67,6 +67,9 @@ document.galleryResizer = function () {
         if (img) {
             const ratio = img.naturalWidth / img.naturalHeight;
             const width = ratio * Math.min($(this).height(), img.naturalHeight);
+            if (width < 150) {
+                return;
+            }
             $(this).width(width);
             // console.log(i, img.naturalWidth, img.naturalHeight, width);
         }
