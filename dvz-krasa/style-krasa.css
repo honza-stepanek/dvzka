@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 
@@ -176,9 +175,9 @@ div.painting-label {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 
-    font-weight: 600;
+    font-weight: 500;
     color: #0000dc;
-    /* color: #3737af; */
+    /* color: #1414ca; */
     opacity: 0;
 }
 div.book-label {
@@ -200,6 +199,7 @@ div.gallery-wall-space-book:hover div.book-label {
 @media (min-width: 500px) and (min-height: 500px) {
     div.painting-label {
         font-size: 150%;
+        font-weight: 600;
     }
 }
 
@@ -221,13 +221,14 @@ div.gallery-wall-space tw-expression tw-link {
     height: 100%;
 }
 div.gallery-wall-space > tw-expression img {
-    border: solid #3737af 0.5em;
+    border: solid 0.5em #1414ca;
     border-style: ridge;
 }
 
 /* neutral painting frame -> border */
-img.painting-frame-neutral {
-    border: solid #c38a05 0.5em;
+img.painting-frame-neutral,
+img.painting-with-own-frame {
+    border: solid 0.5em #dba21b;
     border-style: ridge;
 }
 
@@ -292,7 +293,8 @@ div.modal-dialog-overlay.book-contents img {
 div.modal-dialog-overlay.book-contents audio {
     display: block;
     margin: 0 auto;
-    /* box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.411); */
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.411);
+    background-color: rgba(0, 0, 0, 0.411);
     /* shadow is janky in chrome browsers */
     border-radius: 0.2em;
 }
@@ -651,7 +653,7 @@ tw-passage[tags ~= "baroque"] img {
 }
 
 tw-passage[tags ~= "vstup"] {
-    /* width: 30em; */
+    width: 30em;
     max-width: 95%;
     text-align: center;
 }
