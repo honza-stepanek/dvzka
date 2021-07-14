@@ -1,0 +1,72 @@
+
+<!-- 
+    The curator audio
+    Replace: audio src -> "_AUDIO_URL_"
+ -->
+<div class="curator-wrapper">\
+<div class="curator-container">\
+    <div class="curator-controls">\
+        <img id="curator-transcript-button" src="resources/transcript.svg">\
+        <script>document.galleryInitCuratorTranscriptButton();</script>\
+        <div class="playback-controls">\
+            <audio class="curator" src="_AUDIO_URL_"></audio>\
+            <img id="playback-button" src="resources/play.svg">\
+            <img id="volume-button" src="resources/loud2.svg">\
+            <script>document.galleryInitCuratorControls();</script>\
+        </div>\
+    </div>\
+    <div class="curator-transcript block-horizontal-scroll">\
+        TRANSCRIPT
+    </div>\
+</div>\
+</div>\
+
+
+<!-- 
+    Painting wall space (and modal with citation lower)
+    replace: 2x IDENTIFIER, 2x IMG_URL, THE_CITATION
+ -->
+<div class="gallery-wall-space painting-with-citation">\
+    <a href="#painting-IDENTIFIER" title="Prohlédnout si malbu zblízka">\
+        <img src="IMG_URL">\
+    </a>\
+</div>\
+<div id="painting-IDENTIFIER" class="modal-dialog-overlay-container">\
+<div class="modal-dialog-overlay block-horizontal-scroll">\
+    <img class="block-horizontal-scroll" src="IMG_URL">\
+    <div class="modal-citation block-horizontal-scroll">\
+        THE_CITATION
+\   </div>\
+</div>\
+<a class="modal-close" href='#'>×</a>\
+</div>\
+
+
+<!-- 
+    Loose text inside of gallery -> WALL NOTE
+ -->
+<div class="gallery-wall-note">\
+    INNER_TEXT
+</div>\
+
+
+<!-- 
+    Books in the gallery
+ -->
+<div class="gallery-wall-space-book">\
+    <div class="book-label">\
+        DISPLAY_LABEL
+    </div>\
+    <div class="book-container">\
+        <a href="#book-IDENTIFICATOR" title="Přečíst si báseň">\
+            <img class="book-cover" src="BOOK_COVER">\
+        </a>\
+        <div id="book-IDENTIFICATOR" class="modal-dialog-overlay-container">\
+            <div class="modal-dialog-overlay book-contents block-horizontal-scroll">\
+                <audio class="block-horizontal-scroll" controls src="BOOK_AUDIO"></audio>\
+                <img class="block-horizontal-scroll" src="BOOK_TEXT_SCAN">\
+            </div>\
+            <a class="modal-close" href="#">×</a>\
+        </div>\
+    </div>\
+</div>\

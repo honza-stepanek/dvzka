@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 
 
@@ -17,7 +19,8 @@ tw-story {
     margin: 0;
     padding: 50px 10%;
     /* font-family: 'Open Sans', sans-serif; */
-    font-family: 'Merriweather', serif;
+    /* font-family: 'Merriweather', serif; */
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 tw-passage {
@@ -177,9 +180,9 @@ div.painting-label {
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 
-    font-weight: 700;
+    font-weight: 600;
     color: #0000dc;
-    color: #3737af;
+    /* color: #3737af; */
     opacity: 0;
 }
 div.book-label {
@@ -389,16 +392,22 @@ div.curator-wrapper.active div.curator-container {
 @media (max-width: 649px) {
     div.curator-container {
         left: unset;
-        right: 20px;
+        right: 5%;
+        transition-property: max-width, height, background-color, right;
     }
     div.curator-wrapper.active div.curator-container {
-        left: 10px;
-        right: 10px;
-        height: 90vh;
+        /* left: 5%; */
+        right: 2.5%;
+        width: 95%;
+        height: 86vh;
     }
 
     div.curator-wraper.active {
         width: 0;
+    }
+
+    #curator-transcript-button {
+        order: 2;
     }
 }
 
@@ -419,6 +428,7 @@ div.curator-wrapper.active div.curator-transcript {
     /* state: transcript expanded */
     
     max-width: 100%;
+    height: 100%;
     max-height: 100%;
     
     overflow-y: auto;
