@@ -1,8 +1,5 @@
 
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 
 /*===============================
@@ -18,9 +15,7 @@ tw-story {
     color: black;
     margin: 0;
     padding: 50px 10%;
-    /* font-family: 'Open Sans', sans-serif; */
-    /* font-family: 'Merriweather', serif; */
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 tw-passage {
@@ -34,11 +29,11 @@ tw-passage {
 
 @media (max-width: 649px) {
     tw-story {
-        padding: 80px 15px;
+        padding: 80px 2%;
     }
     tw-passage {
         margin: auto;
-        padding: 1.1em;
+        padding: 18px;
         width: 97%;
         font-size: 85%;
         line-height: 1.5em;
@@ -116,6 +111,8 @@ tw-story[tags ~= "gallery"] {
     /* overflow-x: scroll; */
     height: 100%;
     margin: 0;
+    padding-top: 1em;
+    padding-bottom: 1em;
     width: max-content;
     background-attachment: scroll;
 }
@@ -126,7 +123,6 @@ tw-passage[tags ~= "gallery"] {
     max-height: 85vh;
     width: unset;
     max-width: unset;
-    padding-bottom: 2em;
     background-color: transparent;
     box-shadow: none;
 }
@@ -314,11 +310,19 @@ img.image-option-correct:hover {
 
 img.image-option-wrong.clicked {
     box-shadow: 0px 0px 10px 2px rgb(248, 76, 76),
-    0 6px 8px 4px rgba(0, 0, 0, 0.411);
+        0 6px 8px 4px rgba(0, 0, 0, 0.411);
 }
 img.image-option-correct.clicked {
     box-shadow: 0px 0px 10px 4px rgb(3, 167, 3),
-    0 6px 8px 4px rgba(0, 0, 0, 0.411);
+        0 6px 8px 4px rgba(0, 0, 0, 0.411);
+}
+
+img.clicked + div.citation-tag.image-option-tag {
+    padding: 0.5em 0.65em;
+    max-height: 30em;
+    height: auto;
+    pointer-events: auto;
+    opacity: 1;
 }
 
 div.image-options {
@@ -329,8 +333,6 @@ div.image-options {
 }
 div.image-options > div {
     width: 48%;
-    /* width: auto;
-    display: inline-block; */
 }
 @media (max-width: 900px) {
     /* narrow screen */
@@ -363,12 +365,12 @@ div.curator-container {
     
     position: fixed;
     top: 20px;
-    left: 3.2em;
+    left:75px;
     z-index: 20;
     
     display: flex;
     flex-direction: column;
-    max-width: 6.4em;
+    max-width: 6em;
     height: 2.1em;
     padding: 0.3em;
     
@@ -500,7 +502,7 @@ div.painting-with-citation a > img{
     display: inline-block;
 }
 
-/* the general citation tag div */
+/* citation tag div (used in "romantismus  literatura  aktivita") */
 div.painting-with-citation div.citation-tag {
     display: block;
     margin: 1em auto 0.5em;
@@ -508,6 +510,8 @@ div.painting-with-citation div.citation-tag {
     background-color: rgb(245, 236, 225);
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.205);
     z-index: -1;
+    font-size: 80%;
+    line-height: 1.6em;
 
     padding: 0;
     max-height: 0;
@@ -516,38 +520,6 @@ div.painting-with-citation div.citation-tag {
 
     transition: 300ms;
     transition-property: all;
-}
-div.painting-with-citation:target div.citation-tag,
-img.clicked + div.citation-tag.image-option-tag {
-    padding: 0.5em 0.65em;
-    max-height: 15em;
-    height: auto;
-    pointer-events: auto;
-    opacity: 1;
-}
-
-tw-passage[tags ~= "gallery"] div.painting-with-citation div.citation-tag {
-    font-size: 70%;
-    line-height: 1.5em;
-    margin: 0 auto;
-    transform: translateY(10px);
-}
-
-/* citation close link */
-div.citation-tag a.citation-tag-close {
-    position: absolute;
-    right: -0.25em;
-    top: -0.25em;
-
-    width: 1em;
-    height: 1em;
-    background-color: #e2bf6d;
-    color: black;
-    border-radius: 0.15em;
-    text-align: center;
-    line-height: 1em;
-    font-family: sans-serif;
-    text-decoration: none;
 }
 
 
@@ -666,11 +638,12 @@ a.modal-open:any-link:hover {
 
 
 
-/*--------------------------------------------------
-    Custom gallery spaces/tw-passages properties
---------------------------------------------------*/
-tw-passage[tags ~= "romantismuslitaktivita"] img {
-    width: 30em;
+/*------------------------------------------------------------
+    Concrete gallery spaces/tw-passages specific properties
+------------------------------------------------------------*/
+
+tw-passage[tags ~= "romantismuslitaktivita"] div.painting-with-citation {
+    max-width: 100%;
 }
 
 tw-passage[tags ~= "baroque"] img {
@@ -684,6 +657,10 @@ tw-passage[tags ~= "vstup"] {
 }
 tw-passage[tags ~= "vstup"] tw-link {
     font-size: 130%;
+}
+
+tw-passage[tags ~= "beginning"] div.curator-container {
+    left: 20px
 }
 
 
