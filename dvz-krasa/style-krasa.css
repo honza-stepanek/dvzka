@@ -15,6 +15,7 @@ tw-story {
     margin: 0;
     padding: 50px 10%;
     font-family: 'PT Sans', sans-serif;
+    min-width: 100%;
 }
 
 tw-passage {
@@ -186,8 +187,7 @@ div.book-label {
     opacity: 1;
 }
 
-@media (any-hover: hover) {
-    /* (max-width: 649px) { */
+@media (any-hover: hover) and (min-width: 500px) {
     /* on devices with the ability to hover over elements */
     
     div.painting-label {
@@ -197,7 +197,9 @@ div.book-label {
         opacity: 0.5;
     }
     div.gallery-wall-space:hover div.painting-label,
-    div.gallery-wall-space-book:hover div.book-label {
+    div.gallery-wall-space:focus div.painting-label,
+    div.gallery-wall-space-book:hover div.book-label,
+    div.gallery-wall-space-book:focus div.book-label {
         opacity: 1;
     }
 }
@@ -293,12 +295,13 @@ img.book-cover {
 } */
 div.modal-dialog-overlay.book-contents img {
     margin: 1em auto 0;
-    max-width: 45em;
+    max-width: 150%;
     box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.178);
 }
 div.modal-dialog-overlay.book-contents audio {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.411);
     background-color: rgba(0, 0, 0, 0.411);
     /* shadow is janky in chrome browsers */
@@ -483,13 +486,6 @@ div.playback-controls {
     box-shadow: unset;
 }
 
-/* div.playback-controls > #playback-button,
-div.playback-controls > #volume-button {
-
-} */
-
-
-
 
 
 /*-------------------------------------
@@ -531,9 +527,12 @@ div.painting-with-citation div.citation-tag {
 }
 
 
-/*-------------------------------------
-    Classic targeted modal dialogs
--------------------------------------*/
+
+
+/*======================================
+||   Classic targeted modal dialogs   ||
+======================================*/
+
 /* dialog container */
 div.modal-dialog-overlay-container {
     position: fixed;
@@ -564,13 +563,12 @@ div.modal-dialog-overlay {
     max-height: 100%;
     max-width: 100%;
     margin: auto 0px;
-    padding: 1em 2em;
-    overflow-y: auto;
+    padding: 1em 1.5em;
+    overflow: auto;
 
     background: rgb(248, 242, 234);
-    border: solid 0.5em rgb(245, 231, 214);
-    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3),
-                    0 0 4px 2px rgba(0, 0, 0, 0.349) inset;
+    border: solid 0.5em rgb(173, 151, 84);
+    box-shadow: -5px 15px 17px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* the close link (whole background + a dummy x button) */
@@ -622,6 +620,8 @@ div.modal-citation {
     font-size: 80%;
     line-height: 1.5em;
     max-width: 40em;
+
+    word-wrap: break-word;
 }
 
 @media (orientation: portrait) {
