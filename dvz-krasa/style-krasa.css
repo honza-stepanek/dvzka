@@ -168,6 +168,7 @@ div.book-label {
     transition: opacity 300ms;
     pointer-events: none;
 }
+
 div.painting-label {
     position: absolute;
     z-index: 1;
@@ -178,25 +179,30 @@ div.painting-label {
     font-weight: 500;
     color: #0000dc;
     /* color: #1414ca; */
-    opacity: 0;
+    opacity: 0.8;
 }
+
 div.book-label {
-    opacity: 0.5;
-}
-div.gallery-wall-space:hover div.painting-label,
-div.gallery-wall-space-book:hover div.book-label {
     opacity: 1;
 }
-@media (hover: none), (max-width: 649px) {
-    /* on devices without the ability to hover over elements */
+
+@media (any-hover: hover) {
+    /* (max-width: 649px) { */
+    /* on devices with the ability to hover over elements */
+    
     div.painting-label {
-        opacity: 0.8;
+        opacity: 0;
     }
     div.book-label {
+        opacity: 0.5;
+    }
+    div.gallery-wall-space:hover div.painting-label,
+    div.gallery-wall-space-book:hover div.book-label {
         opacity: 1;
     }
 }
 @media (min-width: 500px) and (min-height: 500px) {
+    /* if the screen is bigger than 500px on both axis */
     div.painting-label {
         font-size: 150%;
         font-weight: 600;
@@ -582,7 +588,7 @@ div.modal-dialog-overlay-container .modal-close:hover {
     color: #0000;
 }
 div.modal-dialog-overlay::before {
-    /* adding an x above of the modal */
+    /* adding an x above of the modal -- a dummy X button*/
     position: fixed;
     right: 1em;
     top: 1em;
@@ -597,8 +603,8 @@ div.modal-dialog-overlay::before {
     line-height: 1.1em;
 
     color: rgb(0, 0, 0);
-    background-color: rgb(97, 97, 97);
-    opacity: 0.5;
+    background-color: rgb(128, 128, 128);
+    opacity: 0.7;
 }
 
 /* an image inside of the modal */
