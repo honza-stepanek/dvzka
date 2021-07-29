@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 
@@ -295,7 +296,7 @@ img.book-cover {
 } */
 div.modal-dialog-overlay.book-contents img {
     margin: 1em auto 0;
-    max-width: 150%;
+    max-width: 125%;
     box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.178);
 }
 div.modal-dialog-overlay.book-contents audio {
@@ -646,8 +647,14 @@ a.modal-open:any-link:hover {
 
 
 
+
+/*======================================
+||            Other things            ||
+======================================*/
+
+
 /*------------------------------------------------------------
-    Concrete gallery spaces/tw-passages specific properties
+    Specific gallery spaces/tw-passages properties
 ------------------------------------------------------------*/
 
 tw-passage[tags ~= "romantismuslitaktivita"] div.painting-with-citation {
@@ -672,6 +679,86 @@ tw-passage[tags ~= "beginning"] div.curator-container {
 }
 
 
+/*------------------------------
+    EU grant stuff and logos
+------------------------------*/
 
+.logo {
+    height: auto;
+    max-height: 100px;
+    box-shadow: none;
+}
+
+.logotext {
+    /* eu project disclaimer */
+    font-size: small;
+    line-height: 1.4em;
+    text-align: center;
+}
+.logolink {
+    /* eu project disclaimer */
+    display: block;
+    margin: 3em auto 1em;
+    box-shadow: none;
+}
+
+
+/*------------------------------
+    credits page adjustments 
+------------------------------*/
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.5em;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-column {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+    padding-top: 0;
+    margin-top: -10px;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+img#muni-logo,
+img#muni-logo-econ {
+    margin-left: -13px;
+}
+img#muni-logo-teiresias {
+    margin-left: -5px;
+    max-height: 130px;
+}
+img#mzk-logo {
+    padding: 10px 0px 20px 0px;
+    margin: 0;
+}
+ul#jan-rychly,
+ul#voiceover {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
 
 
