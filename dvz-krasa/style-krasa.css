@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 
@@ -675,8 +676,56 @@ tw-passage[tags ~= "vstup"] tw-link {
 }
 
 tw-passage[tags ~= "beginning"] div.curator-container {
-    left: 20px
+    left: 20px;
 }
+
+
+/*---------------------------------------
+      Gallery routes color coding
+---------------------------------------*/
+
+/* tw-story[tags ~= "beginning"] {
+    border-bottom: solid blue 0.5em;
+} */
+
+/* entrance wall space color stripes */
+div.gallery-wall-space.baroque::after,
+div.gallery-wall-space.romantism::after,
+div.gallery-wall-space.industrialism::after {
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50vh);
+    
+    width: 100%;
+    height: 1.2em;
+}
+div.gallery-wall-space.baroque::after {
+    background-color: rgb(183, 94, 211);
+}
+div.gallery-wall-space.romantism::after {
+    background-color: rgb(241, 167, 144);
+}
+div.gallery-wall-space.industrialism::after {
+    background-color: rgb(161, 235, 235);
+}
+
+/* passage color stripes */
+tw-story[tags ~= "baroque"],
+tw-story[tags ~= "romantism"],
+tw-story[tags ~= "industrialism"] {
+    border-bottom: solid 0.8em;
+}
+tw-story[tags ~= "baroque"] {
+    border-bottom-color: rgb(183, 94, 211);
+}
+tw-story[tags ~= "romantism"] {
+    border-bottom-color: rgb(241, 167, 144);
+}
+tw-story[tags ~= "industrialism"] {
+    border-bottom-color: rgb(161, 235, 235);
+}
+
 
 
 /*------------------------------
