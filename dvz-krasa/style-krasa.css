@@ -229,25 +229,35 @@ div.gallery-wall-space tw-expression tw-link {
     display: block;
     width: 100%;
     height: 100%;
+
+    box-shadow: 0 0 0.8em 0.4em #8585ff7e;
+    background-color: #8585ff7e;
 }
+
 div.gallery-wall-space > tw-expression img {
     border: solid 0.5em #0000dc;
     border-style: ridge;
 }
+
 /* visited paintings */
 div.gallery-wall-space tw-link.visited img {
-    border-color:#5050b4;
+    border-color:#5050cf;
 }
-div.gallery-wall-space tw-link.visited::after {
-    /* dim overlay */
+div.gallery-wall-space tw-expression tw-link.visited {
+    box-shadow: none;
+    background-color: transparent;
+}
+/* dim overlay */
+/* div.gallery-wall-space tw-link.visited::after {
     position: absolute;
     left: 0;
     top: 0;
     content: "";
     width: 100%;
     height: 100%;
+
     background-color: rgba(0, 0, 0, 0.144);
-}
+} */
 
 /* neutral painting frame -> border */
 img.painting-frame-neutral,
@@ -704,10 +714,6 @@ img.map {
 /*---------------------------------------
       Gallery routes color coding
 ---------------------------------------*/
-
-/* tw-story[tags ~= "beginning"] {
-    border-bottom: solid blue 0.5em;
-} */
 
 /* entrance wall space color stripes */
 div.gallery-wall-space.baroque::after,
