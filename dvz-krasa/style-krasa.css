@@ -107,7 +107,7 @@ tw-link.visited:focus {
 ========================================*/
 
 body {
-    overflow-x: auto;
+    overflow-x: scroll;
 }
 tw-story[tags ~= "gallery"] {
     /* overflow-x: scroll; */
@@ -231,8 +231,22 @@ div.gallery-wall-space tw-expression tw-link {
     height: 100%;
 }
 div.gallery-wall-space > tw-expression img {
-    border: solid 0.5em #1414ca;
+    border: solid 0.5em #0000dc;
     border-style: ridge;
+}
+/* visited paintings */
+div.gallery-wall-space tw-link.visited img {
+    border-color:#5050b4;
+}
+div.gallery-wall-space tw-link.visited::after {
+    /* dim overlay */
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.144);
 }
 
 /* neutral painting frame -> border */
@@ -666,17 +680,24 @@ tw-passage[tags ~= "baroque"] img {
     max-height: 600px;
 }
 
+tw-story[tags ~= "vstup"] {
+    background-image: url(resources/entrance-bg.png);
+    background-size: cover;
+    background-position: center;
+}
 tw-passage[tags ~= "vstup"] {
     width: 30em;
     max-width: 95%;
     text-align: center;
+
+    box-shadow: 2px 4px 6px 3px rgba(0, 0, 0, 0.376);
 }
 tw-passage[tags ~= "vstup"] tw-link {
     font-size: 130%;
 }
-
-tw-passage[tags ~= "beginning"] div.curator-container {
-    left: 20px;
+img.map {
+    max-height: 17em;
+    box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.301);
 }
 
 
@@ -701,13 +722,13 @@ div.gallery-wall-space.industrialism::after {
     height: 1.2em;
 }
 div.gallery-wall-space.baroque::after {
-    background-color: rgb(183, 94, 211);
+    background-color: #B780D3;
 }
 div.gallery-wall-space.romantism::after {
-    background-color: rgb(241, 167, 144);
+    background-color: #f6bfa6;
 }
 div.gallery-wall-space.industrialism::after {
-    background-color: rgb(161, 235, 235);
+    background-color: #BBEBEB;
 }
 
 /* passage color stripes */
@@ -717,13 +738,13 @@ tw-story[tags ~= "industrialism"] {
     border-bottom: solid 0.8em;
 }
 tw-story[tags ~= "baroque"] {
-    border-bottom-color: rgb(183, 94, 211);
+    border-bottom-color: #B780D3;
 }
 tw-story[tags ~= "romantism"] {
-    border-bottom-color: rgb(241, 167, 144);
+    border-bottom-color: #f6bfa6;
 }
 tw-story[tags ~= "industrialism"] {
-    border-bottom-color: rgb(161, 235, 235);
+    border-bottom-color: #BBEBEB;
 }
 
 
