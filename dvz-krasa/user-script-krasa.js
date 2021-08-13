@@ -35,10 +35,14 @@ document.galleryInitCuratorControls = function () {
     $("audio.curator").on("ended", function () {
         $("#playback-button").attr("src", "resources/play.svg");
     });
-    $("#playback-button").on("click", function () {
+    $("#playback-button").on("click", async function () {
         let curator = $("audio.curator")[0];
         if (curator.paused) {
-            curator.play();
+            try {
+                await curator.play();
+            } catch {
+                return;
+            }
             $(this).attr("src", "resources/pause.svg");
         } else {
             $(this).attr("src", "resources/play.svg");
@@ -76,3 +80,11 @@ document.galleryResizer = function () {
     });
 }
 window.addEventListener("resize", document.galleryResizer);
+
+
+// openable Map for orientation
+document.galleryInitMapButton = function () {
+    $("#map-button").on("click", function () {
+        $("#gallery-map").toggleClass("map-pulled-out");
+    });
+}

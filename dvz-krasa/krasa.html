@@ -50,10 +50,14 @@ document.galleryInitCuratorControls = function () {
     $("audio.curator").on("ended", function () {
         $("#playback-button").attr("src", "resources/play.svg");
     });
-    $("#playback-button").on("click", function () {
+    $("#playback-button").on("click", async function () {
         let curator = $("audio.curator")[0];
         if (curator.paused) {
-            curator.play();
+            try {
+                await curator.play();
+            } catch {
+                return;
+            }
             $(this).attr("src", "resources/pause.svg");
         } else {
             $(this).attr("src", "resources/play.svg");
@@ -92,10 +96,26 @@ document.galleryResizer = function () {
 }
 window.addEventListener("resize", document.galleryResizer);
 
-</script><tw-passagedata pid="1" name="gallery resizer" tags="footer" position="59,148" size="100,100">&lt;script&gt;
+
+// openable Map for orientation
+document.galleryInitMapButton = function () {
+    $("#map-button").on("click", function () {
+        $("#gallery-map").toggleClass("map-pulled-out");
+    });
+}
+
+</script><tw-passagedata pid="1" name="gallery resizer and map" tags="footer" position="59,148" size="100,100">&lt;script&gt;
 setTimeout(document.galleryResizer, 50);
 setTimeout(document.galleryResizer, 500);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="2" name="init" tags="startup" position="55,29" size="100,100">(set: $pruchod to (a:))\
+&lt;/script&gt;\
+&lt;div id="map-button-wrapper"&gt;\
+&lt;img id="map-button" src=&quot;resources/map-button.svg&quot;&gt;\
+&lt;div id="gallery-map"&gt;\
+    &lt;img id="gallery-map-img" src=&quot;resources/map.png&quot;&gt;\
+&lt;/div&gt;\
+&lt;script&gt;document.galleryInitMapButton();&lt;/script&gt;\
+&lt;/div&gt;\
+</tw-passagedata><tw-passagedata pid="2" name="init" tags="startup" position="55,29" size="100,100">(set: $pruchod to (a:))\
 &lt;!--
 (set: $playedcurators to (a:))
 --&gt;</tw-passagedata><tw-passagedata pid="3" name="zdroje" tags="" position="1936,488" size="100,100">\
@@ -288,6 +308,7 @@ Pokrok\
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/otaznik.jpg&quot;&gt;-&gt;aktivita]]\
 &lt;/div&gt;\
+\\
 (append: ?SideBar)[\
 [[&lt;img src=&quot;resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;start]]
 ]</tw-passagedata><tw-passagedata pid="5" name="baroko malby" tags="gallery baroque" position="235,603" size="100,100">&lt;div class=&quot;curator-wrapper&quot;&gt;\
@@ -1091,11 +1112,6 @@ Obrazy přetáhněte do odpovídajících kolonek.
 &lt;li&gt;&lt;a class=&quot;hyper&quot; href=&quot;https://is.muni.cz/go/mmartonova&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Monika Martonová&lt;/a&gt;&lt;/li&gt;\
 &lt;li&gt;&lt;a class=&quot;hyper&quot; href=&quot;https://is.muni.cz/go/pmazacova&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Pavlína Mazáčová&lt;/a&gt;&lt;/li&gt;\
 &lt;li&gt;&lt;a class=&quot;hyper&quot; href=&quot;https://is.muni.cz/go/pskyrik&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Petr Škyřík&lt;/a&gt;&lt;/li&gt;\
-&lt;/ul&gt;\
-&lt;img class=&quot;logo&quot; id=&quot;muni-logo-econ&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/KatedraPodnikHosp-lg-cze-rgb.png&quot; alt=&quot;Katedra podnikového hospodářství ESF MU&quot;&gt;\
-&lt;ul id=&quot;muni-econ&quot;&gt;\
-&lt;li class=&quot;category&quot;&gt;Odborný gestor:&lt;/li&gt;\
-&lt;li&gt;&lt;a class=&quot;hyper&quot; href=&quot;https://is.muni.cz/go/TO&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;Tomáš Ondráček&lt;/a&gt;&lt;li&gt;\
 &lt;/ul&gt;\
 &lt;img class=&quot;logo&quot; id=&quot;muni-logo-teiresias&quot; src=&quot;https://www.teiresias.muni.cz/TeiresiasMU/media/system/images/logo-cs-cz.svg&quot; alt=&quot;Logo Střediska pro pomoc studentům se specifickými nároky, MUNI Teiresias&quot;&gt;\
 &lt;ul id=&quot;muni-teiresias&quot;&gt;\
