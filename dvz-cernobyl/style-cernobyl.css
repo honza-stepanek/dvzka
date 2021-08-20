@@ -1,150 +1,625 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
+
+
+
+/* general structure */
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 120%;
+    font-weight: 500;
+}
+
+/*============================
+    TWINE STORY 
+============================*/
+
 tw-story {
-	background-color: white;
-	color: black;
-	font-family: Georgia, serif;
+    padding: 80px 10%;
+    min-height: 100%;
+
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(53, 51, 47);
+    /* background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg"); */
+    background-size: cover;
+
+    font-family: "Roboto Slab", serif;
 }
 
-tw-link {
-    box-shadow: 5px 5px 10px #000000;
-    background-color:#FFFFFF;
-    border-radius: 15px;
-  	border:2px solid;
-    display:inline-block;
-    cursor:pointer;
-    color:#191970;
-    font-weight:bold;
-    padding:15px 20px;
-    text-decoration:none;
-    margin: 1%;
-}
-tw-link:hover {
-    background-color:#191970;
-  	color:#FFFFFF;
+tw-story[tags ~= "intro"] {
+    background-image: url("images/kostel-a-fara-cropped.png");
 }
 
-.modalDialog {
+tw-story[tags ~= "overview"],
+tw-story[tags ~= "ending"] {
+    background-image: url("images/kostel-a-fara-cropped.png");
+}
+
+/* locations */
+tw-story[tags ~= "refectory"] {
+    background-image: url("images/refektar.png");
+}
+tw-story[tags ~= "entry"] {
+    background-image: url("images/chodba.png");
+}
+tw-story[tags ~= "kitchen"] {
+    background-image: url("images/kuchyne.png");
+}
+tw-story[tags ~= "door"] {
+    background-image: url("images/vchod.png");
+}
+tw-story[tags ~= "cell"] {
+    background-image: url("images/dormitar.png");
+}
+tw-story[tags ~= "yard"] {
+    background-image: url("images/rajsky-dvur.png");
+}
+tw-story[tags ~= "outside"] {
+    background-image: url("images/nadvori.png");
+}
+tw-story[tags ~= "bus"] {
+    background-image: url("images/autobus.png");
+}
+
+
+
+/*============================
+    TWINE PASSAGE 
+============================*/
+tw-passage {
+    max-width: 900px;
+    width: 100%;
+    align-self: center;
+
+    padding: 2em;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+
+    background-color: rgb(255, 253, 236);
+    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+    color: black;
+}
+
+tw-passage[tags ~= "memories"] {
+    background-color: rgb(255, 253, 236, 0.95);
+    box-shadow: 0 0 7px 10px rgb(255, 253, 236, 0.95),
+        0 10px 15px 10px rgba(0, 0, 0, 0.363);
+}
+
+tw-story tw-consecutive-br {
+    height: 1em;
+}
+
+tw-icon[alt="Undo"],
+tw-icon[alt="Redo"] {
+    display: none;
+    /* TODO remove "debug release" arrows */
+    display: inline-block;
+    color: greenyellow;
+}
+tw-icon {
+    margin: 0.3em 0;
+}
+tw-icon > img {
+    height: 45px;
+}
+
+
+/*==============================
+    Twine Story and Passage
+   Responsivness adjustments
+==============================*/
+
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-story {
+        padding: 5%;
+    }
+    tw-passage {
+        margin-top: 65px;
+        /* leave space for the sidebar */
+        padding: 2em;
+        font-size: 85%;
+        line-height: normal;
+    }
+    tw-passage[tags="title-passage"] {
+        padding: 1.5em;
+    }
+    tw-sidebar {
+        position: absolute;
+        width: 94%;
+        left: 3%;
+        top: -110px;
+        
+        flex-direction: row;
+    }
+    tw-icon > img {
+        height: 30px
+    }
+}
+/* wider screen */
+@media (min-width: 650px) {
+    tw-sidebar {
+        position: absolute;
+        left: -80px;
+
+        flex-direction: column;
+        /* width: 45px; */
+    }
+}
+
+
+/*============================
+    TWINE LINKS 
+============================*/
+
+/* normal */
+tw-link,
+tw-link.visited {
+    display: inline-block;
+    padding: 0.1em 0.2em;
+    left: -0.1em; /* half of side padding */
+    margin: 0;
+    max-width: 100%;
+    
+    color: #0000dc;
+}
+tw-link::before,
+tw-link.visited::before {
+    /* underline (0 width) */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: solid 0.2em #0000dc;
+    height: 1em;
+    width: 0;
+    transition: 300ms width;
+}
+/* hover and active*/
+tw-link:hover,
+tw-link:focus,
+tw-link:active,
+tw-link.visited:hover,
+tw-link.visited:focus,
+tw-link.visited:active {
+    /* overwriting twine defaults */
+    color: #0000dc;
+    outline: none;
+}
+tw-link:hover::before,
+tw-link:focus::before,
+tw-link:active::before,
+tw-link.visited:hover::before,
+tw-link.visited:focus::before,
+tw-link.visited:active::before {
+    /* underline expanded */
+    content: "";
+    width: 100%;
+}
+
+
+/* LINKS TO MEMORIES */
+tw-hook[name="memorylink"] tw-link,
+tw-hook[name="inlinememorylink"] tw-link {
+    text-shadow: 0 0 2px #8080e9;
+    color: #0000dc1e;
+    font-weight: 400;
+
+    transition-duration: 600ms;
+    transition-property: color, text-shadow;
+}
+tw-hook[name="memorylink"] tw-link:hover,
+tw-hook[name="inlinememorylink"] tw-link:hover {
+    color: #0000dc;
+    text-shadow: 0 0 0 #8080e9;
+}
+tw-hook[name="memorylink"] tw-link::before {
+    /* underline */
+    border-bottom: 0.13em solid #8080e9;
+    transition-property: width, border-color;
+    transition-duration: 600ms;
+}
+tw-hook[name="memorylink"] tw-link:hover::before {
+    /* underline expanded */
+    border-bottom-color: #0000dc;
+}
+
+
+/* INLINE LINKS */
+div.nav-bar tw-link,
+tw-hook[name="inlinelink"] tw-link,
+tw-hook[name="inlinememorylink"] tw-link {
+    display: inline;
+    border-bottom: solid #8080e900 0.2em;
+    padding: 0;
+    margin: 0 0 0 0.12em;
+    transition-property: border, color, text-shadow;
+}
+div.nav-bar tw-link::before,
+tw-hook[name="inlinelink"] tw-link::before,
+tw-hook[name="inlinememorylink"] tw-link::before {
+    display: none;
+}
+div.nav-bar tw-link:hover,
+tw-hook[name="inlinelink"] tw-link:hover,
+tw-hook[name="inlinememorylink"] tw-link:hover {
+    border-bottom: solid #0000dc 0.2em;
+}
+
+
+
+
+/*============================
+    MODAL DIALOGS 
+============================*/
+
+.modal-dialog-container {
     position: fixed;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 99999;
-    opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
 
-.modalDialog:target {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+.modal-dialog-container:target {
     opacity: 1;
     pointer-events: auto;
 }
-.modalDialog>div {
-    width: 90%;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
-}
 
-.close {
-    background: #606061;
-    color: #FFFFFF;
-    line-height: 25px;
+/* modal content */
+.modal-dialog-container > div {
+    max-width: 100%;
+    flex-grow: 0;
+    margin: auto 0px;
+    padding: 1.2em;
+
+    background: rgb(216, 210, 183);
+    box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
+}
+.modal-dialog-container > div::after {
+    /* invisible "padding" to ensure user can scroll
+       all the way to the bottom of the bubble
+       (that is past its border bc shadow/glow fx) */
+    content: '';
     position: absolute;
-    right: -12px;
-    text-align: center;
-    top: -10px;
-    width: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
-}
-.close:hover {
-    background: #00d9ff;
-}
-.cimage {
-    width: auto;
-    max-width: 75%;
-   
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
 }
 
-.imbox {
-    box-shadow: 5px 5px 10px black;
-    border-radius: 10px;
-    padding: 2%;
-    width: 85%;
+.modal-dialog-container img.dont-get-too-big-image {
+    width: 900px;
+}
+
+.modal-dialog-container .modal-close,
+.modal-dialog-container .modal-close:hover {
+    /* background close button/link */
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -1;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background: #0000;
+    color: #0000;
+}
+.modal-dialog-container > div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: -7px;
+    top: -43px;
+    z-index: -2;
+    /* setting it underneath the close link */
+    width: 1em;
+    height: 1em;
+    
+    font-family: sans-serif;
+    content: '×';
+    text-align: center;
+    line-height: 1.2em;
+    
+    color: rgb(0, 0, 0);
+    background-color: rgb(100, 100, 100);
+    opacity: 0.5;
+}
+
+
+
+/*============================
+    FLOATING CLOCK
+============================*/
+
+div.floating-clock-container {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+div.floating-clock {
+    margin: 0 auto;
+    width: max-content;
+    padding: 0.2em 0.5em;
+    top: -130px;
+    pointer-events: auto;
+
+    background-color: rgb(245, 242, 216);
+    box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
+    
+    font-weight: 600;
+}
+/* narrow screen */
+@media (max-width: 649px) {
+    div.floating-clock {
+        top: -100px;
+    }
+}
+
+
+
+
+/*============================
+    Overview navigation 
+============================*/
+
+/* navigational bar in the overview part */
+div.nav-bar {
+    position: relative;
+    top: -1em;
+    padding: 0.;
+    font-size: 90%;
+    
+    /* more standing out variation */
+    /* padding: 0.05em 0.5em 0.15em; */
+    /* background-color: rgb(245, 242, 220); */
+    /* box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.157); */
+}
+
+div.nav-bar div {
+    display: inline;
+}
+
+div.nav-bar tw-link{
+    margin: 0;
+    font-weight: normal;
+}
+div.nav-bar tw-link:hover{
+    border-bottom-width: 0.1em;
+}
+div.nav-bar-path-item::after {
+    /* content: " → "; */
+    content: " / ";
+    color:#0000dc;
+}
+
+div.nav-bar-location {
+    color:#0000dc;
+    /* text-decoration: underline #0000dc 1.5px; */
+    border-bottom: solid #0000dc 0.1em;
+}
+
+
+
+
+/*============================
+    IMAGE STUFF
+============================*/
+
+img {
+    max-width: 100%;
+}
+
+/* all images relevant to the story */
+.story-image,
+#inception-image {
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.123);
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.modal-dialog-container img {
     display: block;
     margin: 0 auto;
 }
-.modalDialog {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 99999;
-    opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
+
+.map-image {
+    box-shadow: none;
+    background-color: unset;
+    transform: scale(1.02);
 }
 
-.modalDialog:target {
-    opacity: 1;
-    pointer-events: auto;
+.witness-image {
+    width: 270px;
 }
 
-.modalDialog>div {
-    width: 90%;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background: #fff;
+.eu-msmt-logo {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
 }
 
-.close {
-    background: #4BC8FF;
-    color: #FFFFFF;
-    line-height: 25px;
-    position: absolute;
-    right: -12px;
+
+iframe {
+    max-width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.123);
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+iframe.interactive-room {
+    /* todo? */
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+iframe.slide-viewer {
+    /* todo? */
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+    border: solid 2px black;
+}
+
+/*============================
+    TEXT STUFF 
+============================*/
+
+span.citation {
+    font-size: 75%;
+    line-height: 1.2em;
+}
+
+div.block-citation {
+    margin: 1em 0.1em 0 auto;
+    width: 800px;
+    max-width: 100%;
+
+    text-align: right;
+    word-wrap: break-word;
+    font-size: 80%;
+    line-height: 1.2em;
+}
+
+
+.eu-disclaimer {
     text-align: center;
-    top: -10px;
-    width: 24px;
-    text-decoration: none;
-    font-weight: bold;
-    text-size-adjust: 25px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
-    -moz-box-shadow: 1px 1px 3px #000;
-    -webkit-box-shadow: 1px 1px 3px #000;
-    box-shadow: 1px 1px 3px #000;
+
+    font-size: 65%;
+    line-height: 1.4em;
 }
 
-.close:hover {
-    background: #FF824B;
+
+/*============================
+    HYPERLINKS   a.hyper
+============================*/
+
+a:link,
+a:link:hover {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
 }
-.inmod {
-    color: #ff00ff;
+a:visited,
+a:visited:hover {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+.hyper {
+    --hyper-color: hsl(170, 98%, 40%);
+    color: var(--hyper-color);
+    text-decoration: underline;
+
+    transition: 300ms;
+    transition-property: color;
+}
+.hyper:hover {
+    color: hsl(170, 100%, 33%);
+}
+.hyper:visited {
+    --hyper-visited-color: hsl(182, 100%, 27%);
+    color: var(--hyper-visited-color);
+}
+.hyper:visited:hover {
+    color: hsl(182, 100%, 20%);
 }
 
-.inmod:hover {
-    color: #DC6E00;
+
+
+/*============================
+    OTHER STUFF
+============================*/
+
+audio {
+    max-width: 100%;
+    width: 270px;
+    height: 1.7em;
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background-color: rgb(241, 241, 241);
 }
+
+.logolink {
+    /* EU */
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+.logotext {
+    /* EU */
+    font-size: small;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+
+
+/*=============================
+   credits page adjustments 
+=============================*/
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags ~= "credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags ~= "credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
+
