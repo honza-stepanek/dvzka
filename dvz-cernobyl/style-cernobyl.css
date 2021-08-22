@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
 
+/* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
+/* $$$ This DVZ is not polished yet.                           $$$ */
+/* $$$ The CSS is sort of a mess mostly copied from elswhere.  $$$ */
+/* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
 
 
 /* general structure */
@@ -30,46 +34,16 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
-    /* background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg"); */
+    background-image: url("http://digikult.phil.muni.cz/wp-content/DVZ/mandelinka/images/journalist_1080p.png");
     background-size: cover;
 
     font-family: "Roboto Slab", serif;
 }
 
-tw-story[tags ~= "intro"] {
-    background-image: url("images/kostel-a-fara-cropped.png");
-}
+/* tw-story[tags ~= "tag"] {
+    background-image: url("url of the image");
+} */
 
-tw-story[tags ~= "overview"],
-tw-story[tags ~= "ending"] {
-    background-image: url("images/kostel-a-fara-cropped.png");
-}
-
-/* locations */
-tw-story[tags ~= "refectory"] {
-    background-image: url("images/refektar.png");
-}
-tw-story[tags ~= "entry"] {
-    background-image: url("images/chodba.png");
-}
-tw-story[tags ~= "kitchen"] {
-    background-image: url("images/kuchyne.png");
-}
-tw-story[tags ~= "door"] {
-    background-image: url("images/vchod.png");
-}
-tw-story[tags ~= "cell"] {
-    background-image: url("images/dormitar.png");
-}
-tw-story[tags ~= "yard"] {
-    background-image: url("images/rajsky-dvur.png");
-}
-tw-story[tags ~= "outside"] {
-    background-image: url("images/nadvori.png");
-}
-tw-story[tags ~= "bus"] {
-    background-image: url("images/autobus.png");
-}
 
 
 
@@ -88,12 +62,6 @@ tw-passage {
     background-color: rgb(255, 253, 236);
     box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
     color: black;
-}
-
-tw-passage[tags ~= "memories"] {
-    background-color: rgb(255, 253, 236, 0.95);
-    box-shadow: 0 0 7px 10px rgb(255, 253, 236, 0.95),
-        0 10px 15px 10px rgba(0, 0, 0, 0.363);
 }
 
 tw-story tw-consecutive-br {
@@ -209,57 +177,6 @@ tw-link.visited:active::before {
 }
 
 
-/* LINKS TO MEMORIES */
-tw-hook[name="memorylink"] tw-link,
-tw-hook[name="inlinememorylink"] tw-link {
-    text-shadow: 0 0 2px #8080e9;
-    color: #0000dc1e;
-    font-weight: 400;
-
-    transition-duration: 600ms;
-    transition-property: color, text-shadow;
-}
-tw-hook[name="memorylink"] tw-link:hover,
-tw-hook[name="inlinememorylink"] tw-link:hover {
-    color: #0000dc;
-    text-shadow: 0 0 0 #8080e9;
-}
-tw-hook[name="memorylink"] tw-link::before {
-    /* underline */
-    border-bottom: 0.13em solid #8080e9;
-    transition-property: width, border-color;
-    transition-duration: 600ms;
-}
-tw-hook[name="memorylink"] tw-link:hover::before {
-    /* underline expanded */
-    border-bottom-color: #0000dc;
-}
-
-
-/* INLINE LINKS */
-div.nav-bar tw-link,
-tw-hook[name="inlinelink"] tw-link,
-tw-hook[name="inlinememorylink"] tw-link {
-    display: inline;
-    border-bottom: solid #8080e900 0.2em;
-    padding: 0;
-    margin: 0 0 0 0.12em;
-    transition-property: border, color, text-shadow;
-}
-div.nav-bar tw-link::before,
-tw-hook[name="inlinelink"] tw-link::before,
-tw-hook[name="inlinememorylink"] tw-link::before {
-    display: none;
-}
-div.nav-bar tw-link:hover,
-tw-hook[name="inlinelink"] tw-link:hover,
-tw-hook[name="inlinememorylink"] tw-link:hover {
-    border-bottom: solid #0000dc 0.2em;
-}
-
-
-
-
 /*============================
     MODAL DIALOGS 
 ============================*/
@@ -295,7 +212,7 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
     margin: auto 0px;
     padding: 1.2em;
 
-    background: rgb(216, 210, 183);
+    background: rgb(240, 233, 205);
     box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
 }
 .modal-dialog-container > div::after {
@@ -433,6 +350,7 @@ div.nav-bar-location {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 /* all images relevant to the story */
@@ -499,6 +417,15 @@ div.block-citation {
     word-wrap: break-word;
     font-size: 80%;
     line-height: 1.2em;
+}
+
+span#inline-dvz-title {
+    font-weight: 700;
+}
+
+span.indented-par {
+    display: inline-block;
+    padding-left: 0.8em;
 }
 
 
@@ -600,7 +527,7 @@ tw-passage[tags ~= "credits"] .logo {
 tw-passage[tags ~= "credits"] ul {
     margin: 0.2em 0em;
     padding: 0.5em;
-    list-style: none;
+    list-style-type: none;
 }
 tw-passage[tags ~= "credits"] li {
     margin: 0.2em 0em;
