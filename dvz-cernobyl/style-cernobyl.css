@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
 
 /* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
@@ -34,10 +35,18 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
-    background-image: url("http://digikult.phil.muni.cz/wp-content/DVZ/mandelinka/images/journalist_1080p.png");
+    background-image: url("resources/power_plant_smoke.png");
     background-size: cover;
 
     font-family: "Roboto Slab", serif;
+}
+
+tw-story[tags ~= "before-expl"] {
+    background-image: url("resources/power_plant_before.png");
+}
+
+tw-story[tags ~= "explosion"] {
+    background-image: url("resources/distant_explosion.png");
 }
 
 /* tw-story[tags ~= "tag"] {
@@ -232,8 +241,8 @@ tw-link.visited:active::before {
     width: 900px;
 }
 
-.modal-dialog-container .modal-close,
-.modal-dialog-container .modal-close:hover {
+.modal-dialog-container a.modal-close[href ^= "#"],
+.modal-dialog-container a.modal-close[href ^= "#"]:hover {
     /* background close button/link */
     position: fixed;
     top: 0;
