@@ -75,13 +75,16 @@ tw-icon[alt="Redo"] {
     display: inline-block;
     color: greenyellow;
 }
-tw-icon {
+/* tw-icon {
     margin: 0.3em 0;
 }
 tw-icon > img {
     height: 45px;
-}
+} */
 
+tw-passage[tags ~= "title-passage"] {
+    font-size: 115%;
+}
 
 /*==============================
     Twine Story and Passage
@@ -99,9 +102,6 @@ tw-icon > img {
         padding: 2em;
         font-size: 85%;
         line-height: normal;
-    }
-    tw-passage[tags="title-passage"] {
-        padding: 1.5em;
     }
     tw-sidebar {
         position: absolute;
@@ -438,37 +438,59 @@ span.indented-par {
 
 
 /*============================
-    HYPERLINKS   a.hyper
+    HYPERLINKS   <a>
 ============================*/
-
+/* 
 a:link,
 a:link:hover {
     color: hsl(170, 98%, 40%);
     text-decoration: underline;
 }
+
 a:visited,
 a:visited:hover {
     color: hsl(182, 100%, 27%);
     text-decoration: underline;
-}
-.hyper {
-    --hyper-color: hsl(170, 98%, 40%);
-    color: var(--hyper-color);
-    text-decoration: underline;
+} */
 
+/* maybe better way to style links */
+
+.hyper,
+a:link {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+.hyper:hover,
+a:link:hover {
+    color: hsl(170, 90%, 46%);
+    text-decoration-thickness: 1.5px;
+}
+.hyper:visited,
+a:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+.hyper:visited:hover,
+a:visited:hover {
+    color: hsl(182, 100%, 22%);
+    text-decoration-thickness: 1.5px;
+}
+
+
+
+/* MODAL OPENERS */
+a[href ^= "#"]:any-link {
+    color: rgb(0, 179, 30);
     transition: 300ms;
-    transition-property: color;
+    transition-property: all;
+    text-decoration: underline;
 }
-.hyper:hover {
-    color: hsl(170, 100%, 33%);
+a[href ^= "#"]:any-link:hover {
+    color: rgb(0, 146, 24);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
 }
-.hyper:visited {
-    --hyper-visited-color: hsl(182, 100%, 27%);
-    color: var(--hyper-visited-color);
-}
-.hyper:visited:hover {
-    color: hsl(182, 100%, 20%);
-}
+
 
 
 
