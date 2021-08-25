@@ -80,19 +80,10 @@ tw-story tw-consecutive-br {
 tw-icon[alt="Undo"],
 tw-icon[alt="Redo"] {
     display: none;
-    /* TODO remove "debug release" arrows */
-    display: inline-block;
-    color: greenyellow;
 }
-/* tw-icon {
-    margin: 0.3em 0;
-}
-tw-icon > img {
-    height: 45px;
-} */
 
 tw-passage[tags ~= "title-passage"] {
-    font-size: 115%;
+    font-size: 110%;
 }
 
 /*==============================
@@ -105,23 +96,15 @@ tw-passage[tags ~= "title-passage"] {
     tw-story {
         padding: 5%;
     }
+
     tw-passage {
-        margin-top: 65px;
-        /* leave space for the sidebar */
-        padding: 2em;
+        margin-top: 20px;
+        padding: 1em;
         font-size: 85%;
         line-height: normal;
     }
-    tw-sidebar {
-        position: absolute;
-        width: 94%;
-        left: 3%;
-        top: -110px;
-        
-        flex-direction: row;
-    }
-    tw-icon > img {
-        height: 30px
+    tw-passage[tags ~= "title-passage"] {
+        font-size: 85%;
     }
 }
 /* wider screen */
