@@ -76,7 +76,12 @@ document.galleryInitCuratorControls = function () {
 
 document.galleryInitCuratorTranscriptButton = function () {
     $("#curator-transcript-button").on("click", function () {
-        $(".curator-wrapper").toggleClass("active")
+        let changed = $(".curator-wrapper").toggleClass("active");
+        if (changed.hasClass("active")) {
+            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/transcript-close.svg");
+        } else {
+            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/transcript.svg");
+        }
     });
 }
 
