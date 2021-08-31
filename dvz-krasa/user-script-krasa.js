@@ -88,3 +88,17 @@ document.galleryInitMapButton = function () {
         $("#map-button-wrapper").toggleClass("map-pulled-out");
     });
 }
+
+
+// On fragment change, stop all audio elements
+document.galleryAddHashChangeHandler = function () {
+    window.addEventListener('hashchange', document.galleryHandleHashChange);
+};
+
+document.galleryHandleHashChange = function () {
+    $("audio").each(function(){
+        this.pause();
+        this.currentTime = 0;
+    });
+};
+

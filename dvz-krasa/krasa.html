@@ -104,6 +104,20 @@ document.galleryInitMapButton = function () {
     });
 }
 
+
+// On fragment change, stop all audio elements
+document.galleryAddHashChangeHandler = function () {
+    window.addEventListener('hashchange', document.galleryHandleHashChange);
+};
+
+document.galleryHandleHashChange = function () {
+    $("audio").each(function(){
+        this.pause();
+        this.currentTime = 0;
+    });
+};
+
+
 </script><tw-passagedata pid="1" name="gallery resizer and map" tags="footer" position="59,148" size="100,100">&lt;script&gt;
 setTimeout(document.galleryResizer, 50);
 setTimeout(document.galleryResizer, 500);
@@ -547,6 +561,7 @@ Co vás na básních nejvíce upoutalo?
 Rozpoznat emočně zabarvené líčení v dobové poezii je snadné. [[Co ale taková próza?-&gt;romantismus lit aktivita]]
 &lt;/div&gt;\
 \
+&lt;script&gt;document.galleryAddHashChangeHandler();&lt;/script&gt;\
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus rozc]]
 ]</tw-passagedata><tw-passagedata pid="9" name="baroko rozc" tags="gallery baroq-cross baroque" position="225,449" size="100,100">\
@@ -801,7 +816,8 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-
+\
+&lt;script&gt;document.galleryAddHashChangeHandler();&lt;/script&gt;\
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industrial rozc]]
 ]</tw-passagedata><tw-passagedata pid="14" name="baroko obecně" tags="baroque" position="84,603" size="100,100">\
