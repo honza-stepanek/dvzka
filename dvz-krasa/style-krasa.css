@@ -108,7 +108,6 @@ body {
     overflow-x: scroll;
 }
 tw-story[tags ~= "gallery"] {
-    /* overflow-x: scroll; */
     height: 100%;
     margin: 0;
     padding-top: 1em;
@@ -128,8 +127,52 @@ tw-passage[tags ~= "gallery"] {
 }
 
 
+
 /*-------------------------------------
-        Wall space container
+        Room title and number
+-------------------------------------*/
+
+div.room-title {
+    font-size: 150%;
+    font-weight: 600;
+    margin-bottom: 0.6em;
+}
+tw-passage[tags ~= "gallery"] div.room-title {
+    margin: 0 0 auto;
+    padding: 0.5rem;
+    padding-bottom: 2.9rem;
+    width: min-content;
+    min-width: 3.5em;
+
+    border-radius: 0.2rem;
+    background-color: rgb(246, 243, 238);
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.205);
+}
+
+/* room number - as indicated on the map*/
+div.room-title::after {
+    content: attr(data-room-no);
+    right: -0.7em;
+    color: rgb(139, 139, 139);
+    font-size: 80%;
+}
+tw-passage[tags ~= "gallery"] div.room-title::after {
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.2rem;
+}
+
+@media (max-width: 649px) and (min-height: 500px) {
+    tw-passage[tags ~= "gallery"] div.room-title {
+        position: absolute;
+        top: 30px;
+    }
+}
+
+
+
+/*-------------------------------------
+          Wall space container
 -------------------------------------*/
 div.gallery-wall-space,
 div.gallery-wall-space-book {
@@ -138,12 +181,8 @@ div.gallery-wall-space-book {
     justify-content: center;
 
     height: 100%;
-    /* width: 90vw; */
     max-width: 90vw;
     margin: 0 3em;
-
-    /* debug border: */
-    /* border: solid rgba(238, 100, 243, 0.486) 4px; */
 }
 div.gallery-wall-space {
     z-index: 0;
@@ -179,7 +218,6 @@ div.painting-label {
 
     font-weight: 500;
     color: #0000dc;
-    /* color: #1414ca; */
     opacity: 0.8;
 }
 
@@ -220,8 +258,6 @@ div.gallery-wall-space tw-expression {
     /* min height 0 allows it to shrink in the flex container */  
     display: block;
     margin: 0 auto;
-    /* debug border: */
-    /* border: solid rgb(243, 100, 119, 0.1) 4px; */
 }
 div.gallery-wall-space tw-expression tw-link {
     display: block;
@@ -245,17 +281,6 @@ div.gallery-wall-space tw-expression tw-link.visited {
     box-shadow: none;
     background-color: transparent;
 }
-/* dim overlay */
-/* div.gallery-wall-space tw-link.visited::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: "";
-    width: 100%;
-    height: 100%;
-
-    background-color: rgba(0, 0, 0, 0.144);
-} */
 
 /* neutral painting frame -> border */
 img.painting-frame-neutral,
@@ -269,8 +294,6 @@ img.painting-with-own-frame {
          Note in the gallery
 -------------------------------------*/
 div.gallery-wall-note {
-    /* min-width: 18em; */
-    /* width: min-content; */
     width: 20em;
     max-width: 90vw;
     height: min-content;
@@ -284,16 +307,6 @@ div.gallery-wall-note {
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.205);
 }
 
-/* text containers -- currently unused */
-div.gallery-text {
-    column-width: 30em;
-    column-count: auto;
-    /* the columns overflow >:( */
-}
-
-/* .block-horizontal-scroll {
-    overflow-y: auto;
-} */
 
 
 /*-------------------------------------
@@ -305,8 +318,6 @@ div.book-container {
     justify-content: center;
     align-content: center;
     min-height: 0;
-
-    /* background-color: rgba(127, 255, 212, 0.5); */
 }
 
 img.book-cover {
@@ -314,12 +325,9 @@ img.book-cover {
     cursor: pointer;
 }
 
-/* div.modal-dialog-overlay.book-contents {
-    background-color: rgb(248, 242, 234);
-} */
 div.modal-dialog-overlay.book-contents img {
     margin: 1em auto 0;
-    max-width: 125%;
+    max-height: 900px;
     box-shadow: 0 6px 8px 4px rgba(0, 0, 0, 0.178);
 }
 div.modal-dialog-overlay.book-contents audio {
@@ -410,9 +418,7 @@ div.curator-container {
     padding: 0.3em;
     
     border-radius: 0.2em;
-    /* background-color: rgb(143, 122, 82); */
     background-color: #0000;
-    /* box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.281); */
     
     transition: 300ms;
     transition-property: max-width, height, background-color;
@@ -486,11 +492,9 @@ div.playback-controls {
     display: flex;
     height: 100%;
     justify-content: space-between;
-    /* background-color: rgb(53, 53, 53); */
     background-color: rgb(70, 70, 70);
 
     border-radius: 0.15em;
-    /* padding: 0 5px; */
 }
 
 #curator-transcript-button,
@@ -503,7 +507,6 @@ div.playback-controls {
     margin: 0;
 
     border-radius: 0.15em;
-    /* background-color: rgb(53, 53, 53); */
     background-color: rgb(70, 70, 70);
     cursor: pointer;
     min-height: unset;
@@ -625,8 +628,8 @@ div.modal-dialog-overlay::before {
     line-height: 1.1em;
 
     color: rgb(0, 0, 0);
-    background-color: rgb(128, 128, 128);
-    opacity: 0.7;
+    background-color: #dfcfa2;
+    opacity: 0.75;
 }
 
 /* an image inside of the modal */
@@ -680,10 +683,6 @@ a.modal-open:any-link:hover {
     left: 15px;
     z-index: 21;
 
-    width: 50px;
-    height: 1.5em;
-
-    box-shadow: none;
     opacity: 0.7;
     transition: 300ms;
     transition-property: transform, opacity;
@@ -692,6 +691,38 @@ a.modal-open:any-link:hover {
 #map-button:focus {
     opacity: 1;
     transform: scale(1.1);
+}
+#map-button::after {
+    font-family: "Courier", serif;
+    color: white;
+    content: "˄";
+    /* content: "ᐱ"; */
+    /* content: "▲"; */
+    /* content: "⮝"; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 46px;
+}
+#map-button-wrapper.map-pulled-out #map-button::after {
+    content: "˅";
+    /* content: "ᐯ"; */
+    /* content: "▼"; */
+    /* content: "⮟"; */
+    top: 2px;
+}
+
+#map-button-img {
+    width: 50px;
+    height: 1.5em;
+
+    box-shadow: none;
 }
 
 #gallery-map {
@@ -720,8 +751,7 @@ a.modal-open:any-link:hover {
 
     box-shadow: 0 10px 12px 5px rgba(0, 0, 0, 0.333);
 }
-
-#gallery-map.map-pulled-out {
+#map-button-wrapper.map-pulled-out #gallery-map {
     bottom: 5vh;
 }
 

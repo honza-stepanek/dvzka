@@ -33,7 +33,7 @@ window.smoothScroller.intervalID = window.setInterval(() => {
 
 document.galleryInitCuratorControls = function () {
     $("audio.curator").on("ended", function () {
-        $("#playback-button").attr("src", "resources/play.svg");
+        $("#playback-button").attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/play.svg");
     });
     $("#playback-button").on("click", async function () {
         let curator = $("audio.curator")[0];
@@ -43,9 +43,9 @@ document.galleryInitCuratorControls = function () {
             } catch {
                 return;
             }
-            $(this).attr("src", "resources/pause.svg");
+            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/pause.svg");
         } else {
-            $(this).attr("src", "resources/play.svg");
+            $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/play.svg");
             curator.pause();
         }
     });
@@ -54,7 +54,7 @@ document.galleryInitCuratorControls = function () {
     $("#volume-button").on("click", function () {
         $(this).attr("value", (_, v) => {return (parseInt(v) + 1) % 4})
         $("audio.curator")[0].volume = (parseInt($(this).attr("value")) + 1) / 4;
-        $(this).attr("src", "resources/loud"
+        $(this).attr("src", "https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/loud"
             + $(this).attr("value") + ".svg");
     });
 }
@@ -85,6 +85,6 @@ window.addEventListener("resize", document.galleryResizer);
 // openable Map for orientation
 document.galleryInitMapButton = function () {
     $("#map-button").on("click", function () {
-        $("#gallery-map").toggleClass("map-pulled-out");
+        $("#map-button-wrapper").toggleClass("map-pulled-out");
     });
 }

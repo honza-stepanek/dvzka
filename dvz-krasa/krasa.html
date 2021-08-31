@@ -100,7 +100,7 @@ window.addEventListener("resize", document.galleryResizer);
 // openable Map for orientation
 document.galleryInitMapButton = function () {
     $("#map-button").on("click", function () {
-        $("#gallery-map").toggleClass("map-pulled-out");
+        $("#map-button-wrapper").toggleClass("map-pulled-out");
     });
 }
 
@@ -109,11 +109,13 @@ setTimeout(document.galleryResizer, 50);
 setTimeout(document.galleryResizer, 500);
 &lt;/script&gt;\
 &lt;div id=&quot;map-button-wrapper&quot;&gt;\
-&lt;img id=&quot;map-button&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/map-button.svg&quot;&gt;\
-&lt;div id=&quot;gallery-map&quot;&gt;\
-    &lt;img id=&quot;gallery-map-img&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/map.png&quot;&gt;\
-&lt;/div&gt;\
-&lt;script&gt;document.galleryInitMapButton();&lt;/script&gt;\
+    &lt;div id=&quot;map-button&quot;&gt;\
+        &lt;img id=&quot;map-button-img&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/map-button.svg&quot;&gt;\
+    &lt;/div&gt;\
+    &lt;div id=&quot;gallery-map&quot;&gt;\
+        &lt;img id=&quot;gallery-map-img&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/map.png&quot;&gt;\
+    &lt;/div&gt;\
+    &lt;script&gt;document.galleryInitMapButton();&lt;/script&gt;\
 &lt;/div&gt;\
 </tw-passagedata><tw-passagedata pid="2" name="init" tags="startup" position="55,29" size="100,100">(set: $pruchod to (a:))\
 &lt;!--
@@ -281,6 +283,7 @@ ZOCCHI, Giuseppe, PFEFFEL Johann Andreas a ALLEGRINI Giuseppe.// Scelta Di XXIV 
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;aktivita]]
 ]</tw-passagedata><tw-passagedata pid="4" name="výstava" tags="gallery beginning" position="790,247" size="100,100">\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;1&quot;&gt;Krása&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space baroque&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
 Řád\
@@ -335,6 +338,7 @@ Svébytným uměleckým odvětvím jsou pak tzv. veduty, což je velmi detailní
 &lt;/div&gt;\
 &lt;/div&gt;\
 \
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;5&quot;&gt;Zrod krajinomalby&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
     &lt;a href=&quot;#painting-RUYSDAEL&quot; title=&quot;Prohlédnout si malbu zblízka&quot;&gt;\
         &lt;img class=&quot;painting-frame-neutral&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/baroko-malby-1-scaled.jpeg&quot;&gt;\
@@ -347,7 +351,7 @@ Svébytným uměleckým odvětvím jsou pak tzv. veduty, což je velmi detailní
         RUYSDAEL, Salomon van. Říční krajina s kostelem &#96;[River View with Church and Ferry] [olejomalba, 1649]&#96;. 75 x 106.5 cm. Haag: Mauritshuis. Dostupné z: https://www.europeana.eu/en/item/2021672/resource_document_mauritshuis_738
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -362,7 +366,7 @@ Svébytným uměleckým odvětvím jsou pak tzv. veduty, což je velmi detailní
         POUSSIN, Nicolas. *Krajina s mužem který byl zabit hadem* &#96;[Landschap met jongeman door een slang gewurgd] [rytina, 1701]&#96;. Amsterdam: Rijksmuseum. Dostupné z: https://www.rijksmuseum.nl/nl/collectie/RP-P-OB-73.302
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -377,7 +381,7 @@ Svébytným uměleckým odvětvím jsou pak tzv. veduty, což je velmi detailní
         LORRAIN, Claude. *Krajina se svatbou Izáka a Rebeky* &#96;[Landscape with Rebekah Taking Leave of her Father] [olejomalba, 1640-1641]&#96;. 60.5 x 80 cm. Stockholm: National Museum. Dostupné z: http://emp-web-84.zetcom.ch/eMP/eMuseumPlus?service=ExternalInterface&amp;module=collection&amp;objectId=23593&amp;viewType=detailView
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -392,7 +396,7 @@ Svébytným uměleckým odvětvím jsou pak tzv. veduty, což je velmi detailní
         HOLLAR, Václav. *Velký prospekt Prahy z Petřína* &#96;[Stort prospekt af Prag] [rytina, 1649]&#96;. Praha: Národní muzeum. Dostupné z: https://www.europeana.eu/en/item/2020903/KKSgb6268_3
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -407,12 +411,13 @@ Svébytným uměleckým odvětvím jsou pak tzv. veduty, což je velmi detailní
         VENUTO Johann. *Stadt Patzau im Taborer Kreise* &#96;[grafika, 1809]&#96;. 31 x 48.5 cm. Vídeň: Österreichische Nationalbibliothek. Dostupné z: https://onb.digital/result/BAG_11301666
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko rozc]]
 ]</tw-passagedata><tw-passagedata pid="6" name="romantismus rozc" tags="gallery romantism-cross romantism" position="796,442" size="100,100">\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;8&quot;&gt;Emoce&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
 Divoká krajina
@@ -435,7 +440,7 @@ Přírodní lyrika
 &lt;/div&gt;\
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;výstava]]
-]</tw-passagedata><tw-passagedata pid="7" name="industrial rozc" tags="gallery industrial-cross industrialism" position="1348,444" size="100,100">  
+]</tw-passagedata><tw-passagedata pid="7" name="industrial rozc" tags="gallery industrial-cross industrialism" position="1348,444" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;14&quot;&gt;Pokrok&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
 Průmyslová krajina
@@ -445,7 +450,7 @@ Průmyslová krajina
 
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
-Avantgarda a socialistický realismus
+Avantgarda a&nbsp;socialistický realismus
 &lt;/div&gt;\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/industrial-rozc_2.jpg&quot;&gt;-&gt;industra malby]]
 &lt;/div&gt;\
@@ -458,7 +463,8 @@ Oslava technického pokroku
 &lt;/div&gt;\
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;výstava]]
-]</tw-passagedata><tw-passagedata pid="8" name="romantismus lit 1" tags="gallery romantism" position="917,606" size="100,100">
+]</tw-passagedata><tw-passagedata pid="8" name="romantismus lit 1" tags="gallery romantism" position="1020,603" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;12&quot;&gt;Přírodní lyrika&lt;/div&gt;\
+\\
 &lt;div class=&quot;gallery-wall-note&quot;&gt;\
 Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem jejich autoři popisují krajinu.
 &lt;/div&gt;\
@@ -476,7 +482,7 @@ Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem 
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_ctirad.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_zeyer-text2.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -494,7 +500,7 @@ Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem 
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/vrchlicky-sum-listi-audio.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_vrchlicky-text.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -512,7 +518,7 @@ Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem 
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_nocni-krajina.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_zeyer-text2.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -530,7 +536,7 @@ Poslechněte si následující ukázky básní. Všimněte si, jakým způsobem 
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_mesic-stoji-s-zesinalou-tvari.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_macha-text.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -544,6 +550,7 @@ Rozpoznat emočně zabarvené líčení v dobové poezii je snadné. [[Co ale ta
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus rozc]]
 ]</tw-passagedata><tw-passagedata pid="9" name="baroko rozc" tags="gallery baroq-cross baroque" position="225,449" size="100,100">\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;2&quot;&gt;Řád&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space&quot;&gt;\
 &lt;div class=&quot;painting-label&quot;&gt;\
 Kulturní krajina
@@ -589,13 +596,14 @@ Tato snaha bývá mnohdy dotažena až do extrému – příkladem může být p
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;/div&gt;\
-\
+\\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;6&quot;&gt;Zahradní architektura&lt;/div&gt;\
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=104&quot; width=&quot;886&quot; height=&quot;700&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 Dokážete na základě toho, co jste se o barokních zahradách dozvěděli, navrhout [[svou vlastní zahradu-&gt;baroko zahrady aktivita]]?
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko rozc]]
-]</tw-passagedata><tw-passagedata pid="11" name="romantismus malby" tags="gallery romantism" position="1054,604" size="100,100">&lt;div class=&quot;curator-wrapper&quot;&gt;\
+]</tw-passagedata><tw-passagedata pid="11" name="romantismus malby" tags="gallery romantism" position="836,609" size="100,100">&lt;div class=&quot;curator-wrapper&quot;&gt;\
 &lt;div class=&quot;curator-container&quot;&gt;\
 &lt;div class=&quot;curator-controls&quot;&gt;\
     &lt;img id=&quot;curator-transcript-button&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/transcript.svg&quot;&gt;\
@@ -621,6 +629,7 @@ V 2. polovině 19. století můžeme ve výtvarném umění naopak pozorovat odk
 &lt;/div&gt;\
 &lt;/div&gt;\
 \
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;11&quot;&gt;Romantismus a realismus&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
 &lt;a href=&quot;#painting-BERGH&quot; title=&quot;Prohlédnout si malbu zblízka&quot;&gt;\
     &lt;img class=&quot;painting-with-own-frame&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_1.jpeg&quot;&gt;\
@@ -633,7 +642,7 @@ V 2. polovině 19. století můžeme ve výtvarném umění naopak pozorovat odk
             BERGH, Edvard. Från Fjällbacka &#96;[&#96;olejomalba, 1870&#96;]&#96;. 75 x 139 cm. Gävle: Länsmuseet Gävleborg. Dostupné z: https://digitaltmuseum.se/021046642918/fran-fjallbacka-landskapsmaleri
 \       &lt;/div&gt;\
     &lt;/div&gt;\
-    &lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;
+    &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -648,7 +657,7 @@ V 2. polovině 19. století můžeme ve výtvarném umění naopak pozorovat odk
         CARUS, Gustav Carl. *Phantasie aus der Alpenwelt* &#96;[Fantasy of the Alps] [olejomalba, 1822]&#96;. 52.5 x 67 cm. Stockholm: National Museum. Dostupné z: http://emp-web-84.zetcom.ch/eMP/eMuseumPlus?service=ExternalInterface&amp;module=collection&amp;objectId=179389&amp;viewType=detailView
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -663,7 +672,7 @@ V 2. polovině 19. století můžeme ve výtvarném umění naopak pozorovat odk
         DAUBIGNY, Charles François. *Low Tide at Villerville, France* &#96;[olejomalba, 1873]&#96;. 37 x 67 cm. Stockholm: National Museum. Dostupné z: http://emp-web-84.zetcom.ch/eMP/eMuseumPlus?service=ExternalInterface&amp;module=collection&amp;objectId=132586&amp;viewType=detailView
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -675,10 +684,10 @@ V 2. polovině 19. století můžeme ve výtvarném umění naopak pozorovat odk
 &lt;div class=&quot;modal-dialog-overlay block-horizontal-scroll&quot;&gt;\
     &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_4.jpeg&quot;&gt;\
     &lt;div class=&quot;modal-citation block-horizontal-scroll&quot;&gt;\
-        GUDE, Hans. *The Troll Peaks in Romsdalen: The Foot of Romsdalshorn to the Right* [olejomalba, 1894]. 36.4 x 52.2 cm. Kodaň: Statens Museum for Kunst. Dostupné z: https://www.europeana.eu/en/item/2020903/KMS3451
+        GUDE, Hans. *The Troll Peaks in Romsdalen: The Foot of Romsdalshorn to the Right* &#96;[olejomalba, 1894]&#96;. 36.4 x 52.2 cm. Kodaň: Statens Museum for Kunst. Dostupné z: https://www.europeana.eu/en/item/2020903/KMS3451
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -690,10 +699,10 @@ V 2. polovině 19. století můžeme ve výtvarném umění naopak pozorovat odk
 &lt;div class=&quot;modal-dialog-overlay block-horizontal-scroll&quot;&gt;\
     &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-malby_5.jpg&quot;&gt;\
     &lt;div class=&quot;modal-citation block-horizontal-scroll&quot;&gt;\
-        WRIGHT, Joseph. *Vesuvius from Posillipo by Moonlight* [olejomalba, 1774]. New Haven: Yale Center for British Art. Dostupné z: https://www.wikiart.org/en/joseph-wright/vesuvius-from-posillipo
+        WRIGHT, Joseph. *Vesuvius from Posillipo by Moonlight* &#96;[olejomalba, 1774]&#96;. New Haven: Yale Center for British Art. Dostupné z: https://www.wikiart.org/en/joseph-wright/vesuvius-from-posillipo
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 (append: ?SideBar)[\
@@ -715,7 +724,8 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
 [[Použité zdroje-&gt;zdroje]]
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;výstava]]
-]</tw-passagedata><tw-passagedata pid="13" name="industra lit 1" tags="gallery industrialism" position="1615,605" size="100,100">
+]</tw-passagedata><tw-passagedata pid="13" name="industra lit 1" tags="gallery industrialism" position="1615,605" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;19&quot;&gt;Oslava technického pokroku&lt;/div&gt;\
+
 &lt;div class=&quot;gallery-wall-note&quot;&gt;\
     Poslechněte si následující ukázky textů reflektujících průmyslovou krajinu. Jak ji popisují? A podle čeho poznáme, že ji autoři vnímají pozitivně?
 &lt;/div&gt;\
@@ -733,7 +743,7 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_pokrok_stavba-vodovodu.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_neumann-text.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -751,7 +761,7 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_pokrok_kurskym-delnikum.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_majakovskij-text-scaled.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -769,7 +779,7 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_zelezne-draty.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_apollinaire-text.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -787,14 +797,16 @@ Své výstupy si ve skupinách vzájemně představte. Dospěli jste ke stejným
                 &lt;audio class=&quot;block-horizontal-scroll&quot; controls src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/krasa_pokrok_prehrada.mp3&quot;&gt;&lt;/audio&gt;\
                 &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/07/kr_majerova-text.jpg&quot;&gt;\
             &lt;/div&gt;\
-            &lt;a class=&quot;modal-close&quot; href=&quot;#&quot;&gt;×&lt;/a&gt;\
+            &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industrial rozc]]
-]</tw-passagedata><tw-passagedata pid="14" name="baroko obecně" tags="baroque" position="84,603" size="100,100">Lidé začali ráz krajiny ve větším měřítku ovlivňovat v 17. a 18. století. Pro tuto krajinu se, vzhledem k dobovému zakotvení, vžilo označení &#39;&#39;barokní krajina&#39;&#39;.
+]</tw-passagedata><tw-passagedata pid="14" name="baroko obecně" tags="baroque" position="84,603" size="100,100">\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;3&quot;&gt;Kulturní krajina&lt;/div&gt;\
+Lidé začali ráz krajiny ve větším měřítku ovlivňovat v 17. a 18. století. Pro tuto krajinu se, vzhledem k dobovému zakotvení, vžilo označení &#39;&#39;barokní krajina&#39;&#39;.
 
 Podívejte se na obrázky a zkuste na jejich základě určit typické znaky barokní krajiny.
 
@@ -826,7 +838,8 @@ Hotovo? [[Pojďme se podívat, jaká je správná odpověď-&gt;baroko obecně k
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;/div&gt;\
-\
+\\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;4&quot;&gt;Kulturní krajina –&nbsp;řešení&lt;/div&gt;\
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=100&quot; width=&quot;760&quot; height=&quot;676&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Zpět na rozcestník-&gt;baroko rozc]]
@@ -845,13 +858,14 @@ Vítejte!
 &lt;div class=&quot;modal-dialog-overlay block-horizontal-scroll&quot;&gt;\
     &lt;img class=&quot;block-horizontal-scroll&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/map.png&quot;&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 
 
 &lt;img class=&quot;logolink&quot; src=&quot;http://digikult.phil.muni.cz/wp-content/DVZ/rozhodovani/images/Logolink_OP_VVV_hor_barva_cz.jpg&quot; style=&quot;width:85%&quot; alt=&quot;Vytvořeno v rámci Operačního programu Výzkum, vývoj a vzdělávání CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&quot;&gt;\
-&lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="romantismus obecně" tags="romantism" position="658,603" size="100,100">Ke konci 18. století došlo k posunu ve vnímání toho, jakou krajinu lze považovat za krásnou. Dokážete na základě těchto výjevů určit, v čem tato změna spočívala?
+&lt;div class=&quot;logotext&quot;&gt;Tento produkt byl vytvořen v rámci Operačního programu Výzkum, vývoj a vzdělávání, projektu CZ.02.3.68/0.0/0.0/18_067/0012281 Humanitní vědy dokořán&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="romantismus obecně" tags="romantism" position="658,603" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;9&quot;&gt;Divoká krajina&lt;/div&gt;\
+Ke konci 18. století došlo k posunu ve vnímání toho, jakou krajinu lze považovat za krásnou. Dokážete na základě těchto výjevů určit, v čem tato změna spočívala?
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=105&quot; width=&quot;886&quot; height=&quot;702&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
@@ -880,12 +894,14 @@ Zejména hory, ještě v 17. století platící za objekty šeredna, jsou nyní 
 &lt;/div&gt;\
 &lt;/div&gt;\
 \\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;10&quot;&gt;Divoká krajina –&nbsp;řešení&lt;/div&gt;\
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=105&quot; width=&quot;886&quot; height=&quot;702&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Zpět na rozcestník-&gt;romantismus rozc]]
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus obecně]]
-]</tw-passagedata><tw-passagedata pid="19" name="industra obecně" tags="industrialism" position="1218,607" size="100,100">Následující obrazy vám patrně nebudou připadat krásné, ačkoli byly doby, kdy za takové považovány bezpochyby byly. Zkuste se na ně podívat očima člověka 19. a počátku 20. století a pokuste se určit, v čem mohla spočívat krása těchto krajin.
+]</tw-passagedata><tw-passagedata pid="19" name="industra obecně" tags="industrialism" position="1218,607" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;15&quot;&gt;Průmyslová krajina&lt;/div&gt;\
+Následující obrazy vám patrně nebudou připadat krásné, ačkoli byly doby, kdy za takové považovány bezpochyby byly. Zkuste se na ně podívat očima člověka 19. a počátku 20. století a pokuste se určit, v čem mohla spočívat krása těchto krajin.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=106&quot; width=&quot;886&quot; height=&quot;734&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
@@ -916,6 +932,7 @@ V zemích východního bloku se v 50. letech 20. století začíná jako svébyt
 &lt;/div&gt;\
 &lt;/div&gt;\
 \
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;17&quot;&gt;Avantgarda a&nbsp;socialistický realismus&lt;/div&gt;\
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
     &lt;a href=&quot;#painting-GOGH&quot; title=&quot;Prohlédnout si malbu zblízka&quot;&gt;\
         &lt;img class=&quot;painting-frame-neutral&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/industra-malby_1.jpg&quot;&gt;\
@@ -928,7 +945,7 @@ V zemích východního bloku se v 50. letech 20. století začíná jako svébyt
         GOGH. Vincent van. *Factories at Asnieres, Seen from the Quai de Clichy* &#96;[olejomalba, 1887]&#96;. 53.9 x 72.5 cm. Dostupné z: https://www.wikiart.org/en/vincent-van-gogh/factories-at-asnieres-seen-from-the-quai-de-clichy-1887
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -943,7 +960,7 @@ V zemích východního bloku se v 50. letech 20. století začíná jako svébyt
         MASHKOV. Ilya. *ZAGES*. *Dam on the Kura River and Highway of Georgian Military Road* &#96;[olejomalba, 1927]&#96;. Dostupné z: https://www.wikiart.org/en/ilya-mashkov/zages-dam-on-the-kura-river-and-highway-of-georgian-military-road-1927
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -958,7 +975,7 @@ V zemích východního bloku se v 50. letech 20. století začíná jako svébyt
         SZEREKES, Emil. *Téglagyár* &#96;[Picture of a Brick Factory] [olejomalba]&#96;. 28 x 37 cm. Kaposvár: Rippl-Rónai Megyei Hatókörű Városi Múzeum. Dostupné z: https://mandadb.hu/tetel/256069/Teglagyar
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -973,7 +990,7 @@ V zemích východního bloku se v 50. letech 20. století začíná jako svébyt
         BARAN, Otakar. *Vítkovice* &#96;[olejomalba]&#96;. Praha: Nadační fond Eleutheria. Dostupné z: http://www.eleutheria.cz/socpresent.php?lang=cz&amp;image=054
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-space painting-with-citation&quot;&gt;\
@@ -988,7 +1005,7 @@ V zemích východního bloku se v 50. letech 20. století začíná jako svébyt
         CÉZANNE, Paul. *Factories Near Mont de Cengle* &#96;[olejomalba, 1870]&#96;. 41 x 55 cm. Soukromá sbírka. Dostupné z: https://www.wikiart.org/en/paul-cezanne/factories-near-mont-de-cengle
 \   &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;\
+&lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
 &lt;/div&gt;\
 
 &lt;div class=&quot;gallery-wall-note&quot;&gt;\
@@ -1020,12 +1037,14 @@ Tento přístup přetrvává prakticky až do 20. století. Zejména v pováleč
 &lt;/div&gt;\
 &lt;/div&gt;\
 \\
+&lt;div class=&quot;room-title&quot; data-room-no=&quot;16&quot;&gt;Průmyslová krajina –&nbsp;řešení&lt;/div&gt;\
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=106&quot; width=&quot;886&quot; height=&quot;734&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[Zpět na rozcestník-&gt;industrial rozc]]
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;industra obecně]]
-]</tw-passagedata><tw-passagedata pid="22" name="baroko zahrady aktivita" tags="baroque" position="340,739" size="100,100">Vžijte se do role zahradního architekta! Píše se rok 1725 a místní šlechtic si vás právě najal, abyste mu nově zakoupené panství zvelebili podle poslední módy. Které prvky nesmí v barokní zahradě chybět a kterým se naopak zdaleka vyhnete?
+]</tw-passagedata><tw-passagedata pid="22" name="baroko zahrady aktivita" tags="baroque" position="340,739" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;7&quot;&gt;Zahradní architektura –&nbsp;řešení&lt;/div&gt;\
+Vžijte se do role zahradního architekta! Píše se rok 1725 a místní šlechtic si vás právě najal, abyste mu nově zakoupené panství zvelebili podle poslední módy. Které prvky nesmí v barokní zahradě chybět a kterým se naopak zdaleka vyhnete?
 
 Vybrané prvky přetáhněte do horní části nákresu.
 
@@ -1034,7 +1053,8 @@ Vybrané prvky přetáhněte do horní části nákresu.
 [[Zpět na rozcestník-&gt;baroko rozc]]
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;baroko zahrady]]
-]</tw-passagedata><tw-passagedata pid="23" name="romantismus lit aktivita" tags="romantismuslitaktivita romantism" position="869,768" size="100,100">Prohlédněte si kresbu hradu Bezděz od Karla Hynka Máchy. Který z následujících popisů se k němu podle vás vztahuje?
+]</tw-passagedata><tw-passagedata pid="23" name="romantismus lit aktivita" tags="romantismuslitaktivita romantism" position="996,766" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;13&quot;&gt;Přírodní lyrika –&nbsp;řešení&lt;/div&gt;\
+Prohlédněte si kresbu hradu Bezděz od Karla Hynka Máchy. Který z následujících popisů se k němu podle vás vztahuje?
 
 &lt;a href=&quot;#cit-bezdez&quot; title=&quot;Prohlédnout si malbu zblízka&quot;&gt;\
     &lt;img class=&quot;painting-frame-neutral&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/05/romantismus-slovnik_1.jpg&quot;&gt;
@@ -1046,7 +1066,7 @@ Vybrané prvky přetáhněte do horní části nákresu.
         MÁCHA, Karel Hynek. *Bezděz od severovýchodu II* &#96;[&#96;kresba, 1833/34&#96;]&#96;. Dostupné z: https://dnnt.mzk.cz/uuid/uuid:1ebdf340-a755-11e2-9592-5ef3fc9bb22f
         &lt;/div&gt;\
     &lt;/div&gt;\
-    &lt;a class=&quot;modal-close&quot; href=&#39;#&#39;&gt;×&lt;/a&gt;
+    &lt;a class=&quot;modal-close&quot; title=&quot;zavřít&quot; href=&#39;#&#39;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;
 &lt;/div&gt;\
 
 &lt;div class=&quot;image-options&quot;&gt;\
@@ -1087,7 +1107,8 @@ $(&quot;.image-option-wrong&quot;).on(&quot;click&quot;, function (e) {e.target.
 [[Zpět na rozcestník-&gt;romantismus rozc]]
 (append: ?SideBar)[\
 [[&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/DVZ/krasa/resources/arrow-back.svg&quot; class=&quot;nav-arrow&quot;&gt;-&gt;romantismus lit 1]]
-]</tw-passagedata><tw-passagedata pid="24" name="industra směry" tags="industrialism" position="1398,767" size="100,100">Industriální krajina byla oblíbeným motivem mnoha výtvarných směrů 20. století. Dokážete je od sebe vzájemně odlišit?
+]</tw-passagedata><tw-passagedata pid="24" name="industra směry" tags="industrialism" position="1398,767" size="100,100">&lt;div class=&quot;room-title&quot; data-room-no=&quot;18&quot;&gt;Avantgarda a&nbsp;socialistický realismus –&nbsp;řešení&lt;/div&gt;\
+Industriální krajina byla oblíbeným motivem mnoha výtvarných směrů 20. století. Dokážete je od sebe vzájemně odlišit?
 
 Obrazy přetáhněte do odpovídajících kolonek.
 
@@ -1113,8 +1134,10 @@ Obrazy přetáhněte do odpovídajících kolonek.
 &lt;/ul&gt;\
 &lt;img class=&quot;logo&quot; id=&quot;muni-logo-teiresias&quot; src=&quot;https://www.teiresias.muni.cz/TeiresiasMU/media/system/images/logo-cs-cz.svg&quot; alt=&quot;Logo Střediska pro pomoc studentům se specifickými nároky, MUNI Teiresias&quot;&gt;\
 &lt;ul id=&quot;muni-teiresias&quot;&gt;\
-&lt;li class=&quot;category&quot;&gt;? ? ?:&lt;/li&gt;\
-&lt;li&gt;&lt;a class=&quot;hyper&quot; href=&quot;???&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;? ? ?&lt;/a&gt;&lt;li&gt;\
+
+&lt;li&gt;Iva Oulehlová&lt;li&gt;\
+&lt;li&gt;Miroslav Zítko&lt;li&gt;\
+&lt;li&gt;Svatoslav Ondra&lt;li&gt;\
 &lt;/ul&gt;\
 &lt;/div&gt;\
 \
