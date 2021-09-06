@@ -192,6 +192,7 @@ else {
     open_new(\*CSS_OUT, "${output_base_path}style-$output_name", '.css');
     open_new(\*HTML_OUT, "$output_base_path$output_name", '.html');
 
+    # TODO  fails to properly dissasemble a twine story with an empty <style> element
     my $in_style = undef;
     while (<HTML_IN>) {
         if (defined $in_style && $in_style == 1) {

@@ -1,9 +1,14 @@
 ## Seznam DVZ na kterých pracuji
 
-- [**Krása**](https://honzaflash.github.io/dvzka/dvz-krasa/krasa)
+- [**Ženy ve vědě**](https://honzaflash.github.io/dvzka/dvz-zeny/zeny-ve-vede)
+
+## Seznam prozatímně hotových DVZ
+
+- [*Černobyl*](https://honzaflash.github.io/dvzka/dvz-cernobyl/cernobyl)
 
 ## Seznam hotových DVZ
 
+- [Krása](https://honzaflash.github.io/dvzka/dvz-krasa/krasa)
 - [Pozitivní psychologie](https://honzaflash.github.io/dvzka/dvz-poz-psych/pozitivni-psychologie)
 - [Akce K](https://honzaflash.github.io/dvzka/dvz-akce-k/akce-k)
 - [Mandelinka bramborová](https://honzaflash.github.io/dvzka/dvz-mandelinka/mandelinka_bramborova)
