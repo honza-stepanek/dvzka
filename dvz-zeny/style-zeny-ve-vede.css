@@ -1,1 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+
+
+
+
+/* general structure */
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 120%;
+    font-weight: 500;
+}
+
+img {
+    max-width: 100%;
+}
+
+/*============================
+    TWINE STORY 
+============================*/
+
+tw-story {
+    padding: 80px 10%;
+    min-height: 100%;
+
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(53, 51, 47);
+    /* a temp background */
+    background-image: url("https://cdn6.dissolve.com/p/D2115_32_920/D2115_32_920_1200.jpg");
+    background-size: cover;
+
+    /* font-family: "Indie Flower", serif; */
+    /* font-family: "The Girl Next Door", serif; */
+    font-family: "Dancing Script", serif;
+}
+
+
+/*============================
+    TWINE PASSAGE 
+============================*/
+
+tw-passage {
+    max-width: 900px;
+    width: 100%;
+    min-height: 30em;
+    align-self: center;
+
+    padding: 2em;
+    /* padding-top: 3em; */
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+
+    background-color: rgb(255, 253, 236);
+    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+    color: black;
+}
+tw-passage,
+div.modal-dialog.article {
+    /* potential texture backgrounds */
+    /* background-image: url("https://i.pinimg.com/736x/e3/22/a8/e322a8ad36f8d7cf4718b8037bf34969--paper-texture-resolution-photo.jpg"); */
+    background-image: url("https://images.unsplash.com/photo-1615800098746-73af8261e3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVpZ2UlMjBmYWJyaWN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
+    background-repeat: repeat;
+}
+
+tw-story tw-consecutive-br {
+    height: 0.5em;
+}
+
+/* tw-icon[alt="Undo"],
+tw-icon[alt="Redo"] {
+    display: none;
+}
+tw-icon {
+    margin: 0.3em 0;
+}
+tw-icon > img {
+    height: 45px;
+} */
+tw-sidebar {
+    display: none;
+
+    /* debug properties TODO remove for release*/
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+
+/*==============================
+    Twine Story and Passage
+   Responsivness adjustments
+==============================*/
+
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-story {
+        padding: 5%;
+    }
+    tw-passage {
+        margin-top: 65px;
+        /* leave space for the sidebar */
+        padding: 2em;
+        font-size: 85%;
+        line-height: normal;
+    }
+    tw-passage[tags="title-passage"] {
+        padding: 1.5em;
+    }
+    /* tw-sidebar {
+        position: absolute;
+        width: 94%;
+        left: 3%;
+        top: -110px;
+        
+        flex-direction: row;
+    }
+    tw-icon > img {
+        height: 30px
+    } */
+}
+/* wider screen */
+/* @media (min-width: 650px) {
+    tw-sidebar {
+        position: absolute;
+        left: -80px;
+
+        flex-direction: column;
+    }
+} */
+
+
+
+/*==============================
+    Page turning controlls
+==============================*/
+
+div.page-turning-wrapper {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    /* padding: 1em 2em; */
+    width: 100%;
+    margin-top: 0.75em;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/*============================
+        Modal dialogs
+============================*/
+
+div.modal-dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+div.modal-dialog-container:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* modal content */
+div.modal-dialog {
+    max-width: 100%;
+    flex-grow: 0;
+    margin: auto 0px;
+    padding: 1.2em;
+
+    background: rgb(216, 210, 183);
+    box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
+}
+div.modal-dialog::after {
+    /* invisible "padding" to ensure user can scroll
+       all the way to the bottom of the bubble
+       (that is past its border bc shadow/glow fx) */
+    content: '';
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
+}
+
+div.modal-dialog-container .modal-close,
+div.modal-dialog-container .modal-close:hover {
+    /* background close button/link */
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -1;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background: #0000;
+    color: #0000;
+}
+div.modal-dialog::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: -7px;
+    top: -43px;
+    z-index: -2;
+    /* setting it underneath the close link */
+    width: 1em;
+    height: 1em;
+    
+    font-family: sans-serif;
+    content: '×';
+    text-align: center;
+    line-height: 1.2em;
+    
+    color: rgb(0, 0, 0);
+    background-color: rgb(100, 100, 100);
+    opacity: 0.5;
+}
+
+/* articles */
+div.modal-dialog.article {
+    transform: translateX(100vw);
+    transition: 400ms;
+    transition-property: transform;
+}
+div.modal-dialog-container:target div.modal-dialog.article {
+    transform: none;
+}
+
+/* wiki articles */
+div.modal-dialog.wiki {
+    height: 100%;
+}
+div.modal-dialog.wiki iframe {
+    width: 1200px;
+    max-width: 100%;
+    height: 100%;
+
+    border: solid 2px rgba(78, 78, 78, 0.5);
+    /* box-shadow: ; */
+}
+
+
+/* modal openers */
+a.modal-open:any-link {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: color, text-shadow;
+    text-decoration: underline;
+}
+a.modal-open:any-link:hover {
+    color: rgb(0, 153, 25);
+    text-decoration: underline;
+    text-shadow: 0 0 0.03em rgb(0, 153, 25);
+}
+
 
