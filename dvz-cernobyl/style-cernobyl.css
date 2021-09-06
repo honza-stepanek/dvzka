@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
 
 /* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
@@ -35,18 +34,18 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
-    background-image: url("resources/power_plant_smoke.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/cernobyl/resources/power_plant_smoke.png");
     background-size: cover;
 
     font-family: "Roboto Slab", serif;
 }
 
 tw-story[tags ~= "before-expl"] {
-    background-image: url("resources/power_plant_before.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/cernobyl/resources/power_plant_before.png");
 }
 
 tw-story[tags ~= "explosion"] {
-    background-image: url("resources/distant_explosion.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/cernobyl/resources/distant_explosion.png");
 }
 
 /* tw-story[tags ~= "tag"] {
