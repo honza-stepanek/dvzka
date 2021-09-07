@@ -54,7 +54,7 @@ tw-story {
 tw-passage {
     max-width: 900px;
     width: 100%;
-    min-height: 30em;
+    /* min-height: 30em; */
     align-self: center;
 
     padding: 2em;
