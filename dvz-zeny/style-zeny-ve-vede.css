@@ -26,19 +26,21 @@ img {
     max-width: 100%;
 }
 
+
+
+
 /*============================
-    TWINE STORY 
+         TWINE STORY 
 ============================*/
 
 tw-story {
-    padding: 80px 10%;
+    padding: 1em 10%;
     min-height: 100%;
 
     background-position: center;
     background-attachment: fixed;
-    background-color: rgb(53, 51, 47);
-    /* a temp background */
-    background-image: url("https://cdn6.dissolve.com/p/D2115_32_920/D2115_32_920_1200.jpg");
+    background-color: rgb(87, 71, 39);
+    background-image: url("resources/table-with-book-bg.png");
     background-size: cover;
 
     /* font-family: "Indie Flower", serif; */
@@ -47,8 +49,10 @@ tw-story {
 }
 
 
+
+
 /*============================
-    TWINE PASSAGE 
+        TWINE PASSAGE 
 ============================*/
 
 tw-passage {
@@ -68,11 +72,17 @@ tw-passage {
 }
 tw-passage,
 div.modal-dialog.article {
-    /* potential texture backgrounds */
-    /* background-image: url("https://i.pinimg.com/736x/e3/22/a8/e322a8ad36f8d7cf4718b8037bf34969--paper-texture-resolution-photo.jpg"); */
-    background-image: url("https://images.unsplash.com/photo-1615800098746-73af8261e3df?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVpZ2UlMjBmYWJyaWN8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80");
+    background-image: url("resources/paper-texture.png");
+    /* TODO  looks a bit low-rez 
+        -> redo the seam in-painting process in full resolution
+           and then export scaled down
+    */
     background-repeat: repeat;
+    background-size: auto;
 }
+
+
+
 
 tw-story tw-consecutive-br {
     height: 0.5em;
