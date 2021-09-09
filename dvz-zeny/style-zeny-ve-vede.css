@@ -169,6 +169,70 @@ div.page-turning-wrapper {
     justify-content: space-between;
 }
 
+@media (min-width: 650px) {
+    /* Positioning the buttons by the sides of the passage */
+
+    div.page-turning-wrapper {
+        position: fixed;
+        top: 30vh;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1040px;
+        width: 98%;
+
+        pointer-events: none;
+    }
+
+    div.page-turning-prev tw-link,
+    div.page-turning-prev tw-link:hover,
+    div.page-turning-next tw-link,
+    div.page-turning-next tw-link:hover {
+        /* hiding the tw-link text */
+        color: transparent;
+        display: block;
+        width: 0;
+    }
+
+    /* THE ARROW BUTTONS */
+    div.page-turning-next tw-link::after,
+    div.page-turning-prev tw-link::after {
+        /* replacing the text by arrows in ::after elements */
+        position: absolute;
+        top: 0;
+
+        font-family: sans-serif;
+        font-size: 5em;
+        display: block;
+        width: 4rem;
+        height: 5rem;
+        overflow: hidden;
+        text-align: center;
+        line-height: 3.6rem;
+
+        color: #0000dc;
+        text-shadow: 0 0 0.07em rgba(255, 255, 255, 0.25);
+        opacity: 0.6;
+        transition: 300ms;
+        transition-property: opacity, transform;
+        
+        pointer-events: auto;
+    }
+    div.page-turning-prev tw-link::after {
+        content: "‹";
+        left: 0;
+    }
+    div.page-turning-next tw-link::after {
+        content: "›";
+        right: 0;
+    }
+    div.page-turning-next tw-link:hover::after,
+    div.page-turning-prev tw-link:hover::after {
+        opacity: 0.95;
+        transform: scale(1.05);
+    }
+
+}
+
 
 
 /*============================
