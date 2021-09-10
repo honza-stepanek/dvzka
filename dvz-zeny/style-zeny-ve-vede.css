@@ -126,8 +126,43 @@ tw-sidebar {
 /*============================
         TWINE LINKS 
 ============================*/
-tw-link {
+tw-link,
+tw-link.visited {
+    display: inline-block;
     color: #0000dc;
+
+    transition: 300ms;
+    transition-property: transform;
+}
+tw-link::before,
+tw-link.visited::before {
+    content: "›";
+    display: block;
+    width: 1.35rem;
+    position: absolute;
+    left: -1.35rem;
+    top: -0.23rem;
+
+    font-family: sans-serif;
+    font-size: 1.7em;
+    font-weight: 500;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: 300ms;
+    transition-property: opacity;
+}
+
+tw-link:hover,
+tw-link.visited:hover {
+    color: #0000dc;
+    transform: translateX(0.9em);
+}
+tw-link:hover::before,
+tw-link.visited:hover::before {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
@@ -171,6 +206,7 @@ div.page-turning-wrapper {
         color: transparent;
         display: block;
         width: 0;
+        transform: none;
     }
 
     /* THE ARROW BUTTONS */
@@ -191,7 +227,7 @@ div.page-turning-wrapper {
 
         color: #0000dc;
         text-shadow: 0 0 0.07em rgba(255, 255, 255, 0.25);
-        opacity: 0.6;
+        opacity: 0.7;
         transition: 300ms;
         transition-property: opacity, transform;
         
