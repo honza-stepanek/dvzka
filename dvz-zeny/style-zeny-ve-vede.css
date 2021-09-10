@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=The+Girl+Next+Door&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
-
 
 
 
@@ -26,6 +23,10 @@ img {
     max-width: 100%;
 }
 
+hr {
+    height: 0px;
+    border: solid 1px black;
+}
 
 
 
@@ -43,8 +44,6 @@ tw-story {
     background-image: url("resources/table-with-book-bg.png");
     background-size: cover;
 
-    /* font-family: "Indie Flower", serif; */
-    /* font-family: "The Girl Next Door", serif; */
     font-family: "Dancing Script", serif;
 }
 
@@ -160,7 +159,12 @@ tw-link.visited:hover::before {
     pointer-events: auto;
 }
 
-
+tw-hook[name^="backlink"] tw-link::before {
+    content: "‹";
+}
+tw-hook[name^="backtobeginning"] tw-link::before {
+    content: "«";
+}
 
 
 /*==============================
@@ -217,7 +221,11 @@ div.page-turning-next tw-link:hover {
 }
 
 @media (min-width: 650px) {
-    /* Positioning the buttons by the sides of the passage */
+    /* ------------------------------------------------------
+       Positioning the buttons BY THE SIDES of the passage
+       And replacing them by ARROWS
+       for bigger screens
+    ------------------------------------------------------ */
 
     div.page-turning-wrapper {
         position: fixed;
@@ -415,4 +423,97 @@ a.modal-open:any-link:hover {
     text-shadow: 0 0 0.03em rgb(0, 153, 25);
 }
 
+/*============================
+    HYPERLINKS   <a>
+============================*/
+
+a:link {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:link:hover {
+    color: hsl(170, 90%, 46%);
+    text-decoration-thickness: 1.5px;
+}
+
+a:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+a:visited:hover {
+    color: hsl(182, 100%, 22%);
+    text-decoration-thickness: 1.5px;
+}
+
+
+
+
+/*============================
+    OTHER STUFF
+============================*/
+
+.logolink {
+    /* EU */
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 8em;
+}
+.logotext {
+    /* EU */
+    font-size: 75%;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+
+
+/*=============================
+      CREDITS page style 
+=============================*/
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags ~= "credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags ~= "credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
 
