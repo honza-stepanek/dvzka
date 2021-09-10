@@ -58,11 +58,9 @@ tw-story {
 tw-passage {
     max-width: 900px;
     width: 100%;
-    /* min-height: 30em; */
     align-self: center;
 
     padding: 2em;
-    /* padding-top: 3em; */
     margin-top: 3vh;
     margin-bottom: 4vh;
 
@@ -88,16 +86,6 @@ tw-story tw-consecutive-br {
     height: 0.5em;
 }
 
-/* tw-icon[alt="Undo"],
-tw-icon[alt="Redo"] {
-    display: none;
-}
-tw-icon {
-    margin: 0.3em 0;
-}
-tw-icon > img {
-    height: 45px;
-} */
 tw-sidebar {
     display: none;
 
@@ -129,27 +117,19 @@ tw-sidebar {
     tw-passage[tags="title-passage"] {
         padding: 1.5em;
     }
-    /* tw-sidebar {
-        position: absolute;
-        width: 94%;
-        left: 3%;
-        top: -110px;
-        
-        flex-direction: row;
-    }
-    tw-icon > img {
-        height: 30px
-    } */
-}
-/* wider screen */
-/* @media (min-width: 650px) {
-    tw-sidebar {
-        position: absolute;
-        left: -80px;
 
-        flex-direction: column;
-    }
-} */
+}
+
+
+
+
+/*============================
+        TWINE LINKS 
+============================*/
+tw-link {
+    color: #0000dc;
+}
+
 
 
 
@@ -236,7 +216,7 @@ div.page-turning-wrapper {
 
 
 /*============================
-        Modal dialogs
+        MODAL DIALOGS
 ============================*/
 
 div.modal-dialog-container {
@@ -254,7 +234,7 @@ div.modal-dialog-container {
     overflow-x: hidden;
     overflow-y: auto;
     
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.5);
     opacity: 0;
     pointer-events: none;
     transition: opacity 400ms;
@@ -340,8 +320,18 @@ div.modal-dialog.wiki iframe {
     max-width: 100%;
     height: 100%;
 
-    border: solid 2px rgba(78, 78, 78, 0.5);
+    border: solid 2px rgba(78, 78, 78, 0.7);
     /* box-shadow: ; */
+}
+
+/* images inside of a H5P embed */
+div.modal-dialog.h5p-embed {
+    width: 40em;
+}
+
+/* modals with a sidenote */
+div.modal-dialog.text-sidenote {
+    width: 30em;
 }
 
 
