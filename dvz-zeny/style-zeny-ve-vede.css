@@ -19,13 +19,18 @@ h3 {
     font-weight: 500;
 }
 
-img {
-    max-width: 100%;
-}
-
 hr {
     height: 0px;
     border: solid 1px black;
+}
+
+img {
+    max-width: 100%;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+div.modal-dialog img {
+    display: block;
+    margin: auto;
 }
 
 
@@ -323,7 +328,7 @@ div.modal-dialog {
     margin: auto 0px;
     padding: 1.2em;
 
-    background: rgb(216, 210, 183);
+    background: rgb(238, 225, 190);
     box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
 }
 div.modal-dialog::after {
@@ -369,8 +374,8 @@ div.modal-dialog::before {
     line-height: 1.2em;
     
     color: rgb(0, 0, 0);
-    background-color: rgb(100, 100, 100);
-    opacity: 0.5;
+    background-color: rgb(143, 139, 132);
+    opacity: 0.8;
 }
 
 /* articles */
@@ -406,6 +411,27 @@ div.modal-dialog.text-sidenote {
     width: 30em;
 }
 
+div.modal-dialog.citation-modal {
+    padding: 0;
+    background-color: transparent;
+    box-shadow: none;
+}
+div.modal-dialog.citation-modal div.block-citation {
+    margin-top: 1em;
+    background-color: rgb(238, 225, 190);
+}
+div.modal-dialog.citation-modal img,
+div.modal-dialog.citation-modal div.block-citation {
+    box-shadow: 0px 15px 15px 10px rgba(0, 0, 0, 0.33);
+}
+
+div.block-citation {
+    padding: 0.5em;
+    width: 30em;
+    max-width: 100%;
+    font-size: 85%;
+    line-height: 1.4em;
+}
 
 /* modal openers */
 a.modal-open:any-link {
@@ -449,15 +475,21 @@ a:visited:hover {
     OTHER STUFF
 ============================*/
 
-.logolink {
-    /* EU */
+iframe {
+    background-color: rgba(0, 0, 0, 0.226);
+}
+
+
+img.logolink {
+    /* EU fondy */
     display: block;
     width: 85%;
-    margin: 0 auto;
-    margin-top: 8em;
+    margin: 8em auto 1em;
+    background-color: rgba(255, 255, 255, 0.335);
+    box-shadow: none;
 }
 .logotext {
-    /* EU */
+    /* EU fondy */
     font-size: 75%;
     line-height: 1.4em;
     text-align: center;
@@ -487,6 +519,7 @@ div.flex-columns > div.last-columnt {
 
 tw-passage[tags ~= "credits"] .logo {
     max-width: 12em;
+    box-shadow: none;
 }
 tw-passage[tags ~= "credits"] ul {
     margin: 0.2em 0em;
