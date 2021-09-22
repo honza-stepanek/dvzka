@@ -207,15 +207,22 @@ else {
                 print CSS_OUT $_;
             }
         }
-        elsif (!defined $in_style && $_ =~ /(.*<style.*id="twine-user-stylesheet".*>)(.*)/) {
+        elsif (!defined $in_style && $_ =~ /^(.*<style[^<]*id="twine-user-stylesheet"[^<]*>)(.*)$/) {
+            # print "!! I have found the style element:\n$_\n$1|---|$2\n";
             print HTML_OUT $1;
             $in_style = 1;
             my $bit_of_css = $2 ? "$2\n" : "";
-            if ($2 =~ /\s*<\/style>.*/) {
-                print "user style sheet is empty, no point in disassembling\n";
-                exit 0;
+
+            if ($2 =~ /(.*)<\/style>(.*)/) {
+                # the style element was closed on the same line as it was opened
+                print "Twine user stylesheet was empty\n";
+                my $css_pth = $paths{fileno CSS_OUT};
+                print HTML_OUT "$1</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$2";
+                $in_style = 0;
+            } else {
+                # the style element was not closed -> write out the CSS
+                print CSS_OUT "$bit_of_css";
             }
-            print CSS_OUT "$bit_of_css";
         } else {
             print HTML_OUT $_;
         }
