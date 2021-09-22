@@ -19,6 +19,7 @@ use warnings;
 use utf8;
 
 use File::Basename;
+use File::Copy;
 
 # static globals
 my $usage =
@@ -250,11 +251,12 @@ sub parse_args {
             print_help(); # exits the program
         } elsif ($arg eq "-a") {
             $assembling = 1; # assembling
+            $overwrite_dis = 0;
         } elsif ($arg eq "-d") {
             $assembling = 0; # dissasembling
-        } elsif ($arg =~ /-od|-do/) {
+        } elsif ($arg eq "-o") {
             $assembling = 0; # dissasembling
-            $overwrite_dis = 1; # reverse assembly (including nameing -> overwrite original files)
+            $overwrite_dis = 1; # overwrite source file
         } elsif ($arg eq "-js") {
             $javascript = shift; # replacing 'user javascript' in original the twine file
         } elsif ($arg eq "-f") {
@@ -271,8 +273,7 @@ sub parse_args {
 
     if ($html_in_pth =~ /.*\.html/) {
     } else {
-        print "first file argument does not have html extension";
-        die 2;
+        die "first file argument does not have html extension";
     }
 
     if (defined $files[1]) {
@@ -280,6 +281,17 @@ sub parse_args {
         my ($name, $base_path, $ext_) = fileparse($files[1], (".html", ".css"));
         $output_name = $name;
         $output_base_path = $base_path;
+    
+    } elsif ($overwrite_dis) {
+        # make a copy for reading
+        copy($html_in_pth, "${html_in_pth}.orig") or die "Copying input file failed: $!";
+        # set variables for overwriting the input file
+        my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
+        $html_in_pth = "${html_in_pth}.orig";
+        $output_name = $name;
+        $output_base_path = $base_path;
+        $safe_open = 0;
+
     } else {
         # output file name based on the input name
         my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
@@ -315,14 +327,12 @@ sub print_help {
     print $usage . "\n" .
     "  -a       assembly mode [default]\n" .
     "  -d       disassembly mode\n" .
-    "  -do      disassemble a file named with '-a' sufix\n" .
-    "           into a file without that sufix (with overwriting)\n" .
+    "  -o       disassemble and overwright\n" .
     "  -js PTH  replace user javascript in the original\n" .
     "           twine html with contents of PTH\n" .
     "  -s       safe open (new files are numbered\n" .
     "           if same name already exists) [deafult]\n" .
     "  -f       no safe open\n" .
-    # "  -o       overwrite existing html #TODO\n" .
     # "#TODO ...\n" .
     "";
     exit 0;
@@ -334,13 +344,7 @@ sub open_new {
     my $new_pref = shift; # part of the file path
     my $new_suf = shift; # extension
 
-    if ($overwrite_dis) { # todo the same as not safe_open
-        open($fh, '>', "${new_pref}${new_suf}") or die $!;
-        $paths{fileno $fh} = "${new_pref}${new_suf}";
-        return;
-    }
-
-    if ($safe_open && -e "${new_pref}${new_suf}") {
+    if ($safe_open && !$overwrite_dis && -e "${new_pref}${new_suf}") {
         my $no = 1;
         while (-e "${new_pref}_${no}${new_suf}") {
             $no = $no + 1;
