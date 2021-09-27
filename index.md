@@ -1,5 +1,6 @@
 ## Seznam DVZ na kterých pracuji
 
+- [**Zapomenutí velikáni**](https://honzaflash.github.io/dvzka/dvz-velikani/zap-velikani)
 - [**Ženy ve vědě**](https://honzaflash.github.io/dvzka/dvz-zeny/zeny-ve-vede)
 
 ## Seznam prozatímně hotových DVZ
