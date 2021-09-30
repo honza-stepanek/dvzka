@@ -247,6 +247,7 @@ div.page-turning-next tw-link:hover {
         color: transparent;
         display: block;
         width: 0;
+        pointer-events: none;
         transform: none;
     }
 
@@ -343,6 +344,9 @@ div.modal-dialog::after {
     height: 60px;
     width: 1px;
 }
+div.modal-dialog-container:target > div.modal-dialog * {
+    pointer-events: auto;
+}
 
 div.modal-dialog-container .modal-close,
 div.modal-dialog-container .modal-close:hover {
@@ -414,6 +418,7 @@ div.modal-dialog.text-sidenote {
 div.modal-dialog.citation-modal {
     padding: 0;
     background-color: transparent;
+    pointer-events: none;
     box-shadow: none;
 }
 div.modal-dialog.citation-modal div.block-citation {
@@ -427,8 +432,8 @@ div.modal-dialog.citation-modal div.block-citation {
 
 div.block-citation {
     padding: 0.5em;
-    width: 30em;
-    max-width: 100%;
+    /* width: 30em;
+    max-width: 100%; */
     font-size: 85%;
     line-height: 1.4em;
 }
