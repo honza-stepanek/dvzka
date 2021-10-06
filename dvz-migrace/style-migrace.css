@@ -56,6 +56,10 @@ tw-story[tags ~= "TAG"] {
     background-image: url("");
 } */
 
+tw-story[tags ~= "sea"] {
+    background-image: url("https://images.unsplash.com/photo-1470115209269-18dd2d7285cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+}
+
 
 /*============================
         TWINE PASSAGE 
@@ -73,22 +77,14 @@ tw-passage {
     background-color: rgb(255, 253, 236);
     box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
     color: black;
+
+    z-index: 0;
 }
 
 
 
 tw-story tw-consecutive-br {
     height: 0.5em;
-}
-
-tw-sidebar {
-    display: none;
-
-    /* debug properties TODO remove for release*/
-    display: block;
-    position: fixed;
-    top: 20px;
-    left: 20px;
 }
 
 
@@ -103,6 +99,7 @@ tw-icon {
 }
 tw-icon > img {
     height: 45px;
+    box-shadow: none;
 }
 
 
@@ -152,23 +149,74 @@ tw-icon > img {
 /*============================
         TWINE LINKS 
 ============================*/
+
 tw-link,
 tw-link.visited {
     display: inline-block;
+    padding: 0.1em 0.3em;
+    left: -0.3em;
+
     color: #0000dc;
     
-    transition: 300ms;
-    left: 0;
-    transition-property: left;
+    transition: 200ms;
+    transition-property: color;
 }
-
-
 tw-link:hover,
 tw-link.visited:hover {
-    color: #0000dc;
-    left: 0.9em;
+    color: #ffffff;
 }
 
+tw-link::before,
+tw-link.visited::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+
+    background-color: #0000DC;
+    
+    transition: 300ms;
+    transition-property: width;
+}
+tw-link:hover::before,
+tw-link.visited:hover::before {
+    width: 100%;
+}
+
+tw-enchantment.enchantment-link {
+    display: inline-block;
+    padding: 0.1em 0.3em;
+    left: -0.3em;
+
+    color: #0000DC;
+    transition: 200ms;
+    transition-property: color;
+}
+tw-enchantment.enchantment-link:hover {
+    color: #ffffff;
+}
+
+
+tw-enchantment.enchantment-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+
+    background-color: #0000DC;
+    
+    transition: 300ms;
+    transition-property: height;
+}
+tw-enchantment.enchantment-link:hover::before {
+    height: 100%;
+}
 
 
 
