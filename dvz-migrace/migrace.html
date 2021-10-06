@@ -9,10 +9,116 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Migrace v průběhu staletí a současná migrační krize.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Migrace v průběhu staletí a současná migrační krize" startnode="1" creator="Twine" creator-version="2.3.14" ifid="B3447A1C-7A7B-44FF-AC44-6D9202F09A41" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style>
+<tw-storydata name="Migrace v průběhu staletí a současná migrační krize" startnode="1" creator="Twine" creator-version="2.3.14" ifid="B3447A1C-7A7B-44FF-AC44-6D9202F09A41" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+</style>
 <link href=".\style-migrace.css" rel="stylesheet">
-<script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Úvod - představení příběhu" tags="" position="674,20" size="100,100">Milé studentky, milí studenti,
-vítejte v příběhu s názvem Migrace v průběhu staletí a současná migrační krize. Nepochybuji o tom, že každý z vás už někdy slyšel pojem migrace, ať už v pozitivním či negativním kontextu. V rámci tohoto příběhu si takto složité a komplexní téma lépe přiblížíme. Budete mít možnost si na chvíli vyzkoušet, jaké to je být uprchlíkem.
+<script role="script" id="twine-user-script" type="text/twine-javascript">
+// insert libraries
+// $("body").prepend(
+//     '<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></'+'script>\
+//     ')
+
+
+document.initAAP = function () {
+    if (document.ambientAudioPlayer) { return; }
+
+    $("body").prepend('<audio id="ambient-audio" src="" loop></audio>');
+    $("#ambient-audio")[0].volume = 0.15;
+
+    const pauseButton = document.createElement("tw-icon");
+    pauseButton.setAttribute("tabindex", 0);
+    pauseButton.setAttribute("alt", "Pause/Play");
+    pauseButton.setAttribute("title", "Pause/Play");
+    pauseButton.innerHTML = '<img src="resources/pause-icon.svg">';
+
+    const volumeButton = document.createElement("tw-icon");
+    volumeButton.setAttribute("tabindex", 0);
+    volumeButton.setAttribute("alt", "Adjust volume");
+    volumeButton.setAttribute("title", "Adjust volume");
+    volumeButton.innerHTML = '<img src="resources/loud2-icon.svg">';
+
+    let audioObject = {
+        audio: $("#ambient-audio")[0],
+        pauseButton: pauseButton,
+        playIcon: '<img src="resources/play-icon.svg">',
+        pauseIcon: '<img src="resources/pause-icon.svg">',
+        volumeButton: volumeButton,
+        volumeIcons: {
+            1: '<img src="resources/loud1-icon.svg">',
+            2: '<img src="resources/loud2-icon.svg">',
+            3: '<img src="resources/loud3-icon.svg">'
+        },
+
+        pauseButtonPress() {
+            if (this.audio.paused) {
+                this.audio.play();
+                this.pauseButton.innerHTML = this.pauseIcon;
+                return;
+            }
+            this.audio.pause();
+            this.pauseButton.innerHTML = this.playIcon;
+        },
+
+        volumeButtonPress() {
+            this.audio.volume = (this.audio.volume + 0.1) % 0.3;
+            this.volumeButton.innerHTML =
+                this.mapVolumeToIcon(this.audio.volume);
+        },
+
+        mapVolumeToIcon(fl) {
+            return this.volumeIcons[Math.round(fl * 10 + 0.25)];
+        }
+    }
+
+    document.ambientAudioPlayer = audioObject;
+
+    audioObject.pauseButton.addEventListener("click", function() {
+        document.ambientAudioPlayer.pauseButtonPress();
+    });
+    audioObject.volumeButton.addEventListener("click", function() {
+        document.ambientAudioPlayer.volumeButtonPress();
+    });
+}
+
+// Setup AAP for the current tw-passage
+document.setupAAP = function (source) {
+    if (!document.ambientAudioPlayer) {
+        document.initAAP();
+    }
+    
+    // append the controls to the sidebar and set audio source
+    if (document.ambientAudioPlayer.audio.getAttribute("src") != source) {
+        document.ambientAudioPlayer.audio.setAttribute("src", source);
+        if (document.ambientAudioPlayer.audio.paused) {
+            document.ambientAudioPlayer.pauseButtonPress();
+        }
+    }
+    $("tw-sidebar")[0].appendChild(document.ambientAudioPlayer.pauseButton);
+    $("tw-sidebar")[0].appendChild(document.ambientAudioPlayer.volumeButton);
+}
+
+// Stop AAP playback after the previous tw-passage
+document.stopAAP = function () {
+    if (!document.ambientAudioPlayer || document.ambientAudioPlayer.audio.paused) {
+        return;
+    }
+
+    const orig_volume = document.ambientAudioPlayer.audio.volume;
+    for (let i = 0; i < 10; i += 1) {
+        setTimeout(function () {
+            document.ambientAudioPlayer.audio.volume = (orig_volume / 9) * (9 - i);
+        }, i * 100); // fade out over 900 ms
+    }
+    setTimeout(function () {
+        document.ambientAudioPlayer.pauseButtonPress();
+        document.ambientAudioPlayer.audio.volume = orig_volume;
+    }, 1000);
+}
+
+
+</script><tw-passagedata pid="1" name="Úvod - představení příběhu" tags="intro" position="674,20" size="100,100">Milé studentky, milí studenti,vítejte v příběhu s názvem **Migrace v průběhu staletí a současná migrační krize**.
+
+Nepochybuji o tom, že každý z vás už někdy slyšel pojem migrace, ať už v pozitivním či negativním kontextu. V rámci tohoto příběhu si takto složité a komplexní téma lépe přiblížíme. Budete mít možnost si na chvíli vyzkoušet, jaké to je být uprchlíkem.
 
 [[Pokračovat-&gt;Pojďme začít]]
 </tw-passagedata><tw-passagedata pid="2" name="Pojďme začít" tags="" position="676,223" size="100,100">Tímto příběhem si chceš projít jako:
@@ -31,10 +137,9 @@ Vše se však změnilo od doby, kdy propukla v Sýrii občanská válka. Náš d
 
 Jednoho dne však bomba spadla i na bazén. Naštěstí se mi nic nestalo, ale přišla jsem i o svoji největší zálibu. Následně jsem se díky facebooku dozvěděla, že jedna má kamarádka se sama dokázala dostat do Německa přes balkánskou trasu. Byla jsem rozhodnutá, že to taky zkusím. S nápadem utéct jsem se svěřila svému bratrovi Mohamedovi, který řekl, že pojede s mnou. Do svých batohů jsme si naskládali jen to nejnutnější. Rodiče odjet odmítli, ale poslali s námi našeho bratrance Ahmeda, aby na nás dával pozor. Vyrazili jsme na letiště směrem do Turecka plní obav.
 
-[[Vzhůru na cestu za dobrodružstvím-&gt;Turecké pobřeží]]</tw-passagedata><tw-passagedata pid="5" name="Turecké pobřeží" tags="" position="191,119" size="100,100">**21. srpen 2015**
- 
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Vzhůru na cestu za dobrodružstvím-&gt;Turecké pobřeží]]</tw-passagedata><tw-passagedata pid="5" name="Turecké pobřeží" tags="" position="191,119" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;21. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+\\
 Cesta letadlem z Damašku dopadla naštěstí dobře. Se svým bratrem, bratrancem a dalšími 18 uprchlíky se nyní schovávám v lese jen kousek od pobřeží Egejského moře nedaleko tureckého města Izmir. Většina z nás zde jsou Syřané, ale je tu i pár Iráčanů. Čekám tu 4 dny na zavolání pašeráků.
 
 Pašeráci zde vládnou jako králové. Musíme se řídit jejich pokyny. Samozřejmě máme strach, převaděčům se nedá moc důvěřovat, je to celý jeden velký špinavý byznys. Když se však chceme dostat do Evropy, tak co jiného máme dělat?
@@ -47,8 +152,8 @@ Je pozdní odpoledne a na obloze začne zapadat slunce. Někdo na nás začne vo
 Uprchlíci poblíž řecko-tureckých hranicích. Dostupné z: https://www.idnes.cz/zpravy/zahranicni/recko-turecko-hranice-zed-uprchlici.A201019_173852_zahranicni_kha/foto/KNN81b736_P202002290238201.jpg.
 
 //Abychom se lépe orientovali v příběhu, pojď se naučit základní pojmy týkající se migrační problematiky.//
-[[Naučit se základní pojmy o migraci-&gt;Co je to migrace?]]</tw-passagedata><tw-passagedata pid="6" name="Na člunu" tags="" position="180,1143" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Naučit se základní pojmy o migraci-&gt;Co je to migrace?]]</tw-passagedata><tw-passagedata pid="6" name="Na člunu" tags="" position="180,1143" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+\\
 U pobřeží Egejského moře na nás čeká motorový člun. Je však poměrně malý. Odhaduji to tak pro 7 lidí, přitom nás je 21.
 
 „Všechny zavazadla tady musíte nechat“ říká nám dost razantním tónem jeden z pašeráků.
@@ -68,7 +173,8 @@ Co bych tak mohla udělat? Jak jen celou situaci zachránit? Plavat umím, dokon
 
 [[Skočit do vody-&gt;Ve vodě]]
 [[Raději zůstat sedět v člunu-&gt;Potopení]]
-</tw-passagedata><tw-passagedata pid="7" name="Co je to migrace?" tags="" position="335,243" size="100,100">**Co je to migrace?**
+</tw-passagedata><tw-passagedata pid="7" name="Co je to migrace?" tags="" position="335,243" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+**Co je to migrace?**
 
 Možnost přemisťovat se je jednou za základních lidských svobod. Lidé migrují odjakživa – v pravěku se tlupy lidí přemisťovaly spolu se zvířaty, která lovily, ve vrcholném středověku se začali lidé přemisťovat do měst kvůli řemeslům a obchodu a také kvůli svobodě, kterou města poskytovala. V novověku se setkáváme již s rozšířením mezikontinentální migrace v době zámořských objevů. S příchodem industriální revoluce zase nastal odliv lidí z venkova za prací do měst.
 
@@ -79,8 +185,8 @@ V dnešní době čelíme migraci z důvodů *ekonomických* (za prací), *soci�
 &lt;img src=&quot;https://i.imgur.com/2CLU2k9.png&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
 Kolik migrantů přišlo v roce 2015 do Evropy. Dostupné z: https://zpravy.aktualne.cz/zahranici/grafika-uprchlici-2015/r~8bf2c0b2d0ce11e59c4a002590604f2e/.
 
-[[Jaké jsou důležité pojmy týkající se migrace?-&gt;Důležité pojmy]]</tw-passagedata><tw-passagedata pid="8" name="Ve vodě" tags="" position="50,1244" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Jaké jsou důležité pojmy týkající se migrace?-&gt;Důležité pojmy]]</tw-passagedata><tw-passagedata pid="8" name="Ve vodě" tags="" position="50,1244" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+\\
 Třesu se celá strachy. Ale musím to udělat. Není čas déle přemýšlet, skáču to vody. Byla jsem sice zvyklá plavat závodně, stejně mám pocit, jako bych byla ve vodě poprvé. Tak moc je voda v moři slaná a studená. Ostatní lidi ze člunu na mě zděšeně koukají. Jednou rukou se držím lana a snažím se člun táhnout kupředu. 
 
 „Skočím za tebou“ volá na mě Mohamed. Vidím na něm, že mi chce pomoct.
@@ -95,11 +201,11 @@ Mohamed však skáče. Oba plaveme, prorážíte vodu, každý na jedné straně
 Uprchlíci na člunu v Egejském moři. Dostupné z: www.shutterstock.com
 
 [[Zachrání se Sarah v moři?-&gt;V Egejském moři]]
-</tw-passagedata><tw-passagedata pid="9" name="Potopení" tags="" position="321,1168" size="100,100">Mám velký strach skočit do vody. Raději zůstávám sedět v člunu a snažím se z něj dostat přebytečnou. Motor stále hapruje a panika je čím dál silnější. Většina lidí v člunu zcela evidentně neumí plavat. Potápíme se, určitě se potopíme. 
+</tw-passagedata><tw-passagedata pid="9" name="Potopení" tags="" position="321,1168" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+\\
+Mám velký strach skočit do vody. Raději zůstávám sedět v člunu a snažím se z něj dostat přebytečnou. Motor stále hapruje a panika je čím dál silnější. Většina lidí v člunu zcela evidentně neumí plavat. Potápíme se, určitě se potopíme. 
 
 Někteří z mužů vyskakují z člunu, ale drží se jeho okraje. Potápění člunu to však nezastavuje, proto skáču z vody. 
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;&gt;&lt;/audio&gt;
 
 I když jsem závodně plavala, tak mám pocit, jako bych byla ve vodě poprvé. Mohamed s Ahmedem na mě vyděšeně koukají. Snaží se mi něco říct, ale neslyším je přes křičící ženy, které zůstaly ještě v člunu. 
 
@@ -113,7 +219,8 @@ KONEC
 
 [[Neskončilo to nějak brzy?-&gt;Předčasný konec]]</tw-passagedata><tw-passagedata pid="10" name="Předčasný konec" tags="" position="476,1217" size="100,100">V průběhu děje jsi učinil volbu, která zapříčila, že příběh skončil dříve, než mohl. Vrať se zpátky na začátek příběhu a projdi jím znovu.
 
-[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="11" name="Stěhování národů" tags="" position="225,1497" size="100,100">**Stěhování národů**
+[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="11" name="Stěhování národů" tags="" position="225,1497" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+**Stěhování národů**
 
 Na přelomu starověku a středověku se mapa Evropy velmi změnila. V té době probíhaly rozsáhlé migrace obyvatelstva. Pro tuto historickou epochu se vžil pojem „Stěhování národů&quot;. 
 
@@ -123,8 +230,8 @@ Pusť si níže uvedené video, které ti ono historické období více přiblí
 &lt;iframe width=&quot;660&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/El5qIJWkeHc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Video z youtube kanálu Edisco — videovýpisky.
 
-[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou]]</tw-passagedata><tw-passagedata pid="12" name="V Egejském moři" tags="" position="190,1318" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou]]</tw-passagedata><tw-passagedata pid="12" name="V Egejském moři" tags="" position="190,1318" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+\\
 Cítím, jak mi docházejí síly. Ruce mám samou modřinu. Mohamed se také tváří vyčerpaně. Ve vodě plaveme už několik hodin, nejsem si jistá kolik přesně. Slunce už zapadá a voda je čím dál studenější. 
 
 Kromě mě a bratra je vodě i několik kluků podobného věku. Očividně neumí plavat, jen se přidržují člunu, aby ho odlehčili. Je pro mě čím dál těžší udržet se ve vodě. Kalhoty, které mám na sobě, mě táhnou ke dnu. Abych se chvíli udržela na vodě, položím se na znak. Kluci z člunu vidí, že mě kalhoty stahují dolů. Vidím, jak vytahují nože a uřezávají mi nohavici. Snaží se mě přitom nezranit, což se jim naštěstí povede. Díky nim se dovedu na vodě udržet lépe, i když síly mi začínají docházet. 
@@ -138,8 +245,8 @@ Na druhém konci telefonu však všichni v člunu slyšíme pobřežní stráž 
 &lt;img src=&quot;https://i.imgur.com/TXIQFou.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci na potápějícím člunu. Dostupné z: www.shutterstock.com
 
-[[Pokračovat-&gt;Vylodění v Řecku]]</tw-passagedata><tw-passagedata pid="13" name="Vylodění v Řecku" tags="" position="52,1419" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Pokračovat-&gt;Vylodění v Řecku]]</tw-passagedata><tw-passagedata pid="13" name="Vylodění v Řecku" tags="" position="52,1419" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+\\
 Stále se snažíme táhnout člun k břehu. Jsem k smrti unavená a celá mokrá. Neustále se mi zavírají oči, musím se hodně přemáhat, abych je měla otevřené. 
 
 „Sarah, Sarah, podívej, každou chvíli budeme u břehu!“ volá na mě Mohamed.
@@ -155,10 +262,9 @@ Jediný, kdo neuroní ani slzu je můj bratr. „Není důvod plakat“ říká 
 Během plavby mi spadly do vody sandále a jednu nohavici mám krátkou. V tuto chvíli mi na tom však vůbec nezáleží. Vyčerpáním se mi zavírají oči a usínám. Přežili jsme, na tom jediném záleží.
 
 
-[[Nyní si dej chvíli oddech od příběhu a pojď se více dozvědět o velké migrační vlně, která výrazně ovlivnila Evropu na pomezí starověku a středověku.-&gt;Stěhování národů]]</tw-passagedata><tw-passagedata pid="14" name="Ostrov Lesbos" tags="" position="72,1780" size="100,100">**22. srpna 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Nyní si dej chvíli oddech od příběhu a pojď se více dozvědět o velké migrační vlně, která výrazně ovlivnila Evropu na pomezí starověku a středověku.-&gt;Stěhování národů]]</tw-passagedata><tw-passagedata pid="14" name="Ostrov Lesbos" tags="" position="72,1780" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;22. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+\\
 &lt;img src=&quot;https://i.imgur.com/EZ6qI6U.jpg&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
 Ostrov Lesbos na konci srpna 2015. Spousta záchranných vest, které patřily uprchlíkům. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#58841
 
@@ -170,10 +276,9 @@ Jakmile však vejdeme, číšník na nás začne něco řecky křičet a z jeho 
 
 Následně zamíříme do obchodu s potravinami, kde nás již nikdo nevyhodí, ale lidé na nás koukají dost podezíravě. Jako by se báli, že jim jdeme vykrást obchod. Koupíme si rychle jídlo a vodu, nechceme se v obchodě příliš zdržovat. Poblíž vidíme nějaké stánky s oblečením, tak si jdu koupit nové oblečení a hlavně nové boty, jelikož tu stojím stále pouze v ponožkách a v rozedraném oblečení. Pevně doufám, že nejhorší část cesty máme za sebou a brzy z Řecka odejdeme.
 
-[[Jak pokračovala Sarah na cestě po Evropě?-&gt;Přes balkán]]</tw-passagedata><tw-passagedata pid="15" name="Přes balkán" tags="" position="228,1823" size="100,100">**29. srpen 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Jak pokračovala Sarah na cestě po Evropě?-&gt;Přes balkán]]</tw-passagedata><tw-passagedata pid="15" name="Přes balkán" tags="" position="228,1823" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;29. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+\\
 &lt;img src=&quot;https://i.imgur.com/YtBpdKT.jpg&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
 Skupina uprchlíků v Srbsku mířící po kolejích do Maďarska. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#58843
 
@@ -185,10 +290,9 @@ Z Atén nás pašeráci nahnali do autobusu, kterým jsme přijeli do Makedonie.
 
 Na hranicích se rozhodne o tom, kdo to do zvládne a dostane se do Německa a kdo to nezvládne. Kromě strachu mezi námi panuje i silné odhodlání. Potom všem, co jsem nejen já, ale i ostatní absolvovali během cesty, se chceme dostat za každou cenu do cíle.
 
-[[Zvládne Sarah překročit srbsko-maďarskou hranici a podaří se jí dostat do Německa?-&gt;Hranice u Maďarska]]</tw-passagedata><tw-passagedata pid="16" name="Hranice u Maďarska" tags="" position="75,1934" size="100,100">**30. srpna 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Zvládne Sarah překročit srbsko-maďarskou hranici a podaří se jí dostat do Německa?-&gt;Hranice u Maďarska]]</tw-passagedata><tw-passagedata pid="16" name="Hranice u Maďarska" tags="" position="75,1934" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;30. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+\\
 Před námi se tyčí &lt;a href=&quot;https://cs.wikipedia.org/wiki/Ma%C4%8Farsk%C3%BD_pohrani%C4%8Dn%C3%AD_plot&quot; target=&quot;_blank&quot;&gt;ostnatý plot&lt;/a&gt;. Pověstná maďarská hranice, která je přísně střežená. Ani tato skutečnost nás však nemůže zastavit v naší cestě do Německa. V plotě je celkem velká díra, která pro nás uprchlíky slouží jako takový improvizovaný přechod. Hned za ní hlídkuje policie. Koho hraniční stráž chytí, toho odvedou do sběrného tábora.
 
 &lt;img src=&quot;https://i.imgur.com/yMWO71O.png&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt; Stavba plotu na maďarsko-srbské hranici. Dostupné z: https://www.irozhlas.cz/fotogalerie/5426711?fid=5657917
@@ -199,9 +303,9 @@ Rozdělíme se do menších skupinek, většinou tak po třech nebo po pěti. Jd
 
 Vzhledem k tomu, že jsme neoficiálními vůdci skupiny, jdeme jako první rekognoskovat terén. Jednotlivě prolezeme po břiše dírou v plotě a přikrčeni se plížíme kukuřicí. Po chvíli uslyšíme nedaleko nás cizí kroky. Ihned se zastavíme a strachy ani nedýcháme. To musí být určitě nějaký policajt!
 
-[[Pokračování-&gt;Stále u hranic]]</tw-passagedata><tw-passagedata pid="17" name="Stále u hranic" tags="" position="236,2012" size="100,100">Policajt se chvíli rozhlížel po poli a zase odešel. Díky Bohu! Byli jsme tak potichu, že si nás vůbec nevšiml. I tak, ale budeme muset být maximálně obezřetní. Za námi se plíží další lidé ze skupiny. Proběhneme kukuřicí, následně se plížíme slunečnicovým i paprikovým polem. Přitom vidíme v horizontu policejní hlídky. Kdykoliv se některý ze strážných přiblíží k polím, hned se zastavíme a pokračujeme dál až poté, co se vzdálí.
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;&gt;&lt;/audio&gt;
+[[Pokračování-&gt;Stále u hranic]]</tw-passagedata><tw-passagedata pid="17" name="Stále u hranic" tags="" position="236,2012" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+\\
+Policajt se chvíli rozhlížel po poli a zase odešel. Díky Bohu! Byli jsme tak potichu, že si nás vůbec nevšiml. I tak, ale budeme muset být maximálně obezřetní. Za námi se plíží další lidé ze skupiny. Proběhneme kukuřicí, následně se plížíme slunečnicovým i paprikovým polem. Přitom vidíme v horizontu policejní hlídky. Kdykoliv se některý ze strážných přiblíží k polím, hned se zastavíme a pokračujeme dál až poté, co se vzdálí.
 
 &lt;img src=&quot;https://i.imgur.com/Ws5wMX9.jpg&quot; width=&quot;950px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci schovaní v kukuřičném poli na maďarsko-srbské hranici. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#108123
@@ -212,8 +316,8 @@ Jakmile zapadlo slunce, začala nám být zima. Část lidí z naší skupinky t
 
 Při každém pomyšlení na tuto událost se mi zvedne žaludek. Samozřejmě mám strach z toho, že by nás mohl potkat podobný osud. Pokud si však politici myslí, že vyhlášením nulové tolerance pašeráky zastaví či odradí další uprchlíky k podniknutí cesty do Evropy, tak se šeredně mýlí. Taková naivita. Vždyť uprchlíci by nejradši s pašeráky do kontaktu nepřicházeli ani nechtějí během cesty do Evropy zahynout. Ale copak mají jinou možnost? Už jsme obětovali příliš mnoho a máme za sebou horší a traumatičtější zážitky. Teď to nemůžeme za žádnou cenu vzdát.
 
-[[Objeví se pašeráci a dostanou naši hrdinku do Budapeště?-&gt;Cesta do Budapeště]]</tw-passagedata><tw-passagedata pid="18" name="Cesta do Budapeště" tags="" position="72,2113" size="100,100">**31. srpna 2015**
-
+[[Objeví se pašeráci a dostanou naši hrdinku do Budapeště?-&gt;Cesta do Budapeště]]</tw-passagedata><tw-passagedata pid="18" name="Cesta do Budapeště" tags="" position="72,2113" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;31. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+\\
 Nejsem si jistá, kolik je hodin, může být už po půlnoci. Najednou vidíme ostrá světla a zvuky přijíždějící dodávky. Z dveří aut vystoupí několik převaděčů. Jsem docela překvapená, někteří z nich nemohou být ani plnoletí.
 
 „300 euros for each person to Budapest, or you´re not going anywhere.“ Oznamuje nám chladným hlasem jeden z pašeráků. 
@@ -222,9 +326,8 @@ Jen za cestu do Budapeště je to vysoká částka, ale upřímně jsme to oček
 
 Pašeráci nás postupně po jednom posílají do menší dodávky. Nejprve si vezmou od uprchlíka peníze a pak ho teprve pošlou do zadní části dodávky. Nepřijde nám správné se cpát dopředu. Chvíli čekáme, než začnou nastupovat první členové naší skupinky.
 
-Najednou se však ozvou sirény a obklopí nás policejní auta. Jsme obklíčeni. 
-
-&lt;audio controls class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Policejni-sirena.m4a&quot;&gt;&lt;/audio&gt;
+Najednou...(click-replace: &quot;Najednou...&quot;)[Najednou se však ozvou sirény a obklopí nás policejní auta. Jsme obklíčeni.
+\&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Policejni-sirena.m4a&quot;)&lt;/script&gt;\
 
 Jakmile pašeráci uviděli policejní auta, rozutekli se co nejrychleji, jak jen mohli. Policisté začali chytat každého, koho spatřili. Skupina se rozutekla na všechny strany, všichni běžíme zpátky do slunečnicového pole.
 
@@ -234,7 +337,8 @@ Hlavou mi proletí snad tisíc myšlenek. Na jedné straně mám velký strach, 
 
 [[Raději se schovat v poli-&gt;Stále v poli]]
 nebo 
-[[Rozběhnout se a pomoct bratrovi-&gt;Do sběrného tábora]]</tw-passagedata><tw-passagedata pid="19" name="Stále v poli" tags="" position="103,2311" size="100,100">Celá se třesu strachy. Se zatajeným dechem ve tmě sleduji, jak Mohameda odnáší do policejního auta. Po tvářích mi stékají slzy velké jak hrachy. Strašně moc bych chtěla svému bratrovi pomoct, ale nedokážu to. Kam ho vezou? Co s ním jen bude? Něco takového se nemělo stát. Jako sourozenci jsme měli dojet do Německa spolu. Tohle je tak nespravedlivé!
+[[Rozběhnout se a pomoct bratrovi-&gt;Do sběrného tábora]]]</tw-passagedata><tw-passagedata pid="19" name="Stále v poli" tags="" position="103,2311" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+Celá se třesu strachy. Se zatajeným dechem ve tmě sleduji, jak Mohameda odnáší do policejního auta. Po tvářích mi stékají slzy velké jak hrachy. Strašně moc bych chtěla svému bratrovi pomoct, ale nedokážu to. Kam ho vezou? Co s ním jen bude? Něco takového se nemělo stát. Jako sourozenci jsme měli dojet do Německa spolu. Tohle je tak nespravedlivé!
 
 Jamile policisté odjeli i s chycenými uprchlíky, hlasitě se rozbrečím a padnu na zem do pole. Jen se třesu a nahlas vzlykám. Asi po pár minutách za mnou přichází Ahmed. Nic neříká, oba víme, že jakákoliv slova jsou v tomto momentu zbytečná. Obejme mě. Je to od něj moc milé gesto. Sice bych nejradši byla v tak emočně vypjaté situaci o samotě. Přesto jsem však ráda, že tu se mnou nyní je. O chvíli později usínám únavou.
 
@@ -242,7 +346,8 @@ Po probuzení se rozhlížím kolem. Ostatní členové skupiny se tváří otř
 
 Prozatím nám nezbývá nic jiného, než čekat další den v poli a doufat, že v noci se opět objeví pašeráci.
 
-[[Dále čekat na pašeráky-&gt;Příjezd do Budapeště]]</tw-passagedata><tw-passagedata pid="20" name="Do sběrného tábora" tags="" position="261,2212" size="100,100">Nemůžu opustit svého bratra. Rozběhnu se k Mohamedovi a křičím: &quot;Pusťte ho!!&quot;
+[[Dále čekat na pašeráky-&gt;Příjezd do Budapeště]]</tw-passagedata><tw-passagedata pid="20" name="Do sběrného tábora" tags="" position="261,2212" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+Nemůžu opustit svého bratra. Rozběhnu se k Mohamedovi a křičím: &quot;Pusťte ho!!&quot;
 
 Skočím na záda tomu policistovi, který drží mého bratra a snažím se ho povalit na zem. Je však příliš dobře obrněný. Na rozdíl ode mě má helmu, pistoli i obušek. Snadno mě setřásne a pohodí na zem. 
 
@@ -252,8 +357,7 @@ Do toho přiběhne další policista, aby mu pomohl. Snažím se proti němu boj
 
 &quot;Proč jsi neběžela zpátky? Měla jsi utéct! Takhle akorát chytili nás oba!&quot; vyštěkne na mě Mohamed. Chci mu odpovědět, že jsem mu přece musela pomoct, ale policisté vpředu vozidla začnou něco křičet, asi abychom byli zticha. Zmůžu se pouze na provinilý pohled a začnu plakat.
 
-[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století 3]]</tw-passagedata><tw-passagedata pid="21" name="Příjezd do Budapeště" tags="" position="45,2474" size="100,100">**1.září 2015**
-
+[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století 3]]</tw-passagedata><tw-passagedata pid="21" name="Příjezd do Budapeště" tags="" position="45,2474" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;1.září 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Zvuky-noci.m4a&quot;&gt;&lt;/audio&gt;
 
 &lt;img src=&quot;https://i.imgur.com/eTcpXVc.jpg?1&quot; width=&quot;950px&quot; height=&quot;450px&quot;&gt;
@@ -475,10 +579,9 @@ Můžeš pokračovat v příběhu.
 
 [[Pokračovat v příběhu-&gt;Vídeň]]</tw-passagedata><tw-passagedata pid="42" name="c) Italové" tags="" position="291,3328" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="43" name="Turecké pobřeží 2" tags="" position="1055,156" size="100,100">**21. srpen 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;&gt;&lt;/audio&gt;
-
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="43" name="Turecké pobřeží 2" tags="" position="1055,156" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;21. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+\\
 Cesta letadlem z Damašku dopadla naštěstí dobře. Se svojí sestrou, bratrancem a dalšími 18 uprchlíky se nyní schovávám v lese jen kousek od pobřeží Egejského moře nedaleko tureckého města Izmir. Většina z nás zde jsou Syřané, ale je tu i pár Iráčanů. Čekám tu 4 dny na zavolání pašeráků.
 
 Pašeráci zde vládnou jako králové. Musíme se řídit jejich pokyny. Samozřejmě máme strach, převaděčům se nedá moc důvěřovat, je to celý jeden velký špinavý byznys. Když se však chceme dostat do Evropy, tak co jiného máme dělat?
@@ -543,8 +646,8 @@ Můžeš pokračovat v příběhu.
 
 (link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="54" name="c1" tags="" position="1381,864" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="55" name="Na člunu 2" tags="" position="1136,1063" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;&gt;&lt;/audio&gt;
-
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="55" name="Na člunu 2" tags="" position="1136,1063" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+\\
 U pobřeží Egejského moře na nás čeká motorový člun. Je však poměrně malý. Odhaduji to tak pro 7 lidí, přitom nás je 21.
 
 „Všechny zavazadla tady musíte nechat“ říká nám dost razantním tónem jeden z pašeráků.
@@ -563,8 +666,8 @@ Po 15 minutách motor najednou zdechne. „Třeba se zase rozjede“ prohlásí 
 Co bych tak mohl udělat? Jak jen celou situaci zachránit? Plavat umím, ale ne tak dobře jako moje sestra a v takto rozbouřeném moři jsem nikdy neplaval. Pokud skočím do vody, pomůžu tím někomu?
 
 [[Skočit do vody-&gt;Ve vodě 2]]
-[[Raději zůstat sedět v člunu-&gt;Potopení 2]]</tw-passagedata><tw-passagedata pid="56" name="Ve vodě 2" tags="" position="998,1120" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Raději zůstat sedět v člunu-&gt;Potopení 2]]</tw-passagedata><tw-passagedata pid="56" name="Ve vodě 2" tags="" position="998,1120" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+\\
 Mé tělo se střese strachy. Ale musím to udělat. Není čas déle přemýšlet, skáču do vody. I když jsem v dětství plaval pravidelně, stejně mám pocit, jako bych byl ve vodě poprvé. Tak moc je voda v moři slaná a studená. Ostatní lidi ze člunu na mě zděšeně koukají. Jednou rukou se držím lana a snažím se člun táhnout kupředu. 
 
 „Skočím za tebou“ volá na mě Sarah. Vidím na ni, že mi chce pomoct.
@@ -578,11 +681,11 @@ Sarah však skáče. Oba plaveme, prorážíte vodu, každý na jedné straně �
 &lt;img src=&quot;https://i.imgur.com/GPp8u90.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci na člunu v Egejském moři. Dostupné z: www.shutterstock.com
 
-[[Zachrání se Mohamed se Sarah v moři?-&gt;V Egejském moři 2]]</tw-passagedata><tw-passagedata pid="57" name="Potopení 2" tags="" position="1262,1107" size="100,100">Mám velký strach skočit do vody. Raději zůstávám sedět v člunu a snažím se z něj dostat přebytečnou vodu. Motor stále hapruje a panika je čím dál silnější. Většina lidí v člunu zcela evidentně neumí plavat. Potápíme se, určitě se potopíme. 
+[[Zachrání se Mohamed se Sarah v moři?-&gt;V Egejském moři 2]]</tw-passagedata><tw-passagedata pid="57" name="Potopení 2" tags="" position="1262,1107" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+\\
+Mám velký strach skočit do vody. Raději zůstávám sedět v člunu a snažím se z něj dostat přebytečnou vodu. Motor stále hapruje a panika je čím dál silnější. Většina lidí v člunu zcela evidentně neumí plavat. Potápíme se, určitě se potopíme. 
 
-Někteří z mužů vyskakují z člunu, ale drží se jeho okraje. Potápění člunu to však nezastavuje, proto skáču do vody. 
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;&gt;&lt;/audio&gt;
+Někteří z mužů vyskakují z člunu, ale drží se jeho okraje. Potápění člunu to však nezastavuje, proto skáču do vody.
 
 Mám pocit, jako bych byl ve vodě poprvé. Sarah s Ahmedem na mě vyděšeně koukají. Snaží se mi něco říct, ale neslyším je přes křičící ženy, které zůstaly ještě v člunu. 
 
@@ -594,10 +697,12 @@ Voda je příliš studená, klepu se zimou. I když ležím na znaku, stejně c�
 
 KONEC 
 
-[[Neskončilo to nějak brzy?-&gt;Předčasný konec 2]]</tw-passagedata><tw-passagedata pid="58" name="Předčasný konec 2" tags="" position="1386,1165" size="100,100">V průběhu děje jsi učinil volbu, která zapříčila, že příběh skončil dříve, než mohl. Vrať se zpátky na začátek příběhu a projdi jím znovu.
+[[Neskončilo to nějak brzy?-&gt;Předčasný konec 2]]</tw-passagedata><tw-passagedata pid="58" name="Předčasný konec 2" tags="" position="1386,1165" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+\\
+V průběhu děje jsi učinil volbu, která zapříčila, že příběh skončil dříve, než mohl. Vrať se zpátky na začátek příběhu a projdi jím znovu.
 
-[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="59" name="V Egejském moři 2" tags="" position="1008,1255" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="59" name="V Egejském moři 2" tags="" position="1008,1255" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+\\
 Cítím, jak mi docházejí síly. Ruce mám samou modřinu. Sarah se také tváří vyčerpaně. Ve vodě plaveme už několik hodin, nejsem si jistý kolik přesně. Slunce už zapadá a voda je čím dál studenější. 
 
 Kromě mě a sestry je ve vodě i několik kluků podobného věku. Očividně neumí plavat, jen se přidržují člunu, aby ho odlehčili. Je pro mě čím dál těžší udržet se ve vodě. Pro Sarah je to taky těžké. Kalhoty, které má na sobě, ji táhnou ke dnu. Aby se chvíli udržela na vodě, položí se na znak. Kluci z člunu vidí, že Sarah kalhoty stahují dolů. Vidím, jak vytahují nože a uřezávají ji nohavici. Snaží se ji přitom nezranit. Díky nim se sestra na vodě udrží trochu lépe, i když je značně vyčerpaná. 
@@ -611,8 +716,8 @@ Na druhém konci telefonu však všichni v člunu slyšíme pobřežní stráž 
 &lt;img src=&quot;https://i.imgur.com/TXIQFou.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci na potápějícím člunu. Dostupné z: www.shutterstock.com
 
-[[Pokračovat-&gt;Vylodění v Řecku 2]]</tw-passagedata><tw-passagedata pid="60" name="Vylodění v Řecku 2" tags="" position="1204,1282" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Pokračovat-&gt;Vylodění v Řecku 2]]</tw-passagedata><tw-passagedata pid="60" name="Vylodění v Řecku 2" tags="" position="1204,1282" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+\\
 Stále se snažíme táhnout člun k břehu. Jsem k smrti unavený a celý mokrý. Neustále se mi zavírají oči, musím se hodně přemáhat, abych je měl otevřené. 
 
 „Mohamede, podívej, každou chvíli budeme u břehu!“ volá na mě Sarah.
@@ -637,10 +742,9 @@ Pusť si níže uvedené video, které ti ono historické období více přiblí
 &lt;iframe width=&quot;660&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/El5qIJWkeHc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Video z youtube kanálu Edisco — videovýpisky.
 
-[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou 2]]</tw-passagedata><tw-passagedata pid="62" name="Ostrov Lesbos 2" tags="" position="1211,1615" size="100,100">**22. srpna 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou 2]]</tw-passagedata><tw-passagedata pid="62" name="Ostrov Lesbos 2" tags="" position="1211,1615" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;22. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+\\
 &lt;img src=&quot;https://i.imgur.com/EZ6qI6U.jpg&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
 Ostrov Lesbos na konci srpna 2015. Spousta záchranných vest, které patřily uprchlíkům. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#58841
 
@@ -652,10 +756,9 @@ Jakmile však vejdeme, číšník na nás začne něco řecky křičet a z jeho 
 
 Následně zamíříme do obchodu s potravinami, kde nás již nikdo nevyhodí, ale lidé na nás koukají dost podezíravě. Jako by se báli, že jim jdeme vykrást obchod. Koupíme si rychle jídlo a vodu, nechceme se v obchodě příliš zdržovat. Poblíž vidíme nějaké stánky s oblečením. Sarah se tam chce jít podívat, ráda by si koupila nové oblečení a hlavně nové boty. Jdu s ní si také vybrat něco lepšího na sebe. Pevně doufám, že nejhorší část cesty máme za sebou a brzy z Řecka odejdeme.
 
-[[Jak pokračoval Mohamed na cestě po Evropě?-&gt;Přes balkán 2]]</tw-passagedata><tw-passagedata pid="63" name="Přes balkán 2" tags="" position="1029,1739" size="100,100">**29. srpen 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Jak pokračoval Mohamed na cestě po Evropě?-&gt;Přes balkán 2]]</tw-passagedata><tw-passagedata pid="63" name="Přes balkán 2" tags="" position="1029,1739" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;29. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+\\
 &lt;img src=&quot;https://i.imgur.com/YtBpdKT.jpg&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
 Skupina uprchlíků v Srbsku mířící po kolejích do Maďarska. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#58843
 
@@ -667,10 +770,9 @@ Z Atén nás pašeráci nahnali do autobusu, kterým jsme přijeli do Makedonie.
 
 Na hranicích se rozhodne o tom, kdo to do zvládne a dostane se do Německa a kdo to nezvládne. Kromě strachu mezi námi panuje i silné odhodlání. Potom všem, co jsem nejen já, ale i ostatní absolvovali během cesty, se chceme dostat za každou cenu do cíle.
 
-[[Zvládne Mohamed překročit srbsko-maďarskou hranici a podaří se mu dostat do Německa?-&gt;Hranice u Maďarska 2]]</tw-passagedata><tw-passagedata pid="64" name="Hranice u Maďarska 2" tags="" position="1244,1805" size="100,100">**30. srpna 2015**
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Zvládne Mohamed překročit srbsko-maďarskou hranici a podaří se mu dostat do Německa?-&gt;Hranice u Maďarska 2]]</tw-passagedata><tw-passagedata pid="64" name="Hranice u Maďarska 2" tags="" position="1244,1805" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;30. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+\\
 Před námi se tyčí &lt;a href=&quot;https://cs.wikipedia.org/wiki/Ma%C4%8Farsk%C3%BD_pohrani%C4%8Dn%C3%AD_plot&quot; target=&quot;_blank&quot;&gt;ostnatý plot&lt;/a&gt;. Pověstná maďarská hranice, která je přísně střežená. Ani tato skutečnost nás však nemůže zastavit v naší cestě do Německa. V plotě je celkem velká díra, která pro nás uprchlíky slouží jako takový improvizovaný přechod. Hned za ní hlídkuje policie. Koho hraniční stráž chytí, toho odvedou do sběrného tábora.
 
 &lt;img src=&quot;https://i.imgur.com/yMWO71O.png&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt; Stavba plotu na maďarsko-srbské hranici. Dostupné z: https://www.irozhlas.cz/fotogalerie/5426711?fid=5657917
@@ -683,9 +785,9 @@ Rozdělíme se do menších skupinek, většinou tak po třech nebo po pěti. Jd
 
 Vzhledem k tomu, že jsme neoficiálními vůdci skupiny, jdeme jako první rekognoskovat terén. Jednotlivě prolezeme po břiše dírou v plotě a přikrčeni se plížíme kukuřicí. Po chvíli uslyšíme nedaleko nás cizí kroky. Ihned se zastavíme a strachy ani nedýcháme. To musí být určitě nějaký policajt!
 
-[[Pokračování-&gt;Stále u hranic 2]]</tw-passagedata><tw-passagedata pid="65" name="Stále u hranic 2" tags="" position="1062,1924" size="100,100">Policajt se chvíli rozhlížel po poli a zase odešel. Díky Bohu! Byli jsme tak potichu, že si nás vůbec nevšiml. I tak, ale budeme muset být maximálně obezřetní. Za námi se plíží další lidé ze skupiny. Proběhneme kukuřicí, následně se plížíme slunečnicovým i paprikovým polem. Přitom vidíme v horizontu policejní hlídky. Kdykoliv se některý ze strážných přiblíží k polím, hned se zastavíme a pokračujeme dál až poté, co se vzdálí.
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;&gt;&lt;/audio&gt;
+[[Pokračování-&gt;Stále u hranic 2]]</tw-passagedata><tw-passagedata pid="65" name="Stále u hranic 2" tags="" position="1062,1924" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+\\
+Policajt se chvíli rozhlížel po poli a zase odešel. Díky Bohu! Byli jsme tak potichu, že si nás vůbec nevšiml. I tak, ale budeme muset být maximálně obezřetní. Za námi se plíží další lidé ze skupiny. Proběhneme kukuřicí, následně se plížíme slunečnicovým i paprikovým polem. Přitom vidíme v horizontu policejní hlídky. Kdykoliv se některý ze strážných přiblíží k polím, hned se zastavíme a pokračujeme dál až poté, co se vzdálí.
 
 &lt;img src=&quot;https://i.imgur.com/Ws5wMX9.jpg&quot; width=&quot;950px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci schovaní v kukuřičném poli na maďarsko-srbské hranici. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#108123
@@ -696,8 +798,8 @@ Jakmile zapadlo slunce, začala nám být zima. Část lidí z naší skupinky t
 
 Při každém pomyšlení na tuto událost se mi zvedne žaludek. Samozřejmě mám strach z toho, že by nás mohl potkat podobný osud. Pokud si však politici myslí, že vyhlášením nulové tolerance pašeráky zastaví či odradí další uprchlíky k podniknutí cesty do Evropy, tak se šeredně mýlí. Taková naivita. Vždyť uprchlíci by nejradši s pašeráky do kontaktu nepřicházeli ani nechtějí během cesty do Evropy zahynout. Ale copak mají jinou možnost? Už jsme obětovali příliš mnoho a máme za sebou horší a traumatičtější zážitky. Teď to nemůžeme za žádnou cenu vzdát.
 
-[[Objeví se pašeráci a dostanou naše hrdiny do Budapeště?-&gt;Cesta do Budapeště 2]]</tw-passagedata><tw-passagedata pid="66" name="Cesta do Budapeště 2" tags="" position="1256,2020" size="100,100">**31. srpna 2015**
-
+[[Objeví se pašeráci a dostanou naše hrdiny do Budapeště?-&gt;Cesta do Budapeště 2]]</tw-passagedata><tw-passagedata pid="66" name="Cesta do Budapeště 2" tags="" position="1256,2020" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;31. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+\\
 Nejsem si jistý, kolik je hodin, může být už po půlnoci. Najednou vidíme ostrá světla a zvuky přijíždějící dodávky. Z dveří aut vystoupí několik převaděčů. Jsem docela překvapený, někteří z nich nemohou být ani plnoletí.
 
 „300 euros for each person to Budapest, or you´re not going anywhere.“ Oznamuje nám chladným hlasem jeden z pašeráků. 
@@ -737,8 +839,7 @@ Do toho přiběhne další policista, aby mu pomohl. Snažím se proti němu boj
 &quot;Proč jsi neběžel zpátky? Měl jsi utéct! Takhle akorát chytili nás oba!&quot; vyštěkne na mě Sarah. Chci jí odpovědět, že jsem ji přece musel pomoct, ale policisté vpředu vozidla začnou něco křičet, asi abychom byli zticha. Zmůžu se pouze na provinilý pohled a Sarah začne plakat.
 
 
-[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století 4]]</tw-passagedata><tw-passagedata pid="69" name="Příjezd do Budapeště 2" tags="" position="916,2207" size="100,100">**1.září 2015**
-
+[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století 4]]</tw-passagedata><tw-passagedata pid="69" name="Příjezd do Budapeště 2" tags="" position="916,2207" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;1.září 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Zvuky-noci.m4a&quot;&gt;&lt;/audio&gt;
 
 &lt;img src=&quot;https://i.imgur.com/eTcpXVc.jpg?1&quot; width=&quot;950px&quot; height=&quot;450px&quot;&gt;
@@ -847,7 +948,8 @@ Když odpoledne přijíždíme do Berlína, lidé nás vítají stejně hezky ja
 Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozhlas.cz/zpravy-svet/tisice-uprchliku-dobrovolne-opousteji-nemecko-hlavnim-duvodem-je-pry-deziluze-_201604051422_kbrezovska
 
 
-[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="82" name="útěk ze záchytného tábora" tags="" position="576,3350" size="100,100">**4. září 2015**
+[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="82" name="útěk ze záchytného tábora" tags="" position="576,3350" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;4. září 2015&lt;/div&gt;&lt;/div&gt;\
+\\
 
 &lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;&gt;&lt;/audio&gt;
 
@@ -895,10 +997,9 @@ Nemáme ani pořádně možnost si normálně sednout a nechci si raději ani do
 
 Po nějaké době vidíme několik dodávek jedoucích k plotu. Zvědavě se přiblížíme. Z dodávek vystupují policisté s nasazenými rouškami na obličeji a vytahují velké bedny. Přijdou blíže k plotu a z bedniček nám začnou házet jídlo. Lidé v táboře se zuřivě hrnou k plotu, aby ukořistili nějakou z lítajících baget. Co to je? Vždyť nás krmí jako zvířata!
 
-[[Dostane se Sarah s Mohamedem z tohoto zařízení?-&gt;útěk ze záchytného tábora 2]]</tw-passagedata><tw-passagedata pid="85" name="útěk ze záchytného tábora 2" tags="" position="1635,3149" size="100,100">**4. září 2015**
-
+[[Dostane se Sarah s Mohamedem z tohoto zařízení?-&gt;útěk ze záchytného tábora 2]]</tw-passagedata><tw-passagedata pid="85" name="útěk ze záchytného tábora 2" tags="" position="1635,3149" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;4. září 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;&gt;&lt;/audio&gt;
-
+\\
 Již několik dní trčíme v naprosto příšerném sběrném táboře. Je to tady dost možná ještě horší než ve vězení. Ani jednou jsme se pořádně nevyspali, nenajedli ani nenapili. Jídlo nám stále hází přes plot jako nějakým chovným prasatům. Bohužel se nám nepodaří chytit jídlo pokaždé, když ho policisté házejí.
 
 Každým dnem se situace stupňuje. Příváží další a další migranty, tábor se plní natolik, že už se ani nemůže pomalu otočit. Atmosféra už je natolik hustá, že to vypadá na otevřenou vzpouru. Vrhají se na plot, který už se začíná hodně kymácet. Policisté zasahují slzným plynem. 
@@ -912,8 +1013,8 @@ Musíme hlavně promyslet, co dál. Půjdeme ke kolejím směrem k Rakousku a sn
 &lt;img src=&quot;https://i.imgur.com/76IjVi0.png&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
 Pochod uprchlíků z Maďarska do Německa na začátku září 2015. Dostupné z: https://cs.wikipedia.org/wiki/Pochod_nad%C4%9Bje
 
-[[Jak bude cesta pokračovat?-&gt;Do Německa 2]]</tw-passagedata><tw-passagedata pid="86" name="Do Německa" tags="" position="471,3591" size="100,100">**9. září 2015**
-
+[[Jak bude cesta pokračovat?-&gt;Do Německa 2]]</tw-passagedata><tw-passagedata pid="86" name="Do Německa" tags="" position="471,3591" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;9. září 2015&lt;/div&gt;&lt;/div&gt;\
+\\
 KONEČNĚ!!! Sedíme s Mohamedem vedle sebe ve starém autobuse a míříme do Berlína! Jsem nejšťastnější za celé týdny, možná i měsíce. Během cesty do Rakouska jsme se dozvěděli, že Německo změnilo postoj k uprchlíkům a německá kancléřka Merkelová řekla, že všichni uprchlíci jsou v Německu vítáni. Novinky o změně německého postoje k migrantům se rychle šířily. Museli jsme se ještě pěšky vypravit do Budapeště, tam však již několik dní  přijíždí nekonečná šňůra autobusů. Do jednoho z nich jsme nastoupili a vyčerpáním usnuli.
 
 Z rána přijíždíme do Vídně. Venku prší. Ve Vídni budeme mít několikahodinovou přestávka a pak budeme pokračovat dále do Berlína. Na autobusovém nádraží stojí dobrovolníci, kteří utečencům roznášejí kafe a horký čaj. S vděčností přijímáme. Taková gesta jsou od Vídeňanů opravdu srdečná. Poprvé za celou cestu se setkávám s laskavým zacházením. V porovnání s tím, jak s námi jednali pašeráci a lidé v balkánských zemích i v Maďarska, mám skoro pocit, jako bych se ocitla v jiném vesmíru.
@@ -926,8 +1027,8 @@ Když odpoledne přijíždíme do Berlína, lidé nás vítají stejně hezky ja
 Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozhlas.cz/zpravy-svet/tisice-uprchliku-dobrovolne-opousteji-nemecko-hlavnim-duvodem-je-pry-deziluze-_201604051422_kbrezovska
 
 
-[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="87" name="Do Německa 2" tags="" position="1777,3336" size="100,100">**9. září 2015**
-
+[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="87" name="Do Německa 2" tags="" position="1777,3336" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;9. září 2015&lt;/div&gt;&lt;/div&gt;\
+\\
 KONEČNĚ!!! Sedíme se Sarah vedle sebe ve starém autobuse a míříme do Berlína! Jsme nejšťastnější za celé týdny, možná i měsíce. Během cesty do Rakouska jsme se dozvěděli, že Německo změnilo postoj k uprchlíkům a německá kancléřka Merkelová řekla, že všichni uprchlíci jsou v Německu vítáni. Novinky o změně německého postoje k migrantům se rychle šířily. Museli jsme se ještě pěšky vypravit do Budapeště, tam však již několik dní  přijíždí nekonečná šňůra autobusů. Do jednoho z nich jsme nastoupili a vyčerpáním usnuli.
 
 Z rána přijíždíme do Vídně. Venku prší. Ve Vídni budeme mít několikahodinovou přestávka a pak budeme pokračovat dále do Berlína. Na autobusovém nádraží stojí dobrovolníci, kteří utečencům roznášejí kafe a horký čaj. S vděčností přijímáme. Taková gesta jsou od Vídeňanů opravdu srdečná. Poprvé za celou cestu se setkávám s laskavým zacházením. V porovnání s tím, jak s námi jednali pašeráci a lidé v balkánských zemích i v Maďarska, mám skoro pocit, jako bychom spadli do jiného vesmíru.
