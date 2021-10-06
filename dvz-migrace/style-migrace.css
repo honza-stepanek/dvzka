@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
 
 
 
@@ -40,19 +40,21 @@ div.modal-dialog img {
 ============================*/
 
 tw-story {
-    padding: 1em 10%;
+    padding: 80px 10%;
     min-height: 100%;
 
     background-position: center;
     background-attachment: fixed;
-    background-color: rgb(87, 71, 39);
-    background-image: url("resources/table-with-book-bg.png");
+    background-color: rgb(119, 105, 76);
+    /* background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg"); */
     background-size: cover;
 
-    font-family: "Dancing Script", serif;
+    font-family: "Roboto Slab", serif;
 }
-
-
+/* 
+tw-story[tags ~= "TAG"] {
+    background-image: url("");
+} */
 
 
 /*============================
@@ -72,13 +74,6 @@ tw-passage {
     box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
     color: black;
 }
-tw-passage,
-div.modal-dialog.article {
-    background-image: url("resources/paper-texture.png");
-    background-repeat: repeat;
-    background-size: auto;
-}
-
 
 
 
@@ -88,6 +83,26 @@ tw-story tw-consecutive-br {
 
 tw-sidebar {
     display: none;
+
+    /* debug properties TODO remove for release*/
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+
+tw-icon[alt="Undo"],
+tw-icon[alt="Redo"] {
+    display: none;
+    /* TODO remove for release */
+    display: block;
+}
+tw-icon {
+    margin: 0.3em 0;
+}
+tw-icon > img {
+    height: 45px;
 }
 
 
@@ -102,9 +117,32 @@ tw-sidebar {
         padding: 5%;
     }
     tw-passage {
-        padding: 1.5em;
+        margin-top: 65px;
+        /* leave space for the sidebar */
+        padding: 2em;
         font-size: 85%;
         line-height: normal;
+    }
+    tw-sidebar {
+        position: absolute;
+        width: 94%;
+        left: 3%;
+        top: -110px;
+        
+        flex-direction: row;
+    }
+    tw-icon > img {
+        height: 30px
+    }
+}
+/* wider screen */
+@media (min-width: 650px) {
+    tw-sidebar {
+        position: absolute;
+        left: -80px;
+
+        flex-direction: column;
+        /* width: 45px; */
     }
 }
 
@@ -123,167 +161,47 @@ tw-link.visited {
     left: 0;
     transition-property: left;
 }
-tw-link::before,
-tw-link.visited::before {
-    content: "›";
-    display: block;
-    width: 1.35rem;
-    position: absolute;
-    left: -1.35rem;
-    top: -0.23rem;
 
-    font-family: sans-serif;
-    font-size: 1.7em;
-    font-weight: 500;
-
-    opacity: 0;
-    pointer-events: none;
-
-    transition: 300ms;
-    transition-property: opacity;
-}
 
 tw-link:hover,
 tw-link.visited:hover {
     color: #0000dc;
     left: 0.9em;
 }
-tw-link:hover::before,
-tw-link.visited:hover::before {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-tw-hook[name^="backlink"] tw-link::before {
-    content: "‹";
-}
-tw-hook[name^="backtobeginning"] tw-link::before {
-    content: "«";
-}
 
 
-/*==============================
-    Page turning controlls
-==============================*/
 
-div.page-turning-wrapper {
+
+/*============================
+    FLOATING CLOCK
+============================*/
+
+div.floating-clock-container {
+    position: fixed;
     width: 100%;
-    margin-top: 0.75em;
-
-    display: flex;
-    justify-content: space-between;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
 }
+div.floating-clock {
+    margin: 0 auto;
+    width: max-content;
+    padding: 0.2em 0.5em;
+    top: -130px;
+    pointer-events: auto;
 
-/* the ::before element already has some properties set
-   from the normal default tw-link style section above */
-
-/* Previous page link */
-div.page-turning-prev tw-link::before {
-    content: "‹ ";
-    display: inline;
-
-    position: relative;
-    top: 0.1rem;
-    left: inherit;
-
-    opacity: 1;
-    transition: none;
-}
-/* Next page link */
-div.page-turning-next tw-link::before {
-    content: none;
-}
-div.page-turning-next tw-link::after {
-    content: " ›";
-    display: inline;
-
-    font-family: sans-serif;
-    font-size: 1.7em;
-    font-weight: 500;
-    width: 1.35rem;
-    position: relative;
-    top: 0.1rem;
+    background-color: rgb(245, 242, 216);
+    box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
     
-    opacity: 1;
-    transition: none;
+    font-weight: 600;
+}
+/* narrow screen */
+@media (max-width: 649px) {
+    div.floating-clock {
+        top: -100px;
+    }
 }
 
-div.page-turning-prev tw-link,
-div.page-turning-prev tw-link:hover,
-div.page-turning-next tw-link,
-div.page-turning-next tw-link:hover {
-    left: unset;
-}
-
-@media (min-width: 650px) {
-    /* ------------------------------------------------------
-       Positioning the buttons BY THE SIDES of the passage
-       And replacing them by ARROWS
-       for bigger screens
-    ------------------------------------------------------ */
-
-    div.page-turning-wrapper {
-        position: fixed;
-        top: 30vh;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 1040px;
-        width: 98%;
-
-        pointer-events: none;
-    }
-
-    div.page-turning-prev tw-link,
-    div.page-turning-prev tw-link:hover,
-    div.page-turning-next tw-link,
-    div.page-turning-next tw-link:hover {
-        /* hiding the tw-link text */
-        color: transparent;
-        display: block;
-        width: 0;
-        pointer-events: none;
-        transform: none;
-    }
-
-    /* THE ARROW BUTTONS */
-    div.page-turning-next tw-link::after,
-    div.page-turning-prev tw-link::after {
-        /* replacing the text by arrows in ::after elements */
-        position: absolute;
-        top: 0;
-
-        font-family: sans-serif;
-        font-size: 5em;
-        font-weight: inherit;
-        display: block;
-        width: 4rem;
-        height: 5rem;
-        overflow: hidden;
-        text-align: center;
-        line-height: 3.6rem;
-
-        color: #0000dc;
-        text-shadow: 0 0 0.07em rgba(255, 255, 255, 0.25);
-        opacity: 0.7;
-        transition: 300ms;
-        transition-property: opacity, transform;
-        
-        pointer-events: auto;
-    }
-    div.page-turning-prev tw-link::after {
-        content: "‹";
-        left: 0;
-    }
-    div.page-turning-next tw-link::after {
-        content: "›";
-        right: 0;
-    }
-    div.page-turning-next tw-link:hover::after,
-    div.page-turning-prev tw-link:hover::after {
-        opacity: 0.95;
-        transform: scale(1.05);
-    }
-}
 
 
 
