@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Migrace v průběhu staletí a současná migrační krize.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Migrace v průběhu staletí a současná migrační krize" startnode="1" creator="Twine" creator-version="2.3.14" ifid="B3447A1C-7A7B-44FF-AC44-6D9202F09A41" zoom="1" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Migrace v průběhu staletí a současná migrační krize" startnode="1" creator="Twine" creator-version="2.3.14" ifid="B3447A1C-7A7B-44FF-AC44-6D9202F09A41" zoom="0.6" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 </style>
 <link href=".\style-migrace.css" rel="stylesheet">
 <script role="script" id="twine-user-script" type="text/twine-javascript">
@@ -81,7 +81,10 @@ document.initAAP = function () {
 }
 
 // Setup AAP for the current tw-passage
-document.setupAAP = function (source) {
+// if the source is being set to a different one, the audio autoplays
+// if the source is the same the audio remains paused/playing
+// if true is passed as second argument the audio will always autoplay 
+document.setupAAP = function (source, always_autoplay=false) {
     if (!document.ambientAudioPlayer) {
         document.initAAP();
     }
@@ -93,6 +96,11 @@ document.setupAAP = function (source) {
             document.ambientAudioPlayer.pauseButtonPress();
         }
     }
+
+    if (always_autoplay && document.ambientAudioPlayer.audio.paused) {
+        document.ambientAudioPlayer.pauseButtonPress();
+    }
+
     $("tw-sidebar")[0].appendChild(document.ambientAudioPlayer.pauseButton);
     $("tw-sidebar")[0].appendChild(document.ambientAudioPlayer.volumeButton);
 }
@@ -116,28 +124,50 @@ document.stopAAP = function () {
 }
 
 
-</script><tw-passagedata pid="1" name="Úvod - představení příběhu" tags="intro" position="674,20" size="100,100">Milé studentky, milí studenti,vítejte v příběhu s názvem **Migrace v průběhu staletí a současná migrační krize**.
+</script><tw-passagedata pid="1" name="Úvod - představení příběhu" tags="intro" position="525,25" size="100,100">Milé studentky, milí studenti,vítejte v příběhu s názvem **Migrace v průběhu staletí a současná migrační krize**.
 
 Nepochybuji o tom, že každý z vás už někdy slyšel pojem migrace, ať už v pozitivním či negativním kontextu. V rámci tohoto příběhu si takto složité a komplexní téma lépe přiblížíme. Budete mít možnost si na chvíli vyzkoušet, jaké to je být uprchlíkem.
 
 [[Pokračovat-&gt;Pojďme začít]]
-</tw-passagedata><tw-passagedata pid="2" name="Pojďme začít" tags="" position="676,223" size="100,100">Tímto příběhem si chceš projít jako:
+</tw-passagedata><tw-passagedata pid="2" name="Pojďme začít" tags="character-choice" position="950,200" size="100,100">Tímto příběhem si chceš projít jako:
 
 [[19letá uprchlice Sarah-&gt;Sarah]]
 nebo
-[[21letý uprchlík Mohamed-&gt;Mohamed]]</tw-passagedata><tw-passagedata pid="3" name="Mohamed" tags="" position="922,39" size="100,100">Jmenuji se Mohamed Allabasi a je mi 21 let. Ještě před týdnem jsem za svůj domov považoval [[Damašek]], hlavní město Sýrie. V Damašku se mi s rodinou líbilo, byl jsem tam šťastný. Měl jsem milující rodinu a už od dětství jsem se svojí mladší sestrou Sarah dostal příležitost věnovat se závodně plavání, jelikož můj otec se živil jako plavecký kouč. Dnes už se plavání nevěnuji, dal jsem raději přednost studiu medicíny, které mi dávalo větší smysl a v Sýrii je velmi prestižní záležitostí.
+[[21letý uprchlík Mohamed-&gt;Mohamed]]</tw-passagedata><tw-passagedata pid="3" name="Mohamed" tags="about-mohamed" position="1350,400" size="100,100">(set: $postava to &quot;Mohamed&quot;)Jmenuji se Mohamed Allabasi a je mi 21 let. Ještě před týdnem jsem za svůj domov považoval &lt;a href=&quot;#mod-damasek&quot; title=&quot;Dozvědět se více&quot; class=&quot;modal-open&quot;&gt;Damašek&lt;/a&gt;, hlavní město Sýrie. V Damašku se mi s rodinou líbilo, byl jsem tam šťastný. Měl jsem milující rodinu a už od dětství jsem se svojí mladší sestrou Sarah dostal příležitost věnovat se závodně plavání, jelikož můj otec se živil jako plavecký kouč. Dnes už se plavání nevěnuji, dal jsem raději přednost studiu medicíny, které mi dávalo větší smysl a v Sýrii je velmi prestižní záležitostí.
 
 Vše se však změnilo od doby, kdy propukla v Sýrii občanská válka. Náš dům se snadno ocitl ve válečné zóně a musel jsem si zvykat na častý zvuk padajících bomb. I obyčejná cesta z domu do školy na univerzitu se stala nebezpečnou. Situace se horšila každým dnem a čím dál častěji jsem začal uvažovat o útěku ze země. Když jsem však tuto myšlenku vyslovil před svými rodiči, zatvářili se zděšeně a nechtěli o ni ani slyšet.
 
 Jednoho dne však bomba spadla i na bazén, kde zrovna byla moje sestra. Naštěstí se jí nic nestalo, ale od té doby byla rozhodnutá, že odejde do Evropy. Byl jsem odhodlaný jít s ní, přece ji nemůžu nechat jet samotnou. Do svých batohů jsme si naskládali jen to nejnutnější. Rodiče odjet odmítli, ale poslali s námi našeho bratrance Ahmeda, aby na nás dával pozor. Vyrazili jsme na letiště směrem do Turecka plní obav.
 
-[[Vzhůru na cestu za dobrodružstvím-&gt;Turecké pobřeží 2]]</tw-passagedata><tw-passagedata pid="4" name="Sarah" tags="" position="399,38" size="100,100">Jmenuji se Sarah Allabasi a je mi 19 let. Ještě před týdnem jsem za svůj domov považovala [[Damašek]], hlavní město Sýrie. V Damašku se mi s rodinou líbilo, byla jsem tam šťastná. Měla jsem milující rodinu a už od dětství jsem dostala příležitost věnovat se závodně plavání, jelikož můj otec se živil jako plavecký kouč. Díky tomu jsem se stala součástí syrského národního plaveckého týmu. V Sýrii není zvykem, že by každý uměl plavat, proto jsem za takovou příležitost vděčná.
+[[Vzhůru na cestu za dobrodružstvím-&gt;Turecké pobřeží 2]]
+&lt;div id=&quot;mod-damasek&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog side-info&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        Damašek, hlavní město Sýrie, před vypuknutím občanské války v roce 2011.
+        &lt;img src=&quot;https://i.imgur.com/vqleHxO.png&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        BAHBOUH, Charif. //Sýrie: historie, kultura, geografie.// Praha: Dar Ibn Rushd, 2005, s.97. ISBN 80-86149-44-7. Dostupné z: https://dnnt.mzk.cz/view/uuid:8f780640-7329-11e6-81ec-005056827e51?page=uuid:2545e7d0-7a66-11e6-ad48-005056825209
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
+</tw-passagedata><tw-passagedata pid="4" name="Sarah" tags="about-sarah" position="550,400" size="100,100">(set: $postava to &quot;Sarah&quot;)Jmenuji se Sarah Allabasi a je mi 19 let. Ještě před týdnem jsem za svůj domov považovala &lt;a href=&quot;#mod-damasek&quot; title=&quot;Dozvědět se více&quot; class=&quot;modal-open&quot;&gt;Damašek&lt;/a&gt;, hlavní město Sýrie. V Damašku se mi s rodinou líbilo, byla jsem tam šťastná. Měla jsem milující rodinu a už od dětství jsem dostala příležitost věnovat se závodně plavání, jelikož můj otec se živil jako plavecký kouč. Díky tomu jsem se stala součástí syrského národního plaveckého týmu. V Sýrii není zvykem, že by každý uměl plavat, proto jsem za takovou příležitost vděčná.
 
 Vše se však změnilo od doby, kdy propukla v Sýrii občanská válka. Náš dům se snadno ocitl ve válečné zóně a musela jsem si zvykat na častý zvuk padajících bomb. I obyčejná cesta z domu do plaveckého bazénu se stala nebezpečnou. Situace se horšila každým dnem a čím dál častěji se mi hlavou draly myšlenky o útěku ze země. Když jsem však tuto myšlenku vyslovila před svými rodiči, zatvářili se zděšeně a nechtěli o ni ani slyšet.
 
 Jednoho dne však bomba spadla i na bazén. Naštěstí se mi nic nestalo, ale přišla jsem i o svoji největší zálibu. Následně jsem se díky facebooku dozvěděla, že jedna má kamarádka se sama dokázala dostat do Německa přes balkánskou trasu. Byla jsem rozhodnutá, že to taky zkusím. S nápadem utéct jsem se svěřila svému bratrovi Mohamedovi, který řekl, že pojede s mnou. Do svých batohů jsme si naskládali jen to nejnutnější. Rodiče odjet odmítli, ale poslali s námi našeho bratrance Ahmeda, aby na nás dával pozor. Vyrazili jsme na letiště směrem do Turecka plní obav.
 
-[[Vzhůru na cestu za dobrodružstvím-&gt;Turecké pobřeží]]</tw-passagedata><tw-passagedata pid="5" name="Turecké pobřeží" tags="" position="191,119" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;21. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+[[Vzhůru na cestu za dobrodružstvím-&gt;Turecké pobřeží]]
+&lt;div id=&quot;mod-damasek&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog side-info&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        Damašek, hlavní město Sýrie, před vypuknutím občanské války v roce 2011.
+        &lt;img src=&quot;https://i.imgur.com/vqleHxO.png&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        BAHBOUH, Charif. //Sýrie: historie, kultura, geografie.// Praha: Dar Ibn Rushd, 2005, s.97. ISBN 80-86149-44-7. Dostupné z: https://dnnt.mzk.cz/view/uuid:8f780640-7329-11e6-81ec-005056827e51?page=uuid:2545e7d0-7a66-11e6-ad48-005056825209
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
+</tw-passagedata><tw-passagedata pid="5" name="Turecké pobřeží" tags="turkey-coast" position="550,575" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;21. srpen 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
 \\
 Cesta letadlem z Damašku dopadla naštěstí dobře. Se svým bratrem, bratrancem a dalšími 18 uprchlíky se nyní schovávám v lese jen kousek od pobřeží Egejského moře nedaleko tureckého města Izmir. Většina z nás zde jsou Syřané, ale je tu i pár Iráčanů. Čekám tu 4 dny na zavolání pašeráků.
@@ -148,11 +178,21 @@ Před dvěma dny už jsme se téměř nalodili do motorového člunu. Přiběhla
 
 Je pozdní odpoledne a na obloze začne zapadat slunce. Někdo na nás začne volat a pískat. To jsou pašeráci! Vycházíme z lesa směrem k pobřeží s nadějí, že se dnes konečně nalodíme a dostaneme se do Evropy.
 
-&lt;img src=&quot;https://i.imgur.com/z4RIdvm.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
-Uprchlíci poblíž řecko-tureckých hranicích. Dostupné z: https://www.idnes.cz/zpravy/zahranicni/recko-turecko-hranice-zed-uprchlici.A201019_173852_zahranicni_kha/foto/KNN81b736_P202002290238201.jpg.
+&lt;a href=&quot;#mod-cit&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;\
+    &lt;img src=&quot;https://i.imgur.com/z4RIdvm.png&quot;&gt;\
+&lt;/a&gt;\
+&lt;div id=&quot;mod-cit&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog citation-modal&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://i.imgur.com/z4RIdvm.png&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        Uprchlíci poblíž řecko-tureckých hranicích. Dostupné z: https://www.idnes.cz/zpravy/zahranicni/recko-turecko-hranice-zed-uprchlici.A201019_173852_zahranicni_kha/foto/KNN81b736_P202002290238201.jpg.
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
 
 //Abychom se lépe orientovali v příběhu, pojď se naučit základní pojmy týkající se migrační problematiky.//
-[[Naučit se základní pojmy o migraci-&gt;Co je to migrace?]]</tw-passagedata><tw-passagedata pid="6" name="Na člunu" tags="" position="180,1143" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+[[Naučit se základní pojmy o migraci-&gt;Co je to migrace?]]</tw-passagedata><tw-passagedata pid="6" name="Na člunu" tags="boat" position="500,1875" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;, true)&lt;/script&gt;\
 \\
 U pobřeží Egejského moře na nás čeká motorový člun. Je však poměrně malý. Odhaduji to tak pro 7 lidí, přitom nás je 21.
 
@@ -164,8 +204,18 @@ Nemáme na výběr. Je zcela evidentní, že člun by žádné těžké batohy a
 
 S velkým očekáváním odplouváme od pobřeží. Snad vše půjde dobře a budeme v pořádku. Snažíme se všichni sedět klidně a moc spolu navzájem ani nemluvíme. S bratrem prohodím jen pár slov.
 
-&lt;img src=&quot;https://i.imgur.com/c0bBo7L.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
-Uprchlíci v Egejském moři. Dostupné z: https://cs.wikipedia.org/wiki/Evropsk%C3%A1_migra%C4%8Dn%C3%AD_krize
+&lt;a href=&quot;#mod-uprch&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;\
+    &lt;img src=&quot;https://i.imgur.com/c0bBo7L.png&quot;&gt;\
+&lt;/a&gt;
+&lt;div id=&quot;mod-uprch&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog citation-modal&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://i.imgur.com/c0bBo7L.png&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        Uprchlíci v Egejském moři. Dostupné z: https://cs.wikipedia.org/wiki/Evropsk%C3%A1_migra%C4%8Dn%C3%AD_krize
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
 
 Po 15 minutách motor najednou zdechne. „Třeba se zase rozjede“ prohlásí jeden z mužů. Nic se však neděje. Uplyne jen dalších pár minut a do člunu se dostává voda. To snad ne, vždyť se potápíme! Jsme příliš přetíženi. Ze všech stran vidím vyděšené výrazy ostatních, panika mezi nimi roste raketovým tempem.
 
@@ -173,7 +223,7 @@ Co bych tak mohla udělat? Jak jen celou situaci zachránit? Plavat umím, dokon
 
 [[Skočit do vody-&gt;Ve vodě]]
 [[Raději zůstat sedět v člunu-&gt;Potopení]]
-</tw-passagedata><tw-passagedata pid="7" name="Co je to migrace?" tags="" position="335,243" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+</tw-passagedata><tw-passagedata pid="7" name="Co je to migrace?" tags="edu-intermezzo" position="950,700" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
 **Co je to migrace?**
 
 Možnost přemisťovat se je jednou za základních lidských svobod. Lidé migrují odjakživa – v pravěku se tlupy lidí přemisťovaly spolu se zvířaty, která lovily, ve vrcholném středověku se začali lidé přemisťovat do měst kvůli řemeslům a obchodu a také kvůli svobodě, kterou města poskytovala. V novověku se setkáváme již s rozšířením mezikontinentální migrace v době zámořských objevů. S příchodem industriální revoluce zase nastal odliv lidí z venkova za prací do měst.
@@ -182,10 +232,20 @@ Migrace je prostorové přemísťování osob přes libovolné hranice, spojené
 
 V dnešní době čelíme migraci z důvodů *ekonomických* (za prací), *sociálních* (stěhování se za rodinou), *politických* (z důvodu náboženské, politické či rasové perzekuce nebo v důsledku válečného konfliktu) a *environmentální* (při přírodních katastrofách či změně klimatu).
 
-&lt;img src=&quot;https://i.imgur.com/2CLU2k9.png&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
-Kolik migrantů přišlo v roce 2015 do Evropy. Dostupné z: https://zpravy.aktualne.cz/zahranici/grafika-uprchlici-2015/r~8bf2c0b2d0ce11e59c4a002590604f2e/.
+&lt;a href=&quot;#mod-data&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;\
+    &lt;img src=&quot;https://i.imgur.com/2CLU2k9.png&quot;&gt;\
+&lt;/a&gt;
+&lt;div id=&quot;mod-data&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog citation-modal&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://i.imgur.com/2CLU2k9.png&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        Kolik migrantů přišlo v roce 2015 do Evropy. Dostupné z: https://zpravy.aktualne.cz/zahranici/grafika-uprchlici-2015/r~8bf2c0b2d0ce11e59c4a002590604f2e/.
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
 
-[[Jaké jsou důležité pojmy týkající se migrace?-&gt;Důležité pojmy]]</tw-passagedata><tw-passagedata pid="8" name="Ve vodě" tags="" position="50,1244" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+[[Jaké jsou důležité pojmy týkající se migrace?-&gt;Důležité pojmy]]</tw-passagedata><tw-passagedata pid="8" name="Ve vodě" tags="boat" position="375,2050" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
 \\
 Třesu se celá strachy. Ale musím to udělat. Není čas déle přemýšlet, skáču to vody. Byla jsem sice zvyklá plavat závodně, stejně mám pocit, jako bych byla ve vodě poprvé. Tak moc je voda v moři slaná a studená. Ostatní lidi ze člunu na mě zděšeně koukají. Jednou rukou se držím lana a snažím se člun táhnout kupředu. 
 
@@ -197,11 +257,21 @@ Mohamed však skáče. Oba plaveme, prorážíte vodu, každý na jedné straně
 
 Člun se rychle plní slanou vodou. Záchranné vesty mě i bratrovi rozdírají kůži. Motor občas naskočí a zase chcípne. Když se to stane, člun nás prudce strhává dozadu. 
 
-&lt;img src=&quot;https://i.imgur.com/GPp8u90.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
-Uprchlíci na člunu v Egejském moři. Dostupné z: www.shutterstock.com
+&lt;a href=&quot;#mod-clun&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;\
+    &lt;img src=&quot;https://i.imgur.com/GPp8u90.png&quot;&gt;\
+&lt;/a&gt;
+&lt;div id=&quot;mod-clun&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog citation-modal&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://i.imgur.com/GPp8u90.png&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        Uprchlíci na člunu v Egejském moři. Dostupné z: www.shutterstock.com
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
 
 [[Zachrání se Sarah v moři?-&gt;V Egejském moři]]
-</tw-passagedata><tw-passagedata pid="9" name="Potopení" tags="" position="321,1168" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+</tw-passagedata><tw-passagedata pid="9" name="Potopení" tags="boat" position="225,2050" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
 \\
 Mám velký strach skočit do vody. Raději zůstávám sedět v člunu a snažím se z něj dostat přebytečnou. Motor stále hapruje a panika je čím dál silnější. Většina lidí v člunu zcela evidentně neumí plavat. Potápíme se, určitě se potopíme. 
 
@@ -213,13 +283,25 @@ Náhle se objeví v moři vlna, která mě prudce smete několik metrů od člun
 
 Voda je příliš studená, klepu se zimou. I když ležím na znaku, stejně cítím, jak se pomalu potápím. Takhle jsem si konec svého života opravdu nepředstavovala. Je to snad ta nejpomalejší smrt, která může nastat.
 
-&lt;img src=&quot;https://i.imgur.com/1039J24.jpg&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
+&lt;a href=&quot;#mod-more&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;\
+    &lt;img src=&quot;https://i.imgur.com/1039J24.jpg&quot;&gt;\
+&lt;/a&gt;
+&lt;div id=&quot;mod-more&quot; class=&quot;modal-dialog-container&quot;&gt;\
+    &lt;div class=&quot;modal-dialog citation-modal&quot;&gt;\
+        &lt;a href=&quot;#&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://i.imgur.com/1039J24.jpg&quot;&gt;\
+        &lt;div class=&quot;block-citation&quot;&gt;\
+        CITATION
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+&lt;/div&gt;\
 
 KONEC 
 
-[[Neskončilo to nějak brzy?-&gt;Předčasný konec]]</tw-passagedata><tw-passagedata pid="10" name="Předčasný konec" tags="" position="476,1217" size="100,100">V průběhu děje jsi učinil volbu, která zapříčila, že příběh skončil dříve, než mohl. Vrať se zpátky na začátek příběhu a projdi jím znovu.
+[[Neskončilo to nějak brzy?-&gt;Předčasný konec]]</tw-passagedata><tw-passagedata pid="10" name="Předčasný konec" tags="bad-end" position="50,2175" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+V průběhu děje jsi učinil volbu, která zapříčila, že příběh skončil dříve, než mohl. Vrať se zpátky na začátek příběhu a projdi jím znovu.
 
-[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="11" name="Stěhování národů" tags="" position="225,1497" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="11" name="Stěhování národů" tags="edu-intermezzo" position="700,2325" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
 **Stěhování národů**
 
 Na přelomu starověku a středověku se mapa Evropy velmi změnila. V té době probíhaly rozsáhlé migrace obyvatelstva. Pro tuto historickou epochu se vžil pojem „Stěhování národů&quot;. 
@@ -230,7 +312,7 @@ Pusť si níže uvedené video, které ti ono historické období více přiblí
 &lt;iframe width=&quot;660&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/El5qIJWkeHc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Video z youtube kanálu Edisco — videovýpisky.
 
-[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou]]</tw-passagedata><tw-passagedata pid="12" name="V Egejském moři" tags="" position="190,1318" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou]]</tw-passagedata><tw-passagedata pid="12" name="V Egejském moři" tags="boat" position="525,2125" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
 \\
 Cítím, jak mi docházejí síly. Ruce mám samou modřinu. Mohamed se také tváří vyčerpaně. Ve vodě plaveme už několik hodin, nejsem si jistá kolik přesně. Slunce už zapadá a voda je čím dál studenější. 
 
@@ -245,7 +327,7 @@ Na druhém konci telefonu však všichni v člunu slyšíme pobřežní stráž 
 &lt;img src=&quot;https://i.imgur.com/TXIQFou.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci na potápějícím člunu. Dostupné z: www.shutterstock.com
 
-[[Pokračovat-&gt;Vylodění v Řecku]]</tw-passagedata><tw-passagedata pid="13" name="Vylodění v Řecku" tags="" position="52,1419" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+[[Pokračovat-&gt;Vylodění v Řecku]]</tw-passagedata><tw-passagedata pid="13" name="Vylodění v Řecku" tags="close-to-greece" position="375,2200" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
 \\
 Stále se snažíme táhnout člun k břehu. Jsem k smrti unavená a celá mokrá. Neustále se mi zavírají oči, musím se hodně přemáhat, abych je měla otevřené. 
 
@@ -262,7 +344,7 @@ Jediný, kdo neuroní ani slzu je můj bratr. „Není důvod plakat“ říká 
 Během plavby mi spadly do vody sandále a jednu nohavici mám krátkou. V tuto chvíli mi na tom však vůbec nezáleží. Vyčerpáním se mi zavírají oči a usínám. Přežili jsme, na tom jediném záleží.
 
 
-[[Nyní si dej chvíli oddech od příběhu a pojď se více dozvědět o velké migrační vlně, která výrazně ovlivnila Evropu na pomezí starověku a středověku.-&gt;Stěhování národů]]</tw-passagedata><tw-passagedata pid="14" name="Ostrov Lesbos" tags="" position="72,1780" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;22. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+[[Nyní si dej chvíli oddech od příběhu a pojď se více dozvědět o velké migrační vlně, která výrazně ovlivnila Evropu na pomezí starověku a středověku.-&gt;Stěhování národů]]</tw-passagedata><tw-passagedata pid="14" name="Ostrov Lesbos" tags="greece-beach" position="350,2575" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;22. srpna 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
 \\
 &lt;img src=&quot;https://i.imgur.com/EZ6qI6U.jpg&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
@@ -276,7 +358,7 @@ Jakmile však vejdeme, číšník na nás začne něco řecky křičet a z jeho 
 
 Následně zamíříme do obchodu s potravinami, kde nás již nikdo nevyhodí, ale lidé na nás koukají dost podezíravě. Jako by se báli, že jim jdeme vykrást obchod. Koupíme si rychle jídlo a vodu, nechceme se v obchodě příliš zdržovat. Poblíž vidíme nějaké stánky s oblečením, tak si jdu koupit nové oblečení a hlavně nové boty, jelikož tu stojím stále pouze v ponožkách a v rozedraném oblečení. Pevně doufám, že nejhorší část cesty máme za sebou a brzy z Řecka odejdeme.
 
-[[Jak pokračovala Sarah na cestě po Evropě?-&gt;Přes balkán]]</tw-passagedata><tw-passagedata pid="15" name="Přes balkán" tags="" position="228,1823" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;29. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+[[Jak pokračovala Sarah na cestě po Evropě?-&gt;Přes balkán]]</tw-passagedata><tw-passagedata pid="15" name="Přes balkán" tags="rail-tracks ferry" position="525,2650" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;29. srpen 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
 \\
 &lt;img src=&quot;https://i.imgur.com/YtBpdKT.jpg&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
@@ -290,7 +372,7 @@ Z Atén nás pašeráci nahnali do autobusu, kterým jsme přijeli do Makedonie.
 
 Na hranicích se rozhodne o tom, kdo to do zvládne a dostane se do Německa a kdo to nezvládne. Kromě strachu mezi námi panuje i silné odhodlání. Potom všem, co jsem nejen já, ale i ostatní absolvovali během cesty, se chceme dostat za každou cenu do cíle.
 
-[[Zvládne Sarah překročit srbsko-maďarskou hranici a podaří se jí dostat do Německa?-&gt;Hranice u Maďarska]]</tw-passagedata><tw-passagedata pid="16" name="Hranice u Maďarska" tags="" position="75,1934" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;30. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+[[Zvládne Sarah překročit srbsko-maďarskou hranici a podaří se jí dostat do Německa?-&gt;Hranice u Maďarska]]</tw-passagedata><tw-passagedata pid="16" name="Hranice u Maďarska" tags="hungary-border corn" position="350,2725" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;30. srpna 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
 \\
 Před námi se tyčí &lt;a href=&quot;https://cs.wikipedia.org/wiki/Ma%C4%8Farsk%C3%BD_pohrani%C4%8Dn%C3%AD_plot&quot; target=&quot;_blank&quot;&gt;ostnatý plot&lt;/a&gt;. Pověstná maďarská hranice, která je přísně střežená. Ani tato skutečnost nás však nemůže zastavit v naší cestě do Německa. V plotě je celkem velká díra, která pro nás uprchlíky slouží jako takový improvizovaný přechod. Hned za ní hlídkuje policie. Koho hraniční stráž chytí, toho odvedou do sběrného tábora.
@@ -303,7 +385,7 @@ Rozdělíme se do menších skupinek, většinou tak po třech nebo po pěti. Jd
 
 Vzhledem k tomu, že jsme neoficiálními vůdci skupiny, jdeme jako první rekognoskovat terén. Jednotlivě prolezeme po břiše dírou v plotě a přikrčeni se plížíme kukuřicí. Po chvíli uslyšíme nedaleko nás cizí kroky. Ihned se zastavíme a strachy ani nedýcháme. To musí být určitě nějaký policajt!
 
-[[Pokračování-&gt;Stále u hranic]]</tw-passagedata><tw-passagedata pid="17" name="Stále u hranic" tags="" position="236,2012" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+[[Pokračování-&gt;Stále u hranic]]</tw-passagedata><tw-passagedata pid="17" name="Stále u hranic" tags="hungary-border corn" position="500,2800" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
 \\
 Policajt se chvíli rozhlížel po poli a zase odešel. Díky Bohu! Byli jsme tak potichu, že si nás vůbec nevšiml. I tak, ale budeme muset být maximálně obezřetní. Za námi se plíží další lidé ze skupiny. Proběhneme kukuřicí, následně se plížíme slunečnicovým i paprikovým polem. Přitom vidíme v horizontu policejní hlídky. Kdykoliv se některý ze strážných přiblíží k polím, hned se zastavíme a pokračujeme dál až poté, co se vzdálí.
 
@@ -316,7 +398,7 @@ Jakmile zapadlo slunce, začala nám být zima. Část lidí z naší skupinky t
 
 Při každém pomyšlení na tuto událost se mi zvedne žaludek. Samozřejmě mám strach z toho, že by nás mohl potkat podobný osud. Pokud si však politici myslí, že vyhlášením nulové tolerance pašeráky zastaví či odradí další uprchlíky k podniknutí cesty do Evropy, tak se šeredně mýlí. Taková naivita. Vždyť uprchlíci by nejradši s pašeráky do kontaktu nepřicházeli ani nechtějí během cesty do Evropy zahynout. Ale copak mají jinou možnost? Už jsme obětovali příliš mnoho a máme za sebou horší a traumatičtější zážitky. Teď to nemůžeme za žádnou cenu vzdát.
 
-[[Objeví se pašeráci a dostanou naši hrdinku do Budapeště?-&gt;Cesta do Budapeště]]</tw-passagedata><tw-passagedata pid="18" name="Cesta do Budapeště" tags="" position="72,2113" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;31. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+[[Objeví se pašeráci a dostanou naši hrdinku do Budapeště?-&gt;Cesta do Budapeště]]</tw-passagedata><tw-passagedata pid="18" name="Cesta do Budapeště" tags="van" position="350,2900" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;31. srpna 2015&lt;/div&gt;&lt;/div&gt;\
 \\
 Nejsem si jistá, kolik je hodin, může být už po půlnoci. Najednou vidíme ostrá světla a zvuky přijíždějící dodávky. Z dveří aut vystoupí několik převaděčů. Jsem docela překvapená, někteří z nich nemohou být ani plnoletí.
 
@@ -337,8 +419,8 @@ Hlavou mi proletí snad tisíc myšlenek. Na jedné straně mám velký strach, 
 
 [[Raději se schovat v poli-&gt;Stále v poli]]
 nebo 
-[[Rozběhnout se a pomoct bratrovi-&gt;Do sběrného tábora]]]</tw-passagedata><tw-passagedata pid="19" name="Stále v poli" tags="" position="103,2311" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
-Celá se třesu strachy. Se zatajeným dechem ve tmě sleduji, jak Mohameda odnáší do policejního auta. Po tvářích mi stékají slzy velké jak hrachy. Strašně moc bych chtěla svému bratrovi pomoct, ale nedokážu to. Kam ho vezou? Co s ním jen bude? Něco takového se nemělo stát. Jako sourozenci jsme měli dojet do Německa spolu. Tohle je tak nespravedlivé!
+[[Rozběhnout se a pomoct bratrovi-&gt;Do sběrného tábora]]]</tw-passagedata><tw-passagedata pid="19" name="Stále v poli" tags="corn hungary-border" position="400,3100" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+(set: $tabor to false)Celá se třesu strachy. Se zatajeným dechem ve tmě sleduji, jak Mohameda odnáší do policejního auta. Po tvářích mi stékají slzy velké jak hrachy. Strašně moc bych chtěla svému bratrovi pomoct, ale nedokážu to. Kam ho vezou? Co s ním jen bude? Něco takového se nemělo stát. Jako sourozenci jsme měli dojet do Německa spolu. Tohle je tak nespravedlivé!
 
 Jamile policisté odjeli i s chycenými uprchlíky, hlasitě se rozbrečím a padnu na zem do pole. Jen se třesu a nahlas vzlykám. Asi po pár minutách za mnou přichází Ahmed. Nic neříká, oba víme, že jakákoliv slova jsou v tomto momentu zbytečná. Obejme mě. Je to od něj moc milé gesto. Sice bych nejradši byla v tak emočně vypjaté situaci o samotě. Přesto jsem však ráda, že tu se mnou nyní je. O chvíli později usínám únavou.
 
@@ -346,8 +428,8 @@ Po probuzení se rozhlížím kolem. Ostatní členové skupiny se tváří otř
 
 Prozatím nám nezbývá nic jiného, než čekat další den v poli a doufat, že v noci se opět objeví pašeráci.
 
-[[Dále čekat na pašeráky-&gt;Příjezd do Budapeště]]</tw-passagedata><tw-passagedata pid="20" name="Do sběrného tábora" tags="" position="261,2212" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
-Nemůžu opustit svého bratra. Rozběhnu se k Mohamedovi a křičím: &quot;Pusťte ho!!&quot;
+[[Dále čekat na pašeráky-&gt;Příjezd do Budapeště]]</tw-passagedata><tw-passagedata pid="20" name="Do sběrného tábora" tags="hungary-border" position="625,3100" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+(set: $tabor to true)Nemůžu opustit svého bratra. Rozběhnu se k Mohamedovi a křičím: &quot;Pusťte ho!!&quot;
 
 Skočím na záda tomu policistovi, který drží mého bratra a snažím se ho povalit na zem. Je však příliš dobře obrněný. Na rozdíl ode mě má helmu, pistoli i obušek. Snadno mě setřásne a pohodí na zem. 
 
@@ -357,9 +439,9 @@ Do toho přiběhne další policista, aby mu pomohl. Snažím se proti němu boj
 
 &quot;Proč jsi neběžela zpátky? Měla jsi utéct! Takhle akorát chytili nás oba!&quot; vyštěkne na mě Mohamed. Chci mu odpovědět, že jsem mu přece musela pomoct, ale policisté vpředu vozidla začnou něco křičet, asi abychom byli zticha. Zmůžu se pouze na provinilý pohled a začnu plakat.
 
-[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století 3]]</tw-passagedata><tw-passagedata pid="21" name="Příjezd do Budapeště" tags="" position="45,2474" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;1.září 2015&lt;/div&gt;&lt;/div&gt;\
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Zvuky-noci.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století]]</tw-passagedata><tw-passagedata pid="21" name="Příjezd do Budapeště" tags="van2" position="250,3175" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;1.září 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Zvuky-noci.m4a&quot;)&lt;/script&gt;\
+\\
 &lt;img src=&quot;https://i.imgur.com/eTcpXVc.jpg?1&quot; width=&quot;950px&quot; height=&quot;450px&quot;&gt;
 V noci na maďarsko-srbské hranici. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#108012
 
@@ -380,8 +462,8 @@ Vstupujeme do velké haly. Je tu poměrně rušno a hodně lidí. Rozhlížíme 
 Pomocí signálu GPS na našich mobilech se vydáváme směrem k hlavnímu nádraží.
 
 [[Jít k nádraží-&gt;Na nádraží v Budapešti]]
-</tw-passagedata><tw-passagedata pid="22" name="Na nádraží v Budapešti" tags="" position="170,2511" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;&gt;&lt;/audio&gt;
-
+</tw-passagedata><tw-passagedata pid="22" name="Na nádraží v Budapešti" tags="train-station" position="400,3250" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;)&lt;/script&gt;\
+\\
 Po dvou hodinách jsme tady. Budapest-Keleti. Největší nádraží ve městě. Nádražní budova je sice krásná, jinak to tady na pohled vypadá příšerně. Brzy zjišťujeme, že životní podmínky jsou zde tristní. Přespává tady několik tisíc uprchlíků, ale na nádraží je jen šest toalet. Migranti jsou na tomto místě uvězněni. Všude okolo je rozmístěná policie a hlídá, aby se uprchlíci z nádraží nedostali. Do vlaků pouští jenom Evropany. Cítíme se zoufalí. Možná nebyl zase tak dobrý nápad utéct z hotelu Berlin. Jak se jen můžeme odsud dostat?
 
 &lt;img src=&quot;https://i.imgur.com/a6nD3OW.png&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
@@ -394,8 +476,8 @@ Nálada na nádraží je hodně napjatá. Uprchlíci protestují, křičí na po
 Atmosféra houstne čím dál více. Potyčky s policisty přibývají, dokonce musí na místě zasahovat těžkooděnci. Situace je nyní nepřehledná. Někteří z uprchlíků utíkají z nádraží. Měli bychom této možnosti využít. Otáčím se k Ahmedovi: „Teď máme příležitost naskočit do nějakého vlaku, teď nebudou mít čas nás hlídat.“ Bratranec se mnou souhlasí, chytí mě za ruku a rychlým krokem míříme ke kolejím.
 
 [[Jít na vlak-&gt;Budapest-Keleti]]
-</tw-passagedata><tw-passagedata pid="23" name="Budapest-Keleti" tags="" position="65,2639" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;&gt;&lt;/audio&gt;
-
+</tw-passagedata><tw-passagedata pid="23" name="Budapest-Keleti" tags="train-station" position="250,3325" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;)&lt;/script&gt;\
+\\
 Díváme se na velkou ceduli, kde ukazují příjezdy a odjezdy vlaků. Za 15 minut přijede vlak směrem Šopróň. Díky google map víme, že toto město leží nedaleko od hranic s Rakouskem. Čekáme zatím na zastávce a snažíme se působit co nejvíce normálním dojmem. Rozpustím si vlasy, do uší si dám sluchátka a pokouším se tvářit nezaujatě, abych vypadala více evropsky, a ne jako muslimka. Snad mi to trochu pomůže. Ahmed je v obličeji tmavší a vypadá víc jako muslim než já. Taky si dá to uší sluchátka.
 
 Zatímco čekáme na vlak, někteří lidé si nás začnou zvědavě prohlížet. Raději se jejich pohledům vyhýbáme. Chceme být maximálně nenápadní a nevýrazní. 
@@ -416,7 +498,7 @@ Noori se také směje. „Musím vám něco důležitého říct. Merkelová, ta
 
 S Ahmedem na Nooriho šokovaně zíráme. Prvotní šok následně vystřídá upřímné nadšení a úleva. Navzájem se na sebe smějeme, objímáme se, dokonce mi začnou téct slzy štěstím. Tak jsme to opravdu zvládli.
 
-[[Nyní odběhneme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století]]</tw-passagedata><tw-passagedata pid="24" name="Vídeň" tags="" position="76,3610" size="100,100">Nooriho slova se naštěstí potvrdila. Novinky o změně německého postoje k migrantům se rychle šířily, načež odpoledne již utichly boje mezi uprchlíky a těžkooděnci. Večer skutečně přijíždí nekonečná šňůra starých autobusů. Nastoupíme s Ahmedem do jednoho z nich a vyčerpáním usínáme.
+[[Nyní odběhneme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století]]</tw-passagedata><tw-passagedata pid="24" name="Vídeň" tags="germany" position="275,4800" size="100,100">Nooriho slova se naštěstí potvrdila. Novinky o změně německého postoje k migrantům se rychle šířily, načež odpoledne již utichly boje mezi uprchlíky a těžkooděnci. Večer skutečně přijíždí nekonečná šňůra starých autobusů. Nastoupíme s Ahmedem do jednoho z nich a vyčerpáním usínáme.
 
 Z rána přijíždíme do Vídně. Venku prší. Ve Vídni budeme mít několikahodinovou přestávka a pak budeme pokračovat dále do Berlína. Na autobusovém nádraží stojí dobrovolníci, kteří utečencům roznášejí kafe a horký čaj. S vděčností přijímáme. Taková gesta jsou od Vídeňanů opravdu srdečná. Poprvé za celou cestu se setkávám s laskavým zacházením. V porovnání s tím, jak s námi jednali pašeráci a lidé v balkánských zemích i v Maďarska, mám skoro pocit, jako bych se ocitla v jiném vesmíru.
 
@@ -434,7 +516,7 @@ Když odpoledne přijíždíme do Berlína, lidé nás vítají stejně hezky ja
 Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozhlas.cz/zpravy-svet/tisice-uprchliku-dobrovolne-opousteji-nemecko-hlavnim-duvodem-je-pry-deziluze-_201604051422_kbrezovska
 
 
-[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="25" name="Seznam použitých zdrojů" tags="" position="249,3934" size="100,100">**Monografie**
+[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="25" name="Seznam použitých zdrojů" tags="conclusion" position="600,5575" size="100,100">**Monografie**
 
 BADE, Klaus J. *Evropa v pohybu: evropské migrace dvou staletí*. Praha: Nakladatelství Lidové noviny, 2005. ISBN 80-7106-559-5.
 
@@ -466,23 +548,23 @@ BEDNAŘÍKOVÁ, Jarmila. Obdiv a kritika života barbarů v antických pramenech
 
 VLHA, Marek. &quot;Zůstaňte doma a poctivě se živte&quot;: počátky masového vystěhovalectví z českých zemí do Ameriky v zrcadle soudobé beletrie. In: *Sborník prací Filozofické fakulty brněnské univerzity*. 2008, roč. 57, č. C55, s. 77-97. ISBN: 978-80-210-4826-3.
 
-Nejhorší masová vražda v Rakousku od války: Mrtvých běženců v autě bylo 71 [online]. Dostupné z: https://ct24.ceskatelevize.cz/svet/1574584-nejhorsi-masova-vrazda-v-rakousku-od-valky-mrtvych-bezencu-v-aute-bylo-71
+Nejhorší masová vražda v Rakousku od války: Mrtvých běženců v autě bylo 71 &#96;[online]&#96;. Dostupné z: https://ct24.ceskatelevize.cz/svet/1574584-nejhorsi-masova-vrazda-v-rakousku-od-valky-mrtvych-bezencu-v-aute-bylo-71
 
-Migrační krize EU: Statistiky [online]. Dostupné z: http://www.europarl.europa.eu/news/cs/headlines/society/20170629STO78630/migracni-krize-eu-statistiky.
+Migrační krize EU: Statistiky &#96;[online]&#96;. Dostupné z: http://www.europarl.europa.eu/news/cs/headlines/society/20170629STO78630/migracni-krize-eu-statistiky.
 
-Maďarský pohraniční plot [online]. Dostupné z: https://cs.wikipedia.org/wiki/Ma%C4%8Farsk%C3%BD_pohrani%C4%8Dn%C3%AD_plot.
+Maďarský pohraniční plot &#96;[online]&#96;. Dostupné z: https://cs.wikipedia.org/wiki/Ma%C4%8Farsk%C3%BD_pohrani%C4%8Dn%C3%AD_plot.
 
-Encyklopedie migrace [online]. Dostupné z: https://www.encyclopediaofmigration.org.
+Encyklopedie migrace &#96;[online]&#96;. Dostupné z: https://www.encyclopediaofmigration.org.
 
-Yusra plave o život [online]. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#58862
+Yusra plave o život &#96;[online]&#96;. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#58862
 
 
 **Video záznamy**
 
 BEDNAŘÍKOVÁ. Jarmila. *Co je velké stěhování národů?*, 2019. In: 
-Humanitní vědy dokořán na FF MU [online]. [cit. 2021-06-30]. Dostupné z: https://www.youtube.com/watch?v=UUqRJok2I6Q&amp;t=1s
+Humanitní vědy dokořán na FF MU &#96;[online]. [cit. 2021-06-30]&#96;. Dostupné z: https://www.youtube.com/watch?v=UUqRJok2I6Q&amp;t=1s
 
-*Stěhování národů*. 2020. In: Edisco – Videovýpisky [online]. [cit. 2021-06-29]. Dostupné z: https://www.youtube.com/watch?v=El5qIJWkeHc&amp;t=278s
+*Stěhování národů*. 2020. In: Edisco – Videovýpisky &#96;[online]. [cit. 2021-06-29]&#96;. Dostupné z: https://www.youtube.com/watch?v=El5qIJWkeHc&amp;t=278s
 
 
 **Obrazový materiál**
@@ -513,7 +595,9 @@ Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozh
 
 Uprchlíci nocující na nádraží Budapest-Keleti. Dostupné z: https://cs.wikipedia.org/wiki/Pochod_nad%C4%9Bje
 
-Policisté a uprchlíci na budapešťském nádraží. Dostupné z: https://cs.wikipedia.org/wiki/Dopady_evropsk%C3%A9_migra%C4%8Dn%C3%AD_krize_v_Ma%C4%8Farsku</tw-passagedata><tw-passagedata pid="26" name="Migrační tendence" tags="" position="134,366" size="100,100">**Vznik migračních tendencí**
+Policisté a uprchlíci na budapešťském nádraží. Dostupné z: https://cs.wikipedia.org/wiki/Dopady_evropsk%C3%A9_migra%C4%8Dn%C3%AD_krize_v_Ma%C4%8Farsku
+
+[[Zpět-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="26" name="Migrační tendence" tags="edu-intermezzo" position="950,875" size="100,100">**Vznik migračních tendencí**
 
 Přemisťování obyvatel je výsledkem kombinace tvz. **push a pull faktorů**. Push faktory jsou takové, které nutí lidi stěhovat se z jejich domovů. Mohli bychom mezi ně zařadit například nedostatek pracovních příležitostí, nedostatečné zajištění bezpečnosti, vysoká kriminalita, hladomor, povodně nebo válka. Naopak okolnosti, které přinucující stěhování do určitých oblastí, se nazývají pull faktory (nabídka zaměstnaní, vyšší úroveň života, nízká kriminalita, přijatelné klima či politická stabilita).
 
@@ -523,63 +607,67 @@ V dnešní době již můžeme ukázat na jistá pravidla, jak lidé migrují. P
 
 Samostatnou kategorii tvoří pašeráci lidí a obchodníci s lidmi. Rozdíl mezi pašeráctvím a ochodem je v dobrovolnosti odchodu. Lidé jsou pašerování dobrovolně, pašerákům platí horentní sumy za převod přes hranice. Cílem obchodu s lidmi jsou zejména dívky a ženy, které jsou nedobrovolně odváděny, aby v jiném prostředí byly nuceny provozovat prostituci.
 
-[[Pokračovat-&gt;První vědomostní kvíz]]</tw-passagedata><tw-passagedata pid="27" name="První vědomostní kvíz" tags="" position="271,430" size="100,100">Doufám, že jsi se dozvěděl spoustu nových informací o migrační tematice. Nyní si ověříme, jak jsi dával během čtení pozor. Dostaneš několik vědomostních otázek a musíš na ně správně odpovědět, abys mohl pokračovat dále v příběhu. Neměj strach, věřím, že určitě odpovíš správně.
+[[Pokračovat-&gt;První vědomostní kvíz]]</tw-passagedata><tw-passagedata pid="27" name="První vědomostní kvíz" tags="edu-intermezzo" position="800,1025" size="100,100">Doufám, že jsi se dozvěděl spoustu nových informací o migrační tematice. Nyní si ověříme, jak jsi dával během čtení pozor. Dostaneš několik vědomostních otázek a musíš na ně správně odpovědět, abys mohl pokračovat dále v příběhu. Neměj strach, věřím, že určitě odpovíš správně.
 
-[[Jít k první otázce-&gt;Který z níže uvedených příkladů nepatří k migraci?]]</tw-passagedata><tw-passagedata pid="28" name="Který z níže uvedených příkladů nepatří k migraci?" tags="" position="52,496" size="100,100">**Který z níže uvedených příkladů nepatří k migraci?**
+[[Jít k první otázce-&gt;Který z níže uvedených příkladů nepatří k migraci?]]</tw-passagedata><tw-passagedata pid="28" name="Který z níže uvedených příkladů nepatří k migraci?" tags="edu-intermezzo" position="750,1175" size="100,100">**Který z níže uvedených příkladů nepatří k migraci?**
 
 //[[a) odstěhování se do jiného státu za lepší prací]]//
 
 //[[b) dočasná změna trvalého bydliště]]//
 
-//[[c) útěk ze země ze strachu o svůj život]]//</tw-passagedata><tw-passagedata pid="29" name="a) odstěhování se do jiného státu za lepší prací" tags="" position="5,698" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) útěk ze země ze strachu o svůj život]]//</tw-passagedata><tw-passagedata pid="29" name="a) odstěhování se do jiného státu za lepší prací" tags="edu-intermezzo" position="550,1325" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="30" name="b) dočasná změna trvalého bydliště" tags="" position="186,723" size="100,100">Výborně, správná odpověď. Dočasná změna trvalého bydliště skutečně nepatří k migraci.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="30" name="b) dočasná změna trvalého bydliště" tags="edu-intermezzo" position="750,1325" size="100,100">Výborně, správná odpověď. Dočasná změna trvalého bydliště skutečně nepatří k migraci.
 
 Můžeš pokračovat na další otázku.
 
-[[Přejít k druhé otázce-&gt;Jaký je rozdíl mezi udělením azylu a dočasné ochrany?]]</tw-passagedata><tw-passagedata pid="31" name="c) útěk ze země ze strachu o svůj život" tags="" position="259,586" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Přejít k druhé otázce-&gt;Jaký je rozdíl mezi udělením azylu a dočasné ochrany?]]</tw-passagedata><tw-passagedata pid="31" name="c) útěk ze země ze strachu o svůj život" tags="edu-intermezzo" position="925,1325" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="32" name="Jaký je rozdíl mezi udělením azylu a dočasné ochrany?" tags="" position="70,831" size="100,100">**Jaký je rozdíl mezi udělením azylu a dočasné ochrany?**
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="32" name="Jaký je rozdíl mezi udělením azylu a dočasné ochrany?" tags="edu-intermezzo" position="750,1525" size="100,100">**Jaký je rozdíl mezi udělením azylu a dočasné ochrany?**
 
 //[[a) dočasná ochrana je časově omezenější než azyl]]//
 
 //[[b) azyl je časově omezenější než dočasná ochrana]]//
 
-//[[c) dočasná ochrana se nevyužívá při hromadném přílivu uprchlíků]]//</tw-passagedata><tw-passagedata pid="33" name="a) dočasná ochrana je časově omezenější než azyl" tags="" position="27,1004" size="100,100">Výborně, správná odpověď. Dočasná ochrana je skutečně časově omezenější než azyl.
+//[[c) dočasná ochrana se nevyužívá při hromadném přílivu uprchlíků]]//</tw-passagedata><tw-passagedata pid="33" name="a) dočasná ochrana je časově omezenější než azyl" tags="edu-intermezzo" position="550,1700" size="100,100">Výborně, správná odpověď. Dočasná ochrana je skutečně časově omezenější než azyl.
 
 Můžeš pokračovat v příběhu.
 
-[[Pokračovat v příběhu-&gt;Na člunu]]</tw-passagedata><tw-passagedata pid="34" name="b) azyl je časově omezenější než dočasná ochrana" tags="" position="161,969" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(if: $postava is &quot;Sarah&quot;)[[[Pokračovat v příběhu-&gt;Na člunu]]](else:)[[[Pokračovat v příběhu-&gt;Na člunu 2]]]</tw-passagedata><tw-passagedata pid="34" name="b) azyl je časově omezenější než dočasná ochrana" tags="edu-intermezzo" position="750,1700" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="35" name="c) dočasná ochrana se nevyužívá při hromadném přílivu uprchlíků" tags="" position="283,901" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="35" name="c) dočasná ochrana se nevyužívá při hromadném přílivu uprchlíků" tags="edu-intermezzo" position="950,1700" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="36" name="Další vědomostní kvíz" tags="" position="70,2950" size="100,100">Nyní tě čeká další vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="36" name="Další vědomostní kvíz" tags="edu-intermezzo" position="750,3775" size="100,100">Nyní tě čeká další vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
 
-[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900?]] </tw-passagedata><tw-passagedata pid="37" name="Kolik evropanů emigrovalo do USA před rokem 1900?" tags="" position="209,3020" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
+[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900?]] </tw-passagedata><tw-passagedata pid="37" name="Kolik evropanů emigrovalo do USA před rokem 1900?" tags="edu-intermezzo" position="850,3900" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
 
 //[[a) 10 milionů]]//
 
 //[[b) 50 milionů]]//
 
-//[[c) 25 milionů]]//</tw-passagedata><tw-passagedata pid="38" name="c) 25 milionů" tags="" position="275,3155" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
+//[[c) 25 milionů]]//</tw-passagedata><tw-passagedata pid="38" name="c) 25 milionů" tags="edu-intermezzo" position="1000,4050" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
 
 Můžeš pokračovat na další otázku.
 
-[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji?]]</tw-passagedata><tw-passagedata pid="39" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji?" tags="" position="156,3309" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
+[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji?]]</tw-passagedata><tw-passagedata pid="39" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji?" tags="edu-intermezzo" position="850,4225" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
 
 //[[a) Rusové]]//
 
 //[[b) Židé]]//
 
-//[[c) Italové]]//</tw-passagedata><tw-passagedata pid="40" name="a) Rusové" tags="" position="14,3361" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) Italové]]//</tw-passagedata><tw-passagedata pid="40" name="a) Rusové" tags="edu-intermezzo" position="700,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="41" name="b) Židé" tags="" position="156,3470" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="41" name="b) Židé" tags="edu-intermezzo" position="850,4375" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
 
 Můžeš pokračovat v příběhu.
 
-[[Pokračovat v příběhu-&gt;Vídeň]]</tw-passagedata><tw-passagedata pid="42" name="c) Italové" tags="" position="291,3328" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(if: $tabor)[\
+(if: $postava is &quot;Sarah&quot;)[[[Pokračovat v příběhu-&gt;Záchytný tábor]]](else:)[[[Pokračovat v příběhu-&gt;Záchytný tábor 2]]]\
+](else:)[\
+(if: $postava is &quot;Sarah&quot;)[[[Pokračovat v příběhu-&gt;Vídeň]]](else:)[[[Pokračovat v příběhu-&gt;Vídeň 2]]]
+]</tw-passagedata><tw-passagedata pid="42" name="c) Italové" tags="edu-intermezzo" position="1000,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="43" name="Turecké pobřeží 2" tags="" position="1055,156" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;21. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="43" name="Turecké pobřeží 2" tags="turkey-coast" position="1350,575" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;21. srpen 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
 \\
 Cesta letadlem z Damašku dopadla naštěstí dobře. Se svojí sestrou, bratrancem a dalšími 18 uprchlíky se nyní schovávám v lese jen kousek od pobřeží Egejského moře nedaleko tureckého města Izmir. Většina z nás zde jsou Syřané, ale je tu i pár Iráčanů. Čekám tu 4 dny na zavolání pašeráků.
@@ -595,7 +683,7 @@ Uprchlíci poblíž řecko-tureckých hranicích. Dostupné z: https://www.idnes
 
 
 //Abychom se lépe orientovali v příběhu, pojď se naučit základní pojmy týkající se migrační problematiky.//
-[[Naučit se základní pojmy o migraci-&gt;Co je to migrace? 2]]</tw-passagedata><tw-passagedata pid="44" name="Co je to migrace? 2" tags="" position="947,285" size="100,100">**Co je to migrace?**
+[[Naučit se základní pojmy o migraci-&gt;Co je to migrace?]]</tw-passagedata><tw-passagedata pid="44" name="Co je to migrace? 2" tags="" position="2700,725" size="100,100">**Co je to migrace?**
 
 Možnost přemisťovat se je jednou za základních lidských svobod. Lidé migrují odjakživa – v pravěku se tlupy lidí přemisťovaly spolu se zvířaty, která lovily, ve vrcholném středověku se začali lidé přemisťovat do měst kvůli řemeslům a obchodu a také kvůli svobodě, kterou města poskytovala. V novověku se setkáváme již s rozšířením mezikontinentální migrace v době zámořských objevů. S příchodem industriální revoluce zase nastal odliv lidí z venkova za prací do měst.
 
@@ -606,7 +694,7 @@ V dnešní době čelíme migraci z důvodů *ekonomických* (za prací), *soci�
 &lt;img src=&quot;https://i.imgur.com/2CLU2k9.png&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
 Kolik migrantů přišlo v roce 2015 do Evropy. Dostupné z: https://zpravy.aktualne.cz/zahranici/grafika-uprchlici-2015/r~8bf2c0b2d0ce11e59c4a002590604f2e/.
 
-[[Jaké jsou důležité pojmy týkající se migrace?-&gt;Důležité pojmy 2]]</tw-passagedata><tw-passagedata pid="45" name="Migrační tendence 2" tags="" position="1113,371" size="100,100">**Vznik migračních tendencí**
+[[Jaké jsou důležité pojmy týkající se migrace?-&gt;Důležité pojmy 2]]</tw-passagedata><tw-passagedata pid="45" name="Migrační tendence 2" tags="" position="2700,925" size="100,100">**Vznik migračních tendencí**
 
 Přemisťování obyvatel je výsledkem kombinace tvz. **push a pull faktorů**. Push faktory jsou takové, které nutí lidi stěhovat se z jejich domovů. Mohli bychom mezi ně zařadit například nedostatek pracovních příležitostí, nedostatečné zajištění bezpečnosti, vysoká kriminalita, hladomor, povodně nebo válka. Naopak okolnosti, které přinucující stěhování do určitých oblastí, se nazývají pull faktory (nabídka zaměstnaní, vyšší úroveň života, nízká kriminalita, přijatelné klima či politická stabilita).
 
@@ -616,37 +704,37 @@ V dnešní době již můžeme ukázat na jistá pravidla, jak lidé migrují. P
 
 Samostatnou kategorii tvoří pašeráci lidí a obchodníci s lidmi. Rozdíl mezi pašeráctvím a ochodem je v dobrovolnosti odchodu. Lidé jsou pašerování dobrovolně, pašerákům platí horentní sumy za převod přes hranice. Cílem obchodu s lidmi jsou zejména dívky a ženy, které jsou nedobrovolně odváděny, aby v jiném prostředí byly nuceny provozovat prostituci.
 
-[[Pokračovat-&gt;První vědomostní kvíz 2]]</tw-passagedata><tw-passagedata pid="46" name="První vědomostní kvíz 2" tags="" position="970,478" size="100,100">Doufám, že jsi se dozvěděl spoustu nových informací o migrační tematice. Nyní si ověříme, jak jsi dával během čtení pozor. Dostaneš několik vědomostních otázek a musíš na ně správně odpovědět, abys mohl pokračovat dále v příběhu. Neměj strach, věřím, že určitě odpovíš správně.
+[[Pokračovat-&gt;První vědomostní kvíz 2]]</tw-passagedata><tw-passagedata pid="46" name="První vědomostní kvíz 2" tags="" position="2550,1050" size="100,100">Doufám, že jsi se dozvěděl spoustu nových informací o migrační tematice. Nyní si ověříme, jak jsi dával během čtení pozor. Dostaneš několik vědomostních otázek a musíš na ně správně odpovědět, abys mohl pokračovat dále v příběhu. Neměj strach, věřím, že určitě odpovíš správně.
 
-[[Jít k první otázce-&gt;Který z níže uvedených příkladů nepatří k migraci? 2]]</tw-passagedata><tw-passagedata pid="47" name="Který z níže uvedených příkladů nepatří k migraci? 2" tags="" position="1145,560" size="100,100">**Který z níže uvedených příkladů nepatří k migraci?**
+[[Jít k první otázce-&gt;Který z níže uvedených příkladů nepatří k migraci? 2]]</tw-passagedata><tw-passagedata pid="47" name="Který z níže uvedených příkladů nepatří k migraci? 2" tags="" position="2675,1200" size="100,100">**Který z níže uvedených příkladů nepatří k migraci?**
 
 //[[a) odstěhování se do jiného státu za lepší prací-&gt;a]]//
 
 //[[b) dočasná změna trvalého bydliště-&gt;b]]//
 
-//[[c) útěk ze země ze strachu o svůj život-&gt;c]]//</tw-passagedata><tw-passagedata pid="48" name="a" tags="" position="985,624" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) útěk ze země ze strachu o svůj život-&gt;c]]//</tw-passagedata><tw-passagedata pid="48" name="a" tags="" position="2500,1350" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="49" name="b" tags="" position="1166,698" size="100,100">Výborně, správná odpověď. Dočasná změna trvalého bydliště skutečně nepatří k migraci.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="49" name="b" tags="" position="2675,1350" size="100,100">Výborně, správná odpověď. Dočasná změna trvalého bydliště skutečně nepatří k migraci.
 
 Můžeš pokračovat na další otázku.
 
-[[Přejít k druhé otázce-&gt;Jaký je rozdíl mezi udělením azylu a dočasné ochrany? 2]]</tw-passagedata><tw-passagedata pid="50" name="c" tags="" position="1341,599" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Přejít k druhé otázce-&gt;Jaký je rozdíl mezi udělením azylu a dočasné ochrany? 2]]</tw-passagedata><tw-passagedata pid="50" name="c" tags="" position="2875,1350" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="51" name="Jaký je rozdíl mezi udělením azylu a dočasné ochrany? 2" tags="" position="1219,837" size="100,100">**Jaký je rozdíl mezi udělením azylu a dočasné ochrany?**
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="51" name="Jaký je rozdíl mezi udělením azylu a dočasné ochrany? 2" tags="" position="2675,1550" size="100,100">**Jaký je rozdíl mezi udělením azylu a dočasné ochrany?**
 
 //[[a) dočasná ochrana je časově omezenější než azyl-&gt;a1]]//
 
 //[[b) azyl je časově omezenější než dočasná ochrana-&gt;b1]]//
 
-//[[c) dočasná ochrana se nevyužívá při hromadném přílivu uprchlíků-&gt;c1]]//</tw-passagedata><tw-passagedata pid="52" name="a1" tags="" position="1052,850" size="100,100">Výborně, správná odpověď. Dočasná ochrana je skutečně časově omezenější než azyl.
+//[[c) dočasná ochrana se nevyužívá při hromadném přílivu uprchlíků-&gt;c1]]//</tw-passagedata><tw-passagedata pid="52" name="a1" tags="" position="2475,1725" size="100,100">Výborně, správná odpověď. Dočasná ochrana je skutečně časově omezenější než azyl.
 
 Můžeš pokračovat v příběhu.
 
-[[Pokračovat v příběhu-&gt;Na člunu 2]]</tw-passagedata><tw-passagedata pid="53" name="b1" tags="" position="1275,984" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Pokračovat v příběhu-&gt;#Na člunu 2]]</tw-passagedata><tw-passagedata pid="53" name="b1" tags="" position="2675,1725" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="54" name="c1" tags="" position="1381,864" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="54" name="c1" tags="" position="2875,1725" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="55" name="Na člunu 2" tags="" position="1136,1063" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="55" name="Na člunu 2" tags="boat" position="800,1875" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;, true)&lt;/script&gt;\
 \\
 U pobřeží Egejského moře na nás čeká motorový člun. Je však poměrně malý. Odhaduji to tak pro 7 lidí, přitom nás je 21.
 
@@ -666,7 +754,7 @@ Po 15 minutách motor najednou zdechne. „Třeba se zase rozjede“ prohlásí 
 Co bych tak mohl udělat? Jak jen celou situaci zachránit? Plavat umím, ale ne tak dobře jako moje sestra a v takto rozbouřeném moři jsem nikdy neplaval. Pokud skočím do vody, pomůžu tím někomu?
 
 [[Skočit do vody-&gt;Ve vodě 2]]
-[[Raději zůstat sedět v člunu-&gt;Potopení 2]]</tw-passagedata><tw-passagedata pid="56" name="Ve vodě 2" tags="" position="998,1120" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+[[Raději zůstat sedět v člunu-&gt;Potopení 2]]</tw-passagedata><tw-passagedata pid="56" name="Ve vodě 2" tags="boat" position="1175,2050" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
 \\
 Mé tělo se střese strachy. Ale musím to udělat. Není čas déle přemýšlet, skáču do vody. I když jsem v dětství plaval pravidelně, stejně mám pocit, jako bych byl ve vodě poprvé. Tak moc je voda v moři slaná a studená. Ostatní lidi ze člunu na mě zděšeně koukají. Jednou rukou se držím lana a snažím se člun táhnout kupředu. 
 
@@ -681,7 +769,7 @@ Sarah však skáče. Oba plaveme, prorážíte vodu, každý na jedné straně �
 &lt;img src=&quot;https://i.imgur.com/GPp8u90.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci na člunu v Egejském moři. Dostupné z: www.shutterstock.com
 
-[[Zachrání se Mohamed se Sarah v moři?-&gt;V Egejském moři 2]]</tw-passagedata><tw-passagedata pid="57" name="Potopení 2" tags="" position="1262,1107" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
+[[Zachrání se Mohamed se Sarah v moři?-&gt;V Egejském moři 2]]</tw-passagedata><tw-passagedata pid="57" name="Potopení 2" tags="boat" position="1450,2050" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Plavani-se-zadychanim.m4a&quot;)&lt;/script&gt;\
 \\
 Mám velký strach skočit do vody. Raději zůstávám sedět v člunu a snažím se z něj dostat přebytečnou vodu. Motor stále hapruje a panika je čím dál silnější. Většina lidí v člunu zcela evidentně neumí plavat. Potápíme se, určitě se potopíme. 
 
@@ -697,11 +785,10 @@ Voda je příliš studená, klepu se zimou. I když ležím na znaku, stejně c�
 
 KONEC 
 
-[[Neskončilo to nějak brzy?-&gt;Předčasný konec 2]]</tw-passagedata><tw-passagedata pid="58" name="Předčasný konec 2" tags="" position="1386,1165" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
-\\
+[[Neskončilo to nějak brzy?-&gt;Předčasný konec 2]]</tw-passagedata><tw-passagedata pid="58" name="Předčasný konec 2" tags="bad-end" position="1625,2175" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
 V průběhu děje jsi učinil volbu, která zapříčila, že příběh skončil dříve, než mohl. Vrať se zpátky na začátek příběhu a projdi jím znovu.
 
-[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="59" name="V Egejském moři 2" tags="" position="1008,1255" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+[[Vrátit se na začátek-&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="59" name="V Egejském moři 2" tags="boat" position="1325,2125" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
 \\
 Cítím, jak mi docházejí síly. Ruce mám samou modřinu. Sarah se také tváří vyčerpaně. Ve vodě plaveme už několik hodin, nejsem si jistý kolik přesně. Slunce už zapadá a voda je čím dál studenější. 
 
@@ -716,7 +803,7 @@ Na druhém konci telefonu však všichni v člunu slyšíme pobřežní stráž 
 &lt;img src=&quot;https://i.imgur.com/TXIQFou.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
 Uprchlíci na potápějícím člunu. Dostupné z: www.shutterstock.com
 
-[[Pokračovat-&gt;Vylodění v Řecku 2]]</tw-passagedata><tw-passagedata pid="60" name="Vylodění v Řecku 2" tags="" position="1204,1282" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
+[[Pokračovat-&gt;Vylodění v Řecku 2]]</tw-passagedata><tw-passagedata pid="60" name="Vylodění v Řecku 2" tags="close-to-greece" position="1175,2200" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Obycejne-plavani.m4a&quot;)&lt;/script&gt;\
 \\
 Stále se snažíme táhnout člun k břehu. Jsem k smrti unavený a celý mokrý. Neustále se mi zavírají oči, musím se hodně přemáhat, abych je měl otevřené. 
 
@@ -732,7 +819,7 @@ Otočím se na svoji sestru: „Není důvod plakat“ říkám ji. Pak si padne
 
 V tuto chvíli mi najednou vnitřně na ničem nezáleží. Vyčerpáním se mi zavírají oči a usínám. Přežili jsme, na tom jediném záleží.
 
-[[Nyní si dej chvíli oddech od příběhu a pojď se více dozvědět o velké migrační vlně, která výrazně ovlivnila Evropu na pomezí starověku a středověku.-&gt;Stěhování národů 2]]</tw-passagedata><tw-passagedata pid="61" name="Stěhování národů 2" tags="" position="1018,1406" size="100,100">**Stěhování národů**
+[[Nyní si dej chvíli oddech od příběhu a pojď se více dozvědět o velké migrační vlně, která výrazně ovlivnila Evropu na pomezí starověku a středověku.-&gt;Stěhování národů]]</tw-passagedata><tw-passagedata pid="61" name="Stěhování národů 2" tags="" position="2750,2325" size="100,100">**Stěhování národů**
 
 Na přelomu starověku a středověku se mapa Evropy velmi změnila. V té době probíhaly rozsáhlé migrace obyvatelstva. Pro tuto historickou epochu se vžil pojem „Stěhování národů&quot;. 
 
@@ -742,7 +829,7 @@ Pusť si níže uvedené video, které ti ono historické období více přiblí
 &lt;iframe width=&quot;660&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/El5qIJWkeHc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Video z youtube kanálu Edisco — videovýpisky.
 
-[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou 2]]</tw-passagedata><tw-passagedata pid="62" name="Ostrov Lesbos 2" tags="" position="1211,1615" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;22. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+[[Pokračovat-&gt;Další stěhování národů s Bednaříkovou 2]]</tw-passagedata><tw-passagedata pid="62" name="Ostrov Lesbos 2" tags="greece-beach" position="1175,2575" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;22. srpna 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/More.m4a&quot;)&lt;/script&gt;\
 \\
 &lt;img src=&quot;https://i.imgur.com/EZ6qI6U.jpg&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
@@ -756,7 +843,7 @@ Jakmile však vejdeme, číšník na nás začne něco řecky křičet a z jeho 
 
 Následně zamíříme do obchodu s potravinami, kde nás již nikdo nevyhodí, ale lidé na nás koukají dost podezíravě. Jako by se báli, že jim jdeme vykrást obchod. Koupíme si rychle jídlo a vodu, nechceme se v obchodě příliš zdržovat. Poblíž vidíme nějaké stánky s oblečením. Sarah se tam chce jít podívat, ráda by si koupila nové oblečení a hlavně nové boty. Jdu s ní si také vybrat něco lepšího na sebe. Pevně doufám, že nejhorší část cesty máme za sebou a brzy z Řecka odejdeme.
 
-[[Jak pokračoval Mohamed na cestě po Evropě?-&gt;Přes balkán 2]]</tw-passagedata><tw-passagedata pid="63" name="Přes balkán 2" tags="" position="1029,1739" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;29. srpen 2015&lt;/div&gt;&lt;/div&gt;\
+[[Jak pokračoval Mohamed na cestě po Evropě?-&gt;Přes balkán 2]]</tw-passagedata><tw-passagedata pid="63" name="Přes balkán 2" tags="rail-tracks ferry" position="1325,2650" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;29. srpen 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
 \\
 &lt;img src=&quot;https://i.imgur.com/YtBpdKT.jpg&quot; width=&quot;950px&quot; height=&quot;550px&quot;&gt;
@@ -770,7 +857,7 @@ Z Atén nás pašeráci nahnali do autobusu, kterým jsme přijeli do Makedonie.
 
 Na hranicích se rozhodne o tom, kdo to do zvládne a dostane se do Německa a kdo to nezvládne. Kromě strachu mezi námi panuje i silné odhodlání. Potom všem, co jsem nejen já, ale i ostatní absolvovali během cesty, se chceme dostat za každou cenu do cíle.
 
-[[Zvládne Mohamed překročit srbsko-maďarskou hranici a podaří se mu dostat do Německa?-&gt;Hranice u Maďarska 2]]</tw-passagedata><tw-passagedata pid="64" name="Hranice u Maďarska 2" tags="" position="1244,1805" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;30. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+[[Zvládne Mohamed překročit srbsko-maďarskou hranici a podaří se mu dostat do Německa?-&gt;Hranice u Maďarska 2]]</tw-passagedata><tw-passagedata pid="64" name="Hranice u Maďarska 2" tags="hungary-border corn" position="1175,2725" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;30. srpna 2015&lt;/div&gt;&lt;/div&gt;\
 &lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
 \\
 Před námi se tyčí &lt;a href=&quot;https://cs.wikipedia.org/wiki/Ma%C4%8Farsk%C3%BD_pohrani%C4%8Dn%C3%AD_plot&quot; target=&quot;_blank&quot;&gt;ostnatý plot&lt;/a&gt;. Pověstná maďarská hranice, která je přísně střežená. Ani tato skutečnost nás však nemůže zastavit v naší cestě do Německa. V plotě je celkem velká díra, která pro nás uprchlíky slouží jako takový improvizovaný přechod. Hned za ní hlídkuje policie. Koho hraniční stráž chytí, toho odvedou do sběrného tábora.
@@ -785,7 +872,7 @@ Rozdělíme se do menších skupinek, většinou tak po třech nebo po pěti. Jd
 
 Vzhledem k tomu, že jsme neoficiálními vůdci skupiny, jdeme jako první rekognoskovat terén. Jednotlivě prolezeme po břiše dírou v plotě a přikrčeni se plížíme kukuřicí. Po chvíli uslyšíme nedaleko nás cizí kroky. Ihned se zastavíme a strachy ani nedýcháme. To musí být určitě nějaký policajt!
 
-[[Pokračování-&gt;Stále u hranic 2]]</tw-passagedata><tw-passagedata pid="65" name="Stále u hranic 2" tags="" position="1062,1924" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
+[[Pokračování-&gt;Stále u hranic 2]]</tw-passagedata><tw-passagedata pid="65" name="Stále u hranic 2" tags="hungary-border corn" position="1325,2800" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chozeni-v-obili-v-trave.m4a&quot;)&lt;/script&gt;\
 \\
 Policajt se chvíli rozhlížel po poli a zase odešel. Díky Bohu! Byli jsme tak potichu, že si nás vůbec nevšiml. I tak, ale budeme muset být maximálně obezřetní. Za námi se plíží další lidé ze skupiny. Proběhneme kukuřicí, následně se plížíme slunečnicovým i paprikovým polem. Přitom vidíme v horizontu policejní hlídky. Kdykoliv se některý ze strážných přiblíží k polím, hned se zastavíme a pokračujeme dál až poté, co se vzdálí.
 
@@ -798,7 +885,7 @@ Jakmile zapadlo slunce, začala nám být zima. Část lidí z naší skupinky t
 
 Při každém pomyšlení na tuto událost se mi zvedne žaludek. Samozřejmě mám strach z toho, že by nás mohl potkat podobný osud. Pokud si však politici myslí, že vyhlášením nulové tolerance pašeráky zastaví či odradí další uprchlíky k podniknutí cesty do Evropy, tak se šeredně mýlí. Taková naivita. Vždyť uprchlíci by nejradši s pašeráky do kontaktu nepřicházeli ani nechtějí během cesty do Evropy zahynout. Ale copak mají jinou možnost? Už jsme obětovali příliš mnoho a máme za sebou horší a traumatičtější zážitky. Teď to nemůžeme za žádnou cenu vzdát.
 
-[[Objeví se pašeráci a dostanou naše hrdiny do Budapeště?-&gt;Cesta do Budapeště 2]]</tw-passagedata><tw-passagedata pid="66" name="Cesta do Budapeště 2" tags="" position="1256,2020" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;31. srpna 2015&lt;/div&gt;&lt;/div&gt;\
+[[Objeví se pašeráci a dostanou naše hrdiny do Budapeště?-&gt;Cesta do Budapeště 2]]</tw-passagedata><tw-passagedata pid="66" name="Cesta do Budapeště 2" tags="van" position="1175,2900" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;31. srpna 2015&lt;/div&gt;&lt;/div&gt;\
 \\
 Nejsem si jistý, kolik je hodin, může být už po půlnoci. Najednou vidíme ostrá světla a zvuky přijíždějící dodávky. Z dveří aut vystoupí několik převaděčů. Jsem docela překvapený, někteří z nich nemohou být ani plnoletí.
 
@@ -808,9 +895,8 @@ Jen za cestu do Budapeště je to vysoká částka, ale upřímně jsme to oček
 
 Pašeráci nás postupně po jednom posílají do menší dodávky. Nejprve si vezmou od uprchlíka peníze a pak ho teprve pošlou do zadní části dodávky. Nepřijde nám správné se cpát dopředu. Chvíli čekáme, než začnou nastupovat první členové naší skupinky.
 
-Najednou se však ozvou sirény a obklopí nás policejní auta. Jsme obklíčeni. 
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Policejni-sirena.m4a&quot;&gt;&lt;/audio&gt;
+Najednou...(click-replace: &quot;Najednou...&quot;)[Najednou se však ozvou sirény a obklopí nás policejní auta. Jsme obklíčeni.
+\&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Policejni-sirena.m4a&quot;)&lt;/script&gt;\
 
 Jakmile pašeráci uviděli policejní auta, rozutekli se co nejrychleji, jak jen mohli. Policisté začali chytat každého, koho spatřili. Skupina se rozutekla na všechny strany, všichni běžíme zpátky do slunečnicového pole.
 
@@ -820,7 +906,8 @@ Hlavou mi proletí snad tisíc myšlenek. Na jedné straně mám velký strach, 
 
 [[Raději se schovat v poli-&gt;Stále v poli 2]]
 nebo 
-[[Rozběhnout se a pomoct bratrovi-&gt;Do sběrného tábora 2]]</tw-passagedata><tw-passagedata pid="67" name="Stále v poli 2" tags="" position="1055,2118" size="100,100">Cítím, jak mě ze strachu šíleně brní nohy. Se zatajeným dechem ve tmě sleduji, jak Sarah odnáší do policejního auta. Strachy se nedokážu pohnout. Strašně moc bych chtěl sestře pomoct, ale nedokážu to. Kam ji vezou? Co s ní jen bude? Něco takového se nemělo stát. Jako sourozenci jsme měli dojet do Německa spolu. To je tak nespravedlivé!
+[[Rozběhnout se a pomoct bratrovi-&gt;Do sběrného tábora 2]]]</tw-passagedata><tw-passagedata pid="67" name="Stále v poli 2" tags="corn hungary-border" position="1350,3100" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+(set: $tabor to false)Cítím, jak mě ze strachu šíleně brní nohy. Se zatajeným dechem ve tmě sleduji, jak Sarah odnáší do policejního auta. Strachy se nedokážu pohnout. Strašně moc bych chtěl sestře pomoct, ale nedokážu to. Kam ji vezou? Co s ní jen bude? Něco takového se nemělo stát. Jako sourozenci jsme měli dojet do Německa spolu. To je tak nespravedlivé!
 
 Jamile policisté odjeli i s chycenými uprchlíky, padnu na zem do pole. Jen se třesu a těžce oddychuji. Asi po pár minutách za mnou přichází Ahmed. Nic neříká, oba víme, že jakákoliv slova jsou v tomto momentu zbytečná. Obejme mě. Je to od něj moc milé gesto. Sice bych nejradši byl v tento moment sám, přece jen se jedná o velmi vypjatou emoční chvíli. Přesto jsem však rád, že tu se mnou nyní je. O chvíli později usínám únavou.
 
@@ -828,7 +915,8 @@ Po probuzení se rozhlížím kolem. Ostatní členové skupiny se tváří otř
 
 Prozatím nám nezbývá nic jiného, než čekat další den v poli a doufat, že v noci se opět objeví pašeráci.
 
-[[Dále čekat na pašeráky-&gt;Příjezd do Budapeště 2]]</tw-passagedata><tw-passagedata pid="68" name="Do sběrného tábora 2" tags="" position="1452,2089" size="100,100">Nemůžu opustit svoji sestru. Rozběhnu se k Sarah a křičím: &quot;Pusťte ji!!&quot;
+[[Dále čekat na pašeráky-&gt;Příjezd do Budapeště 2]]</tw-passagedata><tw-passagedata pid="68" name="Do sběrného tábora 2" tags="hungary-border" position="1025,3100" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+(set: $tabor to true)Nemůžu opustit svoji sestru. Rozběhnu se k Sarah a křičím: &quot;Pusťte ji!!&quot;
 
 Skočím na záda tomu policistovi, který drží mou sestru a snažím se ho povalit na zem. Je však příliš dobře obrněný. Na rozdíl ode mě má helmu, pistoli i obušek. Snadno mě setřásne a pohodí na zem. 
 
@@ -839,9 +927,9 @@ Do toho přiběhne další policista, aby mu pomohl. Snažím se proti němu boj
 &quot;Proč jsi neběžel zpátky? Měl jsi utéct! Takhle akorát chytili nás oba!&quot; vyštěkne na mě Sarah. Chci jí odpovědět, že jsem ji přece musel pomoct, ale policisté vpředu vozidla začnou něco křičet, asi abychom byli zticha. Zmůžu se pouze na provinilý pohled a Sarah začne plakat.
 
 
-[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století 4]]</tw-passagedata><tw-passagedata pid="69" name="Příjezd do Budapeště 2" tags="" position="916,2207" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;1.září 2015&lt;/div&gt;&lt;/div&gt;\
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Zvuky-noci.m4a&quot;&gt;&lt;/audio&gt;
-
+[[Nyní si chvíli odpočineme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století]]</tw-passagedata><tw-passagedata pid="69" name="Příjezd do Budapeště 2" tags="van2" position="1200,3175" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;1.září 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Zvuky-noci.m4a&quot;)&lt;/script&gt;\
+\\
 &lt;img src=&quot;https://i.imgur.com/eTcpXVc.jpg?1&quot; width=&quot;950px&quot; height=&quot;450px&quot;&gt;
 V noci na maďarsko-srbské hranici. Dostupné z: https://extra.rozhlas.cz/yusra-mardini?_ga=2.241686913.285632241.1623773382-1218066106.1620115450#108012
 
@@ -862,8 +950,8 @@ Vstupujeme do velké haly. Je tu poměrně rušno a hodně lidí. Rozhlížíme 
 Pomocí signálu GPS na našich mobilech se vydáváme směrem k hlavnímu nádraží.
 
 [[Jít k nádraží-&gt;Na nádraží v Budapešti 2]]
-</tw-passagedata><tw-passagedata pid="70" name="Na nádraží v Budapešti 2" tags="" position="1091,2308" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;&gt;&lt;/audio&gt;
-
+</tw-passagedata><tw-passagedata pid="70" name="Na nádraží v Budapešti 2" tags="train-station" position="1350,3250" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;)&lt;/script&gt;\
+\\
 Po dvou hodinách jsme tady. Budapest-Keleti. Největší nádraží ve městě. Nádražní budova je sice krásná, jinak to tady na pohled vypadá příšerně. Brzy zjišťujeme, že životní podmínky jsou zde tristní. Přespává tady několik tisíc uprchlíků, ale na nádraží je jen šest toalet. Migranti jsou na tomto místě uvězněni. Všude okolo je rozmístěná policie a hlídá, aby se uprchlíci z nádraží nedostali. Do vlaků pouští jenom Evropany. Cítíme se zoufalí. Možná nebyl zase tak dobrý nápad utéct z hotelu Berlin. Jak se jen můžeme odsud dostat?
 
 &lt;img src=&quot;https://i.imgur.com/a6nD3OW.png&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
@@ -876,8 +964,8 @@ Nálada na nádraží je hodně napjatá. Uprchlíci protestují, křičí na po
 Atmosféra houstne čím dál více. Potyčky s policisty přibývají, dokonce musí na místě zasahovat těžkooděnci. Situace je nyní nepřehledná. Někteří z uprchlíků utíkají z nádraží. Měli bychom této možnosti využít. Otáčím se k Ahmedovi: „Teď máme příležitost naskočit do nějakého vlaku, teď nebudou mít čas nás hlídat.“ Bratranec se mnou souhlasí, chytí mě za ruku a rychlým krokem míříme ke kolejím.
 
 [[Jít na vlak-&gt;Budapest-Keleti 2]]
-</tw-passagedata><tw-passagedata pid="71" name="Budapest-Keleti 2" tags="" position="933,2404" size="100,100">&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;&gt;&lt;/audio&gt;
-
+</tw-passagedata><tw-passagedata pid="71" name="Budapest-Keleti 2" tags="train-station" position="1200,3325" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;)&lt;/script&gt;\
+\\
 Díváme se na velkou ceduli, kde ukazují příjezdy a odjezdy vlaků. Za 15 minut přijede vlak směrem Šopróň. Díky google map víme, že toto město leží nedaleko od hranic s Rakouskem. Čekáme zatím na zastávce a snažíme se působit co nejvíce normálním dojmem. Do uší si dáme sluchátka a pokoušíme se tvářit nezaujatě.
 
 Zatímco čekáme na vlak, někteří lidé si nás začnou zvědavě prohlížet. Raději se jejich pohledům vyhýbáme. Chceme být maximálně nenápadní a nevýrazní. 
@@ -898,39 +986,38 @@ Noori se také směje. „Musím vám něco důležitého říct. Merkelová, ta
 
 S Ahmedem na Nooriho šokovaně zíráme. Prvotní šok následně vystřídá upřímné nadšení a úleva. Navzájem se na sebe smějeme, objímáme se, z té radosti mi možná začnou téct slzy štěstí. Tak jsme to opravdu zvládli.
 
-[[Nyní odběhneme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace evropanů do USA v 19. století 2]]
-</tw-passagedata><tw-passagedata pid="72" name="Třetí vědomostní kvíz 2" tags="" position="1011,2809" size="100,100">Nyní tě čeká třetí vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
+[[Nyní odběhneme od příběhu a dáme si další vědomostní okénko-&gt;Ekonomická migrace Evropanů do USA v 19. století]]</tw-passagedata><tw-passagedata pid="72" name="Třetí vědomostní kvíz 2" tags="" position="3075,3775" size="100,100">Nyní tě čeká třetí vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
 
-[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900? 2]] </tw-passagedata><tw-passagedata pid="73" name="Kolik evropanů emigrovalo do USA před rokem 1900? 2" tags="" position="1216,2849" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
+[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900? 2]] </tw-passagedata><tw-passagedata pid="73" name="Kolik evropanů emigrovalo do USA před rokem 1900? 2" tags="" position="3250,3900" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
 
 [[a) 20 milionů-&gt;a4]]
 
 [[b) 15 milionů-&gt;b4]]
 
 [[c) 25 milionů-&gt;c4]]
-</tw-passagedata><tw-passagedata pid="74" name="a4" tags="" position="974,2962" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+</tw-passagedata><tw-passagedata pid="74" name="a4" tags="" position="3100,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="75" name="b4" tags="" position="1142,3020" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="75" name="b4" tags="" position="3250,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="76" name="c4" tags="" position="1336,2978" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="76" name="c4" tags="" position="3425,4050" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
 
 Můžeš pokračovat na další otázku.
 
-[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 2]]</tw-passagedata><tw-passagedata pid="77" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 2" tags="" position="1280,3170" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
+[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 2]]</tw-passagedata><tw-passagedata pid="77" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 2" tags="" position="3250,4200" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
 
 [[a) Rusové-&gt;a5]]
 
 [[b) Židé-&gt;b5]]
 
-[[c) Italové-&gt;c5]]</tw-passagedata><tw-passagedata pid="78" name="a5" tags="" position="1041,3250" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[c) Italové-&gt;c5]]</tw-passagedata><tw-passagedata pid="78" name="a5" tags="" position="3100,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="79" name="b5" tags="" position="1173,3366" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="79" name="b5" tags="" position="3250,4375" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
 
 Můžeš pokračovat v příběhu.
 
-[[Pokračovat v příběhu-&gt;Vídeň 2]]</tw-passagedata><tw-passagedata pid="80" name="c5" tags="" position="1344,3326" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Pokračovat v příběhu-&gt;#Vídeň 2]]</tw-passagedata><tw-passagedata pid="80" name="c5" tags="" position="3400,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="81" name="Vídeň 2" tags="" position="1216,3540" size="100,100">Nooriho slova se naštěstí potvrdila. Novinky o změně německého postoje k migrantům se rychle šířily, načež odpoledne již utichly boje mezi uprchlíky a těžkooděnci. Večer skutečně přijíždí nekonečná šňůra starých autobusů. Nastoupíme s Ahmedem do jednoho z nich a vyčerpáním usínáme.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="81" name="Vídeň 2" tags="germany" position="925,4800" size="100,100">Nooriho slova se naštěstí potvrdila. Novinky o změně německého postoje k migrantům se rychle šířily, načež odpoledne již utichly boje mezi uprchlíky a těžkooděnci. Večer skutečně přijíždí nekonečná šňůra starých autobusů. Nastoupíme s Ahmedem do jednoho z nich a vyčerpáním usínáme.
 
 Z rána přijíždíme do Vídně. Venku prší. Ve Vídni budeme mít několikahodinovou přestávka a pak budeme pokračovat dále do Berlína. Na autobusovém nádraží stojí dobrovolníci, kteří utečencům roznášejí kafe a horký čaj. S vděčností přijímáme. Taková gesta jsou od Vídeňanů opravdu srdečná. Poprvé za celou cestu se setkávám s laskavým zacházením. V porovnání s tím, jak s námi jednali pašeráci a lidé v balkánských zemích i v Maďarska, mám skoro pocit, jako bych se ocitl v jiném vesmíru.
 
@@ -948,11 +1035,9 @@ Když odpoledne přijíždíme do Berlína, lidé nás vítají stejně hezky ja
 Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozhlas.cz/zpravy-svet/tisice-uprchliku-dobrovolne-opousteji-nemecko-hlavnim-duvodem-je-pry-deziluze-_201604051422_kbrezovska
 
 
-[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="82" name="útěk ze záchytného tábora" tags="" position="576,3350" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;4. září 2015&lt;/div&gt;&lt;/div&gt;\
+[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="82" name="útěk ze záchytného tábora" tags="camp" position="450,4800" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;4. září 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;)&lt;/script&gt;\
 \\
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;&gt;&lt;/audio&gt;
-
 Již několik dní trčíme v naprosto příšerném sběrném táboře. Je to tady dost možná ještě horší než ve vězení. Ani jednou jsme se pořádně nevyspali, nenajedli ani nenapili. Jídlo nám stále hází přes plot jako nějakým chovným prasatům. Bohužel se nám nepodaří chytit jídlo pokaždé, když ho policisté házejí.
 
 Každým dnem se situace stupňuje. Příváží další a další migranty, tábor se plní natolik, že už se ani nemůže pomalu otočit. Atmosféra už je natolik hustá, že to vypadá na otevřenou vzpouru. Vrhají se na plot, který už se začíná hodně kymácet. Policisté zasahují slzným plynem. 
@@ -967,24 +1052,9 @@ Musíme hlavně promyslet, co dál. Půjdeme ke kolejím směrem k Rakousku a sn
 Pochod uprchlíků z Maďarska do Německa na začátku září 2015. Dostupné z: https://cs.wikipedia.org/wiki/Pochod_nad%C4%9Bje
 
 
-[[Jak bude cesta pokračovat?-&gt;Do Německa]]</tw-passagedata><tw-passagedata pid="83" name="Záchytný tábor" tags="" position="623,3144" size="100,100">Před námi se tyčí vysoký opevněný plot obklíčený policisty. Auto zastaví, policisté odemknout kufr a vytáhnou nás ven. Kolem nás jsou i další auta přivážející migranty. Pevně nás drží s rukama za zády. Jdeme k plotu, který trochu pootevřou a vpustí nás dovnitř spolu s další desítkou uprchlíků.
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;&gt;&lt;/audio&gt;
-
-Uprostřed areálu je jedna velká budova a kolem jsou rozestavěny stany. Vidím i několik suchých budek na veřejné záchody. Kolem areálu hlídkuje policie a uvnitř jsou tisíce migrantů všech věkových kategorií, muži i ženy. Teď už je nám to jasné. Musíme být v záchytném táboře!
-
-&lt;img src=&quot;https://i.imgur.com/ZE6FMQ1.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
-Záchytný uprchlický tábor v Maďarsku. Dostupné z: https://www.denik.cz/z_domova/uprchlicky-tabor-spacaky-konci-v-ohni-20150918-8m3m.html
-
-Slovy se ani nedá popsat, jak hrozně to tady vypadá. Nikde nevidím k dispozici vodu a jídlo. Záchodů je tady jen několik. Z tváří všech uprchlíků vidíme jen zoufalství a beznaděj. Tady skončili ti, kterým se nepodařilo překonat srbsko-maďarskou hranici a byli chyceni. Chtěli se dostat taky do Německa, stejně jako my.
-
-Nemáme ani pořádně možnost si normálně sednout a nechci si raději ani dopředu představovat, jak budeme přespávat. Procházíme se po areálu a nevidím tu ani žádné sprchy.
-
-Po nějaké době vidíme několik dodávek jedoucích k plotu. Zvědavě se přiblížíme. Z dodávek vystupují policisté s nasazenými rouškami na obličeji a vytahují velké bedny. Přijdou blíže k plotu a z bedniček nám začnou házet jídlo. Lidé v táboře se zuřivě hrnou k plotu, aby ukořistili nějakou z lítajících baget. Co to je? Vždyť nás krmí jako zvířata!
-
-[[Dostane se Sarah s Mohamedem z tohoto zařízení?-&gt;útěk ze záchytného tábora]]</tw-passagedata><tw-passagedata pid="84" name="Záchytný tábor 2" tags="" position="1821,3088" size="100,100">Před námi se tyčí vysoký opevněný plot obklíčený policisty. Auto zastaví, policisté odemknout kufr a vytáhnou nás ven. Kolem nás jsou i další auta přivážející migranty. Pevně nás drží s rukama za zády. Jdeme k plotu, který trochu pootevřou a vpustí nás dovnitř spolu s další desítkou uprchlíků.
-
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;&gt;&lt;/audio&gt;
+[[Jak bude cesta pokračovat?-&gt;Do Německa]]</tw-passagedata><tw-passagedata pid="83" name="Záchytný tábor" tags="camp" position="600,4700" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;)&lt;/script&gt;\
+\\
+Před námi se tyčí vysoký opevněný plot obklíčený policisty. Auto zastaví, policisté odemknout kufr a vytáhnou nás ven. Kolem nás jsou i další auta přivážející migranty. Pevně nás drží s rukama za zády. Jdeme k plotu, který trochu pootevřou a vpustí nás dovnitř spolu s další desítkou uprchlíků.
 
 Uprostřed areálu je jedna velká budova a kolem jsou rozestavěny stany. Vidím i několik suchých budek na veřejné záchody. Kolem areálu hlídkuje policie a uvnitř jsou tisíce migrantů všech věkových kategorií, muži i ženy. Teď už je nám to jasné. Musíme být v záchytném táboře!
 
@@ -997,8 +1067,23 @@ Nemáme ani pořádně možnost si normálně sednout a nechci si raději ani do
 
 Po nějaké době vidíme několik dodávek jedoucích k plotu. Zvědavě se přiblížíme. Z dodávek vystupují policisté s nasazenými rouškami na obličeji a vytahují velké bedny. Přijdou blíže k plotu a z bedniček nám začnou házet jídlo. Lidé v táboře se zuřivě hrnou k plotu, aby ukořistili nějakou z lítajících baget. Co to je? Vždyť nás krmí jako zvířata!
 
-[[Dostane se Sarah s Mohamedem z tohoto zařízení?-&gt;útěk ze záchytného tábora 2]]</tw-passagedata><tw-passagedata pid="85" name="útěk ze záchytného tábora 2" tags="" position="1635,3149" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;4. září 2015&lt;/div&gt;&lt;/div&gt;\
-&lt;audio controls autoplay class=&quot;curator&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;&gt;&lt;/audio&gt;
+[[Dostane se Sarah s Mohamedem z tohoto zařízení?-&gt;útěk ze záchytného tábora]]</tw-passagedata><tw-passagedata pid="84" name="Záchytný tábor 2" tags="camp" position="1225,4700" size="100,100">&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-1.m4a&quot;)&lt;/script&gt;\
+\\
+Před námi se tyčí vysoký opevněný plot obklíčený policisty. Auto zastaví, policisté odemknout kufr a vytáhnou nás ven. Kolem nás jsou i další auta přivážející migranty. Pevně nás drží s rukama za zády. Jdeme k plotu, který trochu pootevřou a vpustí nás dovnitř spolu s další desítkou uprchlíků.
+
+Uprostřed areálu je jedna velká budova a kolem jsou rozestavěny stany. Vidím i několik suchých budek na veřejné záchody. Kolem areálu hlídkuje policie a uvnitř jsou tisíce migrantů všech věkových kategorií, muži i ženy. Teď už je nám to jasné. Musíme být v záchytném táboře!
+
+&lt;img src=&quot;https://i.imgur.com/ZE6FMQ1.png&quot; width=&quot;850px&quot; height=&quot;450px&quot;&gt;
+Záchytný uprchlický tábor v Maďarsku. Dostupné z: https://www.denik.cz/z_domova/uprchlicky-tabor-spacaky-konci-v-ohni-20150918-8m3m.html
+
+Slovy se ani nedá popsat, jak hrozně to tady vypadá. Nikde nevidím k dispozici vodu a jídlo. Záchodů je tady jen několik. Z tváří všech uprchlíků vidíme jen zoufalství a beznaděj. Tady skončili ti, kterým se nepodařilo překonat srbsko-maďarskou hranici a byli chyceni. Chtěli se dostat taky do Německa, stejně jako my.
+
+Nemáme ani pořádně možnost si normálně sednout a nechci si raději ani dopředu představovat, jak budeme přespávat. Procházíme se po areálu a nevidím tu ani žádné sprchy.
+
+Po nějaké době vidíme několik dodávek jedoucích k plotu. Zvědavě se přiblížíme. Z dodávek vystupují policisté s nasazenými rouškami na obličeji a vytahují velké bedny. Přijdou blíže k plotu a z bedniček nám začnou házet jídlo. Lidé v táboře se zuřivě hrnou k plotu, aby ukořistili nějakou z lítajících baget. Co to je? Vždyť nás krmí jako zvířata!
+
+[[Dostane se Sarah s Mohamedem z tohoto zařízení?-&gt;útěk ze záchytného tábora 2]]</tw-passagedata><tw-passagedata pid="85" name="útěk ze záchytného tábora 2" tags="camp" position="1075,4800" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;4. září 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.setupAAP(&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/06/Chaos-demonstrace-2.m4a&quot;)&lt;/script&gt;\
 \\
 Již několik dní trčíme v naprosto příšerném sběrném táboře. Je to tady dost možná ještě horší než ve vězení. Ani jednou jsme se pořádně nevyspali, nenajedli ani nenapili. Jídlo nám stále hází přes plot jako nějakým chovným prasatům. Bohužel se nám nepodaří chytit jídlo pokaždé, když ho policisté házejí.
 
@@ -1013,7 +1098,8 @@ Musíme hlavně promyslet, co dál. Půjdeme ke kolejím směrem k Rakousku a sn
 &lt;img src=&quot;https://i.imgur.com/76IjVi0.png&quot; width=&quot;950px&quot; height=&quot;650px&quot;&gt;
 Pochod uprchlíků z Maďarska do Německa na začátku září 2015. Dostupné z: https://cs.wikipedia.org/wiki/Pochod_nad%C4%9Bje
 
-[[Jak bude cesta pokračovat?-&gt;Do Německa 2]]</tw-passagedata><tw-passagedata pid="86" name="Do Německa" tags="" position="471,3591" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;9. září 2015&lt;/div&gt;&lt;/div&gt;\
+[[Jak bude cesta pokračovat?-&gt;Do Německa 2]]</tw-passagedata><tw-passagedata pid="86" name="Do Německa" tags="germany" position="600,4900" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;9. září 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.stopAAP()&lt;/script&gt;\
 \\
 KONEČNĚ!!! Sedíme s Mohamedem vedle sebe ve starém autobuse a míříme do Berlína! Jsem nejšťastnější za celé týdny, možná i měsíce. Během cesty do Rakouska jsme se dozvěděli, že Německo změnilo postoj k uprchlíkům a německá kancléřka Merkelová řekla, že všichni uprchlíci jsou v Německu vítáni. Novinky o změně německého postoje k migrantům se rychle šířily. Museli jsme se ještě pěšky vypravit do Budapeště, tam však již několik dní  přijíždí nekonečná šňůra autobusů. Do jednoho z nich jsme nastoupili a vyčerpáním usnuli.
 
@@ -1027,7 +1113,8 @@ Když odpoledne přijíždíme do Berlína, lidé nás vítají stejně hezky ja
 Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozhlas.cz/zpravy-svet/tisice-uprchliku-dobrovolne-opousteji-nemecko-hlavnim-duvodem-je-pry-deziluze-_201604051422_kbrezovska
 
 
-[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="87" name="Do Německa 2" tags="" position="1777,3336" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;9. září 2015&lt;/div&gt;&lt;/div&gt;\
+[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="87" name="Do Německa 2" tags="germany" position="1225,4900" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;9. září 2015&lt;/div&gt;&lt;/div&gt;\
+&lt;script&gt;document.stopAAP()&lt;/script&gt;\
 \\
 KONEČNĚ!!! Sedíme se Sarah vedle sebe ve starém autobuse a míříme do Berlína! Jsme nejšťastnější za celé týdny, možná i měsíce. Během cesty do Rakouska jsme se dozvěděli, že Německo změnilo postoj k uprchlíkům a německá kancléřka Merkelová řekla, že všichni uprchlíci jsou v Německu vítáni. Novinky o změně německého postoje k migrantům se rychle šířily. Museli jsme se ještě pěšky vypravit do Budapeště, tam však již několik dní  přijíždí nekonečná šňůra autobusů. Do jednoho z nich jsme nastoupili a vyčerpáním usnuli.
 
@@ -1041,12 +1128,7 @@ Když odpoledne přijíždíme do Berlína, lidé nás vítají stejně hezky ja
 Vítání uprchlíků na berlínském nádraží. Dostupné z: https://www.irozhlas.cz/zpravy-svet/tisice-uprchliku-dobrovolne-opousteji-nemecko-hlavnim-duvodem-je-pry-deziluze-_201604051422_kbrezovska
 
 
-[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="88" name="Damašek" tags="" position="255,7" size="100,100">Damašek, hlavní město Sýrie, před vypuknutím občanské války v roce 2011.
-&lt;img src=&quot;https://i.imgur.com/vqleHxO.png&quot; width=&quot;650px&quot; height=&quot;950px&quot;&gt;
-BAHBOUH, Charif. //Sýrie: historie, kultura, geografie.// Praha: Dar Ibn Rushd, 2005, s.97. ISBN 80-86149-44-7.
-Dostupné z: https://dnnt.mzk.cz/view/uuid:8f780640-7329-11e6-81ec-005056827e51?page=uuid:2545e7d0-7a66-11e6-ad48-005056825209
-
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="89" name="Důležité pojmy" tags="" position="68,215" size="100,100">**Důležité pojmy**
+[[KONEC NAŠEHO PŘÍBĚHU-&gt;Závěrečná reflexe]]</tw-passagedata><tw-passagedata pid="88" name="Důležité pojmy" tags="edu-intermezzo" position="800,800" size="100,100">**Důležité pojmy**
 
 Podle směru migrace rozeznáváme:
 
@@ -1062,7 +1144,7 @@ Podle směru migrace rozeznáváme:
 
 Podmínky pro získání azylu jsou velmi přísné, což je dané i poměrně úzkou definicí pojmu uprchlík. Proto se vyvinul další institut: **dočasná ochrana**. Jak je z názvu patrné, dočasná ochrana je časově omezenější než azyl (u azylanta se předpokládá návrat do vlasti po zlepšení situace, zastavení perzekuce) a používá se zejména při hromadném přílivu uprchlíků.
 
-[[Jaké jsou migrační tendence?-&gt;Migrační tendence]]</tw-passagedata><tw-passagedata pid="90" name="Důležité pojmy 2" tags="" position="1189,231" size="100,100">**Důležité pojmy**
+[[Jaké jsou migrační tendence?-&gt;Migrační tendence]]</tw-passagedata><tw-passagedata pid="89" name="Důležité pojmy 2" tags="" position="2550,825" size="100,100">**Důležité pojmy**
 
 Podle směru migrace rozeznáváme:
 
@@ -1078,14 +1160,14 @@ Podle směru migrace rozeznáváme:
 
 Podmínky pro získání azylu jsou velmi přísné, což je dané i poměrně úzkou definicí pojmu uprchlík. Proto se vyvinul další institut: **dočasná ochrana**. Jak je z názvu patrné, dočasná ochrana je časově omezenější než azyl (u azylanta se předpokládá návrat do vlasti po zlepšení situace, zastavení perzekuce) a používá se zejména při hromadném přílivu uprchlíků.
 
-[[Jaké jsou migrační tendence?-&gt;Migrační tendence 2]]</tw-passagedata><tw-passagedata pid="91" name="Další stěhování národů s Bednaříkovou" tags="" position="54,1598" size="100,100">Doufám, že se ti video líbilo a bylo pro tebe dostatečně poučné. Nyní budeš mít možnost shlédnout další tematické video, které se také zaměřuje na problematiku stěhování národů. Opět si připrav papír s poznámkami.
+[[Jaké jsou migrační tendence?-&gt;Migrační tendence 2]]</tw-passagedata><tw-passagedata pid="90" name="Další stěhování národů s Bednaříkovou" tags="edu-intermezzo" position="525,2400" size="100,100">Doufám, že se ti video líbilo a bylo pro tebe dostatečně poučné. Nyní budeš mít možnost shlédnout další tematické video, které se také zaměřuje na problematiku stěhování národů. Opět si připrav papír s poznámkami.
 
 &lt;iframe width=&quot;660&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/UUqRJok2I6Q&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Video: //Co je to velké stěhování národů?// ze série **Migrace v průběhu tisíciletí** v rámci projektu *Humanitní vědy dokořán na FF MU*. 
 Hovoří doc. PhDr. Jarmila Bednaříková, CSc. a Mgr. et Mgr. Tomáš Ondráček.
 
 
-[[Pokračovat-&gt;Reflexe]]</tw-passagedata><tw-passagedata pid="92" name="Reflexe" tags="" position="225,1660" size="100,100">Doufám, že tě historické okénko o Stěhování národů bavilo a opět jsi se obohatil o nové informace. Tentokrát tě však nečeká vědomostní kvíz, ale reflexe nově nabytých znalostí.
+[[Pokračovat-&gt;Reflexe]]</tw-passagedata><tw-passagedata pid="91" name="Reflexe" tags="edu-intermezzo" position="700,2475" size="100,100">Doufám, že tě historické okénko o Stěhování národů bavilo a opět jsi se obohatil o nové informace. Tentokrát tě však nečeká vědomostní kvíz, ale reflexe nově nabytých znalostí.
 
 Přečti si vše, co sis poznamenal z obou videí. Následně si polož několik níže uvedených otázek:
 
@@ -1095,14 +1177,15 @@ Přečti si vše, co sis poznamenal z obou videí. Následně si polož několik
 
 Odpovědi na otázky si stručně sepiš na papír. Budou se ti hodit na konci příběhu.
 
-[[Zpět k hlavní dějové lince-&gt;Ostrov Lesbos]]</tw-passagedata><tw-passagedata pid="93" name="Ekonomická migrace Evropanů do USA v 19. století" tags="" position="198,2686" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
+(if: $postava is &quot;Sarah&quot;)[[[Zpět k hlavní dějové lince-&gt;Ostrov Lesbos]]](else:)[[[Zpět k hlavní dějové lince-&gt;Ostrov Lesbos 2]]]</tw-passagedata><tw-passagedata pid="92" name="Ekonomická migrace Evropanů do USA v 19. století" tags="edu-intermezzo" position="900,3500" size="100,100">&lt;script&gt;document.stopAAP()&lt;/script&gt;\
+**Ekonomická migrace Evropanů do USA v 19. století**
 
 Celé 19. století bylo érou masové migrace do Severní Ameriky. Imigranti přijížděli ze všech koutů Evropy. Lákal je příslib svobody i lepší budoucnosti. V první polovině 19. století emigrovali Evropané především ze západní a severní Evropy. Na konci století přišla velká vlna imigrantů z Itálie, Polska, Ruska a Rakouska-Uherska. Do roku 1900 odešlo do USA na 25 Evropanů.
 
 &lt;img src=&quot;https://i.imgur.com/1EGwyGH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 133. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3. 
 
-[[Proč odcházeli?-&gt;Důvody odchodu do USA]]</tw-passagedata><tw-passagedata pid="94" name="Důvody odchodu do USA" tags="" position="65,2784" size="100,100">**Proč emigranti odcházeli?** 
+[[Proč odcházeli?-&gt;Důvody odchodu do USA]]</tw-passagedata><tw-passagedata pid="93" name="Důvody odchodu do USA" tags="edu-intermezzo" position="750,3600" size="100,100">**Proč emigranti odcházeli?** 
 
 Zčásti šlo o důvody politické - země, kam lidé odcházeli, platili za ráje svobody - to platilo o Francii, Velké Británii a USA (i když ne o Německu, které se k migrantům chovalo spíše jako k importované levné pracovní síle). Stejně tak se některé země snažily popřít, že by odjezd jejich obyvatel byl důsledkem pronásledování: např. rumunská vláda nutila odjíždějící Židy podepsat prohlášení, že jejich emigrace má hospodářské důvody. 
 
@@ -1113,7 +1196,7 @@ Emigranti se nezřídka hodlali do své původní vlasti vrátit (často v pří
 &lt;img src=&quot;https://i.imgur.com/2Yc5TZH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 143. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3.
 
-[[Češi v USA-&gt;Češi v USA]]</tw-passagedata><tw-passagedata pid="95" name="Češi v USA" tags="" position="222,2859" size="100,100">**Češi v USA**
+[[Češi v USA-&gt;Češi v USA]]</tw-passagedata><tw-passagedata pid="94" name="Češi v USA" tags="edu-intermezzo" position="900,3675" size="100,100">**Češi v USA**
 
 Také lidé z českých zemích hledali své štěstí a lepší živobytí v Americe. Počátky masové migrace z českých zemí do Ameriky, tedy především do USA, sahají do začátku padesátých let 19. století a její vrchol pak nastal před první světovou válkou. 
 
@@ -1126,18 +1209,18 @@ Dostupné z: https://dnnt.mzk.cz/view/uuid:14278e50-2191-11e6-8803-005056827e51?
 
 Evropské státy se proti emigraci svých obyvatel snažily bojovat - především u mladých a silných mužů, kteří měli dostatek pracovních sil a byli potřeba pro vojenskou službu. Nejinak tomu bylo i v případě českých zemích. V dobovém tisku můžeme najít &lt;a href=&quot;https://digilib.phil.muni.cz/handle/11222.digilib/102838&quot; target=&quot;_blank&quot;&gt; spoustu příkladů&lt;/a&gt;, kdy byli Češi vyzýváni, aby raději *&quot;zůstali doma a poctivě se živili&quot;* (článek celý číst určitě nemusíš, jen si ho zběžně prohlédni a můžeš se k němu vrátit později). 
 
-[[Přejít na vědomostní kvíz-&gt;Další vědomostní kvíz]]</tw-passagedata><tw-passagedata pid="96" name="a) 10 milionů" tags="" position="30,3105" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Přejít na vědomostní kvíz-&gt;Další vědomostní kvíz]]</tw-passagedata><tw-passagedata pid="95" name="a) 10 milionů" tags="edu-intermezzo" position="700,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="97" name="b) 50 milionů" tags="" position="152,3172" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="96" name="b) 50 milionů" tags="edu-intermezzo" position="850,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="98" name="Ekonomická migrace Evropanů do USA v 19. století 3" tags="" position="413,2283" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="97" name="Ekonomická migrace Evropanů do USA v 19. století 3" tags="" position="2725,3500" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
 
 Celé 19. století bylo érou masové migrace do Severní Ameriky. Imigranti přijížděli ze všech koutů Evropy. Lákal je příslib svobody i lepší budoucnosti. V první polovině 19. století emigrovali Evropané především ze západní a severní Evropy. Na konci století přišla velká vlna imigrantů z Itálie, Polska, Ruska a Rakouska-Uherska. Do roku 1900 odešlo do USA na 25 Evropanů.
 
 &lt;img src=&quot;https://i.imgur.com/1EGwyGH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 133. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3. 
 
-[[Proč odcházeli?-&gt;Důvody odchodu do USA 3]]</tw-passagedata><tw-passagedata pid="99" name="Důvody odchodu do USA 3" tags="" position="559,2307" size="100,100">**Proč emigranti odcházeli?** 
+[[Proč odcházeli?-&gt;Důvody odchodu do USA 3]]</tw-passagedata><tw-passagedata pid="98" name="Důvody odchodu do USA 3" tags="" position="2575,3600" size="100,100">**Proč emigranti odcházeli?** 
 
 Zčásti šlo o důvody politické - země, kam lidé odcházeli, platili za ráje svobody - to platilo o Francii, Velké Británii a USA (i když ne o Německu, které se k migrantům chovalo spíše jako k importované levné pracovní síle). Stejně tak se některé země snažily popřít, že by odjezd jejich obyvatel byl důsledkem pronásledování: např. rumunská vláda nutila odjíždějící Židy podepsat prohlášení, že jejich emigrace má hospodářské důvody. 
 
@@ -1148,7 +1231,7 @@ Emigranti se nezřídka hodlali do své původní vlasti vrátit (často v pří
 &lt;img src=&quot;https://i.imgur.com/2Yc5TZH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 143. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3.
 
-[[Češi v USA-&gt;Češi v USA 3]]</tw-passagedata><tw-passagedata pid="100" name="Češi v USA 3" tags="" position="447,2430" size="100,100">**Češi v USA**
+[[Češi v USA-&gt;Češi v USA 3]]</tw-passagedata><tw-passagedata pid="99" name="Češi v USA 3" tags="" position="2725,3675" size="100,100">**Češi v USA**
 
 Také lidé z českých zemích hledali své štěstí a lepší živobytí v Americe. Počátky masové migrace z českých zemí do Ameriky, tedy především do USA, sahají do začátku padesátých let 19. století a její vrchol pak nastal před první světovou válkou. 
 
@@ -1161,44 +1244,44 @@ Dostupné z: https://dnnt.mzk.cz/view/uuid:14278e50-2191-11e6-8803-005056827e51?
 
 Evropské státy se proti emigraci svých obyvatel snažily bojovat - především u mladých a silných mužů, kteří měli dostatek pracovních sil a byli potřeba pro vojenskou službu. Nejinak tomu bylo i v případě českých zemích. V dobovém tisku můžeme najít &lt;a href=&quot;https://digilib.phil.muni.cz/handle/11222.digilib/102838&quot; target=&quot;_blank&quot;&gt; spoustu příkladů&lt;/a&gt;, kdy byli Češi vyzýváni, aby raději *&quot;zůstali doma a poctivě se živili&quot;* (článek celý číst určitě nemusíš, jen si ho zběžně prohlédni a můžeš se k němu vrátit později). 
 
-[[Přejít na vědomostní kvíz-&gt;Další vědomostní kvíz 3]]</tw-passagedata><tw-passagedata pid="101" name="Další vědomostní kvíz 3" tags="" position="581,2487" size="100,100">Nyní tě čeká další vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
+[[Přejít na vědomostní kvíz-&gt;Další vědomostní kvíz 3]]</tw-passagedata><tw-passagedata pid="100" name="Další vědomostní kvíz 3" tags="" position="2575,3775" size="100,100">Nyní tě čeká další vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
 
-[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900? 3]]</tw-passagedata><tw-passagedata pid="102" name="Kolik evropanů emigrovalo do USA před rokem 1900? 3" tags="" position="439,2568" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
+[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900? 3]]</tw-passagedata><tw-passagedata pid="101" name="Kolik evropanů emigrovalo do USA před rokem 1900? 3" tags="" position="2675,3900" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
 
 //[[a) 10 milionů-&gt;a10]]//
 
 //[[b) 50 milionů-&gt;b10]]//
 
-//[[c) 25 milionů-&gt;c10]]//</tw-passagedata><tw-passagedata pid="103" name="a10" tags="" position="355,2684" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) 25 milionů-&gt;c10]]//</tw-passagedata><tw-passagedata pid="102" name="a10" tags="" position="2550,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="104" name="b10" tags="" position="498,2687" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="103" name="b10" tags="" position="2675,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="105" name="c10" tags="" position="619,2691" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="104" name="c10" tags="" position="2825,4050" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
 
 Můžeš pokračovat na další otázku.
 
-[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 3]]</tw-passagedata><tw-passagedata pid="106" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 3" tags="" position="506,2845" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
+[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 3]]</tw-passagedata><tw-passagedata pid="105" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 3" tags="" position="2675,4225" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
 
 //[[a) Rusové-&gt;a)Rusové]]//
 
 //[[b) Židé-&gt;b)Židé]]//
 
-//[[c) Italové-&gt;c)Italové]]//</tw-passagedata><tw-passagedata pid="107" name="a)Rusové" tags="" position="356,2995" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) Italové-&gt;c)Italové]]//</tw-passagedata><tw-passagedata pid="106" name="a)Rusové" tags="" position="2525,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="108" name="b)Židé" tags="" position="506,2996" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="107" name="b)Židé" tags="" position="2675,4375" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
 
 Můžeš pokračovat v příběhu.
 
-[[Pokračovat v příběhu-&gt;Záchytný tábor]]</tw-passagedata><tw-passagedata pid="109" name="c)Italové" tags="" position="656,2975" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Pokračovat v příběhu-&gt;#Záchytný tábor]]</tw-passagedata><tw-passagedata pid="108" name="c)Italové" tags="" position="2825,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="110" name="Další stěhování národů s Bednaříkovou 2" tags="" position="1181,1456" size="100,100">Doufám, že se ti video líbilo a bylo pro tebe dostatečně poučné. Nyní budeš mít možnost shlédnout další tematické video, které se také zaměřuje na problematiku stěhování národů. Opět si připrav papír s poznámkami.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="109" name="Další stěhování národů s Bednaříkovou 2" tags="" position="2575,2400" size="100,100">Doufám, že se ti video líbilo a bylo pro tebe dostatečně poučné. Nyní budeš mít možnost shlédnout další tematické video, které se také zaměřuje na problematiku stěhování národů. Opět si připrav papír s poznámkami.
 
 &lt;iframe width=&quot;660&quot; height=&quot;415&quot; src=&quot;https://www.youtube.com/embed/UUqRJok2I6Q&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
 Video: //Co je to velké stěhování národů?// ze série **Migrace v průběhu tisíciletí** v rámci projektu *Humanitní vědy dokořán na FF MU*. 
 Hovoří doc. PhDr. Jarmila Bednaříková, CSc. a Mgr. et Mgr. Tomáš Ondráček.
 
 
-[[Pokračovat-&gt;Reflexe 2]]</tw-passagedata><tw-passagedata pid="111" name="Reflexe 2" tags="" position="1024,1555" size="100,100">Doufám, že tě historické okénko o Stěhování národů bavilo a opět jsi se obohatil o nové informace. Tentokrát tě však nečeká vědomostní kvíz, ale reflexe nově nabytých znalostí.
+[[Pokračovat-&gt;Reflexe 2]]</tw-passagedata><tw-passagedata pid="110" name="Reflexe 2" tags="" position="2750,2475" size="100,100">Doufám, že tě historické okénko o Stěhování národů bavilo a opět jsi se obohatil o nové informace. Tentokrát tě však nečeká vědomostní kvíz, ale reflexe nově nabytých znalostí.
 
 Přečti si vše, co sis poznamenal z obou videí. Následně si polož několik níže uvedených otázek:
 
@@ -1208,14 +1291,14 @@ Přečti si vše, co sis poznamenal z obou videí. Následně si polož několik
 
 Odpovědi na otázky si stručně sepiš na papír. Budou se ti hodit na konci příběhu.
 
-[[Zpět k hlavní dějové lince-&gt;Ostrov Lesbos 2]]</tw-passagedata><tw-passagedata pid="112" name="Ekonomická migrace evropanů do USA v 19. století 2" tags="" position="1111,2488" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
+[[Zpět k hlavní dějové lince-&gt;#Ostrov Lesbos 2]]</tw-passagedata><tw-passagedata pid="111" name="Ekonomická migrace evropanů do USA v 19. století 2" tags="" position="3250,3500" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
 
 Celé 19. století bylo érou masové migrace do Severní Ameriky. Imigranti přijížděli ze všech koutů Evropy. Lákal je příslib svobody i lepší budoucnosti. V první polovině 19. století emigrovali Evropané především ze západní a severní Evropy. Na konci století přišla velká vlna imigrantů z Itálie, Polska, Ruska a Rakouska-Uherska. Do roku 1900 odešlo do USA na 25 Evropanů.
 
 &lt;img src=&quot;https://i.imgur.com/1EGwyGH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 133. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3. 
 
-[[Proč odcházeli?-&gt;Důvody odchodu do USA 2]]</tw-passagedata><tw-passagedata pid="113" name="Důvody odchodu do USA 2" tags="" position="952,2596" size="100,100">**Proč emigranti odcházeli?** 
+[[Proč odcházeli?-&gt;Důvody odchodu do USA 2]]</tw-passagedata><tw-passagedata pid="112" name="Důvody odchodu do USA 2" tags="" position="3075,3600" size="100,100">**Proč emigranti odcházeli?** 
 
 Zčásti šlo o důvody politické - země, kam lidé odcházeli, platili za ráje svobody - to platilo o Francii, Velké Británii a USA (i když ne o Německu, které se k migrantům chovalo spíše jako k importované levné pracovní síle). Stejně tak se některé země snažily popřít, že by odjezd jejich obyvatel byl důsledkem pronásledování: např. rumunská vláda nutila odjíždějící Židy podepsat prohlášení, že jejich emigrace má hospodářské důvody. 
 
@@ -1226,7 +1309,7 @@ Emigranti se nezřídka hodlali do své původní vlasti vrátit (často v pří
 &lt;img src=&quot;https://i.imgur.com/2Yc5TZH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 143. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3.
 
-[[Češi v USA-&gt;Češi v USA 2]]</tw-passagedata><tw-passagedata pid="114" name="Češi v USA 2" tags="" position="1193,2666" size="100,100">**Češi v USA**
+[[Češi v USA-&gt;Češi v USA 2]]</tw-passagedata><tw-passagedata pid="113" name="Češi v USA 2" tags="" position="3250,3675" size="100,100">**Češi v USA**
 
 Také lidé z českých zemích hledali své štěstí a lepší živobytí v Americe. Počátky masové migrace z českých zemí do Ameriky, tedy především do USA, sahají do začátku padesátých let 19. století a její vrchol pak nastal před první světovou válkou. 
 
@@ -1239,14 +1322,14 @@ Dostupné z: https://dnnt.mzk.cz/view/uuid:14278e50-2191-11e6-8803-005056827e51?
 
 Evropské státy se proti emigraci svých obyvatel snažily bojovat - především u mladých a silných mužů, kteří měli dostatek pracovních sil a byli potřeba pro vojenskou službu. Nejinak tomu bylo i v případě českých zemích. V dobovém tisku můžeme najít &lt;a href=&quot;https://digilib.phil.muni.cz/handle/11222.digilib/102838&quot; target=&quot;_blank&quot;&gt; spoustu příkladů&lt;/a&gt;, kdy byli Češi vyzýváni, aby raději *&quot;zůstali doma a poctivě se živili&quot;* (článek celý číst určitě nemusíš, jen si ho zběžně prohlédni a můžeš se k němu vrátit později). 
 
-[[Přejít na vědomostní kvíz-&gt;Třetí vědomostní kvíz 2]]</tw-passagedata><tw-passagedata pid="115" name="Ekonomická migrace Evropanů do USA v 19. století 4" tags="" position="1624,2154" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
+[[Přejít na vědomostní kvíz-&gt;Třetí vědomostní kvíz 2]]</tw-passagedata><tw-passagedata pid="114" name="Ekonomická migrace Evropanů do USA v 19. století 4" tags="" position="3800,3475" size="100,100">**Ekonomická migrace Evropanů do USA v 19. století**
 
 Celé 19. století bylo érou masové migrace do Severní Ameriky. Imigranti přijížděli ze všech koutů Evropy. Lákal je příslib svobody i lepší budoucnosti. V první polovině 19. století emigrovali Evropané především ze západní a severní Evropy. Na konci století přišla velká vlna imigrantů z Itálie, Polska, Ruska a Rakouska-Uherska. Do roku 1900 odešlo do USA na 25 Evropanů.
 
 &lt;img src=&quot;https://i.imgur.com/1EGwyGH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 133. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3. 
 
-[[Proč odcházeli?-&gt;Důvody odchodu do USA 4]]</tw-passagedata><tw-passagedata pid="116" name="Důvody odchodu do USA 4" tags="" position="1486,2267" size="100,100">**Proč emigranti odcházeli?** 
+[[Proč odcházeli?-&gt;Důvody odchodu do USA 4]]</tw-passagedata><tw-passagedata pid="115" name="Důvody odchodu do USA 4" tags="" position="3625,3600" size="100,100">**Proč emigranti odcházeli?** 
 
 Zčásti šlo o důvody politické - země, kam lidé odcházeli, platili za ráje svobody - to platilo o Francii, Velké Británii a USA (i když ne o Německu, které se k migrantům chovalo spíše jako k importované levné pracovní síle). Stejně tak se některé země snažily popřít, že by odjezd jejich obyvatel byl důsledkem pronásledování: např. rumunská vláda nutila odjíždějící Židy podepsat prohlášení, že jejich emigrace má hospodářské důvody. 
 
@@ -1257,7 +1340,7 @@ Emigranti se nezřídka hodlali do své původní vlasti vrátit (často v pří
 &lt;img src=&quot;https://i.imgur.com/2Yc5TZH.png&quot; width=&quot;950px&quot; height=&quot;660px&quot;&gt;
 KING, Russell: *Atlas lidské migrace*. Praha: Mladá fronta, 2008, s. 143. Dostupné z: https://dnnt.mzk.cz/view/uuid:cc0101d0-5254-11ea-a3ba-005056827e52?page=uuid:9976e3ce-6197-40af-804b-07eb0e247cc3.
 
-[[Češi v USA-&gt;Češi v USA 4]]</tw-passagedata><tw-passagedata pid="117" name="Češi v USA 4" tags="" position="1643,2346" size="100,100">**Češi v USA**
+[[Češi v USA-&gt;Češi v USA 4]]</tw-passagedata><tw-passagedata pid="116" name="Češi v USA 4" tags="" position="3800,3675" size="100,100">**Češi v USA**
 
 Také lidé z českých zemích hledali své štěstí a lepší živobytí v Americe. Počátky masové migrace z českých zemí do Ameriky, tedy především do USA, sahají do začátku padesátých let 19. století a její vrchol pak nastal před první světovou válkou. 
 
@@ -1270,37 +1353,37 @@ Dostupné z: https://dnnt.mzk.cz/view/uuid:14278e50-2191-11e6-8803-005056827e51?
 
 Evropské státy se proti emigraci svých obyvatel snažily bojovat - především u mladých a silných mužů, kteří měli dostatek pracovních sil a byli potřeba pro vojenskou službu. Nejinak tomu bylo i v případě českých zemích. V dobovém tisku můžeme najít &lt;a href=&quot;https://digilib.phil.muni.cz/handle/11222.digilib/102838&quot;&gt; spoustu příkladů&lt;/a&gt;, kdy byli Češi vyzýváni, aby raději *&quot;zůstali doma a poctivě se živili&quot;*(článek celý číst určitě nemusíš, jen si ho zběžně prohlédni a můžeš se k němu vrátit později). 
 
-[[Přejít na vědomostní kvíz-&gt;Další vědomostní kvíz 4]]</tw-passagedata><tw-passagedata pid="118" name="Další vědomostní kvíz 4" tags="" position="1499,2424" size="100,100">Nyní tě čeká další vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
+[[Přejít na vědomostní kvíz-&gt;Další vědomostní kvíz 4]]</tw-passagedata><tw-passagedata pid="117" name="Další vědomostní kvíz 4" tags="" position="3625,3775" size="100,100">Nyní tě čeká další vědomostní kvíz, ale neboj, již bude poslední a pokud ho zvládneš, čeká tě již snadný průchod zbytkem příběhu.
 
-[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900? 4]]</tw-passagedata><tw-passagedata pid="119" name="Kolik evropanů emigrovalo do USA před rokem 1900? 4" tags="" position="1661,2507" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
+[[Přejít k otázce-&gt;Kolik evropanů emigrovalo do USA před rokem 1900? 4]]</tw-passagedata><tw-passagedata pid="118" name="Kolik evropanů emigrovalo do USA před rokem 1900? 4" tags="" position="3800,3900" size="100,100">**Kolik evropanů emigrovalo do USA před rokem 1900?**
 
 //[[a) 10 milionů-&gt;a11]]//
 
 //[[b) 50 milionů-&gt;b11]]//
 
-//[[c) 25 milionů-&gt;c11]]//</tw-passagedata><tw-passagedata pid="120" name="a11" tags="" position="1497,2601" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) 25 milionů-&gt;c11]]//</tw-passagedata><tw-passagedata pid="119" name="a11" tags="" position="3625,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="121" name="b11" tags="" position="1663,2642" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="120" name="b11" tags="" position="3825,4050" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="122" name="c11" tags="" position="1805,2569" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="121" name="c11" tags="" position="3975,4050" size="100,100">Výborně, správná odpověď. Do roku 1900 emigrovalo z Evropy do USA na 25 milionů obyvatel.
 
 Můžeš pokračovat na další otázku.
 
-[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 4]]</tw-passagedata><tw-passagedata pid="123" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 4" tags="" position="1714,2777" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
+[[Přejít k druhé otázce-&gt;Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 4]]</tw-passagedata><tw-passagedata pid="122" name="Která skupina obyvatel odcházela z Evropy do USA nejčastěji? 4" tags="" position="3800,4200" size="100,100">**Která skupina obyvatel odcházela z Evropy do USA nejčastěji?**
 
 //[[a) Rusové-&gt;a)Rusové 1]]//
 
 //[[b) Židé-&gt;b)Židé 1]]//
 
-//[[c) Italové-&gt;c)Italové 1]]//</tw-passagedata><tw-passagedata pid="124" name="a)Rusové 1" tags="" position="1564,2927" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+//[[c) Italové-&gt;c)Italové 1]]//</tw-passagedata><tw-passagedata pid="123" name="a)Rusové 1" tags="" position="3650,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="125" name="b)Židé 1" tags="" position="1714,2927" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="124" name="b)Židé 1" tags="" position="3800,4375" size="100,100">Výborně, správná odpověď. Z politických důvodů odcházeli do USA nejčastěji evropští židé.
 
 Můžeš pokračovat v příběhu.
 
-[[Pokračovat v příběhu-&gt;Záchytný tábor 2]]</tw-passagedata><tw-passagedata pid="126" name="c)Italové 1" tags="" position="1834,2927" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
+[[Pokračovat v příběhu-&gt;#Záchytný tábor 2]]</tw-passagedata><tw-passagedata pid="125" name="c)Italové 1" tags="" position="3950,4375" size="100,100">Špatná odpověď. Vrať se zpátky na otázku a zkus odpovědět znovu a správně.
 
-(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="127" name="Závěrečná reflexe" tags="" position="468,3822" size="100,100">**Reflexe:**
+(link-goto: &quot;Zpět&quot;, (history:)&#39;s last)</tw-passagedata><tw-passagedata pid="126" name="Závěrečná reflexe" tags="conclusion" position="375,5400" size="100,100">**Reflexe:**
 
 Pevně doufám, že tě příběh bavil a zároveň jsi se dozvěděl něco nového.
 Nyní tě čeká ještě závěrečná reflexe. S některým ze svých spolužáků utvoř dvojici (nezáleží na tom, za koho jste hráli v příběhu). 
@@ -1321,11 +1404,16 @@ Jakmile bude vaše diskuze u konce, přejděte na druhou část debaty, která j
 
 
 
+[[Autoři-&gt;credits]]
 
 [[Seznam použitých zdrojů]] 
 
 
-[[Projít si příběh znovu -&gt;Úvod - představení příběhu]]</tw-passagedata></tw-storydata>
+[[Projít si příběh znovu -&gt;Úvod - představení příběhu]]</tw-passagedata><tw-passagedata pid="127" name="credits" tags="conclusion credits" position="450,5575" size="100,100">
+
+[[Zpět-&gt;Závěrečná reflexe]]
+
+</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">"use strict";var _slicedToArray=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,a=!1,i=void 0;try{for(var o,s=e[Symbol.iterator]();!(r=(o=s.next()).done)&&(n.push(o.value),!t||n.length!==t);r=!0);}catch(e){a=!0,i=e}finally{try{!r&&s.return&&s.return()}finally{if(a)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}!function(){
 /**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.

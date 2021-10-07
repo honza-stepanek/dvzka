@@ -66,7 +66,10 @@ document.initAAP = function () {
 }
 
 // Setup AAP for the current tw-passage
-document.setupAAP = function (source) {
+// if the source is being set to a different one, the audio autoplays
+// if the source is the same the audio remains paused/playing
+// if true is passed as second argument the audio will always autoplay 
+document.setupAAP = function (source, always_autoplay=false) {
     if (!document.ambientAudioPlayer) {
         document.initAAP();
     }
@@ -78,6 +81,11 @@ document.setupAAP = function (source) {
             document.ambientAudioPlayer.pauseButtonPress();
         }
     }
+
+    if (always_autoplay && document.ambientAudioPlayer.audio.paused) {
+        document.ambientAudioPlayer.pauseButtonPress();
+    }
+
     $("tw-sidebar")[0].appendChild(document.ambientAudioPlayer.pauseButton);
     $("tw-sidebar")[0].appendChild(document.ambientAudioPlayer.volumeButton);
 }
