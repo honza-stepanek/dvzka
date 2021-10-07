@@ -46,19 +46,98 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(119, 105, 76);
-    /* background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg"); */
+    /* background-image: url(""); */
     background-size: cover;
-
+    
     font-family: "Roboto Slab", serif;
 }
+
 /* 
 tw-story[tags ~= "TAG"] {
     background-image: url("");
 } */
 
+/* thematic backgrounds */
+tw-story[tags ~= "edu-intermezzo"] {
+    background-image: url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+}
+
+/* beginning */
+tw-story[tags ~= "intro"],
+tw-story[tags ~= "character-choice"],
+tw-story[tags ~= "about-mohamed"],
+tw-story[tags ~= "about-sarah"] {
+    background-image: url("https://images.unsplash.com/photo-1589262804704-c5aa9e6def89?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80");
+}
+
+/* tw-story[tags ~= "character-choice"] {
+    background-image: url("");
+}
+tw-story[tags ~= "about-mohamed"] {
+    background-image: url("");
+}
+tw-story[tags ~= "about-sarah"] {
+    background-image: url("");
+} */
+
+/* endings */
+tw-story[tags ~= "conclusion"] {
+    background-image: url("");
+}
+
+tw-story[tags ~= "bad-end"] {
+    background-image: url("");
+}
+
+tw-story[tags ~= "credits"] {
+    background-image: url("");
+}
+
+/* storyline backgrounds */
 tw-story[tags ~= "sea"] {
     background-image: url("https://images.unsplash.com/photo-1470115209269-18dd2d7285cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
 }
+tw-story[tags ~= "boat"] {
+    /* maybe? */
+    background-image: url("https://i.imgur.com/c0bBo7L.png");
+}
+tw-story[tags ~= "turkey-coast"] {
+    background-image: url("");
+    background-image: url("https://images.unsplash.com/photo-1470115209269-18dd2d7285cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+}
+tw-story[tags ~= "close-to-greece"] {
+    background-image: url("https://images.unsplash.com/photo-1470115209269-18dd2d7285cd?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+}
+tw-story[tags ~= "greece-beach"] {
+    background-image: url("");
+}
+tw-story[tags ~= "ferry"] {
+    background-image: url("");
+}
+tw-story[tags ~= "hungary-border"] {
+    background-image: url("");
+}
+tw-story[tags ~= "corn"] {
+    background-image: url("https://images.unsplash.com/photo-1567547921486-f280c2f53b5d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80");
+}
+tw-story[tags ~= "van"],
+tw-story[tags ~= "van2"] {
+    background-image: url("https://images.unsplash.com/photo-1588758167582-5c1021c30e0a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1304&q=80");
+}
+tw-story[tags ~= "camp"] {
+    background-image: url("");
+}
+tw-story[tags ~= "train-tracks"] {
+    background-image: url("https://i.imgur.com/YtBpdKT.jpeg");
+}
+tw-story[tags ~= "train-station"] {
+    background-image: url("https://i.imgur.com/a6nD3OW.png");
+}
+tw-story[tags ~= "germany"] {
+    background-image: url("");
+}
+
+
 
 
 /*============================
