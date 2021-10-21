@@ -342,8 +342,9 @@ iframe {
 ============================*/
 
 span.citation {
+    display: inline-block;
     font-size: 75%;
-    line-height: 1.2em;
+    line-height: 1.5em;
     word-break: break-word;
 }
 
@@ -464,6 +465,10 @@ audio {
     background-color: rgb(241, 241, 241);
 }
 
+
+img.logo {
+    box-shadow: none;
+}
 .logolink {
     /* EU */
     display: block;
@@ -477,18 +482,19 @@ audio {
     line-height: 1.4em;
     text-align: center;
 }
+.eu-msmt-logo {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+}
 
 .eu-disclaimer {
     text-align: center;
 
     font-size: 65%;
     line-height: 1.4em;
-}
 
-.eu-msmt-logo {
-    display: block;
-    margin: 1em auto;
-    width: 80%;
+    margin-top: 7em;
 }
 
 

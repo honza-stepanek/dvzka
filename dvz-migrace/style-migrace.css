@@ -15,8 +15,8 @@ h2 {
     font-size: 150%;
 }
 h3 {
-    font-size: 120%;
-    font-weight: 500;
+    font-size: 110%;
+    font-weight: 600;
 }
 
 hr {
@@ -57,40 +57,18 @@ tw-story[tags ~= "TAG"] {
     background-image: url("");
 } */
 
-/* thematic backgrounds */
+/* educational intermezzo background */
 tw-story[tags ~= "edu-intermezzo"] {
     background-image: url("resources/library.png");
 }
 
-/* beginning */
+/* beginning and ending backgrounds */
 tw-story[tags ~= "intro"],
 tw-story[tags ~= "character-choice"],
 tw-story[tags ~= "about-mohamed"],
-tw-story[tags ~= "about-sarah"] {
-    background-image: url("resources/globe.png");
-}
-
-/* tw-story[tags ~= "character-choice"] {
-    background-image: url("");
-}
-tw-story[tags ~= "about-mohamed"] {
-    background-image: url("");
-}
-tw-story[tags ~= "about-sarah"] {
-    background-image: url("");
-} */
-
-/* endings */
+tw-story[tags ~= "about-sarah"],
 tw-story[tags ~= "conclusion"] {
-    background-image: url("");
-}
-
-tw-story[tags ~= "bad-end"] {
-    background-image: url("");
-}
-
-tw-story[tags ~= "credits"] {
-    background-image: url("");
+    background-image: url("resources/globe.png");
 }
 
 /* storyline backgrounds */
@@ -519,21 +497,44 @@ iframe {
 }
 
 
-img.logolink {
-    /* EU fondy */
+.logolink {
+    /* EU */
     display: block;
     width: 85%;
-    margin: 8em auto 1em;
-    background-color: rgba(255, 255, 255, 0.335);
-    box-shadow: none;
+    margin: 0 auto;
+    margin-top: 5em;
+    box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.17);
 }
 .logotext {
-    /* EU fondy */
-    font-size: 75%;
+    /* EU */
+    font-size: small;
     line-height: 1.4em;
     text-align: center;
 }
 
+.eu-disclaimer {
+    text-align: center;
+
+    font-size: 65%;
+    line-height: 1.4em;
+
+    margin-top: 7em;
+}
+
+.eu-msmt-logo {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+}
+
+
+tw-passage[tags ~= "bibliography"] {
+    word-wrap: break-word;
+    font-size: 90%;
+}
+tw-passage[tags ~= "bibliography"] tw-link {
+    font-size: 116%;
+}
 
 
 /*=============================
@@ -552,7 +553,7 @@ div.flex-columns > div {
     flex-grow: 1;
     padding-right: 1em;
 }
-div.flex-columns > div.last-columnt {
+div.flex-columns > div.last-column {
     padding-right: 0em;
 }
 
