@@ -144,12 +144,17 @@ tw-icon[alt="Undo"],
 tw-icon[alt="Redo"] {
     display: none;
     /* TODO remove for release */
-    display: block;
+    /* display: block; */
 }
-tw-icon {
+tw-icon[alt] {
     margin: 0.3em 0;
+    opacity: 0.6;
 }
-tw-icon > img {
+tw-icon[alt]:hover,
+tw-icon[alt]:focus {
+    opacity: 0.9;
+}
+tw-icon[alt] > img {
     height: 45px;
     box-shadow: none;
 }
