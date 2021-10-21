@@ -35,7 +35,7 @@ tw-story {
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
     /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Brno_View_from_Spilberk_131.JPG"); */
-    background-image: url("resources/brno_landscape.png");
+    background-image: url("https://honzaflash.github.io/dvzka/dvz-velikani/resources/brno_landscape.png");
     background-size: cover;
 
     font-family: "Roboto Slab", serif;
@@ -62,7 +62,7 @@ tw-passage {
     margin-bottom: 4vh;
 
     background-color: rgb(255, 253, 236);
-    background-image: url("resources/mapa-bg.png");
+    background-image: url("https://honzaflash.github.io/dvzka/dvz-velikani/resources/mapa-bg.png");
     box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
     color: black;
 
