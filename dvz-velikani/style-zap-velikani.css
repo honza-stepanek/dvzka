@@ -314,6 +314,8 @@ img.wrong-option {
 img {
     max-width: 100%;
     display: block;
+
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modal-dialog-container img {
@@ -420,11 +422,36 @@ a.img-opener {
 div.flex-row {
     display: flex;
     flex-direction: row;
+
     align-items: center;
     justify-content: space-between;
 }
 div.flex-row > * {
     max-width: 32%;
+}
+
+
+div.flex-columns,
+div.flex-wrap-row-reverse {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div,
+div.flex-wrap-row-reverse > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-column,
+div.flex-wrap-row-reverse > div.last-column {
+    padding-right: 0em;
+}
+
+div.flex-wrap-row-reverse {
+    flex-wrap: wrap-reverse;
 }
 
 
@@ -469,22 +496,6 @@ audio {
 /*=============================
    credits page adjustments 
 =============================*/
-
-div.flex-columns {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-div.flex-columns > div {
-    width: 50%;
-    min-width: 11em;
-    flex-grow: 1;
-    padding-right: 1em;
-}
-div.flex-columns > div.last-columnt {
-    padding-right: 0em;
-}
 
 tw-passage[tags ~= "credits"] .logo {
     max-width: 12em;
