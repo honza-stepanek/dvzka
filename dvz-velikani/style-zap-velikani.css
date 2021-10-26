@@ -423,12 +423,32 @@ a.img-opener {
 div.flex-row {
     display: flex;
     flex-direction: row;
+    margin-bottom: 2em;
 
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 }
 div.flex-row > * {
     max-width: 32%;
+}
+
+div.row-cell tw-link {
+    margin: 0;
+}
+
+div.row-cell-description {
+    /* height: 5em; */
+    margin-top: -0.2em;
+
+    font-size: 90%;
+    word-wrap: break-word;
+}
+
+@media (max-width: 649px) {
+    div.row-cell-description {
+        font-size: 65%;
+        word-wrap: break-word;
+    }
 }
 
 
