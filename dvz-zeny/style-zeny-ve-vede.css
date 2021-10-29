@@ -65,7 +65,7 @@ tw-passage {
     align-self: center;
 
     padding: 2em;
-    margin-top: 3vh;
+    margin-top: calc(2vh + 20px);
     margin-bottom: 4vh;
 
     background-color: rgb(255, 253, 236);
@@ -465,6 +465,104 @@ a:visited {
 a:visited:hover {
     color: hsl(182, 100%, 22%);
     text-decoration-thickness: 1.5px;
+}
+
+
+
+
+
+/*============================
+        Accessibility
+============================*/
+
+body.accessibility-mode tw-story {
+    font-family: Calibri, sans-serif;
+}
+
+div.accessibility-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 0px;
+}
+
+/* the visible button itself */
+#accessibility-toggle {
+    width: 2em;
+    height: 1.5em;
+    background-color: rgba(231, 231, 231, 0.5);
+    padding-left: 0.4em;
+    font-family: Calibri, sans-serif;
+    line-height: 1.5em;
+    cursor: pointer;
+
+    transform: translateX(50%);
+    opacity: 0.4;
+
+    transition: 300ms;
+    transition-property: transform, opacity, background-color;
+}
+#accessibility-toggle::before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: -30%;
+    background-color: none;
+    cursor: auto;
+}
+
+/* toggle is on */
+body.accessibility-mode #accessibility-toggle {
+    font-family: "Dancing Script", serif;
+}
+
+/* hover action */
+#accessibility-toggle:hover,
+tw-passage[tags ~= "uvod"] #accessibility-toggle {
+    transform: none;
+    background-color: rgba(231, 231, 231, 0.5);
+    opacity: 0.9;
+}
+
+/* draw user's attention on opening the DVZ up */
+tw-passage[tags ~= "uvod"] #accessibility-toggle {
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 2;
+    animation-name: wiggle;
+}
+@keyframes wiggle {
+    from {
+        transform: none;
+        padding-right: 0;
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(50%);
+        padding-right: 0.5em;
+        opacity: 0.4;
+    }
+    to {
+        transform: none;
+        padding-right: 0;
+        opacity: 0.9;
+    }
+}
+
+
+/* narrow screen */
+@media (max-width: 649px) {
+
+    div.accessibility-toggle-container {
+        top: 10px;
+        right: 0px;
+    }
+
+    #accessibility-toggle  {
+        transform: translate(15%);
+        background-color: rgba(163, 163, 163, 0.739);
+        opacity: 0.6;
+    }
 }
 
 
