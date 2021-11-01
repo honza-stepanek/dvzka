@@ -21,5 +21,7 @@
 ---
 ### Více o projektu Humanitní vědy dokořán
 [Stránky projektu](https://digikult.phil.muni.cz/) \
+[Informace o projektu na muni.cz](https://www.muni.cz/en/research/projects/50247)
+
 Projekt vzniká pod [Katedrou informačních studií a knihovnictví](https://kisk.phil.muni.cz/)
 
