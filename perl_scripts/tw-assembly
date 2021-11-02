@@ -13,6 +13,7 @@
 #   tw-assembly mystory.html -d
 ###########################################################
 
+# TODO refactor - divide the main body of the script into proper subroutines
 
 use strict;
 use warnings;
@@ -193,7 +194,7 @@ else {
     open_new(\*CSS_OUT, "${output_base_path}style-$output_name", '.css');
     open_new(\*HTML_OUT, "$output_base_path$output_name", '.html');
 
-    # TODO  fails to properly dissasemble a twine story with an empty <style> element
+    my $non_empty_found = 0;
     my $in_style = undef;
     while (<HTML_IN>) {
         if (defined $in_style && $in_style == 1) {
@@ -204,7 +205,12 @@ else {
                 print HTML_OUT "\n</style>\n<link href=\"$css_pth\" rel=\"stylesheet\">\n$bit_after_style";
                 $in_style = 0;
             } else {
-                print CSS_OUT $_;
+                if (!$non_empty_found && $_ =~ /^\s*$/) {
+                    # skipping the first empty lines
+                } else {
+                    $non_empty_found = 1; # a non-empty line found
+                    print CSS_OUT $_;
+                }
             }
         }
         elsif (!defined $in_style && $_ =~ /^(.*<style[^<]*id="twine-user-stylesheet"[^<]*>)(.*)$/) {
@@ -264,6 +270,7 @@ sub parse_args {
         } elsif ($arg eq "-o") {
             $assembling = 0; # dissasembling
             $overwrite_dis = 1; # overwrite source file
+            $safe_open = 0; # force open files
         } elsif ($arg eq "-js") {
             $javascript = shift; # replacing 'user javascript' in original the twine file
         } elsif ($arg eq "-f") {
@@ -292,21 +299,24 @@ sub parse_args {
     } elsif ($overwrite_dis) {
         # make a copy for reading
         copy($html_in_pth, "${html_in_pth}.orig") or die "Copying input file failed: $!";
+        print("saving a copy of $html_in_pth as ${html_in_pth}.orig\n");
+
         # set variables for overwriting the input file
         my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
         $html_in_pth = "${html_in_pth}.orig";
         $output_name = $name;
         $output_base_path = $base_path;
-        $safe_open = 0;
 
     } else {
         # output file name based on the input name
         my ($name, $base_path, $ext_) = fileparse($html_in_pth, (".html"));
+        
         $output_name = defined $assembling && $assembling == 0 ? "$name-d" : "$name-a";
-        if ($overwrite_dis && $assembling == 0 && "$name" =~ /(.*)-a/) {
-            # reversing the assembly -> overwrite the original not assembled file
+        if (defined $assembling && $assembling == 0 && "$name" =~ /(.*)-a(_\d+)?/) {
+            # remove the '-a' sufix if disassembling
             $output_name = $1;
         }
+
         $output_base_path = $base_path;
     }
 }
@@ -334,12 +344,14 @@ sub print_help {
     print $usage . "\n" .
     "  -a       assembly mode [default]\n" .
     "  -d       disassembly mode\n" .
-    "  -o       disassemble and overwright\n" .
+    "  -o       disassemble and overwright the input file\n" .
     "  -js PTH  replace user javascript in the original\n" .
     "           twine html with contents of PTH\n" .
     "  -s       safe open (new files are numbered\n" .
     "           if same name already exists) [deafult]\n" .
     "  -f       no safe open\n" .
+    "  -recover NAME\n" .
+    "           #TODO  replaces the current file *.html by the *.html.orig \n" .
     # "#TODO ...\n" .
     "";
     exit 0;
