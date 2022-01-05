@@ -30,45 +30,48 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
-    /* background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2020/09/AkK_jidelna.jpg"); */
     background-size: cover;
 
     font-family: "Roboto Slab", serif;
 }
 
-tw-story[tags ~= "intro"] {
-    background-image: url("images/kostel-a-fara-cropped.png");
-}
-
+tw-story[tags ~= "intro"],
 tw-story[tags ~= "overview"],
 tw-story[tags ~= "ending"] {
-    background-image: url("images/kostel-a-fara-cropped.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/kostel-a-fara-cropped.png");
+}
+
+tw-story[tags = "intro stb"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/stare_brno.png");
 }
 
 /* locations */
+tw-story[tags ~= "office"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/stul.png");
+}
 tw-story[tags ~= "refectory"] {
-    background-image: url("images/refektar.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/refektar.png");
 }
 tw-story[tags ~= "entry"] {
-    background-image: url("images/chodba.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/chodba.png");
 }
 tw-story[tags ~= "kitchen"] {
-    background-image: url("images/kuchyne.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/kuchyne.png");
 }
 tw-story[tags ~= "door"] {
-    background-image: url("images/vchod.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/vchod.png");
 }
 tw-story[tags ~= "cell"] {
-    background-image: url("images/dormitar.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/dormitar.png");
 }
 tw-story[tags ~= "yard"] {
-    background-image: url("images/rajsky-dvur.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/rajsky-dvur.png");
 }
 tw-story[tags ~= "outside"] {
-    background-image: url("images/nadvori.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/nadvori.png");
 }
 tw-story[tags ~= "bus"] {
-    background-image: url("images/autobus.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/1950/images/autobus.png");
 }
 
 
@@ -123,9 +126,9 @@ tw-icon > img {
         padding: 5%;
     }
     tw-passage {
-        margin-top: 65px;
-        /* leave space for the sidebar */
-        padding: 2em;
+        margin-top: 3.1em;
+        /* leave space for the floating clock */
+        padding: 1.4em;
         font-size: 85%;
         line-height: normal;
     }
@@ -344,6 +347,30 @@ tw-hook[name="inlinememorylink"] tw-link:hover {
     color: rgb(0, 0, 0);
     background-color: rgb(100, 100, 100);
     opacity: 0.5;
+}
+
+
+/* wiki articles */
+div.modal-dialog.wiki {
+    height: 100%;
+}
+div.modal-dialog.wiki iframe {
+    width: 1200px;
+    max-width: 100%;
+    height: 100%;
+
+    border: solid 2px rgba(78, 78, 78, 0.7);
+}
+/* narrow screen */
+@media (max-width: 649px) {
+    .modal-dialog-container {
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+    
+    .modal-dialog.wiki {
+        padding: 0.6em;
+    }
 }
 
 
