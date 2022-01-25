@@ -1,0 +1,543 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
+
+/* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
+/* $$$ This DVZ is not polished yet.                           $$$ */
+/* $$$ The CSS is sort of a mess mostly copied from elswhere.  $$$ */
+/* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
+
+
+/* general structure */
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 120%;
+    font-weight: 500;
+}
+
+/*============================
+    TWINE STORY 
+============================*/
+
+tw-story {
+    padding: 80px 10%;
+    min-height: 100%;
+
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(53, 51, 47);
+    /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Brno_View_from_Spilberk_131.JPG"); */
+    background-image: url("resources/stare-brno.png");
+    background-size: cover;
+
+    font-family: "Roboto Slab", serif;
+}
+
+
+/* tw-story[tags ~= "tag"] {
+    background-image: url("url of the image");
+} */
+
+
+
+
+/*============================
+    TWINE PASSAGE 
+============================*/
+tw-passage {
+    max-width: 1000px;
+    width: 100%;
+    align-self: center;
+
+    padding: 2em;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+
+    background-color: rgb(255, 253, 236);
+    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+    color: black;
+
+    z-index: 0;
+}
+
+tw-story tw-consecutive-br {
+    height: 1em;
+}
+
+tw-sidebar {
+    /* TODO */
+    /* display: none; */
+    position: absolute;
+}
+
+tw-passage[tags ~= "title-passage"] {
+    font-size: 110%;
+}
+
+/*==============================
+    Twine Story and Passage
+   Responsivness adjustments
+==============================*/
+
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-story {
+        padding: 5%;
+    }
+
+    tw-passage {
+        margin-top: 20px;
+        padding: 1em;
+        font-size: 85%;
+        line-height: normal;
+    }
+    tw-passage[tags ~= "title-passage"] {
+        font-size: 85%;
+    }
+}
+/* wider screen */
+@media (min-width: 650px) {
+    tw-sidebar {
+        position: absolute;
+        left: -80px;
+
+        flex-direction: column;
+        /* width: 45px; */
+    }
+}
+
+
+/*============================
+    TWINE LINKS 
+============================*/
+
+/* Default style */
+tw-link,
+tw-link.visited {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    margin: 0.3em 0;
+    max-width: 100%;
+    
+    color: white;
+    font-weight: 500;
+    background-color: #0000DC;
+    border-left: solid black 0;
+
+    transition: 400ms;
+    transition-property: all;
+}
+
+tw-link::before,
+tw-hook[name^="imglink"]::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    transition: 300ms;
+    transition-property: left, top, width, height;
+
+    padding: -1em;
+
+    background-color: none;
+    border: rgb(0, 11, 160) 0.15em dashed;
+    z-index: -2;
+}
+tw-hook[name^="imglink"]::before {
+    border-color: #0000;
+    transition-property: border-color, left, top, width, height;
+}
+
+tw-link > img {
+    padding: 0.3em 0;
+    background-color: #0000DC;
+}
+
+
+/* On hover */
+tw-link:hover,
+tw-link:focus,
+tw-link:active,
+tw-link.visited:hover,
+tw-link.visited:focus,
+tw-link.visited:active {
+    color: #0000DC;
+    color: white;
+    outline: none;
+}
+
+
+
+
+/*============================
+    MODAL DIALOGS 
+============================*/
+
+.modal-dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+.modal-dialog-container:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* modal content */
+.modal-dialog {
+    flex-grow: 0;
+    margin: auto 0px;
+    padding: 1.2em;
+    width: 38em;
+    max-width: 100%;
+
+    background: rgb(238, 225, 190);
+    box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
+}
+.modal-dialog::after {
+    /* invisible "padding" to ensure user can scroll
+       all the way to the bottom of the bubble
+       (that is past its border bc shadow/glow fx) */
+    content: '';
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
+}
+
+.modal-dialog-container a.modal-close[href ^= "#"],
+.modal-dialog-container a.modal-close[href ^= "#"]:hover {
+    /* background close button/link */
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -1;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background: #0000;
+    color: #0000;
+}
+div.modal-dialog::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: -7px;
+    top: -43px;
+    z-index: -2;
+    /* setting it underneath the close link */
+    width: 1em;
+    height: 1em;
+    
+    font-family: sans-serif;
+    content: '×';
+    text-align: center;
+    line-height: 1.2em;
+    
+    color: rgb(0, 0, 0);
+    background-color: rgb(143, 139, 132);
+    opacity: 0.8;
+}
+
+
+/* wiki articles */
+div.modal-dialog.wiki {
+    height: 100%;
+}
+div.modal-dialog.wiki iframe {
+    width: 1200px;
+    max-width: 100%;
+    height: 100%;
+
+    border: solid 2px rgba(78, 78, 78, 0.7);
+}
+/* narrow screen */
+@media (max-width: 649px) {
+    .modal-dialog-container {
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+    }
+    
+    .modal-dialog.wiki {
+        padding: 0.6em;
+    }
+}
+
+
+
+
+
+/*============================
+    IMAGE STUFF
+============================*/
+
+img {
+    max-width: 100%;
+    display: block;
+
+    box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-dialog-container img {
+    display: block;
+    margin: 0 auto;
+}
+
+img.velikan {
+    width: 500px;
+}
+
+
+iframe {
+    max-width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.123);
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/*============================
+    TEXT STUFF 
+============================*/
+
+span.citation {
+    display: inline-block;
+    font-size: 75%;
+    line-height: 1.2em;
+    word-break: break-word;
+}
+
+div.block-citation {
+    margin: 1em 0.1em 0 auto;
+    width: 800px;
+    max-width: 100%;
+
+    text-align: right;
+    word-wrap: break-word;
+    font-size: 80%;
+    line-height: 1.2em;
+}
+
+span#inline-dvz-title {
+    font-weight: 700;
+}
+
+span.indented-par {
+    display: inline-block;
+    padding-left: 0.8em;
+}
+
+span.smaller {
+    font-size: 75%;
+}
+
+
+
+/*============================
+    HYPERLINKS   <a>
+============================*/
+
+a:link {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:link:hover {
+    color: hsl(170, 90%, 46%);
+    text-decoration-thickness: 1.5px;
+}
+a:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+a:visited:hover {
+    color: hsl(182, 100%, 22%);
+    text-decoration-thickness: 1.5px;
+}
+
+
+
+/* MODAL OPENERS */
+a[href ^= "#"]:any-link {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: all;
+    text-decoration: underline;
+}
+a[href ^= "#"]:any-link:hover {
+    color: rgb(0, 146, 24);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+}
+
+a.img-opener {
+    display: inline-block;
+}
+
+
+
+/*============================
+    OTHER STUFF
+============================*/
+
+div.flex-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2em;
+
+    align-items: flex-start;
+    justify-content: space-between;
+}
+div.flex-row > * {
+    max-width: 32%;
+}
+
+div.row-cell tw-link {
+    margin: 0;
+}
+
+div.row-cell-description {
+    /* height: 5em; */
+    margin-top: -0.2em;
+
+    font-size: 90%;
+    word-wrap: break-word;
+}
+
+@media (max-width: 649px) {
+    div.row-cell-description {
+        font-size: 65%;
+        word-wrap: break-word;
+    }
+}
+
+
+div.flex-columns,
+div.flex-wrap-row-reverse {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div,
+div.flex-wrap-row-reverse > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-column,
+div.flex-wrap-row-reverse > div.last-column {
+    padding-right: 0em;
+}
+
+div.flex-wrap-row-reverse {
+    flex-wrap: wrap-reverse;
+}
+
+
+audio {
+    max-width: 100%;
+    width: 270px;
+    height: 1.7em;
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 0;
+    background-color: rgb(241, 241, 241);
+}
+
+
+img.logo {
+    box-shadow: none;
+}
+.logolink {
+    /* EU */
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 5em;
+}
+.logotext {
+    /* EU */
+    font-size: small;
+    line-height: 1.4em;
+    text-align: center;
+}
+.eu-msmt-logo {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+}
+
+.eu-disclaimer {
+    text-align: center;
+
+    font-size: 65%;
+    line-height: 1.4em;
+
+    margin-top: 7em;
+}
+
+
+
+/*=============================
+   credits page adjustments 
+=============================*/
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style-type: none;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags ~= "credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags ~= "credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
+
