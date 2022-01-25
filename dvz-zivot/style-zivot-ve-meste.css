@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 
 /* ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! */
 /* $$$ This DVZ is not polished yet.                           $$$ */
@@ -34,11 +35,11 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     background-color: rgb(53, 51, 47);
-    /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/08/Brno_View_from_Spilberk_131.JPG"); */
-    background-image: url("resources/stare-brno.png");
+    background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/zivot-ve-meste/resources/zvm-brno.png");
     background-size: cover;
 
-    font-family: "Roboto Slab", serif;
+    font-family: "IBM Plex Serif", serif;
+    font-family: "Source Serif Pro", serif;
 }
 
 
@@ -123,48 +124,35 @@ tw-passage[tags ~= "title-passage"] {
 tw-link,
 tw-link.visited {
     display: inline-block;
-    padding: 0.1em 0.4em;
-    margin: 0.3em 0;
+    padding: 0.1em 1em;
+    margin: 0.3em 0.1em;
     max-width: 100%;
     
-    color: white;
-    font-weight: 500;
-    background-color: #0000DC;
-    border-left: solid black 0;
+    color: #0000DC;
+    font-weight: 600;
 
     transition: 400ms;
     transition-property: all;
 }
 
-tw-link::before,
-tw-hook[name^="imglink"]::before {
+tw-link::before {
     content: "";
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 0.38em;
+    height: 0.38em;
 
-    left: 0;
-    top: 0;
+    left: 0.2em;
+    top: 50%;
+    transform: translate(0, -50%);
 
     transition: 300ms;
-    transition-property: left, top, width, height;
+    transition-property: left, top, width, height, transform, border-radius;
 
-    padding: -1em;
-
-    background-color: none;
-    border: rgb(0, 11, 160) 0.15em dashed;
-    z-index: -2;
-}
-tw-hook[name^="imglink"]::before {
-    border-color: #0000;
-    transition-property: border-color, left, top, width, height;
-}
-
-tw-link > img {
-    padding: 0.3em 0;
     background-color: #0000DC;
-}
+    border-radius: 0.2em;
 
+    z-index: -1;
+}
 
 /* On hover */
 tw-link:hover,
@@ -176,6 +164,17 @@ tw-link.visited:active {
     color: #0000DC;
     color: white;
     outline: none;
+}
+tw-link:hover::before,
+tw-link:focus::before,
+tw-link:active::before,
+tw-link.visited:hover::before,
+tw-link.visited:focus::before,
+tw-link.visited:active::before {
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.1em;
 }
 
 
@@ -482,11 +481,14 @@ img.logo {
     /* EU */
     display: block;
     width: 85%;
-    margin: 0 auto;
+    margin: -20px auto;
     margin-top: 5em;
+    box-shadow: none;
 }
 .logotext {
     /* EU */
+    margin: 0 auto;
+    max-width: 40em;
     font-size: small;
     line-height: 1.4em;
     text-align: center;
@@ -504,6 +506,9 @@ img.logo {
     line-height: 1.4em;
 
     margin-top: 7em;
+}
+.licence {
+    max-width: 60em;
 }
 
 
