@@ -1,7 +1,5 @@
 ## Seznam DVZ na kterých pracuji
-
-- [**Migrace v průběhu staletí a současná migrační krize**](https://honzaflash.github.io/dvzka/dvz-migrace/migrace)
-- [**Zapomenutí velikáni**](https://honzaflash.github.io/dvzka/dvz-velikani/zap-velikani)
+- [**Černobyl**](https://honzaflash.github.io/dvzka/dvz-na-cestach/na-cestach)
 
 ## Seznam prozatímně hotových DVZ
 
@@ -9,6 +7,8 @@
 
 ## Seznam hotových DVZ
 
+- ~~[*Migrace v průběhu staletí a současná migrační krize*](https://honzaflash.github.io/dvzka/dvz-migrace/migrace)~~
+- [Zapomenutí velikáni](https://honzaflash.github.io/dvzka/dvz-velikani/zap-velikani)
 - [Ženy ve vědě](https://honzaflash.github.io/dvzka/dvz-zeny/zeny-ve-vede)
 - [Krása](https://honzaflash.github.io/dvzka/dvz-krasa/krasa)
 - [Pozitivní psychologie](https://honzaflash.github.io/dvzka/dvz-poz-psych/pozitivni-psychologie)
