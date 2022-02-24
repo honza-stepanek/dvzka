@@ -29,7 +29,7 @@ Stařík s velikým „parikó“ — jistě místní čaroděj - jde přímo k 
 [[Neodpovídat.-&gt;ticho]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=13LAXcRHvpKCzq7azQQJ21Bb78XTnQFu5&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="3" name="náčelník" tags="fric" position="150,1075" size="100,100">(set: $pruchod to it + (a: &quot;náčelník&quot;))
 
 Domek náčelníka není možné přehlédnout. Po &quot;baitu&quot; jde o největší stavbu ve vesnici, před kterou ve dne v noci hoří velký oheň. Přes den náčelník sedává ve společnosti starých bojovníků, rady starců, u tohoto ohně, kde přijímá příslušníky kmene, aby vyslechl jejich žaloby. Už z dálky je slyšet hlasité lamentování stařeny, která sedí u ohně na bobku a zpěvavým hlasem si náčelníkovi na cosi stěžuje.
@@ -48,7 +48,7 @@ Skutečně, dívka nám s úsměvem podává tykev, a když se podíváme blíž
 [[Ukončit expedici-&gt;návrat 1]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=12Edejrt1NKF3-meCzVfcqJ76eT3rnl2S&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="4" name="džungle" tags="fric" position="875,850" size="100,100">(set: $pruchod to it + (a: &quot;Prozkoumat džungli&quot;))
 
 Vesnice Boróro je sice obklopena políčky, políčka v pralese s primitivními nástroji ovšem není možno udělat dostatečně velká, aby uživila svým výnosem obyvatele vesnice. Boj s pralesem je těžký i Evropanu s jeho ocelí, což teprve indiánu, jehož nej tvrdšími surovinami pro výrobu nástrojů jsou kosti, říční škeble a kámen, více méně opracovaný. Proto hlavním zdrojem výživy je lov.
@@ -63,7 +63,7 @@ Počkat, co je to tamhle? Ale ne, jaguár! Rychle, co dělat??(set: $monster_hp 
 [[Utéct!-&gt;zpět do vesnice]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=10aJxOoH8lkEf8f3_tDEgrGuN4xjs4Jdb&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="5" name="rvačka" tags="fric" position="750,850" size="100,100">(set: $pruchod to it + (a: &quot;rvačka&quot;))
 
 Máte pravdu, obhlédnout si vesnici a dozvědět se o místních lidech nějaké informace je teď asi nejlepší nápad. Ale počkat, slyšíte to také? Vypadá to ale, že se ve vesnici něco děje. Pojďme se podívat!
@@ -76,7 +76,7 @@ Támhle, vidíte? Ženy z vesnice stojí ve velkém kruhu a hlasitým křikem po
 [[Nedělat nic.-&gt;nezasahovat]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=19ef4HK2oUm5B2JInATd-u0xmWAnSFQRS&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="6" name="Bránit se!" tags="fric" position="950,1000" size="100,100">(if: (either: 0, 1) is 0)[  
 
       Au! Kousl mě!
@@ -119,7 +119,7 @@ Pralesu se tedy na nějakou dobu vyhneme. Co ale budeme dělat teď?
 [[Ukončit expedici-&gt;návrat 1]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=13LAXcRHvpKCzq7azQQJ21Bb78XTnQFu5&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="8" name="Zemřel jsi." tags="fric" position="1025,1150" size="100,100">Potkal Vás, drahý příteli, stejný osud jako mnoho dalších. Ve smrti se tak postavíte po moc slavnému Creveauxovi i Ibarretovi, jež oba také našli msrt v těchto končinách.
 
 Já i indiáni kmene Boróro na Vás budeme v dobrém vzpomínat!
@@ -132,9 +132,12 @@ Já i indiáni kmene Boróro na Vás budeme v dobrém vzpomínat!
 Co teď ale s mrtvým jaguárem? Můžeme ho stáhnout z kůže a tu pak zkusit ve vesnici vyměnit za nějaké potraviny, nebo ho tu můžeme nechat supům.
 
 [[Stáhneme ho z kůže a kůži odneseme do vesnice.-&gt;kůže]]
-[[Necháme ho v džungli a vrátíme se do vesnice.-&gt;zpět do vesnice]]</tw-passagedata><tw-passagedata pid="10" name="mapa" tags="map beginning" position="500,125" size="100,100">[[Alberto Vojtěch Frič-&gt;frič]] 
-[[Barbora Markéta Eliášová-&gt;eliášová]] 
-[[Jan Eskymo Welzl-&gt;welzl]] </tw-passagedata><tw-passagedata pid="11" name="kůže" tags="fric" position="875,1275" size="100,100">(set: $inv to it + (a: &quot;jaguáří kůže&quot;))
+[[Necháme ho v džungli a vrátíme se do vesnice.-&gt;zpět do vesnice]]</tw-passagedata><tw-passagedata pid="10" name="mapa" tags="map beginning" position="500,125" size="100,100">&lt;div class="worldmap-container"&gt;\
+&lt;img class="worldmap" src="https://digikult.phil.muni.cz/wp-content/DVZ/cesi-na-cestach/resources/worldmap.png"/&gt;\
+&lt;div id="fric" class="traveler"&gt;[[Alberto Vojtěch Frič-&gt;frič]]&lt;/div&gt;\
+&lt;div id="eliasova" class="traveler"&gt;[[Barbora Markéta Eliášová-&gt;eliášová]]&lt;/div&gt;\
+&lt;div id="welzl" class="traveler"&gt;[[Jan Eskymo Welzl-&gt;welzl]]&lt;/div&gt;\
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="kůže" tags="fric" position="875,1275" size="100,100">(set: $inv to it + (a: &quot;jaguáří kůže&quot;))
 
 Dobrý nápad, jaguáří kůže je u indiánů velice ceněnou komoditou.
 
@@ -145,7 +148,7 @@ Ale co se to děje? Jakmile s jaguáří kůži vstoupíme do vesnice, obyvatel�
 To už nás ale obestoupí skupina mužů z místního &quot;baita&quot;, se kterými jsme se setkali po příchodu do vesnice, a odvádějí nás směrem k domu mužů. Nemáme jinou možnost, než [[jít s nimi-&gt;kaše]].
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_dav.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="12" name="zasáhnout" tags="fric" position="800,1000" size="100,100">Nejsem si jist, zda je dobrý nápad vměšovat se do takové záležitosti, ale když jinak nedáte...
 
 Pozor, několik přihlížejících žen si všimlo, že se chystáme zakročit, a vypadá to, že s naším záměrem ani trochu nesouhlasí. Raději ustupme, příteli, nerad bych dostal díru na &quot;tembetá&quot; některým z těch ostrých náramků.
@@ -153,7 +156,7 @@ Pozor, několik přihlížejících žen si všimlo, že se chystáme zakročit,
 [[Ustoupíme a zpovzdálí pozorujeme, jak to dopadne.-&gt;nezasahovat]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=19ef4HK2oUm5B2JInATd-u0xmWAnSFQRS&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="13" name="nezasahovat" tags="fric" position="675,1050" size="100,100">Také bych se do této záležitosti raději nepletl. Pojďte, ustoupíme stranou a budeme sledovat, co se bude dít.
 
 Podívejte, támhle v hloučku přihlížejících žen stojí i jeden muž. Přesněji řečeno chlapec. Nevypadá moc dobře - obličej má posetý množstvím čerstvých ran a je oblečený v něčem, co připomíná krví potřísněnou jaguáří kůži. Očividně je z celé situace nesvůj a probíhající boj pozoruje s úzkostí. 
@@ -169,7 +172,7 @@ Ale nyní se zdá, že je po všem. Potlučená a krví zbrocená vítězka, kte
 (unless: $pruchod contains &quot;Navštívit náčelníka&quot;)[(show: ?cesta)]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=19ef4HK2oUm5B2JInATd-u0xmWAnSFQRS&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="14" name="řeka" tags="fric" position="625,1200" size="100,100">(set: $pruchod to it + (a: &quot;řekay&quot;))
 
 Aniž bychom se předem smluvili, oba svorně zamíříme směrem k řece. Snad oba cítíme, že po tom nedobrovolném vzrušení potřebujeme trochu klidu. Toho nám ale není přáno, protože sotva dojdeme ke břehu řeky, jsme svědky dalšího dramatu.
@@ -184,7 +187,7 @@ Ach Bože, vždyť tam ta žena uhoří! Rychle, musíme něco udělat!
 [[Ne, čarodějové určitě vědí, co dělají.-&gt;počkat]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=1wdp45_AJAXBmRiLZ05G4CrGsAs6HgbWm&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="15" name="kaše" tags="fric" position="875,1400" size="100,100">Skupina mužů nás odvádí známým směrem, zbytek vesnice jde za hlasitého jásání a zpěvu za námi. Oba nás usadí na čestná místa v &quot;baitu&quot;, jako bychom byli jedni z nich. Jen doufám, že se nechystá další z podivných indiánských rituálů.
 
 &lt;a href=&quot;#mod-hostina&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_hostina.jpg&quot; width=&quot;75%&quot; height=&quot;75%&quot;&gt;&lt;/a&gt;
@@ -195,7 +198,7 @@ Najednou k nám přistoupí dvě mladé dívky a před každého z nás staví t
 [[Ne, děkuji, nemám hlad.-&gt;kaše ne]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="16" name="kaše ano" tags="fric" position="800,1525" size="100,100">Tak tedy přeji dobré chutnání! Odměnu si určitě zasloužíte.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="16" name="kaše ano" tags="fric" position="800,1525" size="100,100">Tak tedy přeji dobré chutnání! Odměnu si určitě zasloužíte.
 
 Musím se ovšem přiznat, že mi na celé této situaci něco nehraje. Ne, nenechte se rušit od jídla. Já jen že... Je tu s námi prakticky celá vesnice a všichni sledovali, jestli kaši sníme. A podívejte se, jak dívce, která Vám kaši podala, svítí oči radostí.
 
@@ -206,7 +209,7 @@ A právě teď, jakmile jste okusil první sousto, vypuká dav v jásavý smích
 [[Dobrou noc!-&gt;svatba]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="17" name="kaše ne" tags="fric" position="950,1525" size="100,100">Dívka vypadá zklamaně, zato několika ostatním se oči rozzáří radostí. Upřímně nevím, co si o tom myslet. Ale na to teď není čas - další dobrodružství čeká!
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="17" name="kaše ne" tags="fric" position="950,1525" size="100,100">Dívka vypadá zklamaně, zato několika ostatním se oči rozzáří radostí. Upřímně nevím, co si o tom myslet. Ale na to teď není čas - další dobrodružství čeká!
 
 |cesta)[[[Pokračovat v průzkumu vesnice|řeka]]]
 (unless: $pruchod contains &quot;U řeky&quot;)[(show: ?cesta)]
@@ -223,7 +226,7 @@ Snažíme se vysvětlit, že je to celé velký omyl. Ale není nám to nic plat
 [[Ukončit expedici-&gt;návrat 1]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=1IjQOZvydPK2caRli-1fQrykb1fCkV_RP&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="19" name="pomoct" tags="fric" position="550,1350" size="100,100">Správně, nemůžeme tam tu ženu nechat. Vykročíme směrem k boudě, která už pomalu začíná být v jednom ohni, ale jeden ze stařešinů nám rázně zastoupí cestu. Divoce gestikluje směrem k hořící boudě a rozčileně na nás křičí cosi v jazyce Boróro.
 
 Čarodějové se mezitím zčistajasna s velikým řevem pustí ke vchodu. Jejich řev je však náhle přerušen nepopsatelným výkřikem bolesti a leknutí a najednou vše utichne. Obávám se nejhoršího, pojďte, jdeme tu ženu vytáhnout!
@@ -242,7 +245,7 @@ Ale počkat, co se to děje? Z kouře a hořící slámy najednou vybíhá dívk
 [[Ukončit expedici-&gt;návrat 1]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=1wdp45_AJAXBmRiLZ05G4CrGsAs6HgbWm&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="20" name="počkat" tags="fric" position="700,1350" size="100,100">Doufám, příteli, že tohoto rozhodnutí nebudeme litovat.
 
 Čarodějové ještě chvíli poskakují kolem hořící boudy, pak se zčistajasna s velikým řevem pustí ke vchodu. Jejich řev je náhle přerušen nepopsatelným výkřikem bolesti a leknutí a najednou vše utichne. Obávám se nejhoršího, pojďte, jdeme tu ženu vytáhnout!
@@ -261,8 +264,8 @@ Ale počkat, co se to děje? Z kouře a hořící slámy najednou vybíhá dívk
 [[Ukončit expedici-&gt;návrat 1]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
-&lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=1wdp45_AJAXBmRiLZ05G4CrGsAs6HgbWm&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="21" name="inventář" tags="" position="100,300" size="100,100">(if: $inv&#39;s length &gt; 0)[Ve tvém inventáři se nachází (print: $inv.join(&quot;, &quot;)).]
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
+&lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=1wdp45_AJAXBmRiLZ05G4CrGsAs6HgbWm&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="21" name="inventář" tags="inventory" position="100,300" size="100,100">(if: $inv&#39;s length &gt; 0)[Ve tvém inventáři se nachází (print: $inv.join(&quot;, &quot;)).]
 (else:)[Tvůj inventář je prázdný.]
 
 (link-goto: &quot;Zpět&quot;, (history:)&#39;s last) </tw-passagedata><tw-passagedata pid="22" name="jaguáří kůže" tags="" position="1050,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="23" name="zdobená tykev" tags="" position="925,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="24" name="návrat 1" tags="fric homecoming" position="600,1900" size="100,100">&lt;a href=&quot;#mod-skupina&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_skupina.jpg&quot; width=&quot;75%&quot; height=&quot;75%&quot;&gt;&lt;/a&gt;
@@ -294,7 +297,7 @@ Nu, to byl tedy výhodný obchod, ale už raději pojďme, než nám své tykve 
 [[Ukončit expedici-&gt;návrat 1]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="26" name="tykev ne" tags="fric" position="225,1275" size="100,100">Posunky se snažíme dívce naznačit, že o její dar nejevíme zájem. Dívka vypadá zklamaně.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="26" name="tykev ne" tags="fric" position="225,1275" size="100,100">Posunky se snažíme dívce naznačit, že o její dar nejevíme zájem. Dívka vypadá zklamaně.
 
 Raději pojďme jinam. Náčelník nás tak jako tak nyní přijmout nemůže, snad později, až se žalující stařena vypovídá.
 
@@ -305,7 +308,7 @@ Raději pojďme jinam. Náčelník nás tak jako tak nyní přijmout nemůže, s
 
 [[Ukončit expedici-&gt;návrat 1]]
 
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="27" name="frič start" tags="fric" position="800,350" size="100,100">Vítejte, příteli! Moje jméno je Alberto Vojtěch Frič a jsem rád, že jste se ke mně připojil na mé badatelské cestě mezi indiánské kmeny žijící na území Brazílie. Právě máme namířeno do vesnice kmene Boróro.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="27" name="frič start" tags="fric" position="800,350" size="100,100">Vítejte, příteli! Moje jméno je Alberto Vojtěch Frič a jsem rád, že jste se ke mně připojil na mé badatelské cestě mezi indiánské kmeny žijící na území Brazílie. Právě máme namířeno do vesnice kmene Boróro.
 
 Do vesnice to už není daleko. Jak však můžete vidět, neputujeme sami. Podívejte! Támhle v korunách stromů se objevilo několik opiček, pod nohama nám pobíhají aguti, a vedle cesty nás provází houštím největší hlodavec kapybara.
 
@@ -352,7 +355,7 @@ Ale dříve nutno projít ještě jednou prohlídkou: obvyklou prohlídkou polic
 [[To tedy ne, okrádat se nenecháme!-&gt;nezaplatit]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_pristav-java.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="31" name="zaplatit" tags="eliasova" position="1525,650" size="100,100">Máte pravdu. Obětovat pár korun je někdy lepší, než se dostat do sporu, obzvlášť, jde-li o imigrační úředníky. Zaplatíme a úředníci vypadají spokojeně. Dávají nám do pasu razítko a propouštějí nás.
 
 Pohled na přístav není pranic poetický. Každý přístav je místem těžké práce: nakládá se tu a skládá z lodí zboží. Jsou tu davy dělníků a nosičů a v orientálních přístavech vypadají tito lidé obyčejně hodně špinavě. A jak vidí přijíždět pasažéry se zavazadly, sesypou se hned kolem a každý hledí uchvátiti něco k nesení, třeba jen maličkost, kterou by si člověk nejraději nechal v ruce sám. To ovšem není snaha pomoci někomu: to je jen uchopení příležitosti, dostati potom bakšiš, chtíti ještě přídavek a zase přídavek, obtěžovati až do nemožností.
@@ -366,7 +369,7 @@ Projíždíme dlouhou ulicí staré Batavie až k hotelu.
 [[Pojďme se ubytovat.-&gt;hotel]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_drozka.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="32" name="nezaplatit" tags="eliasova" position="1675,650" size="100,100">Odmítnout zaplatit nebylo dobré rozhodnutí. Jako jediní cizinci zůstáváme “v zajetí” emigračních úředníků. “Musíte s námi do emigračního úřadu do Batavie”, říkají.
 
 Batavie je jen několik mil jižně od přístavu. Odjíždíme ve státním automobilu s emigračními úředníky. Je jasno, slunečno, cesta je krásná. Jedeme dlouhou alejí vysokých palem. Kam až oko dohlédne, vidíme jen palmy, palmy… Ale vše je suché, země vyprahlá. Tři měsíce zde nepršelo, říkají lidé.
@@ -380,7 +383,7 @@ Zeptáme se na cestu k hotelu a zatímco jeden z úředníků velmi ochotně vys
 [[Jistě, pojďme!-&gt;hotel]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_celnice.m4a&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="33" name="hotel" tags="eliasova" position="1600,775" size="100,100">Hotel se nachází v residenční části města, která se jmenuje Weltevreden. Jáva není zaplavována turisty a cestovateli; hotely jsou zde hlavně pro lidi na ostrově zaměstnané: úředníky a obchodníky. A tak možno v hotelích pozorovati život bílých usedlíků v tomto &quot;tropickém ráji&quot;.
 
 U každé ložnice je veranda s proutěným stolečkem, křesly a lehátkem, vedoucí do zahrady, kde dozrávají citrony a manga. Dámy tráví na verandách všechen svůj čas, zabývajíce se ručními pracemi, nebo něčím podobným, zatím co jejich manželé jsou za svými denními povinnostmi. Mezi námi, nedostatek pohybu viděti na každé ženě zde: o štíhlosti nelze mluviti.
@@ -403,7 +406,7 @@ Ale nezdržujme se tu, pojďme se podívat po okolí! Kam se vydáme?
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_hotel.ogg&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="34" name="noviny" tags="" position="1750,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="35" name="konzulát" tags="eliasova" position="1250,1225" size="100,100">Po úzkých, ne právě čistých schodech vycházíme do místnosti našeho konsulátu v Batavii. Ocitáme se ve velké úřadovně, kde za dřevěnými přepážkami úřaduje množství lidí. Vypadá to jako stará pošta. Stěny jsou špinavé a silná vrstva prachu leží všude, kde se na něčem může usadit.
 
 V jednom koutku za dřevěnou ohradou úřaduje český úředník. Před touto ohradou stojí stolek s českými časopisy, u něho tři proutěná křesla a kolem zábradlí. Tři lidé se stěží vejdou do této ohrady, sloužící za přijímací salon na našem konsulátě v Batavii.
@@ -414,7 +417,7 @@ Na stolku s časopisy je položen i jeden výtisk Národní politiky, datován p
 [[Ne, nechme je tu, ať si je mohou přečíst i ostatní.-&gt;noviny ne]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_konzulat.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="36" name="obchod" tags="eliasova" position="1250,1100" size="100,100">(set: $pruchod to it + (a: &quot;obchod&quot;))
 
 Výtečný nápad. Ráda chodim na potulky po ulicích. To je ovšem třeba choditi pěšky a býti blízko lidí, pozorovati a poslouchati... Na ulicích odráží se mnoho ze života lidí toho kterého kraje; zvláště v Orientě, kde se žije více na ulicích nežli v domech.
@@ -430,7 +433,7 @@ Ale co je tohle? Vidíte to také? Na tomto starém obchodním domě je náš st
 [[Dobrá, když jinak nedáte...-&gt;konzulát]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_ulice.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="37" name="kanál" tags="eliasova" position="1250,1525" size="100,100">Každou ulicí v Batavii protéká kanál. Hodně široký kanál jde ulicí hlavní, kde jsou nejelegantnější budovy. Ale to, co člověk vidí v kanále, je ostrým kontrastem toho, co je nahoře. Voda je oživena hloučky domorodců, kteří tam primitivním orientálním způsobem perou prádlo. Vyváření prádla zde zřejmě neznají.
 
 V tropických krajích se každý obléká bíle: a tak zřejmě musí býti v pouličních kanálech v Batavii denně vypráno velké množství prádla.
@@ -449,7 +452,7 @@ To už ale pomalu docházíme na okraj obchodní čtvrti cizinecké a blížíme
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_prani-pradla-1.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="38" name="kampong" tags="eliasova" position="1750,1100" size="100,100">(set: $pruchod to it + (a: &quot;kampong&quot;))
 
 &lt;a href=&quot;#mod-kampong&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_kampong-2.jpg&quot;&gt;&lt;/a&gt;
@@ -467,7 +470,7 @@ Ale počkejte, tady to už není tak zlé. V této části vesnice jsou vidět p
 [[Ale samozřejmě. Úsměv!-&gt;fotka]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_kampong.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="39" name="noviny ano" tags="eliasova" position="1325,1350" size="100,100">(set: $inv to $inv + (a:  &quot;noviny&quot;))
 
 Čím jsou člověku v daleké cizině třebas i hodně staré noviny  z vlasti, to si nedovedou představit ti, kteří v cizině nikdy nežili. Člověk neviděl českých novin třebas několik měsíců, a tu pojednou je má v ruce - vidí zase jednou ta milá česká slova s různými háčky a čárkami! 
@@ -483,7 +486,7 @@ Kam teď?
 (unless: $pruchod contains &quot;trh&quot;)[(show: ?cesta)]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_konzulat.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="40" name="noviny ne" tags="eliasova" position="1175,1350" size="100,100">Dobrá, nebudeme si je brát. Ale povím vám jedno. Čím jsou člověku v daleké cizině třebas i hodně staré noviny  z vlasti, to si nedovedou představit ti, kteří v cizině nikdy nežili. Člověk neviděl českých novin třebas několik měsíců, a tu pojednou je má v ruce - vidí zase jednou ta milá česká slova s různými háčky a čárkami! 
 
 Kam teď?
@@ -497,7 +500,7 @@ Kam teď?
 (unless: $pruchod contains &quot;trh&quot;)[(show: ?cesta)]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_konzulat.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="41" name="návrat 2" tags="homecoming eliasova" position="1450,1750" size="100,100">Neměla jsem Austrálii na programu, když jsem před několika měsíci odjížděla z vlasti. Japonsko bylo původně zase mým cílem. 
 
 &lt;a href=&quot;#mod-zahrada&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_botanicka-zahrada.jpg&quot;&gt;&lt;/a&gt;
@@ -533,7 +536,7 @@ Půjdeme se tam podívat?
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="43" name="slavnost ano" tags="eliasova" position="1950,1225" size="100,100">Projdeme branou na velmi rozsáhlé nádvoří. Domorodá kapela vyhrává nám při vchodu do kratonu jakési mysticky znějící melodie, ozývá se zpěv. To je velmi vhodný úvod do tohoto cizikrajného prostředí.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="43" name="slavnost ano" tags="eliasova" position="1950,1225" size="100,100">Projdeme branou na velmi rozsáhlé nádvoří. Domorodá kapela vyhrává nám při vchodu do kratonu jakési mysticky znějící melodie, ozývá se zpěv. To je velmi vhodný úvod do tohoto cizikrajného prostředí.
 
 &lt;a href=&quot;#mod-nácvoří&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_nadvori.jpg&quot;&gt;&lt;/a&gt;
 
@@ -551,7 +554,7 @@ Strážný nám vesele kyne a zde nás dál. Vstupujeme do bohatě zdobené brá
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_zpev.mp3&quot; autoplay&gt;c</tw-passagedata><tw-passagedata pid="44" name="pokračovat" tags="eliasova" position="1850,1475" size="100,100">Vyjdeme z brány. To byl tedy podivný zážitek!
 
 Kam se chcete jít podívat teď?
@@ -566,7 +569,7 @@ Kam se chcete jít podívat teď?
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_zpev.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="45" name="trh" tags="eliasova" position="1500,1100" size="100,100">(set: $pruchod to it + (a: &quot;trh&quot;))
 
 Nacházíme zajímavý domorodý bazár. Ženy i muži sedí tu u různého zboží: u věcí nových i starých, u látek, nádobí, ovoce. Sedí tu klidně a spokojeně dnes, zítra, pozítří… U každého stojí pěkná mosazná váza.
@@ -582,7 +585,7 @@ Prodejci na povel vytahují z beden krásné, zajímavé věci: staré, batikova
 [[Líbí se mi dýka.-&gt;koupit kris]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_trziste.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="46" name="sárong" tags="" position="1750,450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="47" name="ostrý kámen" tags="" position="2450,450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="48" name="zásoby jídla" tags="" position="2450,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="49" name="peníze" tags="" position="2575,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="50" name="kris" tags="" position="2575,450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="51" name="indiánský kostým" tags="" position="925,450" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="52" name="pytel" tags="" position="2700,325" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="53" name="koupit sárong" tags="eliasova" position="1600,1225" size="100,100">(set: $inv to $inv + (a:  &quot;sárong&quot;))
 
 Dobrá volba! Sárong je vlastně velký kus rovné látky, který se ovíjí kolem boků a splývá až k zemi. Zde ho nosí muži i ženy. Takový sárong je skoro vždy batikován.
@@ -599,7 +602,7 @@ Co dál?
 (unless: $pruchod contains &quot;obchod&quot;)[(show: ?cesta)]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_trziste.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="54" name="koupit vázu" tags="eliasova" position="1400,1225" size="100,100">Výtečná volba! Když se však prodejce cotazujeme, kolik za vázu chce, jen se nám vysměje. 
 
 To totiž není vůbec žádná váza. Totiž člověk by myslil, že je to váza: ale je to plivátko, do kterého se vrací přežvýkaný a rozžvýkaný betel.
@@ -616,7 +619,7 @@ Co dál?
 (unless: $pruchod contains &quot;obchod&quot;)[(show: ?cesta)]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_trziste.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="55" name="koupit kris" tags="eliasova" position="1500,1225" size="100,100">(set: $inv to $inv + (a:  &quot;kris&quot;))
 
 Krátký kord. Rukojeť krisu je z nějakého drahocenného dřeva, je obdivuhodně řezán a poset kameny.
@@ -631,7 +634,7 @@ Co dál?
 (unless: $pruchod contains &quot;obchod&quot;)[(show: ?cesta)]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_trziste.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="56" name="vladivostok" tags="welzl" position="2300,500" size="100,100">Naše cesta začíná ve Vladivostoku, poslední výspě evropské civilizace. Na severu nás už čeká jen nekonečná step a tundra. Tam přebývají kmeny rozličných severských národů: Tunguzů, Cukčenů a Caučusů, podobných Jakutům a Lamutům. Jsou vesměs pohani. Jako ten kraj, čím dále na půlnoc, jsou i lidé drsnější a jejich mravy surovější. Musíme se tedy na cestu dobře připravit, nakoupit dostatek střeliva a živobytí.
 
 &lt;a href=&quot;#mod-vladivostok&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_vladivostok.jpg&quot;&gt;&lt;/a&gt;
@@ -644,7 +647,7 @@ V přístavu se setkáváme s kapitánem velrybářské lodi, který právě sh�
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/01/cnc_racci.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="57" name="divočina" tags="welzl" position="2250,700" size="100,100">Nejdříve musíme projeti krajem bez lidí a cest, pustinou Ust Uda, kde se křižuje tisíce všelijakých stezek, kde se končí všecko a kde má člověk dojem, jako by odcházel na onen svět. Ani památky zde není, která by ukázala, kam která stezka vede, zablouditi zde na věky bylo by hračkou. 
 
 &lt;a href=&quot;#mod-divočina&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_polarni-kraj.jpg&quot;&gt;&lt;/a&gt;
@@ -661,7 +664,7 @@ Někde mezi Vitimskem a Vercholenskem se dostaneme do temného a hlubokého pral
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/01/cnc_vitr.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="58" name="lov velryb" tags="welzl" position="2400,675" size="100,100">(set: $inv to it + (a:  &quot;peníze&quot;))
 
 Ujednáno. Ještě dnes vyplouváme s našimi novými známými na Japonské moře na chytání velryb. Ve svém životě poprvé pluji do moře Japonského, jsem hodně zvědav; není ale na takové cestě ani pohodlí, ani lenošení.
@@ -675,7 +678,7 @@ Koupíme dva koně a malý vozík s dvěma koly, dále dostatek živobytí, stř
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/01/cnc_velryby.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="59" name="tábor" tags="welzl" position="2250,825" size="100,100">Abychom se zajistili před nebezpečím, opustíme pro jistotu z opatrnosti cestu a vyhledáme si opodál ní pohodlné místo ku přenocování. Roste zde hojně trávy, i pustíme koně na pastvu a sami si nasekáme hromadu haluzí, abychom měl příjemné lůžko. Koně se spokojeně popásají, nám se krásně usíná. 
 
 Tu se opět probereme a zaslechneme, kterak se někdo přibližuje. V tichu pralesa se ozývá jasně každý zvuk a brzy poznáme, že to nepřichází jen jeden člověk. 
@@ -694,7 +697,7 @@ Když se ráno přiblížíme k místu, kde trestanci tábořili, spatříme u v
 [[Raději ho zde nechejme, kdo ví, co v něm je.-&gt;nevzít pytel]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_ohen.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="60" name="vzít pytel" tags="welzl" position="2175,950" size="100,100">(set: $inv to it + (a: &quot;pytel&quot;))
 
 Počkejte tedy, podívám se, co v pytli je. 
@@ -706,7 +709,7 @@ Hodíme pytel na vůz a ubíráme se opět dál. Když dorazíme na křižovatku
 [[Už abychom tam byli!-&gt;zlatokopská vesnice]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_ohen.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="61" name="nevzít pytel" tags="welzl" position="2325,950" size="100,100">Alespoň se tedy podívejme, co v pytli je. 
 
 Vypadá to na nějaké menší kousky masa a srdce. Maso již silně zapáchá rozkladem. Tedy nic užitečného.
@@ -716,7 +719,7 @@ Hodíme pytel zpět na zem a ubíráme se opět dál. Když dorazíme na křižo
 [[Už abychom tam byli!-&gt;zlatokopská vesnice]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_ohen.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="62" name="zlatokopská vesnice" tags="welzl" position="2250,1075" size="100,100">Vesnice je na sibiřské poměry velká. Podle všeho ji obávají většinou domorodci, Jurténi, avšak bydlí zde i Rusi a je tu dokonce i obchod. Ten patří polskému židu, jenž umí mluvit německy. Vstoupíme do jeho krámku a koupíme si dvě vodky, abychom se po rozčilující noci poněkud občerstvili. Ostatně to je trochu záminkou, poněvadž dobře víme, že právě takoví obchodníci znají nejlépe místní poměry. 
 
 &lt;a href=&quot;#mod-zlatokop&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_vesnice-1.jpg&quot;&gt;&lt;/a&gt;
@@ -734,7 +737,7 @@ Za chvíli se však rozmyslí, ukáže prstem rovnou na nás a praví, že my js
 [[Zamlčíme pravdu.-&gt;mlčet]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_kone.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="63" name="oznámit" tags="welzl" position="2175,1200" size="100,100">(set: $inv to it + (a:  &quot;zásoby jídla&quot;))
 
 Lépe by bylo říci, že jsme nikoho podezřelého cestou nespatřili, ale co by bylo, kdyby jim Jakov Fedotovič prozradil, s čím jsem se mu svěřili? Raději kozákům tedy vše podle pravdy vypovíme.
@@ -755,7 +758,7 @@ Ještě vyměníme naše dva koně za čtyři soby, kteří jsou k běhu po sně
 [[Pokračujme tedy v cestě!-&gt;ztracení]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="64" name="mlčet" tags="welzl" position="2325,1200" size="100,100">Vrtíme hlavou a povídáme, že jsme nikoho podezřelého cestou nespatřili. Naštěstí nám věří. Přátelsky se s námi rozloučí a my se raději opět uchystáme k další cestě.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="64" name="mlčet" tags="welzl" position="2325,1200" size="100,100">Vrtíme hlavou a povídáme, že jsme nikoho podezřelého cestou nespatřili. Naštěstí nám věří. Přátelsky se s námi rozloučí a my se raději opět uchystáme k další cestě.
 
 &lt;a href=&quot;#mod-sobi&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_sobi.jpg&quot;&gt;&lt;/a&gt;
 
@@ -764,7 +767,7 @@ Ještě vyměníme naše dva koně za čtyři soby, kteří jsou k běhu po sně
 [[Pokračujme tedy v cestě!-&gt;ztracení]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="65" name="do vesnice" tags="welzl" position="2550,825" size="100,100">Vesnice je na sibiřské poměry velká. Podle všeho ji obávají většinou domorodci, Jurténi, avšak bydlí zde i Rusi a je tu dokonce i obchod. Ten patří polskému židu, jenž umí mluvit německy. Vstoupíme do jeho krámku a koupíme si dvě vodky, abychom se po dlouhé cestě poněkud občerstvili.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="65" name="do vesnice" tags="welzl" position="2550,825" size="100,100">Vesnice je na sibiřské poměry velká. Podle všeho ji obávají většinou domorodci, Jurténi, avšak bydlí zde i Rusi a je tu dokonce i obchod. Ten patří polskému židu, jenž umí mluvit německy. Vstoupíme do jeho krámku a koupíme si dvě vodky, abychom se po dlouhé cestě poněkud občerstvili.
 
 &lt;a href=&quot;#mod-zlatokop&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_vesnice-1.jpg&quot;&gt;&lt;/a&gt;
 
@@ -776,7 +779,7 @@ Než se však stačíme zeptat, nač ten míšek je a co s kamením, které v n�
 [[Raději se do toho nebudeme míchat.-&gt;odmítnout]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_kone.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="66" name="přijmout" tags="welzl" position="2625,950" size="100,100">(set: $inv to it + (a:  &quot;ostrý kámen&quot;))
 
 V těchto končinách se vyplácí pomáhat, nikdy nevíte, kdy to budete sám potřebovat. A my máme označené místo stejně po cestě.
@@ -796,7 +799,7 @@ Když vyhnanci vidí, kterak nás zázračný kámen zaujal, s radostí nám dar
 [[Pokračujme tedy v cestě.-&gt;ztracení]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_kovani.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="67" name="odmítnout" tags="welzl" position="2475,950" size="100,100">Máte pravdu, z takové podezřelé operace koukají akorát tak problémy.
 
 Raději tedy míšek s kamením nepozorovaně vyhodíme z povozu. Sami kamení neužijeme a kdo ví, jaké by z toho byly mrzutosti, kdyby jej u nás nalezli kozáci.
@@ -806,7 +809,7 @@ Když je tohle vyřízeno, jsme připraveni vyrazit dále na sever.
 [[Pokračujme tedy v cestě!-&gt;ztracení]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_kone.mp3&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="68" name="ztracení" tags="welzl" position="2450,1425" size="100,100">Jedeme kus zpátky hlavní cestou a po té oklice se bereme znovu k severovýchodu. Po delším čase vchází cesta do lesa. Nedělá nám to zpočátku starostí, lesy však houstnou a záhy stojíme s naším povozem opět v temném pralese. 
 
 &lt;a href=&quot;#mod-les&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_ricka.jpg&quot;&gt;&lt;/a&gt;
@@ -818,7 +821,7 @@ Zanedlouho narazíme na říčku, která není zakreslena v mapě, není tedy ji
 [[Pokračovat stezkou do lesů.-&gt;mech]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_potok.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="69" name="mech" tags="welzl" position="2550,1725" size="100,100">(set: $pruchod to it + (a: &quot;mech&quot;))
 
 Pokračujeme pěšinou na západ a najednou vycházíme z lesního porostu a spatříme jednu z těch vesnic, které nemají spojení se světem a o kterých nikdo nemá nejmenší potuchy. Přebývají v ní lidé bílí, kteří mluví starodávnou ruštinou. 
@@ -839,7 +842,7 @@ Kam teď?
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="70" name="tundra" tags="welzl" position="2675,1575" size="100,100">(set: $pruchod to it + (a: &quot;tundra&quot;))
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="70" name="tundra" tags="welzl" position="2675,1575" size="100,100">(set: $pruchod to it + (a: &quot;tundra&quot;))
 
 Cesta na východ vede zelenou tundrou. Tundra dává zvířatům hodně potravy a i my pilně sbíráme trávu a mech, abychom jim měli co dáti, až přijdeme do pustiny, kde není rostlin.
 
@@ -875,7 +878,7 @@ Když se však přiblížíme k vesnici, ihned si všimneme, že je zde něco ji
 Slyšíte to také? Jakýsi podivný rámus přichází od jezera tamhle za kopcem. Měli bychom se jít [[podívat, co se tam děje-&gt;pobožnost]]. 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="72" name="zastřelit medvěda" tags="welzl" position="2850,1500" size="100,100">(if: (either: 0, 1) is 0)[  
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="72" name="zastřelit medvěda" tags="welzl" position="2850,1500" size="100,100">(if: (either: 0, 1) is 0)[  
 
       Au! Kousl mě!
 
@@ -917,7 +920,7 @@ Rychle k saním a pryč!
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/01/cnc_vitr.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="74" name="sežrán medvědem" tags="welzl" position="3025,1575" size="100,100">Byl jsi zabit medvědem. Nedá se nic dělat, na dalekém severu stojí lovec oběma nohama v hrobě.
 
 Po vzoru místních obyvatel vás pohřbím ve sněhu, tváří k severu, o němž místní Eskymáci věří, že je zdrojem magické moci.
@@ -942,7 +945,7 @@ Netrvalo dlouho a Eskymáci přispěchali. Pověděl jsem jim narychlo, co se st
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="76" name="návrat 3" tags="homecoming welzl" position="2150,2000" size="100,100">Na cesty dalekým severem smí se vydati jen takový člověk, kterému nezáleží na životě a který si nedělá ničeho z toho, když mu kůže dokrvava puká chladem. Kdo se toho však odváží, nemá toho dosti a stále ho láká ten kraj za sebou. Potom nezná obav, jde směle kupředu, tichý a stálý mráz činí mu jenom radost, poněvadž je to vlastně koupel v jasném zdravém vzduchu.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="76" name="návrat 3" tags="homecoming welzl" position="2150,2000" size="100,100">Na cesty dalekým severem smí se vydati jen takový člověk, kterému nezáleží na životě a který si nedělá ničeho z toho, když mu kůže dokrvava puká chladem. Kdo se toho však odváží, nemá toho dosti a stále ho láká ten kraj za sebou. Potom nezná obav, jde směle kupředu, tichý a stálý mráz činí mu jenom radost, poněvadž je to vlastně koupel v jasném zdravém vzduchu.
 
 &lt;a href=&quot;#mod-pustina&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_pustina.jpg&quot;&gt;&lt;/a&gt;
 
@@ -1027,7 +1030,7 @@ Nyní, když je náš vzhled akceptovatelný, čekají nás společenské povinn
 [[Do pralesa.-&gt;džungle]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=13LAXcRHvpKCzq7azQQJ21Bb78XTnQFu5&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="81" name="ticho" tags="fric" position="925,650" size="100,100">Stařec patrně čekal odpověď a naše mlčení ho viditelně rozhodí. Když se chvíli nic neděje, něco v jazyce Boróro zavolá na své soudruhy, kteří na jeho pokyn rozpustí kruh a stáhnout se zpět do baita. Měl jste něco říci příteli, příslušníci kmene jsou sice na bělochy, kteří nemluví jejich jazykem, zvyklí, ale takto si jejich důveru nezískáme.
 
 Neudělali jsme dobrý první dojem, obyvatelé nám tedy neurčí místo ke spánku, jak by to obvykle udělali. Budeme si muset postavit alespoň protatímní chýši, abychom byli přes noc chráněni před komáry. Na to ale bude čas později, nyní náš čekají jinné povinnosti.
@@ -1039,7 +1042,7 @@ Musíme jít vzdát poctu náčelníkovi a také obstarat v džungli nějaké z�
 [[Do pralesa.-&gt;džungle]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=13LAXcRHvpKCzq7azQQJ21Bb78XTnQFu5&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="82" name="braide bári boa" tags="fric" position="800,650" size="100,100">(set: $inv to it + (a: &quot;indiánský kostým&quot;))
 
 Stařík v úžasu poodstoupí a něco v jazyce Boróro sdělí ostatním mužům. I na nich je vidět údiv, v některých tvářích se zračí až posvátná hrůza. Aby ne - právě jste se jim představil, jako &quot;bílý čaroděj&quot;. Taková situace má jen dvě východiska. Buď nás na místě zabijí, nebo nás přivítají jako nejváženější hosty. 
@@ -1059,7 +1062,7 @@ Nyní, když je náš vzhled akceptovatelný, čekají nás společenské povinn
 [[Do pralesa.-&gt;džungle]] 
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://drive.google.com/uc?export=download&amp;id=13LAXcRHvpKCzq7azQQJ21Bb78XTnQFu5&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="83" name="fotka" tags="eliasova" position="1750,1225" size="100,100">&lt;a href=&quot;#mod-kampong&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_chyse.jpg&quot;&gt;&lt;/a&gt;
 
 Děkuji vám! Kam teď?
@@ -1074,7 +1077,7 @@ Děkuji vám! Kam teď?
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_fotka.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="84" name="zpět" tags="eliasova" position="1650,1600" size="100,100">&lt;a href=&quot;#mod-ulice&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_ulice-1-1.jpg&quot;&gt;&lt;/a&gt;
 
 Fajn, vrátli jsme se. Kam teď?
@@ -1089,7 +1092,7 @@ Fajn, vrátli jsme se. Kam teď?
 [[Ukončit expedici-&gt;návrat 2]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_ulice-jakarta.flac&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="85" name="pobožnost" tags="welzl" position="2375,1725" size="100,100">No jistě, vždyť je přece květen, začátek polárního jara! V tuto dobu dávají eskymáčtí hejtmané rozhlašovati velký tah ryb a na dni, kdy se začíná lov lososů, se ustanovují slavnosti. A vypadá to, že to je právě dnes.
 
 Slavnosti eskymácké konají se vesměs venku pod širou oblohou. Každý Eskymák s veškerou svou rodinou se na svátky pečlivě připravuje. Je tenkrát doba nadbytku jako u nás po žních a proto chystají se horlivě nejlepší pokrmy. Poté celá vesnice v saních s větrem o závod ujíždí na místo vybrané ke svěcení svátků. 
@@ -1112,7 +1115,7 @@ Kam teď?
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.
 &lt;audio src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/cnc_zabava.wav&quot; autoplay&gt;</tw-passagedata><tw-passagedata pid="86" name="lovci" tags="welzl" position="2900,1850" size="100,100">Po prostém pohřbu nám táborníci pomohou naložit zabité zvíře na sáně a společně je odvezeme do jejich tábora.
 
 Našemu lovu tenkrát štěstí přálo. Přišel jsem zakrátko do táboru a eskymáčtí pomocníci stahovali právě dva medvědy. Poznal jsem, že žádný není z těch, které bych byl málem zaplatil životem, poněvadž to byli medvědi hnědí, obyčejní, a ti v doupěti byli dva staří a dva mladí medvědi šedí. Ptal jsem se, zdali také ti dva byli v té sluji, a Eskymák mi vesele povídá, že tito dva jsou na maso a že je našli v jiné díře sluje, když tam posvítili jinou lampou. To jsem seznal, že v té krajině je pravá medvědí reservace.
@@ -1129,7 +1132,7 @@ Zhynulá zvěř, když se posbírá, dováží se na saních na kupecké lodi a 
 [[Ukončit expedici-&gt;návrat 3]]
 
 ---
-Zkontrolovat (link-goto: &quot;inventář&quot;).</tw-passagedata><tw-passagedata pid="87" name="frič" tags="fric traveler-intro" position="800,200" size="100,100">Následující příběh je založen na autentickém textu z knihy Indiáni Jižní Ameriky.
+Zkontrolovat [(link-goto: &quot;inventář&quot;)]&lt;inventorylink|.</tw-passagedata><tw-passagedata pid="87" name="frič" tags="fric traveler-intro" position="800,200" size="100,100">Následující příběh je založen na autentickém textu z knihy Indiáni Jižní Ameriky.
 
 &lt;a href=&quot;#mod-frič kniha&quot; class=&quot;modal-open-image&quot; title=&quot;Zvětšit a zobrazit citaci&quot;&gt;&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/CnC_fric-kniha.jpg&quot;&gt;&lt;/a&gt;
 
