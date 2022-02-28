@@ -237,23 +237,26 @@ tw-hook[name="inventorylink"] tw-link::after {
 ============================*/
 
 .worldmap-container {
-    /* max-width: 90%; */
     overflow: visible;
 }
 
 img.worldmap {
     box-shadow: none;
     margin: 0;
+    width: auto;
+    max-width: calc(1000px - 2em);
+    max-height: 80vh;
 }
 
 .traveler {
     position: absolute;
+    /* translates lining up the dot in front of the text
+    with the upper left corner of the element */
     transform: translate(-0.9em, -50%);
     text-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 .traveler tw-link {
-    background-color: rgba(247, 239, 222, 0.274);
-    box-shadow: 0 0 10px 10px rgba(247, 239, 222, 0.274);
+    background-color: rgba(247, 239, 222, 0.692);
 }
 .traveler#fric {
     top: 57%;
@@ -267,6 +270,23 @@ img.worldmap {
     top: 20%;
     left: 78%;
 }
+
+tw-story[tags~="map"] div {
+    width: max-content;
+}
+
+tw-story[tags~="map"] {
+    display: block;
+    overflow-x: auto;
+}
+
+tw-passage[tags~="map"] {
+    width: max-content;
+    box-sizing: content-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 
 /*============================
