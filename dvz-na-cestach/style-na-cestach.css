@@ -84,14 +84,37 @@ tw-story tw-consecutive-br {
     height: 1em;
 }
 
-tw-sidebar {
-    /* TODO */
-    /* display: none; */
-    position: absolute;
-}
-
 tw-passage[tags ~= "title-passage"] {
     font-size: 110%;
+}
+
+tw-icon[alt="Undo"],
+tw-icon[alt="Redo"] {
+    display: none;
+    /* TODO remove for release */
+    display: block;
+}
+tw-icon[alt] {
+    margin: 0.3em 0;
+    opacity: 0.6;
+}
+tw-icon[alt]:hover,
+tw-icon[alt]:focus {
+    opacity: 0.9;
+}
+tw-icon[alt] > img {
+    height: 45px;
+    box-shadow: none;
+}
+
+tw-sidebar.aap-disabled > tw-icon[alt="Pause/Play"],
+tw-sidebar.aap-disabled > tw-icon[alt="Pause/Play"]:hover,
+tw-sidebar.aap-disabled > tw-icon[alt="Pause/Play"]:focus,
+tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"],
+tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"]:hover,
+tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"]:focus {
+    pointer-events: none;
+    opacity: 0.15;
 }
 
 /*==============================
@@ -104,15 +127,23 @@ tw-passage[tags ~= "title-passage"] {
     tw-story {
         padding: 5%;
     }
-
     tw-passage {
-        margin-top: 20px;
-        padding: 1em;
+        margin-top: 65px;
+        /* leave space for the sidebar */
+        padding: 2em;
         font-size: 85%;
         line-height: normal;
     }
-    tw-passage[tags ~= "title-passage"] {
-        font-size: 85%;
+    tw-sidebar {
+        position: absolute;
+        width: 94%;
+        left: 3%;
+        top: -110px;
+        
+        flex-direction: row;
+    }
+    tw-icon > img {
+        height: 30px
     }
 }
 /* wider screen */
