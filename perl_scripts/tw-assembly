@@ -218,6 +218,7 @@ else {
             print HTML_OUT $1;
             $in_style = 1;
             my $bit_of_css = $2 ? "$2\n" : "";
+            # TODO  the annoying extra newline at the beginning (previous fix attempt not great)
 
             if ($2 =~ /(.*)<\/style>(.*)/) {
                 # the style element was closed on the same line as it was opened
