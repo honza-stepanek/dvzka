@@ -34,7 +34,7 @@ tw-story {
 
     background-position: center;
     background-attachment: fixed;
-    background-color: rgb(53, 51, 47);
+    background-color: rgb(230, 214, 184);
     background-image: url("https://digikult.phil.muni.cz/wp-content/DVZ/cesi-na-cestach/resources/general-background-map.png");
     background-size: cover;
 
@@ -91,16 +91,14 @@ tw-passage[tags ~= "title-passage"] {
 tw-icon[alt="Undo"],
 tw-icon[alt="Redo"] {
     display: none;
-    /* TODO remove for release */
-    display: block;
 }
 tw-icon[alt] {
     margin: 0.3em 0;
-    opacity: 0.6;
+    opacity: 0.75;
 }
 tw-icon[alt]:hover,
 tw-icon[alt]:focus {
-    opacity: 0.9;
+    opacity: 0.98;
 }
 tw-icon[alt] > img {
     height: 45px;
@@ -114,7 +112,7 @@ tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"],
 tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"]:hover,
 tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"]:focus {
     pointer-events: none;
-    opacity: 0.15;
+    opacity: 0.4;
 }
 
 /*==============================
@@ -138,9 +136,9 @@ tw-sidebar.aap-disabled > tw-icon[alt="Adjust volume"]:focus {
         position: absolute;
         width: 94%;
         left: 3%;
-        top: -110px;
+        top: -85px;
         
-        flex-direction: row;
+        flex-direction: row-reverse;
     }
     tw-icon > img {
         height: 30px
