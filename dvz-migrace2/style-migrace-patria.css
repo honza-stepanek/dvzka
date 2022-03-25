@@ -1,0 +1,1015 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
+
+/* general structure */
+body {
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 200%;
+}
+h2 {
+    font-size: 150%;
+}
+h3 {
+    font-size: 120%;
+    font-weight: 500;
+}
+
+hr {
+    height: 0px;
+    border: solid 1px black;
+}
+
+img {
+    max-width: 100%;
+    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+div.modal-dialog img {
+    display: block;
+    margin: auto;
+}
+
+
+audio {
+	display: block;
+  	margin: auto;
+}
+
+audio::-webkit-media-controls-panel {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_zvuk_pozadi.jpg");
+  	border-radius: 5px; 
+}
+
+tw-hook {
+    overflow-y: visible !important;
+
+}
+/*============================
+         TWINE STORY 
+============================*/
+
+tw-story {
+    padding: 80px 10%;
+    min-height: 100%;
+
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgb(119, 105, 76);
+    background-size: cover;
+    font-family: "Dancing Script", cursive;
+  	font-size: 150%;
+}
+
+/* thematic backgrounds */
+tw-story[tags ~= "edu-intermezzo"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_JizniAmerika_Quality.jpg");
+}
+tw-story[tags="germani"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Hrncir_Germani_173.jpg");
+  }
+tw-story[tags="hunove"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Hrncir_Hunove_163.jpg");
+  }
+tw-story[tags="mapka"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Stehovani_mapka.jpg");
+  }
+tw-story[tags="nasledky"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_tornPaper.jpg");
+  }
+tw-story[tags="amerika"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_Amerika_Quality.jpg");
+  }
+tw-story[tags="amerika2"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Korensky_Amerika_242a.jpg");
+  }
+tw-story[tags="amerika3"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Soukup_Amerika_Ulice_39-e1638960668653.jpg");
+  }
+tw-story[tags="amerika4"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Soukup_Milligan_118.jpg");
+  }
+tw-story[tags="amerika5"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Soukup_Mrakodrapy_35.jpg");
+  }
+tw-story[tags="intro"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_PotopeneLodibrehHaify_Martinec_UtekpredZlutouHvezdou_305.jpg");
+  }
+
+tw-story[tags="more"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_Jaderske_Quality.jpg");
+  	
+  }
+
+tw-story[tags="nakladHaifa"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_NakladaninaLod_Svetozor_19400725.jpg");
+  	
+  }
+tw-story[tags="patrieVybuch"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_LodPatria_MachacekUtekDoAnglie_99.jpg");
+  	
+  }
+
+tw-story[tags="zeleznaVrata"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_DunajZeleznaVrata_Basl59.jpg");
+  }
+tw-story[tags="dunajGiorgiu"]{
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Dunaj_Svetozor19350912.jpg");
+}
+
+tw-story[tags="tulcea"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_TulceaPristav_Barbu48d.jpg");
+  	
+  }
+
+tw-story[tags="marmar"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_BosporMarmar_Svetozor19141120.jpg");
+  	
+  }
+
+tw-story[tags="Cernemore"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_CerneMore_Quality.jpg");
+  }
+
+
+tw-story[tags="malaStrana"] {
+  	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Praha_Plicka_124.jpg");
+}
+tw-story[tags="prazskaUlice"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Praha_Plicka_81-e1638438835773.jpg");
+}
+tw-story[tags="nadrazi"]{
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_NadraziPraha_Quality.jpg");
+}
+tw-story[tags="praha"] {
+  	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Praha_Plicka_166.jpg");
+}
+tw-story[tags="atlit"]{
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_AtlitTabor.jpg");
+}
+
+tw-story[tags="dunaj"]{
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_Dunaj_Quality-scaled.jpg");
+}
+
+tw-story[tags="haifa"]{
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Haifa_Svetozor19400725.jpg");
+}
+
+tw-story[tags ~= "pametnici"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/Migrace_Pametnici_pozadi.jpg");
+}
+
+/* endings */
+tw-story[tags ~= "conclusion"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/vintage-g928035a53_1920.jpg");
+}
+
+tw-story[tags ~= "credits"] {
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/11/vintage-g928035a53_1920.jpg");
+}
+
+tw-story[tags ~= "budapest"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Budapest_Svetozor1938_254.jpg");
+  }
+
+tw-story[tags="kreta"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_Kreta_Svetozor19411226.jpg");
+  }
+tw-story[tags="kypr"] {
+	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_KyperJOHN_s15.jpg");
+  }
+/*============================
+        TWINE PASSAGE 
+============================*/
+
+tw-passage {
+    width: 1000px;
+    max-width: 100%;
+    align-self: center;
+    padding: 2em;
+    margin-top: 3vh;
+    margin-bottom: 4vh;
+	background-image: url("https://digikult.phil.muni.cz/wp-			content/uploads/2021/12/Migrace_denikPozadi.jpg");
+  	background-position: center;
+    background-attachment: fixed;
+  	background-size: cover;
+    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+    color: black;
+
+    z-index: 0;
+}
+
+tw-story tw-consecutive-br {
+    height: 0.5em;
+}
+
+tw-sidebar {
+	display: none;
+}
+
+
+/*==============================
+    Twine Story and Passage
+   Responsivness adjustments
+==============================*/
+
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-story {
+        padding: 5%;
+    }
+    tw-passage {
+        margin-top: 105px;
+        /* leave space for the sidebar */
+        padding: 2em;
+        font-size: 85%;
+        line-height: normal;
+    }
+    tw-sidebar {
+        position: absolute;
+        width: 94%;
+        left: 3%;
+        top: -110px;
+        
+        flex-direction: row;
+    }
+    tw-icon > img {
+        height: 30px
+    }
+}
+/* wider screen */
+@media (min-width: 650px) {
+    tw-sidebar {
+        position: absolute;
+        left: -80px;
+
+        flex-direction: column;
+        /* width: 45px; */
+    }
+}
+
+
+/*============================
+        TWINE LINKS 
+============================*/
+
+tw-link,
+tw-link.visited {
+    display: inline-block;
+    padding: 0.1em 0.3em;
+    right: 0.1em;
+
+    color: #0000dc;
+    
+    transition: 200ms;
+    transition-property: color;
+}
+tw-link:hover,
+tw-link.visited:hover {
+    color: #ffffff;
+}
+
+tw-link::before,
+tw-link.visited::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+
+    background-color: #0000DC;
+    
+    transition: 300ms;
+    transition-property: width;
+}
+tw-link:hover::before,
+tw-link.visited:hover::before {
+    width: 100%;
+}
+
+/**classic tw-enchantment link**/
+tw-enchantment.enchantment-link {
+    display: inline-block;
+    margin: 0.3em 0;
+    padding: 0.1em 0.3em;
+    left: -0.3em;
+
+    color: #0000DC;
+    transition: 200ms;
+    transition-property: color;
+}
+tw-enchantment.enchantment-link.link:hover,
+tw-enchantment.enchantment-link.link:focus,
+tw-enchantment.enchantment-link.link:active {
+    color: #ffffff;
+}
+
+tw-enchantment.enchantment-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+
+    background-color: #0000DC;
+    
+    transition: 200ms;
+    transition-property: height;
+}
+tw-enchantment.enchantment-link.link:hover::before,
+tw-enchantment.enchantment-link.link:focus::before,
+tw-enchantment.enchantment-link.link:active::before {
+    height: 100%;
+}
+
+
+/**time tw-enchantment link**/
+div.chooseTime tw-enchantment.enchantment-link {
+    display: inline-block;
+    margin: 0.3em 0;
+    padding: 0.1em 0.3em;
+    left: -0.3em;
+
+    color: #82b74b;
+    transition: 200ms;
+    transition-property: color;
+}
+div.chooseTime tw-enchantment.enchantment-link.link:hover,
+div.chooseTime tw-enchantment.enchantment-link.link:focus,
+div.chooseTime tw-enchantment.enchantment-link.link:active {
+    color: #ffffff;
+}
+
+div.chooseTime tw-enchantment.enchantment-link::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: -1;
+
+    background-color: #82b74b;
+    
+    transition: 200ms;
+    transition-property: width;
+}
+div.chooseTime tw-enchantment.enchantment-link.link:hover::before,
+div.chooseTime tw-enchantment.enchantment-link.link:focus::before,
+div.chooseTime tw-enchantment.enchantment-link.link:active::before {
+    height: 100%;
+}
+
+/*============================
+    FLOATING CLOCK
+============================*/
+
+div.floating-clock-container {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+div.floating-clock {
+    margin: 0 auto;
+    width: max-content;
+    padding: 0.2em 0.5em;
+    top: -130px;
+    pointer-events: auto;
+
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_denikPozadi.jpg");
+    box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.246);
+    
+    font-weight: 600;
+}
+
+/* narrow screen */
+@media (max-width: 649px) {
+    div.floating-clock {
+        top: -100px;
+    }
+}
+
+
+/*============================
+    MODAL DIALOGS 
+============================*/
+
+.modal-dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vh 4vw;
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 400ms;
+}
+.modal-dialog-container:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* modal content */
+.modal-dialog-container > div {
+    max-width: 100%;
+    flex-grow: 0;
+    margin: auto 0px;
+    padding: 1.2em;
+
+    background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_denikPozadi.jpg");
+    box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
+}
+.modal-dialog-container > div::after {
+    /* invisible "padding" to ensure user can scroll
+       all the way to the bottom of the bubble
+       (that is past its border bc shadow/glow fx) */
+    content: '';
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    pointer-events: none;
+    height: 60px;
+    width: 1px;
+}
+
+.modal-dialog-container img.dont-get-too-big-image {
+    width: 900px;
+}
+
+.modal-dialog-container .modal-close,
+.modal-dialog-container .modal-close:hover {
+    /* background close button/link */
+    position: fixed;
+    top: 0;
+    left:0;
+    z-index: -1;
+    
+    width: 100vw;
+    height: 100vh;
+    
+    background: #0000;
+    color: #0000;
+}
+.modal-dialog-container > div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: -7px;
+    top: -43px;
+    z-index: -2;
+    /* setting it underneath the close link */
+    width: 1em;
+    height: 1em;
+    
+    font-family: sans-serif;
+    content: '×';
+    text-align: center;
+    line-height: 1.2em;
+    
+    color: rgb(0, 0, 0);
+    background-color: white;
+    opacity: 0.5;
+}
+
+
+
+/* wiki articles */
+div.modal-dialog.wiki {
+    height: 100%;
+}
+div.modal-dialog.wiki iframe {
+    width: 1200px;
+    max-width: 100%;
+    height: 1000px;
+
+    border: solid 2px rgba(78, 78, 78, 0.7);
+    /* box-shadow: ; */
+}
+
+
+/* images inside of a H5P embed */
+div.modal-dialog.h5p-embed {
+    width: 40em;
+}
+
+/* modals with a sidenote */
+div.modal-dialog.text-sidenote {
+    width: 30em;
+}
+
+span.citation {
+    font-size: 75%;
+    line-height: 1.2em;
+}
+
+div.block-citation {
+    margin: 1em 0.1em 0 auto;
+    width: 800px;
+    max-width: 100%;
+
+    text-align: right;
+    word-wrap: break-word;
+    font-size: 80%;
+    line-height: 1.2em;
+}
+
+tw-passage[tags ~= "bibliography"] {
+    word-wrap: break-word;
+}
+
+
+
+/*============================
+    HYPERLINKS   <a>
+============================*/
+
+a:link {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:link:hover {
+    color: hsl(170, 90%, 46%);
+    text-decoration-thickness: 1.5px;
+}
+
+a:visited {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+a:visited:hover {
+    color: hsl(182, 100%, 22%);
+    text-decoration-thickness: 1.5px;
+}
+
+
+/* modal openers */
+a.modal-open:any-link,
+a[href ^= "#"] {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: color, text-shadow;
+    text-decoration: underline;
+}
+a.modal-open:any-link:hover,
+a[href ^= "#"]:hover {
+    color: rgb(0, 153, 25);
+    text-decoration: underline;
+    text-shadow: 0 0 0.03em rgb(0, 153, 25);
+}
+
+
+
+/*============================
+    IMAGE STUFF
+============================*/
+
+tw-passage img {
+    max-width: 100%;
+  	display: block;
+  	margin: auto;
+}
+img.not-big {
+	width: 60%;
+}
+/* all images relevant to the story */
+.story-image,
+#inception-image {
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.123);
+    box-shadow: 0px 4px 7px 1px rgba(0, 0, 0, 0.3);
+}
+
+.modal-dialog-container img {
+    display: block;
+    margin: 0 auto;
+}
+
+.map-image {
+    box-shadow: none;
+    background-color: unset;
+    transform: scale(1.02);
+}
+
+.witness-image {
+    width: 270px;
+}
+
+
+
+
+/*============================
+        Accessibility
+============================*/
+
+/* changes in accessibility mode */
+body.accessibility-mode tw-story {
+    font-family: 'Roboto Slab', serif;
+}
+
+/* the button style */
+
+div.accessibility-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 0px;
+}
+
+/* the visible button itself */
+#accessibility-toggle {
+    width: 2em;
+    height: 1.5em;
+    padding-left: 0.4em;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.5em;
+    cursor: pointer;
+    
+    transform: translateX(50%);
+    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.876);
+    color: white;
+
+    transition: 300ms;
+    transition-property: transform, opacity, background-color;
+}
+#accessibility-toggle::before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: -30%;
+    background-color: none;
+    cursor: auto;
+}
+
+/* toggle is on */
+body.accessibility-mode #accessibility-toggle {
+    font-family: "Dancing Script", serif;
+}
+
+/* on hover */
+#accessibility-toggle:hover {
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.637);
+    opacity: 0.9;
+}
+
+
+/* draw user's attention on opening the DVZ */
+/* tw-passage[tags ~= "acc-animation"] #accessibility-toggle, */
+tw-passage[tags ~= "acc-animation"] .info-hint-button {
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 2;
+    animation-name: wiggle;
+}
+@keyframes wiggle {
+    from {
+        transform: none;
+        padding-right: 0;
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(50%);
+        padding-right: 0.5em;
+        opacity: 0.4;
+    }
+    to {
+        transform: none;
+        padding-right: 0;
+        opacity: 0.9;
+    }
+}
+
+
+/* narrow screen */
+@media (max-width: 649px) {
+
+    div.accessibility-toggle-container {
+        top: 10px;
+        right: 0px;
+    }
+
+    #accessibility-toggle  {
+        transform: translate(15%);
+        background-color: rgba(0, 0, 0, 0.739);
+        opacity: 0.6;
+        padding-left: 0.2em;
+    }
+}
+
+/** ===============
+Content 
+================**/
+.content{
+	position: fixed;
+    right: 1em;
+    padding: 1em;
+    margin: 1em;
+    top: 10vh;
+    max-width: 15vw;
+    max-height: 20vh;
+    word-break: break-word;
+    font-size: 2.5vh;
+    line-height: 1em;
+    bottom: 0;
+}
+
+/**============= 
+Content Overview 
+===================**/
+.contentOverview{
+  	position: fixed;
+    right: 1em;
+  	bottom: 1em;
+    padding: 1em;
+    margin: 1em;
+    top: 3em;
+    width: 35vw;
+    word-break: break-word;
+    border-radius: 1em;
+    font-size: 1.2em;
+    line-height: 1em;
+  	opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  	resize: both;
+  	overflow: auto;
+  	z-index: 5;
+  	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_denikPozadi.jpg");
+  	box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+}
+.contentOverview:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+.contentOverview .close,
+.contentOverview .close:hover {
+    /* close link */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0000;
+    color: #0000;
+}
+.contentOverview > div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: 0.15em;
+    top: -1.35em;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.1em;
+
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+[draggable=true] {
+  cursor: move;
+}
+#drag_me {
+  -webkit-user-drag: element;
+}
+
+/** =====================
+Content Overview END 
+======================	**/
+
+/**==================
+Icon image
+====================**/
+.iconImg{
+	width: 6vw;
+  	box-shadow: none;
+}
+
+/**==================
+Icon image END
+====================**/
+
+/*============================
+    OTHER STUFF
+============================*/
+
+iframe {
+    background-color: rgba(0, 0, 0, 0.226);
+  	display: block;
+  	margin: auto;
+  	max-width: 100%;
+}
+
+
+img.logolink {
+    /* EU fondy */
+    display: block;
+    width: 85%;
+    margin: 4em auto 1em;
+    background-color: rgba(255, 255, 255, 0.335);
+    box-shadow: none;
+}
+.logotext {
+    /* EU fondy */
+    font-size: 75%;
+    line-height: 1.4em;
+    text-align: center;
+}
+
+.eu-msmt-logo {
+    display: block;
+    margin: 1em auto;
+    width: 80%;
+}
+
+
+/* Floating side buttons - contents, help, fullscreen */
+
+.floating-buttons-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: calc(20px + 1.5em);
+    right: 0;
+}
+
+.floating-button a,
+.floating-button a:hover {
+    display: block;
+    font: inherit;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.floating-button tw-icon[data-raw] {
+    width: 2em;
+    height: 1.5em;
+    margin: 5px 0 0 0;
+    padding-left: 0.3em;
+    font-size: inherit;
+    line-height: 1.45em;
+
+    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.876);
+    color: white;
+
+    transform: translateX(50%);
+
+    transition: 300ms;
+    transition-property: transform, opacity, background-color;
+}
+.floating-button tw-icon[data-raw]::before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: -30%;
+    background-color: none;
+    cursor: auto;
+}
+
+.floating-button tw-icon[data-raw]:hover,
+tw-passage[tags ~= "acc-animation"] tw-icon[data-raw].info-hint-button  {
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.637);
+    opacity: 0.9;
+}
+
+/* narrow screen */
+@media (max-width: 649px) {
+
+    .floating-buttons-container {
+        top: 10px;
+        right: calc(2em);
+        flex-direction: row-reverse;
+    }
+    .floating-button tw-icon[data-raw]  {
+        width: 1.5em;
+        padding: 0;
+        margin: 0 10px 0 0;
+        text-align: center;
+        transform: translate(15%);
+        background-color: rgba(0, 0, 0, 0.739);
+        opacity: 0.6;
+    }
+}
+
+
+/*=============================
+      CREDITS page style 
+=============================*/
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+    box-shadow: none;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags ~= "credits"] #muni-logo {
+    position: relative;
+    left: -13px;
+}
+tw-passage[tags ~= "credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
+
+
+/**
+ * Harlowe Audio Library (HAL), by Chapel, v2.2.1
+ * for Harlowe 2.1.0 and higher
+ * Released under the Unlicense, and dedicated to the public domain.
+**/
+#audio-overlay{position:fixed;top:0;right:0;left:0;bottom:0;z-index:100000;background:#111}.lds-ring{display:block;position:relative;top:20%;margin:auto;width:20em;height:20em}.lds-ring div{box-sizing:border-box;display:block;position:absolute;width:18em;height:18em;margin:6px;border:6px solid #fff;border-radius:50%;-webkit-animation:lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;animation:lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;border-color:#fff transparent transparent transparent}.lds-ring div:nth-child(1){-webkit-animation-delay:-.45s;animation-delay:-.45s}.lds-ring div:nth-child(2){-webkit-animation-delay:-.3s;animation-delay:-.3s}.lds-ring div:nth-child(3){-webkit-animation-delay:-.15s;animation-delay:-.15s}@-webkit-keyframes lds-ring{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes lds-ring{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}input#audio-volume{width:100%;margin:2em 0}span#vol-title{position:relative;bottom:-1em;font-size:1rem;float:left}tw-link#audio-mute{display:inline-block;padding:.3em;width:90%;text-decoration:none;color:#111;background:#eee;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #000}tw-link#audio-mute:hover{opacity:.8}tw-link#audio-mute:active{opacity:.6}tw-link#audio-mute span{display:inline-block;width:1em;position:relative;height:1em;top:.2em;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAABF0lEQVR4Ae2VJVREYRSEB3ftuFUaLhF6I22iF7TgLr1XvAc849CwiBac9Xtm3e97cefp/Pec7+mdH0mZrGtMoBomyAEHfjGHXKg07gNxeUS3BuMAqGZswE7YcOIYgqgG7BFlSQgTAgKysC2jNjQmghFQCOpMxq+QmQgmFATU4kcq/YlgfKB1lALUqFSukRIbEwpy4BTZPM/Bu9TaQ362KAsl56sAtSR+Sgv6RCFdr/gjBYiuj65c3J0eNEmXz95TgybocvmoJj3avf5l59L1iD/WglZCP7/uh8zgeQ6epdahaZENFIPCCFvEYNPW4JdNazBGzhkj6caCbSc02DRRu0+8RR/+rb7wx6D505HxCVKvG0zpp+yknHe8MBDkT/s8AAAAAElFTkSuQmCC);background-size:contain}tw-link#audio-mute.muted span{right:4px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAASElEQVR4Ae3WsQ0AMAjAsJ7ez9MTGEmlRGL3BJzPq6prw2DDYMNgw2DDYMOwh1kAMUygQIEC2RejANVxnVE9aDOqJ39GVZWqB5Z3r1ndBX5oAAAAAElFTkSuQmCC)}div#audio-volume{float:left}div#audio-controls{font:100% Georgia,serif;font-size:1.5em;position:fixed;width:8em;height:100%;padding:1em 2em;z-index:10000;top:0;left:0;bottom:0;background:#333;color:#eee;transition:left .3s;text-align:center}div#audio-controls.closed{left:-10.5em}div#audio-controls tw-link#audio-panel-toggle{display:inline-block;width:1.5em;position:absolute;height:1.5em;top:0;right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-decoration:none;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAYklEQVR4Ae3MsQFAMAAEQMDEagCgN4EuVTrbPcACeUBugDNeSdMQomI0PmYdTEYD9DA5jcVoBKuxGY1kNQ6jGRSaGaIj8gw1aI/KYVUSNqsSzMpiVT2zMjlVN0fqVW5o2luMGHqkQmD9cPYAAAAASUVORK5CYII=);background-size:contain}div#audio-controls.closed tw-link#audio-panel-toggle{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAZElEQVR4Ae3TpwGAMBQAUfrEeHB0cDhcXBSO7ehlgBw9N8BL/YZO95r6uA/UEbOv+ylfHRJ9z1BWLynKJqmWohyS6ijKOygKCpmjZYqXTTA2xUiCsShGAMw8/Q3ArFgFMHek0w3WCaR74eO2YQAAAABJRU5ErkJggg==)}@media screen and (max-width:800px){div#audio-controls.closed{left:-12em}div#audio-controls.closed tw-link#audio-panel-toggle{right:-1.5em}}div#story-menu{margin:1em 0}tw-link.story-menu{width:100%;display:block;font-weight:400;background:#ccc;font-size:.9em;padding:.1em 0;color:#111;border:1px solid #333}tw-link.story-menu.hide{display:none}tw-link.story-menu:hover{opacity:.8}tw-link.story-menu:active{opacity:.6}input[type=range].hal{-webkit-appearance:none;width:100%;margin:2.25px 0}input[type=range].hal:focus{outline:0}input[type=range].hal::-webkit-slider-runnable-track{width:100%;height:15.5px;cursor:pointer;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d;background:#111;border-radius:0;border:0 solid #010101}input[type=range].hal::-webkit-slider-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer;-webkit-appearance:none;margin-top:-2.25px}input[type=range].hal:focus::-webkit-slider-runnable-track{background:#444}input[type=range].hal::-moz-range-track{width:100%;height:15.5px;cursor:pointer;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d;background:#111;border-radius:0;border:0 solid #010101}input[type=range].hal::-moz-range-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer}input[type=range].hal::-ms-track{width:100%;height:15.5px;cursor:pointer;background:0 0;border-color:transparent;color:transparent}input[type=range].hal::-ms-fill-lower{background:#000;border:0 solid #010101;border-radius:0;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d}input[type=range].hal::-ms-fill-upper{background:#111;border:0 solid #010101;border-radius:0;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d}input[type=range].hal::-ms-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer;height:15.5px}input[type=range].hal:focus::-ms-fill-lower{background:#111}input[type=range].hal:focus::-ms-fill-upper{background:#444}
+/** End of HAL code */
+
+
+/* vlastní úpravy HAL rozhraní */
+
+div#audio-controls {
+    box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.575);
+}
+
+tw-link#audio-mute {
+    border-radius: 0.2em;
+}
+
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-link#audio-panel-toggle {
+        margin-top: 5px;
+    }
+    div#audio-controls.closed tw-link#audio-panel-toggle {
+        background-color: rgba(26, 25, 25, 0.616);
+        opacity: 0.7;
+        /* border-radius: 30%; */
+        margin-right: -5px;
+        width: 1.2em;
+    }
+}
+
+tw-link#audio-mute::before,
+tw-link#audio-panel-toggle::before {
+    /* zrušení animace podtržení */
+    content: none;
+}
