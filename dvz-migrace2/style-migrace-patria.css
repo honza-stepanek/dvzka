@@ -714,55 +714,46 @@ tw-passage[tags ~= "acc-animation"] .info-hint-button {
     }
 }
 
-/** ===============
-Content 
-================**/
-.content{
-	position: fixed;
-    right: 1em;
-    padding: 1em;
-    margin: 1em;
-    top: 10vh;
-    max-width: 15vw;
-    max-height: 20vh;
-    word-break: break-word;
-    font-size: 2.5vh;
-    line-height: 1em;
-    bottom: 0;
-}
+
 
 /**============= 
 Content Overview 
 ===================**/
-.contentOverview{
-  	position: fixed;
-    right: 1em;
-  	bottom: 1em;
-    padding: 1em;
-    margin: 1em;
-    top: 3em;
-    width: 35vw;
-    word-break: break-word;
-    border-radius: 1em;
-    font-size: 1.2em;
-    line-height: 1em;
-  	opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-  	resize: both;
-  	overflow: auto;
-  	z-index: 5;
-  	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_denikPozadi.jpg");
-  	box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+
+.content-overview-container {
+    position: fixed;
+    z-index: 5;
 }
-.contentOverview:target {
+.content-overview-container > * {
+    pointer-events: none;
+    opacity: 0;
+}
+.content-overview-container:target > * {
     opacity: 1;
     pointer-events: auto;
 }
-.contentOverview .close,
-.contentOverview .close:hover {
+
+.content-overview {
+  	position: fixed;
+    right: 2em;
+  	bottom: 1em;
+    padding: 1em;
+    top: 90px;
+    width: 15em;
+    max-width: 90vw;
+    word-break: break-word;
+    font-size: 120%;
+    line-height: 1.3em;
+  	resize: both;
+  	overflow: auto;
+  	z-index: 1;
+  	background-image: url("https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Migrace_denikPozadi.jpg");
+  	box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
+    transition: opacity 200ms;
+}
+
+.content-overview-container .close-content-overview,
+.content-overview-container .close-content-overview:hover {
     /* close link */
     position: fixed;
     top: 0;
@@ -775,14 +766,14 @@ Content Overview
     background: #0000;
     color: #0000;
 }
-.contentOverview > div::before {
+.close-content-overview::before {
     /* adding an x above of the modal */
-    position: absolute;
-    right: 0.15em;
-    top: -1.35em;
+  	position: fixed;
+    right: 2.3em;
+    top: 55px;
     width: 1em;
     height: 1em;
-    z-index: -2;
+    z-index: 1;
     /* setting it underneath the close link */
 
     font-family: sans-serif;
@@ -802,21 +793,51 @@ Content Overview
   -webkit-user-drag: element;
 }
 
-/** =====================
-Content Overview END 
-======================	**/
+/* narrow screen */
+@media (max-width: 649px) {
 
-/**==================
-Icon image
-====================**/
-.iconImg{
-	width: 6vw;
-  	box-shadow: none;
+    .content-overview {
+        position: fixed;
+        right: 4vw;
+        width: 92vw;
+        max-width: 99vw;
+        top: 130px;
+        bottom: 1em;
+        padding: 1em;
+        margin: 0;
+        font-size: 120%;
+        line-height: 1.3em;
+    }
+
+    .close-content-overview::before {
+        right: 4vw;
+        top: 105px;
+    }
 }
 
-/**==================
-Icon image END
-====================**/
+.content-overview ul {
+    margin: 0;
+    padding-left: 0.5em;
+}
+.content-overview ul > li {
+    padding-left: 0.2em;
+}
+.content-overview ul > li::marker {
+    content: '-';
+}
+
+span.content-overview-unknown-item {
+    color: rgba(0, 0, 0, 0.01);
+    text-shadow: rgba(0, 0, 0, 1) 0 0 0.4em;
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    
+    padding-left: 0.2em;
+}
+
+
 
 /*============================
     OTHER STUFF

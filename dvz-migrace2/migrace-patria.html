@@ -2092,44 +2092,42 @@ Málem jsem umřel. Nemoc, která mě zastihla krátce po katastrofě, mě upout
     &lt;/div&gt;\
 &lt;/div&gt;\
 \\
-&lt;div class=&quot;content&quot;&gt;\
-    &lt;div id=&quot;cont&quot; class=&quot;contentOverview&quot;&gt;\
-        &lt;div&gt;\
-            &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-(link:&quot;Uložit příběh&quot;)[
-  (if:(save-game:&quot;Slot A&quot;))[
+&lt;div id=&quot;cont&quot; class=&quot;content-overview-container&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close-content-overview&quot;&gt;&amp;times;&lt;/a&gt;\
+    &lt;div class="content-overview"&gt;\
+(link:&quot;Uložit příběh&quot;)[\
+  (if:(save-game:&quot;Slot A&quot;))[\
     Příběh uložen!
-  ](else: )[
+  ](else: )[\
     Promiň, příběh se nepodařilo uložit!
-  ]
-]
-(if: $restart is true)[
+  ]\
+]\
+(if: $restart is true)[\
 (link: &quot;Restartovat příběh&quot;)[(reload:)]]
-(else:)[]
+(else:)[]\
 
 
 **Kapitoly příběhu**
-[[Úvod-&gt;Uvod]]
-(if: (history:) contains &quot;Predstaveni&quot;)[[[Praha-&gt;Predstaveni]]](else:)[Neznámé] 
-(if: (history:) contains &quot;Dunaj&quot;)[[[Dunaj-&gt;Dunaj]]](else:)[Neznámé]  
-(if: (history:) contains &quot;CerneMore&quot;)[[[Černé moře-&gt;CerneMore]]](else:)[Neznámé]  
-(if: (history:) contains &quot;EgejskeMore&quot;)[[[Středozemní moře-&gt;EgejskeMore]]](else:)[Neznámé]  
-(if: (history:) contains &quot;Haifa&quot;)[[[Haifa-&gt;Haifa]]](else:)[Neznámé]  
-(if: (history:) contains &quot;Atlit&quot;)[[[Atlit-&gt;Atlit]]](else:)[Neznámé]
+* [[Úvod-&gt;Uvod]]
+* (if: (history:) contains &quot;Predstaveni&quot;)[[[Praha-&gt;Predstaveni]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Praha&lt;/span&gt;] 
+* (if: (history:) contains &quot;Dunaj&quot;)[[[Dunaj-&gt;Dunaj]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Dunaj&lt;/span&gt;]  
+* (if: (history:) contains &quot;CerneMore&quot;)[[[Černé moře-&gt;CerneMore]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Černé moře&lt;/span&gt;]  
+* (if: (history:) contains &quot;EgejskeMore&quot;)[[[Středozemní moře-&gt;EgejskeMore]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Středozemní moře&lt;/span&gt;]  
+* (if: (history:) contains &quot;Haifa&quot;)[[[Haifa-&gt;Haifa]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Haifa&lt;/span&gt;]  
+* (if: (history:) contains &quot;Atlit&quot;)[[[Atlit-&gt;Atlit]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Atlit&lt;/span&gt;]
 
 (if: $cas is 90)[
 **Kontextové části**
-(if: (history:) contains &quot;Migrace&quot;)[[[O migraci-&gt;Migrace]]](else:)[Neznámé]
-(if: (history:) contains &quot;StehovaniNarodu1&quot;)[[[Stěhování národů-&gt;StehovaniNarodu1]]](else:)[Neznámé]
-(if: (history:) contains &quot;MigraceUsa&quot;)[[[Migrace od USA-&gt;MigraceUsa]]](else:)[Neznámé]
+* (if: (history:) contains &quot;Migrace&quot;)[[[O migraci-&gt;Migrace]]](else:)[&lt;span class="content-overview-unknown-item"&gt;O migraci&lt;/span&gt;]
+* (if: (history:) contains &quot;StehovaniNarodu1&quot;)[[[Stěhování národů-&gt;StehovaniNarodu1]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Stěhování národů&lt;/span&gt;]
+* (if: (history:) contains &quot;MigraceUsa&quot;)[[[Migrace od USA-&gt;MigraceUsa]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Migrace od USA&lt;/span&gt;]
 ]\
 
 **Závěrečné aktivity**
-[[Závěrečná úloha-&gt;ObjasneniKatastrofy]] 
-[[Použité zdroje-&gt;SeznamZdroju]] 
-[[Rozšiřující úloha-&gt;RozsUloha]] 
-[[Autoři-&gt;credits]] 
-        &lt;/div&gt;\
+* [[Závěrečná úloha-&gt;ObjasneniKatastrofy]] 
+* [[Použité zdroje-&gt;SeznamZdroju]] 
+* [[Rozšiřující úloha-&gt;RozsUloha]] 
+* [[Autoři-&gt;credits]] 
     &lt;/div&gt;\
 &lt;/div&gt;\
 \\
