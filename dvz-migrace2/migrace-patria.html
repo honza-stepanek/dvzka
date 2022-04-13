@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Migrace.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Migrace" startnode="1" creator="Twine" creator-version="2.3.14" ifid="B3447A1C-7A7B-44FF-AC44-6D9202F09A41" zoom="0.6" format="Harlowe" format-version="3.2.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
+<tw-storydata name="Migrace" startnode="1" creator="Twine" creator-version="2.3.14" ifid="B3447A1C-7A7B-44FF-AC44-6D9202F09A41" zoom="0.6" format="Harlowe" format-version="3.2.2" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
 </style>
 <link href=".\style-migrace-patria.css" rel="stylesheet">
 <script role="script" id="twine-user-script" type="text/twine-javascript">
@@ -43,7 +43,7 @@ Milá studentko, milý studente, vítej v příběhu:
 
 (if: (saved-games: ) contains &quot;Slot A&quot;)[
 	
-	|new&gt;[(link: &quot;Nový příběh&quot;)[(replace: ?load)[] 
+	|new&gt;[(link: &quot;Začít nový příběh&quot;)[(replace: ?load)[] 
 
 &lt;div class=&quot;chooseTime&quot;&gt;
 Kolik času máš určeno na průchod DVZ?
@@ -55,12 +55,12 @@ Kolik času máš určeno na průchod DVZ?
 |==|
 &lt;/div&gt;
 (click: ?cli1)[(replace: ?cli2)[](set: $cas to 45)\
-[[Začít příběh-&gt;Predstaveni]]]\
+[[Vstoupit do příběhu-&gt;Predstaveni]]]\
 (click: ?cli2)[(replace: ?cli1)[](set: $cas to 90)\
-[[Začít příběh-&gt;Predstaveni]]]]
+[[Vstoupit do příběhu-&gt;Predstaveni]]]]
 
 	|load&gt;[(link: &quot;Pokračovat v příběhu&quot;)[(load-game:&quot;Slot A&quot;)]]]]
-(else:)[(link: &quot;Nový příběh&quot;)[
+(else:)[(link: &quot;Začít nový příběh&quot;)[
 &lt;div class=&quot;chooseTime&quot;&gt;
 Kolik času máš určeno na průchod DVZ?
 
@@ -736,9 +736,7 @@ Vraťte se ke svým poznámkám z vyšetřování. Sdílejte závěry své spole
 
 1. Co jste vypátrali? Kdo je podle vás odpovědný za tragédii? Liší se vaše závěry?
 2. Myslíte si, že bylo možné tragédii zabránit? Jak?]\
-
-
-(if: $cas is 90)[
+(else-if: $cas is 90)[
 Vraťte se ke svým poznámkám, které jste si poznamenali v edukačních pasážích DVZ a pobavte se o nich se spolužáky a učitelem. Během diskuze si vzájemně odpovězte na tyto otázky:
 
 1. O jaký typ migrace se v případě židovských uprchlíků do Palestiny jednalo? Byly příčinou této migrace spíše pull, či push faktory?
@@ -749,6 +747,10 @@ Vraťte se ke svým poznámkám, které jste si poznamenali v edukačních pasá
 3. Podělte se o své poznámky z četby textů o českém vystěhovalectví do USA. Zkuste utvořit dvě skupiny rozdělené dle čtených textů. Předneste si navzájem argumentace jejich autorů.
 
 Jakmile bude vaše diskuze u konce, přejděte na druhou část debaty, která je zaměřena na hlavní příběhovou linii. Vraťte se ke svým poznámkám z vyšetřování. Sdílejte závěry své společné detektivní práce se spolužáky a učitelem. Zkuste si navzájem odpovědět na následující otázky:
+
+1. Co jste vypátrali? Kdo je podle vás odpovědný za tragédii? Liší se vaše závěry?
+2. Myslíte si, že bylo možné tragédii zabránit? Jak?]
+(else:)[Vraťte se ke svým poznámkám z vyšetřování. Sdílejte závěry své společné detektivní práce se spolužáky a učitelem. Zkuste si navzájem odpovědět na následující otázky:
 
 1. Co jste vypátrali? Kdo je podle vás odpovědný za tragédii? Liší se vaše závěry?
 2. Myslíte si, že bylo možné tragédii zabránit? Jak?]
@@ -1464,7 +1466,7 @@ Nyní odběhni od příběhu a dej si další vědomostní okénko.
         &lt;/div&gt;\
       &lt;/div&gt;\
     &lt;/div&gt;\
-Opět se dostávám k tužce a papíru. Pokusím se shrnout poslední dny. Když jsme minuli krásně osvětlenou Budapešť, pokračovali jsme v cestě dál a propluli Moháčem, kde jsme nabrali uhlí. Teď kotvíme v Giorgiu. Na lodi je spousta nadějných muzikantů, a tak se nám podařilo sestavit kapelu. Ne nadarmo se říká, že co Čech, to muzikant. Často se na naší lodi konají [[koncerty.-&gt;Koncerty]]</tw-passagedata><tw-passagedata pid="33" name="Tulcea" tags="tulcea" position="1189,744" size="100,100">(track: &#39;Smetana&#39;, &#39;stop&#39;)\
+Opět se dostávám k tužce a papíru. Pokusím se shrnout poslední dny. Když jsme minuli krásně osvětlenou Budapešť, pokračovali jsme v cestě dál a propluli Moháčem, kde jsme nabrali uhlí. Teď kotvíme v Giorgiu. Na lodi je spousta nadějných muzikantů, a tak se nám podařilo sestavit kapelu. Ne nadarmo se říká, že co Čech, to muzikant. Často se na naší lodi konají [[koncerty.-&gt;Koncerty]]</tw-passagedata><tw-passagedata pid="33" name="Tulcea" tags="tulcea" position="1187,745" size="100,100">(track: &#39;Smetana&#39;, &#39;stop&#39;)\
 (track: &#39;MainTheme&#39;, &#39;loop&#39;, true)\
 (track: &#39;MainTheme&#39;, &#39;play&#39;)\
 &lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;Počátek října 1940, &lt;a href=&quot;#mapa&quot; class=&quot;modal-open-image&quot;&gt;Tulcea, Rumunsko&lt;/a&gt;
@@ -1957,13 +1959,13 @@ Vtom přiběhl nějaký muž a začal mi s Pavlem pomáhat. Později jsem zjisti
 (set: $potapeni to &quot;PNepomuzouMi&quot;)\
 Všude byl strašný chaos a nebylo nikoho, kdo by mi pomohl Pavla dostat zpod komody. Pavel na mě zakřičel, ať ho nechám. To jsem nemohl udělat. Rychle jsem se k němu přiblížil, ale další kus nábytku byl strhnut proudem přímo na Pavla(link: &quot;...&quot;)[. Těžko se mi to píše, ale otočil jsem se a utíkal na palubu. Loď už byla nakloněná na bok, a tak jsem musel lézt po boku a leckde se pořezal o přirostlé mušle. Nakonec jsem skočil z boku lodi do vody.
 
-(align:&quot;==&gt;&quot;)+(box:&quot;=X&quot;)[[[&amp;#10162;-&gt;PlavaniNaBreh]]]]</tw-passagedata><tw-passagedata pid="53" name="OtecPomoc" tags="intro" position="2490,1688" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;25. listopadu 1940, 9:28&lt;/div&gt;&lt;/div&gt;\
+(align:&quot;==&gt;&quot;)+(box:&quot;=X&quot;)[[[&amp;#10162;-&gt;PlavaniNaBreh]]]]</tw-passagedata><tw-passagedata pid="53" name="OtecPomoc" tags="intro" position="2490,1689" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;25. listopadu 1940, 9:28&lt;/div&gt;&lt;/div&gt;\
 (set: $potapeni to &quot;OtecPomoc&quot;)\
 Vtom přiběhl nějaký muž a začal mi s otcem pomáhat. Později jsem zjistil, že to byl táta toho malého chlapečka, kterému jsem dal dvě jablíčka. Viděl nás, nemohl nás nechat napospas neblahému osudu, a tak se vydal z posledních sil. S otcem a naším zachráncem jsme se cpali přes hromadu lidí na palubu. Loď už byla nakloněná na bok, a tak jsme lezli po boku a leckde se pořezali o přirostlé mušle. Nakonec jsme skočili z boku lodi do vody. 
 
 (align:&quot;==&gt;&quot;)+(box:&quot;=X&quot;)[[[&amp;#10162;-&gt;PlavaniNaBreh]]]</tw-passagedata><tw-passagedata pid="54" name="OtecNepomuzouMi" tags="intro" position="2685,1630" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;25. listopadu 1940, 9:28&lt;/div&gt;&lt;/div&gt;\
 (set: $potapeni to &quot;OtecNepomuzouMi&quot;)\
-Všude byl strašný chaos a nebylo nikoho, kdo by mi pomohl otce dostat zpod komody. Táta na mě zakřičel, ať ho nechám. To jsem nemohl udělat. Rychle jsem se k němu přiblížil, ale další kus nábytku byl strhnut proudem přímo na otce (link: &quot;...&quot;).[ Těžko se mi to píše, ale otočil jsem se a utíkal na palubu. Loď už byla nakloněná na bok, a tak jsem musel lézt po boku a leckde se pořezal o přirostlé mušle. Nakonec jsem skočil z boku lodi do vody.
+Všude byl strašný chaos a nebylo nikoho, kdo by mi pomohl otce dostat zpod komody. Táta na mě zakřičel, ať ho nechám. To jsem nemohl udělat. Rychle jsem se k němu přiblížil, ale další kus nábytku byl strhnut proudem přímo na otce. (link: &quot;...&quot;)[ Těžko se mi to píše, ale otočil jsem se a utíkal na palubu. Loď už byla nakloněná na bok, a tak jsem musel lézt po boku a leckde se pořezal o přirostlé mušle. Nakonec jsem skočil z boku lodi do vody.
 
 (align:&quot;==&gt;&quot;)+(box:&quot;=X&quot;)[[[&amp;#10162;-&gt;PlavaniNaBreh]]]]</tw-passagedata><tw-passagedata pid="55" name="PavelPomoc" tags="intro" position="3108,1641" size="100,100">&lt;div class=&quot;floating-clock-container&quot;&gt;&lt;div class=&quot;floating-clock&quot;&gt;25. listopadu 1940, 9:28&lt;/div&gt;&lt;/div&gt;\
 (set: $potapeni to &quot;PavelPomoc&quot;)\
@@ -2076,25 +2078,25 @@ Málem jsem umřel. Nemoc, která mě zastihla krátce po katastrofě, mě upout
     &lt;div id=&quot;accessibility-toggle&quot; title=&quot;Změnit font&quot;&gt;Aa&lt;/div&gt;\
     &lt;script&gt;document.twStoryAcc.init()&lt;/script&gt;\
 &lt;/div&gt;\
-&lt;div class="floating-buttons-container"&gt;\
+&lt;div class=&quot;floating-buttons-container&quot;&gt;\
     &lt;div class=&quot;floating-button fullscreen-button&quot;&gt;\
         (icon-fullscreen: &quot;⛶&quot;)\
     &lt;/div&gt;\
-    &lt;div class="floating-button"&gt;\
+    &lt;div class=&quot;floating-button&quot;&gt;\
         &lt;tw-icon&gt;\
             &lt;a href=&quot;#cont&quot; title=&quot;Obsah DVZ&quot;&gt;☰&lt;/a&gt;\
         &lt;/tw-icon&gt;\
     &lt;/div&gt;\
-    &lt;div class="floating-button"&gt;\
-        &lt;tw-icon class="info-hint-button"&gt;\
-            &lt;a href=&quot;#help&quot; title=&quot;Nápověda&quot&gt;🛈&lt;/a&gt;\
+    &lt;div class=&quot;floating-button&quot;&gt;\
+        &lt;tw-icon class=&quot;info-hint-button&quot;&gt;\
+            &lt;a href=&quot;#help&quot; title=&quot;Nápověda&quot;&gt;🛈&lt;/a&gt;\
         &lt;/tw-icon&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 \\
 &lt;div id=&quot;cont&quot; class=&quot;content-overview-container&quot;&gt;\
     &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close-content-overview&quot;&gt;&amp;times;&lt;/a&gt;\
-    &lt;div class="content-overview"&gt;\
+    &lt;div class=&quot;content-overview&quot;&gt;\
 (link:&quot;Uložit příběh&quot;)[\
   (if:(save-game:&quot;Slot A&quot;))[\
     Příběh uložen!
@@ -2109,18 +2111,18 @@ Málem jsem umřel. Nemoc, která mě zastihla krátce po katastrofě, mě upout
 
 **Kapitoly příběhu**
 * [[Úvod-&gt;Uvod]]
-* (if: (history:) contains &quot;Predstaveni&quot;)[[[Praha-&gt;Predstaveni]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Praha&lt;/span&gt;] 
-* (if: (history:) contains &quot;Dunaj&quot;)[[[Dunaj-&gt;Dunaj]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Dunaj&lt;/span&gt;]  
-* (if: (history:) contains &quot;CerneMore&quot;)[[[Černé moře-&gt;CerneMore]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Černé moře&lt;/span&gt;]  
-* (if: (history:) contains &quot;EgejskeMore&quot;)[[[Středozemní moře-&gt;EgejskeMore]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Středozemní moře&lt;/span&gt;]  
-* (if: (history:) contains &quot;Haifa&quot;)[[[Haifa-&gt;Haifa]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Haifa&lt;/span&gt;]  
-* (if: (history:) contains &quot;Atlit&quot;)[[[Atlit-&gt;Atlit]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Atlit&lt;/span&gt;]
+* (if: (history:) contains &quot;Predstaveni&quot;)[[[Praha-&gt;Predstaveni]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Praha&lt;/span&gt;] 
+* (if: (history:) contains &quot;Dunaj&quot;)[[[Dunaj-&gt;Dunaj]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Dunaj&lt;/span&gt;]  
+* (if: (history:) contains &quot;CerneMore&quot;)[[[Černé moře-&gt;CerneMore]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Černé moře&lt;/span&gt;]  
+* (if: (history:) contains &quot;EgejskeMore&quot;)[[[Středozemní moře-&gt;EgejskeMore]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Středozemní moře&lt;/span&gt;]  
+* (if: (history:) contains &quot;Haifa&quot;)[[[Haifa-&gt;Haifa]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Haifa&lt;/span&gt;]  
+* (if: (history:) contains &quot;Atlit&quot;)[[[Atlit-&gt;Atlit]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Atlit&lt;/span&gt;]
 
 (if: $cas is 90)[
 **Kontextové části**
-* (if: (history:) contains &quot;Migrace&quot;)[[[O migraci-&gt;Migrace]]](else:)[&lt;span class="content-overview-unknown-item"&gt;O migraci&lt;/span&gt;]
-* (if: (history:) contains &quot;StehovaniNarodu1&quot;)[[[Stěhování národů-&gt;StehovaniNarodu1]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Stěhování národů&lt;/span&gt;]
-* (if: (history:) contains &quot;MigraceUsa&quot;)[[[Migrace od USA-&gt;MigraceUsa]]](else:)[&lt;span class="content-overview-unknown-item"&gt;Migrace od USA&lt;/span&gt;]
+* (if: (history:) contains &quot;Migrace&quot;)[[[O migraci-&gt;Migrace]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;O migraci&lt;/span&gt;]
+* (if: (history:) contains &quot;StehovaniNarodu1&quot;)[[[Stěhování národů-&gt;StehovaniNarodu1]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Stěhování národů&lt;/span&gt;]
+* (if: (history:) contains &quot;MigraceUsa&quot;)[[[Migrace od USA-&gt;MigraceUsa]]](else:)[&lt;span class=&quot;content-overview-unknown-item&quot;&gt;Migrace od USA&lt;/span&gt;]
 ]\
 
 **Závěrečné aktivity**
@@ -2134,7 +2136,7 @@ Málem jsem umřel. Nemoc, která mě zastihla krátce po katastrofě, mě upout
 &lt;div id=&quot;help&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&amp;times;&lt;/a&gt;\
-        &lt;img class=&quot;story-image dont-get-too-big-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/02/Migrace_HelpScreen-1.png&quot;&gt;\
+        &lt;img class=&quot;story-image dont-get-too-big-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_HelpScreen_nova.png&quot;&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 </tw-passagedata><tw-passagedata pid="63" name="Predstaveni" tags="conclusion" position="306,91" size="100,100">(masteraudio: &#39;stopall&#39;)\

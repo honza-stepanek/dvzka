@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
 
+/* HIDE SCROLLBAR, BUT YOU CAN SCROLL */
+::-webkit-scrollbar {
+    display: none;
+}
+
 /* general structure */
 body {
     margin: 0;
@@ -1008,7 +1013,14 @@ ul#jan-rychly {
 /* vlastní úpravy HAL rozhraní */
 
 div#audio-controls {
-    box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.575);
+    transition-property: background-color, left;
+}
+div#audio-controls.closed {
+  	background-color: rgba(26, 25, 25, 0.616);
+}
+tw-link#audio-panel-toggle {
+    width: 1em;
+    padding: 0;
 }
 
 tw-link#audio-mute {
@@ -1018,14 +1030,16 @@ tw-link#audio-mute {
 /* narrow screen */
 @media (max-width: 649px) {
     tw-link#audio-panel-toggle {
-        margin-top: 5px;
+        margin-top: 10px;
     }
     div#audio-controls.closed tw-link#audio-panel-toggle {
+        height: 1.27em;
+        width: 1.5em;
+        margin-right: 0;
+        right: -1.5em;
+
         background-color: rgba(26, 25, 25, 0.616);
         opacity: 0.7;
-        /* border-radius: 30%; */
-        margin-right: -5px;
-        width: 1.2em;
     }
 }
 
