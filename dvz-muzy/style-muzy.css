@@ -1,0 +1,1181 @@
+/*Import znakové sady*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+
+/*==========================
+	ANIMATION CAR
+=========================*/
+.picture-in-motion {
+	width: 40vw;
+  	box-shadow: none;
+  	display: block;
+  	margin: auto;
+  	margin-bottom: 10xp;
+}
+
+#car-move {
+	animation-name: moving-picture;
+	animation-duration: 4s;
+	animation-timing-function: linear;
+}
+
+@keyframes moving-picture {
+	0% {
+		width: 10vw;     
+		}
+	100% { 
+		width:40vw; 
+    }
+}
+
+
+/**=====================================
+	HIDE SCROLLBAR, BUT YOU CAN SCROLL
+======================================**/
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* general structure */
+body {
+    margin: 0;
+    height: 100%;
+}
+
+/*Formáty background obrázků*/
+tw-story {
+    font-family: 'Courier Prime', monospace;
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_PodobyKontrabandu_pozadi.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  	font-size: 150%;
+}
+
+tw-story[tags ~= "knihy"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_RudePravo_19810630_3_zabaveneVeci.jpg");
+}
+
+tw-story[tags ~= "seznamZdroju"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_TechnikaAdministrativy_psaciStroj_8.jpg");
+}
+
+
+tw-story[tags ~= "pasovani"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Gluckselig_podobyKontrabandu_96e_background_prejezd.jpg");
+}
+
+tw-story[tags ~= "pasovaniDD"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_CeskePohranici_bariera_prostor_DolniDvoriste_208-e1648722030737.jpg");
+}
+
+tw-story[tags ~= "pasovaniAuta"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_NaStraziSocialismu_129_hranicniprejezd-e1648722797212.jpg");
+}
+
+tw-story[tags ~= "exil"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_DenVCSSR_prahaKrizovatka_55.jpg");
+}
+
+tw-story[tags ~= "Mnichov"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_background_image_Mesto.jpg");
+}
+
+tw-story[tags ~= "road"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_CeskoslovenskaFotografie_Cesta_40-1-e1648721768156.jpg");
+}
+
+tw-story[tags ~= "road2"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_SlouziliJsmeVPohranicniStrazi_143.jpg");
+}
+
+tw-story[tags ~= "hranice"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_UtekyZaZeleznouOponu_183.jpg");
+}
+
+tw-story[tags ~= "Celnice"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Pejcoch_DolniDvoriste_185.jpg");	
+}
+
+tw-story[tags ~= "karavan"] {
+    background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_RudePravo_19810630_3.jpg");	
+}
+
+tw-story[tags ~= "celnice2"] {
+	background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_PodobyKontrabandu_pozadi.jpg");
+}
+
+tw-story[tags ~= "studovna"] {
+	background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Studovna_ABSCtenar.jpg");
+}
+
+/*Formát pasáží*/
+tw-passage {
+    padding: 3.5em 5em;
+    border-radius: 1em;
+  	max-width: 65vw;
+  	min-width: 60vw;
+    min-height: 50vh;
+  	align-self: center;
+    color: black;
+    background-color: #f2f2f2;
+    box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
+  	word-break: break-word;
+}
+
+tw-passage[tags ~= "task"] {
+	padding: 1.5em 2em;
+  	width: 75vw;
+    max-width: 85vw;
+}
+
+/* úpravy hlavních prvků pro užší obrazovky */
+@media (max-width: 575px) {
+    tw-story {
+        font-size: large;
+        padding: 2em 0.8em;
+    }
+    
+    tw-passage {
+        padding: 2em 1.8em;
+        box-shadow: inset 0px 0px 1.5em 0.3em #cfcfcf;
+    }
+}
+
+
+/* formát tw linků */
+tw-link,
+tw-link.visited {
+    display: inline-block;
+    right: -0.1em; /* half of side padding */
+    padding: 0.1em 0.2em;
+    margin: 1em 0 0;
+    max-width: 100%;
+    color: #0000dc;
+}
+
+tw-passage[tags ~= "noMarginLink"] tw-link,
+tw-passage[tags ~= "noMarginLink"] tw-link.visited {
+    margin: 0px;
+}
+
+
+tw-link::before,
+tw-link.visited::before {
+    /* underline (0 width) */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: solid 0.2em #0000dc;
+    height: 1em;
+    width: 0;
+    transition: 300ms width;
+}
+
+/* hover and active*/
+tw-link:hover,
+tw-link:focus,
+tw-link:active,
+tw-link.visited:hover,
+tw-link.visited:focus,
+tw-link.visited:active {
+    /* overwriting twine defaults */
+    color: #0000dc;
+    outline: none;
+}
+tw-link:hover::before,
+tw-link:focus::before,
+tw-link:active::before,
+tw-link.visited:hover::before,
+tw-link.visited:focus::before,
+tw-link.visited:active::before {
+    /* underline expanded */
+    content: "";
+    width: 100%;
+}
+
+
+/**classic tw-enchantment link**/
+tw-enchantment.enchantment-link {
+    display: inline-block;
+    right: -0.1em; /* half of side padding */
+    max-width: 100%;
+    color: #0000dc;
+
+}
+tw-enchantment.enchantment-link.link:hover,
+tw-enchantment.enchantment-link.link:focus,
+tw-enchantment.enchantment-link.link:active {
+    /* overwriting twine defaults */
+    color: #0000dc;
+    outline: none;
+}
+
+tw-enchantment.enchantment-link::before {
+    /* underline (0 width) */
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: solid 0.2em #0000dc;
+    height: 1em;
+    width: 0;
+    transition: 300ms width;
+}
+tw-enchantment.enchantment-link.link:hover::before,
+tw-enchantment.enchantment-link.link:focus::before,
+tw-enchantment.enchantment-link.link:active::before {
+    /* underline expanded */
+    content: "";
+    width: 100%;
+}
+
+/**=================
+	STORY IMAGE
+===================**/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+img.center {
+    width: auto;
+}
+img.enlarge {
+	width: 100%;
+}
+img.imageStory {
+	max-width: 100%;
+}
+img.not-too-big {
+	width: 70%;
+}
+img {
+    margin-top: 1.5em;
+    /* max-width: 2000px;
+    max-height: 2000px; */
+    /* způsobuje přepsání 'max-width: 100%' a obrázky pak přetékají */
+    /* z-index: 1; */
+    box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.2);
+}
+
+.cimage {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
+
+
+/**=================
+	CITATION
+===================**/
+.zdroj {
+    margin: 1em 0.1em 0 auto;
+    width: 800px;
+    max-width: 100%;
+    text-align: right;
+    word-wrap: break-word;
+    font-size: 80%;
+    line-height: 1.2em; 
+}
+
+
+
+audio,
+iframe {
+    max-width: 100%;
+}
+
+iframe {
+    background-color: #f2f2f2;
+    box-shadow: 2px 3px 4px #0002;
+}
+
+/**=================================
+	MODAL DIALOG START
+==================================**/
+/*řešení modálních oken*/
+.modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialog>div {
+    width: 90%;
+    position: relative;
+    margin: 5% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+  	box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
+  	align-self: center;
+  	flex-grow: 0;
+}
+
+
+/*řešení křížku u modálních oken*/
+.modalDialog .close,
+.modalDialogTranslate .close,
+.modalDialogTranslate .close:hover,
+.modalDialog .close:hover {
+    /* close link */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0000;
+    color: #0000;
+}
+.modalDialog > div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: 0.15em;
+    top: -1.35em;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.1em;
+
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+/*Translate modal dialog*/
+.modalDialogTranslate {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modalDialogTranslate:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modalDialogTranslate>div {
+    width: auto;
+    position: relative;
+	text-align: center;
+    margin: 5% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+  	box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
+  	align-self: center;
+  	flex-grow: 0;
+}
+
+.modalDialogTranslate>div::before {
+    /* adding an x above of the modal */
+    position: absolute;
+    right: 0.15em;
+    top: -1.35em;
+    width: 1em;
+    height: 1em;
+    z-index: -2;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.1em;
+
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+/**=================================
+	MODAL DIALOG END
+==================================**/
+
+a:link,
+a:link:hover {
+    color: hsl(170, 98%, 40%);
+    text-decoration: underline;
+}
+a:visited,
+a:visited:hover {
+    color: hsl(182, 100%, 27%);
+    text-decoration: underline;
+}
+.hyper {
+    --hyper-color: hsl(170, 98%, 40%);
+    color: var(--hyper-color);
+    text-decoration: underline;
+
+    transition: 300ms;
+    transition-property: color;
+}
+.hyper:hover {
+    color: hsl(170, 100%, 33%);
+}
+.hyper:visited {
+    --hyper-visited-color: hsl(182, 100%, 27%);
+    color: var(--hyper-visited-color);
+}
+.hyper:visited:hover {
+    color: hsl(182, 100%, 20%);
+}
+
+.inmod {
+    color: #ff00ff;
+}
+
+.inmod:hover {
+    color: #DC6E00;
+}
+
+.logolink {
+    /* EU */
+    display: block;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 5em;
+    box-shadow: none;
+}
+.logotext {
+   /* EU fondy */
+    font-size: 75%;
+    line-height: 1.4em;
+    text-align: center;
+}
+img[src="https://digikult.phil.muni.cz/wp-content/uploads/2020/08/Logolink_OP_VVV_hor_barva_cz.jpg"] {
+    /* the EU & mšmt logotypes */
+    box-shadow: none;
+}
+
+tw-passage[tags ~= "bibliography"] {
+    word-wrap: break-word;
+}
+
+
+/* wiki articles */
+div.modal-dialog.wiki {
+    height: 100%;
+}
+div.modal-dialog.wiki iframe {
+    width: 1200px;
+    max-width: 100%;
+    height: 1000px;
+    border: solid 2px rgba(78, 78, 78, 0.7);
+  	align-self: center;
+  	margin: auto;
+  	display: block;
+    /* box-shadow: ; */
+}
+
+/*=============================
+   credits page adjustments 
+=============================*/
+
+div.flex-columns {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.flex-columns > div {
+    width: 50%;
+    min-width: 11em;
+    flex-grow: 1;
+    padding-right: 1em;
+}
+div.flex-columns > div.last-columnt {
+    padding-right: 0em;
+}
+
+tw-passage[tags ~= "credits"] .logo {
+    max-width: 12em;
+}
+tw-passage[tags ~= "credits"] ul {
+    margin: 0.2em 0em;
+    padding: 0.5em;
+    list-style: none;
+}
+tw-passage[tags ~= "credits"] li {
+    margin: 0.2em 0em;
+    padding: 0em 1em;
+}
+tw-passage[tags ~= "credits"] li.category {
+    margin: 0.2em 0em;
+    padding: 0em;
+}
+tw-passage[tags ~= "credits"] #muni-logo {
+    position: relative;	
+    left: -13px;
+    box-shadow: none;
+}
+tw-passage[tags ~= "credits"] #mzk-logo {
+    padding: 10px 0px 20px 0px;
+    box-shadow: none;
+}
+ul#jan-rychly {
+    margin-top: 0.25em;
+    max-width: 10em;
+    border-top: solid #0000DC 0.2em
+}
+
+
+/** =====================================================
+	Floating side buttons - contents, help, fullscreen
+========================================================**/
+
+.floating-buttons-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: calc(20px + 1.5em);
+    right: 0;
+}
+
+.floating-button a,
+.floating-button a:hover {
+    display: block;
+    font: inherit;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.floating-button tw-icon[data-raw] {
+    width: 2em;
+    height: 1.5em;
+    margin: 5px 0 0 0;
+    padding-left: 0.3em;
+    font-size: inherit;
+    line-height: 1.45em;
+
+    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.876);
+    color: white;
+
+    transform: translateX(50%);
+
+    transition: 300ms;
+    transition-property: transform, opacity, background-color;
+}
+.floating-button tw-icon[data-raw]::before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: -30%;
+    background-color: none;
+    cursor: auto;
+}
+
+.floating-button tw-icon[data-raw]:hover,
+tw-passage[tags ~= "acc-animation"] tw-icon[data-raw].info-hint-button  {
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.637);
+    opacity: 0.9;
+}
+
+
+/* narrow screen */
+@media (max-width: 649px) {
+
+    .floating-buttons-container {
+        top: 10px;
+        right: calc(2em);
+        flex-direction: row-reverse;
+    }
+    .floating-button tw-icon[data-raw]  {
+        width: 1.5em;
+        padding: 0;
+        margin: 0 10px 0 0;
+        text-align: center;
+        transform: translate(15%);
+        background-color: rgba(0, 0, 0, 0.739);
+        opacity: 0.6;
+    }
+}
+
+
+
+/**========================
+		VIDEO EDIT 
+=========================**/
+.film {
+	width: 100%;
+}
+
+.youtube {
+	width: 100%;
+  	height: 60vh;
+}
+
+
+/*=================
+	SIDEBAR EDIT
+=================**/
+tw-sidebar{
+	color: #87bdd8;
+}
+tw-icon[alt] {
+	opacity: 1;
+}
+tw-sidebar {
+	display: none;
+}
+
+/** ===============
+	CONTENT 
+================**/
+.content{
+	position: fixed;
+    right: 1em;
+    padding: 1em;
+    margin: 1em;
+    top: 10vh;
+    max-width: 15vw;
+    max-height: 20vh;
+    word-break: break-word;
+    line-height: 1em;
+    bottom: 0;
+  	font-size: 1vw;
+}
+
+/**=================== 
+     CONTENT OVERVIEW 
+======================**/
+
+.content-overview-container {
+    position: fixed;
+    z-index: 5;
+}
+.content-overview-container > * {
+    pointer-events: none;
+    opacity: 0;
+}
+.content-overview-container:target > * {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.content-overview {
+  	position: fixed;
+    right: 2em;
+  	bottom: 1em;
+    padding: 1em;
+    top: 90px;
+    width: 15em;
+    max-width: 90vw;
+  	border-radius: 1em;
+    word-break: break-word;
+    font-size: 120%;
+    line-height: 1.3em;
+  	resize: both;
+  	overflow: auto;
+  	z-index: 1;
+  	background-color: #f2f2f2;
+    box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
+    transition: opacity 200ms;
+}
+
+.content-overview-container .close-content-overview,
+.content-overview-container .close-content-overview:hover {
+    /* close link */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    width: 100vw;
+    height: 100vh;
+
+    background: #0000;
+    color: #0000;
+}
+.close-content-overview::before {
+    /* adding an x above of the modal */
+  	position: fixed;
+    right: 2.3em;
+    top: 55px;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+    /* setting it underneath the close link */
+
+    font-family: sans-serif;
+    content: "×";
+    text-align: center;
+    line-height: 1.1em;
+
+    color: #000000;
+    background-color: #ffffff;
+    opacity: 0.5;
+}
+
+[draggable=true] {
+  cursor: move;
+}
+#drag_me {
+  -webkit-user-drag: element;
+}
+
+/* narrow screen */
+@media (max-width: 649px) {
+
+    .content-overview {
+        position: fixed;
+        right: 4vw;
+        width: 92vw;
+        max-width: 99vw;
+        top: 130px;
+        bottom: 1em;
+        padding: 1em;
+        margin: 0;
+        font-size: 120%;
+        line-height: 1.3em;
+    }
+
+    .close-content-overview::before {
+        right: 4vw;
+        top: 105px;
+    }
+}
+
+.content-overview ul {
+    margin: 0;
+    padding-left: 0.5em;
+}
+.content-overview ul > li {
+    padding-left: 0.2em;
+}
+.content-overview ul > li::marker {
+    content: '-';
+}
+
+/** =====================
+Content Overview END 
+======================	**/
+
+
+
+/**===============================
+		RADIO ELEMENT
+================================**/
+.radioimage {
+	box-shadow: none;
+    margin-top: 50px;
+  	width: 800px;
+  	display: block;
+    margin: 0 auto;
+}
+
+.radioPosition {
+	text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+.smallerRadioIcon {
+	width: 250px;
+  	margin-top: 50px;
+  	box-shadow: none;
+}
+.smallerRadioIcon:hover {
+	border: 2px dashed #0000dc;
+}
+/**=============================
+	AUDIO TAG EDIT
+==============================**
+/*audio::-webkit-media-controls-timeline-container,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button,
+audio::-webkit-media-controls-volume-slider-container,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button*/
+
+
+audio::-webkit-media-controls-fullscreen-button,
+audio::-webkit-media-controls-rewind-button,
+audio::-webkit-media-controls-return-to-realtime-button,
+audio::-webkit-media-controls-toggle-closed-captions-button {
+	display: none;
+}
+
+.audio-background {
+  	align-self: center;
+	width: 15em;
+    height: 10em;
+    max-width: 50vw;
+  	background-image:url("https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_kazeta_audioTag-e1647437577662-1024x637-1.jpg");
+  	background-size: cover;
+  	background-position: center;
+  	display: flex;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+  	justify-content: space-between;
+  	align-items: flex-end;
+  	margin: auto;
+    margin-top: 15px;
+  	box-shadow: 1px 3px 5px rgb(0, 0, 0, 0.2);
+}
+
+audio::-webkit-media-controls-panel {
+	align-self: center;
+}
+
+audio::-webkit-media-controls-play-button {
+	background-color: white;
+  	align-self: flex-end;
+  	flex-grow: 0;
+}
+
+audio::-webkit-media-controls-enclosure {
+  	opacity: 1;
+  	width: 100%;
+  	background-color: white;
+  	border-radius: 8px;
+  	margin: 4px;
+}
+/**=============================
+	AUDIO TAG EDIT END
+===============================**/
+
+/*========================
+	MODAL OPENERS
+=========================*/
+a.modal-open {
+    color: rgb(0, 179, 30);
+    transition: 300ms;
+    transition-property: color, text-shadow;
+    text-decoration: underline;
+  	transition: all 300ms linear;
+}
+a.modal-open:hover {
+    color: rgb(0, 51, 0);
+    text-decoration: underline;
+    text-shadow: 0 0 0.03em rgb(0, 153, 25);
+}
+
+/**===============================
+		SPECIAL IFRAME SIZING
+		DICTIONARY OF DISENT
+		SIKTANC POEM
+================================**/
+iframe.slovnik {
+    width: 300px;
+    max-width: 50%;
+    height: 800px;
+    border: solid 2px rgba(78, 78, 78, 0.7);
+    /* box-shadow: ; */
+}
+
+iframe.basen {
+	max-width: 70%;
+}
+
+
+/*============================
+        ACCESSIBILITY
+============================*/
+
+/* changes in accessibility mode */
+body.accessibility-mode tw-story {
+    font-family: 'Roboto Slab', serif;
+}
+
+/* the button style */
+
+div.accessibility-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 0px;
+}
+
+/* the visible button itself */
+
+#accessibility-toggle {
+    width: 2em;
+    height: 1.5em;
+    padding-left: 0.4em;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.5em;
+    cursor: pointer;
+    
+    transform: translateX(50%);
+    opacity: 0.4;
+    background-color: rgba(0, 0, 0, 0.876);
+    color: white;
+
+    transition: 300ms;
+    transition-property: transform, opacity, background-color;
+}
+#accessibility-toggle::before {
+    content: "";
+    width: 30%;
+    height: 100%;
+    position: absolute;
+    left: -30%;
+    background-color: none;
+    cursor: auto;
+}
+
+/* toggle is on */
+body.accessibility-mode #accessibility-toggle {
+    font-family: 'Courier Prime', monospace;
+}
+
+/* on hover */
+#accessibility-toggle:hover,
+/* and at the beginning of DVZ */
+tw-passage[tags ~= "acc-animation"] #accessibility-toggle {
+
+    transform: none;
+    background-color: rgba(0, 0, 0, 0.637);
+    opacity: 0.9;
+}
+
+
+/* draw user's attention on opening the DVZ */
+
+tw-passage[tags ~= "acc-animation"] #accessibility-toggle {
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 2;
+    animation-name: wiggle;
+}
+@keyframes wiggle {
+    from {
+        transform: none;
+        padding-right: 0;
+        opacity: 0.9;
+    }
+    50% {
+        transform: translateX(50%);
+        padding-right: 0.5em;
+        opacity: 0.4;
+    }
+    to {
+        transform: none;
+        padding-right: 0;
+        opacity: 0.9;
+    }
+}
+
+
+/* narrow screen */
+@media (max-width: 649px) {
+
+    div.accessibility-toggle-container {
+        top: 10px;
+        right: 0px;
+    }
+
+    #accessibility-toggle  {
+        transform: translate(15%);
+        background-color: rgba(0, 0, 0, 0.739);
+        opacity: 0.6;
+    }
+}
+
+
+/*============================
+        TASK GRID DISPLAY
+============================*/
+
+.grid-container {
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  	font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.grid-item-one {
+    grid-column: 1;
+  	grid-row: 1;
+  	padding: 5px;
+}
+.grid-item-one:hover {
+	border: 2px dashed #0000dc;
+}
+
+.grid-item-two {
+   	grid-column: 2;
+  	grid-row: 1;
+  	padding: 5px;
+}
+.grid-item-two:hover {
+	border: 2px dashed #0000dc;
+}
+
+.grid-item-three {
+    grid-column: 1;
+  	grid-row: 2;
+  	padding: 5px;
+}
+.grid-item-three:hover {
+	border: 2px dashed #0000dc;
+}
+
+.grid-item-four {
+    grid-column: 2;
+  	grid-row: 2;
+  	padding: 5px;
+}
+.grid-item-four:hover {
+	border: 2px dashed #0000dc;
+}
+
+.grid-item-five {
+    grid-column: 1 / 3;
+  	grid-row: 3;
+  	padding: 5px;
+}
+.grid-item-five:hover {
+	border: 2px dashed #0000dc;
+}
+
+/*=================================================
+        WORD TRANSLATOR (ONLY FOR TW-LINK WORDS)
+==================================================*/
+.translate {
+	cursor: pointer;
+  	font-style: italic;
+}
+
+.translate:hover:before {
+	/* ------- THIS IS THE MAGIC ----------------*/
+      content: attr(data-hover);
+      /* ------------------------------------------*/
+      display: block;
+  	  border-radius: 1em;
+      background-color: white;
+      position: absolute;
+  	  bottom: 100%;
+      padding: 15px; 
+  	  left: -7px;
+}
+
+.translate:hover:after {
+	  content: "";
+      position: absolute;
+  	  border-radius: 1em;
+  	  display: block;
+      width: 0;
+      height: 0;
+      bottom: 0;
+      left: 50%;
+      margin: 5px;
+      z-index: 8000;
+}
+*/
+
+
+
+/**
+ * Harlowe Audio Library (HAL), by Chapel, v2.2.1
+ * for Harlowe 2.1.0 and higher
+ * Released under the Unlicense, and dedicated to the public domain.
+**/
+#audio-overlay{position:fixed;top:0;right:0;left:0;bottom:0;z-index:100000;background:#111}.lds-ring{display:block;position:relative;top:20%;margin:auto;width:20em;height:20em}.lds-ring div{box-sizing:border-box;display:block;position:absolute;width:18em;height:18em;margin:6px;border:6px solid #fff;border-radius:50%;-webkit-animation:lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;animation:lds-ring 1.2s cubic-bezier(.5,0,.5,1) infinite;border-color:#fff transparent transparent transparent}.lds-ring div:nth-child(1){-webkit-animation-delay:-.45s;animation-delay:-.45s}.lds-ring div:nth-child(2){-webkit-animation-delay:-.3s;animation-delay:-.3s}.lds-ring div:nth-child(3){-webkit-animation-delay:-.15s;animation-delay:-.15s}@-webkit-keyframes lds-ring{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes lds-ring{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}input#audio-volume{width:100%;margin:2em 0}span#vol-title{position:relative;bottom:-1em;font-size:1rem;float:left}tw-link#audio-mute{display:inline-block;padding:.3em;width:90%;text-decoration:none;color:#111;background:#eee;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid #000}tw-link#audio-mute:hover{opacity:.8}tw-link#audio-mute:active{opacity:.6}tw-link#audio-mute span{display:inline-block;width:1em;position:relative;height:1em;top:.2em;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAABF0lEQVR4Ae2VJVREYRSEB3ftuFUaLhF6I22iF7TgLr1XvAc849CwiBac9Xtm3e97cefp/Pec7+mdH0mZrGtMoBomyAEHfjGHXKg07gNxeUS3BuMAqGZswE7YcOIYgqgG7BFlSQgTAgKysC2jNjQmghFQCOpMxq+QmQgmFATU4kcq/YlgfKB1lALUqFSukRIbEwpy4BTZPM/Bu9TaQ362KAsl56sAtSR+Sgv6RCFdr/gjBYiuj65c3J0eNEmXz95TgybocvmoJj3avf5l59L1iD/WglZCP7/uh8zgeQ6epdahaZENFIPCCFvEYNPW4JdNazBGzhkj6caCbSc02DRRu0+8RR/+rb7wx6D505HxCVKvG0zpp+yknHe8MBDkT/s8AAAAAElFTkSuQmCC);background-size:contain}tw-link#audio-mute.muted span{right:4px;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAASElEQVR4Ae3WsQ0AMAjAsJ7ez9MTGEmlRGL3BJzPq6prw2DDYMNgw2DDYMOwh1kAMUygQIEC2RejANVxnVE9aDOqJ39GVZWqB5Z3r1ndBX5oAAAAAElFTkSuQmCC)}div#audio-volume{float:left}div#audio-controls{font:100% Georgia,serif;font-size:1.5em;position:fixed;width:8em;height:100%;padding:1em 2em;z-index:10000;top:0;left:0;bottom:0;background:#333;color:#eee;transition:left .3s;text-align:center}div#audio-controls.closed{left:-10.5em}div#audio-controls tw-link#audio-panel-toggle{display:inline-block;width:1.5em;position:absolute;height:1.5em;top:0;right:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-decoration:none;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAYklEQVR4Ae3MsQFAMAAEQMDEagCgN4EuVTrbPcACeUBugDNeSdMQomI0PmYdTEYD9DA5jcVoBKuxGY1kNQ6jGRSaGaIj8gw1aI/KYVUSNqsSzMpiVT2zMjlVN0fqVW5o2luMGHqkQmD9cPYAAAAASUVORK5CYII=);background-size:contain}div#audio-controls.closed tw-link#audio-panel-toggle{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAZElEQVR4Ae3TpwGAMBQAUfrEeHB0cDhcXBSO7ehlgBw9N8BL/YZO95r6uA/UEbOv+ylfHRJ9z1BWLynKJqmWohyS6ijKOygKCpmjZYqXTTA2xUiCsShGAMw8/Q3ArFgFMHek0w3WCaR74eO2YQAAAABJRU5ErkJggg==)}@media screen and (max-width:800px){div#audio-controls.closed{left:-12em}div#audio-controls.closed tw-link#audio-panel-toggle{right:-1.5em}}div#story-menu{margin:1em 0}tw-link.story-menu{width:100%;display:block;font-weight:400;background:#ccc;font-size:.9em;padding:.1em 0;color:#111;border:1px solid #333}tw-link.story-menu.hide{display:none}tw-link.story-menu:hover{opacity:.8}tw-link.story-menu:active{opacity:.6}input[type=range].hal{-webkit-appearance:none;width:100%;margin:2.25px 0}input[type=range].hal:focus{outline:0}input[type=range].hal::-webkit-slider-runnable-track{width:100%;height:15.5px;cursor:pointer;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d;background:#111;border-radius:0;border:0 solid #010101}input[type=range].hal::-webkit-slider-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer;-webkit-appearance:none;margin-top:-2.25px}input[type=range].hal:focus::-webkit-slider-runnable-track{background:#444}input[type=range].hal::-moz-range-track{width:100%;height:15.5px;cursor:pointer;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d;background:#111;border-radius:0;border:0 solid #010101}input[type=range].hal::-moz-range-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer}input[type=range].hal::-ms-track{width:100%;height:15.5px;cursor:pointer;background:0 0;border-color:transparent;color:transparent}input[type=range].hal::-ms-fill-lower{background:#000;border:0 solid #010101;border-radius:0;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d}input[type=range].hal::-ms-fill-upper{background:#111;border:0 solid #010101;border-radius:0;box-shadow:.4px .4px 1px #000,0 0 .4px #0d0d0d}input[type=range].hal::-ms-thumb{box-shadow:0 0 2.2px rgba(17,17,17,.1),0 0 0 rgba(30,30,30,.1);border:0 solid #fff;height:20px;width:11px;border-radius:0;background:rgba(255,255,255,.93);cursor:pointer;height:15.5px}input[type=range].hal:focus::-ms-fill-lower{background:#111}input[type=range].hal:focus::-ms-fill-upper{background:#444}
+/** End of HAL code */
+
+
+/*================================ 
+	vlastní úpravy HAL rozhraní 
+=================================*/
+
+div#audio-controls {
+    transition-property: background-color, left;
+}
+div#audio-controls.closed {
+  	background-color: rgba(26, 25, 25, 0.616);
+}
+tw-link#audio-panel-toggle {
+    width: 1em;
+    padding: 0;
+}
+
+tw-link#audio-mute {
+    border-radius: 0.2em;
+}
+
+/* narrow screen */
+@media (max-width: 649px) {
+    tw-link#audio-panel-toggle {
+        margin-top: 10px;
+    }
+    div#audio-controls.closed tw-link#audio-panel-toggle {
+        height: 1.27em;
+        width: 1.5em;
+        margin-right: 0;
+        right: -1.5em;
+
+        background-color: rgba(26, 25, 25, 0.616);
+        opacity: 0.7;
+    }
+}
+
+tw-link#audio-mute::before,
+tw-link#audio-panel-toggle::before {
+    /* zrušení animace podtržení */
+    content: none;
+}
