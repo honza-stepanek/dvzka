@@ -31,7 +31,7 @@ document.twStoryAcc = {
 ;!function(e){(jQuery.browser=jQuery.browser||{}).mobile=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(e)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(e.substr(0,4))}(navigator.userAgent||navigator.vendor||window.opera),function(){"use strict";window.Fast={filter:function(e,t){for(var o=e.length,n=[],a=0;a<o;a++)t(e[a],a,e)&&n.push(e[a]);return n},forEach:function(e,t){for(var o=e.length,n=0;n<o;n++)t(e[n],n,e)},map:function(e,t){for(var o=e.length,n=new Array(o),a=0;a<o;a++)n[a]=t(e[a],a,e);return n},find:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return e[n]},findIndex:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return n;return-1},some:function(e,t){for(var o=e.length,n=0;n<o;n++)if(t(e[n],n,e))return!0;return!1}}}(),window.Chapel=window.Chapel||{},window.Chapel.options={preload:!0,loadDelay:0,muteOnBlur:!0,startingVol:.5,persistPrefs:!0,globalA:!0,showControls:!0,sidebarStartClosed:!0,volumeDisplay:!1,trackLoadLimit:500,totalLoadLimit:8e3,debug:!1},window.Chapel.debug=function(){Chapel.options.debug&&console.log.apply(null,arguments)},function(){"use strict";var n=$("tw-storydata"),o=/(.+?):(.+)/,t=/[\r\n]+/,a=/^["']/,r=/["']$/;function e(e){return Fast.map(Fast.filter(e.split(t),function(e){return e&&e.trim()&&e.includes(":")}),function(e){return e.trim()})}function i(e){return e.trim().replace(a,"").replace(r,"").trim()}function s(e){var t=e.match(o);return t instanceof Array?{key:i(t[1]),value:i(t[2])}:e}var u,l,c,p=n.find('tw-passagedata[name="hal.tracks"]'),d=null;p.length&&(u=e(p.text()),l=[],c=[],Fast.forEach(u,function(e){var t,o=s(e);"string"==typeof o&&c.push(o),l.push([o.key,(t=o.value,Fast.map(t.split(","),i))])}),c.length&&console.error("Some track definitions could not be parsed:\n"+c.join("\n")+"\nPlease check these definitions and try again."),d=new Map(l));var m,h,f=n.find('tw-passagedata[name="hal.config"]'),g=null;function y(e){var t=n.attr("format-version");if(e)return t;var o=t.split(".")[0],o=Number(o);return Number.isNaN(o)&&(o=3),o<1&&(o=3),o}f.length&&(m=e(f.text()),h={},Fast.forEach(Fast.map(m,function(e){return s(e)}),function(e){h[e.key]=e.value}),g=h),g&&Fast.forEach(Object.keys(g),function(e){var t=e,o=h[e],n=typeof Chapel.options[e];"boolean"==n?"true"===o?Chapel.options[t]=!0:"false"===o&&(Chapel.options[t]=!1):"number"==n?(o=Number(o),Number.isNaN(o)||(Chapel.options[t]=o)):"string"==n&&o&&(Chapel.options[t]=o)});var w=require("macros");if(window.Chapel=window.Chapel||{},window.Chapel.Macros={add:function(n){n&&"object"==typeof n&&Fast.forEach(Object.keys(n),function(e){var t,o;o=n[t=e],w.add(t,function(){var e=[].slice.call(arguments).slice(1),t=o.apply(null,e);return"string"==typeof t||"boolean"==typeof t||"number"==typeof t?t:""},w.TypeSignature.zeroOrMore(w.TypeSignature.Any))})}},window.Chapel.Get={version:y(),isHarlowe3OrLater:3<=y(),storyTitle:n.attr("name"),IFID:n.attr("ifid"),fromPassage:d},Chapel.debug("Harlowe Version -> ",y(!0)),Chapel.debug("Harlowe Major Version -> ",Chapel.Get.version),Chapel.debug("Story Title -> ",Chapel.Get.storyTitle),Chapel.debug("Story IFID -> ",Chapel.Get.IFID),Chapel.Get.version<2)throw new Error("The Harlowe Audio Library is only designed to work with Harlowe 2 and 3; you appear to be using Harlowe 1 or an otherwise invalid story format.","get.js -> initialization",176);Chapel.options.storagekey="%%hal-"+Chapel.Get.IFID+"-{"+Chapel.Get.storyTitle+"}",Chapel.debug("Storage Key -> ",Chapel.options.storagekey)}(),function(){"use strict";var t=Chapel.options,e=function(e,t){if(window.localStorage)try{e=""+e,"string"!=typeof t&&(t=JSON.stringify(t)),window.localStorage.setItem(e,t)}catch(e){console.error(e)}},o=function(e){if(window.localStorage)try{return e=""+e,window.localStorage.getItem(e)}catch(e){console.error(e)}},n=function(e){if(window.localStorage)try{e=""+e,window.localStorage.removeItem(e)}catch(e){console.error(e)}},a={loaded:[],classes:{},master:{volume:t.startingVol,mute:!1},groups:{playing:[],looping:[],custom:{}},mute:function(e){a.master.mute=!!e,$(document).trigger({type:":master-mute",mute:!!e})},isMuted:function(){return!!a.master.mute},volume:function(e){e=Number(e),Number.isNaN(e)||(1<e?e=1:e<0&&(e=0),a.master.volume=e),$(document).trigger({type:":master-volume",volume:e})},getVolume:function(){return a.master.volume},stopAll:function(){a.classes.Track&&Fast.forEach(a.classes.Track.list,function(e){e.stop()})},audioPlaying:function(){return!!a.groups.playing.length},savePrefs:function(){e(t.storagekey,a.master)},loadPrefs:function(){var e=o(t.storagekey);e&&"object"==typeof e&&e.hasOwnProperty("volume")&&"number"==typeof e.volume&&e.hasOwnProperty("mute")&&"boolean"==typeof e.volume&&(delete a.master,a.master=e)},clearPrefs:function(){n(t.storagekey)}},r={track:[":available",":loaded",":play",":stop",":mute",":volume"],master:[":master-mute",":master-volume"]};var i=r.track.concat(r.master);function s(e,t){if(!e||"string"!=typeof e||!e.trim())return null;var o=Fast.filter(Fast.map(e.split(" "),function(e){return":"!==(e=e.split(".")[0])[0]&&(e=":"+e),e+".userland"}),function(e){return t?i.includes(e):r.track.includes(e)}).join(" ");return o&&o.trim()?o:null}a.data={parseEvent:s,bail:function(e){throw new Error(e,"audio.js -> bail()",140)}},a.on=function(e,t){t&&"function"==typeof t?(e=s(e,!0))&&$(document).on(e,t):console.error("Chapel.Audio.on() -> invalid callback")},a.one=function(e,t){t&&"function"==typeof t?(e=s(e,!0))&&$(document).one(e,t):console.error("Chapel.Audio.one() -> invalid callback")},a.off=function(e){(e=s(e,!0))&&$(document).off(e)},t.persistPrefs&&($(document).on(":master-mute",a.savePrefs),$(document).on(":master-volume",a.savePrefs)),$(document).on(":play",function(e){e.track.addToGroup("playing")}),$(document).on(":stop",function(e){e.track.removeFromGroup("playing")}),t.muteOnBlur&&$(window).on("blur",function(){a.isMuted()||(a.mute(!0),$(window).one("focus",function(){a.mute(!1)}))}),a.parseEvent=s,window.Chapel=window.Chapel||{},window.Chapel.Audio=a}(),function(){"use strict";var r=Chapel.Audio,o=r.data.pareEvent,a=r.data.bail,i=Chapel.options,t=$(document.createElement("div")).attr("id","audio-container").css("display","none").appendTo(document.body),s={aac:"audio/aac",caf:"audio/x-caf","x-caf":"audio/x-caf",mp3:'audio/mpeg; codecs="mp3"',mpeg:'audio/mpeg; codecs="mp3"',m4a:"audio/mp4",mp4:"audio/mp4","x-m4a":"audio/mp4","x-mp4":"audio/mp4",oga:"audio/ogg",ogg:"audio/ogg",opus:'audio/ogg; codecs="opus"',wav:"audio/wav",wave:"audio/wav",weba:"audio/webm",webm:"audio/webm"};function u(e,t,o){this instanceof u||a("Track: called without `new` operator"),e||a("Track: no id specified"),"string"!=typeof e&&a("Track: track id is not a string"),t&&(!Array.isArray(t)||t.length)||a("Track: no sources specified"),o?t=[].slice.call(arguments).slice(1):"string"==typeof t&&(t=[t]);var n=$(document.createElement("audio"));Fast.forEach(t,function(e){var t,o;$(document.createElement("source")).attr({src:e,type:(t=e.split("."),(o=t[t.length-1]).includes("?")&&(o=o.split("?")[0]),o=o.toLowerCase().trim(),Object.keys(s).includes(o)||a('Track: unsupported file type "'+o+'"'),s[o])}).appendTo(n)}),n.attr({"data-track":"id","data-volume":1,"data-mute":!1}).one("canplaythrough.hal",function(){r.loaded.push(e)}),i.preload&&n.attr("preload","auto"),n[0].volume=+r.master.volume,this.id=e,this.$el=n,this.unwrap=n[0],this.sources=t}Object.assign(u,{list:[],is:function(e){return e instanceof u},has:function(t){return Fast.some(u.list,function(e){return e.id===t})},emit:function(e,t){$(document).trigger({type:e,track:t}),t.emit(e)},add:function(e,t,o){o&&(t=[].slice.call(arguments).slice(1));var n=new u(e,t);return u.list.push(n),n.$el.on("canplay",function(){u.emit(":available",n)}),n.$el.on("canplaythrough",function(){u.emit(":loaded",n)}),n.attach(),n},renew:function(){Fast.forEach(u.list,function(e){e.mute(e.isMuted()),e.volume(e.getVolume())})},getIdx:function(t){return Fast.findIndex(u.list,function(e){return e.id===t})},get:function(t){var e=Fast.find(u.list,function(e){return e.id===t});if(!e)throw new ReferenceError('There is no track with the id "'+t+'". Please check your spelling and capitalization.',"track.js -> Track.get()",155);return e},removeFromDOM:function(e){"string"==typeof e&&(e=u.get(e)),e&&u.is(e)?e.unattach():t.remove()},_runOnMultiple:function(e,t,o){e instanceof Array&&u.prototype.hasOwnProperty(t)&&Fast.forEach(u.list,function(e){u.is(e)||(e=u.get(e)||null),e&&e[t].apply(e,o&&o instanceof Array?o:[])})}}),Object.assign(u.prototype,{constructor:u,emit:function(e){this.$el.trigger({type:e,track:this})},clone:function(){return new u(this.id,this.sources)},isAttached:function(){return $.contains(t[0],this.unwrap)},attach:function(){return this.isAttached()||this.$el.appendTo(t),this},unattach:function(){return this.isAttached()&&this.$el.remove(),this},isPlaying:function(){return!this.unwrap.paused},play:function(){var e=this;return this.unwrap.play(),u.emit(":play",this),this.$el.on("ended",function(){e.unwrap.loop||(e.unwrap.currentTime=0,u.emit(":stop",e))}),this},playWhenPossible:function(){var t=this;return this.unwrap.play().then(function(){u.emit(":play",t),t.$el.on("ended",function(){t.unwrap.loop||(t.unwrap.currentTime=0,u.emit(":stop",t))})},function(e){$(document).one("click mousedown keydown touchstart",function(){t.play()})}).catch(function(e){console.error(e)}),this},forcePlay:function(){var e=this,t=$(document.createElement("a")).css("display","none").appendTo(document.body).on("click",function(){e.play()});setTimeout(function(){t.trigger("click")},safeAudioStart)},pause:function(){return this.unwrap.pause(),u.emit(":pause",this),this},stop:function(){return this.unwrap.pause(),this.unwrap.currentTime=0,u.emit(":stop",this),this},mute:function(e){return e=!!e,this.$el.attr("data-mute",e),r.master.mute?this.unwrap.muted=!0:this.unwrap.muted=e,u.emit(":mute",this),this},isMuted:function(){var e=this.$el.attr("data-mute");return"boolean"==typeof e?e:"false"!==e},toggleMute:function(){return this.mute(!this.isMuted()),this},volume:function(e){return e=Number(e),Number.isNaN(e)||(1<e?e=1:e<0&&(e=0),this.$el.attr("data-volume",e),this.unwrap.volume=e*r.master.volume),u.emit(":volume",this),this},getVolume:function(){return Number(this.$el.attr("data-volume"))},addToGroup:function(e,t){var o=this,n=t?r.groups.custom[e]:r.groups[e];return Fast.some(n,function(e){return o.id===e.id})||n.push(this),this},removeFromGroup:function(e,t){var o=this,n=t?r.groups.custom[e]:r.groups[e],a=Fast.findIndex(n,function(e){return e.id&&e.id===o.id});return n.splice(a,1),this},loop:function(e){return this.unwrap.loop=!!e,this.unwrap.loop?this.addToGroup("looping"):this.removeFromGroup("looping"),this},isLooping:function(){return!!this.unwrap.loop},toggleLoop:function(){return this.loop(!this.isLooping()),this},seek:function(e){return e<0?e=this.unwrap.duration-e:e>this.unwrap.duration&&(e=this.unwrap.duration),this.unwrap.currentTime=e,this},fadeIn:function(e){var t=this;e=e||1;var o=this.getVolume();return this.volume(0),this.play(),this.$el.animate({volume:o*r.master.volume},1e3*e,function(){t.volume(o),u.emit(":volume",t),u.emit(":fade",t)}),this},fadeOut:function(e){e=e||1;var t=this,o=this.getVolume();return this.$el.animate({volume:0},1e3*e,function(){t.stop(),t.volume(o),u.emit(":volume",t),u.emit(":fade",t)}),this},fadeTo:function(e,t){var o=this;if(e=e||1,t=Number(t),!Number.isNaN(t))return 1<t?t=1:t<0&&(t=0),this.$el.animate({volume:t*r.master.volume},1e3*e,function(){o.volume(t),u.emit(":volume",o),u.emit(":fade",o)}),this;alert("ivalid volume level")},delay:function(e,t){var o=this;"function"==typeof t&&(e=Number(e),(Number.isNaN(e)||e<0)&&(e=0),setTimeout(function(){t.call(o,o,e)},e))},on:function(e,t){if(!t||"function"!=typeof t)return console.error("<track>.on() -> invalid callback"),this;(e=o(e))&&this.$el.on(e,t)},one:function(e,t){if(!t||"function"!=typeof t)return console.error("<track>.one() -> invalid callback"),this;(e=o(e))&&this.$el.one(e,t)},off:function(e){(e=o(e))&&this.$el.off(e)}}),r.classes.Track=u,r.newTrack=function(){try{return u.add.apply(null,arguments)}catch(e){console.error(e.message),alert("Error in A.newTrack() -> see the console for more information.")}},r.track=function(e){try{return u.get(e)}catch(e){console.error(e.message),alert("Error in A.track() -> see the console for more information.")}},$(document).on(":master-mute",u.renew),$(document).on(":master-volume",u.renew)}(),function(){"use strict";var i=Chapel.Audio,s=i.classes.Track,o=(i.data._extend,/(play)?list:(.+)/i);i.createGroup=function(e,t,o){var n,a,r=o?[].slice.call(arguments).slice(1):t;n=e,(a=r)&&Array.isArray(a)||(a=[]),i.groups.custom[n]=Fast.map(a,function(e){return s.get(e)})},i.group=function(e){if(!(this instanceof i.group))return new i.group(e);if(Object.keys(i.groups.custom).includes(e))this.members=i.groups.custom[e];else{if(!(i.groups[e]&&i.groups[e]instanceof Array))throw new ReferenceError('There is no group with the id "'+id+'". Please check your spelling and capitalization.',"group.js -> A.group()",29);this.members=i.groups[e]}var t;!o.test(e)||(t=e.match(o)[2])&&t.trim()&&(this.members=i.playlist(t).tracks),Array.isArray(this.members)||(this.members=[],console.error('Could not find members for track group "'+e+'"!'))},Object.assign(i.group,{is:function(e){return this instanceof i.group},_runOnAll:function(e,t,o,n){null!=n?o=[].slice.call(arguments).slice(2):o instanceof Array||(o=[o]);var a=[e.members,t,o];s._runOnMultiple.apply(null,a)}}),Object.assign(i.group.prototype,{constructor:i.group,_run:function(){i.group._runOnAll.apply(null,[this].concat([].slice.call(arguments)))},play:function(){return this._run("play"),this},pause:function(){return this._run("pause"),this},stop:function(){return this._run("stop"),this},mute:function(e){return this._run("mute",e),this},volume:function(e){return this._run("volume",e),this},loop:function(e){return this._run("loop",e),this}})}(),function(){"use strict";var e=Chapel.Audio,r=e.classes.Track;e.data._extend;function n(e,t){if(!(this instanceof n))return new n(e,t);this.id=e,this.tracks=t.map(function(e){return r.get(e)}),this.looping=!1,this.current="",this.playing=!1}Object.assign(n,{list:{},is:function(e){return e instanceof n},add:function(e,t,o){return o&&(t=[].slice.call(arguments).slice(1)),n.list[e]=new n(e,t),n.list[e]},_runOnAll:function(e,t,o,n){null!=n?o=[].slice.call(arguments).slice(2):o instanceof Array||(o=[o]);var a=[e.tracks,t,o];r._runOnMultiple.apply(null,a)}}),Object.assign(n.prototype,{constructor:n,clone:function(){return new n(this.id,this.tracks.map(function(e){return e.id}))},_run:function(){n._runOnAll.apply(null,[this].concat([].slice.call(arguments)))},volume:function(e){return this._run("volume",e),this},mute:function(e){return this._run("mute",e),this},shuffle:function(){for(var e,t,o=this.tracks,n=o.length-1;0<n;n--)e=Math.floor(Math.random()*(n+1)),t=o[n],o[n]=o[e],o[e]=t;return this.tracks=o,this},random:function(){return this.tracks[Math.floor(Math.random()*this.tracks.length)]},isPlaying:function(){return this.playing},nowPlaying:function(){return r.get(this.current)},play:function(e){var t=this;if((e=e||(t.current?Fast.findIndex(t.tracks,function(e){return e.id===t.current}):0))>=t.tracks.length&&t.looping)e=0;else if(e>=t.tracks.length)return t.current="",void(t.playing=!1);var o=t.tracks[e],n=o.isLooping();return o.loop(!1),o.play(),t.playing=!0,setTimeout(function(){o.isPlaying()||(t.playing=!1)},20),t.current=o.id,o.$el.one("ended.playlist",function(){e++,o.loop(n),t.play(e)}),t},loop:function(e){return this.looping=!!e,this},isLooping:function(){return this.looping},stop:function(){var e;return this.current&&this.isPlaying()?(e=this.nowPlaying())&&(e.stop(),e.$el.off(".playlist")):this._run("stop"),this.current="",this.playing=!1,this},pause:function(){var e;return this.current&&this.isPlaying()&&((e=this.nowPlaying())&&e.pause()),this.playing=!1,this}}),e.classes.Playlist=n,e.createPlaylist=function(){try{n.add.apply(null,arguments)}catch(e){console.error(e.message),alert("Error in A.createPlaylist() -> see the console for more information.")}},e.playlist=function(e){try{var t=n.list[e]||null;if(!t)throw new ReferenceError('There is no playlist with the id "'+e+'". Please check your spelling and capitalization.',"list.js -> A.playlist()",171);return t}catch(e){console.error(e.message),alert("Error in A.createPlaylist() -> see the console for more information.")}}}(),function(){"use strict";var t=Chapel.Audio,o=t.classes.Track,n=t.classes.Playlist;function a(t,o){if("object"!=typeof o)throw new TypeError("Invalid extension.","extensions.js -> _extend()",8);Fast.forEach(Object.keys(o),function(e){if(void 0!==t[e])throw new Error('Invalid extension: cannot clobber existing property "'+e+'".',"extensions.js -> _extend()",8);t[e]=o[e]})}t.extend=function(e){a(Audio,e)},o.extend=function(e){a(o,e)},o.extendPrototype=function(e){a(o.prototype,e)},t.extendTrack=o.extend,t.extendTrackProto=o.extendPrototype,t.group.extend=function(e){a(t.group,e)},t.group.extendPrototype=function(e){a(t.group.prototype,e)},t.extendGroup=t.group.extend,t.extendGroupProto=t.group.extendPrototype,n.extend=function(e){a(n,e)},n.extendPrototype=function(e){a(n.prototype,e)},t.extendPlaylist=n.extend,t.extendPlaylistProto=n.extendPrototype}(),function(){"use strict";var e,t,o,n,a,r,i,s,u=Chapel.options;u.showControls&&(e=$(document.createElement("div")).attr("id","story-menu").css("display","none"),t=$(document.createElement("span")).attr("id","vol-title").append("Volume"),u.volumeDisplay||t.css("display","none"),o=$(document.createElement("input")).attr({id:"audio-volume",type:"range",min:1,max:99,step:1,title:"Volume"}).addClass("hal"),(n=Math.trunc(100*window.Chapel.Audio.master.volume))<0?n=0:100<n&&(n=100),o.attr("value",n),a=function(e){void 0===e&&(e=o.val()),t.empty().append("Volume "+e)},o.on("input",function(){window.Chapel.Audio.volume($(this).val()/100),a($(this).val())}),r=$(document.createElement("tw-link")).attr({id:"audio-mute",title:"Mute"}).append("Mute <span></span>").on("click",function(e){e.preventDefault(),$(this).toggleClass("muted"),Chapel.Audio.mute(!Chapel.Audio.isMuted())}),Chapel.Audio.isMuted()&&r.addClass("muted"),i=$(document.createElement("tw-link")).attr("id","audio-panel-toggle").on("click",function(e){e.preventDefault(),s.toggleClass("closed")}),s=$(document.createElement("div")).attr("id","audio-controls").append(e,t,o,r,i).appendTo(document.body),u.sidebarStartClosed&&s.addClass("closed"),window.Chapel=window.Chapel||{},window.Chapel.Audio=window.Chapel.Audio||{},window.Chapel.Audio.controls={$panel:s,$volume:o,$mute:r,$user:e,close:function(){s.addClass("closed")},open:function(){s.removeClass("closed")},toggle:function(){s.toggleClass("closed")},hide:function(){s.css("display","none")},show:function(){s.css("display","block")},updateVolume:a})}(),function(){"use strict";var s=Chapel.options,t=State,e=$(document.createElement("div")).attr("id","audio-overlay").css("display","none").appendTo(document.body);function o(){e.css("display","block").append('<div class="lds-ring"><div></div><div></div><div></div><div></div></div>')}function u(){e.fadeOut(function(){e.empty()})}window.Chapel=window.Chapel||{},window.Chapel.Audio=window.Chapel.Audio||{},window.Chapel.Audio.loadScreen={show:o,dismiss:u,kill:function(){$("#audio-overlay").remove()}},window.Chapel.Audio.$overlay=e,window.Chapel.Audio.preload=function(){var a,e,r,i;Chapel.debug("This is a mobile browser -> ",$.browser.mobile),t.pastLength||t.futureLength||$.browser.mobile||($(document).ready(function(){o()}),a=100+s.loadDelay,e=Chapel.Audio.classes.Track.list,r=Chapel.Audio.loaded,e.length?(i=Fast.map(e,function(e){return e.id}),0<s.totalLoadLimit&&setTimeout(function(){u()},s.totalLoadLimit),function e(){var t,o,n;i.length?(t=i.shift(),r.includes(t)?e():(o=Chapel.Audio.classes.Track.get(t)).unwrap.readyState<2?(n=!1,o.$el.one("canplaythrough.hal",function(){e(),n=!0}),setTimeout(function(){n||(o.$el.off("canplaythrough.hal"),e())},s.trackLoadLimit)):(r.includes(t)||r.push(t),e())):setTimeout(u,a)}()):setTimeout(u,a))}}(),function(){"use strict";var o=Chapel.options.storagekey+"_hal_restart_";Chapel.debug("HAL Session Key -> ",o);var e,t,n=(window.sessionStorage?(Chapel.debug("Session Storage Available"),e=function(e,t){window.sessionStorage.setItem(o+e,t)},t=function(e){return window.sessionStorage.getItem(o+e)}):(Chapel.debug("Session Storage Unavailable"),e=function(){},t=function(){},console.warn("Session storage is unavailable...")),{save:e,load:t});window.Chapel.Audio.state={_store:n,saveTracks:function(){var e;try{e=Fast.map(Chapel.Audio.classes.Track.list,function(e){return{id:e.id,sources:e.sources}}),Chapel.debug("Session Saved (Tracks) -> ",e),e=JSON.stringify(e),n.save("tracks",e)}catch(e){console.error(e.message)}},loadTracks:function(){var e;try{e=(e=n.load("tracks"))&&JSON.parse(e),Array.isArray(e)&&e.length&&(Chapel.debug("Session Loaded (Tracks) -> ",e),Fast.forEach(e,function(e){e.id&&e.sources&&!Chapel.Audio.classes.Track.has(e.id)?Chapel.Audio.newTrack.apply(null,[e.id].concat(e.sources)):Chapel.debug("Track reloading skipped.")}))}catch(e){console.error(e.message)}},savePlaylists:function(){try{var o=Chapel.Audio.classes.Playlist.list,e=Fast.map(Object.keys(o),function(e){var t={};return t.tracks=Fast.map(o[e].tracks,function(e){return e.id}),t.id=o[e].id,t});Chapel.debug("Session Saved (Playlists) -> ",e),e=JSON.stringify(e),n.save("playlists",e)}catch(e){console.error(e.message)}},loadPlaylists:function(){var e;try{(e=(e=n.load("playlists"))&&JSON.parse(e))&&Array.isArray(e)&&e.length&&(Chapel.debug("Session Loaded (Playlists) -> ",e),Fast.forEach(e,function(e){e.id&&e.tracks&&Chapel.Audio.createPlaylist(e.id,e.tracks)}))}catch(e){console.error(e.message)}},saveGroups:function(){var t;try{t={},Fast.forEach(Object.keys(Chapel.Audio.groups.custom),function(e){t[e]=Fast.map(Chapel.Audio.groups.custom[e],function(e){return"string"==typeof e?e:e.id})}),Chapel.debug("Session Saved (Groups) -> ",t),t=JSON.stringify(t),n.save("groups",t)}catch(e){console.error(e.message)}},loadGroups:function(){var t;try{(t=(t=n.load("groups"))&&JSON.parse(t))&&"object"==typeof t&&(Chapel.debug("Session Loaded (Groups) -> ",t),Fast.forEach(Object.keys(t),function(e){Fast.map(t[e],function(e){return Chapel.Audio.classes.Track.get(e)})}),Chapel.Audio.groups.custom=t)}catch(e){console.error(e.message)}}}}(),function(){"use strict";var e=Chapel.options;e.globalA&&void 0===window.A&&(Chapel.debug("Created global A interface."),window.A=window.Chapel.Audio),Chapel.Get.fromPassage&&(Chapel.debug("Loading tracks from track def special passage -> ",Chapel.Get.fromPassage),Chapel.Get.fromPassage.forEach(function(e,t){Chapel.Audio.newTrack.apply(null,[t].concat(e))})),$(document).on("unload",function(){Chapel.debug("User Prefs Saved"),window.Chapel.Audio.savePrefs()}),Chapel.Audio.classes.Track.renew(),Chapel.Audio.controls&&Chapel.Audio.controls.updateVolume(),Chapel.Get.isHarlowe3OrLater&&($(window).on("unload",function(){Chapel.debug("HAL State Saved"),Chapel.Audio.state.saveTracks(),Chapel.Audio.state.savePlaylists(),Chapel.Audio.state.saveGroups()}),Chapel.debug("HAL State Loaded"),Chapel.Audio.state.loadTracks(),Chapel.Audio.state.loadPlaylists(),Chapel.Audio.state.loadGroups()),e.persistPrefs&&(Chapel.debug("User Prefs Loaded"),Chapel.Audio.loadPrefs())}(),function(){"use strict";var s,u,e,l,t;Chapel.options.showControls&&(s=Engine,u=Chapel.Audio.controls.$user,e=function(){return"none"!==u.css("display")},l=function(){return e()||u.css("display","block"),u},t=function(){return e()&&u.css("display","none"),u},Chapel.Audio.menu={hide:t,show:l,isShown:e,links:{add:function(e,t,o){var n,a;if(!e||"string"!=typeof e){var r="undefined";return alert(r),void console.error(r)}o||"function"!=typeof t?(t&&"string"==typeof t&&(n=t),o&&"function"==typeof o&&(a=o)):(a=t,n=null);var i=$(document.createElement("tw-link")).append(e).attr({tabindex:"0",name:e.toLowerCase().trim()}).on("click",function(){n&&s.goToPassage(n),a&&a()}).addClass("story-menu").appendTo(u);return l(),i},clear:function(){return u.empty(),t()},hide:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').addClass("hide")},show:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').removeClass("hide")},toggle:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').toggleClass("hide")},remove:function(e){e=e.toLowerCase().trim(),$('tw-link.story-menu[name="'+e+'"]').remove()}}})}(),function(){"use strict";var n=Chapel.Audio;function o(e){return e&&"function"==typeof e}function a(e,t){if(!e||"string"!=typeof e)return null;switch(e=e.toLowerCase().trim()){case"isplaying":e="isPlaying";break;case"playwhenpossible":e="playWhenPossible";break;case"ismuted":e="isAMuted";break;case"togglemute":e="toggleMute";break;case"getvolume":e="getVolume";break;case"islooping":e="isLooping";break;case"toggleloop":e="toggleLoop";break;case"fadein":e="fadeIn";break;case"fadeout":e="fadeOut";break;case"fadeto":e="fadeTo";break;case"stopall":e="stopAll"}if("isPlaying"===e&&"master"===t&&(e="audioPlaying"),"group"===t){if(o(n.group.prototype[e]))return e}else if("master"===t){if(o(n[e]))return e}else if(o(n.classes[t].prototype[e]))return e;throw new ReferenceError('Cannot run the command: "'+e+'" on the API "'+t+'". The command may be invalid, or this may be a bug in HAL.',"macros.js -> getCommand()",10)}var e={newtrack:function(){var e=[].slice.call(arguments);try{return n.newTrack.apply(null,e)}catch(e){alert("Error in the (newtrack:) macro: "+e.message)}},newplaylist:function(e,t){t=[].slice.call(arguments).slice(1);try{return n.createPlaylist(e,t)}catch(e){alert("Error in the (newplaylist:) macro: "+e.message)}},newgroup:function(e,t){t=[].slice.call(arguments).slice(1);try{return n.createGroup(e,t)}catch(e){alert("Error in the (newgroup:) macro: "+e.message)}},masteraudio:function(e){try{return e=a(e,"master"),n[e].apply(null,[].slice.call(arguments).slice(1))}catch(e){alert("Error in the (masteraudio:) macro: "+e.message)}},track:function(e,t){try{var o=n.track(e);return o[t=a(t,"Track")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (track:) macro: "+e.message)}},playlist:function(e,t){try{var o=n.playlist(e);return o[t=a(t,"Playlist")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (playlist:) macro: "+e.message)}},group:function(e,t){try{var o=n.group(e);return o[t=a(t,"group")].apply(o,[].slice.call(arguments).slice(2))}catch(e){alert("Error in the (group:) macro: "+e.message)}}};window.Chapel.Macros.add(e)}();
 /** End of HAL code */</script><tw-passagedata pid="1" name="Start" tags="lang" position="1196,12" size="100,100">(set: $restart to false)\
 &lt;img class=&quot;picture-in-motion&quot; id=&quot;car-move&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Auto-1.png&quot;&gt;
-&lt;div id=&quot;delayed-appear&quot;&gt;\
+&lt;div class=&quot;delayed-fade-in&quot;&gt;\
 ###Vítej!
 Tento zdroj se zaměřuje na tematiku **pašování exilové literatury do Československa ze zahraničí v letech 1968-1989.**
 
@@ -59,9 +59,9 @@ Chceš-li si však zopakovat pojmy a kontext doby, vydej se touto cestou:
 
 
 &lt;a href=&quot;#kresba&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Jakubec_automobil_157.jpg&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;kresba&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;kresba&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Jakubec_automobil_157.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: JAKUBEC, Julius. *Přívěsy za osobní automobil.* Praha: Nakladatelství dopravy a spojů, 1980, s. 157. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7bbff40-b7e8-11e3-b74a-5ef3fc9ae867&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7bbff40-b7e8-11e3-b74a-5ef3fc9ae867&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -394,19 +394,19 @@ Kde není uvedeno jinak, vyjma obrázků na pozadí, kde nelze vložit přímo c
 Příběh francouzských občanů Gillese Thonona a&amp;nbsp; Françoise Anisové se odehrál v noci z 27. na 28. dubna roku 1981 . Thonon a Anisová se rozhodli, že budou pašovat exilovou literaturu do Československa. 
 Pašování literatury většinou prováděli právě levicově a liberálně orientovaní dobrovolnící cizího státního příslušenství, kteří nesouhlasili se stalinovským režimem a s následovníky tohoto režimu. Mezi takovéto levicové odpůrce lze zařadit například i francouzské &lt;a class=&quot;modal-open&quot; href=&quot;#trock&quot;&gt;trockisty&lt;/a&gt;, mezi něž Thonon a Anisová zřejmě patřili &lt;a class=&quot;modal-open&quot; href=&quot;https://blog.aktualne.cz/blogy/petr-uhl.php?itemid=25634&quot; target=&quot;_blank&quot;&gt;(Uhl, 2015).&lt;/a&gt; 
 Jak na cizí kurýry vzpomíná například &lt;a class=&quot;modal-open&quot; href=&quot;#wikiDien&quot;&gt;Jiří Dienstbier starší&lt;/a&gt;, politik, signitář Charty 77, novinář a disident, si můžete přečíst níže:
-&lt;div id=&quot;wikiDien&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99%C3%AD_Dienstbier_star%C5%A1%C3%AD&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;wikiDien&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99%C3%AD_Dienstbier_star%C5%A1%C3%AD&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Jiří Dienstbier starší &#96;[online]&#96;, Wikipedie: Otevřená encyklopedie, c2022, Datum poslední revize 16. 03. 2022, 11:43 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupný z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Ji%C5%99%C3%AD_Dienstbier_star%C5%A1%C3%AD&amp;oldid=21040531&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Ji%C5%99%C3%AD_Dienstbier_star%C5%A1%C3%AD&amp;oldid=21040531&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;a href=&quot;#dien&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Dienstbier_87.jpg&quot;&gt;&lt;/a&gt;
 
-&lt;div id=&quot;dien&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;dien&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Dienstbier_87.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: MIKOLÁŠ, Robert a Jiří DIENSTBIER. *Jiří Dienstbier: žít naplno.* Praha: NLN, Nakladatelství Lidové noviny, 2012, p. 87. ISBN 978-80-7422-163-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:67df76f0-e7f9-11e6-9e7e-001018b5eb5c&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:67df76f0-e7f9-11e6-9e7e-001018b5eb5c&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;\
@@ -418,9 +418,9 @@ Z Anglie dal do Paříže Thononovi a Anisové pokyny Jan Kavan, v Českoslovens
 &lt;a href=&quot;#anis&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_25_Anisova.jpg&quot;&gt;&lt;/a&gt;
 &lt;div class=&quot;zdroj&quot;&gt;Francouzská studentka Anisová přihlíží tomu, jak estébáci zadržují pašované knihy a časopisy.&lt;/div&gt;
 
-&lt;div id=&quot;anis&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;anis&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_25_Anisova.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: WANATOWICZOVÁ, Krystyna. Povolání agent. *Týden: události - peníze - styl - lidé + TV sešit : moderní zpravodajský týdeník.* Praha: K Service, reklamní a tiskové služby, 2006, **13**(21), s. 24-26. ISSN 1210-9940. Dostupné také z: &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8d76270-1b90-11e9-90cf-5ef3fc9bb22f&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8d76270-1b90-11e9-90cf-5ef3fc9bb22f&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -428,9 +428,9 @@ Z Anglie dal do Paříže Thononovi a Anisové pokyny Jan Kavan, v Českoslovens
 
 &lt;a href=&quot;#kamion&quot; class=&quot;modal-open&quot;&gt;Proč případ Kamion?&lt;/a&gt;
 
-&lt;div id=&quot;kamion&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;kamion&quot; class=&quot;modal-dialog-container&quot;&gt;\
 &lt;div&gt;\
-&lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+&lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
 Není kamion jako „kamion“
 
 Označení případu se ujalo pro množství převážených tiskovin, které byly pašovány v obytných karavanech. Literatura nebyla ve skutečnosti pašována v kamionech. Tento případ vstoupil do dějin také pod názvem akce Delta. Původcem tohoto názvu bylo StB. 
@@ -442,17 +442,17 @@ Označení případu se ujalo pro množství převážených tiskovin, které by
 
 [[Co o tom psal soudobý tisk?|CTK]]
 {(masteraudio: &#39;stopall&#39;)}
-&lt;div id=&quot;trock&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Trockismus&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;trock&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Trockismus&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Wikipedie: Otevřená encyklopedie: Trockismus &#96;[online]&#96;. c2022 &#96;[cit. 2022-03-17]&#96;. Dostupný z WWW: &lt;a href=&quot;https://cs.wikipedia.org/wiki/Trockismus&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/wiki/Trockismus&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;siklovaWiki&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99ina_%C5%A0iklov%C3%A1&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;siklovaWiki&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99ina_%C5%A0iklov%C3%A1&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: 
 		Přispěvatelé Wikipedie, Jiřina Šiklová &#96;[online]&#96;, Wikipedie: Otevřená encyklopedie, c2021, Datum poslední revize 12. 12. 2021, 19:54 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupný z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Ji%C5%99ina_%C5%A0iklov%C3%A1&amp;oldid=20722703&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/w/index.php?title=Ji%C5%99ina_%C5%A0iklov%C3%A1&amp;oldid=20722703&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -469,9 +469,9 @@ radioCSSR: https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_CSSR_ra
 [[„A to myslíš, že jim texty pomůžou?“|Pochybnosti]]
 
 (align:&quot;==&gt;&quot;)+(box:&quot;=XXXX&quot;)[&lt;a href=&quot;#radio&quot; class=&quot;modal-dialog&quot;&gt;&lt;img class=&quot;smallerRadioIcon&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;&lt;/a&gt;]
-&lt;div id=&quot;radio&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;radio&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        &lt;img class=&quot;radioimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;
 &lt;div class=&quot;radioPosition&quot;&gt;		
   {(link-repeat: &quot;Stanice 1&quot;)[
@@ -495,23 +495,23 @@ radioCSSR: https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_CSSR_ra
 &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="7" name="Rozhovor2" tags="road2" position="1569,444" size="100,100">„Hele to, co vezeme, může udělat &lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;très bien&lt;/a&gt; pro lidi v této zemi. Je tady prostě přiškrcený tok informací, lidem se neříká &lt;a class=&quot;modal-open&quot; href=&quot;#preklad2&quot;&gt;vérité.&lt;/a&gt;“
-[[„&lt;span class=&quot;translate&quot; data-hover=&quot;Vím&quot;&gt;Je sais,&lt;/span&gt; ale co to vlastně všechno vezeme?“|Obsah-kamionu]]
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+[[„&lt;span class=&quot;translate&quot; data-hover=&quot;Vím&quot;&gt;Je sais&lt;/span&gt;, ale co to vlastně všechno vezeme?“|Obsah-kamionu]]
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        hodně dobrého
 &lt;/div&gt;\
     &lt;/div&gt;\
-	&lt;div id=&quot;preklad2&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+	&lt;div id=&quot;preklad2&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        pravda
 &lt;/div&gt;\
     &lt;/div&gt;\
 (align:&quot;==&gt;&quot;)+(box:&quot;=XXXX&quot;)[&lt;a href=&quot;#radio&quot; class=&quot;modal-dialog&quot;&gt;&lt;img class=&quot;smallerRadioIcon&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;&lt;/a&gt;]
-&lt;div id=&quot;radio&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;radio&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        &lt;img class=&quot;radioimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;
 &lt;div class=&quot;radioPosition&quot;&gt;		
   {(link-repeat: &quot;Stanice 1&quot;)[
@@ -537,21 +537,21 @@ radioCSSR: https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_CSSR_ra
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="8" name="Obsah-kamionu" tags="road2" position="1583,595" size="100,100">„Upřímně také nevím, neměl jsem &lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;le temps&lt;/a&gt; a ani jsem si vlastně nemohl vše prohlédnout. Prostě jsem dostal klíče od &lt;a class=&quot;modal-open&quot; href=&quot;#preklad2&quot;&gt;la automobile&lt;/a&gt; a&amp;nbsp;adresu, kde mám la automobile vyzvednout.“
 „Aha.“
 „A navíc ani neumím &lt;a class=&quot;modal-open&quot; href=&quot;#preklad3&quot;&gt;tchécoslovaque,&lt;/a&gt; takže bych si toho moc nepočetl.“
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        čas
 &lt;/div&gt;\
     &lt;/div&gt;\
-&lt;div id=&quot;preklad2&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad2&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        automobilu
 &lt;/div&gt;\
     &lt;/div&gt;\
-&lt;div id=&quot;preklad3&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad3&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        československy
 &lt;/div&gt;\
     &lt;/div&gt;\
@@ -566,17 +566,17 @@ Snažíš se [[identifikovat jednotlivá slova.-&gt;RadioHranice]]
 
 „Chce, abychom najeli na váhu?“ ptáš se Erica.
 „Asi jo, nic jiného nám nezbývá, &lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;non?&lt;/a&gt;“
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        ne?
 &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;a href=&quot;#kresba&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Respekt_4.jpg&quot;&gt;&lt;/a&gt;
 
-&lt;div id=&quot;kresba&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;kresba&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Respekt_4.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: KURAS, Benjamin. Křivá přísaha. *Respekt.* Praha: R-Presse, 9.3.1992, 1992(10), s. 4. ISSN 0862-6545. Dostupné také z: &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:15ed40d0-bd36-11e2-9592-5ef3fc9bb22f&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:15ed40d0-bd36-11e2-9592-5ef3fc9bb22f&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -592,9 +592,9 @@ Po chvilce vychází celník z kabinky a ukazuje, abyste přeparkovali karavan n
 Snažíte se s ním dorozumět, ale jediné, co pochopíte z jeho slov, je, že váš karavan je podezřele těžký. Celníci se pouštějí do ohledávání vnitřku automobilu.
 „Ericu?“
 „&lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;Oui?&lt;/a&gt;“
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        Ano?
 &lt;/div&gt;\
     &lt;/div&gt;\
@@ -606,15 +606,15 @@ Pořádně nerozumíš, co ti říkají. Celník odchází a nechává vás o sa
 Odlepit tajné vzkazy pro disent z těla a [[sníst je.-&gt;Snezeno]]
 [[Zeptat se prvně Erica, co dělat.-&gt;Nesnezeno]]</tw-passagedata><tw-passagedata pid="13" name="Snezeno" tags="Celnice noMarginLink" position="1661,1401" size="100,100">Rychle natrháš vzkazy na malé kousíčky a i přes odpor k&amp;nbsp;papírové chuti [[vše spolykáš.|ModniCasopis]]</tw-passagedata><tw-passagedata pid="14" name="Nesnezeno" tags="Celnice" position="1834,1349" size="100,100">„Co teď, Ericu?“
 „&lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;Vite!&lt;/a&gt; Musíme zničit ty &lt;a class=&quot;modal-open&quot; href=&quot;#preklad2&quot;&gt;less messages&lt;/a&gt; označené *most important*, ať dostanou v le automobile cokoliv, tohle dostat nesmí.“
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        Rychle!
 &lt;/div&gt;\
     &lt;/div&gt;\
-&lt;div id=&quot;preklad2&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad2&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        zprávy
 &lt;/div&gt;\
     &lt;/div&gt;\
@@ -623,18 +623,20 @@ Jedno je ti však jasné, je možné, že se do Francie jen tak nevrátíš.
 Podíváš se na Erica. V jeho pohledu se zrcadlí pohled tvůj. Pohled plný strachu, ale také odhodlání.
 [[Venku začíná pomalu svítat.|Konec příběhu]]</tw-passagedata><tw-passagedata pid="16" name="Pochybnosti" tags="road2" position="1376,575" size="100,100">„Ty texty mluví o tom, o čem se tady mlčí, totiž, že tohle je normální totalita. &lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;En&amp;nbsp;Tchécoslovaquie&lt;/a&gt; ale tyhle texty jsou prý štvavé žvásty.“
 [[„A co se tam všechno píše?“|Obsah-kamionu]]
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-       V Československu
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    V Československu
+  &lt;/div&gt;\
 &lt;/div&gt;\
-    &lt;/div&gt;\
-(align:&quot;==&gt;&quot;)+(box:&quot;=XXXX&quot;)[&lt;a href=&quot;#radio&quot; class=&quot;modal-dialog&quot;&gt;&lt;img class=&quot;smallerRadioIcon&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;&lt;/a&gt;]
-&lt;div id=&quot;radio&quot; class=&quot;modalDialog&quot;&gt;\
+(align:&quot;==&gt;&quot;)+(box:&quot;=XXXX&quot;)[&lt;a href=&quot;#radio&quot; class=&quot;modal-dialog&quot;&gt;&lt;img class=&quot;smallerRadioIcon&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;&lt;/a&gt;]\
+\\
+&lt;div id=&quot;radio&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       &lt;img class=&quot;radioimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;
-&lt;div class=&quot;radioPosition&quot;&gt;		
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;img class=&quot;radioimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;\
+    &lt;div class=&quot;radioPosition&quot;&gt;\
   {(link-repeat: &quot;Stanice 1&quot;)[
   		{(masteraudio: &#39;stopall&#39;)
   		(track: &#39;radio1&#39;, &#39;loop&#39;, true)
@@ -653,9 +655,10 @@ Podíváš se na Erica. V jeho pohledu se zrcadlí pohled tvůj. Pohled plný st
 		(track: &quot;radio3&quot;, &quot;volume&quot;, 0.3)
 	    (track: &#39;radio3&#39;, &#39;playwhenpossible&#39;)}
 				]}
+    &lt;/div&gt;\
+  &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;/div&gt;\
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="17" name="Disent" tags="knihy" position="3883,1249" size="100,100">####Disent
+</tw-passagedata><tw-passagedata pid="17" name="Disent" tags="knihy" position="3883,1249" size="100,100">####Disent
 
 Disent tvořili odpůrci totalitního režimu. 
 
@@ -667,9 +670,9 @@ Nechytáš se?
 &lt;a href=&quot;#help&quot; class=&quot;modal-open&quot;&gt;Mrkni na disidentský slovník&lt;/a&gt;
 
 [[Zajímavé. Můžeš mi o disentu říci ještě něco?|Disent2]]
-&lt;div id=&quot;help&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;help&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
 &lt;iframe class=&quot;slovnik center&quot; src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=153&quot; width=&quot;800&quot; height=&quot;1000&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; title=&quot;Slovnicek&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 &lt;div class=&quot;zdroj&quot;&gt;
 Zdroj: SUK, Jaroslav. Slang chartistů. *Svědectví* &#96;[online]&#96;. 1981, 17(65), 32-36 &#96;[cit. 2021-06-19]&#96;. ISSN 0586-0350. Dostupné z:&lt;a class=&quot;hyper&quot; href=&quot;http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1981_65.pdf&quot; target=&quot;_blank&quot;&gt; http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1981_65.pdf&lt;/a&gt;
@@ -730,9 +733,9 @@ Prvně si však řekněme, co je to samizdat, jelikož právě od tohoto pojmu s
 Samizdat lze definovat jako *„texty rozšiřované v neoficiálním oběhu (opisy, xerokopie) a v omezeném počtu exemplářů, protože legálně nemohly být z různých důvodů (politických, ideových, ekonomických) vydány.“* &lt;a href=&quot;http://www.totalita.cz/vysvetlivky/samizdat.php&quot; target=&quot;_blank&quot;&gt; (Marjánko, 2021)&lt;/a&gt; 
 
 &lt;a href=&quot;#c_eleg&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Steiner_Samizdat.png&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_eleg&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_eleg&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Steiner_Samizdat.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: STEINER, Peter. S/T-amizdat. In: *Sborník prací Filozofické fakulty brněnské univerzity. V, Řada literárněvědná bohemistická = Bohemica litteraria 2008* &#96;[online]&#96;. **57**(11), 47-55 &#96;[cit. 2021-06-24]&#96;. ISSN 1213-2144. Dostupné z: &lt;a href=&quot;http://hdl.handle.net/11222.digilib/104863http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1981_65.pdf&quot; target=&quot;_blank&quot;&gt;http://hdl.handle.net/11222.digilib/104863http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1981_65.pdf&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -751,9 +754,9 @@ Jako samizdat tedy nazýváme texty, které byly vytvářeny a neoficiálně š�
 
 
 &lt;a href=&quot;#c_dsam&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_PRIBAN_divsaz.png&quot; alt=&quot;divoky samizdat&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_dsam&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_dsam&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_PRIBAN_divsaz.png&quot; alt=&quot;divoky samizdat&quot;  class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PŘIBÁŇ, Michal. Vnitrozemí a pohraničí českého literárního samizdatu: Úvaha nejen pojmoslovná. *Česká literatura: časopis pro literární vědu* &#96;[online]&#96;. Praha: ČSAV, 12.2016, **64**(6), 822-847 &#96;[cit. 2021-06-24]&#96;. ISSN 0009-0468. Dostupné také z: &lt;a href=&quot;https://kramerius.lib.cas.cz/uuid/uuid:e96fc8c5-d0a4-428f-9d34-b38fcc28e00d&quot;&gt;https://kramerius.lib.cas.cz/uuid/uuid:e96fc8c5-d0a4-428f-9d34-b38fcc28e00d&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -768,9 +771,9 @@ Než se pustíme dále, řekneme si něco o tom, co to vlastně slovo exil zname
 
 
 &lt;a href=&quot;#c_fom&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Linhartova_Exil.png&quot; alt=&quot;linhartova-za ontologie exilu&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_fom&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_fom&quot; class=&quot;modal-dialog-container&quot;&gt;
     &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img class=&quot;center enlarge&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Linhartova_Exil.png&quot; alt=&quot;linhartova-za ontologie exilu&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: LINHARTOVÁ, Věra. Za ontologii exilu. Literární noviny &#96;[online]&#96;. 1998, **9**(49), s. 1, 5 &#96;[cit. 2021-06-24]&#96; ISSN 1210-0021. Dostupné také z: &lt;a href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/9.1998/49.&quot; target=&quot;_blank&quot;&gt;http://archiv.ucl.cas.cz/index.php?path=LitNIII/9.1998/49.&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -805,9 +808,9 @@ Až si projdeš předchozí odkazy, pokračuj níže:
 
 
 &lt;a href=&quot;#c_exil&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy-Papousek.png&quot; alt=&quot;linhartova-za ontologie exilu&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_exil&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_exil&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img class=&quot;center enlarge&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy-Papousek.png&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PAPOUŠEK, Vladimír. Exil jako možnost a jako obrana: česká exilová próza sedmdesátých a osmdesátých let. In: *Život je jinde...?* &#96;[online]&#96;.&#96;[Praha]&#96;: Ústav pro českou literaturu AV ČR, 2002. s. 50.&#96;[cit. 2021-06-24]&#96; ISBN 80-85778-35-1. Dostupné také z: &lt;a href=&quot;http://www.ucl.cas.cz/edicee/data/sborniky/2002/ZJJ/6.pdf&quot; target=&quot;_blank&quot;&gt;http://www.ucl.cas.cz/edicee/data/sborniky/2002/ZJJ/6.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -820,9 +823,9 @@ Díky vyhnanství do exilu vznikly navíc i velmi zajímavá literární díla.
 Nesmrtelným kladným dědictvím existence tak negativního jevu jako je právě exil jsou například tyto Borovského verše:
 
 &lt;a href=&quot;#c_eleg&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_tyrolske_elegie.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_eleg&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_eleg&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_tyrolske_elegie.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: HAVLÍČEK BOROVSKÝ, Karel. Tyrolské elegie. Brno: Dědictví Havlíčkovo, 1929, s. 5. Dostupné také z:&lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b98e4af5-d9c2-426b-9129-00efc1789dda&quot; target=&quot;_blank&quot;&gt; http://www.digitalniknihovna.cz/mzk/uuid/uuid:b98e4af5-d9c2-426b-9129-00efc1789dda&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -853,9 +856,9 @@ V tomto období do exilu odešlo až 1/4 miliónu lidí. Část z&amp;nbsp;nich 
 Činnost umělců zprvu měla ráz spíše politický, doufalo se totiž, že podobně jako při druhé světové válce, nebude nutný exil na delší dobu. Z&amp;nbsp;těchto převažovala v prních poúnorových letech spíše politická publicistika. V Austrálii například v roce 1950 vzniká politický čtrnáctideník **HLAS DOMOVA** (1950-1979, po většinu času redigoval František Váňa).
 
 &lt;a href=&quot;#c_hlas&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_HLASDOMOVA.png&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_hlas&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_hlas&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_HLASDOMOVA.png&quot;  class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: *Hlas domova* &#96;[online]&#96;. 1950, **1**(1), 1 &#96;[cit. 2021-06-25]&#96;.Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory//scriptum/%5Bnode%5D/hlas-domova_1950-01_ocr.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory//scriptum/%5Bnode%5D/hlas-domova_1950-01_ocr.pdf&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -866,19 +869,19 @@ Nejproduktivnějším poúnorovým exilovým nakladatelem byla **KŘESŤANSKÁ A
 
 
 &lt;a href=&quot;#c_stud&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_STUDIE.png&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_stud&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_stud&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_STUDIE.png&quot;  class=&quot;center not-too-big&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: *Studie* &#96;[online]&#96;. 1958, **1**(1), 1 &#96;[cit. 2021-06-25]&#96;. Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory//scriptum/%5Bnode%5D/studie_1958_001_ocr_new.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory//scriptum/%5Bnode%5D/studie_1958_001_ocr_new.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 V roce 1951 zahájila pravidelná vysílání Československá rozhlasová stanice &lt;a class=&quot;modal-open&quot; href=&quot;#radio&quot;&gt;Rádio Svobodná Evropa (Radio Free Europe, RFE).&lt;/a&gt;
-&lt;div id=&quot;radio&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Svobodn%C3%A1_Evropa&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;radio&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Svobodn%C3%A1_Evropa&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Svobodná Evropa &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 15. 01. 2022, 00:37 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Svobodn%C3%A1_Evropa&amp;oldid=20832793&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/w/index.php?title=Svobodn%C3%A1_Evropa&amp;oldid=20832793&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -887,9 +890,9 @@ První významnější čistě literární revue byla **SKLIZEŇ** (1953–1979)
 Společně s Křesťanskou akademií vyhlásili redaktoři Sklizně první literární soutěž pro československé exilové autory.
 
 &lt;a href=&quot;#c_skliz&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_SklizenSoutez.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_skliz&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_skliz&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_SklizenSoutez.png&quot;  class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: VLACH. Robert. Literární a hudební soutěž Křesťanské akademie v Římě na rok 1953. *Sklizeň* &#96;[online]&#96;. 1953, ****(6), 9 &#96;[cit. 2021-06-25]&#96;. Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory/scriptum/sklizen/sklizen_1953_06_ocr-opr.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory/scriptum/sklizen/sklizen_1953_06_ocr-opr.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -904,17 +907,18 @@ Normalizace vyvolala další ohromnou emigrační vlnu.
 Českoslovenští emigranti posrpnového období měli zároveň o něco lepší výchozí pozici v exilu. Pomohly jim již existující exilové vazby a zároveň &lt;a class=&quot;modal-open&quot; href=&quot;https://www.ceskatelevize.cz/porady/10177109865-dejiny-udatneho-ceskeho-naroda/211543116230107-prazske-jaro/&quot; target=&quot;_blank&quot;&gt;Pražské jaro&lt;/a&gt; a následná okupace Československa vyvolala vlnu solidarity západních zemí s [[disidenty|Disent]].
 
 Situace ale také nebyla vždy růžová. Mezi poúnorovou a&amp;nbsp;posrpnovou vlnou byla někdy i určitá míra nedůvěry. Hlavně vzhledem k exulantům z okruhu reformních komunistů, tedy osob, které zastávali před srpnem 1968 často i vysoké pozice a z těchto pozic se snažili o reformu praxe komunistického režimu. Příkladem může být např. bývalý ředitel České televize &lt;a class=&quot;modal-open&quot; href=&quot;#pelikan&quot;&gt;Jiří Pelikán.&lt;/a&gt;
-&lt;div id=&quot;pelikan&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99%C3%AD_Pelik%C3%A1n_(politik)&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+
+&lt;div id=&quot;pelikan&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99%C3%AD_Pelik%C3%A1n_(politik)&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Jiří Pelikán (politik) &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2021, Datum poslední revize 24. 11. 2021, 16:08 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupný z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Ji%C5%99%C3%AD_Pelik%C3%A1n_(politik)&amp;oldid=20668816&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Ji%C5%99%C3%AD_Pelik%C3%A1n_(politik)&amp;oldid=20668816&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;a href=&quot;#pelFoto&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Pelikan_82.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;pelFoto&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;pelFoto&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Pelikan_82.jpg&quot; class=&quot;center not-too-big&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PELIKÁN, Jiří a Libuše VANČUROVÁ. *Jiří Pelikán 1923-1999: sborník.* Praha: OPS Občanský dialog, 2003, s. &#96;[82]&#96;. ISBN 80-239-0846-4. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f924ad20-26ea-11e3-b79f-5ef3fc9bb22f&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f924ad20-26ea-11e3-b79f-5ef3fc9bb22f&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -926,9 +930,9 @@ Byl to právě Jiří Pelikán, kdo založil po Tigridově Svědectví, druhé n
 
 Úrývek z úvodu prvního čísla časopisu Listy:
 &lt;a href=&quot;#c_list&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Pelikan_Listy-prvni-cislo.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_list&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_list&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Pelikan_Listy-prvni-cislo.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PELIKÁN Jiří. Proč nesmíme mlčet. *Listy* &#96;[online]&#96;. 1971, **1**(1), 2 &#96;[cit. 2021-06-25]&#96;. Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory//scriptum/listy-rim/listy_1971_1_zm_ocr.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory//scriptum/listy-rim/listy_1971_1_zm_ocr.pdf/&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -941,18 +945,18 @@ Co víš o poválečných převratech?
 
 Dalším významným exilovým periodikem bylo **SVĚDECTVÍ** (1956-1990) založené v roce 1956 v New Yorku, od roku 1960 vycházející v Paříži.
 Hlavní osobou spojenou s tímto významným jak poúnorovým, tak také posrpnovým periodikem, byl &lt;a class=&quot;modal-open&quot; href=&quot;#tigrid&quot;&gt;Pavel Tigrid&lt;/a&gt;.
-&lt;div id=&quot;tigrid&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/w/index.php?title=Pavel_Tigrid&amp;oldid=19823697&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;tigrid&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/w/index.php?title=Pavel_Tigrid&amp;oldid=19823697&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Wikipedie: Otevřená encyklopedie: Pavel Tigrid &#96;[online]&#96;. c2021 &#96;[cit. 2021-06-25]&#96;. Dostupný z WWW: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Pavel_Tigrid&amp;oldid=19823697&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Pavel_Tigrid&amp;oldid=19823697&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;a href=&quot;#c_tigrid&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Muzy_Tigrid-scaled.jpg&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_tigrid&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_tigrid&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/12/Muzy_Tigrid-scaled.jpg&quot;  class=&quot;center not-too-big&quot; width=&quot;80%&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: &#96;[Pavel Tigrid]&#96;. S.l: s.n., 1900-1999, s. &#96;[1a]&#96;. Dostupné také z: &lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:04b693a4-cc62-4a48-a27c-d555e77ef6f5&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:04b693a4-cc62-4a48-a27c-d555e77ef6f5&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -962,9 +966,9 @@ Hlavní osobou spojenou s tímto významným jak poúnorovým, tak také posrpno
 Můžeš si také přečíst úvodní slova Pavla Tigrida k&amp;nbsp;prvnímu číslu:
 
 &lt;a href=&quot;#c_sved&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Svedectvi_prvni_cislo.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_sved&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_sved&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Svedectvi_prvni_cislo.png&quot;  class=&quot;center not-too-big&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: REDAKCE. Výzva. *Svědectví* &#96;[online]&#96;. 1956, **1**(1), 1 &#96;[cit. 2021-06-25]&#96;. Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1956_01_ocr-opr.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1956_01_ocr-opr.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -982,38 +986,35 @@ Pavel Tigrid tedy patřil dle propagandy komunistického režimu k&amp;nbsp;nejo
 
 [[Zajímavé. A jak to bylo s posrpnovou vlnou?|VlnaDruha]]</tw-passagedata><tw-passagedata pid="32" name="VlnaDruha2" tags="exil" position="3650,1105" size="100,100">####Druhá vlna
 
-Další významnou událostí v oblasti exilové literatury bylo založení nakladatelství **68 Publishers** v roce 1971 manželi Škvoreckými, &lt;a href=&quot;#zdena&quot; class=&quot;modal-open&quot;&gt;Zdenou Salivarou&lt;/a&gt; a &lt;a href=&quot;#josef&quot; class=&quot;modal-open&quot;&gt;Josefem Škvoreckým&lt;/a&gt;v Torontu. Do roku 1993 zde vyšlo 224 knižních titulů. 
-&lt;div id=&quot;zdena&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;
-		&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Zdena_Salivarov%C3%A1&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+Další významnou událostí v oblasti exilové literatury bylo založení nakladatelství **68 Publishers** v roce 1971 manželi Škvoreckými, &lt;a href=&quot;#zdena&quot; class=&quot;modal-open&quot;&gt;Zdenou Salivarou&lt;/a&gt; a &lt;a href=&quot;#josef&quot; class=&quot;modal-open&quot;&gt;Josefem Škvoreckým&lt;/a&gt; v Torontu. Do roku 1993 zde vyšlo 224 knižních titulů. 
+&lt;div id=&quot;zdena&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+		&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Zdena_Salivarov%C3%A1&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Zdena Salivarová &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 6. 03. 2022, 13:19 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Zdena_Salivarov%C3%A1&amp;oldid=21007310&quot; class=&quot;hyper&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Zdena_Salivarov%C3%A1&amp;oldid=21007310&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;josef&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;
-		&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Josef_%C5%A0kvoreck%C3%BD&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;josef&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+		&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Josef_%C5%A0kvoreck%C3%BD&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Josef Škvorecký &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 6. 03. 2022, 13:19 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Josef_%C5%A0kvoreck%C3%BD&amp;oldid=21005356&quot; class=&quot;hyper&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Josef_%C5%A0kvoreck%C3%BD&amp;oldid=21005356&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
-
 &lt;a href=&quot;#c_skvor&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Skvorecti_459.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_skvor&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_skvor&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Skvorecti_459.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PŘIBÁŇ, Michal. *Česká literární nakladatelství 1949-1989.* Praha: Academia, 2014, s. 459. ISBN 978-80-200-2407-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:3fc25a1f-779e-4363-a42f-0e2125862aae&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:3fc25a1f-779e-4363-a42f-0e2125862aae&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;a href=&quot;#tank&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Skvorecti_TankovyPrapor_460.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;tank&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;tank&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Skvorecti_TankovyPrapor_460.jpg&quot; class=&quot;center not-too-big&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PŘIBÁŇ, Michal. *Česká literární nakladatelství 1949-1989.* Praha: Academia, 2014, s. 460. ISBN 978-80-200-2407-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:5ab20374-cd16-4ea7-8d18-97833c4c3b56&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:5ab20374-cd16-4ea7-8d18-97833c4c3b56&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1022,9 +1023,9 @@ Další významnou událostí v oblasti exilové literatury bylo založení nakl
 Významné také bylo nakladatelství **Index**, které založil v&amp;nbsp;Kolíně nad Rýnem roku 1971 **Adolf Müller**. V&amp;nbsp;tomto nakladatelství vyšlo 170 svazků. 
 
 &lt;a href=&quot;#barbar&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Index_Hrabal_166.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;barbar&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;barbar&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Index_Hrabal_166.jpg&quot; class=&quot;center not-too-big&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PŘIBÁŇ, Michal. *Česká literární nakladatelství 1949-1989.* Praha: Academia, 2014, s. 116. ISBN 978-80-200-2407-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:6402c037-1828-46d3-99a6-07764fae06d4&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:6402c037-1828-46d3-99a6-07764fae06d4&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1032,19 +1033,18 @@ Významné také bylo nakladatelství **Index**, které založil v&amp;nbsp;Kol�
 &lt;div class=&quot;zdroj&quot;&gt;Mimo jiné zde vycházely i Hrabalovy zakázané prózy.&lt;/div&gt;
 
 V roce 1982 vzniká další exilové nakladatelství, tentokráte v Londýně zakladá &lt;a href=&quot;#tom&quot; class=&quot;modal-open&quot;&gt;Alexander Tomský&lt;/a&gt; **Rozmluvy**. Zde vyšlo do roku 1989 76 titulů.
-&lt;div id=&quot;tom&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;
-		&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Alexander_Tomsk%C3%BD&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;tom&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+		&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Alexander_Tomsk%C3%BD&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Alexander Tomský &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2021, Datum poslední revize 7. 12. 2021, 21:07 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Alexander_Tomsk%C3%BD&amp;oldid=20708531&quot; class=&quot;hyper&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Alexander_Tomsk%C3%BD&amp;oldid=20708531&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;a href=&quot;#klima&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Rozmluvy_Klima_435.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;klima&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;klima&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Rozmluvy_Klima_435.jpg&quot; class=&quot;center not-too-big&quot;&gt;
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Priban_Rozmluvy_Klima_435.jpg&quot; class=&quot;center not-too-big&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: PŘIBÁŇ, Michal. *Česká literární nakladatelství 1949-1989.* Praha: Academia, 2014, s. 435. ISBN 978-80-200-2407-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:9b7bb859-24f5-444b-abb7-a939d652b24e&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:9b7bb859-24f5-444b-abb7-a939d652b24e&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;
@@ -1055,9 +1055,9 @@ A co zkusit hru s asociacemi?
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=150&quot; width=&quot;958&quot; height=&quot;379&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; title=&quot;VlnyTest&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 
 [[A jako to bylo s exilovými počiny po roce 1989?|KonecExilu]]
-&lt;div id=&quot;help&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;help&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
 ####Nápověda
 Zkus se zamyslet nad příjmeními osobností československého exilu. Následně spoj jejich exilové vydavatelské počiny s odpovídajícím zvířetem na základě vybavené slovní asociace mezi zvířetem a příjmením exilové osobnosti.
     &lt;/div&gt;\
@@ -1073,9 +1073,9 @@ Jakým způsobem a kdo se zapojoval do pašování literatury?
 Tuto otázku není jednoduché zodpovědět. Jelikož bylo pašování exilové literatury a samizdatu samozřejmě zakázanou činností, neexistují o tom všem přehledné a&amp;nbsp;celistvé zprávy, přesto však víme o určitých cestách, které fungovaly a byly využívány.
 
 &lt;a href=&quot;#hrdinove&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Siklova_BezOhlavky_129.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;hrdinove&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;hrdinove&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Siklova_BezOhlavky_129.jpg&quot; class=&quot;center&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠIKLOVÁ, Jiřina, Michal PLZÁK a Magdalena ČECHLOVSKÁ. *Bez ohlávky: (rozhovory).* Praha: Kalich, 2011, s. 129. ISBN 978-80-7017-154-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b959e1ae-188b-4522-8e41-504b9f391b40&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b959e1ae-188b-4522-8e41-504b9f391b40&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1090,9 +1090,9 @@ Tuto otázku není jednoduché zodpovědět. Jelikož bylo pašování exilové 
 
 
 &lt;a href=&quot;#kon&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Gluckselig_podobyKontrabandu_96.jpg&quot; alt=&quot;zabavené tiskoviny&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;kon&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;kon&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Gluckselig_podobyKontrabandu_96.jpg&quot; alt=&quot;zabavené tiskoviny&quot; class=&quot;center&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: GLÜCKSELIG, Josef. *Podoby kontrabandu: (pašeráci včera a dnes).* Praha: Naše vojsko, 1986, s. &#96;[96e]&#96;. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:a2f02a10-4c06-11e3-ac54-005056825209 &quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:a2f02a10-4c06-11e3-ac54-005056825209&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1109,9 +1109,9 @@ A jaký osud čekal zadržené tiskoviny? Na to se můžeš podívat v&amp;nbsp;
 Po svém zatčení v květnu 1981 se Šiklová ve své obhajobě vůči nařčení z podvracení republiky v případu Kamion zmiňuje též o ničení knih a snaží se, aby byly knihy alespoň zachovány, když ne zpřístupněny československým občanům.
 
 &lt;a href=&quot;#c_sik&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Siklova_Orwell.png&quot; alt=&quot;Siklova_obhajoba&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_sik&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_sik&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Siklova_Orwell.png&quot; alt=&quot;Siklova_obhajoba&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠIKLOVÁ, Jiřina. &quot;Nedopusťte, aby byly zničeny!&quot;. *Literární noviny* &#96;[online]&#96;. 2000, **11**(25), 3 &#96;[cit. 2021-06-16]&#96;. ISSN 1210-0021. Dostupné také z: &lt;a href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/11.2000/25/3.png&quot; target=&quot;_blank&quot;&gt;http://archiv.ucl.cas.cz/index.php?path=LitNIII/11.2000/25/3.png.&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -1122,9 +1122,9 @@ Po svém zatčení v květnu 1981 se Šiklová ve své obhajobě vůči nařčen
 Veliké množství výtisků poslaných z několika různých měst v zahraničí napomáhalo tomu, aby alespoň část z&amp;nbsp;nich unikla pozornosti cenzury a našla si svého domácího adresáta. Pavel Tigrid v roce 1990 ve svém Svědectví se právě i o této technice pašování literatury zmiňuje a děkuje lidem, kteří byli ochotni se zapojit do zasílání tiskovin poštou.
 
 &lt;a href=&quot;#c_tig&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Tigrid_Svedectvi.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_tig&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_tig&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Tigrid_Svedectvi.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: TIGRID, Pavel. Úvodem. *Svědectví* &#96;[online]&#96;. 1990, **23**(89/90), s. 5 &#96;[cit. 2021-06-16]&#96;. ISSN 0586-0350. Dostupné z:&lt;a href=&quot;http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1990_89-90.pdf&quot; target=&quot;_blank&quot;&gt; http://scriptum.cz/soubory/scriptum/svedectvi/svedectvi_1990_89-90.pdf&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;\
@@ -1138,9 +1138,9 @@ Dalším způsobem, jak dostat exilovou literaturu do Československa, bylo jej�
 Takto tuto situaci komentuje soudobá publikace *Podoby kontrabandu: (pašeráci včera a dnes)* z roku 1986:
 
 &lt;a href=&quot;#kon&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Gluckselig_podobyKontrabandu_96e_vozidla.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;kon&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;kon&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Gluckselig_podobyKontrabandu_96e_vozidla.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: GLÜCKSELIG, Josef. *Podoby kontrabandu: (pašeráci včera a dnes).* Praha: Naše vojsko, 1986, s. &#96;[96p]&#96;. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:a3541c00-4c06-11e3-ac54-005056825209&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:a3541c00-4c06-11e3-ac54-005056825209&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1149,9 +1149,9 @@ Takto tuto situaci komentuje soudobá publikace *Podoby kontrabandu: (pašeráci
 O těchto cestách se zmiňuje též Jiří Škvorecký ve svém rozhovoru pro zahraniční tisk:
 
 &lt;a href=&quot;#c_skvo&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Skvorecky_rozhovor2.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_skvo&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_skvo&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_Skvorecky_rozhovor2.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: GOUREVITCH, Philip a Josef, ŠKVORECKÝ. An Interview with Josef Skvorecky. *Columbia: Journal of Literature and Art* &#96;[online]&#96;. 1991, 16, 88-102 &#96;[cit. 2021-06-16]&#96;. ISSN 0161486X. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://www.jstor.org/stable/41807092&quot; target=&quot;_blank&quot;&gt;https://www.jstor.org/stable/41807092&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1167,9 +1167,9 @@ Jedním ze zahraničních pašeráků byl také kanadský diplomat Peter Bakewel
 Před Bakewellem v letech 1983 až 1986 s Prečanem a Šiklovou také spolupracoval západoněmecký diplomat &lt;a href=&quot;#scheur&quot; class=&quot;modal-open&quot;&gt;Wolfgang Scheur&lt;/a&gt;.	V roce 1995 se Scheur za svou oddanou práci pro rozvoj demokracie v ČSSR dočkal dokonce udělení Řádu Tomáše Garrigua Masaryka.
 
 &lt;a href=&quot;#tgm&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Scheur_RadTGM_Havel_224r.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;tgm&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;tgm&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Scheur_RadTGM_Havel_224r.jpg&quot; class=&quot;center&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;
 		Zdroj: PREČAN, Vilém, Milan UHDE a Ludger UDOLPH. *Im Dienst der gemeinsamen Sache: Wolfgang Scheur und Prag 1981-1989.* Brno: Atlantis, 2001, s. &#96;[224r]&#96;. ISBN 80-7108-226-0. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:317fb141-c4f6-8b41-dc93-48f444cbeb97&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:317fb141-c4f6-8b41-dc93-48f444cbeb97&lt;/a&gt;&lt;/div&gt;\
@@ -1177,10 +1177,10 @@ Před Bakewellem v letech 1983 až 1986 s Prečanem a Šiklovou také spolupraco
 &lt;/div&gt;\
 
 [[Zpět|Cesty]]
-&lt;div id=&quot;scheur&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Wolfgang_Scheur&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;scheur&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Wolfgang_Scheur&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: 
 		Přispěvatelé Wikipedie, Wolfgang Scheur &#96;[online]&#96;, Wikipedie: Otevřená encyklopedie, c2021, Datum poslední revize 3. 08. 2021, 13:44 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupný z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Wolfgang_Scheur&amp;oldid=20278657&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/w/index.php?title=Wolfgang_Scheur&amp;oldid=20278657&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1189,9 +1189,9 @@ Před Bakewellem v letech 1983 až 1986 s Prečanem a Šiklovou také spolupraco
 Československo bylo v područí komunistického režimu, který jak v 50. letech, tak později během normalizace značně omezoval tok informací ve společnosti. Totalitní režim nedovoloval svobodu slova ani tisku, proto musely existovat jiné způsoby, jak zakázanou literaturu dostat mezi československé čtenáře. Kromě oficiální kultury zde tedy existovala i tzv. kultura paralelní, která fungovala na pozadí toho, co se vydávalo za jediný povolený zdroj informací. K tomuto alternativnímu zdroji však nebylo vůbec jednoduché se dostat. Existovali zde však lidé, kteří doslova nasazovali svůj krk, aby se tato paralelní kultura u&amp;nbsp;nás pěstovala.
 
 &lt;a href=&quot;#sam&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_DejinyPolicieCetnictva_233.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;sam&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;sam&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_DejinyPolicieCetnictva_233.jpg&quot; class=&quot;center&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;
 		Zdroj: MACEK, Pavel a Lubomír UHLÍŘ. *Dějiny policie a četnictva, IV: Československo (1945-1989).* Praha: Police history, 2011, s. 233. ISBN 978-80-86477-55-8. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:cea6d350-dc54-11e3-93a3-005056825209&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:cea6d350-dc54-11e3-93a3-005056825209&lt;/a&gt;&lt;/div&gt;\
@@ -1204,9 +1204,9 @@ Paralelní kultura byla do určité míry závislá na komunikaci s exilem. Exil
 [[Cože? Ideodiverzní centra? Co je to za slovo?|IdeoVys]]</tw-passagedata><tw-passagedata pid="40" name="IdeoVys" tags="hranice" position="2588,1584" size="100,100">####Ideodiverzní centra
 
 &lt;a href=&quot;#c_skvo&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_defiIDC.png&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_skvo&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_skvo&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_defiIDC.png&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;
 		Zdroj: VACHALOVSKÝ, Přemysl a Pavel ŽÁČEK. Jan Kavan v labyrintu služeb. Praha: Formát, 2003, s. 245. ISBN 80-86718-02-6. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:741cf0e0-5358-11e6-8746-005056825209&quot; target=&quot;_blank&quot;&gt; http://www.digitalniknihovna.cz/mzk/uuid/uuid:741cf0e0-5358-11e6-8746-005056825209&lt;/a&gt;&lt;/div&gt;\
@@ -1233,9 +1233,9 @@ Pelikánovy **Listy** a Tigridovo **Svědectví** byly považovány za jedny z n
 V Rudém právu (prominentních novinách komunistického režimu) vyšel i článek, který upozorňoval na ideodiverzní činnost a podplácení exilových periodik zahraničními tajnými službami.
 
 &lt;a href=&quot;#c_skvo&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Bret.jpg&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_skvo&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_skvo&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Bret.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: BRETT, Vladimír. Pohled za kulisy. *Rudé právo: Ústřední orgán Komunistické strany Československa. * &#96;[online]&#96;. Praha: Komunistická strana Československa, 6.1.1973, **53-54**(5), 4 &#96;[cit. 2021-06-16]&#96;. ISSN 0032-6569. Dostupný z: &lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:a3a14670-6578-11de-badf-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:a3a14670-6578-11de-badf-000d606f5dc6&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -1247,9 +1247,9 @@ Bohužel, bylo to přesně naopak. Pelikánovy **Listy** a&amp;nbsp;Tigridovo **
 V Rudém právu (prominentních novinách komunistického režimu) vyšel i článek, který upozorňoval na ideodiverzní činnost a podplácení exilových periodik zahraničními tajnými službami.
 
 &lt;a href=&quot;#c_skvo&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Bret.jpg&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_skvo&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_skvo&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Bret.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: BRETT, Vladimír. Pohled za kulisy. *Rudé právo: Ústřední orgán Komunistické strany Československa. * &#96;[online]&#96;. Praha: Komunistická strana Československa, 6.1.1973, **53-54**(5), 4 &#96;[cit. 2021-06-16]&#96;. ISSN 0032-6569. Dostupný z: &lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:a3a14670-6578-11de-badf-000d606f5dc6 &quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:a3a14670-6578-11de-badf-000d606f5dc6&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -1282,36 +1282,36 @@ V Rudém právu (prominentních novinách komunistického režimu) vyšel i čl�
 Co se o případu psalo v Rudém právu?
 
 &lt;a href=&quot;#c_ctk1&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Diverzni_titulek.jpg&quot; alt=&quot;Siklova_obhajoba&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_ctk1&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_ctk1&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Diverzni_titulek.jpg&quot; alt=&quot;Siklova_obhajoba&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ČTK. Diverzní činnost proti SSSR. *Rudé právo: Ústřední orgán Komunistické strany Československa.* &#96;[online]&#96;. Praha: Komunistická strana Československa, 16.5.1981, **61**(114), 2 &#96;[cit. 2021-06-21]&#96;. ISSN 0032-6569. Dostupný z:&lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:2d7b01d0-f798-11df-b17b-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:2d7b01d0-f798-11df-b17b-000d606f5dc6&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;a href=&quot;#c_ctk2&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Diverzni-cinnost-proti-CSSR_vynatek.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_ctk2&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_ctk2&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Diverzni-cinnost-proti-CSSR_vynatek.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ČTK. Diverzní činnost proti SSSR. *Rudé právo: Ústřední orgán Komunistické strany Československa.* &#96;[online]&#96;. Praha: Komunistická strana Československa, 16.5.1981, **61**(114), 2 &#96;[cit. 2021-06-21]&#96;. ISSN 0032-6569. Dostupný z:&lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:2d7b01d0-f798-11df-b17b-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:2d7b01d0-f798-11df-b17b-000d606f5dc6&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;
 
 &lt;a href=&quot;#c_ctk3&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Zprava-CTK_Vynatek2.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_ctk3&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_ctk3&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Zprava-CTK_Vynatek2.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ČTK. Zpráva ČTK. *Rudé právo: Ústřední orgán Komunistické strany Československa.* &#96;[online]&#96;. Praha: Komunistická strana Československa, 7.5.1981, **61-62**(105), 2&#96;[cit. 2021-06-21]&#96;. ISSN 0032-6569. Dostupný z:&lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:4e739ef0-f870-11df-a2ae-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:4e739ef0-f870-11df-a2ae-000d606f5dc6&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;
 
 &lt;a href=&quot;#c_ctk4&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Zprava-CTK_vynatek.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_ctk4&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_ctk4&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Zprava-CTK_vynatek.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ČTK. Zpráva ČTK. *Rudé právo: Ústřední orgán Komunistické strany Československa.* &#96;[online]&#96;. Praha: Komunistická strana Československa, 7.5.1981, **61-62**(105), 2&#96;[cit. 2021-06-21]&#96;. ISSN 0032-6569. Dostupný z:&lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:4e739ef0-f870-11df-a2ae-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:4e739ef0-f870-11df-a2ae-000d606f5dc6&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1320,18 +1320,18 @@ Co se o případu psalo v Rudém právu?
 |click1&gt;[Co se stalo s Anisovou a Thononem?]
 (click: ?click1)[
 &lt;a href=&quot;#c_ctk5&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/CTK_vyhosteni_tit.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_ctk5&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_ctk5&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/CTK_vyhosteni_tit.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ČTK. Vyhoštěni z ČSSR. *Rudé právo: Ústřední orgán Komunistické strany Československa.* &#96;[online]&#96;. Praha: Komunistická strana Československa, 20.5.1981, **61-62**(117), 2 &#96;[cit. 2021-06-21]&#96;. ISSN 0032-6569. Dostupné z: &lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:2de4e730-f798-11df-88f2-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:2de4e730-f798-11df-88f2-000d606f5dc6&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;
 
 &lt;a href=&quot;#c_ctk6&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/CTK_vyhosteni_2.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_ctk6&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_ctk6&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/CTK_vyhosteni_2.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ČTK. Vyhoštěni z ČSSR. *Rudé právo: Ústřední orgán Komunistické strany Československa.* &#96;[online]&#96;. Praha: Komunistická strana Československa, 20.5.1981, **61-62**(117), 2 &#96;[cit. 2021-06-21]&#96;. ISSN 0032-6569. Dostupné z: &lt;a href=&quot;https://dnnt.mzk.cz/uuid/uuid:2de4e730-f798-11df-88f2-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;https://dnnt.mzk.cz/uuid/uuid:2de4e730-f798-11df-88f2-000d606f5dc6&lt;/a&gt;&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1344,9 +1344,9 @@ Se Šiklovou a spol. se připravoval monstrproces, ke kterému však nedošlo i 
 Tlak na představitele komunistického režimu také pomáhala vyvolat exilová periodika, např. Pelikánovy Listy.
 
 &lt;a href=&quot;#c_zat&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_represe_Quality.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_zat&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_zat&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_represe_Quality.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: REDAKCE LISTŮ. Nová vlna represe. *Listy* &#96;[online]&#96;. 1981, **11**(3-4), 2 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-1222. Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory//scriptum/listy-rim/listy_1981_3_4_zm_ocr.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory//scriptum/listy-rim/listy_1981_3_4_zm_ocr.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1364,25 +1364,25 @@ Reflexi těchto událostí můžeš nalézt i v uměleckých dílech. Vyber jedn
 ]
 (click: ?click1)[(replace: ?clicks)[
 O této pohnuté době ve vazbě napsala spisovatelka &lt;a href=&quot;#spisovatelka&quot; class=&quot;modal-open&quot;&gt;Eva Kantůrková,&lt;/a&gt; jedna ze zadržených v případu Kamion, ve své knize &lt;a href=&quot;#wikiKan&quot; class=&quot;modal-open&quot;&gt;*Přítelkyně z domu smutku*.&lt;/a&gt; Bedlivě si přečti vybranou ukázku:
-&lt;div id=&quot;spisovatelka&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Eva_Kant%C5%AFrkov%C3%A1&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;spisovatelka&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Eva_Kant%C5%AFrkov%C3%A1&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie,  Eva Kantůrková &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2021, Datum poslední revize 28. 11. 2021, 21:56 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Eva_Kant%C5%AFrkov%C3%A1&amp;oldid=20680371&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Eva_Kant%C5%AFrkov%C3%A1&amp;oldid=20680371&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;wikiKan&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/P%C5%99%C3%ADtelkyn%C4%9B_z_domu_smutku&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;wikiKan&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/P%C5%99%C3%ADtelkyn%C4%9B_z_domu_smutku&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Přítelkyně z domu smutku &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 31. 01. 2022, 23:28 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=P%C5%99%C3%ADtelkyn%C4%9B_z_domu_smutku&amp;oldid=20893230&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=P%C5%99%C3%ADtelkyn%C4%9B_z_domu_smutku&amp;oldid=20893230&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;a href=&quot;#kan&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kanturkova_96.jpg&quot;&gt;&lt;/a&gt;
 
-&lt;div id=&quot;kan&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;kan&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kanturkova_96.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: KANTŮRKOVÁ, Eva. *Přítelkyně z domu smutku.* Praha: Československý spisovatel, 1990, s. 96. ISBN 80-202-0195-5. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f36367c0-8567-11e2-b238-005056827e52&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:f36367c0-8567-11e2-b238-005056827e52&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;\
@@ -1406,32 +1406,32 @@ Naštěstí u Šiktance zůstalo pouze u výslechu, pokud se dá mluvit o štěs
 
 [[A tím bylo pašování literatury přerušeno?|Vzpominky4]]
 ]]
-&lt;div id=&quot;list&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;list&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        	&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Siktanc_Hruska_249.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: HRUŠKA, Petr a František KNOPP. *Někde tady: český básník Karel Šiktanc.* Brno: Host, 2010, s. 249. ISBN 978-80-7294-377-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:d9313640-81ba-11e6-bf08-001018b5eb5c&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:d9313640-81ba-11e6-bf08-001018b5eb5c&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;spisovatel&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Karel_%C5%A0iktanc&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;spisovatel&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Karel_%C5%A0iktanc&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Karel Šiktanc &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 6. 03. 2022, 14:17 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Karel_%C5%A0iktanc&amp;oldid=21005550&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Karel_%C5%A0iktanc&amp;oldid=21005550&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;sik&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;sik&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Siklova_BezOhlavky_Prohlidka_208.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;I když se Šiklová většinou možných kompromitujících materiálů zbavovala, tentokráte nechala útržky dopisů v koši. Zdroj: ŠIKLOVÁ, Jiřina, Michal PLZÁK a Magdalena ČECHLOVSKÁ. *Bez ohlávky: (rozhovory).* Praha: Kalich, 2011, s. 208. ISBN 978-80-7017-154-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:de4b5911-e1fa-4f48-8f6a-fed9e6022bc2&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:de4b5911-e1fa-4f48-8f6a-fed9e6022bc2&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="47" name="DolniDvoriste" tags="pasovaniDD" position="1698,2970" size="100,100">####Zadržení v Dolním Dvořišti
 
 Nebyla. O příjezdu karavanu se již vědělo předem. Na konci roku 1980 byl totiž do pašerácké sítě Jiřiny Šiklové dosazen agent &lt;a class=&quot;modal-open&quot; href=&quot;#Murasko&quot;&gt;Filip (tj. Pavel Muraško)&lt;/a&gt;, který byl součástí akce StB známé jako akce Delta.
-&lt;div id=&quot;Murasko&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;Murasko&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Schovanek_AgentFilip.png&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: SCHOVÁNEK, Radek. Odpověď Jánu Mlynárikovi. *Literární noviny* &#96;[online]&#96;. 2001, **12**(23), 3 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-0021. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&quot; target=&quot;_blank&quot;&gt;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1439,9 +1439,9 @@ Nebyla. O příjezdu karavanu se již vědělo předem. Na konci roku 1980 byl t
  
 StB tedy o dovážce do Československa věděla, neměla však informaci o tom, přes který hraniční přejezd má karavan přijet. Celníci byli proto upozorněni, aby se zaměřili na karavany. 
 Na přechodu v &lt;a class=&quot;modal-open&quot; href=&quot;#dolni&quot;&gt;Dolním Dvořišti,&lt;/a&gt; při kontrole hmotnosti karavanu francouzské posádky, celníky upoutala skutečnost, že hmotnost karavanu byla neúměrně větší, než to u tohoto typu vozidla bylo zvykem. Proto francouzský karavan předali k prohlídce StB.
-&lt;div id=&quot;dolni&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;dolni&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Dostal_DolniDvoriste_79.jpg&quot; class=&quot;center&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Malá obec Dolní Dvořiště na jihu Čech sídlí v blízkoski Rakouska. Zdroj: DOSTÁL, Jaroslav. Šumava turistům a lyžařům. Praha: Zemský cizinecký svaz, 1947, s. &#96;[79]&#96;. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b0f50893-c4a6-4ca5-a65c-b20a2b22ded1&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b0f50893-c4a6-4ca5-a65c-b20a2b22ded1&lt;/a&gt;&lt;/div&gt;\
 		
@@ -1499,9 +1499,9 @@ Normalizací nazýváme oddobí, která následovalo po invazi vojsk Varšavské
 [[Byla normalizace nebezpečným obdobím?|Normalizace2]]</tw-passagedata><tw-passagedata pid="51" name="Normalizace2" tags="exil" position="4007,942" size="100,100">####Normalizace
 
 &lt;a href=&quot;#c_tom&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_TOMEK_normalizace2.png&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_tom&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_tom&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_TOMEK_normalizace2.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: TOMEK, Prokop. &quot;Špionáž&quot; v normalizačním Československu. *Paměť a dějiny* &#96;[online]&#96; 2008, **2**(3), s. 5-24 &#96;[cit. 2021-06-23]&#96;. ISSN 1802-8241. Dostupné také z: &lt;a href=&quot;https://www.ustrcr.cz/data/pdf/pamet-dejiny/0803-005-024.pdf.&quot; target=&quot;_blank&quot;&gt;https://www.ustrcr.cz/data/pdf/pamet-dejiny/0803-005-024.pdf.&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;
@@ -1520,9 +1520,9 @@ StB s tlumočníkem dorazili až přístí den ráno a karavan prohledali. Nalez
 
 &lt;a href=&quot;#cas&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_26_zabaveneTiskoviny.jpg&quot;&gt;&lt;/a&gt;
 
-&lt;div id=&quot;cas&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;cas&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_26_zabaveneTiskoviny.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: WANATOWICZOVÁ, Krystyna. Povolání agent. *Týden: události - peníze - styl - lidé + TV sešit : moderní zpravodajský týdeník.* Praha: K Service, reklamní a tiskové služby, 2006, **13**(21), s. 26. ISSN 1210-9940. Dostupné také z: &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8e80440-1b90-11e9-90cf-5ef3fc9bb22f&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8e80440-1b90-11e9-90cf-5ef3fc9bb22f&lt;/a&gt;&lt;/div&gt;
     &lt;/div&gt;\
@@ -1540,9 +1540,9 @@ Podívej se video, kde je nafilmováno odkrytí tajných skrýší v karavanu
 &lt;div class=&quot;zdroj&quot;&gt;Zdroj: EM4 přichází  &#96;[online]&#96;. ]. Československá televize, 1981 &#96;[cit. 2021-06-16]&#96;. Dostupné z: &lt;a href=&quot;https://www.ceskatelevize.cz/ivysilani/702515-em4-prichazi&quot; target=&quot;_blank&quot;&gt;https://www.ceskatelevize.cz/ivysilani/702515-em4-prichazi&lt;/a&gt;&lt;/div&gt;
 
 [[A co se ještě stalo?|Zatceni]]
-&lt;div id=&quot;cyklo&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;cyklo&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
 		&lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_RudePravo_19810630_3_technickeVybaveni.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zabavené technické vybavení, např. cyklostyl. Co to bylo za zařízení si můžeš přečíst níže. Zdroj: *Rudé právo: Ústřední orgán Komunistické strany Československa.* Praha: Komunistická strana Československa, 30.6.1981, **61-62**(152), s. 3. ISSN 0032-6569. Dostupné také z: &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b9c49790-f799-11df-9615-000d606f5dc6&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b9c49790-f799-11df-9615-000d606f5dc6&lt;/a&gt;&lt;/div&gt;\
 		
@@ -1556,36 +1556,35 @@ Podívej se video, kde je nafilmováno odkrytí tajných skrýší v karavanu
 Agent Filip (Pavel Muraško) vyzradil také úložiště ostatního materiálu určeného k vývozu – bylo zřízeno ve Staré Boleslavi. Následně bylo v této souvislosti pozatýkáno několik lidí, jednalo se většinou o signatáře Charty 77 a členy Výboru na obranu nespravedlivě stíhaných (VONS). Zatčení lidé byli obviněni z trestného činu podvracení republiky a někteří ze zadržených poté strávili téměř rok ve vězení.
 
 &lt;a href=&quot;#c_zat&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_MlynarikZatceni.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_zat&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_zat&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_MlynarikZatceni.png&quot; class=&quot;center enlarge&quot;&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_MlynarikZatceni.png&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: MLYNÁRIK, Ján. Ještě jednou o&quot;kamionu&quot;: akce &quot;Delta&quot; a fízlové. *Literární noviny* &#96;[online]&#96;. 2001, **12**(23), 3 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-0021. Dostupné také z:&lt;a href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&quot; target=&quot;_blank&quot;&gt; http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;
+&lt;/div&gt;\
 
 &lt;a href=&quot;#c_rep&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Listy_1981_NovaVlnaReprese_s2.bmp&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_rep&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_rep&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Listy_1981_NovaVlnaReprese_s2.bmp&quot; class=&quot;center&quot;&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Listy_1981_NovaVlnaReprese_s2.bmp&quot; class=&quot;center&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: REDAKCE LISTŮ. Nová vlna represe. *Listy* &#96;[online]&#96;. 1981, **11**(3-4), s. 2 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-1222. Dostupné z: &lt;a href=&quot;http://scriptum.cz/soubory//scriptum/listy-rim/listy_1981_3_4_zm_ocr.pdf&quot; target=&quot;_blank&quot;&gt;http://scriptum.cz/soubory//scriptum/listy-rim/listy_1981_3_4_zm_ocr.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;
-
+&lt;/div&gt;\
 
 Co o zatýkání v rámci akce Delta (případu Kamion) vypověděl &lt;a class=&quot;modal-open&quot; href=&quot;#Havel&quot;&gt;Ivan Havel?&lt;/a&gt;
 
-&lt;iframe class=&quot;center youtube&quot; src=&quot;https://www.youtube.com/embed/AuJINYbNI-s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;div class=&quot;zdroj&quot;&gt;
+&lt;iframe class=&quot;center youtube&quot; src=&quot;https://www.youtube.com/embed/AuJINYbNI-s&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;\
+&lt;div class=&quot;zdroj&quot;&gt;\
 Zdroj: PAMĚŤ NÁRODA. Ivan M. Havel o zatýkání v rámci akce Delta. In: *Youtube.com* &#96;[online]&#96;. 26. 4. 2021 &#96;[cit. 2021-06-21]&#96;. Dostupné z: &lt;a href=&quot;https://www.youtube.com/watch?v=AuJINYbNI-s&amp;ab_channel=Pam%C4%9B%C5%A5n%C3%A1roda&quot; target=&quot;_blank&quot;&gt;https://www.youtube.com/watch?v=AuJINYbNI-s&amp;ab_channel=Pam%C4%9B%C5%A5n%C3%A1roda&lt;/a&gt;
 &lt;/div&gt;
 
 [[A proč byli po roce puštěni?|Reakce]]
-&lt;div id=&quot;Havel&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ivan_M._Havel&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;Havel&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ivan_M._Havel&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Ivan M. Havel &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 14. 01. 2022, 07:19 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Ivan_M._Havel&amp;oldid=20829521&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Ivan_M._Havel&amp;oldid=20829521&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="55" name="Vzpominky4" tags="pasovaniDD" position="1731,3678" size="100,100">####Pokračování v pašování literatury
@@ -1593,9 +1592,9 @@ Zdroj: PAMĚŤ NÁRODA. Ivan M. Havel o zatýkání v rámci akce Delta. In: *Yo
 Nikoliv.
 
 &lt;a href=&quot;#c_obn&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Schovanek_kamion_Pasovani.png&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_obn&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;c_obn&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Schovanek_kamion_Pasovani.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: SCHOVÁNEK, Radek. Jak to bylo s &quot;kamionem&quot;. *Literární noviny* &#96;[online]&#96;. 2001, **12**(18), 3 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-0021. Dostupné také z: &lt;a href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/18.&quot; target=&quot;_blank&quot;&gt;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/18.
 &lt;/a&gt;&lt;/div&gt;
@@ -1605,9 +1604,9 @@ Nikoliv.
 [[Pokračovat|ZaverecnaUloha]]</tw-passagedata><tw-passagedata pid="56" name="ZaverecnaUloha" tags="pasovani task" position="1694,3854" size="100,100">####Závěrečná úloha
 
 &lt;a class=&quot;modal-open&quot; href=&quot;#Mur&quot;&gt;Kdo to vlastně byl Pavel Muraško?&lt;/a&gt;
-&lt;div id=&quot;Mur&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;Mur&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
 Agent Filip, skutečným jménem Pavel Muraško, se narodil ukrajinským rodičům (avšak měl státní příslušenství ČSSR), vystudoval filosofickou fakultu v Prešově, působil jako učitel ukrajinského jazyka a později jako technik v Pražských vodárnách (jedno z typických zaměstnání disidentů po srpnu 68). Muraško byl disident, protože byl v první polovině 70. let vězněn na Mírově právě za pašování ukrajinské opoziční literatury. Ve vězení se seznámil s českými disidenty a v roce 1977 i podepsal Chartu 77. Počátek jeho spolupráce s StB se datuje k roku 1980. Muraško však žil v domnění, že spolupracuje s KGB, spolupráci s StB odmítl (důstojníci StB si tak před Muraškem museli hrát na své ruské kolegy). Během normalizace nebyl Muraško českým disentem jako agent odhalen. Dle záznamů z Archivu bezpečnostních služeb s Muraškem StB ukončilo spolupráci v roce 1986. Důvedem byla Muraškova stále trvající aktivní činnost v disidentských organizacích a snížená kvalita zpráv projevující se především horší konkretizací osob a míst. Po revoluci se Muraško stal na krátkou chvíli i aktivním politikem (poslancem za Občanské fórum). Ale už v roce 1990 byl Petrem Pithartem vykázán z Federálního shromáždění poté, co byly odkryty dokumenty odhalující Muraškovu spolupráci s StB.
 		&lt;div class=&quot;zdroj&quot;&gt;(align:&quot;&lt;==&quot;)+(box:&quot;XXX==&quot;)[Zdroje:]  
 Přispěvatelé Wikipedie, Pavel Muraško &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*,  c2021, Datum poslední revize 26. 03. 2021, 14:01 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Pavel_Mura%C5%A1ko&amp;oldid=19650487&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Pavel_Mura%C5%A1ko&amp;oldid=19650487&lt;/a&gt;
@@ -1621,82 +1620,82 @@ WANATOWICZOVÁ, Krystyna. Povolání agent. *Týden: události - peníze - styl 
 
 *Přečti si následující názory na spolupráci Pavla Muraška s&amp;nbsp;StB.*
 &lt;div class=&quot;grid-container&quot;&gt;\
-&lt;div class=&quot;grid-item-one&quot;&gt;
+&lt;div class=&quot;grid-item-one&quot;&gt;\
 Co o Muraškovi napsala Jiřina Šiklová?
 
 &lt;a href=&quot;#c_obn&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Siklova_LitinoveKolecko.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_obn&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_obn&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-        &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Siklova_LitinoveKolecko.png&quot; class=&quot;center enlarge&quot;&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+        &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Siklova_LitinoveKolecko.png&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠIKLOVÁ, Jiřina. Ještě jednou o &quot;kamionu&quot;: jak to bylo s &quot;Filipem&quot;. *Literární noviny* &#96;[online]&#96;. 2001, **12**(23), 3 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-0021. Dostupné také z:&lt;a href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&quot; target=&quot;_blank&quot;&gt;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;/div&gt;
-&lt;div class=&quot;grid-item-two&quot;&gt;
+&lt;/div&gt;\
+&lt;div class=&quot;grid-item-two&quot;&gt;\
 V témže vydání Literárních novin píše o Pavlu Muraškovi také &lt;a href=&quot;#Sabatova&quot; class=&quot;modal-open&quot;&gt;Anna Šabatová,&lt;/a&gt; signatářka Charty 77, a mimo jiné také vydavatelka periodika Informace o Chartě 77 a spoluzakladatelka Výboru na obranu nespravedlivě stíhaných (VONS):
 &lt;a href=&quot;#c_sab&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Sabatova.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_sab&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_sab&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_Sabatova.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠABATOVÁ, Anna. Ještě jednou o &quot;kamionu&quot;: je snadné říci &quot;fízl&quot;. *Literární noviny* &#96;[online]&#96;. 2001, **12**(23), 3 &#96;[cit. 2021-06-21]&#96;. ISSN 1210-0021. Dostupné také z:&lt;a href=&quot;http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&quot; target=&quot;_blank&quot;&gt; http://archiv.ucl.cas.cz/index.php?path=LitNIII/12.2001/23.&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div class=&quot;grid-item-three&quot;&gt;
+&lt;div class=&quot;grid-item-three&quot;&gt;\
 Novinář, publicista a básník &lt;a href=&quot;#Stern&quot; class=&quot;modal-open&quot;&gt;Jan Štern&lt;/a&gt;, byl další z lidí v opozici, který se též podílel na disidentských aktivitách (vedl domácí ilegální redakci Pelikánových Listů), podepsal Chartu 77 a byl jejím mluvčím, vzpomenul v Listech též na osobnost Pavla Muraška (označovanou v textu jako Dr. M.) i skrze vzpomínky jiného českého disidenta Josefa Mundila, který se zase staral např. o distribuci Tigridova Svědectví.
-&lt;div id=&quot;Stern&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Jan_%C5%A0tern&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;Stern&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Jan_%C5%A0tern&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Jan Štern &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2021, Datum poslední revize 15. 05. 2021, 01:52 UTC,  &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Jan_%C5%A0tern&amp;oldid=19869309&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Jan_%C5%A0tern&amp;oldid=19869309/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;a href=&quot;#stern1&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Stern_Kamion_20_a-1-e1648195897488.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;stern1&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;stern1&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Stern_Kamion_20_a-1-e1648195897488.jpg&quot; class=&quot;center enlarge&quot;&gt;
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Stern_Kamion_20_a-1-e1648195897488.jpg&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠTERN, Jan. Kamión. *Listy: časopis československé socialistické opozice* &#96;[online]&#96;. Praha: Československá socialistická opozice, 1991, **21**(6), s. 20. ISSN 1210-1222. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b738a640-a79c-11e8-99aa-005056827e51&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b738a640-a79c-11e8-99aa-005056827e51&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
-&lt;/div&gt;
+&lt;/div&gt;\
 &lt;a href=&quot;#stern2&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Stern_Kamion_21_b.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;stern2&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;stern2&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Stern_Kamion_21_b.jpg&quot; class=&quot;center enlarge&quot;&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Stern_Kamion_21_b.jpg&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠTERN, Jan. Kamión. *Listy: časopis československé socialistické opozice* &#96;[online]&#96;. Praha: Československá socialistická opozice, 1991, **21**(6), s. 21. ISSN 1210-1222. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b738a640-a79c-11e8-99aa-005056827e51&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b738a640-a79c-11e8-99aa-005056827e51&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div class=&quot;grid-item-four&quot;&gt;
+&lt;div class=&quot;grid-item-four&quot;&gt;\
 Přečti si ještě porevoluční vyjádření samotného Pavla Muraška, které bylo uveřejněno v roce 2006 v týdeníku Týden:
 &lt;a href=&quot;#tyden1&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_25.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;tyden1&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;tyden1&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_25.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: WANATOWICZOVÁ, Krystyna. Povolání agent. *Týden: události - peníze - styl - lidé + TV sešit : moderní zpravodajský týdeník.* Praha: K Service, reklamní a tiskové služby, 2006, **13**(21), s. 25. ISSN 1210-9940. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8d76270-1b90-11e9-90cf-5ef3fc9bb22f&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8d76270-1b90-11e9-90cf-5ef3fc9bb22f&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;a href=&quot;#tyden2&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_26.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;tyden2&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;tyden2&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Wanato_26.jpg&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: WANATOWICZOVÁ, Krystyna. Povolání agent. *Týden: události - peníze - styl - lidé + TV sešit : moderní zpravodajský týdeník.* Praha: K Service, reklamní a tiskové služby, 2006, **13**(21), s. 26. ISSN 1210-9940. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8e80440-1b90-11e9-90cf-5ef3fc9bb22f&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:c8e80440-1b90-11e9-90cf-5ef3fc9bb22f&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;/div&gt;
-&lt;div class=&quot;grid-item-five&quot;&gt;
-Obecně o metodách navazování spolupráce StB se svými obětmi píše spisovatel &lt;a href=&quot;#Vanecek&quot; class=&quot;modal-open&quot;&gt;Jan Vaněček:&lt;/a&gt;
+&lt;/div&gt;\
+&lt;div class=&quot;grid-item-five&quot;&gt;\
+Obecně o metodách navazování spolupráce StB se svými obětmi píše spisovatel &lt;a href=&quot;#Vanecek&quot; class=&quot;modal-open&quot;&gt;Jan Vaněček&lt;/a&gt;:
 &lt;a href=&quot;#c_van&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_verbovani_lidi_StB.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_van&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_van&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_verbovani_lidi_StB.png&quot; class=&quot;center enlarge&quot;&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_verbovani_lidi_StB.png&quot; class=&quot;center enlarge&quot;&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: VANĚČEK, Jan. Jak jsem se (ne)stal agentem StB: fraška z občanského života. Český Krumlov: Jan Vaněček, 2004, s. 7. ISBN 80-239-3693-X. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7d293d0-e43f-11e8-8d10-5ef3fc9ae867&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7d293d0-e43f-11e8-8d10-5ef3fc9ae867&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -1725,24 +1724,24 @@ zastávat veřejnou funkci? (Např. být učitelem, lékařem, politikem, polici
 [[Chci si projít případ Kamion ještě jednou.|KamionInfo]]
 ]
 {(masteraudio: &#39;stopall&#39;)}
-&lt;div id=&quot;Murasko&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Pavel_Mura%C5%A1ko&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;Murasko&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Pavel_Mura%C5%A1ko&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Pavel Muraško &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*,  c2021, Datum poslední revize 26. 03. 2021, 14:01 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Pavel_Mura%C5%A1ko&amp;oldid=19650487&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Pavel_Mura%C5%A1ko&amp;oldid=19650487&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;Sabatova&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Anna_%C5%A0abatov%C3%A1&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;Sabatova&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Anna_%C5%A0abatov%C3%A1&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Anna Šabatová &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2022, Datum poslední revize 4. 03. 2022, 13:31 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Anna_%C5%A0abatov%C3%A1&amp;oldid=20998824&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Anna_%C5%A0abatov%C3%A1&amp;oldid=20998824&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;Vanecek&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Jan_Van%C4%9B%C4%8Dek&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;Vanecek&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Jan_Van%C4%9B%C4%8Dek&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Jan Vaněček &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2020, Datum poslední revize 15. 09. 2020, 19:01 UTC, &#96;[citováno 22. 03. 2022]&#96;. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Jan_Van%C4%9B%C4%8Dek&amp;oldid=18999474&quot; target=&quot;_blank&quot;&gt;https://cs.wikipedia.org/w/index.php?title=Jan_Van%C4%9B%C4%8Dek&amp;oldid=18999474&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="57" name="Charta77" tags="knihy" position="3960,1139" size="100,100">####Charta 77
@@ -1755,10 +1754,10 @@ Co víš o Chartě 77?
 Odpověď na první otázku vyhledej v &lt;a class=&quot;modal-open&quot; href=&quot;#charta&quot;&gt;textu Charty 77.&lt;/a&gt;
 Nejsi si jistý, kdo Chartu 77 podepsal a kdo ne? Navštiv &lt;a class=&quot;modal-open&quot; href=&quot;http://www.totalita.cz/vysvetlivky/ch77.php&quot; target=&quot;_blank&quot;&gt;tento web a zkus osobu vyhledat v seznamu signatářů.&lt;/a&gt;
 
-&lt;div id=&quot;charta&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikisource.org/wiki/Prohl%C3%A1%C5%A1en%C3%AD_Charty_77&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;charta&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikisource.org/wiki/Prohl%C3%A1%C5%A1en%C3%AD_Charty_77&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikizdrojů, Prohlášení Charty 77. *Wikisource.org* &#96;[online]&#96;. c2021, Datum poslední revize 12. 05. 2021, 13:07 UTC, &#96;[citováno 9. 06. 2021]&#96;. Dostupné z: &lt;a href=&quot;https://cs.wikisource.org/w/index.php?title=Prohl%C3%A1%C5%A1en%C3%AD_Charty_77&amp;oldid=266928&quot; target=&quot;_blank&quot;&gt; https://cs.wikisource.org/w/index.php?title=Prohl%C3%A1%C5%A1en%C3%AD_Charty_77&amp;oldid=266928&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -1777,18 +1776,18 @@ Také si můžeš přečíst&lt;a class=&quot;hyper&quot; href=&quot;https://www
 [[Zpět|Zaver]]</tw-passagedata><tw-passagedata pid="59" name="CestaAutem" tags="noMarginLink road2" position="1494,316" size="100,100">Po chvíli ti to ale stejně nedá, otočíš se na Erica a zeptáš se: „Myslíš, že to bude v pohodě?“
 „Neboj, nejsme přece první, kdo jede. Není důvod, proč zrovna nás by měli přistihnout.“
 [[„Ty nemáš vůbec žádné pochybnosti?“|Rozhovor1]]
-[[„&lt;a data-hover=&quot;Dobře&quot; class=&quot;translate&quot;&gt;Bien,&lt;/a&gt; myslím, že jsi mě uklidnil.“|Rozhovor2]]
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+[[„&lt;a data-hover=&quot;Dobře&quot; class=&quot;translate&quot;&gt;Bien&lt;/a&gt;, myslím, že jsi mě uklidnil.“|Rozhovor2]]
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        Dobře
 &lt;/div&gt;\
     &lt;/div&gt;\
 
 (align:&quot;==&gt;&quot;)+(box:&quot;=XXXX&quot;)[&lt;a href=&quot;#radio&quot; class=&quot;modal-dialog&quot;&gt;&lt;img class=&quot;smallerRadioIcon&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;&lt;/a&gt;]
-&lt;div id=&quot;radio&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;radio&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        &lt;img class=&quot;radioimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;
 &lt;div class=&quot;radioPosition&quot;&gt;		
   {(link-repeat: &quot;Stanice 1&quot;)[
@@ -1816,9 +1815,9 @@ Také si můžeš přečíst&lt;a class=&quot;hyper&quot; href=&quot;https://www
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="60" name="StBVysv" tags="exil" position="4118,961" size="100,100">####StB
 
 &lt;a href=&quot;#c_tom&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_vanecek_stb.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_tom&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_tom&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2021/08/Muzy_vanecek_stb.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: VANĚČEK, Jan. Jak jsem se (ne)stal agentem StB: fraška z občanského života. Český Krumlov: Jan Vaněček, 2004, s. 7. ISBN 80-239-3693-X. Dostupné také z: &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7d293d0-e43f-11e8-8d10-5ef3fc9ae867&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7d293d0-e43f-11e8-8d10-5ef3fc9ae867&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1831,9 +1830,9 @@ Jedním z &quot;neprofesionálních&quot; pašeráků byl například český ka
 Můžeš si přečíst následující vzpomínky samotného Svobody, 
 
 &lt;a href=&quot;#c_skvo&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Svoboda-Foglar.png&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_skvo&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_skvo&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Svoboda-Foglar.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: SVOBODA, Milan. Jak to všechno bylo. *Západ: Časopis pro Čechy a Slováky* &#96;[online]&#96;. 1991, **13**(3-4), s. 20-21 &#96;[cit. 2021-06-16]&#96; ISSN 0226-3068. Dostupné z: &lt;a class=&quot;hyper&quot; href=&quot;http://scriptum.cz/soubory/scriptum/zapad/zapad_1991_3-4_ocr.pdf&quot; target=&quot;_blank&quot;&gt;  http://scriptum.cz/soubory/scriptum/zapad/zapad_1991_3-4_ocr.pdf&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1848,33 +1847,33 @@ anebo si pusť audionahrávku o pašování Foglarova rukopisu na stránkách Č
 Kromě ojedinělých případů pašování však existovaly i&amp;nbsp;dlouhotrvající a profesionálně udržované cesty mezi československým disentem a exilovými nakladateli a periodiky.
 Jeden z nejvýznamnějších kanálů existoval mezi britskou agenturou Palach Press, založenou &lt;a class=&quot;modal-open&quot; href=&quot;#kavan&quot;&gt;Janem Kavanem&lt;/a&gt;, a československým disidentem &lt;a href=&quot;#pithart&quot; class=&quot;modal-open&quot;&gt;Petrem Pithartem.&lt;/a&gt;
 
-&lt;div id=&quot;kavan&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Jan_Kavan&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;kavan&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Jan_Kavan&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Jan Kavan &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2021, Datum poslední revize 12. 12. 2021, 19:54 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupný z: &lt;a href=&quot;https://cs.wikipedia.org/wiki/Jan_Kavan&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/wiki/Jan_Kavan&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-&lt;div id=&quot;pithart&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Petr_Pithart&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;pithart&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Petr_Pithart&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Petr Pithart &#96;[online]&#96;, Wikipedie: Otevřená encyklopedie, c2021, Datum poslední revize 12. 12. 2021, 19:54 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupný z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Petr_Pithart&amp;oldid=20722697&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/w/index.php?title=Petr_Pithart&amp;oldid=20722697&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;a href=&quot;#c_kav&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kavan_aktivity.png&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;c_kav&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_kav&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-        &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kavan_aktivity.png&quot; class=&quot;center enlarge&quot;&gt;
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kavan_aktivity.png&quot; class=&quot;center enlarge&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: KAVAN, Jan. Knihy jsme do Československa pašovali bez pomoci cizích rozvědek. *Britské listy* &#96;[online]&#96;. 7. 11. 2014 &#96;[cit. 2021-06-16]&#96;. ISSN 1213-1792. Dostupné z: &lt;a href=&quot;https://blisty.cz/art/75404-knihy-jsme-do-ceskoslovenska-pasovali-bez-pomoci-cizich-rozvedek.html&quot; target=&quot;_blank&quot;&gt; https://blisty.cz/art/75404-knihy-jsme-do-ceskoslovenska-pasovali-bez-pomoci-cizich-rozvedek.html&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 &lt;a href=&quot;#karavan&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Jakubec_automobil_158.jpg&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;karavan&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;karavan&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Jakubec_automobil_158.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: JAKUBEC, Julius. *Přívěsy za osobní automobil.* Praha: Nakladatelství dopravy a spojů, 1980, s. 158. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7c32b30-b7e8-11e3-b74a-5ef3fc9ae867&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:e7c32b30-b7e8-11e3-b74a-5ef3fc9ae867&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1882,9 +1881,9 @@ Jeden z nejvýznamnějších kanálů existoval mezi britskou agenturou Palach P
 &lt;div class=&quot;zdroj&quot;&gt;V podobných kempingových vozech se na přelomu 70. a 80. let převážely tiskoviny a jiné věci. Tento způsob pašeráckého či kurýrního spoje fungoval více jak 10 let.&lt;/div&gt;
 
 &lt;a href=&quot;#kemp&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_CSSR-v-promenach-komunistickeho-rezimu_autokemping_401.jpg&quot;&gt;&lt;/a&gt;
-&lt;div id=&quot;kemp&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;kemp&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_CSSR-v-promenach-komunistickeho-rezimu_autokemping_401.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: RATAJ, Jan, Přemysl HOUDA a Vysoká škola ekonomická v Praze. *Československo v proměnách komunistického režimu.* V Praze: Oeconomica, 2010, s. 401. ISBN 978-80-245-1696-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:36ec53a0-0545-11e8-9854-5ef3fc9ae867&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:36ec53a0-0545-11e8-9854-5ef3fc9ae867&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1908,27 +1907,27 @@ Zdroj: PITHART, Petr.  Konspirační kanál pro vývoz a dovoz zakázané litera
 V Německu se o pašování staral &lt;a class=&quot;modal-open&quot; href=&quot;#precan&quot;&gt;Vilém Prečan&lt;/a&gt;, který zřídil v bavorském Scheinfeldu &lt;a class=&quot;modal-open&quot; href=&quot;https://www.nm.cz/historicke-muzeum/ceskoslovenske-dokumentacni-stredisko&quot; target=&quot;_blank&quot; class=&quot;nepovinnyLink&quot;&gt;Československé dokumentační středisko nezávislé kultury&lt;/a&gt;. 
 Ke konci 70. let přebírá od Petra Pitharta starost o&amp;nbsp;organizaci dovozu zakázané literatury v Československu &lt;a class=&quot;modal-open&quot; href=&quot;#siklovaWiki&quot;&gt;Jiřina Šiklová.&lt;/a&gt;
 
-&lt;div id=&quot;precan&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Vil%C3%A9m_Pre%C4%8Dan&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;precan&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Vil%C3%A9m_Pre%C4%8Dan&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: Přispěvatelé Wikipedie, Vilém Prečan &#96;[online]&#96;, *Wikipedie: Otevřená encyklopedie*, c2021, Datum poslední revize 15. 05. 2021, 02:43 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupný z: &lt;a href=&quot;https://cs.wikipedia.org/w/index.php?title=Vil%C3%A9m_Pre%C4%8Dan&amp;oldid=19871203&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/w/index.php?title=Vil%C3%A9m_Pre%C4%8Dan&amp;oldid=19871203&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
-&lt;div id=&quot;siklovaWiki&quot; class=&quot;modalDialog&quot;&gt;\
-  &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
-       	&lt;div class=&quot;modal-dialog wiki&quot;&gt;&lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99ina_%C5%A0iklov%C3%A1&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;\
+&lt;div id=&quot;siklovaWiki&quot; class=&quot;modal-dialog-container&quot;&gt;\
+  &lt;div class=&quot;modal-dialog wiki&quot;&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
+    &lt;iframe src=&quot;https://cs.wikipedia.org/wiki/Ji%C5%99ina_%C5%A0iklov%C3%A1&quot;&gt;&lt;/iframe&gt;\
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: 
 		Přispěvatelé Wikipedie, Jiřina Šiklová &#96;[online]&#96;, Wikipedie: Otevřená encyklopedie, c2021, Datum poslední revize 12. 12. 2021, 19:54 UTC, &#96;[citováno 2. 02. 2022]&#96;. Dostupný z: &lt;a class=&quot;hyper&quot; href=&quot;https://cs.wikipedia.org/w/index.php?title=Ji%C5%99ina_%C5%A0iklov%C3%A1&amp;oldid=20722703&quot; target=&quot;_blank&quot;&gt; https://cs.wikipedia.org/w/index.php?title=Ji%C5%99ina_%C5%A0iklov%C3%A1&amp;oldid=20722703&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
 
 &lt;a href=&quot;#c_sik&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Siklova_BezOhlavky_197.jpg&quot;&gt;&lt;/a&gt;\
-&lt;div id=&quot;c_sik&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;c_sik&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Siklova_BezOhlavky_197.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: ŠIKLOVÁ, Jiřina, Michal PLZÁK a Magdalena ČECHLOVSKÁ. *Bez ohlávky: (rozhovory).* Praha: Kalich, 2011, s. 197. ISBN 978-80-7017-154-7. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b7e2a666-d50d-4803-93ce-1f35f90ca132&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:b7e2a666-d50d-4803-93ce-1f35f90ca132&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -1985,7 +1984,7 @@ Zjisti, jaké odpovědi si zapsali ostatní ze spolužáků a jak vizualizovali 
     &lt;div id=&quot;accessibility-toggle&quot; title=&quot;Změnit font&quot;&gt;Aa&lt;/div&gt;\
     &lt;script&gt;document.twStoryAcc.init()&lt;/script&gt;\
 &lt;/div&gt;\
-
+\\
 &lt;div class=&quot;floating-buttons-container&quot;&gt;\
     &lt;div class=&quot;floating-button&quot;&gt;\
         &lt;tw-icon&gt;\
@@ -1999,9 +1998,8 @@ Zjisti, jaké odpovědi si zapsali ostatní ze spolužáků a jak vizualizovali 
     &lt;/div&gt;\
 &lt;/div&gt;\
 \\
-
 &lt;div id=&quot;cont&quot; class=&quot;content-overview-container&quot;&gt;\
-    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close-content-overview&quot;&gt;&amp;times;&lt;/a&gt;\
+    &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close-content-overview&quot;&gt;&lt;/a&gt;\
     &lt;div class=&quot;content-overview&quot;&gt;\
 {(link:&quot;Uložit příběh&quot;)[
   (if:(save-game:&quot;Slot A&quot;))[
@@ -2018,7 +2016,6 @@ Zjisti, jaké odpovědi si zapsali ostatní ze spolužáků a jak vizualizovali 
 &lt;div&gt;
 [[Úvod-&gt;Start]]
 &lt;/div&gt;
-
 &lt;div&gt;
 **Příběhová část**
 	&lt;div&gt;
@@ -2040,19 +2037,18 @@ Zjisti, jaké odpovědi si zapsali ostatní ze spolužáků a jak vizualizovali 
 	&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div&gt;
+&lt;div&gt;\
 [[Použité zdroje-&gt;Použité zdroje]] 
 [[Rozšiřující aktivity-&gt;RozAktivity]] 
 [[Rozšiřující zdroje-&gt;RozsZdroje]] 
 [[Autoři-&gt;autori]] 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;div id=&quot;help&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;/div&gt;\
+&lt;/div&gt;\
+&lt;/div&gt;\
+\\
+&lt;div id=&quot;help&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;story-image dont-get-too-big-image&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/04/Muzy_helpscreen_modra.png&quot;&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
@@ -2089,22 +2085,22 @@ Zkus si přeladit na nějakou jinou písničku.
 „Radši už Françoise vypni to rádio,“ praví ti Eric.
 „Máš pravdu, bude lepší je neprovokovat touto zápaďáckou &lt;a href=&quot;#preklad1&quot; class=&quot;modal-open&quot;&gt;la musique&lt;/a&gt;,“ a ve snaze zlehčit situaci dodáš, „ale vsadím se, že i zde potají chytají rakouské stanice a během služby si sem tam něco poslechnou.“
 Eric se zasměje, ale i jeho smích je smíšen s notnou dávkou nervozity.
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        muzikou
 &lt;/div&gt;\
     &lt;/div&gt;\
 [[Zatím vypneš rádio-&gt;Vaha]] </tw-passagedata><tw-passagedata pid="69" name="Mapa" tags="road" position="1476,178" size="100,100">Sotva se zaposloucháš, obrátí se na tebe Eric a povídá: „Prosím, nejsem si jistý, jestli jsem nezabloudil. Podívej se do &lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;le carte&lt;/a&gt; a ukaž mi, kde přesně máme přejet přes hranice. &lt;a class=&quot;modal-open&quot; href=&quot;#preklad2&quot;&gt;Je pense,&lt;/a&gt; že to má být někde u vesničky Dolní Dvořiště.“
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad1&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        mapy
 &lt;/div&gt;\
     &lt;/div&gt;\
-&lt;div id=&quot;preklad2&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad2&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        Myslím
 &lt;/div&gt;\
     &lt;/div&gt;\
@@ -2113,9 +2109,9 @@ Eric se zasměje, ale i jeho smích je smíšen s notnou dávkou nervozity.
 
 &lt;iframe src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=229&quot; width=&quot;958&quot; height=&quot;723&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; title=&quot;Muzy_Mapa&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 &lt;div class=&quot;zdroj&quot;&gt;Zdroj: ZINNER, Štěpán a Adolf PARLESÁK. *Motorovým vozidlem do zahraničí: nejdůležitější informace, odlišná pravidla silničního provozu a stručný cestovní slovníček.* Praha: Nakladatelství dopravy a spojů, 1964, s. 9. Dostupné také z: &lt;a class=&quot;hyper&quot; href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:ed530b80-cc2f-11e5-aabf-005056825209&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:ed530b80-cc2f-11e5-aabf-005056825209&lt;/a&gt;&lt;/div&gt;\
-&lt;div id=&quot;preklad3&quot; class=&quot;modalDialogTranslate&quot;&gt;\
+&lt;div id=&quot;preklad3&quot; class=&quot;modal-translation-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        Děkuji
 &lt;/div&gt;\
     &lt;/div&gt;\
@@ -2126,9 +2122,9 @@ Eric se zasměje, ale i jeho smích je smíšen s notnou dávkou nervozity.
 ]
 
 (align:&quot;==&gt;&quot;)+(box:&quot;=XXXX&quot;)[&lt;a href=&quot;#radio&quot; class=&quot;modal-dialog&quot;&gt;&lt;img class=&quot;smallerRadioIcon&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;&lt;/a&gt;]
-&lt;div id=&quot;radio&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;radio&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
        &lt;img class=&quot;radioimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_MyOwnRadioIcon-e1647531033429.png&quot;&gt;
 &lt;div class=&quot;radioPosition&quot;&gt;		
   {(link-repeat: &quot;Stanice 1&quot;)[
@@ -2183,9 +2179,9 @@ Pro doplnění celkového obrázku si také můžeš poslechnout &lt;a class=&qu
 
 &lt;a href=&quot;#kvety&quot;&gt;&lt;img title=&quot;Zvětšit a zobrazit citaci&quot; class=&quot;cimage&quot; src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kvety_23041981_49_jarniModa-scaled.jpg&quot;&gt;&lt;/a&gt;
 
-&lt;div id=&quot;kvety&quot; class=&quot;modalDialog&quot;&gt;
+&lt;div id=&quot;kvety&quot; class=&quot;modal-dialog-container&quot;&gt;
   &lt;div&gt;
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
         &lt;img src=&quot;https://digikult.phil.muni.cz/wp-content/uploads/2022/03/Muzy_Kvety_23041981_49_jarniModa-scaled.jpg&quot; class=&quot;center&quot;&gt;
 		&lt;div class=&quot;zdroj&quot;&gt;Zdroj: *Květy.* Praha: Rudé právo, 23.04.1981, **31**(16), s. 49. ISSN 0023-5849. Dostupné také z: &lt;a href=&quot;http://www.digitalniknihovna.cz/mzk/uuid/uuid:0eb3e2b0-c2c6-11e3-85ae-001018b5eb5c&quot; target=&quot;_blank&quot;&gt;http://www.digitalniknihovna.cz/mzk/uuid/uuid:0eb3e2b0-c2c6-11e3-85ae-001018b5eb5c&lt;/a&gt;&lt;/div&gt;\
     &lt;/div&gt;\
@@ -2199,28 +2195,17 @@ Slyšíš blížící se kroky.
 ]
 ]</tw-passagedata><tw-passagedata pid="73" name="Snezeno3" tags="Celnice" position="1797,1687" size="100,100">Do místnosti přichází celník. Podívá se na tebe, trochu se pousměje, natáhne ruku pro časopis a řekne:
 „Chci koupit ženě, mé femme, meine frau, kabát k narozeninám, sakra, jak se to řekne, das Geburstag. Rozumíte?“
-{|cli1&gt;[„&lt;a class=&quot;modal-open&quot; href=&quot;#preklad1&quot;&gt;Oui.&lt;/a&gt; Ten &lt;a class=&quot;modal-open&quot; href=&quot;#preklad2&quot;&gt;la rouge&lt;/a&gt; je pěkný.“]}
-&lt;div id=&quot;preklad1&quot; class=&quot;modalDialogTranslate&quot;&gt;\
-  &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-       Ano.
-&lt;/div&gt;\
-    &lt;/div&gt;\
-&lt;div id=&quot;preklad2&quot; class=&quot;modalDialogTranslate&quot;&gt;\
-  &lt;div&gt;\
-       &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;\
-       červený
-&lt;/div&gt;\
-    &lt;/div&gt;\
+{|cli1&gt;[„&lt;a class=&quot;translate&quot; data-hover=&quot;Ano&quot;&gt;Oui&lt;/a&gt;. Ten &lt;a class=&quot;translate&quot; data-hover=&quot;červený&quot;&gt;la rouge&lt;/a&gt; je pěkný.“]}
+
 (click: ?cli1)[„Ja, die rote. Ten červený ji koupím.“
 Převezme si od tebe časopis a snaží se tobě a Ericovi vysvětlit, že karavan je příliš těžký, a proto musíte počkat do rána, kdy přijede StB, která automobil prohledá. Moc slovům nerozumíte, protože není přítomen žádný tlumočník.
 Jedno je ti však jasné, je možné, že se do Francie jen tak nevrátíš.
 Podíváš se na Erica. V jeho pohledu se zrcadlí pohled tvůj. Pohled plný strachu, ale také odhodlání.
 [[Venku začíná pomalu svítat.|Konec příběhu]]
 ]</tw-passagedata><tw-passagedata pid="74" name="KodyJmena" tags="task" position="2190,4044" size="100,100">####Krycí jména
-&lt;div id=&quot;helpSlov&quot; class=&quot;modalDialog&quot;&gt;\
+&lt;div id=&quot;helpSlov&quot; class=&quot;modal-dialog-container&quot;&gt;\
   &lt;div&gt;\
-        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&amp;times;&lt;/a&gt;
+        &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;close&quot;&gt;&lt;/a&gt;\
 &lt;iframe class=&quot;slovnik center&quot; src=&quot;https://digikult.phil.muni.cz/wp-admin/admin-ajax.php?action=h5p_embed&amp;id=232&quot; width=&quot;958&quot; height=&quot;1477&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;allowfullscreen&quot; title=&quot;Muzy_KryciJmena&quot;&gt;&lt;/iframe&gt;&lt;script src=&quot;https://digikult.phil.muni.cz/wp-content/plugins/h5p/h5p-php-library/js/h5p-resizer.js&quot; charset=&quot;UTF-8&quot;&gt;&lt;/script&gt;
 &lt;div class=&quot;zdroj&quot;&gt;
 Zdroj: ŠIKLOVÁ, Jiřina.  Zpráva o části opozičního hnutí v letech 1971–1981, in: JANIŠOVÁ, Milena, PREČAN, Vilém a Tomáš VRBA eds. *Ročenka československého dokumentačního střediska 2004–2007*&#96;[online]&#96;. Praha 2008, 283-284 &#96;[cit. 2021-06-16]&#96;. ISBN 978-80-904228-2-7. Dostupné z:&lt;a class=&quot;hyper&quot; href=&quot;http://www.csds.cz/cs/2091-DS/version/10/part/15/data/Ro%C4%8Denka%202004%20-%202007.pdf&quot; target=&quot;_blank&quot;&gt; http://www.csds.cz/cs/2091-DS/version/10/part/15/data/Ro%C4%8Denka%202004%20-%202007.pdf&lt;/a&gt;

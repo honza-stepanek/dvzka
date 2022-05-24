@@ -1,27 +1,29 @@
 /*Import znakové sady*/
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;800&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
 
 /*==========================
 	ANIMATION CAR
 =========================*/
+
 .picture-in-motion {
     width: 40vw;
     box-shadow: none;
     display: block;
     margin: auto;
-    margin-bottom: 10xp;
+    margin-bottom: 0.5em;
 }
 
 #car-move {
     animation-name: moving-picture;
     animation-duration: 4s;
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
+}
+
+.delayed-fade-in {
+    animation-name: fade-in;
+    animation-duration: 5s;
+    animation-timing-function: cubic-bezier(.38,-0.01,.89,.99);
 }
 
 @keyframes moving-picture {
@@ -30,6 +32,14 @@
     }
     100% {
         width: 40vw;
+    }
+}
+@keyframes fade-in {
+    0%, 75% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
 
@@ -54,6 +64,7 @@ tw-story {
     background-position: center;
     background-attachment: fixed;
     font-size: 150%;
+    padding: calc(20px + 1.5em) 1vw;
 }
 
 tw-story[tags~="knihy"] {
@@ -116,8 +127,8 @@ tw-story[tags~="studovna"] {
 tw-passage {
     padding: 3.5em 5em;
     border-radius: 1em;
-    max-width: 65vw;
-    min-width: 60vw;
+    width: 1000px;
+    max-width: 90vw;
     min-height: 50vh;
     align-self: center;
     color: black;
@@ -128,18 +139,14 @@ tw-passage {
 
 tw-passage[tags~="task"] {
     padding: 1.5em 2em;
-    width: 75vw;
-    max-width: 85vw;
 }
 
 /* úpravy hlavních prvků pro užší obrazovky */
 @media (max-width: 575px) {
-    tw-story {
+    tw-story[tags] {
         font-size: large;
-        padding: 2em 0.8em;
     }
-
-    tw-passage {
+    tw-passage[tags] {
         padding: 2em 1.8em;
         box-shadow: inset 0px 0px 1.5em 0.3em #cfcfcf;
     }
@@ -243,7 +250,8 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 800px;
+    max-width: 100%;
 }
 img.center {
     width: auto;
@@ -255,7 +263,7 @@ img.imageStory {
     max-width: 100%;
 }
 img.not-too-big {
-    width: 70%;
+    width: 600px;
 }
 img {
     margin-top: 1.5em;
@@ -269,7 +277,8 @@ img {
 .cimage {
     display: block;
     margin: 0 auto;
-    max-width: 80%;
+    width: 750px;
+    max-width: 100%;
 }
 
 /**=================
@@ -299,61 +308,65 @@ iframe {
 	MODAL DIALOG START
 ==================================**/
 /*řešení modálních oken*/
-.modalDialog {
+.modal-dialog-container,
+.modal-translation-dialog-container {
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 99999;
+
+    padding: 6vh 4vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.8);
     opacity: 0;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
     pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-
-.modalDialog:target {
+.modal-dialog-container:target,
+.modal-translation-dialog-container:target {
     opacity: 1;
     pointer-events: auto;
 }
 
-.modalDialog > div {
-    width: 90%;
+.modal-dialog-container > div {
     position: relative;
-    margin: 5% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background-color: #f2f2f2;
-    box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
+    max-width: 100%;
+    margin: auto 0px;
+    padding: 1.2em;
     align-self: center;
     flex-grow: 0;
+    
+    border-radius: 0.5em;
+    background-color: #f2f2f2;
+    box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
 }
 
 /*řešení křížku u modálních oken*/
-.modalDialog .close,
-.modalDialogTranslate .close,
-.modalDialogTranslate .close:hover,
-.modalDialog .close:hover {
+.modal-dialog-container .close,
+.modal-translation-dialog-container .close,
+.modal-translation-dialog-container .close:hover,
+.modal-dialog-container .close:hover {
     /* close link */
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1;
-
     width: 100vw;
     height: 100vh;
+    z-index: -1;
 
     background: #0000;
     color: #0000;
 }
-.modalDialog > div::before {
+.modal-dialog-container > div::before,
+.modal-translation-dialog-container > div::before {
     /* adding an x above of the modal */
     position: absolute;
     right: 0.15em;
@@ -373,96 +386,70 @@ iframe {
     opacity: 0.5;
 }
 
-/*Translate modal dialog*/
-.modalDialogTranslate {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    overflow-y: auto;
-    overflow-x: hidden;
-    z-index: 99999;
-    opacity: 0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+/* wiki articles */
+div.modal-dialog.wiki {
+    max-height: 150%;
+    height: 150%;
+}
+div.modal-dialog.wiki iframe {
+    width: 1200px;
+    max-width: 100%;
+    /* height: 100%; */
+    height: 85vh;
+
+    border: solid 2px rgba(78, 78, 78, 0.7);
 }
 
-.modalDialogTranslate:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modalDialogTranslate > div {
+/* Translation modal dialogs */
+.modal-translation-dialog-container > div {
     width: auto;
     position: relative;
     text-align: center;
-    margin: 5% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
+    margin: 2em auto;
+    padding: 1em 2em;
+    border-radius: 0.5em;
     background-color: #f2f2f2;
     box-shadow: inset 0em 0em 3.5em 0.5em #c7c7c7;
-    align-self: center;
     flex-grow: 0;
-}
-
-.modalDialogTranslate > div::before {
-    /* adding an x above of the modal */
-    position: absolute;
-    right: 0.15em;
-    top: -1.35em;
-    width: 1em;
-    height: 1em;
-    z-index: -2;
-    /* setting it underneath the close link */
-
-    font-family: sans-serif;
-    content: "×";
-    text-align: center;
-    line-height: 1.1em;
-
-    color: #000000;
-    background-color: #ffffff;
-    opacity: 0.5;
 }
 
 /**=================================
 	MODAL DIALOG END
 ==================================**/
 
-a:link,
-a:link:hover {
+a:link {
     color: hsl(170, 98%, 40%);
     text-decoration: underline;
 }
-a:visited,
-a:visited:hover {
+a:link:hover {
+    color: hsl(170, 90%, 46%);
+    text-decoration-thickness: 1.5px;
+}
+a:visited {
     color: hsl(182, 100%, 27%);
     text-decoration: underline;
 }
-.hyper {
-    --hyper-color: hsl(170, 98%, 40%);
-    color: var(--hyper-color);
-    text-decoration: underline;
+a:visited:hover {
+    color: hsl(182, 100%, 22%);
+    text-decoration-thickness: 1.5px;
+}
 
+
+/*========================
+	MODAL OPENERS
+=========================*/
+a[href ^= "#"]:any-link {
+    color: rgb(0, 179, 30);
     transition: 300ms;
-    transition-property: color;
+    transition-property: color, text-shadow;
+    text-decoration: underline;
+    transition: all 300ms linear;
 }
-.hyper:hover {
-    color: hsl(170, 100%, 33%);
-}
-.hyper:visited {
-    --hyper-visited-color: hsl(182, 100%, 27%);
-    color: var(--hyper-visited-color);
-}
-.hyper:visited:hover {
-    color: hsl(182, 100%, 20%);
+a[href ^= "#"]:any-link:hover {
+    color: rgb(5, 99, 5);
+    text-decoration: underline;
+    text-shadow: 0 0 0.03em rgb(0, 153, 25);
 }
 
 .inmod {
@@ -495,21 +482,6 @@ img[src="https://digikult.phil.muni.cz/wp-content/uploads/2020/08/Logolink_OP_VV
 
 tw-passage[tags~="bibliography"] {
     word-wrap: break-word;
-}
-
-/* wiki articles */
-div.modal-dialog.wiki {
-    height: 100%;
-}
-div.modal-dialog.wiki iframe {
-    width: 1200px;
-    max-width: 100%;
-    height: 1000px;
-    border: solid 2px rgba(78, 78, 78, 0.7);
-    align-self: center;
-    margin: auto;
-    display: block;
-    /* box-shadow: ; */
 }
 
 /*=============================
@@ -575,12 +547,12 @@ ul#jan-rychly {
     right: 0;
 }
 
-.floating-button a,
-.floating-button a:hover {
+.floating-button a[href],
+.floating-button a[href]:hover {
     display: block;
-    font: inherit;
-    text-decoration: inherit;
-    color: inherit;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
 }
 
 .floating-button tw-icon[data-raw] {
@@ -644,7 +616,8 @@ tw-passage[tags~="acc-animation"] tw-icon[data-raw].info-hint-button {
 
 .youtube {
     width: 100%;
-    height: 60vh;
+    height: 45vw;
+    max-height: 500px;
 }
 
 /*=================
@@ -876,21 +849,7 @@ audio::-webkit-media-controls-enclosure {
 	AUDIO TAG EDIT END
 ===============================**/
 
-/*========================
-	MODAL OPENERS
-=========================*/
-a.modal-open {
-    color: rgb(0, 179, 30);
-    transition: 300ms;
-    transition-property: color, text-shadow;
-    text-decoration: underline;
-    transition: all 300ms linear;
-}
-a.modal-open:hover {
-    color: rgb(0, 51, 0);
-    text-decoration: underline;
-    text-shadow: 0 0 0.03em rgb(0, 153, 25);
-}
+
 
 /**===============================
 		SPECIAL IFRAME SIZING
@@ -898,8 +857,7 @@ a.modal-open:hover {
 		SIKTANC POEM
 ================================**/
 iframe.slovnik {
-    width: 300px;
-    max-width: 50%;
+    width: 700px !important;
     height: 800px;
     border: solid 2px rgba(78, 78, 78, 0.7);
     /* box-shadow: ; */
@@ -1019,6 +977,27 @@ tw-passage[tags~="acc-animation"] #accessibility-toggle {
     grid-auto-rows: minmax(100px, auto);
     font-size: 1rem;
     line-height: 1.5rem;
+    margin: 1em 0;
+}
+@media (max-width: 649px) {
+    .grid-container {
+        display: block;
+    }
+    .grid-item-one,
+    .grid-item-two,
+    .grid-item-three,
+    .grid-item-four,
+    .grid-item-five {
+        margin: 1em 0;
+    }
+}
+
+.grid-item-one,
+.grid-item-two,
+.grid-item-three,
+.grid-item-four,
+.grid-item-five {
+    border: 2px dashed #59564d57;
 }
 
 .grid-item-one {
@@ -1026,17 +1005,11 @@ tw-passage[tags~="acc-animation"] #accessibility-toggle {
     grid-row: 1;
     padding: 5px;
 }
-.grid-item-one:hover {
-    border: 2px dashed #0000dc;
-}
 
 .grid-item-two {
     grid-column: 2;
     grid-row: 1;
     padding: 5px;
-}
-.grid-item-two:hover {
-    border: 2px dashed #0000dc;
 }
 
 .grid-item-three {
@@ -1044,26 +1017,17 @@ tw-passage[tags~="acc-animation"] #accessibility-toggle {
     grid-row: 2;
     padding: 5px;
 }
-.grid-item-three:hover {
-    border: 2px dashed #0000dc;
-}
 
 .grid-item-four {
     grid-column: 2;
     grid-row: 2;
     padding: 5px;
 }
-.grid-item-four:hover {
-    border: 2px dashed #0000dc;
-}
 
 .grid-item-five {
     grid-column: 1 / 3;
     grid-row: 3;
     padding: 5px;
-}
-.grid-item-five:hover {
-    border: 2px dashed #0000dc;
 }
 
 /*=================================================
@@ -1072,34 +1036,36 @@ tw-passage[tags~="acc-animation"] #accessibility-toggle {
 .translate {
     cursor: pointer;
     font-style: italic;
+    /* color: #6c04eb; */
+    text-decoration: underline;
 }
 
-.translate:hover:before {
-    /* ------- THIS IS THE MAGIC ----------------*/
-    content: attr(data-hover);
-    /* ------------------------------------------*/
-    display: block;
-    border-radius: 1em;
-    background-color: white;
-    position: absolute;
-    bottom: 100%;
-    padding: 15px;
-    left: -7px;
-}
-
-.translate:hover:after {
-    content: "";
-    position: absolute;
-    border-radius: 1em;
-    display: block;
-    width: 0;
-    height: 0;
+.translate::after,
+.translate:hover::after {
+    content: " (" attr(data-hover) ")";
+    right: 0;
     bottom: 0;
-    left: 50%;
-    margin: 5px;
-    z-index: 8000;
+    color: inherit;
+    display: inline;
 }
-*/
+@media (min-width: 650px) {
+    .translate::after {
+        content: none;
+    }
+    .translate:hover::after {
+        /* --- taking translation from the attribute ---*/
+        content: attr(data-hover);
+        display: block;
+        width: max-content;
+        border-radius: 0.7em;
+        background-color: white;
+        position: absolute;
+        bottom: calc(100% + 0.2em);
+        left: -0.8em;
+        padding: 0.5em 0.8em;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.188);
+    }
+}
 
 
 
