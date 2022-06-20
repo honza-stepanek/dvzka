@@ -182,21 +182,22 @@ tw-link::before,
 tw-link::after {
     content: "";
     position: absolute;
-    width: 0.38em;
-    height: 0.38em;
-
-    left: 0.45em;
+    width: 0.1em;
+    height: 0.8em;
+    border-radius: 0em;
+    
+    left: 0.50em;
     top: 50%;
-    transform: translate(0, -50%) rotate(45deg);
+    transform: translate(20%, -50%) rotate(45deg);
+    transform-origin: center;
 
     transition: 300ms;
     transition-property: width, height, transform, border-radius;
 
     background-color: #0000DC;
-    border-radius: 0.2em;
 }
 tw-link::after {
-    transform: translate(0, -50%) rotate(-45deg);
+    transform: translate(20%, -50%) rotate(-45deg);
 }
 
 /* On hover */
@@ -222,10 +223,9 @@ tw-link:active::after,
 tw-link.visited:hover::after,
 tw-link.visited:focus::after,
 tw-link.visited:active::after {
-    width: 0.2em;
-    height: 1em;
-    border-radius: 0em;
-    transform-origin: center;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
 }
 tw-link:hover::after,
 tw-link:focus::after,
@@ -233,7 +233,7 @@ tw-link:active::after,
 tw-link.visited:hover::after,
 tw-link.visited:focus::after,
 tw-link.visited:active::after {
-    transform: translate(10%, -50%) rotate(-45deg);
+    transform: translate(-12%, -50%) rotate(-45deg);
 }
 tw-link:hover::before,
 tw-link:focus::before,
@@ -241,7 +241,7 @@ tw-link:active::before,
 tw-link.visited:hover::before,
 tw-link.visited:focus::before,
 tw-link.visited:active::before {
-    transform: translate(10%, -50%) rotate(45deg);
+    transform: translate(-12%, -50%) rotate(45deg);
 }
 
 /* link to the inventory page */
