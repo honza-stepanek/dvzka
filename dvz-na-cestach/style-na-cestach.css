@@ -182,22 +182,33 @@ tw-link::before,
 tw-link::after {
     content: "";
     position: absolute;
-    width: 0.1em;
-    height: 0.8em;
-    border-radius: 0em;
-    
-    left: 0.50em;
-    top: 50%;
-    transform: translate(20%, -50%) rotate(45deg);
+
     transform-origin: center;
 
     transition: 300ms;
     transition-property: width, height, transform, border-radius;
+}
+tw-link::before {
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 0.25em;
+    
+    left: 0.48em;
+    top: 0.5em;
 
     background-color: #0000DC;
 }
 tw-link::after {
-    transform: translate(20%, -50%) rotate(-45deg);
+    width: 0;
+    height: 0;
+    
+    left: 0.559em;
+    top: 0.96em;
+
+    border-width: 0.18em;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #0000DC;
 }
 
 /* On hover */
@@ -211,37 +222,23 @@ tw-link.visited:active {
     outline: none;
     border-color: #0000DCFF;
 }
-tw-link:hover::before,
-tw-link:focus::before,
-tw-link:active::before,
-tw-link.visited:hover::before,
-tw-link.visited:focus::before,
-tw-link.visited:active::before,
-tw-link:hover::after,
-tw-link:focus::after,
-tw-link:active::after,
-tw-link.visited:hover::after,
-tw-link.visited:focus::after,
-tw-link.visited:active::after {
-    width: 0.5em;
-    height: 0.5em;
-    border-radius: 0.25em;
-}
-tw-link:hover::after,
-tw-link:focus::after,
-tw-link:active::after,
-tw-link.visited:hover::after,
-tw-link.visited:focus::after,
-tw-link.visited:active::after {
-    transform: translate(-12%, -50%) rotate(-45deg);
-}
+
 tw-link:hover::before,
 tw-link:focus::before,
 tw-link:active::before,
 tw-link.visited:hover::before,
 tw-link.visited:focus::before,
 tw-link.visited:active::before {
-    transform: translate(-12%, -50%) rotate(45deg);
+    background-color: #0000DC00;
+    transform: scale(0);
+}
+tw-link:hover::after,
+tw-link:focus::after,
+tw-link:active::after,
+tw-link.visited:hover::after,
+tw-link.visited:focus::after,
+tw-link.visited:active::after {
+    transform: translate(20%, -90%) rotate(-90deg) scale(2);
 }
 
 /* link to the inventory page */
