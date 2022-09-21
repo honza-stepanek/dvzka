@@ -10,654 +10,9 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Ženy ve vědě.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Ženy ve vědě" startnode="1" creator="Twine" creator-version="2.4.1" format="Harlowe" format-version="3.3.1" ifid="D62F8DA1-9910-44D0-9956-DCB821C80EBC" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">
-
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
-
-
-
-/* general structure */
-body {
-    margin: 0;
-    height: 100%;
-}
-
-h1 {
-    font-size: 200%;
-}
-h2 {
-    font-size: 150%;
-}
-h3 {
-    font-size: 120%;
-    font-weight: 500;
-}
-
-hr {
-    height: 0px;
-    border: solid 1px black;
-}
-
-img {
-    max-width: 100%;
-    box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-div.modal-dialog img {
-    display: block;
-    margin: auto;
-}
-
-
-
-/*============================
-         TWINE STORY 
-============================*/
-
-tw-story {
-    padding: 1em 10%;
-    min-height: 100%;
-
-    background-position: center;
-    background-attachment: fixed;
-    background-color: rgb(87, 71, 39);
-    background-image: url("resources/table-with-book-bg.png");
-    background-size: cover;
-
-    font-family: "Dancing Script", serif;
-}
-
-
-
-
-/*============================
-        TWINE PASSAGE 
-============================*/
-
-tw-passage {
-    max-width: 900px;
-    width: 100%;
-    align-self: center;
-
-    padding: 2em;
-    margin-top: calc(2vh + 20px);
-    margin-bottom: 4vh;
-
-    background-color: rgb(255, 253, 236);
-    box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.363);
-    color: black;
-}
-tw-passage,
-div.modal-dialog.article {
-    background-image: url("resources/paper-texture.png");
-    background-repeat: repeat;
-    background-size: auto;
-}
-
-
-
-
-tw-story tw-consecutive-br {
-    height: 0.5em;
-}
-
-tw-sidebar {
-    display: none;
-}
-
-
-/*==============================
-    Twine Story and Passage
-   Responsivness adjustments
-==============================*/
-
-/* narrow screen */
-@media (max-width: 649px) {
-    tw-story {
-        padding: 5%;
-    }
-    tw-passage {
-        padding: 1.5em;
-        font-size: 85%;
-        line-height: normal;
-    }
-}
-
-
-
-
-/*============================
-        TWINE LINKS 
-============================*/
-tw-link,
-tw-link.visited {
-    display: inline-block;
-    color: #0000dc;
-    
-    transition: 300ms;
-    left: 0;
-    transition-property: left;
-}
-tw-link::before,
-tw-link.visited::before {
-    content: "›";
-    display: block;
-    width: 1.35rem;
-    position: absolute;
-    left: -1.35rem;
-    top: -0.23rem;
-
-    font-family: sans-serif;
-    font-size: 1.7em;
-    font-weight: 500;
-
-    opacity: 0;
-    pointer-events: none;
-
-    transition: 300ms;
-    transition-property: opacity;
-}
-
-tw-link:hover,
-tw-link.visited:hover {
-    color: #0000dc;
-    left: 0.9em;
-}
-tw-link:hover::before,
-tw-link.visited:hover::before {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-tw-hook[name^="backlink"] tw-link::before {
-    content: "‹";
-}
-tw-hook[name^="backtobeginning"] tw-link::before {
-    content: "«";
-}
-
-
-/*==============================
-    Page turning controlls
-==============================*/
-
-div.page-turning-wrapper {
-    width: 100%;
-    margin-top: 0.75em;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-/* the ::before element already has some properties set
-   from the normal default tw-link style section above */
-
-/* Previous page link */
-div.page-turning-prev tw-link::before {
-    content: "‹ ";
-    display: inline;
-
-    position: relative;
-    top: 0.1rem;
-    left: inherit;
-
-    opacity: 1;
-    transition: none;
-}
-/* Next page link */
-div.page-turning-next tw-link::before {
-    content: none;
-}
-div.page-turning-next tw-link::after {
-    content: " ›";
-    display: inline;
-
-    font-family: sans-serif;
-    font-size: 1.7em;
-    font-weight: 500;
-    width: 1.35rem;
-    position: relative;
-    top: 0.1rem;
-    
-    opacity: 1;
-    transition: none;
-}
-
-div.page-turning-prev tw-link,
-div.page-turning-prev tw-link:hover,
-div.page-turning-next tw-link,
-div.page-turning-next tw-link:hover {
-    left: unset;
-}
-
-@media (min-width: 650px) {
-    /* ------------------------------------------------------
-       Positioning the buttons BY THE SIDES of the passage
-       And replacing them by ARROWS
-       for bigger screens
-    ------------------------------------------------------ */
-
-    div.page-turning-wrapper {
-        position: fixed;
-        top: 30vh;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 1040px;
-        width: 98%;
-
-        pointer-events: none;
-    }
-
-    div.page-turning-prev tw-link,
-    div.page-turning-prev tw-link:hover,
-    div.page-turning-next tw-link,
-    div.page-turning-next tw-link:hover {
-        /* hiding the tw-link text */
-        color: transparent;
-        display: block;
-        width: 0;
-        pointer-events: none;
-        transform: none;
-    }
-
-    /* THE ARROW BUTTONS */
-    div.page-turning-next tw-link::after,
-    div.page-turning-prev tw-link::after {
-        /* replacing the text by arrows in ::after elements */
-        position: absolute;
-        top: 0;
-
-        font-family: sans-serif;
-        font-size: 5em;
-        font-weight: inherit;
-        display: block;
-        width: 4rem;
-        height: 5rem;
-        overflow: hidden;
-        text-align: center;
-        line-height: 3.6rem;
-
-        color: #0000dc;
-        text-shadow: 0 0 0.07em rgba(255, 255, 255, 0.25);
-        opacity: 0.7;
-        transition: 300ms;
-        transition-property: opacity, transform;
-        
-        pointer-events: auto;
-    }
-    div.page-turning-prev tw-link::after {
-        content: "‹";
-        left: 0;
-    }
-    div.page-turning-next tw-link::after {
-        content: "›";
-        right: 0;
-    }
-    div.page-turning-next tw-link:hover::after,
-    div.page-turning-prev tw-link:hover::after {
-        opacity: 0.95;
-        transform: scale(1.05);
-    }
-}
-
-
-
-/*============================
-        MODAL DIALOGS
-============================*/
-
-div.modal-dialog-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    padding: 6vh 4vw;
-    z-index: 10000;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
-    
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 400ms;
-}
-div.modal-dialog-container:target {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* modal content */
-div.modal-dialog {
-    max-width: 100%;
-    flex-grow: 0;
-    margin: auto 0px;
-    padding: 1.2em;
-
-    background: rgb(238, 225, 190);
-    box-shadow: 0px 30px 15px 10px rgba(0, 0, 0, 0.33);
-}
-div.modal-dialog::after {
-    /* invisible "padding" to ensure user can scroll
-       all the way to the bottom of the bubble
-       (that is past its border bc shadow/glow fx) */
-    content: '';
-    position: absolute;
-    top: 100%;
-    opacity: 0;
-    pointer-events: none;
-    height: 60px;
-    width: 1px;
-}
-div.modal-dialog-container:target > div.modal-dialog * {
-    pointer-events: auto;
-}
-
-div.modal-dialog-container .modal-close,
-div.modal-dialog-container .modal-close:hover {
-    /* background close button/link */
-    position: fixed;
-    top: 0;
-    left:0;
-    z-index: -1;
-    
-    width: 100vw;
-    height: 100vh;
-    
-    background: #0000;
-    color: #0000;
-}
-div.modal-dialog::before {
-    /* adding an x above of the modal */
-    position: absolute;
-    right: -7px;
-    top: -43px;
-    z-index: -2;
-    /* setting it underneath the close link */
-    width: 1em;
-    height: 1em;
-    
-    font-family: sans-serif;
-    content: '×';
-    text-align: center;
-    line-height: 1.2em;
-    
-    color: rgb(0, 0, 0);
-    background-color: rgb(143, 139, 132);
-    opacity: 0.8;
-}
-
-/* articles */
-div.modal-dialog.article {
-    transform: translateX(100vw);
-    transition: 400ms;
-    transition-property: transform;
-}
-div.modal-dialog-container:target div.modal-dialog.article {
-    transform: none;
-}
-
-/* wiki articles */
-div.modal-dialog.wiki {
-    height: 100%;
-}
-div.modal-dialog.wiki iframe {
-    width: 1200px;
-    max-width: 100%;
-    height: 100%;
-
-    border: solid 2px rgba(78, 78, 78, 0.7);
-    /* box-shadow: ; */
-}
-
-/* images inside of a H5P embed */
-div.modal-dialog.h5p-embed {
-    width: 40em;
-}
-
-/* modals with a sidenote */
-div.modal-dialog.text-sidenote {
-    width: 30em;
-}
-
-div.modal-dialog.citation-modal {
-    padding: 0;
-    background-color: transparent;
-    pointer-events: none;
-    box-shadow: none;
-}
-div.modal-dialog.citation-modal div.block-citation {
-    margin-top: 1em;
-    background-color: rgb(238, 225, 190);
-}
-div.modal-dialog.citation-modal img,
-div.modal-dialog.citation-modal div.block-citation {
-    box-shadow: 0px 15px 15px 10px rgba(0, 0, 0, 0.33);
-}
-
-div.block-citation {
-    padding: 0.5em;
-    /* width: 30em;
-    max-width: 100%; */
-    font-size: 85%;
-    line-height: 1.4em;
-}
-
-/* modal openers */
-a.modal-open:any-link {
-    color: rgb(0, 179, 30);
-    transition: 300ms;
-    transition-property: color, text-shadow;
-    text-decoration: underline;
-}
-a.modal-open:any-link:hover {
-    color: rgb(0, 153, 25);
-    text-decoration: underline;
-    text-shadow: 0 0 0.03em rgb(0, 153, 25);
-}
-
-/*============================
-    HYPERLINKS   <a>
-============================*/
-
-a:link {
-    color: hsl(170, 98%, 40%);
-    text-decoration: underline;
-}
-a:link:hover {
-    color: hsl(170, 90%, 46%);
-    text-decoration-thickness: 1.5px;
-}
-
-a:visited {
-    color: hsl(182, 100%, 27%);
-    text-decoration: underline;
-}
-a:visited:hover {
-    color: hsl(182, 100%, 22%);
-    text-decoration-thickness: 1.5px;
-}
-
-
-
-
-
-/*============================
-        Accessibility
-============================*/
-
-body.accessibility-mode tw-story {
-    font-family: Calibri, sans-serif;
-}
-
-div.accessibility-toggle-container {
-    position: fixed;
-    top: 20px;
-    right: 0px;
-}
-
-/* the visible button itself */
-#accessibility-toggle {
-    width: 2em;
-    height: 1.5em;
-    background-color: rgba(231, 231, 231, 0.5);
-    padding-left: 0.4em;
-    font-family: Calibri, sans-serif;
-    line-height: 1.5em;
-    cursor: pointer;
-
-    transform: translateX(50%);
-    opacity: 0.4;
-
-    transition: 300ms;
-    transition-property: transform, opacity, background-color;
-}
-#accessibility-toggle::before {
-    content: "";
-    width: 30%;
-    height: 100%;
-    position: absolute;
-    left: -30%;
-    background-color: none;
-    cursor: auto;
-}
-
-/* toggle is on */
-body.accessibility-mode #accessibility-toggle {
-    font-family: "Dancing Script", serif;
-}
-
-/* hover action */
-#accessibility-toggle:hover,
-tw-passage[tags ~= "uvod"] #accessibility-toggle {
-    transform: none;
-    background-color: rgba(231, 231, 231, 0.5);
-    opacity: 0.9;
-}
-
-/* draw user's attention on opening the DVZ up */
-tw-passage[tags ~= "uvod"] #accessibility-toggle {
-    animation-duration: 1s;
-    animation-delay: 0.5s;
-    animation-iteration-count: 2;
-    animation-name: wiggle;
-}
-@keyframes wiggle {
-    from {
-        transform: none;
-        padding-right: 0;
-        opacity: 0.9;
-    }
-    50% {
-        transform: translateX(50%);
-        padding-right: 0.5em;
-        opacity: 0.4;
-    }
-    to {
-        transform: none;
-        padding-right: 0;
-        opacity: 0.9;
-    }
-}
-
-
-/* narrow screen */
-@media (max-width: 649px) {
-
-    div.accessibility-toggle-container {
-        top: 10px;
-        right: 0px;
-    }
-
-    #accessibility-toggle  {
-        transform: translate(15%);
-        background-color: rgba(163, 163, 163, 0.739);
-        opacity: 0.6;
-    }
-}
-
-
-
-
-/*============================
-    OTHER STUFF
-============================*/
-
-iframe {
-    background-color: rgba(0, 0, 0, 0.226);
-}
-
-
-img.logolink {
-    /* EU fondy */
-    display: block;
-    width: 85%;
-    margin: 8em auto 1em;
-    background-color: rgba(255, 255, 255, 0.335);
-    box-shadow: none;
-}
-.logotext {
-    /* EU fondy */
-    font-size: 75%;
-    line-height: 1.4em;
-    text-align: center;
-}
-
-
-
-/*=============================
-      CREDITS page style 
-=============================*/
-
-div.flex-columns {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-div.flex-columns > div {
-    width: 50%;
-    min-width: 11em;
-    flex-grow: 1;
-    padding-right: 1em;
-}
-div.flex-columns > div.last-columnt {
-    padding-right: 0em;
-}
-
-tw-passage[tags ~= "credits"] .logo {
-    max-width: 12em;
-    box-shadow: none;
-}
-tw-passage[tags ~= "credits"] ul {
-    margin: 0.2em 0em;
-    padding: 0.5em;
-    list-style: none;
-}
-tw-passage[tags ~= "credits"] li {
-    margin: 0.2em 0em;
-    padding: 0em 1em;
-}
-tw-passage[tags ~= "credits"] li.category {
-    margin: 0.2em 0em;
-    padding: 0em;
-}
-tw-passage[tags ~= "credits"] #muni-logo {
-    position: relative;
-    left: -13px;
-}
-tw-passage[tags ~= "credits"] #mzk-logo {
-    padding: 10px 0px 20px 0px;
-}
-ul#jan-rychly {
-    margin-top: 0.25em;
-    max-width: 10em;
-    border-top: solid #0000DC 0.2em
-}
-
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">
+</style>
+<link href=".\style-zeny-ve-vede.css" rel="stylesheet">
+<script role="script" id="twine-user-script" type="text/twine-javascript">
 // Adding accessibility toggle functionality
 
 document.twStoryAcc = {
@@ -828,7 +183,7 @@ Mimochodem, moc se mi líbí jméno, které pro gymnázium vybrali. Schválně, 
 [[b) Fortuna-&gt;2b]]
 [[c) Diana-&gt;2c]]
 \\
-&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;[[Předchozí-&gt;praha]]&lt;/div&gt;
+&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;[[Předchozí-&gt;praha]]&lt;/div&gt;&lt;/div&gt;
 \\
 
 
@@ -842,7 +197,7 @@ Mimochodem, moc se mi líbí jméno, které pro gymnázium vybrali. Schválně, 
     &lt;/div&gt;\
 &lt;/div&gt;\
 
-(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)</tw-passagedata><tw-passagedata pid="8" name="maturita povolení" tags="" position="1099,1875" size="100,100">Březen 1895
+(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)[]</tw-passagedata><tw-passagedata pid="8" name="maturita povolení" tags="" position="1099,1875" size="100,100">Březen 1895
 ---
 
 Milý deníčku,
@@ -853,9 +208,9 @@ dnes jsme se dozvěděly, že nám ministerstvo vyuučování povolilo složit m
 [[b) Maturitní vysvědčení bude platné jen na území Rakouska-Uherska.-&gt;4b]]
 [[c) Maturitní vysvědčení nás nebude opravňovat ke vstupu na univerzitu.-&gt;4c]]
 
-&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;(link-goto: &quot;Předchozí&quot;, (history:)&#39;s last)&lt;/div&gt;
+&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;(link-goto: &quot;Předchozí&quot;, (history:)&#39;s last)&lt;/div&gt;&lt;/div&gt;
 
-(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)</tw-passagedata><tw-passagedata pid="9" name="nástup na univerzitu" tags="" position="1102,2370" size="100,100">Září 1895
+(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)[]</tw-passagedata><tw-passagedata pid="9" name="nástup na univerzitu" tags="" position="1102,2370" size="100,100">Září 1895
 ---
 
 Milý deníčku,
@@ -1035,9 +390,9 @@ Tatínek je osobním lékařem pana hraběte Schlika, který žije na zdejším 
 [[a) Jsme chudí a studium medicíny je příliš drahé.-&gt;1a]]
 [[b) Jsem Češka a medicína se na české univerzitě studovat nedá, pouze na německé.-&gt;1b]]
 [[c) Jsem holka a holky u nás nesmí studovat na univerzitách.-&gt;1c]]
-
-&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;[[Předchozí-&gt;start]]&lt;/div&gt;
-
+\
+&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;[[Předchozí-&gt;start]]&lt;/div&gt;&lt;/div&gt;\
+\\
 &lt;div id=&quot;mod-zamek&quot; class=&quot;modal-dialog-container&quot;&gt;\
     &lt;div class=&quot;modal-dialog citation-modal&quot;&gt;\
         &lt;a href=&quot;#close&quot; title=&quot;Zavřít&quot; class=&quot;modal-close&quot;&gt;&lt;div class=&quot;empty-filler&quot;&gt;&lt;/div&gt;&lt;/a&gt;\
@@ -1047,8 +402,8 @@ Tatínek je osobním lékařem pana hraběte Schlika, který žije na zdejším 
         &lt;/div&gt;\
     &lt;/div&gt;\
 &lt;/div&gt;\
-
-(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)</tw-passagedata><tw-passagedata pid="14" name="1a" tags="" position="1101,501" size="100,100">Vedle jak ta jedle! Studium sice stojí peníze, ale myslím, že jich tatínek vydělává dost.
+\\
+(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)[]</tw-passagedata><tw-passagedata pid="14" name="1a" tags="" position="1101,501" size="100,100">Vedle jak ta jedle! Studium sice stojí peníze, ale myslím, že jich tatínek vydělává dost.
 
 Skutečný důvod je to, že děvčata u nás nesmějí studovat na univerzitách. Nu, bez vystudované univerzity se nemohu stát lékařkou.
 
@@ -1266,7 +621,7 @@ Občas se ale najde čas i na zábavu. S některými spolužačkami se často sc
 [[c) V tělocvičně Akademického gymnázia, kde se učíme šermovat.-&gt;3c]]
 
 \\
-&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;[[Předchozí-&gt;zápis]]&lt;/div&gt;
+&lt;div class=&quot;page-turning-wrapper&quot;&gt;&lt;div class=&quot;page-turning-prev&quot;&gt;[[Předchozí-&gt;zápis]]&lt;/div&gt;&lt;/div&gt;
 \\
 
 &lt;div id=&quot;mod-vysledky&quot; class=&quot;modal-dialog-container&quot;&gt;\
@@ -1279,7 +634,7 @@ Občas se ale najde čas i na zábavu. S některými spolužačkami se často sc
     &lt;/div&gt;\
 &lt;/div&gt;
 
-(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)</tw-passagedata><tw-passagedata pid="23" name="konec roku" tags="" position="1100,1622" size="100,100">Červenec 1891
+(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)[]</tw-passagedata><tw-passagedata pid="23" name="konec roku" tags="" position="1100,1622" size="100,100">Červenec 1891
 ---
 
 Milý deníčku,
@@ -1478,7 +833,7 @@ Schválně, jestli uhodneš, která se k tomuto odvážnému kroku odhodlala.
     &lt;/div&gt;\
 &lt;/div&gt;\
 
-(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)</tw-passagedata><tw-passagedata pid="31" name="úspěch" tags="" position="1101,3001" size="100,100">Říjen 1900
+(align:&quot;==&gt;&quot;)+(box:&quot;X=&quot;)[]</tw-passagedata><tw-passagedata pid="31" name="úspěch" tags="" position="1101,3001" size="100,100">Říjen 1900
 ---
 
 Milý deníčku,
