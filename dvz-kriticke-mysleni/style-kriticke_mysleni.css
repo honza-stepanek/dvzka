@@ -5,13 +5,12 @@
  This Font Software is licensed under the SIL Open Font License, Version 1.1. */
  @font-face {
     font-family: 'Quicksand';
-    src: url("font-Quicksand/Quicksand-Medium.ttf");
-    /* src: url("https://digikult.phil.muni.cz/wp-content/DVZ/common/font-Quicksand/Quicksand-Medium.ttf"); */
+    src: url("https://digikult.phil.muni.cz/wp-content/DVZ/common/font-Quicksand/Quicksand-Medium.ttf");
     font-weight: 500;
 }
 @font-face {
     font-family: 'Quicksand';
-    src: url("font-Quicksand/Quicksand-Bold.ttf");
+    src: url("https://digikult.phil.muni.cz/wp-content/DVZ/common/font-Quicksand/Quicksand-Bold.ttf");
     font-weight: bold;
 }
 
@@ -21,13 +20,13 @@
  This Font Software is licensed under the SIL Open Font License, Version 1.1.
  Font github: https://github.com/ctrlcctrlv/TT2020  */
 @font-face {
-    font-family: 'TT2020';
-    src: url("../dvz-mandelinka/TT2020/TT2020StyleE-Regular.woff2");
+    font-family: 'tt2020';
+    src: url("https://digikult.phil.muni.cz/wp-content/DVZ/common/font-TT2020/TT2020StyleE-Regular.woff2");
     font-weight: normal;
 }
 @font-face {
-    font-family: 'TT2020';
-    src: url("../dvz-mandelinka/TT2020/TT2020StyleB-Regular.woff2");
+    font-family: 'tt2020';
+    src: url("https://digikult.phil.muni.cz/wp-content/DVZ/common/font-TT2020/TT2020StyleB-Regular.woff2");
     font-weight: bold;
 }
 
@@ -390,17 +389,23 @@ hr {
 }
 
 .logolink {
-    /* EU */
     display: block;
     width: 85%;
-    margin: 0 auto;
+    margin: -20px auto;
     margin-top: 5em;
+    box-shadow: none;
 }
+
 .logotext {
-    /* EU */
+    margin: 0 auto;
+    max-width: 40em;
     font-size: small;
     line-height: 1.4em;
     text-align: center;
+}
+
+.licence {
+    max-width: 60em;
 }
 
 /* pdf viewer object in a modal */
